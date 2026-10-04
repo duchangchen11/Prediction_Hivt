@@ -1,0 +1,106 @@
+{
+  "stage": "Stage 2C",
+  "root": "/home/lrj/Prediction_Hivt/outputs/stage2c_trainval_vehicle_baseline",
+  "self_hash_excluded": true,
+  "artifacts": [
+    {
+      "relative_path": "00_manifest/stage2c_common.py",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 10898,
+      "sha256": "591d5a2a3c1ef1d65edef4b0c883c8495a9f99685becc61ea32dc9fdd2963761",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109163123318094
+    },
+    {
+      "relative_path": "00_manifest/stage2c_config.yaml",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 1426,
+      "sha256": "81fa26af5ea5abb8fcfd2a083717369c26169086ef0fdc62b97befb9bed79080",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109163123318094
+    },
+    {
+      "relative_path": "00_manifest/stage2c_environment.json",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 650,
+      "sha256": "fdd973463e8563cad3eea25c305a3bc22e8c77739072f207b4b6a49b936df25a",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109365014361578
+    },
+    {
+      "relative_path": "00_manifest/stage2c_freeze_verification.json",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 189,
+      "sha256": "5fd758e603fa5c9dcb128879a30c4c50317c9928023cf677883ce9e5d6efe07b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109399749953956
+    },
+    {
+      "relative_path": "00_manifest/stage2c_git_state.txt",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 159,
+      "sha256": "a833802bc4d10929265bbf3b8fa04f696c190a98b69a77374ea3b7e4b6ec663d",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109365026362877
+    },
+    {
+      "relative_path": "00_manifest/stage2c_previous_artifacts_sha256.json",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 51324,
+      "sha256": "f591c494a3e426e7edfc24a694baa2997e7d8a005eeb80ea0fe1c566c3e6a754",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109048376122509
+    },
+    {
+      "relative_path": "00_manifest/stage2c_requirements.txt",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 17563,
+      "sha256": "259e08d6151303d08f2e8c560a8b12f5980e2c7501ec633a81cd5918daa2ee7e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109048272124528
+    },
+    {
+      "relative_path": "01_data_audit/stage2c_nuscenes_split_audit.json",
+      "description": "official train/val vehicle audit",
+      "file_size": 343222,
+      "sha256": "267412f7c84cbdccbc3961322e8345eae04a5e8bce06b6deded7570eea441d4f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109364926352028
+    },
+    {
+      "relative_path": "01_data_audit/stage2c_nuscenes_split_audit.md",
+      "description": "official train/val vehicle audit",
+      "file_size": 200,
+      "sha256": "df4479e142ce81be47c52ac0a22545c403123f9ec87ac7fcd7f6e5925fed88d6",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109364926352028
+    },
+    {
+      "relative_path": "02_preprocessed/stage2c_prepare.py",
+      "description": "scene-level graph or preprocessing index",
+      "file_size": 20581,
+      "sha256": "7dc2d052343b5c7dd21a44c15f778f490f931fb4e851c7aabd2aaccd13ddfbca",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109361013925549
+    },
+    {
+      "relative_path": "08_logs/stage2c_initialize.log",
+      "description": "reproducible execution log",
+      "file_size": 58,
+      "sha256": "fd6a6320dd3be0d65f27d826ac25e71b0dc0da75418d35eef87d7f68113856fc",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791109364926352028
+    }
+  ]
+}

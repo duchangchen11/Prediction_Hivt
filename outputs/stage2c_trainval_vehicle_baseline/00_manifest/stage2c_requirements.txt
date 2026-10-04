@@ -1,0 +1,1185 @@
+你现在开始执行：
+
+Stage 2C：nuScenes Trainval Vehicle-only HiVT Formal Baseline
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前稳定分支：
+stage2/vehicle-hivt-baseline
+
+当前已经完成：
+- Stage 1 数据管线 PASS
+- nuScenes mini pipeline PASS
+- HiVT architecture adaptation PASS
+- K=6 moving overfit PASS
+- fixed-scale warm-up → original Laplace NLL PASS
+- full tiny PASS
+- mini baseline COMPLETE
+
+当前 mini 的意义仅为工程验证。
+现在开始正式 nuScenes trainval vehicle-only baseline。
+
+禁止：
+- pedestrian
+- bicycle
+- type embedding
+- dynamic interaction创新
+- intent head
+- diffusion planner
+- Stage 3
+
+==================================================
+0. 新建独立分支
+==================================================
+
+从当前：
+
+stage2/vehicle-hivt-baseline
+
+建立：
+
+stage2c/trainval-vehicle-baseline
+
+不要 merge main。
+
+==================================================
+1. 统一结果目录
+==================================================
+
+所有 Stage 2C 结果必须统一保存在：
+
+/home/lrj/Prediction_Hivt/outputs/stage2c_trainval_vehicle_baseline/
+
+建立：
+
+outputs/stage2c_trainval_vehicle_baseline/
+├── 00_manifest/
+├── 01_data_audit/
+├── 02_preprocessed/
+├── 03_training/
+├── 04_evaluation/
+├── 05_figures/
+├── 06_tables/
+├── 07_checkpoints/
+├── 08_logs/
+└── 09_reports/
+
+以后本阶段禁止再创建：
+
+outputs/stage2c_xxx
+outputs/trainval_xxx
+outputs/figures/stage2c_xxx
+
+等其他散乱目录。
+
+所有 Stage 2C 文件全部进入上述一个根目录。
+
+==================================================
+2. 文件命名规范
+==================================================
+
+固定使用：
+
+stage2c_<内容>.<扩展名>
+
+不要使用：
+
+result.json
+metrics.json
+test.png
+figure1.png
+final.json
+new_result.csv
+
+这种无法追踪的名字。
+
+必须使用有意义的文件名。
+
+例如：
+
+00_manifest/
+stage2c_artifact_manifest.json
+stage2c_environment.json
+stage2c_git_state.txt
+
+01_data_audit/
+stage2c_nuscenes_split_audit.json
+stage2c_nuscenes_split_audit.md
+stage2c_vehicle_statistics.csv
+stage2c_motion_state_statistics.csv
+
+02_preprocessed/
+stage2c_train_index.csv
+stage2c_val_index.csv
+stage2c_preprocess_manifest.json
+
+03_training/
+stage2c_warmup_config.yaml
+stage2c_warmup_curve.csv
+stage2c_warmup_curve.png
+
+stage2c_nll_config.yaml
+stage2c_nll_curve.csv
+stage2c_nll_curve.png
+
+04_evaluation/
+stage2c_val_metrics.json
+stage2c_val_actor_errors.csv
+stage2c_val_scene_metrics.csv
+stage2c_cv_metrics.json
+stage2c_bootstrap_ci.json
+
+05_figures/
+stage2c_moving_success_001.png
+stage2c_moving_success_002.png
+...
+stage2c_moving_failure_001.png
+...
+stage2c_stopped_case_001.png
+stage2c_parked_case_001.png
+
+06_tables/
+stage2c_cv_vs_hivt.csv
+stage2c_motion_state_metrics.csv
+stage2c_main_results.csv
+
+07_checkpoints/
+stage2c_best_overall_minfde.pt
+stage2c_best_moving_minfde.pt
+stage2c_last_checkpoint.pt
+
+08_logs/
+stage2c_preprocess.log
+stage2c_warmup_train.log
+stage2c_nll_train.log
+stage2c_evaluation.log
+
+09_reports/
+stage2c_final_report.md
+
+==================================================
+3. 建立 artifact manifest
+==================================================
+
+建立：
+
+00_manifest/stage2c_artifact_manifest.json
+
+所有重要文件生成后都登记：
+
+relative_path
+description
+file_size
+sha256
+git_tracked
+created_by_stage
+
+例如：
+
+{
+  "path": "05_figures/stage2c_moving_success_001.png",
+  "description": "validation moving vehicle successful prediction case",
+  "git_tracked": true
+}
+
+checkpoint：
+
+git_tracked=false
+
+但是仍记录：
+
+文件路径
+SHA256
+epoch
+metric
+
+这样即使 checkpoint 不上传 Git，
+我们以后也知道它对应哪一次实验。
+
+==================================================
+4. 正式检查 nuScenes 官方 split
+==================================================
+
+使用：
+
+/media/lrj/54926A1D926A0438/nuscenes-trainval
+
+不要使用 mini 自定义 6/2/2。
+
+通过官方 nuscenes-devkit split 定义读取：
+
+train
+val
+
+不要自己随机 split。
+
+优先使用：
+
+nuscenes.utils.splits.create_splits_scenes()
+
+实际打印：
+
+train scene count
+val scene count
+
+然后断言：
+
+train ∩ val = empty
+
+不要依赖硬编码数量。
+
+保存：
+
+01_data_audit/stage2c_nuscenes_split_audit.json
+01_data_audit/stage2c_nuscenes_split_audit.md
+
+报告：
+
+train scenes=
+val scenes=
+overlap=0
+
+test：
+
+本阶段完全不使用。
+
+==================================================
+5. 全量 trainval 数据审计
+==================================================
+
+统计正式 train / val：
+
+scene
+window
+vehicle actor-window
+
+以及：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+分别统计：
+
+full 12-step future
+partial future
+
+同时统计 endpoint displacement：
+
+0–1m
+1–2m
+2–5m
+5–10m
+10–20m
+20–40m
+>40m
+
+保存：
+
+01_data_audit/stage2c_vehicle_statistics.csv
+01_data_audit/stage2c_motion_state_statistics.csv
+01_data_audit/stage2c_vehicle_statistics.json
+
+注意：
+
+运动状态仍然使用真实 t0 nuScenes attribute。
+
+禁止：
+
+根据未来轨迹人为把 stopped 改成 moving。
+
+==================================================
+6. 正式 preprocessing 不允许全部塞入内存
+==================================================
+
+机器内存有限。
+
+不要生成一个巨大的：
+
+graphs.pt
+
+把整个 trainval 全部放内存。
+
+改成：
+
+scene-level shard
+
+建议：
+
+02_preprocessed/
+├── train/
+│   ├── scene-xxxx.pt
+│   ├── scene-xxxx.pt
+│   └── ...
+├── val/
+│   ├── scene-xxxx.pt
+│   └── ...
+├── stage2c_train_index.csv
+├── stage2c_val_index.csv
+└── stage2c_preprocess_manifest.json
+
+一个 scene 一个 shard。
+
+index CSV 至少记录：
+
+split
+scene_name
+scene_token
+sample_token
+window_index
+vehicle_count
+full_horizon_target_count
+partial_target_count
+file_path
+
+==================================================
+7. 预处理必须可恢复
+==================================================
+
+脚本必须支持：
+
+已经生成的 scene shard 自动跳过。
+
+即：
+
+如果训练中途停止，
+重新运行 preprocessing 不得从头开始。
+
+每个 shard 完成后再写文件。
+
+不要出现：
+
+半个 .pt 文件被误认为完成。
+
+建议：
+
+先保存：
+
+.tmp
+
+完成后 rename 为：
+
+.pt
+
+==================================================
+8. Full preprocessing 前先做 10-scene smoke
+==================================================
+
+先：
+
+5 train scenes
++
+5 val scenes
+
+完成：
+
+preprocess
+DataLoader
+batch
+forward
+loss
+backward
+
+要求：
+
+NaN=0
+Inf=0
+
+通过以后：
+
+PREPROCESS_SMOKE=PASS
+
+再处理全部 train/val。
+
+==================================================
+9. 正式输入定义保持不变
+==================================================
+
+必须冻结：
+
+Th = 5
+Tf = 12
+
+约：
+
+2s history
+6s future
+
+K = 6
+
+HiVT-64
+
+8 attention heads
+4 temporal layers
+3 global layers
+
+local radius = 50m
+lane resolution = 2m
+
+vehicle：
+
+vehicle.*
+排除 vehicle.bicycle
+
+不删除：
+
+parked
+stopped
+
+ego：
+
+context only
+不是 prediction target
+
+HD Map：
+
+lane centerline geometry
+
+继续保持现有 baseline 定义。
+
+==================================================
+10. GPU batch-size benchmark
+==================================================
+
+RTX3080 10GB。
+
+正式训练前测试：
+
+batch_size = 4
+batch_size = 8
+batch_size = 16
+
+逐步测试。
+
+每种跑：
+
+forward
+backward
+optimizer step
+
+记录：
+
+GPU peak memory
+iteration time
+
+选择：
+
+不会 OOM，
+且显存峰值最好低于约 85–90%
+
+的最大稳定 batch size。
+
+如果 batch=4 最稳，
+就使用4。
+
+不要为了大 batch 修改模型。
+
+保存：
+
+00_manifest/stage2c_batch_benchmark.json
+
+==================================================
+11. 正式训练 Protocol
+==================================================
+
+采用已经验证的：
+
+Protocol 1
+
+即：
+
+Phase 1
+fixed-scale warm-up
+
+↓
+
+Phase 2
+original learnable Laplace NLL
+
+模型结构完全不变。
+
+==================================================
+12. Phase 1：Fixed-scale Warm-up
+==================================================
+
+注意：
+
+正式 trainval 的数据量远大于 mini。
+
+不要机械复制：
+
+64 epochs。
+
+这次主要按 optimizer step 控制。
+
+先计算：
+
+steps_per_epoch =
+ceil(train_windows / batch_size)
+
+保存这个值。
+
+参考 mini 已验证 warm-up：
+
+约2368 optimizer steps
+
+但正式训练可以设置：
+
+minimum warm-up = 2500 steps
+
+maximum warm-up = 10000 steps
+
+每：
+
+500 optimizer steps
+
+跑一次 validation。
+
+LR：
+
+1e-3
+
+无 scheduler。
+
+目标：
+
+先把 location 学起来。
+
+每次 validation 保存：
+
+overall
+moving
+stopped
+parked
+
+ADE
+FDE
+MR
+
+==================================================
+13. Warm-up checkpoint
+==================================================
+
+同时维护：
+
+07_checkpoints/stage2c_warmup_best_overall.pt
+
+选择：
+
+validation full-horizon overall minFDE 最低。
+
+另外保存：
+
+07_checkpoints/stage2c_warmup_best_moving.pt
+
+选择：
+
+validation vehicle.moving minFDE 最低。
+
+注意：
+
+正式 baseline primary checkpoint 仍然以：
+
+overall minFDE
+
+为主。
+
+moving checkpoint 只用于诊断。
+
+不要根据 moving checkpoint 报正式主结果。
+
+==================================================
+14. Phase 2：恢复 Original NLL
+==================================================
+
+从：
+
+warm-up best overall checkpoint
+
+进入：
+
+learnable Laplace NLL。
+
+LR：
+
+1e-4
+
+保留 optimizer state 的方案和 Stage2B 保持一致，
+除非代码设计要求重新初始化。
+
+必须记录。
+
+maximum：
+
+10000 optimizer steps
+
+每：
+
+500 steps
+
+validation。
+
+如果连续：
+
+5次 validation
+
+overall full-horizon minFDE 没有改善：
+
+允许 early stop。
+
+不要训练到严重过拟合才停止。
+
+==================================================
+15. 正式 checkpoint selection
+==================================================
+
+最终 primary checkpoint：
+
+07_checkpoints/stage2c_best_overall_minfde.pt
+
+选择依据：
+
+VAL
+full horizon
+overall vehicle
+minFDE
+
+严禁使用：
+
+test
+train
+moving subgroup
+
+选择正式 checkpoint。
+
+另外保存：
+
+stage2c_best_moving_minfde.pt
+
+只作为诊断。
+
+最后保存：
+
+stage2c_last_checkpoint.pt
+
+==================================================
+16. Checkpoint metadata
+==================================================
+
+每个 checkpoint 同时记录：
+
+epoch
+global_step
+phase
+LR
+validation ADE
+validation FDE
+validation MR
+moving ADE/FDE
+git commit SHA
+config SHA256
+
+写到：
+
+00_manifest/stage2c_checkpoint_manifest.json
+
+==================================================
+17. 正式评价
+==================================================
+
+只用：
+
+VAL
+
+primary checkpoint：
+
+stage2c_best_overall_minfde.pt
+
+输出 full-horizon 主结果：
+
+overall
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+每组：
+
+count
+minADE6
+minFDE6
+MR6
+
+partial future：
+
+另外单独保存。
+
+绝对不能混入主指标。
+
+==================================================
+18. CV baseline
+==================================================
+
+在完全相同 VAL actor 上运行 CV。
+
+使用：
+
+最后两个有效 history observation
+实际 timestamp
+
+比较：
+
+CV
+vs
+HiVT
+
+输出：
+
+06_tables/stage2c_cv_vs_hivt.csv
+
+格式：
+
+Method
+Group
+Count
+minADE6
+minFDE6
+MR6
+
+至少：
+
+CV overall
+CV moving
+CV stopped
+CV parked
+
+HiVT overall
+HiVT moving
+HiVT stopped
+HiVT parked
+
+==================================================
+19. 增加 scene-level bootstrap
+==================================================
+
+正式 trainval 已经不是 mini。
+
+因此增加：
+
+scene-cluster bootstrap
+
+使用：
+
+VAL scene
+
+重采样单位：
+
+scene
+
+不是 actor-window。
+
+运行：
+
+1000 bootstrap replicates
+
+比较：
+
+HiVT - CV
+
+指标：
+
+ADE
+FDE
+
+分别：
+
+overall
+moving
+
+输出：
+
+04_evaluation/stage2c_bootstrap_ci.json
+06_tables/stage2c_bootstrap_ci.csv
+
+至少给出：
+
+ΔADE
+95% CI
+
+ΔFDE
+95% CI
+
+注意：
+
+负数表示 HiVT 更好。
+
+不要使用 actor-window 独立 bootstrap，
+因为同一 scene/window 存在相关性。
+
+==================================================
+20. 正式图片保存规范
+==================================================
+
+所有图只放：
+
+05_figures/
+
+不允许散落。
+
+至少生成：
+
+5个 moving success
+5个 moving failure
+
+3个 stopped
+3个 parked
+
+命名：
+
+stage2c_moving_success_001.png
+stage2c_moving_success_002.png
+...
+stage2c_moving_failure_001.png
+...
+stage2c_stopped_case_001.png
+...
+stage2c_parked_case_001.png
+
+每张图标题必须包含：
+
+scene name
+sample token前8位
+actor instance token前8位
+GT motion state
+minADE
+minFDE
+
+图中必须包括：
+
+lane centerline
+history
+GT future
+6 predicted modes
+best-FDE mode
+mode probabilities
+
+==================================================
+21. 额外保存一张论文级主图
+==================================================
+
+选择一个：
+
+真实 moving
+有明显转弯/交互
+HiVT明显优于CV
+
+的案例。
+
+保存：
+
+05_figures/stage2c_qualitative_main_case.png
+
+同时保存对应数据：
+
+04_evaluation/stage2c_qualitative_main_case.json
+
+JSON必须包含：
+
+scene_token
+sample_token
+instance_token
+history trajectory
+GT trajectory
+CV trajectory
+6 HiVT trajectories
+mode probabilities
+ADE/FDE
+
+这张图以后很可能直接放论文。
+
+因此：
+
+不要只保存PNG，
+必须同时保存原始数值。
+
+==================================================
+22. 训练曲线命名
+==================================================
+
+只保存：
+
+03_training/stage2c_warmup_curve.csv
+03_training/stage2c_warmup_curve.png
+
+03_training/stage2c_nll_curve.csv
+03_training/stage2c_nll_curve.png
+
+不要用：
+
+curve1.png
+curve_final.png
+latest.png
+
+训练曲线至少包含：
+
+train loss
+regression loss
+classification loss
+VAL overall ADE/FDE
+VAL moving ADE/FDE
+learning rate
+global step
+
+==================================================
+23. 主结果表
+==================================================
+
+生成：
+
+06_tables/stage2c_main_results.csv
+
+内容：
+
+CV vs HiVT
+
+full-horizon：
+
+overall
+moving
+stopped
+parked
+
+同时生成：
+
+09_reports/stage2c_final_report.md
+
+==================================================
+24. 正式验收标准
+==================================================
+
+Stage 2C 不要求强行规定：
+
+HiVT必须大幅超过CV。
+
+但必须满足：
+
+1.
+训练稳定。
+
+2.
+train / val 无scene泄漏。
+
+3.
+validation metrics finite。
+
+4.
+HiVT明显优于之前 mini 的不稳定状态，
+或者至少在 full trainval 上达到合理泛化。
+
+5.
+moving vehicle 不能再次出现：
+训练很好、val几十米FDE
+这种异常。
+
+6.
+如果HiVT仍然不如CV，
+必须如实保留结果，
+禁止为了过CV偷偷改split或删样本。
+
+==================================================
+25. Stage 2C 的科研判断规则
+==================================================
+
+情况 A：
+
+HiVT overall 和 moving 都优于CV。
+
+结论：
+
+Vehicle baseline建立成功。
+
+允许进入：
+
+Stage 3 Multi-Type。
+
+情况 B：
+
+overall优于CV，
+moving略差CV。
+
+结论：
+
+baseline可用，
+但后续创新必须重点提升moving/interacting agents。
+
+仍然可以进入Stage3，
+但要保留该问题。
+
+情况 C：
+
+overall和moving都明显差于CV。
+
+结论：
+
+不要进入Stage3。
+
+继续检查：
+
+训练策略
+地图输入
+历史信息
+数据采样
+模型适配
+
+不能靠增加创新模块掩盖baseline失败。
+
+==================================================
+26. 不允许做的事情
+==================================================
+
+不要：
+
+删除 parked
+删除 stopped
+改变 Tf
+改变 Th
+修改模型层数
+扩大 embed_dim
+增加类型信息
+增加未来信息
+使用 val 参与训练
+使用 test 调参
+
+==================================================
+27. Git管理
+==================================================
+
+代码、配置、小型JSON、CSV、报告、PNG：
+
+可以提交Git。
+
+不要提交：
+
+processed scene .pt
+checkpoint .pt
+大型cache
+raw data
+
+.gitignore确保：
+
+02_preprocessed/train/*
+02_preprocessed/val/*
+07_checkpoints/*.pt
+
+不上传。
+
+但是：
+
+这些文件全部必须记录到：
+
+stage2c_artifact_manifest.json
+
+==================================================
+28. 推荐 commits
+==================================================
+
+依次：
+
+chore: prepare Stage2C official nuScenes split
+
+feat: preprocess trainval vehicle HiVT dataset
+
+exp: train full vehicle HiVT baseline
+
+eval: evaluate vehicle HiVT on nuScenes val
+
+docs: finalize Stage2C baseline report
+
+最后 push：
+
+stage2c/trainval-vehicle-baseline
+
+==================================================
+29. 最终汇报
+==================================================
+
+【Dataset】
+
+train scenes=
+val scenes=
+
+train windows=
+val windows=
+
+train vehicle targets=
+val vehicle targets=
+
+【Preprocessing】
+
+scene shards=
+failed shards=
+NaN=
+Inf=
+
+【Training】
+
+batch size=
+steps/epoch=
+
+warmup steps=
+NLL steps=
+
+best checkpoint step=
+
+【Validation Full Horizon】
+
+CV:
+
+overall ADE/FDE/MR=
+moving ADE/FDE/MR=
+stopped ADE/FDE/MR=
+parked ADE/FDE/MR=
+
+HiVT:
+
+overall ADE/FDE/MR=
+moving ADE/FDE/MR=
+stopped ADE/FDE/MR=
+parked ADE/FDE/MR=
+
+【Bootstrap】
+
+Overall:
+ΔADE=
+95%CI=
+ΔFDE=
+95%CI=
+
+Moving:
+ΔADE=
+95%CI=
+ΔFDE=
+95%CI=
+
+【Artifacts】
+
+root directory=
+figure count=
+table count=
+report path=
+
+【Git】
+
+branch=
+commit=
+push=
+
+【Decision】
+
+Stage2C=
+PASS / FAIL
+
+Allow Stage3=
+YES / NO
