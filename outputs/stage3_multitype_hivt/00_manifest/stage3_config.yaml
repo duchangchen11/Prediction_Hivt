@@ -1,0 +1,49 @@
+seed: 2022
+historical_steps: 5
+future_steps: 12
+num_modes: 6
+embed_dim: 64
+num_heads: 8
+dropout: 0.1
+num_temporal_layers: 4
+num_global_layers: 3
+local_radius: 50.0
+lane_resolution: 2.0
+weight_decay: 0.0001
+batch_size: 16
+protocol: 1
+scheduler: none
+warmup:
+  lr: 0.001
+  minimum_steps: 2500
+  maximum_steps: 10000
+  plateau_patience: 5
+  stop_rule: after minimum_steps, five consecutive validations without overall full-horizon
+    minFDE improvement, or maximum_steps
+nll:
+  lr: 0.0001
+  maximum_steps: 10000
+  plateau_patience: 5
+validation_interval_steps: 500
+data_loader:
+  workers: 0
+  cache_scenes: 2
+  shuffle: shuffle scene order and window order within each scene, epoch seed 2022+epoch
+experiment: Multi-Type HiVT (No Type)
+type_embedding: false
+oversampling: false
+class_balanced_loss: false
+test_used: false
+tiny:
+  warmup_lr: 0.001
+  nll_lr: 0.0001
+  warmup_max_steps: 2500
+  warmup_min_steps: 1000
+  nll_max_steps: 1000
+  check_every: 250
+  minimum_targets:
+  - 10
+  - 10
+  - 5
+  minimum_relative_improvement: 0.5
+  selection_split: train only; complete scene context

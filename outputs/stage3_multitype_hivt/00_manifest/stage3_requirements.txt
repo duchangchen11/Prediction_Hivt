@@ -1,0 +1,874 @@
+你现在开始执行：
+
+Stage 3A：Multi-Type HiVT No-Type Baseline
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前已完成：
+Stage2C official nuScenes trainval vehicle-only HiVT baseline = PASS
+
+本轮目标：
+建立 vehicle + pedestrian + bicycle 的统一 Multi-Type HiVT baseline，
+但暂时不加入 type embedding。
+
+本轮结束后必须停止，
+不要继续 Stage3B。
+
+==================================================
+1. Git 分支
+==================================================
+
+从：
+
+stage2c/trainval-vehicle-baseline
+
+创建：
+
+stage3/multitype-hivt
+
+不要 merge main。
+
+==================================================
+2. 统一结果目录
+==================================================
+
+Stage 3A 所有结果统一放：
+
+/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/
+
+建立：
+
+outputs/stage3_multitype_hivt/
+├── 00_manifest/
+├── 01_data_audit/
+├── 02_preprocessed/
+├── 03_no_type_baseline/
+├── 04_evaluation/
+├── 05_figures/
+├── 06_tables/
+├── 07_checkpoints/
+├── 08_logs/
+└── 09_reports/
+
+本轮禁止创建其他散乱 stage3 目录。
+
+==================================================
+3. 类型定义
+==================================================
+
+加入三类参与者：
+
+0 = vehicle
+1 = pedestrian
+2 = bicycle
+
+vehicle：
+vehicle.*
+但排除 vehicle.bicycle
+
+pedestrian：
+human.pedestrian.*
+
+bicycle：
+vehicle.bicycle
+
+不要加入：
+barrier
+cone
+static object
+其他非动态参与者
+
+==================================================
+4. 数据结构保持不变
+==================================================
+
+一个 sample 仍然是完整 scene-window。
+
+每个窗口同时包含：
+
+vehicle
+pedestrian
+bicycle
+
+不要改成：
+one actor = one sample
+
+保持：
+
+Th = 5
+Tf = 12
+
+约：
+2s history
+6s future
+
+K = 6
+
+ego：
+只作为 context / coordinate reference
+不作为 prediction target
+
+==================================================
+5. 第一阶段：数据审计
+==================================================
+
+先统计 official train / val：
+
+train scenes = 700
+val scenes = 150
+
+确认：
+scene overlap = 0
+
+分别统计：
+
+vehicle
+pedestrian
+bicycle
+
+每类：
+
+total actor-window
+full-horizon
+partial future
+history valid count
+future valid count
+
+endpoint displacement bins：
+
+0–1m
+1–2m
+2–5m
+5–10m
+10–20m
+20–40m
+>40m
+
+输出：
+
+01_data_audit/stage3_class_statistics.csv
+01_data_audit/stage3_class_statistics.json
+01_data_audit/stage3_dataset_audit.md
+
+最终必须打印：
+
+Train:
+vehicle=
+pedestrian=
+bicycle=
+
+Val:
+vehicle=
+pedestrian=
+bicycle=
+
+==================================================
+6. 类别比例审计
+==================================================
+
+计算：
+
+N_vehicle : N_pedestrian : N_bicycle
+
+只统计，不做 oversampling。
+
+不要本轮加入 class-balanced loss。
+
+先得到自然分布 baseline。
+
+==================================================
+7. taxonomy / instance association 检查
+==================================================
+
+分别抽：
+
+10 vehicle
+10 pedestrian
+10 bicycle
+
+检查：
+
+instance_token continuity
+history continuity
+future continuity
+mask
+heading
+ego coordinate transform
+map alignment
+
+如果 bicycle / pedestrian 出现 ID 跳变或轨迹错位：
+
+立即停止。
+
+不要训练。
+
+==================================================
+8. 数据可视化
+==================================================
+
+保存：
+
+05_figures/stage3_data_vehicle_examples.png
+05_figures/stage3_data_pedestrian_examples.png
+05_figures/stage3_data_bicycle_examples.png
+
+每张图至少显示：
+
+History
+GT Future
+HD Map
+目标类别
+scene name
+instance token前8位
+
+此处只做数据正确性检查，
+不要画模型预测。
+
+==================================================
+9. Multi-Type No-Type 模型
+==================================================
+
+模型暂时不知道 agent type。
+
+也就是说：
+
+vehicle
+pedestrian
+bicycle
+
+全部输入相同：
+
+Local Encoder
+A-A Interaction
+Temporal Transformer
+A-L Interaction
+GlobalInteractor
+K=6 Decoder
+
+不要输入：
+
+agent_type embedding
+
+不要修改：
+
+A-A attention
+GlobalInteractor
+lane encoder
+decoder结构
+
+实验名：
+
+Multi-Type HiVT (No Type)
+
+==================================================
+10. 输入输出检查
+==================================================
+
+确认模型输出：
+
+pred_traj:
+[N_target, 6, 12, 2]
+
+mode_prob:
+[N_target, 6]
+
+三类 target 都必须可以进入 loss。
+
+不得只计算 vehicle loss。
+
+==================================================
+11. Tiny Overfit
+==================================================
+
+正式训练前必须先 tiny。
+
+选择若干包含三类参与者的窗口。
+
+至少保证监督 target：
+
+vehicle >= 10
+pedestrian >= 10
+bicycle >= 5
+
+保留完整 scene context。
+
+训练设置沿用 Stage2C：
+
+Phase 1:
+fixed-scale warm-up
+
+Phase 2:
+original Laplace NLL
+
+Tiny 目标不是追求正式指标，
+而是检查三类都能学习。
+
+必须分别报告：
+
+Vehicle:
+initial ADE/FDE
+final ADE/FDE
+
+Pedestrian:
+initial ADE/FDE
+final ADE/FDE
+
+Bicycle:
+initial ADE/FDE
+final ADE/FDE
+
+要求：
+三类都必须明显下降。
+
+如果某一类：
+loss 不下降
+ADE/FDE 不下降
+NaN / Inf
+梯度异常
+
+则：
+
+TINY_OVERFIT=FAIL
+
+立即停止。
+
+==================================================
+12. Full Trainval
+==================================================
+
+Tiny PASS 后：
+
+official train 700 scenes
+official val 150 scenes
+
+保持 scene split 不变。
+
+训练协议：
+
+Stage2C Protocol 1
+
+Phase 1:
+fixed-scale warm-up
+
+Phase 2:
+original Laplace NLL
+
+不要重新做大规模超参数搜索。
+
+==================================================
+13. Batch benchmark
+==================================================
+
+因为加入 pedestrian/bicycle，
+图节点和边数会增加。
+
+先测试：
+
+batch_size = 16
+8
+4
+
+优先尝试16。
+
+记录：
+
+peak GPU memory
+iteration time
+
+选择不会 OOM 的最大稳定 batch。
+
+保存：
+
+00_manifest/stage3_batch_benchmark.json
+
+不要通过减少 actor 数量解决显存问题，
+除非确实无法训练，并先报告。
+
+==================================================
+14. Validation 频率
+==================================================
+
+每500 optimizer steps：
+
+跑一次完整 validation。
+
+保存：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+的：
+
+minADE6
+minFDE6
+MR6
+
+checkpoint selection：
+
+VAL full-horizon overall multi-type minFDE
+
+==================================================
+15. 训练指标
+==================================================
+
+训练阶段记录：
+
+total loss
+regression loss
+classification loss
+NLL
+
+另外分别统计：
+
+vehicle regression loss
+pedestrian regression loss
+bicycle regression loss
+
+目的：
+
+检查哪类主导训练。
+
+==================================================
+16. 正式评价指标
+==================================================
+
+主指标：
+
+minADE@6
+minFDE@6
+MR@6
+
+MR仍定义：
+
+endpoint error > 2m
+
+保持和 Stage2C 一致。
+
+同时增加：
+
+Top1 ADE
+Top1 FDE
+
+Top1：
+
+使用 mode probability 最大的轨迹。
+
+==================================================
+17. Full horizon 与 partial 分开
+==================================================
+
+主论文指标：
+
+只使用 full 12-step future。
+
+分别报告：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+Partial future：
+
+单独表格保存。
+
+不能混在主结果里。
+
+==================================================
+18. Vehicle 进一步分组
+==================================================
+
+Vehicle 继续保留：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+因为后面需要和 Stage2C vehicle-only baseline 对照。
+
+==================================================
+19. Stage2C vehicle retention
+==================================================
+
+必须比较：
+
+Stage2C Vehicle-only HiVT
+
+vs
+
+Stage3A Multi-Type No-Type HiVT
+
+只看完全相同的 VAL vehicle actor。
+
+至少比较：
+
+vehicle overall ADE/FDE/MR
+vehicle.moving ADE/FDE/MR
+
+保存：
+
+06_tables/stage3_vehicle_retention.csv
+
+目的：
+
+判断多类型联合训练是否损害 vehicle 性能。
+
+==================================================
+20. Stage 3A 主结果表
+==================================================
+
+生成：
+
+06_tables/stage3_no_type_main_results.csv
+
+字段：
+
+Method
+Group
+Count
+minADE6
+minFDE6
+MR6
+Top1ADE6
+Top1FDE6
+NLL
+
+Group：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+以及 vehicle 子组。
+
+==================================================
+21. 可视化：正式预测图
+==================================================
+
+本轮只画少量代表案例。
+
+每类：
+
+Vehicle：
+2 success
+2 failure
+
+Pedestrian：
+2 success
+2 failure
+
+Bicycle：
+2 success
+2 failure
+
+命名：
+
+05_figures/stage3_vehicle_success_001.png
+stage3_vehicle_success_002.png
+
+stage3_vehicle_failure_001.png
+stage3_vehicle_failure_002.png
+
+stage3_pedestrian_success_001.png
+...
+
+stage3_bicycle_failure_002.png
+
+对应真实数据 JSON 放：
+
+04_evaluation/cases/
+
+例如：
+
+stage3_vehicle_success_001.json
+
+==================================================
+22. 画图规范
+==================================================
+
+所有正式结果图必须从真实 JSON 重画。
+
+禁止：
+
+人工改轨迹
+平滑
+示意数据冒充结果图
+
+每个 trajectory：
+
+Tf=12
+
+所以必须显示12个未来 marker。
+
+统一：
+
+History：
+灰色圆点
+linewidth 1.5
+
+GT：
+黑色实线
+方形 marker
+linewidth 2.5
+zorder高
+
+HiVT best-FDE：
+蓝色实线
+圆形 marker
+linewidth 2.5
+zorder最高
+
+HiVT Top-1：
+橙色/深灰虚线
+三角 marker
+linewidth 2.0
+
+正文主图：
+不要默认画另外5个 mode。
+
+==================================================
+23. 成功/失败案例定义
+==================================================
+
+先按类型分别排名。
+
+成功案例：
+
+full horizon
+GT motion meaningful
+minFDE较低
+
+失败案例：
+
+full horizon
+minFDE较高
+
+不要只挑静止目标当 success。
+
+Vehicle success：
+优先 moving vehicle
+
+Pedestrian success：
+优先有明显位移
+
+Bicycle success：
+优先有明显位移
+
+==================================================
+24. 每张图必须显示
+==================================================
+
+标题：
+
+scene name
+sample token前8位
+instance token前8位
+agent type
+
+数值：
+
+Best-mode ADE
+Best-mode FDE
+Top1 ADE
+Top1 FDE
+
+终点：
+
+GT endpoint
+Best endpoint
+Top1 endpoint
+
+如果三条轨迹部分重合，
+必须靠 marker 区分。
+
+==================================================
+25. 局部放大
+==================================================
+
+对于：
+
+turning
+crossing
+明显failure
+
+增加 inset zoom。
+
+自动根据：
+
+GT最后6个点
+best最后6个点
+Top1最后6个点
+
+计算范围。
+
+不要手写固定坐标。
+
+==================================================
+26. 绘图数值校验
+==================================================
+
+生成每张图前重新计算：
+
+best ADE/FDE
+Top1 ADE/FDE
+
+与 JSON 保存指标核对。
+
+误差要求：
+
+<1e-4
+
+否则：
+
+不生成正式 PNG。
+
+保存：
+
+xxx_audit.json
+
+==================================================
+27. 训练曲线
+==================================================
+
+保存：
+
+03_no_type_baseline/stage3_no_type_loss_curve.png
+
+显示：
+
+train total
+regression
+classification
+
+另外保存：
+
+03_no_type_baseline/stage3_no_type_val_fde_curve.png
+
+显示：
+
+Overall FDE
+Vehicle FDE
+Pedestrian FDE
+Bicycle FDE
+
+不要把十几个指标塞一张图。
+
+同时保存 CSV：
+
+stage3_no_type_train_curve.csv
+
+==================================================
+28. Stage 3A 结束条件
+==================================================
+
+本轮必须满足：
+
+1. 三类数据读取 PASS
+2. 三类 tiny overfit PASS
+3. Full trainval 正常训练
+4. 三类 val 指标 finite
+5. vehicle retention 已完成
+6. success/failure 图完成
+7. report 完成
+
+完成后：
+
+STOP
+
+不要继续 Type Embedding。
+
+==================================================
+29. 最终报告
+==================================================
+
+输出：
+
+09_reports/stage3a_final_report.md
+
+汇报格式：
+
+【Dataset】
+
+Train:
+vehicle=
+pedestrian=
+bicycle=
+
+Val:
+vehicle=
+pedestrian=
+bicycle=
+
+Class ratio=
+
+【Tiny Overfit】
+
+Vehicle:
+ADE/FDE initial=
+ADE/FDE final=
+
+Pedestrian:
+initial=
+final=
+
+Bicycle:
+initial=
+final=
+
+PASS/FAIL
+
+【Full Validation】
+
+Overall:
+ADE/FDE/MR=
+Top1 ADE/FDE=
+
+Vehicle:
+ADE/FDE/MR=
+Top1=
+
+Pedestrian:
+ADE/FDE/MR=
+Top1=
+
+Bicycle:
+ADE/FDE/MR=
+Top1=
+
+【Vehicle Retention】
+
+Stage2C vehicle-only:
+ADE/FDE=
+
+Stage3A Multi-Type:
+ADE/FDE=
+
+Moving:
+Stage2C=
+Stage3A=
+
+【Training】
+
+batch size=
+warmup steps=
+NLL steps=
+best step=
+
+【Visualization】
+
+vehicle success/failure=
+pedestrian success/failure=
+bicycle success/failure=
+
+【Decision】
+
+Stage3A=
+PASS / FAIL
+
+Ready for Type Embedding=
+YES / NO

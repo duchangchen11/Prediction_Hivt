@@ -30,3 +30,10 @@ outputs/stage2c_trainval_vehicle_baseline/**/*.tmp
 outputs/stage2c_trainval_vehicle_baseline/04_evaluation/stage2c_val_actor_errors.csv
 outputs/stage2c_trainval_vehicle_baseline/04_evaluation/stage2c_cv_actor_errors.csv
 !outputs/stage2c_trainval_vehicle_baseline/08_logs/stage2c_*.log
+outputs/stage3_multitype_hivt/02_preprocessed/train/*
+outputs/stage3_multitype_hivt/02_preprocessed/val/*
+outputs/stage3_multitype_hivt/02_preprocessed/stage3_cache/
+outputs/stage3_multitype_hivt/07_checkpoints/*.pt
+outputs/stage3_multitype_hivt/**/*.tmp
+outputs/stage3_multitype_hivt/04_evaluation/stage3_no_type_actor_errors.csv
+!outputs/stage3_multitype_hivt/08_logs/stage3_*.log

@@ -1,0 +1,2671 @@
+{
+  "stage": "Stage 3A",
+  "root": "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt",
+  "self_hash_excluded": true,
+  "artifacts": [
+    {
+      "relative_path": "00_manifest/stage3_common.py",
+      "description": "Stage3A 00_manifest",
+      "file_size": 11993,
+      "sha256": "83edfff64aa90d818d58b136d49763aa68e32bc68807525906895eb32e457ad2",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124437696016419
+    },
+    {
+      "relative_path": "00_manifest/stage3_config.yaml",
+      "description": "Stage3A 00_manifest",
+      "file_size": 1082,
+      "sha256": "c704e66d9e288a67d168f5c70ad222e8b97f212e1b803c31e3c46a50a61e62c2",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124272176941606
+    },
+    {
+      "relative_path": "00_manifest/stage3_environment.json",
+      "description": "Stage3A 00_manifest",
+      "file_size": 699,
+      "sha256": "86f7fd35431189fe9ac346d7d58c79ce810613dbe0cb6eaaca7cec49ab89c0a8",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124312340720988
+    },
+    {
+      "relative_path": "00_manifest/stage3_freeze_verification.json",
+      "description": "Stage3A 00_manifest",
+      "file_size": 109,
+      "sha256": "6955cca54642b6edaa949da1d1332fad0026cd0abd1141a05379a1cb9581af48",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124755673846511
+    },
+    {
+      "relative_path": "00_manifest/stage3_frozen_previous.json",
+      "description": "Stage3A 00_manifest",
+      "file_size": 71194,
+      "sha256": "0946639442d6819e21129106a694f9908fb290c29a2d3a7bb33c4b1dfe056155",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124058246062878
+    },
+    {
+      "relative_path": "00_manifest/stage3_git_payload.py",
+      "description": "Stage3A 00_manifest",
+      "file_size": 1938,
+      "sha256": "18eab3e34addad3f952041273f47a9f42b51d4d65d97ef042752b651bf00f022",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124597675088676
+    },
+    {
+      "relative_path": "00_manifest/stage3_git_state.txt",
+      "description": "Stage3A 00_manifest",
+      "file_size": 630,
+      "sha256": "f822dbfef67984940f4a9ff0015b3398261b8dcb81d1848dc2df868091524514",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124058258062818
+    },
+    {
+      "relative_path": "00_manifest/stage3_requirements.txt",
+      "description": "Stage3A 00_manifest",
+      "file_size": 12898,
+      "sha256": "d0631b622263e014cdbf63b6387860f73d9505084b713f03824d1a30103ad7de",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124058246062878
+    },
+    {
+      "relative_path": "01_data_audit/stage3_official_split.json",
+      "description": "Stage3A 01_data_audit",
+      "file_size": 17203,
+      "sha256": "139e74c0b65e82fbb6abf817333eb652afb9f33e82e69a6b3af1db72d1fceb05",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124316428698383
+    },
+    {
+      "relative_path": "02_preprocessed/stage3_dataset.py",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6230,
+      "sha256": "d00360d0abd6ff4edfb61c6f332ccf482808b87e210e1655e9cb1d5e3e4cae35",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124312244721517
+    },
+    {
+      "relative_path": "02_preprocessed/stage3_prepare.py",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 18704,
+      "sha256": "aa8b53ceb323513031ed9493d910c4383e2242201717703f281d260ca704547d",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124272084942107
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0001.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1615622,
+      "sha256": "d2fdd93f6975bce8fe2f9aad27af59a16a0130d364464cedfdfe04d40ac97b61",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124317432692827
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0002.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6040198,
+      "sha256": "5ef9f872a5cce7d3c96d6ed0ac8fd59d9eb834af852e1095d56f5a76e9f1ef7d",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124319224682905
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0004.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8639686,
+      "sha256": "b6e099bcf5b2ec4362190fde4594bbb1f16bc95776a65ec79e0a1076b29634a5",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124320908673577
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0005.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2822546,
+      "sha256": "03dad640e8357de8bb81a2fdc2181c5bc1598893a5f2c85708bf72740b1249cd",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124322344665619
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0006.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3760390,
+      "sha256": "db20964ff5fbe0611db182327104b2615fa3377c23d78a52dbba2d317eeea9ae",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124324264654975
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0007.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6346386,
+      "sha256": "6c273c2dfdee639a1db7842ab94f9a68ae0bfff55ec5223eaed989efa6843167",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124326152644503
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0008.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2898438,
+      "sha256": "e6b74023c1ca080571c2537fbcfd1912833686d767b9e6528c296a4186970977",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124327020639686
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0009.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1406534,
+      "sha256": "ae14597fd6874b53339842a8ef3b4bbb9f0b49fdd7ef0d904163d3a22308421c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124328120633580
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0010.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2112774,
+      "sha256": "63faabb64a4ee1d7c9a0d680b60a323c03119563444f6b17dd66d3a620bbbbef",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124329372626627
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0011.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2453702,
+      "sha256": "f97834f8626209adfe58df93222398595a5289ddea639222ae854a538a70888a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124330748618983
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0019.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5796038,
+      "sha256": "c0689a5366b779e6a41abece3afc1fff055fd596fc2998307b575659b4a9a12a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124331984612116
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0020.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4076754,
+      "sha256": "2580cc804e05adb43f095d10a013c5985edaec72e2ab0c661ca90f1132e90b48",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124332844607336
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0021.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7867014,
+      "sha256": "bf74ccec1f3f1105cdb74ba875b754f46917774fde5efdf8d0c95ab838e3b476",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124334236599595
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0022.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3442694,
+      "sha256": "c27955aea7a74417c4e25e92a40087ae2cb4f44a9238c00f10b3423db5e04826",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124335688591519
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0023.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2416582,
+      "sha256": "6b8019be3a0abdb17f5723d8c735f7e459d842e965b687b7f9d4bc745e458eb6",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124337508581391
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0024.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2984390,
+      "sha256": "e5be22e25cae011c472c3a9ea9ad68d7ad32b482f4dcd684917b05ba61c8a4f5",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124338864573842
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0025.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2784710,
+      "sha256": "9db89abffa78d6ae4099fe81e620d5a604f823df39ae55a2387eae0ece94cf66",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124339648569475
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0026.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3212242,
+      "sha256": "a2485a41e49f1036338b68fa36d93321da5b76afdaea1f76ddd369946da0c805",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124341036561743
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0027.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3229702,
+      "sha256": "6dce15ef4948a502e4773ac214550722e869b5efd1843951bee140046501aa68",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124342276554832
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0028.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 10799430,
+      "sha256": "959607d4504945bbc9a741a3979d74957c95aed969c93aec833f0fb111e89bda",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124343592547497
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0029.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 13305926,
+      "sha256": "bac95d718e9449b7e4456041d89160b15f0563a459368948728d1df596059392",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124344832540581
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0030.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5133958,
+      "sha256": "a735c46cc7f8b5c70bd25bedd52ffc3d22d7ef5fd393c8b03c697c5d1960e91e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124346644530472
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0031.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2264134,
+      "sha256": "4356a55c8735a4e11b307e8e79c0a4538b42c8210f309d3949e80903d4cdf61e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124347920523350
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0032.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1581126,
+      "sha256": "395cfbd4543b17ac0207099f32212bd54fd9ef96ed94a9ac93d5c7b6f47d7b28",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124349120516650
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0033.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1169094,
+      "sha256": "d4290b923747e2049ec7be912a7197eeafe2c3515c3240e3470021a299b9abb3",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124350212510552
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0034.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 587730,
+      "sha256": "f71aab590b56de34b6884188c9941f44220ee7e0ad1e27f2455e76ca72001a72",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124350860506932
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0041.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2126790,
+      "sha256": "7dac3517469844a7e9fce2c0904b693dc3560eb7b7959985d0a3e9c21c7ac3e7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124352016500472
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0042.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2466234,
+      "sha256": "68b4cdb75aee282045ef8db4b75b23a53cfdccf208db88f9b051867eae6ccd6f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124354012489315
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0043.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9492498,
+      "sha256": "a420986a0077c9874fbd131f6576054964205acd6d7c554e1ff69ea3e4e67043",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124355548480724
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0044.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1037062,
+      "sha256": "cb13810cdfa38f4a7f4c3a2c71f0fa096aaab4a36235b97d97e7a31b2c0524ab",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124356972472757
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0045.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6171922,
+      "sha256": "8a9f9d65ee24f51306a9eda8589826ac2f29225e519205958c79bdf1af152e8a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124358872462123
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0046.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8635858,
+      "sha256": "cd561c8fd6d9504a8e0408bfbb4c8395af8b4225903ca55fc03295258832baf5",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124360008455761
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0047.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4254406,
+      "sha256": "2d881ddae3e69d91d462405faff8b066a723c1bb027a003cbd65b0ed454dd823",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124361820445609
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0048.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1991814,
+      "sha256": "8adac25cbcfc6c364e193d1322b346055317a0486da45597f700de2665e7e70b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124362628441083
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0049.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3101714,
+      "sha256": "9bbf99ae20d9be295a5daf705e9b302582ca0c7bb4a2649ccd4ca20db96c9d7e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124364188432339
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0050.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2691730,
+      "sha256": "61b7a14954a02f0e94390723f58fd8b72539879e9aedab917ba06538f404ee3e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124365664424061
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0051.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2142354,
+      "sha256": "b4a26903da19a71429d7dcbf22303c89764d1252c5795793c232868d56f0fc73",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124366476419506
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0052.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1369926,
+      "sha256": "a2b8608cd56c1b5e3d8a7e03720acfeb717a27f753d9c67913889d731d045e82",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124367680412751
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0053.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5992658,
+      "sha256": "8a0aa1f8737d9f69b369be52da81af4b885e3b9083add02de4b5c9a8f47c3ae8",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124369784400940
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0054.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2112338,
+      "sha256": "705fd595a4d2250298883b476b7b09284db6dd6eda4b93e3fa4a09c04e419336",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124371012394045
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0055.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1052678,
+      "sha256": "69e117453d3d81e34b6169c2e0f13a4692c36926a28669ddf1cfecc0f08a20be",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124372088388000
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0056.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1838906,
+      "sha256": "1564cc4df79e628040768e7c8844a8e74f7cdd527e161ad4a62629dab7d709b4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124373344380942
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0057.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4737746,
+      "sha256": "e9042e9a3bedcfa47a6799d563f76464a0fda609ad8e130c8eecadf1ec16bda4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124375012371565
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0058.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4171026,
+      "sha256": "9e86288809a8ad8622538573ad6ab5681c1527368234d01461a997dc6117bbe4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124376652362344
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0059.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3761786,
+      "sha256": "3964a569910d5e4a18993350be12748ca5fce8b3a471e23ff36ac6c7f934d164",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124377868355503
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0060.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2540614,
+      "sha256": "32474ffc9ba5d2293b8b4abc8ee732ced012ec196a178a48959d30e29f8f5f3f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124379148348301
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0061.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 20083282,
+      "sha256": "c3ce5a85fc6d97896868c38de52cf42f655eb49537f5371bb35bae6d7c009305",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124381144337063
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0062.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1241874,
+      "sha256": "010f825a09dd3d55c4daf96817cd132503f59dd597c6eb8061aa17288dc2f486",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124383116325955
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0063.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4322834,
+      "sha256": "79f8259a06afc2f396b4700cc3826f7f3b6466b8ada30bb847f518649b0d0969",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124384696317053
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0064.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8023558,
+      "sha256": "619b54731d27acbc04f80a2c52713ab6328b467df4872bdb425645f1cc33ad69",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124387200302935
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0065.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7157382,
+      "sha256": "bedc32f781254f7c1b07a35066d6f7d6ccfbcd05840a26c196221b5b377388a8",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124389300291089
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0066.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 12420626,
+      "sha256": "2fb2f2433bfc4f3c75e3ad77fe726a2e43df1cb2cecfd336f295f0e0239100c9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124390844282373
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0067.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9798406,
+      "sha256": "14d7ddfc0fec78eeed512767730222ad8d6d590ae69605aa53ea9eb9819ffad2",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124392456273273
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0068.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8234066,
+      "sha256": "74367e85853cac3e2b6d60607dd37a79cdc532bae3754300be23253c9edbd107",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124395280257321
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0069.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5706886,
+      "sha256": "7107dd8478f970882701f8e94babb98445d9e9f20227c010562612222f181ba4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124397428245179
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0070.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7254726,
+      "sha256": "c7052d5883c1105afea897d176de44f6c949035bdb171282fe4babbd9be7df29",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124399884231290
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0071.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3812806,
+      "sha256": "2bbbddacfcbf9b630916fd7b78aedc51a28613f4a22e4e2e9f4d1bc48a10f16d",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124400916225451
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0072.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4587526,
+      "sha256": "f8a715504ae08b0af33bd813287ff5f5b8db8e0ac8e35cbcd91fddc0e883da78",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124402048219043
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0073.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5657414,
+      "sha256": "72b2fafa0edb756c40b7bbdc4c81f708f50f9a0bac55f9e121b8a9a11be5660c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124404148207154
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0074.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 13584902,
+      "sha256": "0f874062cc545af58eb6d0f1105be6d5593b16b2eb8fd7925c721110aed64e2d",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124405852197502
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0075.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7040530,
+      "sha256": "c5c6e4eaae239bb8916b04f736f7ea0094ddc90d0150efc876238ebfa2bda111",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124407664187234
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0076.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4770758,
+      "sha256": "6f8dde47e14f0af2b113d7deb76c18fb5064aac30f78d2e734660f908772163a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124409472176984
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0120.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5052998,
+      "sha256": "db86611cf7e02cfd640734074902a7adb1b587734b8d7c5e5e02df91fa0159d0",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124410976168455
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0121.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2295366,
+      "sha256": "9c03919d05dd09110358fb32213fdaea288f170df7ac166edf0d055cd91d8bc4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124412288161012
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0122.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1856594,
+      "sha256": "9e7bb0cfbd01db4cf08fbc6ff652f42ad8e41fa6ec0ec442f7c07cdacd12b8d8",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124413780152544
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0123.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1827590,
+      "sha256": "8a09ced3045d1c35e91a098d438bfc65ea84fffd98b72fc039d32e3ef48c23be",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124415100145050
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0124.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5276614,
+      "sha256": "d24b152682e2b87e48b5170f67f21e6d5732f41df9fb72989acc5ff9057148c1",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124416892134874
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0125.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3725894,
+      "sha256": "8a8776ecadb05ae790ff5c2e2a7c8804843a8201c643803f810ef4136ed4b9b7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124418552125443
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0126.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2962950,
+      "sha256": "050ef1464cc055de5a58102ee80f4c026cfba5bcaa0d10db25f0b7eeaee4409f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124419864117987
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0127.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3865222,
+      "sha256": "15bdb02694667018c9c9e6102e68ec4aea4161157b57ed9fce371d736ce7d9d2",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124421584108209
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0128.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3391942,
+      "sha256": "761cd6084cab4da25f8fc84224adc517a9c500c4c77ed370af69b5c946c77fb7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124423548097037
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0129.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4515718,
+      "sha256": "bedc6e53db66dc646ba96d12cb6110bd5456f7563335bc7f3b344be2fca11dee",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124424816089822
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0130.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4212166,
+      "sha256": "6aba4e358633320bf4fd0e795bfb81b04d4074f13ffb6cdd75c943bd27165c4b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124426068082697
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0131.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3193478,
+      "sha256": "b6d2925d4d465bc9560973cc5b064edf797105cddc953399e8ef491d21cc00fd",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124427280075798
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0132.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4239366,
+      "sha256": "0994cac5343e2f8d75f0cb3dc94e3625932da71d34b0cf76f2bd956a8f8fe606",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124428592068327
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0133.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5362118,
+      "sha256": "9004b75b176f641879d96e92b2b907d81d9dbcb43108ef4c0d7ccb89fa3f12d2",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124430076059873
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0134.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3660102,
+      "sha256": "106da109f673137941eb2e5e3d8d882b44e06c351299759b4fb93950b82a3aa6",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124431360052556
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0135.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4198354,
+      "sha256": "d48da76a975ad666c5e8e48a3b35f62262fca9b4eeebb72ab2801f387cbba58a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124432932043595
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0138.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 894662,
+      "sha256": "730994b37f79f5f18b524d95927c95427c9d89afcfcd67b8d026cc1218acb544",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124434200036364
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0139.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2497478,
+      "sha256": "ba1c31b3579c35929ce261a6b836efac3b2a15d199c7d5a9a9261a5d64056e4c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124435348029816
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0149.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5981254,
+      "sha256": "42857a5cf27587ab968d2dd763b4e660d421b359e096ef53bcf169ae0958e046",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124436852021236
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0150.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7474322,
+      "sha256": "a711480716c04861221f968e28e11ce35e5df9d03ed757f10dbd2ed1bd255dfd",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124439016008885
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0151.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11807046,
+      "sha256": "91b4b25d3db10a31221f1307aad6ef0fb11b7f942a63e00c406408965e713178",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124441455994951
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0152.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1974738,
+      "sha256": "0b5ffcb5d82981102cef8ca26220801e386727229d7f737197e82c06d240f858",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124442647988142
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0154.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2028306,
+      "sha256": "9029877ec8af61f6af936b1eaac5c087010fac36c404bb479531a56f900f45fa",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124443783981649
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0155.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3642258,
+      "sha256": "a6d8f8837fa61b608c5cb7c6b0236ab9ddafbcd9df8439b1d53bfa75ee5df5c1",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124444855975522
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0157.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1291270,
+      "sha256": "5c6f315ee949806ebbe37da224deb2ca3559fc833b6bd47a00022aa03e8e57a4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124446275967405
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0158.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5113606,
+      "sha256": "1fdad716bfeabd1174e941ac171fb75affe403cfab8100f4b65b9768a0a0beb7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124447851958391
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0159.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 13702290,
+      "sha256": "4c7e6d012b61ea2117406ca1aea91808ef156fe3e6001f2cd8a15666641f637f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124449095951275
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0160.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2791366,
+      "sha256": "f0da487b18aa4bf36f23d4b84fbc74d8bda1267f262af29ed407f9826d0cfda3",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124450707942050
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0161.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9595142,
+      "sha256": "3d5360a6458ff20c0f14018710c936fce35bccc914b686d887bf7e857f3fbfb0",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124451687936441
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0162.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 10489478,
+      "sha256": "ad899f9f0b1a3adddc79fec69a7bc04e60d2883265e6d68d35886edd7b846608",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124452935929296
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0163.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6288966,
+      "sha256": "6c8fe6f55db9733407e8e81bc835dbb110da37d3b071f60961d5c93d9c39eb69",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124454643919512
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0164.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3262290,
+      "sha256": "12e4d28b6a5c8212ecca961ec5d3e00d39bf80a3310467519a70749c6bf8796b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124456575908443
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0165.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2714438,
+      "sha256": "a3687a285213ea27c191015b083feb1640a0c855969ec58e10259a942eeec2be",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124458031900098
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0166.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2624210,
+      "sha256": "56bba5a1ed2a127b41258bfb387c7671dff59fc012f2d7e852b89fd5e5ea8f4f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124459955889067
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0167.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4081158,
+      "sha256": "20113a50b9e5bf4036b97a6de3aa119bfd3e273cdb13e5b80f0e8995e598995f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124461835878282
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0168.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5799366,
+      "sha256": "5e1730b30e2e96828722a6354f28f76e6a22e457dd01eb9be374fcc546a62e36",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124463751867287
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0170.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7369414,
+      "sha256": "e9ccc804d48ecfba5923080175a04b50ffe5c747b84395abd9d09deda13dc1d4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124465139859319
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0171.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5326662,
+      "sha256": "2110e2158eca7f9f6cfdad2c75d7880a99e105a53c84a14edd4f6e028ec3b526",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124467111847997
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0172.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1682886,
+      "sha256": "26ed03b91b1abba0ac2f1b2910a00d0128e0f29a0f40682aae2a255c3c0ca110",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124468235841539
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0173.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4509190,
+      "sha256": "a39211d5bfb799986da8d508e4c1f9048f14b8d8978ef9ec2cc0ef994aea18c9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124469575833840
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0174.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5088774,
+      "sha256": "e47dfe9eddfe4e97328be916b94061ab458342d7356840c9fae9b6fa88879a3c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124471547822506
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0175.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5008070,
+      "sha256": "26aaa42aa9f707ee2e3d9b708193b740368d2b6e1f5e3079936b390f1a8ddf00",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124473031813973
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0176.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3574354,
+      "sha256": "f87b0c46e1432ecaf2306cfdf7e9d4654ac1a48c5ade444f211a9484610e6a0f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124474279806795
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0177.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 730630,
+      "sha256": "90a598b2f3a93cb449718f0badde654c2095ee085ee294084dade406218b7d3b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124475347800651
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0178.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3558610,
+      "sha256": "5a4c7d60384faaf869ecc79448dfb16d8a43c5d4c70b452f12da010f89ee037b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124476487794092
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0179.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2129670,
+      "sha256": "cb1356d2b31b01a23944f44a6e6c094b491809fadcbc8794fcce442122c5722b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124477279789534
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0180.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5441938,
+      "sha256": "85e1f0d71d369b09224af5ce727a85d0d9d8e5debdc289ed5e9c9ff0915ba81a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124477975785528
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0181.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 580230,
+      "sha256": "cfe18699a9af171d235186bf8510f8143244159e77919a51ff5aa018775ec713",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124478783780876
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0182.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1600646,
+      "sha256": "94f02a7b9ffb94d982f6ede47946650f197bfcfd3f8fd78e1f0f5ca3fe1e3831",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124479987773943
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0183.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1207558,
+      "sha256": "dd0a9e24f14a9ac46dfbc25524d2758cb2f217923445d533f1f3eab632d5d414",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124481059767768
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0184.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 509190,
+      "sha256": "8ad629f8086bcf32a91da6fabf58591360d2aee9aaebf68972802b74f006b207",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124482487759542
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0185.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1785670,
+      "sha256": "4a3c3f1c146d13e2d5f146bef6f4eb047dc0330bd3ad64543cc9479a1b42c6ac",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124483943751154
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0187.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3147090,
+      "sha256": "5a8a1612125495e14adb2ab16b3dd80b8d9cd6b2b2c465d6653580a7424333c1",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124485135744281
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0188.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5297254,
+      "sha256": "b4e6a61dbae152d6f872035b7cb75f9798da5c6c95fa6e696e1e030ec654c817",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124486259737801
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0190.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1540166,
+      "sha256": "52123f9a67cf4d1485d6967790216b70a2e8fbbdc05e1a0d5d400be0cde671ed",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124487507730603
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0191.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1554182,
+      "sha256": "bbd4f28cfd778ad5a30f81db4c5a3d134b0ba781ce24dc32602065058333ea2d",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124489175720982
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0192.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4204358,
+      "sha256": "8b0be34fa244bbd3eaa5360d30662275bf3e59dced1b005355dc40a008b2b7bc",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124490467713526
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0193.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4007942,
+      "sha256": "434819d5e86307e1ca29ee7a336dee7dc711916b9d2caddfb9d8ebd335f38a63",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124491419708032
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0194.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5121670,
+      "sha256": "928d145885060734619462c9fc28d43e44b03b8c3f7f6fd7c0529754b5fdf229",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124492875699627
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0195.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2831686,
+      "sha256": "331cd78692c2dd9433b617514476751eaf9c6fba46b3b74d018ff0423322483c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124494435690619
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0196.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1095622,
+      "sha256": "30bb7fd3178059c6fe914599048ed71f90c28a17c12234d715da30d8522c6724",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124495407685003
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0199.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1402502,
+      "sha256": "886fa645300c82e0e88f28fd0cd953d1ed2aa7d323d2955f38ba4057e66e77aa",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124496735677332
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0200.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9402450,
+      "sha256": "57cb7e411318b1b5622fdacad61601ea41d7355a34f03c6f7c2afb0177655859",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124498703665958
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0202.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4771474,
+      "sha256": "e18f5755e589e9e19ccdf1c1d475b0972f9d04d793b015afeb2dc0a8dee25bf6",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124499931658860
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0203.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9003846,
+      "sha256": "88b60e73987f074f88615b142d343e2a5b5b1f79918ae123293ad542b601b8eb",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124502087646390
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0204.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7960914,
+      "sha256": "b4e570f2615eb25175a009f36d3e3ddcddbe808ac5df0f81502d5c5cabe31dc3",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124504395633039
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0206.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8970194,
+      "sha256": "1e074596cbfa6caf2e16d9d5c8a187387697fb9162b50be20aa3022a7ff0dd50",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124506691619748
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0207.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3313862,
+      "sha256": "a0cc69b847c51414f03f3c5260e92babe28f2b0abaf85ef58ed8dd530dc95935",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124508803607519
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0208.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6511430,
+      "sha256": "845563d1eeb6a6d5ed540b8b5d8c9b77f690d195be1c5140d27613fb65c24d3b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124509747602052
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0209.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4856338,
+      "sha256": "77ab5def2cb645bd59ea33e99280c385067e504c268bfd8f93e8a2bc678ec80c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124512111588354
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0210.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2450246,
+      "sha256": "6dc407ffec763d790b1ee3df8a5570cd88d65c9bbe396895680d21b0263ad898",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124513355581144
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0211.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4626130,
+      "sha256": "5ecef2aa9a05ef2f736fe2bdf04c8660bdd459254ea2e30ea07810fa0d19ef29",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124514735573144
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0212.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4955398,
+      "sha256": "4a3e781bd84bc2964a08836a9655be9cadab21938fc69daeff687d08a1ee28f7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124516659561985
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0213.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4913234,
+      "sha256": "99b782e0be76dded9522e4865e21afbaf359a5c72d9496cde07eda556bc89e15",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124518831549387
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0214.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8070674,
+      "sha256": "817f29ca4266bc84813044595ac4ee1205ab921e79bc6cafa4a98b3d723e59f9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124520283540958
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0218.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9390022,
+      "sha256": "c03995cc67a5396dd6675e626c02424ae3bd51e4dd97c0fc6232e2ddd2b43563",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124521387534550
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0219.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9424338,
+      "sha256": "912764bfe0114c48c497004a25adb94555855ae2afc0dfaae397db933c41a998",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124522587527583
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0220.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11375622,
+      "sha256": "6e99daeb75769c8305c97a83e4d3d45ad96df8543fc7ea9bde7c7a2df02fb969",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124524523516339
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0222.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 10061958,
+      "sha256": "88dcecd1ae85b216dc755f75ef5941bbdabcbd0640d331b15f1e7c5ed2f9f05e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124526579504394
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0224.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4736402,
+      "sha256": "1de0122480abf6580022546686fa6d8215c8950eddf9b484189f42c3801fd10b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124528103495538
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0225.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7246918,
+      "sha256": "61a2989bc2ca99ecd029ebc0a194b447ab59b86fed1579cebf30985de7e6d27c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124529123489609
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0226.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6017414,
+      "sha256": "e630e43e4271a974247c9af445bb7ed8cb41c3886290e5158a6bebf33a3408b9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124531195477561
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0227.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11192466,
+      "sha256": "e11778b2145d22ea3a61a1b516d8f9a86a2c07b3837a8048c928eafbe558a9b2",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124533167466090
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0228.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4803014,
+      "sha256": "e516c87d2bd697280912fccabfa62e008e2e59928f0ddba17aa8d94b441bf07c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124534603457733
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0229.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4921350,
+      "sha256": "72918a25f4c52e17e38df30bd2372f32274e73c10df2b0773e324cec2c83c649",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124536619445998
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0230.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6372422,
+      "sha256": "c1ec959257806aced6505bbf748308a4cf64c087b10ae56de5769d7369605206",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124538555434726
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0231.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6066566,
+      "sha256": "96285258d8e7a3dbf0c4fe1d4b437b934463f29c0b291228a6fd9ad0029563fc",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124539607428598
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0232.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9601862,
+      "sha256": "49db2d0f58998764c210d3ea2e3f5ef0a482221d538e4ff6cec9b0f4292677fe",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124541039420255
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0233.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 17073606,
+      "sha256": "c23ec07a9abd68b4fbbc83ccff84aea85254d383ad2792f208ced214b1873e23",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124543159407902
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0234.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 17942662,
+      "sha256": "da3a3a9313649f903d6b4dea22a9534ad9570d8a2c6c2fcdc3fcf5d3f5ca18ba",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124545327395264
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0235.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11713042,
+      "sha256": "885c00a9c0c0b9df695ddd2ef9efec8d8cd928d2b7c62ee0912a85fe273e210e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124547059385163
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0236.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 15132742,
+      "sha256": "9b1ae621fc8c7e27867145a7333ba4c6754848bc4ca936faea44c1c22f8564a4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124549351371794
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0237.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11038162,
+      "sha256": "4c6f4e884ac2f93a9db1986b908c9c8703c1261b2c32c1a3bca9ce358108f933",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124551275360564
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0238.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 17292678,
+      "sha256": "ffc87a17fbb9bcd38698464094ef1baade63aa0586e321f0aefdb5d73acdcaeb",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124552955350759
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0239.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 16009990,
+      "sha256": "344abfabd173c973fbe08c9458698c22b8daa74ea7f4863f648833370c03c8d8",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124554979338938
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0240.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 13928658,
+      "sha256": "8eae2ebe74debae3175a0eb510c3641df08be0578e1af1440cb45e48d3bd5cf9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124556931327535
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0241.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 17989510,
+      "sha256": "147ab019ef3057a44dde43c60fcd33c28eee8c2be95bd0ecbee09217c70f0c4a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124559315313604
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0242.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9748678,
+      "sha256": "40ab1f6b1d478d33e68a81a028869f9381edbd86c18ad170935d6ae582eebb5b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124561615300158
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0243.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8562694,
+      "sha256": "3c4273b5e8ae9dc324c66653e0338128d1494d4475507b992f6e8e031e2cb740",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124563103291456
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0244.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 15232326,
+      "sha256": "dc2a0e3814dae90c5f57d0fa016d393965b868f102d62c6e003fd3556fcc8112",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124564663282331
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0245.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7388498,
+      "sha256": "d7f8e32891f5d0d7fb8bc32866912f3f8f4dedb8d5ade85ecd90f07864a154ba",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124567319266791
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0246.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4965830,
+      "sha256": "d0b639f35f026a9c782ec7d9ff05d35c3f2cb7019e6b6ae218ac40cffae5c35c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124569275255340
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0247.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9027794,
+      "sha256": "00248ae2ba567c5c5bfa37e3d035ec5faaf6ab93969a74d0e29499ec2964af64",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124571595241754
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0248.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 16734150,
+      "sha256": "1271b17361c4fe7edbe9221021a3ea3d21a971382229dd593168411d850e1840",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124573619229897
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0249.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 16449734,
+      "sha256": "4987537731b04688b6d5b9b17f02bd230b6f70ce60fb9f1d480ce8727e386c66",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124576139215131
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0250.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8524230,
+      "sha256": "65f2377399bd295e737e0cc3afe062252f4e7f75daf865b5e0f10966de338c69",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124578907198901
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0251.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 14174406,
+      "sha256": "1a5f49ef4e034ddc129aedf79caa6f33de8568d661d0d5fbbd0c2773e2d777a8",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124581167185645
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0252.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 15711110,
+      "sha256": "9cc9657531134fb04a0b3936b30a84dda8e4d3c9b55474752c083d60a37b2c18",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124583603171351
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0253.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 19236678,
+      "sha256": "c309b20064484bc4fb6a57f4a742689925738ac018150d58a5a60a965f6e75b7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124586279155644
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0254.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1363654,
+      "sha256": "a400cf2b1ba083f6d6ee11518cf0df4fb4a17ed8789502db80f0245fa794ff24",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124588171144534
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0255.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11844870,
+      "sha256": "6f653fda10ee5c118525e579f5cefa15a75d62377fc26df9473af4e02a5e33bb",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124589751135255
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0256.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2661714,
+      "sha256": "b37182a9ad75f3e7297874c95d72bd08aa41736eadc680c2a363b944443deb44",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124590995127946
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0257.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6091590,
+      "sha256": "6c83ae2c2f6c87271d8b1c371df76c6a795a8f8a8d9be11a0f2a5475ae098d32",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124592283120378
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0258.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4390854,
+      "sha256": "f989b33c42cd16ccc55a419fdc5e0016c33b830edc422acb6c97bdf4fe926896",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124595295102670
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0259.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 13854470,
+      "sha256": "7a38e4d77d5c7542503b028e1b1e5668273f2480dad331f485de7ef83b6de4de",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124597575089264
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0260.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6967238,
+      "sha256": "7cf80a75abd99807041e491afe4328d4c0012e534a2164af67cd01a33bd95695",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124599071080462
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0261.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4469638,
+      "sha256": "45030e9c24ba69fde4a7becc37c92e126a9b5fae0bc96c450c539313b28ef694",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124601279067469
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0262.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6838534,
+      "sha256": "5acb74f020c01ec44adbdada0d58c1e955590028e5fa0d8a8a9efe16421af9f6",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124602399060879
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0263.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3772550,
+      "sha256": "62e4313b91e11ef960d2c23fe38213f02507b6e1c9ab7cd6a70c51989c445ddf",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124604483048608
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0264.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9583942,
+      "sha256": "50004fc627369e4f00819d4a61ab40d584a27026c6a6f989563fa2123400140f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124607259032260
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0283.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 12520326,
+      "sha256": "b8c6c142a0d64b1c818340d0d5e2be803ce493ba92427cc90b083d74575590df",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124610051015810
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0284.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7593746,
+      "sha256": "0941b4ef5fd800a9befb823c47943e5010233aa833019e9c2868586ce1153499",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124612267002746
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0285.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7779206,
+      "sha256": "3cb978b97540e7d9d45ce292db43056c2591177c208fe65c97513b72f0a0cfad",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124614734988195
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0286.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11192198,
+      "sha256": "b3357e6bff929ce968604c304e8c1cc8d3f7d5c59755f2f77e5c8610179a4c55",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124616786976092
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0287.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6439558,
+      "sha256": "6d4f2e210759029e0176721c3495092950269fd8f7425527c165d596c7f39e2e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124619674959050
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0288.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7791942,
+      "sha256": "77a016f40c5d60656285f27f9e78836fdbf957186839b0ba738a8ac04fa12f13",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124621470948449
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0289.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5119750,
+      "sha256": "be18c14aae1ec3638607ecaa5b9b08b97c9bb09575cc442e16a9d2120cb01da7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124624466930758
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0290.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4474118,
+      "sha256": "2fc83d55d2af57c356ad1d74f7d2d88cafd1242b8cd1d8f0a262cb4bd762319c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124626522918611
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0291.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4458194,
+      "sha256": "dc3f912b277cab675f72017297cb6ccaab9eda8a24e2aa85b80d859911baa548",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124628554906604
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0292.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3776646,
+      "sha256": "9ac5361e54da1a8b3e986b40c62929ee63c1bbd6c32b7feb7a80a371290d0947",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124631198890975
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0293.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5917574,
+      "sha256": "810afbde3e312243c87a5895462b8c8fab0d5157b3f0a36ef6a5785c7f71e648",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124633702876170
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0294.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4902802,
+      "sha256": "f1528b0cd31a916dd358ec3461891c365946a05713f2d0340433ba7975fafc12",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124635398866136
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0295.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 10715206,
+      "sha256": "31aad7e40a5fb9a4c2419ebc9e46a0d949dbf8dc9942021004bb8ca2d4b3daf9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124636894857287
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0296.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 10294534,
+      "sha256": "719d27fa819e79af9c00db877b1198917bc702a2dda0bd52cb89a2dc28c1a31b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124638270849144
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0297.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11359122,
+      "sha256": "217b1f47461e5012e8f81f28001b16f1a055edb928d8a680d90dfe586f5284e1",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124640262837352
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0298.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4873554,
+      "sha256": "af821292f4d8507acdb494d83d98e133265c657f32562a5e8e8a256ecc39f06c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124642118826363
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0299.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3634502,
+      "sha256": "e350f420e67f4d4d10ec0d276da86a825fc8a96032e132e1a3c1b190a2dc2eb7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124643818816295
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0300.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 12307398,
+      "sha256": "7004c638009884d6d12054b090ee93351710eeb625de3d3fc60c51f280e656a0",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124646254801864
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0301.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4268806,
+      "sha256": "e9c0a123cc392c5b594a65589641160195bdaf1151013b20583d0e1b6f569f62",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124647302795653
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0302.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 18082502,
+      "sha256": "26b63c8027a66ecf8d495ce570be696b682c53cd5c667310702dc5065b8f73b5",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124650107025020
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0303.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3909062,
+      "sha256": "d6970e5eb08265478ad92a611b6f3014f4af2c0f8d065a871de4004f0d9b6250",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124651719338338
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0304.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6992402,
+      "sha256": "d58096470acf6e2093d2948e13c6c1e2e16024efde7778c47d1567e768310e0a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124654067793230
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0305.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3561286,
+      "sha256": "9fd103868552f7e76b9a4ba55211d22e17862bd3911ec59858772cb31147921b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124656728306327
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0306.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 12408262,
+      "sha256": "ed11a69af18895c269b1c4b701400a8c6df04d5783162f59b9a12819d2da60e0",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124658772699052
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0315.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1607186,
+      "sha256": "96424e0c8830e38bb121ac1e2288ad521993c11398b838abb893ccf5e979cf96",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124660272986383
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0316.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3232978,
+      "sha256": "cc84c7fb8bb18b6c96f3a79cb4b6332a1a0360c49cf378e3941cd4e6f3ccf20a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124661585237100
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0317.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5394706,
+      "sha256": "afafa1109780612f6f1c7196a196a6e6320fe52f2220e373c7e1b16f36876144",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124663333570278
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0318.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3351570,
+      "sha256": "ab941c97f99a068f1b52f781608ffe070104e89da428549b0669280e5fa546fe",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124665109907809
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0321.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7049478,
+      "sha256": "10c1b49854113823011dbc30a92b22d338a30b57d25bdc65669deb1aad1c4550",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124666542179180
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0323.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 13827142,
+      "sha256": "005765082eff019bfc6d9f1fbcb9f2b72093efa8013c425e52b4d9708be10642",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124668382526941
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0324.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 14522438,
+      "sha256": "2418aaafade735c45206efacad0e1a07adf40b5b43b1bc10f8fcfa1236014682",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124670526930789
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0328.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5906514,
+      "sha256": "ddaa687d0ce75b165891770f8e09eb059342c38b42689321904cc71a0c458514",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124672403282958
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0347.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4089810,
+      "sha256": "c693cdf2153ceac476a5c3e6051b027e058f770a913abe4a04ac7666702c6558",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124673663518866
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0348.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5081670,
+      "sha256": "21ca08c2a3d1dd40914d9a63df6ab84905610ce1261337db9865af70ef821ff3",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124675675894529
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0349.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 821970,
+      "sha256": "d960f336980de4a4ad4f9904b005e977023066096364dd8f5ec612024c05f457",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124676272005567
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0350.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1900882,
+      "sha256": "292f2074e835c39603474c08037f8897207ef678e6ef822f119598d7fe6ab917",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124677296196071
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0351.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1416902,
+      "sha256": "cc62ed24e6cabbc720c59504be158341c6edad30d2ab597f10c7ba9ccac82e95",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124678632444127
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0352.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2893766,
+      "sha256": "a044b9ed3f264edfea9ebac2d8eb9070a4ea334d52fbf2de55237d7e7c51a59e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124680056707938
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0353.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4492306,
+      "sha256": "a99d61473a7f3c87cf2be8ae5a0fb23df29c7d9f0f1620b27160b3f8946f7f94",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124681240926762
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0354.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2989842,
+      "sha256": "53056a55f3ee79fa16c022cc359114ddf447c29ae8e49c3edd51d833264b3dad",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124683061262328
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0355.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 18111634,
+      "sha256": "745a16e335e8654757b966a8d8028cff89685202c57583718f29601915c02983",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124684829587290
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0356.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 13050002,
+      "sha256": "bf59685bf33e0f789aef773184576174a7be17f149ba5900837170372075b484",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124686433881274
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0357.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 17790202,
+      "sha256": "e4a7fd92e39a61394b8c68ec702a02e5a20245e692f422dfea741853e71db440",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124689038356903
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0358.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 15877062,
+      "sha256": "f11b2c13fa8ae9b7ea33d6a78c17e51a9d0b75f8d3a25787dd61ba394e5de303",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124690542630615
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0359.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3749446,
+      "sha256": "2da7d700f00214717ba7625517707a81b1eaa3218e9fac0f59dd7db0dc14a27b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124692534992119
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0360.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5253062,
+      "sha256": "6d77811c5aa9d3d88161b2fee6df64757019e156c725ff60f592e591ff5041e9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124694175288848
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0361.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2809286,
+      "sha256": "38f762eee3ea3c0a45691bdc9626613fac3181684fd492f95bbc965737394f9e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124695335498216
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0362.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3076486,
+      "sha256": "acda5f648450df6ef5a091cd304fbcae14401309e921432317386c4171760aba",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124696843769811
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0363.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2761722,
+      "sha256": "770f70e62e3e213a40b672cc73fb95fe34f040473b51cd29efee1bb2ce68785c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124698648093786
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0364.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4127942,
+      "sha256": "94f77968fc6c9e0e5bfbb6e6bba9c0702cbe13889e605b68c2596251b2b9bda4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124699816303038
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0365.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3336838,
+      "sha256": "e6c4b844de505fa1288c44526896c189dd5722323726d29fa08bcc493beeee8d",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124701496603269
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0366.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4608518,
+      "sha256": "4f56bfeadadb0fe9760a9886585259ed62e19124bca603a3cca09fd143051103",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124703020874941
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0367.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 785030,
+      "sha256": "c370ebe79c79a7509b34f9f8023552b215b79f2382ba555899d4c984e3b5c6ad",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124704293101100
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0368.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5092166,
+      "sha256": "f6841275e231b85d07084ef9aae0a2972755e3bb93ff3db010b4607dd417129f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124705797367931
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0369.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4888134,
+      "sha256": "4f6fab61090abb60d771b127cb2b8ed2821ca9a977de615132b9f6130c8810ee",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124707213618527
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0370.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3477446,
+      "sha256": "74f36bbb840dacf240d892b1ffc3243595363ef2ac5eef1751dd31d24f798c64",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124709369998942
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0371.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2441670,
+      "sha256": "477c09533a814230717eeed6807e7fca0ff76def1e26148103865f438525a699",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124710882264930
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0372.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3837894,
+      "sha256": "cdfa55e1ea9a477d05f4aa2736fa10c5ea572cdd175a4e8d6c0ac2fa4811479e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124712770596091
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0373.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6519046,
+      "sha256": "d1ac0db4fa61199abf91a0e16787e7e6443f7370950366c7adf995b85e22b2c2",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124714134834708
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0374.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6460474,
+      "sha256": "62087cc35cb5b843907718ee736d5e7d6fda0e1f31811da1e57ccce8536bbdf2",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124715751116683
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0375.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3318726,
+      "sha256": "e10d4e1816a22cf2ec59a24b15163b669043f931a1d341d2aad0b629493cfc82",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124717239375661
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0376.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4049402,
+      "sha256": "499ddf1e1b84668f6e3cd3b2b6bb597a8ce3d30980516dcbe2ce7da04c21b90d",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124719387748369
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0377.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2563142,
+      "sha256": "f9266d49d7c20ba283cf0ab4674ccfe2621fab75a3cfdb80564677fc3d4f3596",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124721216064516
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0378.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2630022,
+      "sha256": "0282f97e187e64780af07d5602208a2ced6fb78e082f8884eaabbec3b14f6947",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124723204407234
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0379.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1973138,
+      "sha256": "3e7e827064ad526bee8b352224d3207aa5c721cc5105483a4de1afba20e7ac2d",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124724584644456
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0380.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1330298,
+      "sha256": "63f20e4b328b93e6f6777cbe6ae1cc9beef7aa5ac42080133a9b6e8d2771c2b2",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124725796852374
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0381.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 3852998,
+      "sha256": "5e361037c2afca34a96909724ede4bd1559183179cabda14da819b1c10d6ecdd",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124727253101574
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0382.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9021062,
+      "sha256": "dbce46a35b5e8fd3ca62f85d6161f3615dbeaede048ec2c1653a627b6aaa4985",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124728721352221
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0383.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2591558,
+      "sha256": "95c1db0b700628ffc658a9ce1940174c7f33bfd8e86193839c259cedc9eb97af",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124729629506943
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0384.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1261190,
+      "sha256": "4cf711b4b1c96aee310124552e3b7c1c9517e404eb4cd931a37806393f98755f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124730821709723
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0385.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5451718,
+      "sha256": "a6c47f816fa6af8ad166d9ab6c31a728c586b5aeec8616f86723b723f6227597",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124732566005655
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0386.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1762118,
+      "sha256": "87923542c9ff65e52b33d6f828468d9dfa097c37edcb5e1b0b242ea3162834d3",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124733118099168
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0388.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5679802,
+      "sha256": "4a385945f92935940cfe364df941bb03d74a499ac577a958ccbc3a958c35338b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124734482329802
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0389.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4503046,
+      "sha256": "9ed6466aadd2d70c679b17481947e1b556b95c3f052af82b76f8a83df363ecf5",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124737078767368
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0390.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7158278,
+      "sha256": "e004105aae3a6856744ddada0f2ccc26ba5dd56ba2d127411f8d68fb2b28812b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124739663200998
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0391.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5238086,
+      "sha256": "39d96bec49004a6e8863519e28101d07d522ddcb9b5686c24c5b13dda0c4549e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124742071603468
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0392.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6734534,
+      "sha256": "215450b886a11eac9d63f62e7dd0c94e6b642fdcfee21b986e673051758eb46a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124744227962420
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0393.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 2794374,
+      "sha256": "28eb7777e3e68cd260d5261727f9ee0ceeded280ced4aee15adda0688d1ffe4b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124746244296918
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0394.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6056582,
+      "sha256": "7e4e6c3e092b95e9cc0d0494ab318d91d549cae4d0c11c09b772ddc9ccd460a0",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124747892569544
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0395.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 9119110,
+      "sha256": "6af320a6ec0e8760c97573182658c5d267e0ac8ffec574802242b1e6a71c2f65",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124750488997447
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0396.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7545094,
+      "sha256": "f3f2ca0f5a879726b20df24c08ebd9755e1b59db00f2d8ca8a2d7d4319a5a10f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124752401311450
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0397.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 8179590,
+      "sha256": "182575e24f07e3c8de4f6675805b9a324346ea51ce7e226bc90b296d0e19cdc9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124753873552536
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0398.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 5426426,
+      "sha256": "445bb062b8b9b4ac4410d3d00c3b8ec1eeded0f4d25c4fd8297dcabc94b07d3c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124754721691132
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0399.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 11721210,
+      "sha256": "7adc8dc8853bab770ece4c41f9fdfecb3fd0a13541b15b9ec401e8053e2cc271",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124756073911745
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0400.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 7933190,
+      "sha256": "275c157f23c3c23cd963dd5177487abefa3a9e83be08488311b00f97286df20a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124757742183197
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0401.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 4868806,
+      "sha256": "04c792371824e37f370dd6ee54e6d77fcf8c7f03c8e047d30b55db6d49c38c7f",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124758946378709
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0402.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1134214,
+      "sha256": "a765241f5d7c46a1606bc31c1c870f33b201561a2a34a0a4b31ada7ff1f7de71",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124760386611985
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0403.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1408570,
+      "sha256": "b389842728e6ecc3665c42fcec6a96c6ff0885e8f0e4f0152a7bd3d333244748",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124762098888652
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0405.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1726598,
+      "sha256": "32dbe798b99e521560cbf4fa25f810e2b73dbd043c4df93467899c79fda2dfeb",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124763395097541
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0406.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 831686,
+      "sha256": "29c87aee1338ec82de88e7fefbc3489a1d718f8da5175a9992f3cf5219fb09a8",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124764363253288
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0407.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1699014,
+      "sha256": "6a7d510bc00951d9c986d08973e77a868e33550c96736692cb7f0d3154112982",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124765387417773
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0408.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 1297402,
+      "sha256": "fba1a7c450fc5eec977cf1d87c35738552dac978cfc62184038affedfb767b28",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124765983513407
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0410.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 624390,
+      "sha256": "2ccdb59f2cf5cff6b8e6a6fb9cf92d68040762a96c84e0e45980ecc8bf7b85e4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124766899660158
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0411.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 822650,
+      "sha256": "750429a85b03542473180e81a06d6b2229741d575cfe05a61bb68741e5e613a7",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124767683785576
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0412.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 934266,
+      "sha256": "c0812885a5b360be7469a7486b9c683fd6e8977d444ea12e6f4469ceadc0b52b",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124768675944057
+    },
+    {
+      "relative_path": "02_preprocessed/train/stage3_scene-0413.pt",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 911610,
+      "sha256": "24af0e5d4392e6ce52178e0299c3efbed77be9b837695c3949c737a7f921f849",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124770136176850
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_tiny.py",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 9319,
+      "sha256": "b63609dea56f6556d423afa894f2ddfde35872bf2fb1eef68cfd6000f8fbab29",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124387372301965
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_train.py",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 17309,
+      "sha256": "d88fc79a821d156f738f2a7405585569391bf0d80a0b1a2539f10ae240dea45d",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124723164400354
+    },
+    {
+      "relative_path": "04_evaluation/stage3_evaluate.py",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 7627,
+      "sha256": "8240b6f24180da4381424337e7a76f4c3e7519746a665fa542f55a60877a0e1b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124597675088676
+    },
+    {
+      "relative_path": "05_figures/stage3_plot_data.py",
+      "description": "Stage3A 05_figures",
+      "file_size": 3656,
+      "sha256": "54fa911255a84ec44b2174a5220cb7b88895f084a054706db9880a7397931755",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124522091530463
+    },
+    {
+      "relative_path": "05_figures/stage3_plot_predictions.py",
+      "description": "Stage3A 05_figures",
+      "file_size": 8610,
+      "sha256": "94a53086a253815dbf4e0155a95131179c48cb3218dca4989d803cf619b57911",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124723168401042
+    },
+    {
+      "relative_path": "08_logs/stage3_preprocess.log",
+      "description": "Stage3A 08_logs",
+      "file_size": 2652,
+      "sha256": "30624f61847726805ad9aba383ae8e2db6b0461c0bb215777a2b05bedee47f34",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124766943667207
+    },
+    {
+      "relative_path": "09_reports/stage3_execution_commands.md",
+      "description": "Stage3A 09_reports",
+      "file_size": 2909,
+      "sha256": "e6a01cefd28a191c8b33a4ce94ecd4e748790e21b6d34a89e4ed2221c198f908",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791124522183529930
+    }
+  ]
+}
