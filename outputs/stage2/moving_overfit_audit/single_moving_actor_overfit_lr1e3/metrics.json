@@ -1,0 +1,250 @@
+{
+  "experiment": "single_moving_actor_overfit_lr1e3",
+  "epochs": 500,
+  "elapsed_seconds": 51.46286922399986,
+  "initial_state_sha256": "bd8bff1b8ca27d589f5c659d646838e390a5786d07ee43f29249600016527644",
+  "configuration": {
+    "historical_steps": 5,
+    "future_steps": 12,
+    "num_modes": 6,
+    "embed_dim": 64,
+    "num_heads": 8,
+    "dropout": 0.1,
+    "num_temporal_layers": 4,
+    "num_global_layers": 3,
+    "local_radius": 50.0,
+    "seed": 2022,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "none",
+    "max_epochs": 500,
+    "evaluation_interval": 10,
+    "batch_size": 4,
+    "target_count": 1,
+    "scene_windows": 1,
+    "context": "all nodes, actor edges and lane context unchanged; only target_mask limited",
+    "loss": "unchanged official LaplaceNLL + detached soft-target mode CE",
+    "diagnostic_only": true,
+    "gate_minADE_m": 0.5,
+    "gate_minFDE_m": 1.0,
+    "early_stop": "at evaluation epoch>=100 only if both strict thresholds pass; no loosened threshold"
+  },
+  "initial": {
+    "loss": 22.363054275512695,
+    "regression_loss": 20.539793014526367,
+    "classification_loss": 1.82326078414917,
+    "minADE": 26.38825035095215,
+    "minFDE": 48.82434844970703,
+    "independent_minADE": 26.38825035095215,
+    "MR": 1.0,
+    "target_count": 1,
+    "pred_max_displacement_m": 1.8668447732925415,
+    "GT_endpoint_displacement_mean_m": 49.5347785949707,
+    "GT_max_displacement_m": 49.5347785949707,
+    "scale_mean": 1.102185606956482,
+    "scale_max": 3.3323006629943848,
+    "actors": [
+      {
+        "node_in_batch": 36,
+        "minADE_K": 26.38825035095215,
+        "minFDE_K": 48.82434844970703,
+        "best_FDE_mode": 0,
+        "best_training_L2_mode": 0,
+        "mode_probabilities": [
+          0.2903481721878052,
+          0.16063250601291656,
+          0.13783611357212067,
+          0.14216038584709167,
+          0.13306409120559692,
+          0.135958731174469
+        ],
+        "gt_endpoint_displacement_m": 49.5347785949707,
+        "gt_max_displacement_m": 49.5347785949707,
+        "pred_max_displacement_m": 1.8668447732925415,
+        "best_mode_endpoint_displacement_m": 0.7142981886863708,
+        "scale_mean": 1.102185606956482,
+        "scale_max": 3.3323006629943848,
+        "unused_scale_head_mean": null,
+        "output_units": [
+          {
+            "future_step": 1,
+            "future_time_s": 0.499322,
+            "GT_local_xy_m": [
+              3.9287359714508057,
+              -0.00020274892449378967
+            ],
+            "prediction_local_xy_m": [
+              -0.7891082167625427,
+              0.26534566283226013
+            ],
+            "prediction_to_GT_norm_ratio": 0.21190690994262695
+          },
+          {
+            "future_step": 3,
+            "future_time_s": 1.548863,
+            "GT_local_xy_m": [
+              12.372064590454102,
+              0.03803557902574539
+            ],
+            "prediction_local_xy_m": [
+              1.109575867652893,
+              1.4732483625411987
+            ],
+            "prediction_to_GT_norm_ratio": 0.14907288551330566
+          },
+          {
+            "future_step": 6,
+            "future_time_s": 3.049105,
+            "GT_local_xy_m": [
+              24.43941307067871,
+              -0.06104429066181183
+            ],
+            "prediction_local_xy_m": [
+              1.1407628059387207,
+              -0.053066253662109375
+            ],
+            "prediction_to_GT_norm_ratio": 0.046727504581213
+          },
+          {
+            "future_step": 12,
+            "future_time_s": 6.052844,
+            "GT_local_xy_m": [
+              49.53470993041992,
+              -0.08280295133590698
+            ],
+            "prediction_local_xy_m": [
+              0.710363507270813,
+              -0.07487048208713531
+            ],
+            "prediction_to_GT_norm_ratio": 0.01442013494670391
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "loss": 2.600921392440796,
+    "regression_loss": 0.8091953992843628,
+    "classification_loss": 1.791725993156433,
+    "minADE": 18.754270553588867,
+    "minFDE": 41.082984924316406,
+    "independent_minADE": 18.754270553588867,
+    "MR": 1.0,
+    "target_count": 1,
+    "pred_max_displacement_m": 9.598895072937012,
+    "GT_endpoint_displacement_mean_m": 49.5347785949707,
+    "GT_max_displacement_m": 49.5347785949707,
+    "scale_mean": 4.087388038635254,
+    "scale_max": 12.620753288269043,
+    "actors": [
+      {
+        "node_in_batch": 36,
+        "minADE_K": 18.754270553588867,
+        "minFDE_K": 41.082984924316406,
+        "best_FDE_mode": 2,
+        "best_training_L2_mode": 2,
+        "mode_probabilities": [
+          0.16671553254127502,
+          0.16547764837741852,
+          0.16940531134605408,
+          0.16457268595695496,
+          0.16607877612113953,
+          0.1677500307559967
+        ],
+        "gt_endpoint_displacement_m": 49.5347785949707,
+        "gt_max_displacement_m": 49.5347785949707,
+        "pred_max_displacement_m": 9.598895072937012,
+        "best_mode_endpoint_displacement_m": 8.452332496643066,
+        "scale_mean": 4.087388038635254,
+        "scale_max": 12.620753288269043,
+        "unused_scale_head_mean": null,
+        "output_units": [
+          {
+            "future_step": 1,
+            "future_time_s": 0.499322,
+            "GT_local_xy_m": [
+              3.9287359714508057,
+              -0.00020274892449378967
+            ],
+            "prediction_local_xy_m": [
+              3.945481777191162,
+              -0.012178638949990273
+            ],
+            "prediction_to_GT_norm_ratio": 1.0042672157287598
+          },
+          {
+            "future_step": 3,
+            "future_time_s": 1.548863,
+            "GT_local_xy_m": [
+              12.372064590454102,
+              0.03803557902574539
+            ],
+            "prediction_local_xy_m": [
+              6.817171573638916,
+              0.056864362210035324
+            ],
+            "prediction_to_GT_norm_ratio": 0.5510298013687134
+          },
+          {
+            "future_step": 6,
+            "future_time_s": 3.049105,
+            "GT_local_xy_m": [
+              24.43941307067871,
+              -0.06104429066181183
+            ],
+            "prediction_local_xy_m": [
+              9.598773002624512,
+              -0.048296354711055756
+            ],
+            "prediction_to_GT_norm_ratio": 0.3927616775035858
+          },
+          {
+            "future_step": 12,
+            "future_time_s": 6.052844,
+            "GT_local_xy_m": [
+              49.53470993041992,
+              -0.08280295133590698
+            ],
+            "prediction_local_xy_m": [
+              8.451728820800781,
+              -0.10103008896112442
+            ],
+            "prediction_to_GT_norm_ratio": 0.17063429951667786
+          }
+        ]
+      }
+    ]
+  },
+  "status": "FAIL",
+  "loss_supervision_verified": "all non-target raw prediction gradients exactly zero; context retained",
+  "gradient_epoch_1": {
+    "experiment": "single_moving_actor_overfit_lr1e3",
+    "epoch": 1,
+    "learning_rate": 0.001,
+    "gradient_timing": "train-mode backward before optimizer step",
+    "loc_grad_norm": 3.002437260651621,
+    "scale_grad_norm": 61.65097552376765,
+    "pi_grad_norm": 1.246939431220407,
+    "chosen_location_output_grad_mean_abs": 0.06433217972517014,
+    "chosen_scale_output_grad_mean_abs": 1.1975610256195068,
+    "pred_max_displacement_m": 2.13588809967041,
+    "scale_mean": 1.0871334075927734,
+    "scale_max": 3.1149377822875977,
+    "GT_max_displacement_m": 49.5347785949707
+  },
+  "gradient_final": {
+    "experiment": "single_moving_actor_overfit_lr1e3",
+    "epoch": 500,
+    "learning_rate": 0.001,
+    "gradient_timing": "train-mode backward before optimizer step",
+    "loc_grad_norm": 53.2551092210538,
+    "scale_grad_norm": 1.0853091917626945,
+    "pi_grad_norm": 0.0035226783917475927,
+    "chosen_location_output_grad_mean_abs": 1.3575365543365479,
+    "chosen_scale_output_grad_mean_abs": 0.7895640730857849,
+    "pred_max_displacement_m": 9.598895072937012,
+    "scale_mean": 4.087388038635254,
+    "scale_max": 12.620753288269043,
+    "GT_max_displacement_m": 49.5347785949707
+  }
+}

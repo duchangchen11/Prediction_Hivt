@@ -1,0 +1,103 @@
+{
+  "commit": "2bddcd8d7b166d60120e4fb3b347d196f5214a58",
+  "branch": "stage2/vehicle-hivt-baseline",
+  "files": {
+    "outputs/stage2/tiny_overfit/metrics.json": {
+      "sha256": "5ed3acca04427272df9b97c496b84838a7dff9c5130f7818923c6f84ce8c43ed",
+      "bytes": 1566
+    },
+    "outputs/stage2/tiny_overfit/checkpoint.pt": {
+      "sha256": "aea1c24816c09cc6c167ba0b54f0e31cd3aadaca1b587c95b1db3086832693a6",
+      "bytes": 2695378
+    },
+    "outputs/stage2/tiny_overfit/config.yaml": {
+      "sha256": "eb1257f1ca75607b38b60630691f7fd2061f2f22d094286bb0448c213601e8d0",
+      "bytes": 725
+    },
+    "outputs/stage2/tiny_overfit/training_curve.csv": {
+      "sha256": "7ff3415e7415eb4848f105d9de24d0260f20d919b7fca888a4928f48c509f379",
+      "bytes": 26518
+    },
+    "outputs/stage2/tiny_overfit/training_curve.png": {
+      "sha256": "ee87bef71e5daafcb3eb0e74b40e5f83644f982e1535cf5c960df0a8ed0eb64c",
+      "bytes": 91179
+    },
+    "outputs/stage2/tiny_overfit/training_windows.json": {
+      "sha256": "43041c9bc58fe2313bb4915614307fa132e123f5fbd6ae6cde56c140150a9ebf",
+      "bytes": 1907
+    },
+    "outputs/stage2/tiny_overfit/initial_predictions/initial_04.png": {
+      "sha256": "9f408ca70140fdc00f2dde3a36139eee1d50f415524c66b20294433f57130e06",
+      "bytes": 93832
+    },
+    "outputs/stage2/tiny_overfit/initial_predictions/initial_cases.json": {
+      "sha256": "691e55a95c04d306d6653d0adb32868d21f4e4497589ddcfc52356cdc9e7c581",
+      "bytes": 1541
+    },
+    "outputs/stage2/tiny_overfit/initial_predictions/initial_05.png": {
+      "sha256": "71a5de933cd4cc5df274a1b3f9deb5b099d372b516a8790be8ef67fcd94fc8c6",
+      "bytes": 104168
+    },
+    "outputs/stage2/tiny_overfit/initial_predictions/initial_02.png": {
+      "sha256": "c04c289ee6b0247f6ae28bc5a4f7899d33bd11f2640f351811ef3f83b044cd2a",
+      "bytes": 119512
+    },
+    "outputs/stage2/tiny_overfit/initial_predictions/initial_03.png": {
+      "sha256": "41e6159e5451b9a47184fe93bb68bdfb4c918707ec1d9a79aea8adae3aa05729",
+      "bytes": 139768
+    },
+    "outputs/stage2/tiny_overfit/initial_predictions/initial_01.png": {
+      "sha256": "d1199afbb196cd1772e8c4875121ad2070371678a3a1be5c4ecb0fef2945e7c6",
+      "bytes": 116394
+    },
+    "outputs/stage2/tiny_overfit/prediction_figures/overfit_cases.json": {
+      "sha256": "50fb4b9e26663bd98c40b50da16d48754d992374cf195e04edf0112415fe3617",
+      "bytes": 1534
+    },
+    "outputs/stage2/tiny_overfit/prediction_figures/overfit_03.png": {
+      "sha256": "59aa1066dfdb131a14d0d5145a1446f3b10ff1571f320afadc91a8bbbdb70a9d",
+      "bytes": 113224
+    },
+    "outputs/stage2/tiny_overfit/prediction_figures/overfit_04.png": {
+      "sha256": "e37cd0ee1de5595ee0e84b92fde4f6c752f0c9f0350557a89d76545c7b25c31b",
+      "bytes": 89011
+    },
+    "outputs/stage2/tiny_overfit/prediction_figures/overfit_02.png": {
+      "sha256": "c6907fcfe87c233ebf526e02298a035bbc1b8de09f67aa2c47e0322c401b57d6",
+      "bytes": 93755
+    },
+    "outputs/stage2/tiny_overfit/prediction_figures/overfit_01.png": {
+      "sha256": "bb990f561a05354e9850b8366f86f7fedf9f2e37187360e7a5b4deecbbc16a0b",
+      "bytes": 109792
+    },
+    "outputs/stage2/tiny_overfit/prediction_figures/overfit_05.png": {
+      "sha256": "71a0180316cfa988833a5283e4008539a3f1dc94d612fba9596ae5191a8903e7",
+      "bytes": 133629
+    },
+    "outputs/figures/stage2/tiny_failure/failure_05.png": {
+      "sha256": "a625b582f5c414d7f966215a86ea6dbe08d63c04ee334cc06ba2ee1eea57b8ec",
+      "bytes": 157936
+    },
+    "outputs/figures/stage2/tiny_failure/failure_02.png": {
+      "sha256": "4e85b804ca61648d8c43ca5a19d0be0eddcbd9231def386b4fb4fcbb593e7f0d",
+      "bytes": 94764
+    },
+    "outputs/figures/stage2/tiny_failure/failure_01.png": {
+      "sha256": "1822f64791b9e1d952f3a3a17e1e9c1a78aa1b746cfb77666a302e8a406f363c",
+      "bytes": 88508
+    },
+    "outputs/figures/stage2/tiny_failure/failure_03.png": {
+      "sha256": "7607fe60f31d50cb5bf30d52e99537cbb955021dc302488c1ef726ce23bcd052",
+      "bytes": 83464
+    },
+    "outputs/figures/stage2/tiny_failure/failure_cases.json": {
+      "sha256": "b1e0dc9ef66540b3ec739fb9c57cd225a7e8366c22f60d2d55af7e09c7c9b0ba",
+      "bytes": 1480
+    },
+    "outputs/figures/stage2/tiny_failure/failure_04.png": {
+      "sha256": "a40d20b071f57ac97bbede01033231229a7352c71ce842ce82415c2e1b346b72",
+      "bytes": 102047
+    }
+  },
+  "checkpoint_uploaded": false
+}

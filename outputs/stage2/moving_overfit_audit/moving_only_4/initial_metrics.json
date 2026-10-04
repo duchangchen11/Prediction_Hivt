@@ -1,0 +1,301 @@
+{
+  "loss": 13.608989715576172,
+  "regression_loss": 13.608989715576172,
+  "classification_loss": 0.0,
+  "minADE": 23.188164234161377,
+  "minFDE": 39.362555503845215,
+  "independent_minADE": 23.188164234161377,
+  "MR": 1.0,
+  "target_count": 4,
+  "pred_max_displacement_m": 2.188697338104248,
+  "GT_endpoint_displacement_mean_m": 40.21258354187012,
+  "GT_max_displacement_m": 49.5347785949707,
+  "scale_mean": 1.0,
+  "scale_max": 1.0,
+  "actors": [
+    {
+      "node_in_batch": 36,
+      "minADE_K": 26.335464477539062,
+      "minFDE_K": 48.655540466308594,
+      "best_FDE_mode": 0,
+      "best_training_L2_mode": 0,
+      "mode_probabilities": [
+        1.0
+      ],
+      "gt_endpoint_displacement_m": 49.5347785949707,
+      "gt_max_displacement_m": 49.5347785949707,
+      "pred_max_displacement_m": 2.0230045318603516,
+      "best_mode_endpoint_displacement_m": 1.0152640342712402,
+      "scale_mean": 1.0,
+      "scale_max": 1.0,
+      "unused_scale_head_mean": 1.0098872184753418,
+      "output_units": [
+        {
+          "future_step": 1,
+          "future_time_s": 0.499322,
+          "GT_local_xy_m": [
+            3.9287359714508057,
+            -0.00020274892449378967
+          ],
+          "prediction_local_xy_m": [
+            0.04077652096748352,
+            0.07469409704208374
+          ],
+          "prediction_to_GT_norm_ratio": 0.02166079543530941
+        },
+        {
+          "future_step": 3,
+          "future_time_s": 1.548863,
+          "GT_local_xy_m": [
+            12.372064590454102,
+            0.03803557902574539
+          ],
+          "prediction_local_xy_m": [
+            0.7209016680717468,
+            -0.3848394453525543
+          ],
+          "prediction_to_GT_norm_ratio": 0.06605096906423569
+        },
+        {
+          "future_step": 6,
+          "future_time_s": 3.049105,
+          "GT_local_xy_m": [
+            24.43941307067871,
+            -0.06104429066181183
+          ],
+          "prediction_local_xy_m": [
+            -1.9869499206542969,
+            0.38023266196250916
+          ],
+          "prediction_to_GT_norm_ratio": 0.08277605473995209
+        },
+        {
+          "future_step": 12,
+          "future_time_s": 6.052844,
+          "GT_local_xy_m": [
+            49.53470993041992,
+            -0.08280295133590698
+          ],
+          "prediction_local_xy_m": [
+            0.8826847076416016,
+            0.5016260147094727
+          ],
+          "prediction_to_GT_norm_ratio": 0.020495984703302383
+        }
+      ]
+    },
+    {
+      "node_in_batch": 54,
+      "minADE_K": 21.814674377441406,
+      "minFDE_K": 43.75779342651367,
+      "best_FDE_mode": 0,
+      "best_training_L2_mode": 0,
+      "mode_probabilities": [
+        1.0
+      ],
+      "gt_endpoint_displacement_m": 44.70124816894531,
+      "gt_max_displacement_m": 44.70124816894531,
+      "pred_max_displacement_m": 2.0974156856536865,
+      "best_mode_endpoint_displacement_m": 1.057464838027954,
+      "scale_mean": 1.0,
+      "scale_max": 1.0,
+      "unused_scale_head_mean": 1.0181573629379272,
+      "output_units": [
+        {
+          "future_step": 1,
+          "future_time_s": 0.499875,
+          "GT_local_xy_m": [
+            2.8068411350250244,
+            0.4943044185638428
+          ],
+          "prediction_local_xy_m": [
+            -0.046842023730278015,
+            -0.26810193061828613
+          ],
+          "prediction_to_GT_norm_ratio": 0.09549472481012344
+        },
+        {
+          "future_step": 3,
+          "future_time_s": 1.50018,
+          "GT_local_xy_m": [
+            8.300503730773926,
+            2.8639018535614014
+          ],
+          "prediction_local_xy_m": [
+            0.4185959994792938,
+            -0.3188665509223938
+          ],
+          "prediction_to_GT_norm_ratio": 0.05992833897471428
+        },
+        {
+          "future_step": 6,
+          "future_time_s": 2.999786,
+          "GT_local_xy_m": [
+            16.286279678344727,
+            10.165353775024414
+          ],
+          "prediction_local_xy_m": [
+            -2.0573854446411133,
+            0.4078204333782196
+          ],
+          "prediction_to_GT_norm_ratio": 0.10924968868494034
+        },
+        {
+          "future_step": 12,
+          "future_time_s": 5.949281,
+          "GT_local_xy_m": [
+            34.450496673583984,
+            28.48447036743164
+          ],
+          "prediction_local_xy_m": [
+            1.030189037322998,
+            0.23862606287002563
+          ],
+          "prediction_to_GT_norm_ratio": 0.023656271398067474
+        }
+      ]
+    },
+    {
+      "node_in_batch": 63,
+      "minADE_K": 25.62407875061035,
+      "minFDE_K": 40.99831771850586,
+      "best_FDE_mode": 0,
+      "best_training_L2_mode": 0,
+      "mode_probabilities": [
+        1.0
+      ],
+      "gt_endpoint_displacement_m": 41.80299758911133,
+      "gt_max_displacement_m": 41.80299758911133,
+      "pred_max_displacement_m": 2.188697338104248,
+      "best_mode_endpoint_displacement_m": 0.8424023985862732,
+      "scale_mean": 1.0,
+      "scale_max": 1.0,
+      "unused_scale_head_mean": 1.0013993978500366,
+      "output_units": [
+        {
+          "future_step": 1,
+          "future_time_s": 0.499875,
+          "GT_local_xy_m": [
+            5.120865821838379,
+            0.005883991718292236
+          ],
+          "prediction_local_xy_m": [
+            -0.18641051650047302,
+            0.117247074842453
+          ],
+          "prediction_to_GT_norm_ratio": 0.04300393536686897
+        },
+        {
+          "future_step": 3,
+          "future_time_s": 1.50018,
+          "GT_local_xy_m": [
+            14.423930168151855,
+            0.18620693683624268
+          ],
+          "prediction_local_xy_m": [
+            0.7845288515090942,
+            -0.3422190546989441
+          ],
+          "prediction_to_GT_norm_ratio": 0.05933534726500511
+        },
+        {
+          "future_step": 6,
+          "future_time_s": 2.999786,
+          "GT_local_xy_m": [
+            26.61077880859375,
+            0.6260848045349121
+          ],
+          "prediction_local_xy_m": [
+            -2.158229112625122,
+            0.36392757296562195
+          ],
+          "prediction_to_GT_norm_ratio": 0.08222576975822449
+        },
+        {
+          "future_step": 12,
+          "future_time_s": 5.949281,
+          "GT_local_xy_m": [
+            41.66747283935547,
+            3.3633759021759033
+          ],
+          "prediction_local_xy_m": [
+            0.7829518914222717,
+            0.3108505308628082
+          ],
+          "prediction_to_GT_norm_ratio": 0.02015172317624092
+        }
+      ]
+    },
+    {
+      "node_in_batch": 85,
+      "minADE_K": 18.978439331054688,
+      "minFDE_K": 24.038570404052734,
+      "best_FDE_mode": 0,
+      "best_training_L2_mode": 0,
+      "mode_probabilities": [
+        1.0
+      ],
+      "gt_endpoint_displacement_m": 24.811309814453125,
+      "gt_max_displacement_m": 24.811309814453125,
+      "pred_max_displacement_m": 2.054126262664795,
+      "best_mode_endpoint_displacement_m": 0.7777724266052246,
+      "scale_mean": 1.0,
+      "scale_max": 1.0,
+      "unused_scale_head_mean": 1.0020647048950195,
+      "output_units": [
+        {
+          "future_step": 1,
+          "future_time_s": 0.499882,
+          "GT_local_xy_m": [
+            4.8446502685546875,
+            -0.00033336877822875977
+          ],
+          "prediction_local_xy_m": [
+            0.019928932189941406,
+            -0.16876691579818726
+          ],
+          "prediction_to_GT_norm_ratio": 0.035077765583992004
+        },
+        {
+          "future_step": 3,
+          "future_time_s": 1.500178,
+          "GT_local_xy_m": [
+            12.601223945617676,
+            -0.21113383769989014
+          ],
+          "prediction_local_xy_m": [
+            0.5662489533424377,
+            -0.4764735996723175
+          ],
+          "prediction_to_GT_norm_ratio": 0.058719702064991
+        },
+        {
+          "future_step": 6,
+          "future_time_s": 2.999252,
+          "GT_local_xy_m": [
+            22.07673454284668,
+            -0.5120904445648193
+          ],
+          "prediction_local_xy_m": [
+            -1.9968736171722412,
+            0.48159125447273254
+          ],
+          "prediction_to_GT_norm_ratio": 0.09301982074975967
+        },
+        {
+          "future_step": 12,
+          "future_time_s": 5.949297,
+          "GT_local_xy_m": [
+            24.805137634277344,
+            -0.5533542633056641
+          ],
+          "prediction_local_xy_m": [
+            0.7746403813362122,
+            0.06972998380661011
+          ],
+          "prediction_to_GT_norm_ratio": 0.03134749457240105
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "root_cause_case": "Case C",
+  "finding": "同一 moving actor、同一 K=1 模型及相同训练步数下，free-scale 官方 Laplace 失败，固定 b=1 通过；uncertainty/NLL 优化抑制 location 学习是本例中得到实验支持的原因。",
+  "scope": "one selected previously failing moving car; does not prove all original tiny failures share a sole cause",
+  "matched_epoch_comparison": {
+    "epoch": 610,
+    "same_initial_weights_sha256": "9c52ca940b4eb78f3cc1fbac5ccbfe6950498972a1fdf62889bd9d94bf6f2b5d",
+    "same_target_count": 1,
+    "same_learning_rate": 0.001,
+    "same_context_agents": 51,
+    "same_context_lane_segments": 666,
+    "official_K1_at_same_epoch": {
+      "epoch": 610.0,
+      "loss": 0.3181941509246826,
+      "regression_loss": 0.3181941509246826,
+      "classification_loss": 0.0,
+      "minADE": 16.346298217773438,
+      "minFDE": 37.53026580810547,
+      "independent_minADE": 16.346298217773438,
+      "MR": 1.0,
+      "target_count": 1.0,
+      "pred_max_displacement_m": 13.347040176391602,
+      "GT_endpoint_displacement_mean_m": 49.5347785949707,
+      "GT_max_displacement_m": 49.5347785949707,
+      "scale_mean": 4.188894271850586,
+      "scale_max": 14.289291381835938
+    },
+    "fixed_scale_K1_at_same_epoch": {
+      "loss": 0.7360790967941284,
+      "regression_loss": 0.7360790967941284,
+      "classification_loss": 0.0,
+      "minADE": 0.0728057399392128,
+      "minFDE": 0.33863893151283264,
+      "independent_minADE": 0.0728057399392128,
+      "MR": 0.0,
+      "target_count": 1,
+      "pred_max_displacement_m": 49.196285247802734,
+      "GT_endpoint_displacement_mean_m": 49.5347785949707,
+      "GT_max_displacement_m": 49.5347785949707,
+      "scale_mean": 1.0,
+      "scale_max": 1.0
+    }
+  },
+  "official_K6_single_moving_overfit": "FAIL",
+  "diagnostic_location_memorization": "PASS",
+  "excluded_or_unproved": [
+    "单目标 loss 已消除 parked/static 占比因素，不能将失败仅归因于静止车分布。",
+    "K=1 去除了多模态竞争和 classification 的影响后仍失败，Case D 不成立。",
+    "target 原始标注、旋转往返、输出米制和 decoder range 均检查通过；本次未发现坐标或统一 timestep multiplier 错误。",
+    "规模/平衡实验若使用 fixed-scale 诊断 loss，即使成功，也不能形成 Case B 的官方 loss/采样对照；不能据此决定删除 parked 或 stopped 车辆。"
+  ],
+  "moving_only_4_8_16": {
+    "4": {
+      "status": "PASS",
+      "epochs": 700,
+      "minADE": 0.40001358464360237,
+      "minFDE": 1.4989487174898386,
+      "loss": 0.9257938265800476
+    },
+    "8": {
+      "status": "PASS",
+      "epochs": 720,
+      "minADE": 0.4320011450909078,
+      "minFDE": 1.946626310236752,
+      "loss": 0.9389625191688538
+    },
+    "16": {
+      "status": "TREND_ONLY",
+      "epochs": 1000,
+      "minADE": 0.19515739008784294,
+      "minFDE": 0.48554227501153946,
+      "loss": 0.815502155572176
+    }
+  },
+  "balanced": {
+    "status": "PASS",
+    "moving": 8,
+    "stopped": 4,
+    "parked": 4,
+    "minADE": 0.7487389238085598,
+    "minFDE": 1.988792508142069,
+    "loss": 1.1011495888233185,
+    "by_real_attribute": {
+      "moving": {
+        "count": 8,
+        "minADE": 1.4653091505169868,
+        "minFDE": 3.9428554512560368
+      },
+      "parked": {
+        "count": 4,
+        "minADE": 0.0393840903416276,
+        "minFDE": 0.04296757373958826
+      },
+      "stopped": {
+        "count": 4,
+        "minADE": 0.024953497108072042,
+        "minFDE": 0.02649436006322503
+      }
+    },
+    "gate_scope": "pooled actor mean only; moving subgroup not automatically PASS"
+  },
+  "next_stage": {
+    "complete_original_tiny_rerun": "NO",
+    "mini_training": "NO",
+    "Stage3": "NO"
+  },
+  "next_work": "保持 K=6、原 horizon 和 context，继续诊断官方 loss 的 scale/loc 优化；先使官方 single moving PASS，再在官方 loss 下验收 4/8/16 和 balanced。本次 fixed-scale/K=1 诊断不能替代最终 baseline 验收。"
+}

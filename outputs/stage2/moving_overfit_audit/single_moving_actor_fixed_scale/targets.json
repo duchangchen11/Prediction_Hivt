@@ -1,0 +1,29 @@
+[
+  {
+    "graph_index": 38,
+    "node": 36,
+    "scene_token": "bebf5f5b2a674631ab5c88fd1aa9e87a",
+    "scene_name": "scene-0655",
+    "sample_token": "baaa60749cd04db7952fd8f4ef8ac837",
+    "instance_token": "c56ebf9c16dc44b8b9cd34fb79f40bc6",
+    "category_name": "vehicle.car",
+    "annotation_token": "97766454bc7344ae9a48fa56a7037070",
+    "attribute_names": [
+      "vehicle.moving"
+    ],
+    "attribute_state": "moving",
+    "prediction_eligible": true,
+    "full_horizon": true,
+    "previous_tiny_minFDE_m": 43.50815963745117,
+    "gt_endpoint_displacement_m": 49.534780402357946,
+    "gt_mean_future_displacement_m": 26.627325073398286,
+    "gt_path_length_m": 49.535339050293246,
+    "history_mean_speed_mps": 7.790320364845527,
+    "current_past_only_speed_mps": 7.743599819983572,
+    "future_valid_length": 12,
+    "history_valid_length": 5,
+    "last_valid_future_s": 6.052844,
+    "future_max_interval_speed_mps": 8.57075749779807,
+    "future_max_interval_acceleration_mps2": 0.912493113671291
+  }
+]

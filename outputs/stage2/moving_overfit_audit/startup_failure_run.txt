@@ -1,0 +1,16 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/lrj/Prediction_Hivt/scripts/moving_overfit_audit.py", line 301, in <module>
+    main()
+  File "/home/lrj/Prediction_Hivt/scripts/moving_overfit_audit.py", line 277, in main
+    run_experiment("single_moving_actor_overfit",[selection["single"]],corpus)
+  File "/home/lrj/Prediction_Hivt/scripts/moving_overfit_audit.py", line 188, in run_experiment
+    if name == "single_moving_actor_overfit": target_sanity(graphs[0], targets[0], model)
+  File "/home/lrj/Prediction_Hivt/scripts/moving_overfit_audit.py", line 129, in target_sanity
+    assert time_error == 0
+AssertionError

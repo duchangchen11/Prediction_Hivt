@@ -1,0 +1,639 @@
+你现在继续 /home/lrj/Prediction_Hivt 项目。
+
+当前分支：
+stage2/vehicle-hivt-baseline
+
+当前状态：
+Stage 1 PASS
+Stage 2 数据适配 PASS
+HiVT forward/backward PASS
+trainval smoke test PASS
+Tiny Overfit FAIL
+
+禁止：
+- 不运行 mini 完整训练
+- 不进入 Multi-Type
+- 不加 pedestrian/bicycle
+- 不加 type embedding
+- 不加 dynamic graph
+- 不加 intent
+- 不做 diffusion
+- 不修改论文创新结构
+
+本轮唯一目标：
+
+定位 HiVT 对“移动中的车辆”无法过拟合的原因。
+
+==================================================
+1. 先冻结当前失败结果
+==================================================
+
+保留当前：
+
+commit
+checkpoint
+metrics
+training_curve
+failure figures
+
+建立新的诊断目录：
+
+outputs/stage2/moving_overfit_audit/
+
+不要覆盖之前 tiny_overfit。
+
+==================================================
+2. 统计 vehicle 运动状态分布
+==================================================
+
+对当前 mini train split 中全部 vehicle actor-window 统计：
+
+1. GT 6s endpoint displacement
+2. GT ADE displacement / path length
+3. 历史速度
+4. 当前速度
+5. future valid length
+6. nuScenes attribute（如果存在）
+
+重点检查 nuScenes annotation attribute 中实际出现的：
+
+moving
+stopped
+parked
+
+等车辆状态。
+
+不要预设名称，
+先打印实际 attribute_name。
+
+输出：
+
+outputs/reports/vehicle_motion_distribution.json
+outputs/reports/vehicle_motion_distribution.md
+
+至少按以下区间统计：
+
+endpoint displacement:
+
+0–1 m
+1–2 m
+2–5 m
+5–10 m
+10–20 m
+20–40 m
+>40 m
+
+并统计：
+
+actor-window 数量
+占比
+
+目的：
+确认训练是否被 parked/static vehicle 主导。
+
+==================================================
+3. 构造“单移动目标”过拟合实验
+==================================================
+
+从训练集选择一个满足：
+
+- full 12-step future
+- 至少完整历史
+- 未来 endpoint displacement 20–50 m
+- 轨迹连续
+- 非明显 annotation 异常
+
+的 vehicle。
+
+保存其：
+
+scene_token
+sample_token
+instance_token
+GT displacement
+GT trajectory
+
+非常重要：
+
+场景中的其他 agent 和 lane context 可以保留，
+但 prediction target_mask 只允许这一辆车参与 loss。
+
+也就是说：
+
+完整场景作为 context
++
+只有 1 个 moving vehicle 计算 prediction loss
+
+不要删除周围 context。
+
+实验名：
+
+single_moving_actor_overfit
+
+==================================================
+4. 第一组：保持官方 HiVT loss
+==================================================
+
+模型结构完全不改：
+
+K=6
+HiVT-64
+官方 decoder
+LaplaceNLL
+mode classification
+
+但为了排除 scheduler 影响：
+
+暂时不用 cosine annealing。
+
+先用固定：
+
+lr = 5e-4
+
+最多训练 500 epoch。
+
+每 10 epoch evaluation。
+
+如果 500 epoch 还不够，可以再测试：
+
+lr = 1e-3
+
+但不要同时改其他东西。
+
+记录：
+
+epoch
+total loss
+regression loss
+classification loss
+minADE
+minFDE
+最大预测位移
+GT endpoint displacement
+
+验收：
+
+单个 moving actor 应至少达到：
+
+minADE < 0.5 m
+minFDE < 1.0 m
+
+理想情况应能继续接近 0。
+
+如果通过：
+SINGLE_MOVING_OVERFIT=PASS
+
+如果失败：
+SINGLE_MOVING_OVERFIT=FAIL
+
+==================================================
+5. 记录 loc / scale 梯度
+==================================================
+
+对 decoder 分别记录：
+
+loc head gradient norm
+scale head gradient norm
+pi head gradient norm
+
+例如：
+
+decoder.loc
+decoder.scale
+decoder.pi
+
+至少在：
+
+epoch 1
+epoch 10
+epoch 50
+epoch 100
+最后 epoch
+
+记录。
+
+同时记录：
+
+predicted loc max displacement
+predicted scale mean/max
+GT max displacement
+
+生成：
+
+outputs/reports/moving_gradient_audit.csv
+
+目的：
+
+判断网络是在学习轨迹均值 μ，
+还是主要利用 Laplace scale b 降低 NLL。
+
+==================================================
+6. 第二组诊断：K=1
+==================================================
+
+如果单目标 K=6 官方 loss 仍然失败：
+
+做一个纯诊断实验：
+
+num_modes = 1
+
+此时：
+
+无多模态竞争问题
+classification loss 不作为核心因素
+
+模型仍使用 HiVT encoder + decoder。
+
+只观察轨迹 location 是否可以记住。
+
+名称：
+
+single_moving_actor_k1
+
+验收：
+
+minADE < 0.5 m
+minFDE < 1.0 m
+
+注意：
+
+这是诊断实验，
+不是最终 baseline。
+
+==================================================
+7. 第三组诊断：固定 uncertainty
+==================================================
+
+如果 K=1 仍失败：
+
+再增加一个诊断 loss：
+
+只训练 location。
+
+可以使用：
+
+SmoothL1
+或
+固定 scale=1 的 Laplace loss
+
+禁止让 scale 自由增大。
+
+名称：
+
+single_moving_actor_fixed_scale
+
+目的：
+
+判断 uncertainty branch 是否掩盖 location 学习。
+
+如果：
+
+官方 Laplace FAIL
+但 fixed-scale PASS
+
+说明主要问题在：
+
+uncertainty / loss optimization
+
+而不是数据坐标。
+
+如果：
+
+fixed-scale 也 FAIL
+
+继续排查：
+
+target
+rotation
+decoder output
+gradient
+learning rate
+
+==================================================
+8. 做一个最简单的 target sanity check
+==================================================
+
+选同一个 moving actor。
+
+打印：
+
+history ego coordinates
+current position
+future ego coordinates
+y = future - current
+rotation angle
+rotated y
+
+并验证：
+
+rotated_y
+→ inverse rotation
+→ + current position
+
+必须恢复原 future。
+
+误差要求：
+
+< 1e-4 m
+
+虽然之前全局检查已经 PASS，
+这次必须针对“失败的 moving actor”单独检查。
+
+输出：
+
+outputs/reports/single_moving_target_audit.json
+
+==================================================
+9. 检查输出量纲
+==================================================
+
+对单 moving actor 比较：
+
+GT local displacement：
+
+t=1
+t=3
+t=6
+t=12
+
+预测 local displacement：
+
+t=1
+t=3
+t=6
+t=12
+
+检查是否存在明显的：
+
+5倍
+10倍
+0.5倍
+
+尺度关系。
+
+因为原始 HiVT 是：
+
+10 Hz
+2 s history
+3 s future
+
+当前 nuScenes 是约：
+
+2 Hz
+2 s history
+6 s future
+
+虽然模型理论上可以学习，
+但必须检查是否存在隐式 timestep / displacement scale 问题。
+
+不要直接修改尺度。
+先测。
+
+==================================================
+10. 如果单目标 PASS，继续 4 / 8 / 16 moving targets
+==================================================
+
+只有：
+
+single moving actor PASS
+
+之后才执行：
+
+4 moving actors
+8 moving actors
+16 moving actors
+
+要求：
+
+只选择明显移动并且 full-horizon 的车辆。
+
+仍然保留各自场景 context。
+
+分别记录：
+
+minADE
+minFDE
+loss
+
+目标是确定：
+
+从哪个 target 数量开始发生退化。
+
+建议验收：
+
+4 actors:
+minADE < 0.75 m
+minFDE < 1.5 m
+
+8 actors:
+minADE < 1.0 m
+minFDE < 2.0 m
+
+16 actors:
+看趋势，不强制最终阈值。
+
+==================================================
+11. 再做 moving + stationary 平衡实验
+==================================================
+
+如果 moving-only 可以过拟合：
+
+建立：
+
+8 moving
++
+8 stationary/stopped
+
+的 balanced tiny set。
+
+注意：
+
+不要简单把所有低速车辆都定义为 parked。
+
+如果 metadata attribute 能区分：
+
+parked
+stopped
+moving
+
+优先使用真实 attribute 辅助判断。
+
+目的：
+
+验证之前失败是否由：
+
+171 stationary
+vs
+65 moving
+
+这种比例造成。
+
+==================================================
+12. 最终只允许得出以下几类结论
+==================================================
+
+Case A：
+
+single moving actor 都 FAIL
+
+结论：
+模型/target/loss/decoder adaptation 仍有实现问题。
+
+下一步继续修 Stage 2。
+
+Case B：
+
+single moving PASS
+moving-only 16 PASS
+balanced PASS
+原 tiny FAIL
+
+结论：
+原始 tiny 被静止车辆分布严重主导。
+
+下一步重新设计 vehicle target sampling / weighting。
+
+Case C：
+
+official Laplace FAIL
+fixed-scale PASS
+
+结论：
+uncertainty scale / NLL 优化导致 location 学习受抑制。
+
+下一步研究 loss 设计，但先保证 baseline 公平。
+
+Case D：
+
+K=6 FAIL
+K=1 PASS
+
+结论：
+多模态 mode selection / classification 分支存在优化问题。
+
+下一步检查 best-mode selection 和 mode loss。
+
+==================================================
+13. 当前禁止做的事情
+==================================================
+
+不要因为结果不好直接：
+
+删除所有静止车辆
+降低预测 horizon
+换 Transformer
+换 Mamba
+换模型
+加创新模块
+
+先定位原因。
+
+特别注意：
+
+红灯等待车辆属于重要动态交通参与者，
+不能和真正 parked vehicle 一起简单删除。
+
+==================================================
+14. Git
+==================================================
+
+完成后 commit：
+
+test: diagnose moving vehicle overfit failure
+
+push 到：
+
+stage2/vehicle-hivt-baseline
+
+==================================================
+15. 最终汇报格式
+==================================================
+
+【Vehicle distribution】
+
+总 vehicle actor-window=
+moving=
+stationary/stopped=
+parked=
+
+各 displacement bin：
+
+0–1m=
+1–2m=
+2–5m=
+5–10m=
+10–20m=
+20–40m=
+>40m=
+
+【Single moving K=6】
+
+GT displacement=
+epochs=
+initial minADE=
+final minADE=
+initial minFDE=
+final minFDE=
+
+loc grad=
+scale grad=
+pi grad=
+
+pred max displacement=
+scale mean/max=
+
+PASS/FAIL
+
+【Single moving K=1】
+
+minADE=
+minFDE=
+
+PASS/FAIL
+
+【Fixed scale diagnostic】
+
+minADE=
+minFDE=
+
+PASS/FAIL
+
+【Moving-only】
+
+4 actors:
+ADE=
+FDE=
+
+8 actors:
+ADE=
+FDE=
+
+16 actors:
+ADE=
+FDE=
+
+【Balanced】
+
+moving count=
+stationary count=
+ADE=
+FDE=
+
+【Root cause judgment】
+
+只能根据实验结果判断，
+不要猜测。
+
+【Next Stage】
+
+是否允许重新运行完整 tiny：
+
+YES / NO
+
+是否允许运行 mini：
+
+YES / NO
+
+是否允许 Stage 3：
+
+NO

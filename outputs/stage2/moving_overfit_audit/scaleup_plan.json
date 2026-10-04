@@ -1,0 +1,23 @@
+{
+  "passing_single_experiment": "single_moving_actor_fixed_scale_budget1000",
+  "loss": "fixed unit-scale Laplace, location only, K=1 (diagnostic)",
+  "num_modes": 1,
+  "learning_rate": 0.001,
+  "max_epochs": 1000,
+  "diagnostic_only": true,
+  "gate_4": [
+    0.75,
+    1.5
+  ],
+  "gate_8": [
+    1.0,
+    2.0
+  ],
+  "gate_16": "trend only; no mandatory threshold",
+  "balanced_condition": "4 and 8 moving actor diagnostic gates pass; 16 is trend-only",
+  "balanced_gate": [
+    1.0,
+    2.0
+  ],
+  "context": "all original agents and lanes preserved in each selected window"
+}

@@ -1,0 +1,93 @@
+{
+  "loss": 22.363054275512695,
+  "regression_loss": 20.539793014526367,
+  "classification_loss": 1.82326078414917,
+  "minADE": 26.38825035095215,
+  "minFDE": 48.82434844970703,
+  "independent_minADE": 26.38825035095215,
+  "MR": 1.0,
+  "target_count": 1,
+  "pred_max_displacement_m": 1.8668447732925415,
+  "GT_endpoint_displacement_mean_m": 49.5347785949707,
+  "GT_max_displacement_m": 49.5347785949707,
+  "scale_mean": 1.102185606956482,
+  "scale_max": 3.3323006629943848,
+  "actors": [
+    {
+      "node_in_batch": 36,
+      "minADE_K": 26.38825035095215,
+      "minFDE_K": 48.82434844970703,
+      "best_FDE_mode": 0,
+      "best_training_L2_mode": 0,
+      "mode_probabilities": [
+        0.2903481721878052,
+        0.16063250601291656,
+        0.13783611357212067,
+        0.14216038584709167,
+        0.13306409120559692,
+        0.135958731174469
+      ],
+      "gt_endpoint_displacement_m": 49.5347785949707,
+      "gt_max_displacement_m": 49.5347785949707,
+      "pred_max_displacement_m": 1.8668447732925415,
+      "best_mode_endpoint_displacement_m": 0.7142981886863708,
+      "scale_mean": 1.102185606956482,
+      "scale_max": 3.3323006629943848,
+      "unused_scale_head_mean": null,
+      "output_units": [
+        {
+          "future_step": 1,
+          "future_time_s": 0.499322,
+          "GT_local_xy_m": [
+            3.9287359714508057,
+            -0.00020274892449378967
+          ],
+          "prediction_local_xy_m": [
+            -0.7891082167625427,
+            0.26534566283226013
+          ],
+          "prediction_to_GT_norm_ratio": 0.21190690994262695
+        },
+        {
+          "future_step": 3,
+          "future_time_s": 1.548863,
+          "GT_local_xy_m": [
+            12.372064590454102,
+            0.03803557902574539
+          ],
+          "prediction_local_xy_m": [
+            1.109575867652893,
+            1.4732483625411987
+          ],
+          "prediction_to_GT_norm_ratio": 0.14907288551330566
+        },
+        {
+          "future_step": 6,
+          "future_time_s": 3.049105,
+          "GT_local_xy_m": [
+            24.43941307067871,
+            -0.06104429066181183
+          ],
+          "prediction_local_xy_m": [
+            1.1407628059387207,
+            -0.053066253662109375
+          ],
+          "prediction_to_GT_norm_ratio": 0.046727504581213
+        },
+        {
+          "future_step": 12,
+          "future_time_s": 6.052844,
+          "GT_local_xy_m": [
+            49.53470993041992,
+            -0.08280295133590698
+          ],
+          "prediction_local_xy_m": [
+            0.710363507270813,
+            -0.07487048208713531
+          ],
+          "prediction_to_GT_norm_ratio": 0.01442013494670391
+        }
+      ]
+    }
+  ]
+}

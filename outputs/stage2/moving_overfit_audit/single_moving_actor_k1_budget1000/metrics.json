@@ -1,0 +1,240 @@
+{
+  "experiment": "single_moving_actor_k1_budget1000",
+  "epochs": 1000,
+  "elapsed_seconds": 104.27738627099984,
+  "initial_state_sha256": "9c52ca940b4eb78f3cc1fbac5ccbfe6950498972a1fdf62889bd9d94bf6f2b5d",
+  "configuration": {
+    "historical_steps": 5,
+    "future_steps": 12,
+    "num_modes": 1,
+    "embed_dim": 64,
+    "num_heads": 8,
+    "dropout": 0.1,
+    "num_temporal_layers": 4,
+    "num_global_layers": 3,
+    "local_radius": 50.0,
+    "seed": 2022,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "none",
+    "max_epochs": 1000,
+    "evaluation_interval": 10,
+    "batch_size": 4,
+    "target_count": 1,
+    "scene_windows": 1,
+    "context": "all nodes, actor edges and lane context unchanged; only target_mask limited",
+    "loss": "unchanged official LaplaceNLL + detached soft-target mode CE",
+    "diagnostic_only": true,
+    "gate_minADE_m": 0.5,
+    "gate_minFDE_m": 1.0,
+    "early_stop": "at evaluation epoch>=100 only if both strict thresholds pass; no loosened threshold"
+  },
+  "initial": {
+    "loss": 20.649457931518555,
+    "regression_loss": 20.649457931518555,
+    "classification_loss": 0.0,
+    "minADE": 26.335464477539062,
+    "minFDE": 48.65553665161133,
+    "independent_minADE": 26.335464477539062,
+    "MR": 1.0,
+    "target_count": 1,
+    "pred_max_displacement_m": 2.0230047702789307,
+    "GT_endpoint_displacement_mean_m": 49.5347785949707,
+    "GT_max_displacement_m": 49.5347785949707,
+    "scale_mean": 1.0098872184753418,
+    "scale_max": 2.7990834712982178,
+    "actors": [
+      {
+        "node_in_batch": 36,
+        "minADE_K": 26.335464477539062,
+        "minFDE_K": 48.65553665161133,
+        "best_FDE_mode": 0,
+        "best_training_L2_mode": 0,
+        "mode_probabilities": [
+          1.0
+        ],
+        "gt_endpoint_displacement_m": 49.5347785949707,
+        "gt_max_displacement_m": 49.5347785949707,
+        "pred_max_displacement_m": 2.0230047702789307,
+        "best_mode_endpoint_displacement_m": 1.0152642726898193,
+        "scale_mean": 1.0098872184753418,
+        "scale_max": 2.7990834712982178,
+        "unused_scale_head_mean": null,
+        "output_units": [
+          {
+            "future_step": 1,
+            "future_time_s": 0.499322,
+            "GT_local_xy_m": [
+              3.9287359714508057,
+              -0.00020274892449378967
+            ],
+            "prediction_local_xy_m": [
+              0.040776968002319336,
+              0.07469400763511658
+            ],
+            "prediction_to_GT_norm_ratio": 0.021660830825567245
+          },
+          {
+            "future_step": 3,
+            "future_time_s": 1.548863,
+            "GT_local_xy_m": [
+              12.372064590454102,
+              0.03803557902574539
+            ],
+            "prediction_local_xy_m": [
+              0.720901370048523,
+              -0.3848392069339752
+            ],
+            "prediction_to_GT_norm_ratio": 0.0660509392619133
+          },
+          {
+            "future_step": 6,
+            "future_time_s": 3.049105,
+            "GT_local_xy_m": [
+              24.43941307067871,
+              -0.06104429066181183
+            ],
+            "prediction_local_xy_m": [
+              -1.986950397491455,
+              0.3802325129508972
+            ],
+            "prediction_to_GT_norm_ratio": 0.08277606219053268
+          },
+          {
+            "future_step": 12,
+            "future_time_s": 6.052844,
+            "GT_local_xy_m": [
+              49.53470993041992,
+              -0.08280295133590698
+            ],
+            "prediction_local_xy_m": [
+              0.8826851844787598,
+              0.5016257762908936
+            ],
+            "prediction_to_GT_norm_ratio": 0.020495988428592682
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "loss": -0.15128004550933838,
+    "regression_loss": -0.15128004550933838,
+    "classification_loss": 0.0,
+    "minADE": 12.087153434753418,
+    "minFDE": 31.373401641845703,
+    "independent_minADE": 12.087153434753418,
+    "MR": 1.0,
+    "target_count": 1,
+    "pred_max_displacement_m": 20.62855339050293,
+    "GT_endpoint_displacement_mean_m": 49.5347785949707,
+    "GT_max_displacement_m": 49.5347785949707,
+    "scale_mean": 4.512494087219238,
+    "scale_max": 17.400348663330078,
+    "actors": [
+      {
+        "node_in_batch": 36,
+        "minADE_K": 12.087153434753418,
+        "minFDE_K": 31.373401641845703,
+        "best_FDE_mode": 0,
+        "best_training_L2_mode": 0,
+        "mode_probabilities": [
+          1.0
+        ],
+        "gt_endpoint_displacement_m": 49.5347785949707,
+        "gt_max_displacement_m": 49.5347785949707,
+        "pred_max_displacement_m": 20.62855339050293,
+        "best_mode_endpoint_displacement_m": 18.161542892456055,
+        "scale_mean": 4.512494087219238,
+        "scale_max": 17.400348663330078,
+        "unused_scale_head_mean": null,
+        "output_units": [
+          {
+            "future_step": 1,
+            "future_time_s": 0.499322,
+            "GT_local_xy_m": [
+              3.9287359714508057,
+              -0.00020274892449378967
+            ],
+            "prediction_local_xy_m": [
+              3.911607027053833,
+              0.0333821177482605
+            ],
+            "prediction_to_GT_norm_ratio": 0.9956763386726379
+          },
+          {
+            "future_step": 3,
+            "future_time_s": 1.548863,
+            "GT_local_xy_m": [
+              12.372064590454102,
+              0.03803557902574539
+            ],
+            "prediction_local_xy_m": [
+              12.375741004943848,
+              0.03274078294634819
+            ],
+            "prediction_to_GT_norm_ratio": 1.000295877456665
+          },
+          {
+            "future_step": 6,
+            "future_time_s": 3.049105,
+            "GT_local_xy_m": [
+              24.43941307067871,
+              -0.06104429066181183
+            ],
+            "prediction_local_xy_m": [
+              15.287837028503418,
+              -0.06285916268825531
+            ],
+            "prediction_to_GT_norm_ratio": 0.6255435943603516
+          },
+          {
+            "future_step": 12,
+            "future_time_s": 6.052844,
+            "GT_local_xy_m": [
+              49.53470993041992,
+              -0.08280295133590698
+            ],
+            "prediction_local_xy_m": [
+              18.161312103271484,
+              -0.09165044128894806
+            ],
+            "prediction_to_GT_norm_ratio": 0.3666422665119171
+          }
+        ]
+      }
+    ]
+  },
+  "status": "FAIL",
+  "loss_supervision_verified": "all non-target raw prediction gradients exactly zero; context retained",
+  "gradient_epoch_1": {
+    "experiment": "single_moving_actor_k1_budget1000",
+    "epoch": 1,
+    "learning_rate": 0.001,
+    "gradient_timing": "train-mode backward before optimizer step",
+    "loc_grad_norm": 6.52868889921698,
+    "scale_grad_norm": 137.9045259861063,
+    "pi_grad_norm": 0.0,
+    "chosen_location_output_grad_mean_abs": 0.10136246681213379,
+    "chosen_scale_output_grad_mean_abs": 5.699216842651367,
+    "pred_max_displacement_m": 1.532414197921753,
+    "scale_mean": 1.2473005056381226,
+    "scale_max": 2.913863182067871,
+    "GT_max_displacement_m": 49.5347785949707
+  },
+  "gradient_final": {
+    "experiment": "single_moving_actor_k1_budget1000",
+    "epoch": 1000,
+    "learning_rate": 0.001,
+    "gradient_timing": "train-mode backward before optimizer step",
+    "loc_grad_norm": 98.86438238879721,
+    "scale_grad_norm": 1.88472053282372,
+    "pi_grad_norm": 0.0,
+    "chosen_location_output_grad_mean_abs": 2.4108970165252686,
+    "chosen_scale_output_grad_mean_abs": 1.998700499534607,
+    "pred_max_displacement_m": 20.62855339050293,
+    "scale_mean": 4.512494087219238,
+    "scale_max": 17.400348663330078,
+    "GT_max_displacement_m": 49.5347785949707
+  }
+}

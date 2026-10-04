@@ -1,0 +1,88 @@
+{
+  "loss": 20.649457931518555,
+  "regression_loss": 20.649457931518555,
+  "classification_loss": 0.0,
+  "minADE": 26.335464477539062,
+  "minFDE": 48.65553665161133,
+  "independent_minADE": 26.335464477539062,
+  "MR": 1.0,
+  "target_count": 1,
+  "pred_max_displacement_m": 2.0230047702789307,
+  "GT_endpoint_displacement_mean_m": 49.5347785949707,
+  "GT_max_displacement_m": 49.5347785949707,
+  "scale_mean": 1.0098872184753418,
+  "scale_max": 2.7990834712982178,
+  "actors": [
+    {
+      "node_in_batch": 36,
+      "minADE_K": 26.335464477539062,
+      "minFDE_K": 48.65553665161133,
+      "best_FDE_mode": 0,
+      "best_training_L2_mode": 0,
+      "mode_probabilities": [
+        1.0
+      ],
+      "gt_endpoint_displacement_m": 49.5347785949707,
+      "gt_max_displacement_m": 49.5347785949707,
+      "pred_max_displacement_m": 2.0230047702789307,
+      "best_mode_endpoint_displacement_m": 1.0152641534805298,
+      "scale_mean": 1.0098872184753418,
+      "scale_max": 2.7990834712982178,
+      "unused_scale_head_mean": null,
+      "output_units": [
+        {
+          "future_step": 1,
+          "future_time_s": 0.499322,
+          "GT_local_xy_m": [
+            3.9287359714508057,
+            -0.00020274892449378967
+          ],
+          "prediction_local_xy_m": [
+            0.040776923298835754,
+            0.0746941864490509
+          ],
+          "prediction_to_GT_norm_ratio": 0.02166086435317993
+        },
+        {
+          "future_step": 3,
+          "future_time_s": 1.548863,
+          "GT_local_xy_m": [
+            12.372064590454102,
+            0.03803557902574539
+          ],
+          "prediction_local_xy_m": [
+            0.7209012508392334,
+            -0.3848392367362976
+          ],
+          "prediction_to_GT_norm_ratio": 0.0660509318113327
+        },
+        {
+          "future_step": 6,
+          "future_time_s": 3.049105,
+          "GT_local_xy_m": [
+            24.43941307067871,
+            -0.06104429066181183
+          ],
+          "prediction_local_xy_m": [
+            -1.986950159072876,
+            0.3802326023578644
+          ],
+          "prediction_to_GT_norm_ratio": 0.08277606219053268
+        },
+        {
+          "future_step": 12,
+          "future_time_s": 6.052844,
+          "GT_local_xy_m": [
+            49.53470993041992,
+            -0.08280295133590698
+          ],
+          "prediction_local_xy_m": [
+            0.8826848864555359,
+            0.5016260147094727
+          ],
+          "prediction_to_GT_norm_ratio": 0.020495986565947533
+        }
+      ]
+    }
+  ]
+}

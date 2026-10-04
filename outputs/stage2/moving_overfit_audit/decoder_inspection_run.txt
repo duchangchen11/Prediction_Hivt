@@ -1,0 +1,2271 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+{
+  "experiments": {
+    "single_moving_actor_overfit": {
+      "epoch": 500,
+      "device": "CPU eval-mode backward; no optimizer.step",
+      "best_sum_L2_mode": 1,
+      "losses": {
+        "loss": 3.219409465789795,
+        "regression_loss": 1.4278851747512817,
+        "classification_loss": 1.7915241718292236
+      },
+      "head_gradient_norms": {
+        "loc": 44.14199306611356,
+        "scale": 1.1737175390698524,
+        "pi": 0.016344078319384996
+      },
+      "encoder_gradient_norms": {
+        "local": 2.668936361916419,
+        "global": 1.503334784246491
+      },
+      "location_output_gradient_mean_abs_xy": [
+        0.09910362213850021,
+        2.054867744445801
+      ],
+      "scale_output_gradient_mean_abs_xy": [
+        0.08501464128494263,
+        1.1776756048202515
+      ],
+      "location_last_weight_gradient_norm_xy": [
+        5.798255443572998,
+        38.221153259277344
+      ],
+      "residual_mean_abs_xy_m": [
+        21.827177047729492,
+        0.015061928890645504
+      ],
+      "chosen_scale_mean_xy_m": [
+        5.79678201675415,
+        0.02142663486301899
+      ],
+      "NLL_mean_xy": [
+        5.293103218078613,
+        -2.4373323917388916
+      ],
+      "chosen_scale_max_xy_m": [
+        8.56447696685791,
+        0.03115553967654705
+      ],
+      "chosen_scale_min_xy_m": [
+        0.03749377653002739,
+        0.013241006061434746
+      ],
+      "chosen_raw_scale_mean_xy_m": [
+        5.79678201675415,
+        0.02142663486301899
+      ],
+      "chosen_prediction_local_xy_m": [
+        [
+          3.937652111053467,
+          -0.005411393009126186
+        ],
+        [
+          5.054831504821777,
+          0.05495704710483551
+        ],
+        [
+          4.916146755218506,
+          0.00423542782664299
+        ],
+        [
+          5.966989040374756,
+          0.013198093511164188
+        ],
+        [
+          4.405332565307617,
+          -0.008461542427539825
+        ],
+        [
+          5.65031623840332,
+          -0.06924682855606079
+        ],
+        [
+          5.907287120819092,
+          -0.07549087703227997
+        ],
+        [
+          2.8397908210754395,
+          -0.10694851726293564
+        ],
+        [
+          4.255414962768555,
+          -0.11677020788192749
+        ],
+        [
+          5.645977020263672,
+          -0.0788571760058403
+        ],
+        [
+          5.361958026885986,
+          -0.10367356985807419
+        ],
+        [
+          3.6770761013031006,
+          -0.07541539520025253
+        ]
+      ],
+      "GT_local_xy_m": [
+        [
+          3.9287359714508057,
+          -0.00020274892449378967
+        ],
+        [
+          7.950839042663574,
+          0.017786923795938492
+        ],
+        [
+          12.372064590454102,
+          0.03803557902574539
+        ],
+        [
+          16.39318084716797,
+          0.005034804344177246
+        ],
+        [
+          20.418296813964844,
+          -0.02804352343082428
+        ],
+        [
+          24.43941307067871,
+          -0.06104429066181183
+        ],
+        [
+          28.499752044677734,
+          -0.08280376344919205
+        ],
+        [
+          32.56109619140625,
+          -0.10458266735076904
+        ],
+        [
+          36.85405349731445,
+          -0.09684844315052032
+        ],
+        [
+          41.14299011230469,
+          -0.09003646671772003
+        ],
+        [
+          45.43192672729492,
+          -0.08322450518608093
+        ],
+        [
+          49.53470993041992,
+          -0.08280295133590698
+        ]
+      ],
+      "stepwise_location_scale_gradient": [
+        {
+          "future_step": 1,
+          "residual_abs_xy_m": [
+            0.008916139602661133,
+            0.005208644084632397
+          ],
+          "effective_scale_xy_m": [
+            0.03749377653002739,
+            0.02350492589175701
+          ],
+          "location_output_gradient_abs_xy": [
+            1.1112955808639526,
+            1.7726781368255615
+          ]
+        },
+        {
+          "future_step": 2,
+          "residual_abs_xy_m": [
+            2.896007537841797,
+            0.03717012330889702
+          ],
+          "effective_scale_xy_m": [
+            3.8422768115997314,
+            0.021625233814120293
+          ],
+          "location_output_gradient_abs_xy": [
+            0.01084426511079073,
+            1.926761507987976
+          ]
+        },
+        {
+          "future_step": 3,
+          "residual_abs_xy_m": [
+            7.455917835235596,
+            0.0338001511991024
+          ],
+          "effective_scale_xy_m": [
+            3.962358236312866,
+            0.015980077907443047
+          ],
+          "location_output_gradient_abs_xy": [
+            0.010515623725950718,
+            2.6074132919311523
+          ]
+        },
+        {
+          "future_step": 4,
+          "residual_abs_xy_m": [
+            10.426191329956055,
+            0.008163289166986942
+          ],
+          "effective_scale_xy_m": [
+            5.325296401977539,
+            0.026865435764193535
+          ],
+          "location_output_gradient_abs_xy": [
+            0.007824290543794632,
+            1.5509395599365234
+          ]
+        },
+        {
+          "future_step": 5,
+          "residual_abs_xy_m": [
+            16.012964248657227,
+            0.019581981003284454
+          ],
+          "effective_scale_xy_m": [
+            5.160558223724365,
+            0.02434070222079754
+          ],
+          "location_output_gradient_abs_xy": [
+            0.008074061945080757,
+            1.7118104696273804
+          ]
+        },
+        {
+          "future_step": 6,
+          "residual_abs_xy_m": [
+            18.78909683227539,
+            0.008202537894248962
+          ],
+          "effective_scale_xy_m": [
+            7.122788429260254,
+            0.013241006061434746
+          ],
+          "location_output_gradient_abs_xy": [
+            0.005849769338965416,
+            3.1467902660369873
+          ]
+        },
+        {
+          "future_step": 7,
+          "residual_abs_xy_m": [
+            22.592464447021484,
+            0.007312886416912079
+          ],
+          "effective_scale_xy_m": [
+            5.551382064819336,
+            0.01956249587237835
+          ],
+          "location_output_gradient_abs_xy": [
+            0.007505638524889946,
+            2.1299259662628174
+          ]
+        },
+        {
+          "future_step": 8,
+          "residual_abs_xy_m": [
+            29.72130584716797,
+            0.0023658499121665955
+          ],
+          "effective_scale_xy_m": [
+            6.280647277832031,
+            0.02398456446826458
+          ],
+          "location_output_gradient_abs_xy": [
+            0.006634135730564594,
+            1.737228512763977
+          ]
+        },
+        {
+          "future_step": 9,
+          "residual_abs_xy_m": [
+            32.59864044189453,
+            0.019921764731407166
+          ],
+          "effective_scale_xy_m": [
+            8.56447696685791,
+            0.03115553967654705
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004865056835114956,
+            1.3373758792877197
+          ]
+        },
+        {
+          "future_step": 10,
+          "residual_abs_xy_m": [
+            35.497013092041016,
+            0.01117929071187973
+          ],
+          "effective_scale_xy_m": [
+            7.807132244110107,
+            0.018810642883181572
+          ],
+          "location_output_gradient_abs_xy": [
+            0.005337000358849764,
+            2.2150580883026123
+          ]
+        },
+        {
+          "future_step": 11,
+          "residual_abs_xy_m": [
+            40.069969177246094,
+            0.020449064671993256
+          ],
+          "effective_scale_xy_m": [
+            8.30468463897705,
+            0.02239699475467205
+          ],
+          "location_output_gradient_abs_xy": [
+            0.005017248447984457,
+            1.8603687286376953
+          ]
+        },
+        {
+          "future_step": 12,
+          "residual_abs_xy_m": [
+            45.857635498046875,
+            0.0073875561356544495
+          ],
+          "effective_scale_xy_m": [
+            7.602287292480469,
+            0.015652013942599297
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0054808068089187145,
+            2.66206431388855
+          ]
+        }
+      ],
+      "decoder_final_linear_reconstruction_max_error_m": 4.76837158203125e-07,
+      "ego_vs_local_displacement_norm_max_difference_m": 1.6689300537109375e-06,
+      "analytic_dNLL_dmu_vs_autograd_max_difference": 1.1920928955078125e-07,
+      "analytic_derivative": "sign(mu-y)/(valid_steps*2*b); fixed diagnostic b=1",
+      "optimizer_includes_every_parameter_once": true,
+      "all_gradients_finite": true,
+      "final_loc_activation_norm": 5.216304302215576,
+      "initial_to_final_parameter_changes": {
+        "decoder.loc.3.weight": {
+          "initial_norm": 5.8960442543029785,
+          "final_norm": 6.672804832458496,
+          "change_norm": 2.991204023361206
+        },
+        "decoder.loc.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.54204922914505,
+          "change_norm": 0.54204922914505
+        },
+        "decoder.scale.3.weight": {
+          "initial_norm": 5.912130832672119,
+          "final_norm": 6.417561054229736,
+          "change_norm": 2.083751678466797
+        },
+        "decoder.scale.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.35987240076065063,
+          "change_norm": 0.35987240076065063
+        },
+        "decoder.pi.6.weight": {
+          "initial_norm": 1.3131413459777832,
+          "final_norm": 1.2722980976104736,
+          "change_norm": 0.06369175761938095
+        }
+      },
+      "algebraic_output_range_probe": {
+        "target_supplied_to_disposable_last_linear_bias": true,
+        "GT_reconstruction_max_error_m": 5.7220458984375e-06,
+        "not_a_training_result": true,
+        "finding": "unchanged decoder can represent the 49.53m target; no tanh bound, output scaling or inverse-frame range restriction"
+      }
+    },
+    "single_moving_actor_overfit_lr1e3": {
+      "epoch": 500,
+      "device": "CPU eval-mode backward; no optimizer.step",
+      "best_sum_L2_mode": 2,
+      "losses": {
+        "loss": 2.600921154022217,
+        "regression_loss": 0.8091952800750732,
+        "classification_loss": 1.7917258739471436
+      },
+      "head_gradient_norms": {
+        "loc": 53.6941827127849,
+        "scale": 1.6060056990410534,
+        "pi": 0.001889761700332351
+      },
+      "encoder_gradient_norms": {
+        "local": 2.229751209224443,
+        "global": 1.1139521720444452
+      },
+      "location_output_gradient_mean_abs_xy": [
+        0.1749742478132248,
+        2.55045223236084
+      ],
+      "scale_output_gradient_mean_abs_xy": [
+        0.11729049682617188,
+        2.0832767486572266
+      ],
+      "location_last_weight_gradient_norm_xy": [
+        7.254849433898926,
+        45.6105842590332
+      ],
+      "residual_mean_abs_xy_m": [
+        18.75393295288086,
+        0.017436658963561058
+      ],
+      "chosen_scale_mean_xy_m": [
+        8.178362846374512,
+        0.01779889315366745
+      ],
+      "NLL_mean_xy": [
+        3.8946895599365234,
+        -2.276299238204956
+      ],
+      "chosen_scale_max_xy_m": [
+        12.620753288269043,
+        0.033223461359739304
+      ],
+      "chosen_scale_min_xy_m": [
+        0.037908922880887985,
+        0.010631633922457695
+      ],
+      "chosen_raw_scale_mean_xy_m": [
+        8.178362846374512,
+        0.01779889315366745
+      ],
+      "chosen_prediction_local_xy_m": [
+        [
+          3.945482015609741,
+          -0.012178514152765274
+        ],
+        [
+          7.960312366485596,
+          0.01788308098912239
+        ],
+        [
+          6.817173480987549,
+          0.05686437338590622
+        ],
+        [
+          9.037019729614258,
+          0.014752672985196114
+        ],
+        [
+          6.6204514503479,
+          -0.0872923955321312
+        ],
+        [
+          9.598773002624512,
+          -0.04829636216163635
+        ],
+        [
+          8.32616138458252,
+          -0.08530329912900925
+        ],
+        [
+          7.109113693237305,
+          -0.12514372169971466
+        ],
+        [
+          7.911969184875488,
+          -0.08382022380828857
+        ],
+        [
+          9.516850471496582,
+          -0.09927020967006683
+        ],
+        [
+          9.237261772155762,
+          -0.05014973133802414
+        ],
+        [
+          8.451728820800781,
+          -0.101030133664608
+        ]
+      ],
+      "GT_local_xy_m": [
+        [
+          3.9287359714508057,
+          -0.00020274892449378967
+        ],
+        [
+          7.950839042663574,
+          0.017786923795938492
+        ],
+        [
+          12.372064590454102,
+          0.03803557902574539
+        ],
+        [
+          16.39318084716797,
+          0.005034804344177246
+        ],
+        [
+          20.418296813964844,
+          -0.02804352343082428
+        ],
+        [
+          24.43941307067871,
+          -0.06104429066181183
+        ],
+        [
+          28.499752044677734,
+          -0.08280376344919205
+        ],
+        [
+          32.56109619140625,
+          -0.10458266735076904
+        ],
+        [
+          36.85405349731445,
+          -0.09684844315052032
+        ],
+        [
+          41.14299011230469,
+          -0.09003646671772003
+        ],
+        [
+          45.43192672729492,
+          -0.08322450518608093
+        ],
+        [
+          49.53470993041992,
+          -0.08280295133590698
+        ]
+      ],
+      "stepwise_location_scale_gradient": [
+        {
+          "future_step": 1,
+          "residual_abs_xy_m": [
+            0.016746044158935547,
+            0.011975765228271484
+          ],
+          "effective_scale_xy_m": [
+            0.037908922880887985,
+            0.017689121887087822
+          ],
+          "location_output_gradient_abs_xy": [
+            1.099125623703003,
+            2.355496644973755
+          ]
+        },
+        {
+          "future_step": 2,
+          "residual_abs_xy_m": [
+            0.009473323822021484,
+            9.615719318389893e-05
+          ],
+          "effective_scale_xy_m": [
+            0.043606948107481,
+            0.019191397354006767
+          ],
+          "location_output_gradient_abs_xy": [
+            0.9555052518844604,
+            2.171111822128296
+          ]
+        },
+        {
+          "future_step": 3,
+          "residual_abs_xy_m": [
+            5.554891109466553,
+            0.018828794360160828
+          ],
+          "effective_scale_xy_m": [
+            5.284597396850586,
+            0.012628508731722832
+          ],
+          "location_output_gradient_abs_xy": [
+            0.007884548977017403,
+            3.2994132041931152
+          ]
+        },
+        {
+          "future_step": 4,
+          "residual_abs_xy_m": [
+            7.356161117553711,
+            0.009717868641018867
+          ],
+          "effective_scale_xy_m": [
+            8.218949317932129,
+            0.014574123546481133
+          ],
+          "location_output_gradient_abs_xy": [
+            0.005069585517048836,
+            2.8589484691619873
+          ]
+        },
+        {
+          "future_step": 5,
+          "residual_abs_xy_m": [
+            13.797845840454102,
+            0.059248872101306915
+          ],
+          "effective_scale_xy_m": [
+            8.535223960876465,
+            0.018535984680056572
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004881731234490871,
+            2.247879981994629
+          ]
+        },
+        {
+          "future_step": 6,
+          "residual_abs_xy_m": [
+            14.8406400680542,
+            0.012747928500175476
+          ],
+          "effective_scale_xy_m": [
+            9.959197044372559,
+            0.033223461359739304
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004183737561106682,
+            1.2541338205337524
+          ]
+        },
+        {
+          "future_step": 7,
+          "residual_abs_xy_m": [
+            20.17359161376953,
+            0.0024995356798171997
+          ],
+          "effective_scale_xy_m": [
+            8.823578834533691,
+            0.013079119846224785
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004722196143120527,
+            3.185739517211914
+          ]
+        },
+        {
+          "future_step": 8,
+          "residual_abs_xy_m": [
+            25.451982498168945,
+            0.020561054348945618
+          ],
+          "effective_scale_xy_m": [
+            10.184493064880371,
+            0.014518095180392265
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004091187380254269,
+            2.8699817657470703
+          ]
+        },
+        {
+          "future_step": 9,
+          "residual_abs_xy_m": [
+            28.94208526611328,
+            0.01302821934223175
+          ],
+          "effective_scale_xy_m": [
+            12.242063522338867,
+            0.016270769760012627
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0034035658463835716,
+            2.5608296394348145
+          ]
+        },
+        {
+          "future_step": 10,
+          "residual_abs_xy_m": [
+            31.626140594482422,
+            0.009233742952346802
+          ],
+          "effective_scale_xy_m": [
+            10.671713829040527,
+            0.023481739684939384
+          ],
+          "location_output_gradient_abs_xy": [
+            0.00390440272167325,
+            1.7744284868240356
+          ]
+        },
+        {
+          "future_step": 11,
+          "residual_abs_xy_m": [
+            36.194664001464844,
+            0.03307477384805679
+          ],
+          "effective_scale_xy_m": [
+            12.620753288269043,
+            0.010631633922457695
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0033014407381415367,
+            3.919121742248535
+          ]
+        },
+        {
+          "future_step": 12,
+          "residual_abs_xy_m": [
+            41.08298110961914,
+            0.01822718232870102
+          ],
+          "effective_scale_xy_m": [
+            11.518267631530762,
+            0.019762767478823662
+          ],
+          "location_output_gradient_abs_xy": [
+            0.003617442212998867,
+            2.108341693878174
+          ]
+        }
+      ],
+      "decoder_final_linear_reconstruction_max_error_m": 1.9073486328125e-06,
+      "ego_vs_local_displacement_norm_max_difference_m": 1.9073486328125e-06,
+      "analytic_dNLL_dmu_vs_autograd_max_difference": 2.384185791015625e-07,
+      "analytic_derivative": "sign(mu-y)/(valid_steps*2*b); fixed diagnostic b=1",
+      "optimizer_includes_every_parameter_once": true,
+      "all_gradients_finite": true,
+      "final_loc_activation_norm": 4.981138229370117,
+      "initial_to_final_parameter_changes": {
+        "decoder.loc.3.weight": {
+          "initial_norm": 5.8960442543029785,
+          "final_norm": 8.056178092956543,
+          "change_norm": 5.323441505432129
+        },
+        "decoder.loc.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.9290027618408203,
+          "change_norm": 0.9290027618408203
+        },
+        "decoder.scale.3.weight": {
+          "initial_norm": 5.912130832672119,
+          "final_norm": 6.6909685134887695,
+          "change_norm": 2.6073315143585205
+        },
+        "decoder.scale.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.3834184408187866,
+          "change_norm": 0.3834184408187866
+        },
+        "decoder.pi.6.weight": {
+          "initial_norm": 1.3131413459777832,
+          "final_norm": 1.262818455696106,
+          "change_norm": 0.08932919800281525
+        }
+      },
+      "algebraic_output_range_probe": {
+        "target_supplied_to_disposable_last_linear_bias": true,
+        "GT_reconstruction_max_error_m": 5.7220458984375e-06,
+        "not_a_training_result": true,
+        "finding": "unchanged decoder can represent the 49.53m target; no tanh bound, output scaling or inverse-frame range restriction"
+      }
+    },
+    "single_moving_actor_k1": {
+      "epoch": 500,
+      "device": "CPU eval-mode backward; no optimizer.step",
+      "best_sum_L2_mode": 0,
+      "losses": {
+        "loss": 0.5720821022987366,
+        "regression_loss": 0.5720821022987366,
+        "classification_loss": 0.0
+      },
+      "head_gradient_norms": {
+        "loc": 61.1993378111119,
+        "scale": 1.6633398099116392,
+        "pi": 0.0
+      },
+      "encoder_gradient_norms": {
+        "local": 2.039281045508342,
+        "global": 1.1148684240165831
+      },
+      "location_output_gradient_mean_abs_xy": [
+        0.4602251350879669,
+        2.4187934398651123
+      ],
+      "scale_output_gradient_mean_abs_xy": [
+        0.34240177273750305,
+        1.8791006803512573
+      ],
+      "location_last_weight_gradient_norm_xy": [
+        22.131120681762695,
+        51.231529235839844
+      ],
+      "residual_mean_abs_xy_m": [
+        17.55430030822754,
+        0.019616134464740753
+      ],
+      "chosen_scale_mean_xy_m": [
+        7.697534084320068,
+        0.018325166776776314
+      ],
+      "NLL_mean_xy": [
+        3.459529161453247,
+        -2.3153650760650635
+      ],
+      "chosen_scale_max_xy_m": [
+        13.01359748840332,
+        0.024987174198031425
+      ],
+      "chosen_scale_min_xy_m": [
+        0.015228582546114922,
+        0.01177687756717205
+      ],
+      "chosen_raw_scale_mean_xy_m": [
+        7.697534084320068,
+        0.018325166776776314
+      ],
+      "chosen_prediction_local_xy_m": [
+        [
+          3.9594221115112305,
+          0.00031381286680698395
+        ],
+        [
+          7.960104465484619,
+          0.017109932377934456
+        ],
+        [
+          12.405964851379395,
+          0.02676687017083168
+        ],
+        [
+          11.206217765808105,
+          0.001234512310475111
+        ],
+        [
+          7.756458282470703,
+          -0.024951163679361343
+        ],
+        [
+          7.3604865074157715,
+          -0.04527511075139046
+        ],
+        [
+          11.452187538146973,
+          -0.12621243298053741
+        ],
+        [
+          7.784020900726318,
+          -0.09570778161287308
+        ],
+        [
+          10.509203910827637,
+          -0.07251057773828506
+        ],
+        [
+          10.052453994750977,
+          -0.15102927386760712
+        ],
+        [
+          8.310553550720215,
+          -0.13563014566898346
+        ],
+        [
+          10.266060829162598,
+          -0.07255329936742783
+        ]
+      ],
+      "GT_local_xy_m": [
+        [
+          3.9287359714508057,
+          -0.00020274892449378967
+        ],
+        [
+          7.950839042663574,
+          0.017786923795938492
+        ],
+        [
+          12.372064590454102,
+          0.03803557902574539
+        ],
+        [
+          16.39318084716797,
+          0.005034804344177246
+        ],
+        [
+          20.418296813964844,
+          -0.02804352343082428
+        ],
+        [
+          24.43941307067871,
+          -0.06104429066181183
+        ],
+        [
+          28.499752044677734,
+          -0.08280376344919205
+        ],
+        [
+          32.56109619140625,
+          -0.10458266735076904
+        ],
+        [
+          36.85405349731445,
+          -0.09684844315052032
+        ],
+        [
+          41.14299011230469,
+          -0.09003646671772003
+        ],
+        [
+          45.43192672729492,
+          -0.08322450518608093
+        ],
+        [
+          49.53470993041992,
+          -0.08280295133590698
+        ]
+      ],
+      "stepwise_location_scale_gradient": [
+        {
+          "future_step": 1,
+          "residual_abs_xy_m": [
+            0.030686140060424805,
+            0.0005165617913007736
+          ],
+          "effective_scale_xy_m": [
+            0.015228582546114922,
+            0.024987174198031425
+          ],
+          "location_output_gradient_abs_xy": [
+            2.7360830307006836,
+            1.6675221920013428
+          ]
+        },
+        {
+          "future_step": 2,
+          "residual_abs_xy_m": [
+            0.009265422821044922,
+            0.000676991418004036
+          ],
+          "effective_scale_xy_m": [
+            0.016500545665621758,
+            0.01177687756717205
+          ],
+          "location_output_gradient_abs_xy": [
+            2.5251691341400146,
+            3.53800630569458
+          ]
+        },
+        {
+          "future_step": 3,
+          "residual_abs_xy_m": [
+            0.03390026092529297,
+            0.011268708854913712
+          ],
+          "effective_scale_xy_m": [
+            0.1867411881685257,
+            0.024772537872195244
+          ],
+          "location_output_gradient_abs_xy": [
+            0.22312521934509277,
+            1.6819701194763184
+          ]
+        },
+        {
+          "future_step": 4,
+          "residual_abs_xy_m": [
+            5.186963081359863,
+            0.003800292033702135
+          ],
+          "effective_scale_xy_m": [
+            5.85476016998291,
+            0.01901836507022381
+          ],
+          "location_output_gradient_abs_xy": [
+            0.007116716355085373,
+            2.1908648014068604
+          ]
+        },
+        {
+          "future_step": 5,
+          "residual_abs_xy_m": [
+            12.66183853149414,
+            0.0030923597514629364
+          ],
+          "effective_scale_xy_m": [
+            9.7368745803833,
+            0.013593031093478203
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004279265180230141,
+            3.0652964115142822
+          ]
+        },
+        {
+          "future_step": 6,
+          "residual_abs_xy_m": [
+            17.07892608642578,
+            0.01576917991042137
+          ],
+          "effective_scale_xy_m": [
+            10.667922973632812,
+            0.013990355655550957
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0039057901594787836,
+            2.9782421588897705
+          ]
+        },
+        {
+          "future_step": 7,
+          "residual_abs_xy_m": [
+            17.047565460205078,
+            0.04340866953134537
+          ],
+          "effective_scale_xy_m": [
+            9.910984992980957,
+            0.022071314975619316
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004204089287668467,
+            1.8878198862075806
+          ]
+        },
+        {
+          "future_step": 8,
+          "residual_abs_xy_m": [
+            24.777074813842773,
+            0.008874885737895966
+          ],
+          "effective_scale_xy_m": [
+            9.751241683959961,
+            0.014359308406710625
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004272960126399994,
+            2.9017183780670166
+          ]
+        },
+        {
+          "future_step": 9,
+          "residual_abs_xy_m": [
+            26.3448486328125,
+            0.02433786541223526
+          ],
+          "effective_scale_xy_m": [
+            10.028013229370117,
+            0.020272506400942802
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004155027214437723,
+            2.055328845977783
+          ]
+        },
+        {
+          "future_step": 10,
+          "residual_abs_xy_m": [
+            31.09053611755371,
+            0.060992807149887085
+          ],
+          "effective_scale_xy_m": [
+            13.01359748840332,
+            0.023236824199557304
+          ],
+          "location_output_gradient_abs_xy": [
+            0.003201779443770647,
+            1.793130874633789
+          ]
+        },
+        {
+          "future_step": 11,
+          "residual_abs_xy_m": [
+            37.12137222290039,
+            0.05240564048290253
+          ],
+          "effective_scale_xy_m": [
+            11.437726974487305,
+            0.017081214115023613
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0036429150495678186,
+            2.4393270015716553
+          ]
+        },
+        {
+          "future_step": 12,
+          "residual_abs_xy_m": [
+            39.26865005493164,
+            0.010249651968479156
+          ],
+          "effective_scale_xy_m": [
+            11.750810623168945,
+            0.014742506667971611
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0035458547063171864,
+            2.8262946605682373
+          ]
+        }
+      ],
+      "decoder_final_linear_reconstruction_max_error_m": 1.9073486328125e-06,
+      "ego_vs_local_displacement_norm_max_difference_m": 1.9073486328125e-06,
+      "analytic_dNLL_dmu_vs_autograd_max_difference": 2.384185791015625e-07,
+      "analytic_derivative": "sign(mu-y)/(valid_steps*2*b); fixed diagnostic b=1",
+      "optimizer_includes_every_parameter_once": true,
+      "all_gradients_finite": true,
+      "final_loc_activation_norm": 5.933342933654785,
+      "initial_to_final_parameter_changes": {
+        "decoder.loc.3.weight": {
+          "initial_norm": 5.978866100311279,
+          "final_norm": 8.088088989257812,
+          "change_norm": 5.121431827545166
+        },
+        "decoder.loc.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.856752336025238,
+          "change_norm": 0.856752336025238
+        },
+        "decoder.scale.3.weight": {
+          "initial_norm": 5.932851314544678,
+          "final_norm": 6.744814395904541,
+          "change_norm": 3.0803632736206055
+        },
+        "decoder.scale.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.46978524327278137,
+          "change_norm": 0.46978524327278137
+        },
+        "decoder.pi.6.weight": {
+          "initial_norm": 1.4178162813186646,
+          "final_norm": 1.4177360534667969,
+          "change_norm": 8.148442429956049e-05
+        }
+      },
+      "algebraic_output_range_probe": {
+        "target_supplied_to_disposable_last_linear_bias": true,
+        "GT_reconstruction_max_error_m": 5.7220458984375e-06,
+        "not_a_training_result": true,
+        "finding": "unchanged decoder can represent the 49.53m target; no tanh bound, output scaling or inverse-frame range restriction"
+      }
+    },
+    "single_moving_actor_fixed_scale": {
+      "epoch": 500,
+      "device": "CPU eval-mode backward; no optimizer.step",
+      "best_sum_L2_mode": 0,
+      "losses": {
+        "loss": 1.4569926261901855,
+        "regression_loss": 1.4569926261901855,
+        "classification_loss": 0.0
+      },
+      "head_gradient_norms": {
+        "loc": 3.0829551506876656,
+        "scale": 0.0,
+        "pi": 0.0
+      },
+      "encoder_gradient_norms": {
+        "local": 0.110190760244888,
+        "global": 0.09434239727580108
+      },
+      "location_output_gradient_mean_abs_xy": [
+        0.0416666679084301,
+        0.0416666679084301
+      ],
+      "scale_output_gradient_mean_abs_xy": [
+        0.0,
+        0.0
+      ],
+      "location_last_weight_gradient_norm_xy": [
+        1.8936119079589844,
+        1.8936119079589844
+      ],
+      "residual_mean_abs_xy_m": [
+        1.5063161849975586,
+        0.021374525502324104
+      ],
+      "chosen_scale_mean_xy_m": [
+        1.0,
+        1.0
+      ],
+      "NLL_mean_xy": [
+        2.1994636058807373,
+        0.7145217061042786
+      ],
+      "chosen_scale_max_xy_m": [
+        1.0,
+        1.0
+      ],
+      "chosen_scale_min_xy_m": [
+        1.0,
+        1.0
+      ],
+      "chosen_raw_scale_mean_xy_m": [
+        1.0544185638427734,
+        1.130245566368103
+      ],
+      "chosen_prediction_local_xy_m": [
+        [
+          3.909188747406006,
+          -0.05154205113649368
+        ],
+        [
+          7.9374308586120605,
+          0.024281403049826622
+        ],
+        [
+          12.412409782409668,
+          0.010227290913462639
+        ],
+        [
+          16.411746978759766,
+          0.05316765606403351
+        ],
+        [
+          20.358352661132812,
+          0.000662587583065033
+        ],
+        [
+          24.45745086669922,
+          -0.05682075023651123
+        ],
+        [
+          28.47477912902832,
+          -0.0811070129275322
+        ],
+        [
+          32.57085418701172,
+          -0.1120782271027565
+        ],
+        [
+          36.93271255493164,
+          -0.14351238310337067
+        ],
+        [
+          39.68952941894531,
+          -0.09168553352355957
+        ],
+        [
+          39.75140380859375,
+          -0.08972661942243576
+        ],
+        [
+          38.876136779785156,
+          -0.0570206344127655
+        ]
+      ],
+      "GT_local_xy_m": [
+        [
+          3.9287359714508057,
+          -0.00020274892449378967
+        ],
+        [
+          7.950839042663574,
+          0.017786923795938492
+        ],
+        [
+          12.372064590454102,
+          0.03803557902574539
+        ],
+        [
+          16.39318084716797,
+          0.005034804344177246
+        ],
+        [
+          20.418296813964844,
+          -0.02804352343082428
+        ],
+        [
+          24.43941307067871,
+          -0.06104429066181183
+        ],
+        [
+          28.499752044677734,
+          -0.08280376344919205
+        ],
+        [
+          32.56109619140625,
+          -0.10458266735076904
+        ],
+        [
+          36.85405349731445,
+          -0.09684844315052032
+        ],
+        [
+          41.14299011230469,
+          -0.09003646671772003
+        ],
+        [
+          45.43192672729492,
+          -0.08322450518608093
+        ],
+        [
+          49.53470993041992,
+          -0.08280295133590698
+        ]
+      ],
+      "stepwise_location_scale_gradient": [
+        {
+          "future_step": 1,
+          "residual_abs_xy_m": [
+            0.019547224044799805,
+            0.05133930221199989
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 2,
+          "residual_abs_xy_m": [
+            0.013408184051513672,
+            0.00649447925388813
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 3,
+          "residual_abs_xy_m": [
+            0.040345191955566406,
+            0.027808288112282753
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 4,
+          "residual_abs_xy_m": [
+            0.018566131591796875,
+            0.04813285171985626
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 5,
+          "residual_abs_xy_m": [
+            0.05994415283203125,
+            0.028706111013889313
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 6,
+          "residual_abs_xy_m": [
+            0.018037796020507812,
+            0.004223540425300598
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 7,
+          "residual_abs_xy_m": [
+            0.024972915649414062,
+            0.001696750521659851
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 8,
+          "residual_abs_xy_m": [
+            0.00975799560546875,
+            0.007495559751987457
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 9,
+          "residual_abs_xy_m": [
+            0.0786590576171875,
+            0.04666393995285034
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 10,
+          "residual_abs_xy_m": [
+            1.453460693359375,
+            0.0016490668058395386
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 11,
+          "residual_abs_xy_m": [
+            5.680522918701172,
+            0.006502114236354828
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 12,
+          "residual_abs_xy_m": [
+            10.658573150634766,
+            0.02578231692314148
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        }
+      ],
+      "decoder_final_linear_reconstruction_max_error_m": 3.814697265625e-06,
+      "ego_vs_local_displacement_norm_max_difference_m": 3.814697265625e-06,
+      "analytic_dNLL_dmu_vs_autograd_max_difference": 0.0,
+      "analytic_derivative": "sign(mu-y)/(valid_steps*2*b); fixed diagnostic b=1",
+      "optimizer_includes_every_parameter_once": true,
+      "all_gradients_finite": true,
+      "final_loc_activation_norm": 13.119328498840332,
+      "initial_to_final_parameter_changes": {
+        "decoder.loc.3.weight": {
+          "initial_norm": 5.978866100311279,
+          "final_norm": 9.463947296142578,
+          "change_norm": 6.715333461761475
+        },
+        "decoder.loc.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 1.2881075143814087,
+          "change_norm": 1.2881075143814087
+        },
+        "decoder.scale.3.weight": {
+          "initial_norm": 5.932851314544678,
+          "final_norm": 5.932492733001709,
+          "change_norm": 0.0003642468655016273
+        },
+        "decoder.scale.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.0,
+          "change_norm": 0.0
+        },
+        "decoder.pi.6.weight": {
+          "initial_norm": 1.4178162813186646,
+          "final_norm": 1.4178162813186646,
+          "change_norm": 0.0
+        }
+      },
+      "algebraic_output_range_probe": {
+        "target_supplied_to_disposable_last_linear_bias": true,
+        "GT_reconstruction_max_error_m": 5.7220458984375e-06,
+        "not_a_training_result": true,
+        "finding": "unchanged decoder can represent the 49.53m target; no tanh bound, output scaling or inverse-frame range restriction"
+      }
+    },
+    "single_moving_actor_k1_budget1000": {
+      "epoch": 1000,
+      "device": "CPU eval-mode backward; no optimizer.step",
+      "best_sum_L2_mode": 0,
+      "losses": {
+        "loss": -0.15128284692764282,
+        "regression_loss": -0.15128284692764282,
+        "classification_loss": 0.0
+      },
+      "head_gradient_norms": {
+        "loc": 97.971450197499,
+        "scale": 1.7424889985664695,
+        "pi": 0.0
+      },
+      "encoder_gradient_norms": {
+        "local": 1.5295098698571221,
+        "global": 1.3556946943488857
+      },
+      "location_output_gradient_mean_abs_xy": [
+        0.9137855172157288,
+        3.8787364959716797
+      ],
+      "scale_output_gradient_mean_abs_xy": [
+        0.3384445607662201,
+        3.5250771045684814
+      ],
+      "location_last_weight_gradient_norm_xy": [
+        31.916173934936523,
+        82.73723602294922
+      ],
+      "residual_mean_abs_xy_m": [
+        12.083244323730469,
+        0.014763777144253254
+      ],
+      "chosen_scale_mean_xy_m": [
+        9.013203620910645,
+        0.011783890426158905
+      ],
+      "NLL_mean_xy": [
+        2.148681163787842,
+        -2.451246976852417
+      ],
+      "chosen_scale_max_xy_m": [
+        17.400346755981445,
+        0.01635141484439373
+      ],
+      "chosen_scale_min_xy_m": [
+        0.014179302379488945,
+        0.00557638518512249
+      ],
+      "chosen_raw_scale_mean_xy_m": [
+        9.013203620910645,
+        0.011783890426158905
+      ],
+      "chosen_prediction_local_xy_m": [
+        [
+          3.911607027053833,
+          0.033382005989551544
+        ],
+        [
+          7.961498260498047,
+          0.04708206653594971
+        ],
+        [
+          12.375741004943848,
+          0.03274064138531685
+        ],
+        [
+          16.371143341064453,
+          -0.006838460452854633
+        ],
+        [
+          15.376907348632812,
+          -0.028147529810667038
+        ],
+        [
+          15.287837028503418,
+          -0.06285914033651352
+        ],
+        [
+          20.628332138061523,
+          -0.0956006869673729
+        ],
+        [
+          13.84636402130127,
+          -0.13050909340381622
+        ],
+        [
+          18.428150177001953,
+          -0.07705182582139969
+        ],
+        [
+          17.210355758666992,
+          -0.0832720473408699
+        ],
+        [
+          14.997557640075684,
+          -0.06215795874595642
+        ],
+        [
+          18.161312103271484,
+          -0.09165039658546448
+        ]
+      ],
+      "GT_local_xy_m": [
+        [
+          3.9287359714508057,
+          -0.00020274892449378967
+        ],
+        [
+          7.950839042663574,
+          0.017786923795938492
+        ],
+        [
+          12.372064590454102,
+          0.03803557902574539
+        ],
+        [
+          16.39318084716797,
+          0.005034804344177246
+        ],
+        [
+          20.418296813964844,
+          -0.02804352343082428
+        ],
+        [
+          24.43941307067871,
+          -0.06104429066181183
+        ],
+        [
+          28.499752044677734,
+          -0.08280376344919205
+        ],
+        [
+          32.56109619140625,
+          -0.10458266735076904
+        ],
+        [
+          36.85405349731445,
+          -0.09684844315052032
+        ],
+        [
+          41.14299011230469,
+          -0.09003646671772003
+        ],
+        [
+          45.43192672729492,
+          -0.08322450518608093
+        ],
+        [
+          49.53470993041992,
+          -0.08280295133590698
+        ]
+      ],
+      "stepwise_location_scale_gradient": [
+        {
+          "future_step": 1,
+          "residual_abs_xy_m": [
+            0.017128944396972656,
+            0.033584754914045334
+          ],
+          "effective_scale_xy_m": [
+            0.015272928401827812,
+            0.008791876956820488
+          ],
+          "location_output_gradient_abs_xy": [
+            2.7281386852264404,
+            4.739223480224609
+          ]
+        },
+        {
+          "future_step": 2,
+          "residual_abs_xy_m": [
+            0.010659217834472656,
+            0.029295142740011215
+          ],
+          "effective_scale_xy_m": [
+            0.014179302379488945,
+            0.010470939800143242
+          ],
+          "location_output_gradient_abs_xy": [
+            2.9385554790496826,
+            3.9792673587799072
+          ]
+        },
+        {
+          "future_step": 3,
+          "residual_abs_xy_m": [
+            0.0036764144897460938,
+            0.005294937640428543
+          ],
+          "effective_scale_xy_m": [
+            0.015446079894900322,
+            0.01635141484439373
+          ],
+          "location_output_gradient_abs_xy": [
+            2.697556257247925,
+            2.5481996536254883
+          ]
+        },
+        {
+          "future_step": 4,
+          "residual_abs_xy_m": [
+            0.022037506103515625,
+            0.01187326479703188
+          ],
+          "effective_scale_xy_m": [
+            0.016178203746676445,
+            0.013141347095370293
+          ],
+          "location_output_gradient_abs_xy": [
+            2.575481653213501,
+            3.170654296875
+          ]
+        },
+        {
+          "future_step": 5,
+          "residual_abs_xy_m": [
+            5.041389465332031,
+            0.00010400637984275818
+          ],
+          "effective_scale_xy_m": [
+            9.311506271362305,
+            0.013514293357729912
+          ],
+          "location_output_gradient_abs_xy": [
+            0.004474750719964504,
+            3.083155393600464
+          ]
+        },
+        {
+          "future_step": 6,
+          "residual_abs_xy_m": [
+            9.151576042175293,
+            0.0018148496747016907
+          ],
+          "effective_scale_xy_m": [
+            11.682167053222656,
+            0.00557638518512249
+          ],
+          "location_output_gradient_abs_xy": [
+            0.00356669002212584,
+            7.471985340118408
+          ]
+        },
+        {
+          "future_step": 7,
+          "residual_abs_xy_m": [
+            7.871419906616211,
+            0.012796923518180847
+          ],
+          "effective_scale_xy_m": [
+            10.875062942504883,
+            0.01602078787982464
+          ],
+          "location_output_gradient_abs_xy": [
+            0.003831395646557212,
+            2.60078763961792
+          ]
+        },
+        {
+          "future_step": 8,
+          "residual_abs_xy_m": [
+            18.714733123779297,
+            0.02592642605304718
+          ],
+          "effective_scale_xy_m": [
+            13.188272476196289,
+            0.012580109760165215
+          ],
+          "location_output_gradient_abs_xy": [
+            0.003159372601658106,
+            3.3121068477630615
+          ]
+        },
+        {
+          "future_step": 9,
+          "residual_abs_xy_m": [
+            18.4259033203125,
+            0.019796617329120636
+          ],
+          "effective_scale_xy_m": [
+            13.595735549926758,
+            0.009243858978152275
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0030646866653114557,
+            4.507497310638428
+          ]
+        },
+        {
+          "future_step": 10,
+          "residual_abs_xy_m": [
+            23.932634353637695,
+            0.006764419376850128
+          ],
+          "effective_scale_xy_m": [
+            17.400346755981445,
+            0.00958867184817791
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0023945884313434362,
+            4.345405578613281
+          ]
+        },
+        {
+          "future_step": 11,
+          "residual_abs_xy_m": [
+            30.434368133544922,
+            0.02106654644012451
+          ],
+          "effective_scale_xy_m": [
+            15.7581148147583,
+            0.016264451667666435
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0026441405061632395,
+            2.561824321746826
+          ]
+        },
+        {
+          "future_step": 12,
+          "residual_abs_xy_m": [
+            31.373397827148438,
+            0.008847445249557495
+          ],
+          "effective_scale_xy_m": [
+            16.28615951538086,
+            0.00986255519092083
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0025584097020328045,
+            4.224733352661133
+          ]
+        }
+      ],
+      "decoder_final_linear_reconstruction_max_error_m": 1.9073486328125e-06,
+      "ego_vs_local_displacement_norm_max_difference_m": 1.9073486328125e-06,
+      "analytic_dNLL_dmu_vs_autograd_max_difference": 4.76837158203125e-07,
+      "analytic_derivative": "sign(mu-y)/(valid_steps*2*b); fixed diagnostic b=1",
+      "optimizer_includes_every_parameter_once": true,
+      "all_gradients_finite": true,
+      "final_loc_activation_norm": 5.828254699707031,
+      "initial_to_final_parameter_changes": {
+        "decoder.loc.3.weight": {
+          "initial_norm": 5.978866100311279,
+          "final_norm": 10.967302322387695,
+          "change_norm": 8.87949275970459
+        },
+        "decoder.loc.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 1.4722566604614258,
+          "change_norm": 1.4722566604614258
+        },
+        "decoder.scale.3.weight": {
+          "initial_norm": 5.932851314544678,
+          "final_norm": 6.988966941833496,
+          "change_norm": 3.529533863067627
+        },
+        "decoder.scale.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.4933415353298187,
+          "change_norm": 0.4933415353298187
+        },
+        "decoder.pi.6.weight": {
+          "initial_norm": 1.4178162813186646,
+          "final_norm": 1.4176559448242188,
+          "change_norm": 0.00016296884859912097
+        }
+      },
+      "algebraic_output_range_probe": {
+        "target_supplied_to_disposable_last_linear_bias": true,
+        "GT_reconstruction_max_error_m": 5.7220458984375e-06,
+        "not_a_training_result": true,
+        "finding": "unchanged decoder can represent the 49.53m target; no tanh bound, output scaling or inverse-frame range restriction"
+      }
+    },
+    "single_moving_actor_fixed_scale_budget1000": {
+      "epoch": 610,
+      "device": "CPU eval-mode backward; no optimizer.step",
+      "best_sum_L2_mode": 0,
+      "losses": {
+        "loss": 0.7360794544219971,
+        "regression_loss": 0.7360794544219971,
+        "classification_loss": 0.0
+      },
+      "head_gradient_norms": {
+        "loc": 3.285026660799395,
+        "scale": 0.0,
+        "pi": 0.0
+      },
+      "encoder_gradient_norms": {
+        "local": 0.13725869849869138,
+        "global": 0.09324597314386497
+      },
+      "location_output_gradient_mean_abs_xy": [
+        0.0416666679084301,
+        0.0416666679084301
+      ],
+      "scale_output_gradient_mean_abs_xy": [
+        0.0,
+        0.0
+      ],
+      "location_last_weight_gradient_norm_xy": [
+        1.962952971458435,
+        1.962952971458435
+      ],
+      "residual_mean_abs_xy_m": [
+        0.06378761678934097,
+        0.022076865658164024
+      ],
+      "chosen_scale_mean_xy_m": [
+        1.0,
+        1.0
+      ],
+      "NLL_mean_xy": [
+        0.7569348216056824,
+        0.7152240872383118
+      ],
+      "chosen_scale_max_xy_m": [
+        1.0,
+        1.0
+      ],
+      "chosen_scale_min_xy_m": [
+        1.0,
+        1.0
+      ],
+      "chosen_raw_scale_mean_xy_m": [
+        1.0515462160110474,
+        1.0984728336334229
+      ],
+      "chosen_prediction_local_xy_m": [
+        [
+          3.9257595539093018,
+          -0.014018774963915348
+        ],
+        [
+          7.971426010131836,
+          -0.004145441576838493
+        ],
+        [
+          12.34358024597168,
+          0.0852334201335907
+        ],
+        [
+          16.4469051361084,
+          -0.010234358720481396
+        ],
+        [
+          20.40981101989746,
+          -0.047255802899599075
+        ],
+        [
+          24.521373748779297,
+          -0.0890979915857315
+        ],
+        [
+          28.567691802978516,
+          -0.0941702127456665
+        ],
+        [
+          32.623924255371094,
+          -0.09835082292556763
+        ],
+        [
+          36.88246536254883,
+          -0.052741918712854385
+        ],
+        [
+          41.17887496948242,
+          -0.055465348064899445
+        ],
+        [
+          45.467620849609375,
+          -0.0959993302822113
+        ],
+        [
+          49.19623565673828,
+          -0.07241272181272507
+        ]
+      ],
+      "GT_local_xy_m": [
+        [
+          3.9287359714508057,
+          -0.00020274892449378967
+        ],
+        [
+          7.950839042663574,
+          0.017786923795938492
+        ],
+        [
+          12.372064590454102,
+          0.03803557902574539
+        ],
+        [
+          16.39318084716797,
+          0.005034804344177246
+        ],
+        [
+          20.418296813964844,
+          -0.02804352343082428
+        ],
+        [
+          24.43941307067871,
+          -0.06104429066181183
+        ],
+        [
+          28.499752044677734,
+          -0.08280376344919205
+        ],
+        [
+          32.56109619140625,
+          -0.10458266735076904
+        ],
+        [
+          36.85405349731445,
+          -0.09684844315052032
+        ],
+        [
+          41.14299011230469,
+          -0.09003646671772003
+        ],
+        [
+          45.43192672729492,
+          -0.08322450518608093
+        ],
+        [
+          49.53470993041992,
+          -0.08280295133590698
+        ]
+      ],
+      "stepwise_location_scale_gradient": [
+        {
+          "future_step": 1,
+          "residual_abs_xy_m": [
+            0.0029764175415039062,
+            0.013816026039421558
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 2,
+          "residual_abs_xy_m": [
+            0.02058696746826172,
+            0.021932365372776985
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 3,
+          "residual_abs_xy_m": [
+            0.028484344482421875,
+            0.047197841107845306
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 4,
+          "residual_abs_xy_m": [
+            0.05372428894042969,
+            0.015269163064658642
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 5,
+          "residual_abs_xy_m": [
+            0.008485794067382812,
+            0.019212279468774796
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 6,
+          "residual_abs_xy_m": [
+            0.08196067810058594,
+            0.028053700923919678
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 7,
+          "residual_abs_xy_m": [
+            0.06793975830078125,
+            0.011366449296474457
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 8,
+          "residual_abs_xy_m": [
+            0.06282806396484375,
+            0.006231844425201416
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 9,
+          "residual_abs_xy_m": [
+            0.028411865234375,
+            0.04410652443766594
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 10,
+          "residual_abs_xy_m": [
+            0.035884857177734375,
+            0.03457111865282059
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 11,
+          "residual_abs_xy_m": [
+            0.035694122314453125,
+            0.012774825096130371
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        },
+        {
+          "future_step": 12,
+          "residual_abs_xy_m": [
+            0.3384742736816406,
+            0.010390229523181915
+          ],
+          "effective_scale_xy_m": [
+            1.0,
+            1.0
+          ],
+          "location_output_gradient_abs_xy": [
+            0.0416666679084301,
+            0.0416666679084301
+          ]
+        }
+      ],
+      "decoder_final_linear_reconstruction_max_error_m": 3.814697265625e-06,
+      "ego_vs_local_displacement_norm_max_difference_m": 3.814697265625e-06,
+      "analytic_dNLL_dmu_vs_autograd_max_difference": 0.0,
+      "analytic_derivative": "sign(mu-y)/(valid_steps*2*b); fixed diagnostic b=1",
+      "optimizer_includes_every_parameter_once": true,
+      "all_gradients_finite": true,
+      "final_loc_activation_norm": 13.59973430633545,
+      "initial_to_final_parameter_changes": {
+        "decoder.loc.3.weight": {
+          "initial_norm": 5.978866100311279,
+          "final_norm": 9.738607406616211,
+          "change_norm": 7.056473255157471
+        },
+        "decoder.loc.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 1.3484015464782715,
+          "change_norm": 1.3484015464782715
+        },
+        "decoder.scale.3.weight": {
+          "initial_norm": 5.932851314544678,
+          "final_norm": 5.9324140548706055,
+          "change_norm": 0.0004443810321390629
+        },
+        "decoder.scale.3.bias": {
+          "initial_norm": 0.0,
+          "final_norm": 0.0,
+          "change_norm": 0.0
+        },
+        "decoder.pi.6.weight": {
+          "initial_norm": 1.4178162813186646,
+          "final_norm": 1.4178162813186646,
+          "change_norm": 0.0
+        }
+      },
+      "algebraic_output_range_probe": {
+        "target_supplied_to_disposable_last_linear_bias": true,
+        "GT_reconstruction_max_error_m": 5.7220458984375e-06,
+        "not_a_training_result": true,
+        "finding": "unchanged decoder can represent the 49.53m target; no tanh bound, output scaling or inverse-frame range restriction"
+      }
+    }
+  },
+  "training_started": false,
+  "optimizer_steps": 0,
+  "official_source_hashes_verified": 19
+}

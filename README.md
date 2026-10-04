@@ -89,3 +89,13 @@ python -m scripts.diagnose_hivt_overfit
 Tiny 使用16个训练窗口、240 epochs。确定性eval loss从10.8056降至1.5769，但full-horizon minADE_6/minFDE_6仍为5.5717/11.2742m。静止目标拟合良好，移动目标仍严重低估未来位移；未把loss下降当作成功overfit。配置、曲线、初始/最终预测、5个失败案例、诊断报告均保留；checkpoint和processed图数据留在本机。
 
 `minADE_K`按官方HiVT/Argoverse规则使用最低FDE的mode计算ADE，另外单独记录独立minimum-ADE。MR沿用上游末端误差>2m；full-horizon（12个未来关键帧均有效，约6s）与partial-future分开报告。本阶段不是nuScenes官方leaderboard实验。
+
+## 移动车辆 overfit 诊断
+
+原 tiny 的失败结果和 checkpoint 已冻结，原文件 SHA256 保持相同。本轮只做 train split 的单目标/规模/平衡诊断，全部保留场景 vehicle 与 lane context，不修改原 HiVT 架构、baseline loss 或数据尺度。
+
+单目标 K=6 官方 loss（两档固定 LR）和 K=1 官方 loss 仍 FAIL；同一 K=1 模型固定 uncertainty 后，在 epoch 610 达到 ADE=0.0728m、FDE=0.3386m。相同初始权重与同一 epoch 的 free-scale 官方 K=1 仍为 ADE=16.3463m、FDE=37.5303m，支持 **Case C：当前设置下 uncertainty/NLL 优化抑制 location 学习**。结论限于该诊断，K=1/fixed-scale 不能替代官方 K=6 baseline。
+
+按用户条件继续测试 4/8/16 moving targets 与 balanced 的结果见 [诊断报告](outputs/reports/moving_overfit_audit_report.md)，量纲、source target、梯度和各目标真实 attribute 都可追溯。原完整 tiny、mini 完整训练和 Stage 3 均未运行，仍需先解决官方 K=6 moving overfit。
+
+[运行命令](docs/moving_overfit_audit_commands.md) · [Vehicle 运动分布](outputs/reports/vehicle_motion_distribution.md) · [Target audit](outputs/reports/single_moving_target_audit.json) · [梯度 CSV](outputs/reports/moving_gradient_audit.csv)

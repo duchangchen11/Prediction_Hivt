@@ -1,0 +1,9 @@
+{
+  "reason": "both K=1 diagnostics fail at 500, but fixed scale improves location substantially; check convergence with equal budgets",
+  "scope": "K=1 diagnostic only; no K=6 extension, no full tiny/mini",
+  "max_epochs": 1000,
+  "initialization": "fresh seed2022, same as respective 500-epoch runs",
+  "learning_rate": 0.001,
+  "only_change_vs_each_500_epoch_run": "maximum epoch budget",
+  "matched_comparison": "compare official K=1 at the exact first fixed-scale passing epoch"
+}

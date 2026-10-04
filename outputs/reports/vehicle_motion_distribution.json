@@ -1,0 +1,321 @@
+{
+  "dataset": "nuScenes v1.0-mini",
+  "split": "train only, existing scene split",
+  "train_windows": 146,
+  "actual_attribute_names": [
+    "cycle.with_rider",
+    "cycle.without_rider",
+    "pedestrian.moving",
+    "pedestrian.sitting_lying_down",
+    "pedestrian.standing",
+    "vehicle.moving",
+    "vehicle.parked",
+    "vehicle.stopped"
+  ],
+  "t0_vehicle_attribute_counts": {
+    "vehicle.stopped": 903,
+    "vehicle.moving": 1166,
+    "vehicle.parked": 1434,
+    "cycle.without_rider": 23,
+    "cycle.with_rider": 97
+  },
+  "total_vehicle_actor_windows": 3623,
+  "eligible_prediction_actor_windows": 3417,
+  "full_horizon_actor_windows": 2158,
+  "attribute_state_counts": {
+    "stopped": 903,
+    "moving": 1166,
+    "parked": 1434,
+    "unknown": 120
+  },
+  "attribute_vs_motion": [
+    {
+      "attribute": "moving",
+      "kinematic_group": "endpoint<=2m",
+      "count": 82
+    },
+    {
+      "attribute": "moving",
+      "kinematic_group": "endpoint>2m",
+      "count": 1037
+    },
+    {
+      "attribute": "moving",
+      "kinematic_group": "no_future",
+      "count": 47
+    },
+    {
+      "attribute": "parked",
+      "kinematic_group": "endpoint<=2m",
+      "count": 1388
+    },
+    {
+      "attribute": "parked",
+      "kinematic_group": "endpoint>2m",
+      "count": 9
+    },
+    {
+      "attribute": "parked",
+      "kinematic_group": "no_future",
+      "count": 37
+    },
+    {
+      "attribute": "stopped",
+      "kinematic_group": "endpoint<=2m",
+      "count": 873
+    },
+    {
+      "attribute": "stopped",
+      "kinematic_group": "endpoint>2m",
+      "count": 20
+    },
+    {
+      "attribute": "stopped",
+      "kinematic_group": "no_future",
+      "count": 10
+    },
+    {
+      "attribute": "unknown",
+      "kinematic_group": "endpoint<=2m",
+      "count": 43
+    },
+    {
+      "attribute": "unknown",
+      "kinematic_group": "endpoint>2m",
+      "count": 77
+    }
+  ],
+  "kinematic_counts_with_future": {
+    "small_endpoint<=2m": 2386,
+    "moving_endpoint>2m": 1143
+  },
+  "endpoint_bins_all_actor_windows": {
+    "denominator_all_actor_windows": 3623,
+    "denominator_with_future": 3529,
+    "no_future_count": 94,
+    "bins": [
+      {
+        "bin": "0–1m",
+        "count": 2338,
+        "fraction_of_valid_future": 0.662510626239728,
+        "fraction_of_all_actor_windows": 0.6453215567209495
+      },
+      {
+        "bin": "1–2m",
+        "count": 48,
+        "fraction_of_valid_future": 0.013601586851799376,
+        "fraction_of_all_actor_windows": 0.013248688931824454
+      },
+      {
+        "bin": "2–5m",
+        "count": 55,
+        "fraction_of_valid_future": 0.01558515160102012,
+        "fraction_of_all_actor_windows": 0.015180789401048854
+      },
+      {
+        "bin": "5–10m",
+        "count": 87,
+        "fraction_of_valid_future": 0.02465287616888637,
+        "fraction_of_all_actor_windows": 0.024013248688931826
+      },
+      {
+        "bin": "10–20m",
+        "count": 196,
+        "fraction_of_valid_future": 0.05553981297818079,
+        "fraction_of_all_actor_windows": 0.05409881313828319
+      },
+      {
+        "bin": "20–40m",
+        "count": 357,
+        "fraction_of_valid_future": 0.10116180221025786,
+        "fraction_of_all_actor_windows": 0.09853712393044438
+      },
+      {
+        "bin": ">40m",
+        "count": 448,
+        "fraction_of_valid_future": 0.12694814395012752,
+        "fraction_of_all_actor_windows": 0.12365443003036158
+      }
+    ]
+  },
+  "endpoint_bins_eligible_targets": {
+    "denominator_all_actor_windows": 3417,
+    "denominator_with_future": 3417,
+    "no_future_count": 0,
+    "bins": [
+      {
+        "bin": "0–1m",
+        "count": 2269,
+        "fraction_of_valid_future": 0.6640327772900205,
+        "fraction_of_all_actor_windows": 0.6640327772900205
+      },
+      {
+        "bin": "1–2m",
+        "count": 47,
+        "fraction_of_valid_future": 0.013754755633596722,
+        "fraction_of_all_actor_windows": 0.013754755633596722
+      },
+      {
+        "bin": "2–5m",
+        "count": 54,
+        "fraction_of_valid_future": 0.015803336259877086,
+        "fraction_of_all_actor_windows": 0.015803336259877086
+      },
+      {
+        "bin": "5–10m",
+        "count": 87,
+        "fraction_of_valid_future": 0.025460930640913083,
+        "fraction_of_all_actor_windows": 0.025460930640913083
+      },
+      {
+        "bin": "10–20m",
+        "count": 196,
+        "fraction_of_valid_future": 0.05736025753585016,
+        "fraction_of_all_actor_windows": 0.05736025753585016
+      },
+      {
+        "bin": "20–40m",
+        "count": 350,
+        "fraction_of_valid_future": 0.10242903131401815,
+        "fraction_of_all_actor_windows": 0.10242903131401815
+      },
+      {
+        "bin": ">40m",
+        "count": 414,
+        "fraction_of_valid_future": 0.12115891132572432,
+        "fraction_of_all_actor_windows": 0.12115891132572432
+      }
+    ]
+  },
+  "endpoint_bins_full_horizon": {
+    "denominator_all_actor_windows": 2158,
+    "denominator_with_future": 2158,
+    "no_future_count": 0,
+    "bins": [
+      {
+        "bin": "0–1m",
+        "count": 1518,
+        "fraction_of_valid_future": 0.7034291010194624,
+        "fraction_of_all_actor_windows": 0.7034291010194624
+      },
+      {
+        "bin": "1–2m",
+        "count": 34,
+        "fraction_of_valid_future": 0.015755329008341055,
+        "fraction_of_all_actor_windows": 0.015755329008341055
+      },
+      {
+        "bin": "2–5m",
+        "count": 19,
+        "fraction_of_valid_future": 0.008804448563484708,
+        "fraction_of_all_actor_windows": 0.008804448563484708
+      },
+      {
+        "bin": "5–10m",
+        "count": 24,
+        "fraction_of_valid_future": 0.011121408711770158,
+        "fraction_of_all_actor_windows": 0.011121408711770158
+      },
+      {
+        "bin": "10–20m",
+        "count": 77,
+        "fraction_of_valid_future": 0.03568118628359592,
+        "fraction_of_all_actor_windows": 0.03568118628359592
+      },
+      {
+        "bin": "20–40m",
+        "count": 169,
+        "fraction_of_valid_future": 0.0783132530120482,
+        "fraction_of_all_actor_windows": 0.0783132530120482
+      },
+      {
+        "bin": ">40m",
+        "count": 317,
+        "fraction_of_valid_future": 0.1468952734012975,
+        "fraction_of_all_actor_windows": 0.1468952734012975
+      }
+    ]
+  },
+  "definitions": {
+    "state": "t0 real annotation attribute; absent/other is unknown; low speed never implies parked",
+    "endpoint": "distance from t0 to last valid future, approximately 6s only when full 12 steps",
+    "GT_ADE_displacement": "mean norm of valid future minus t0; descriptive motion quantity, not prediction ADE",
+    "path_length": "sum segments from t0 through available future points; gaps bridged and valid length retained",
+    "history_speed": "observed history path length / elapsed time; current speed uses last two past observations",
+    "bins": "[0,1], (1,2], (2,5], (5,10], (10,20], (20,40], (40,inf) meters"
+  },
+  "statistics": {
+    "gt_endpoint_displacement_m": {
+      "count": 3529,
+      "mean": 11.635354731117216,
+      "quantiles_0_25_50_75_90_100": [
+        0.0,
+        0.018028098857400393,
+        0.18916929732936397,
+        16.474630212098013,
+        46.820858164473414,
+        110.7337724650937
+      ]
+    },
+    "gt_mean_future_displacement_m": {
+      "count": 3529,
+      "mean": 6.484924129013916,
+      "quantiles_0_25_50_75_90_100": [
+        0.0,
+        0.01646448955478242,
+        0.12100498106365133,
+        9.691282021540859,
+        25.63298115973807,
+        60.01492164820113
+      ]
+    },
+    "gt_path_length_m": {
+      "count": 3529,
+      "mean": 11.789870040545102,
+      "quantiles_0_25_50_75_90_100": [
+        0.0,
+        0.034055288328463024,
+        0.36526830883794054,
+        16.76278216789776,
+        46.88654272164802,
+        111.03239234051297
+      ]
+    },
+    "history_mean_speed_mps": {
+      "count": 3509,
+      "mean": 2.6164694892646727,
+      "quantiles_0_25_50_75_90_100": [
+        0.0,
+        0.0,
+        0.07118380924516808,
+        5.062619936714336,
+        9.606135359224874,
+        20.799450771043503
+      ]
+    },
+    "current_past_only_speed_mps": {
+      "count": 3509,
+      "mean": 2.6424718872795285,
+      "quantiles_0_25_50_75_90_100": [
+        0.0,
+        0.0,
+        0.060841711077740994,
+        5.062072769396719,
+        9.763592684066909,
+        31.191312766675043
+      ]
+    },
+    "future_valid_length": {
+      "count": 3623,
+      "mean": 9.58349434170577,
+      "quantiles_0_25_50_75_90_100": [
+        0.0,
+        7.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ]
+    }
+  }
+}
