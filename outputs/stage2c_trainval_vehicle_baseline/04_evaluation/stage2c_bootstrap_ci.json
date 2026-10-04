@@ -1,0 +1,54 @@
+{
+  "method": "paired scene-cluster percentile bootstrap",
+  "replicates": 1000,
+  "seed": 2022,
+  "resampling_unit": "validation scene",
+  "scene_count": 150,
+  "confidence": 0.95,
+  "weighting": "actor-window equal weights inside pooled resampled scenes; repeated scenes contribute their entire clusters",
+  "difference": "HiVT - CV; negative values favor HiVT",
+  "groups": {
+    "overall": {
+      "actor_windows": 42332,
+      "delta_ADE": {
+        "estimate_m": -0.6618456938337066,
+        "CI95_m": [
+          -0.7615357500678364,
+          -0.5711835205258046
+        ],
+        "bootstrap_std_m": 0.04802148384555292,
+        "valid_replicates": 1000
+      },
+      "delta_FDE": {
+        "estimate_m": -1.7540406029471485,
+        "CI95_m": [
+          -2.0196367368109525,
+          -1.510446829635659
+        ],
+        "bootstrap_std_m": 0.13052275287987763,
+        "valid_replicates": 1000
+      }
+    },
+    "vehicle.moving": {
+      "actor_windows": 10461,
+      "delta_ADE": {
+        "estimate_m": -2.056266580479339,
+        "CI95_m": [
+          -2.2480543221431697,
+          -1.8832423304196322
+        ],
+        "bootstrap_std_m": 0.09338793438456015,
+        "valid_replicates": 1000
+      },
+      "delta_FDE": {
+        "estimate_m": -5.626466772751104,
+        "CI95_m": [
+          -6.145970504976946,
+          -5.157059964349513
+        ],
+        "bootstrap_std_m": 0.25261644646632714,
+        "valid_replicates": 1000
+      }
+    }
+  }
+}

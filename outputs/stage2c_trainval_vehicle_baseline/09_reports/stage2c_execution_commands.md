@@ -41,4 +41,12 @@ Practical acceptance guards are predeclared: finite stable training, no scene le
 
 Qualitative selection uses real t0 moving attributes and GT displacement≥5m; successes have ADE/FDE≤2m, failures FDE>2m, with distinct instances. Main figure additionally requires observed turn≥20°, FDE improvement over CV≥2m and ADE improvement≥.5m. The primary checkpoint is fixed before any visual selection. All numerical trajectories/probabilities are saved; main figure uses Python/matplotlib, 183mm width, PNG600dpi plus editable SVG/PDF. A selected example is not evidence of aggregate superiority.
 
+Visual review requires at least five original lane segments inside each case viewport. The final main-case review uses the first and last three-step GT displacement directions (both vectors≥1m), sustained turn≥60° and lateral deviation≥3m, preventing a small reverse movement after stopping from being labeled a large turn. ADE and FDE must each be≤75% of paired CV, retaining the original absolute gain requirements. This qualitative example need not satisfy the separate≤2m success-case threshold. Candidates are geometry-screened in scene order without retaining all graphs, saved to `04_evaluation/stage2c_main_case_candidate_audit.csv`, and ranked by HiVT FDE then ADE. All full-VAL metrics, eligible targets, checkpoint selection and model weights remain fixed throughout visual review. The figure displays remaining errors and the unchanged mode probabilities; its best-FDE mode is oracle-selected.
+
+Final independent artifact audit:
+
+```bash
+OMP_NUM_THREADS=4 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage2c_trainval_vehicle_baseline/00_manifest/stage2c_final_audit.py >> outputs/stage2c_trainval_vehicle_baseline/08_logs/stage2c_final_audit.log 2>&1
+```
+
 Processed shards, SQLite cache, checkpoints and large actor CSVs remain local and ignored by Git, while every generated important file is indexed with SHA256 and tracked state in the artifact manifest. Manifest self-reference is excluded. Stage3 and merge into main are outside this task.

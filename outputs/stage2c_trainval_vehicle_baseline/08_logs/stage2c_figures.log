@@ -1,0 +1,43 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+FIGURES_COMPLETE {'moving_success': {'requested': 5, 'produced': 5, 'available': 2715}, 'moving_failure': {'requested': 5, 'produced': 5, 'available': 6114}, 'stopped_case': {'requested': 3, 'produced': 3, 'available': 5599}, 'parked_case': {'requested': 3, 'produced': 3, 'available': 25198}} main turn 30.579158782958984
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+FIGURES_COMPLETE {'moving_success': {'requested': 5, 'produced': 5, 'available': 2715}, 'moving_failure': {'requested': 5, 'produced': 5, 'available': 6114}, 'stopped_case': {'requested': 3, 'produced': 3, 'available': 5599}, 'parked_case': {'requested': 3, 'produced': 3, 'available': 25198}} main turn 183.30984497070312
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/outputs/stage2c_trainval_vehicle_baseline/05_figures/stage2c_figures.py", line 173, in <module>
+    if __name__=="__main__":torch.set_num_threads(4);main()
+  File "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/lrj/Prediction_Hivt/outputs/stage2c_trainval_vehicle_baseline/05_figures/stage2c_figures.py", line 169, in main
+    assert chosen_main is not None,"No supported turning main case; report this limitation without inventing one"
+AssertionError: No supported turning main case; report this limitation without inventing one
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+FIGURES_COMPLETE {'moving_success': {'requested': 5, 'produced': 5, 'available': 2715}, 'moving_failure': {'requested': 5, 'produced': 5, 'available': 6114}, 'stopped_case': {'requested': 3, 'produced': 3, 'available': 5599}, 'parked_case': {'requested': 3, 'produced': 3, 'available': 25198}} main turn 63.13504110060038
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+MAIN_GEOMETRY_SCREEN 500 / 4732 qualified 2
+MAIN_GEOMETRY_SCREEN 1000 / 4732 qualified 15
+MAIN_GEOMETRY_SCREEN 1500 / 4732 qualified 26
+MAIN_GEOMETRY_SCREEN 2000 / 4732 qualified 33
+MAIN_GEOMETRY_SCREEN 2500 / 4732 qualified 39
+MAIN_GEOMETRY_SCREEN 3000 / 4732 qualified 44
+MAIN_GEOMETRY_SCREEN 3500 / 4732 qualified 49
+MAIN_GEOMETRY_SCREEN 4000 / 4732 qualified 64
+MAIN_GEOMETRY_SCREEN 4500 / 4732 qualified 79
+FIGURES_COMPLETE {'moving_success': {'requested': 5, 'produced': 5, 'available': 2715}, 'moving_failure': {'requested': 5, 'produced': 5, 'available': 6114}, 'stopped_case': {'requested': 3, 'produced': 3, 'available': 5599}, 'parked_case': {'requested': 3, 'produced': 3, 'available': 25198}} main turn 63.13504110060038
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+MAIN_GEOMETRY_SCREEN 500 / 4732 qualified 2
+MAIN_GEOMETRY_SCREEN 1000 / 4732 qualified 15
+MAIN_GEOMETRY_SCREEN 1500 / 4732 qualified 26
+MAIN_GEOMETRY_SCREEN 2000 / 4732 qualified 33
+MAIN_GEOMETRY_SCREEN 2500 / 4732 qualified 39
+MAIN_GEOMETRY_SCREEN 3000 / 4732 qualified 44
+MAIN_GEOMETRY_SCREEN 3500 / 4732 qualified 49
+MAIN_GEOMETRY_SCREEN 4000 / 4732 qualified 64
+MAIN_GEOMETRY_SCREEN 4500 / 4732 qualified 79
+FIGURES_COMPLETE {'moving_success': {'requested': 5, 'produced': 5, 'available': 2715}, 'moving_failure': {'requested': 5, 'produced': 5, 'available': 6114}, 'stopped_case': {'requested': 3, 'produced': 3, 'available': 5599}, 'parked_case': {'requested': 3, 'produced': 3, 'available': 25198}} main turn 60.58565718887834

@@ -1,0 +1,24 @@
+{
+  "conclusion": "In this real moving validation turning case, the oracle best-FDE HiVT mode has smaller ADE/FDE than past-only CV, with remaining trajectory error shown explicitly.",
+  "evidence_chain": {
+    "a": "map/history/GT/CV and all six primary-checkpoint trajectories",
+    "b": "per-future-step displacement error from the same stored numerical arrays",
+    "c": "unaltered model mode probabilities; best-FDE choice identified"
+  },
+  "archetype": "asymmetric mixed-modality figure",
+  "backend": "Python/matplotlib",
+  "dimensions_mm": [
+    183,
+    110
+  ],
+  "exports": [
+    "PNG 600dpi",
+    "SVG editable text",
+    "PDF embedded TrueType"
+  ],
+  "review_risks": [
+    "Selected case is qualitative evidence, not an independent sample or aggregate superiority claim.",
+    "Best-FDE mode is oracle-selected for evaluation, not a top-probability deployment prediction."
+  ],
+  "source_data": "04_evaluation/stage2c_qualitative_main_case.json"
+}

@@ -89,6 +89,7 @@ def main():
             if k.startswith("delta_"): assert v["valid_replicates"] == 1000 and v["CI95_m"][0] <= v["CI95_m"][1]
     cases = read_json(ROOT / "04_evaluation/stage2c_figure_case_manifest.json")
     assert cases["main_case_found"] and all(v["produced"] >= v["requested"] for v in cases["coverage"].values())
+    assert all(c["visible_lane_segments_in_case_viewport"] >= 5 for c in cases["cases"])
     assert cases["checkpoint_sha256"] == primary["sha256"]
     source = read_json(ROOT / "04_evaluation/stage2c_qualitative_main_case.json")
     assert source["primary_checkpoint_sha256"] == primary["sha256"] and source["motion_state"] == "vehicle.moving"
@@ -101,6 +102,18 @@ def main():
     assert abs(errors[best].mean() - source["minADE6"]) < 1e-4 and abs(errors[best, -1] - source["minFDE6"]) < 1e-4
     cv_errors = np.linalg.norm(cv - gt, axis=-1)
     assert abs(cv_errors.mean() - source["CV_ADE_m"]) < 1e-5 and abs(cv_errors[-1] - source["CV_FDE_m"]) < 1e-5
+    history = np.array(source["history_trajectory_m"]); times = np.array(source["history_times_seconds"])
+    first, last = gt[2] - history[-1], gt[-1] - gt[-4]
+    assert min(np.linalg.norm(first), np.linalg.norm(last)) >= 1
+    turn = np.degrees(np.arccos(np.clip(np.dot(first, last) / (np.linalg.norm(first) * np.linalg.norm(last)), -1, 1)))
+    relative = gt - history[-1]
+    lateral = np.abs(relative[:, 0] * first[1] - relative[:, 1] * first[0]).max() / np.linalg.norm(first)
+    assert abs(turn - source["turn_degrees"]) < 1e-3 and turn >= 60 and lateral >= 3
+    assert source["minADE6"] <= .75 * source["CV_ADE_m"] and source["minFDE6"] <= .75 * source["CV_FDE_m"]
+    observed = np.flatnonzero(source["history_mask"]); previous, current = observed[-2:]
+    velocity = (history[current] - history[previous]) / (times[current] - times[previous])
+    expected_cv = history[current] + (np.array(source["future_times_seconds"]) - times[current])[:, None] * velocity
+    assert np.allclose(cv, expected_cv, rtol=1e-6, atol=1e-4)
     image_sizes = {}
     for p in sorted((ROOT / "05_figures").glob("stage2c_*.png")):
         with Image.open(p) as image:

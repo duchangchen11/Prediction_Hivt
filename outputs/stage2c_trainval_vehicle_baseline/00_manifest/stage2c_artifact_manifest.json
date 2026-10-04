@@ -49,13 +49,31 @@
       "mtime_ns": 1791109365014361578
     },
     {
-      "relative_path": "00_manifest/stage2c_final_audit.py",
+      "relative_path": "00_manifest/stage2c_figure_qa.json",
       "description": "configuration, provenance or reproducibility manifest",
-      "file_size": 8891,
-      "sha256": "aead59a18a0c532d7969157cb914ebdd3c8771b29a9edc482590495585b0070d",
+      "file_size": 1295,
+      "sha256": "aa657f0d725d7bccd17b5c2b460a17dcdbc5f8188c94b457bc0fe642eb9ccf33",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791112380752489128
+      "mtime_ns": 1791118920707518227
+    },
+    {
+      "relative_path": "00_manifest/stage2c_final_audit.json",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 2526,
+      "sha256": "c9bbefd132b3099acd10ac0d47c40efc084d9b56d602688594d6a7a0a47fd391",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118693868999559
+    },
+    {
+      "relative_path": "00_manifest/stage2c_final_audit.py",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 10014,
+      "sha256": "1f5ec2e36b7fcbd7ebd35e4416474c8b12286c0d66db800936fa8fd4bb490f8c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118659840620877
     },
     {
       "relative_path": "00_manifest/stage2c_freeze_verification.json",
@@ -64,7 +82,7 @@
       "sha256": "5fd758e603fa5c9dcb128879a30c4c50317c9928023cf677883ce9e5d6efe07b",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791116911265801512
+      "mtime_ns": 1791119056981027573
     },
     {
       "relative_path": "00_manifest/stage2c_git_delivery_state.json",
@@ -92,6 +110,15 @@
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
       "mtime_ns": 1791109365026362877
+    },
+    {
+      "relative_path": "00_manifest/stage2c_main_figure_contract.json",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 963,
+      "sha256": "c8dc5ae06a63f49b8b88823cb095bf1aef081b95f7dd28ec06b24377c95bf014",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118663512661752
     },
     {
       "relative_path": "00_manifest/stage2c_metric_smoke.json",
@@ -8014,6 +8041,33 @@
       "mtime_ns": 1791114993856041460
     },
     {
+      "relative_path": "04_evaluation/stage2c_bootstrap_ci.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 1476,
+      "sha256": "396eff6a6f48d180b2d904268348f17c6ab21c2293a5cde6cf0a07208fa3240f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970606404850
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_cv_actor_errors.csv",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 13557083,
+      "sha256": "993ddfb07a4d64b911a6001fbc7b402a27b530943ad559918b53ee06bdb3b6b3",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970134400030
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_cv_metrics.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 262354,
+      "sha256": "e306b7ed77dfa84cde72a4cdd63282fa3a21f9b4d08add1c5af264c96c4b124f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970578404562
+    },
+    {
       "relative_path": "04_evaluation/stage2c_evaluate.py",
       "description": "validation evaluation, paired actor errors or bootstrap",
       "file_size": 6516,
@@ -8021,6 +8075,24 @@
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
       "mtime_ns": 1791109943030310566
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_figure_case_manifest.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 171339,
+      "sha256": "8a1a1f507c7065459677d8628ef3cb83242373c94132ff7ecf56392f49f0d021",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118306704723210
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_main_case_candidate_audit.csv",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 23776,
+      "sha256": "056f3f92f9d042ac19c33f1f4537b686d68b106740b204ca4c9514dd68d60337",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118305224707026
     },
     {
       "relative_path": "04_evaluation/stage2c_nll_val_step_00500.json",
@@ -8111,6 +8183,42 @@
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
       "mtime_ns": 1791116862897314176
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_qualitative_main_case.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 158832,
+      "sha256": "83f11ebbdf025610ea17d4952f8021e0136f4b47d340446951179c53f9da781b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118305300707856
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_val_actor_errors.csv",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 14116517,
+      "sha256": "05e456e07448fc71137d34c4543a6c83fe2c848c666275c12ed8ca5e227a2da0",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116949814192804
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_val_metrics.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 262502,
+      "sha256": "0ccd77f481bb5c318a71ac8b90e5fb6ce0858714e8b8cb0f6cefb45a993d80ff",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970566404442
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_val_scene_metrics.csv",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 314224,
+      "sha256": "f35f5ab696530334458e9a46d1220acdfe7f2bcf6f31fa2daad0d610140248c0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970594404728
     },
     {
       "relative_path": "04_evaluation/stage2c_warmup_val_step_00500.json",
@@ -8277,11 +8385,218 @@
     {
       "relative_path": "05_figures/stage2c_figures.py",
       "description": "validation qualitative figure with six predicted modes",
-      "file_size": 11429,
-      "sha256": "3a612257d30739fa080cda8324ace22bad5959bd7d4e9c3e426bf40b3ef16726",
+      "file_size": 14838,
+      "sha256": "1edb7a639fd05493e9d6fdd0cfdecb1f3c499738c165b0ec2107c77f374b82a2",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791116907885767321
+      "mtime_ns": 1791119053612990294
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_failure_001.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 116463,
+      "sha256": "f06e126bf9ad5595ec12b837d5b106b20b03e62c71f9ffdf8b13b0167421ec1c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118294912594263
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_failure_002.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 141651,
+      "sha256": "fbe8f69336a74cf9af8dc752eca27b56b5c04285112af39a1563b07645fb066b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118295160596975
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_failure_003.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 135471,
+      "sha256": "67739e078b22f3131bf199b260a4f5e7250e88947538acc03a446dd6672299bb",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118295420599819
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_failure_004.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 164381,
+      "sha256": "eda131a2cc5865b6d38e138bebbef5cc24d41e9fc2f5af80b57a9119a67c7461",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118295844604454
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_failure_005.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 150427,
+      "sha256": "f78ecb28f9e534ff18cd085e7b6f679c98da11bfd41536f63b0ae15a92eee030",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118296064606860
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_success_001.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 104940,
+      "sha256": "a39f33a810ee37e8f468e6b36f0101d5163f428f53fabe0fcd51623acc662dc0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118293768581755
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_success_002.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 90601,
+      "sha256": "47759dbf7b6df18b78bf325bba1c77c739cc79ed43b2274b3bd441ab5154a316",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118293996584247
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_success_003.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 95983,
+      "sha256": "5ffd7b612f94a7d8875c49304fad275c00fcbcc505c25ebdb711fab8c9fa7abc",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118294224586742
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_success_004.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 102119,
+      "sha256": "0f62eb7339be2a8ff3b8c047dc9771cf3b0102f5d9149b641c2018e7b3cea0cb",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118294452589234
+    },
+    {
+      "relative_path": "05_figures/stage2c_moving_success_005.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 88016,
+      "sha256": "578b06ce24f78ac9ca5385f42b6bdd4c1c7884494bcedb4ce9d94bd8d1f0a2e6",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118294664591552
+    },
+    {
+      "relative_path": "05_figures/stage2c_parked_case_001.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 94838,
+      "sha256": "869ac70f628c29f98c890d70a1760bebf77f97901be056351128d53c5f8964dd",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118297316620550
+    },
+    {
+      "relative_path": "05_figures/stage2c_parked_case_002.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 89660,
+      "sha256": "7e52da826579bcefc6d44888455c1ab5de8618da93418b5573ffba651960cf50",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118297576623394
+    },
+    {
+      "relative_path": "05_figures/stage2c_parked_case_003.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 95043,
+      "sha256": "90f434c8e923d1eff9cd9c947567bedd15eed93e61b5d1c25f63f346bbbddc36",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118297876626675
+    },
+    {
+      "relative_path": "05_figures/stage2c_qualitative_main_case.pdf",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 26942,
+      "sha256": "ecbfb63a9e1a9559ee6c0b19ec38a5d5d8fd75684cc1836a9434aded227cbcdd",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118664952677783
+    },
+    {
+      "relative_path": "05_figures/stage2c_qualitative_main_case.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 522809,
+      "sha256": "b9f3dc38cdfc55cd341e82ba526bf71f0095cfb087cc8ab7d7c936dca67b3d7b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118664276670258
+    },
+    {
+      "relative_path": "05_figures/stage2c_qualitative_main_case.svg",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 179842,
+      "sha256": "aab2075deabbf01f8ac74a52eed4ef2c9281b393bc3921aec12f61904be354ad",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791119053700991269
+    },
+    {
+      "relative_path": "05_figures/stage2c_stopped_case_001.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 109688,
+      "sha256": "062976c5e288c808a465a665d10d64e6e97fa8f30d5d0f632a26cc02f0240700",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118296304609485
+    },
+    {
+      "relative_path": "05_figures/stage2c_stopped_case_002.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 101323,
+      "sha256": "b551257531ab30b1c7e8dc032380bef0cebe35b39d5e8da02209748caacc78fe",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118296700613814
+    },
+    {
+      "relative_path": "05_figures/stage2c_stopped_case_003.png",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 124577,
+      "sha256": "c9d955923989a42b425b3239c431f665806fd4b5806979f639e562c2f1ddff9d",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118297004617139
+    },
+    {
+      "relative_path": "06_tables/stage2c_bootstrap_ci.csv",
+      "description": "validation comparison table",
+      "file_size": 453,
+      "sha256": "4c3b64477310d5cb626b4fb41940272dbeea6d9bbf2d856c7b66406d3b416fc0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970606404850
+    },
+    {
+      "relative_path": "06_tables/stage2c_cv_vs_hivt.csv",
+      "description": "validation comparison table",
+      "file_size": 975,
+      "sha256": "bfb0e55cdfd892b68fd9cb6de60c0439ad17d891880be3e24a943419c146fc7c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970578404562
+    },
+    {
+      "relative_path": "06_tables/stage2c_main_results.csv",
+      "description": "validation comparison table",
+      "file_size": 975,
+      "sha256": "bfb0e55cdfd892b68fd9cb6de60c0439ad17d891880be3e24a943419c146fc7c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970578404562
+    },
+    {
+      "relative_path": "06_tables/stage2c_motion_state_metrics.csv",
+      "description": "validation comparison table",
+      "file_size": 1919,
+      "sha256": "bdb1b7bf3ae6dcb4ce974ddeeb9f375f59c1dbe181f32e717a58b043f47b8760",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970578404562
     },
     {
       "relative_path": "07_checkpoints/stage2c_best_moving_minfde.pt",
@@ -8524,6 +8839,33 @@
       "mtime_ns": 1791111166940599751
     },
     {
+      "relative_path": "08_logs/stage2c_evaluation.log",
+      "description": "reproducible execution log",
+      "file_size": 3584,
+      "sha256": "73c1687bef5d17096a47b282e9cd70541fa2595143e5e549c68a92a92c12e4d0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116970778406608
+    },
+    {
+      "relative_path": "08_logs/stage2c_figures.log",
+      "description": "reproducible execution log",
+      "file_size": 4671,
+      "sha256": "a72ad3911191c4ff2cdb2a2071a82170444e235bde2ba6f07432d08d6a68c6b7",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118306788724128
+    },
+    {
+      "relative_path": "08_logs/stage2c_final_audit.log",
+      "description": "reproducible execution log",
+      "file_size": 3808,
+      "sha256": "fc6df8abe347e19e7b1200676c6c5e61e582cdf7b1e466bbf1e77803e42e122b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791118693929000227
+    },
+    {
       "relative_path": "08_logs/stage2c_initialize.log",
       "description": "reproducible execution log",
       "file_size": 58,
@@ -8607,20 +8949,20 @@
     {
       "relative_path": "09_reports/stage2c_execution_commands.md",
       "description": "Stage 2C report or execution documentation",
-      "file_size": 9599,
-      "sha256": "78c5b16aceeeb7e1450dc54a0bbe8fc30c4627ec38ac834f00c1b4fd62d87223",
+      "file_size": 10789,
+      "sha256": "57e126f758114119cc31d894affc3fea79f8cb788a7c9eb9fd32ca4441a8a5a1",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791116907885767321
+      "mtime_ns": 1791118659840620877
     },
     {
       "relative_path": "09_reports/stage2c_report.py",
       "description": "Stage 2C report or execution documentation",
-      "file_size": 11860,
-      "sha256": "3d739ad1c8677c6384ca9eb02eb08f7052411f94298a8aadfb90d90e3561a5a7",
+      "file_size": 12127,
+      "sha256": "81404ec7834edcce1e0c31fa4fc321a44f68bed125759a7da0acd45184b8f2b6",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791110992807013021
+      "mtime_ns": 1791118659840620877
     }
   ]
 }

@@ -95,9 +95,11 @@ def main():
     if figures:
         lines += [f"Case coverage={figures['coverage']}；turning main case found={figures['main_case_found']}。",
                   "Each case uses a distinct instance within its category; moving success ADE/FDE≤2m, moving failure FDE>2m, both GT travel≥5m. Figures show lanes/history/GT/6 modes/best-FDE/probabilities and required identities/state/errors in titles."]
+        lines += [figures.get("visual_review", "")]
         if figures["main_case_found"]:
             source=read_json(ROOT / "04_evaluation/stage2c_qualitative_main_case.json")
             lines += [f"Main case turn={source['turn_degrees']:.2f}°；HiVT ADE/FDE={source['minADE6']:.6f}/{source['minFDE6']:.6f}；CV={source['CV_ADE_m']:.6f}/{source['CV_FDE_m']:.6f}。",
+                      f"GT lateral deviation={source['GT_lateral_deviation_from_initial_direction_m']:.3f}m. The example retains nonzero trajectory errors; lower error than CV does not mean perfect turn tracking.",
                       "[Main case source arrays](../04_evaluation/stage2c_qualitative_main_case.json), PNG600dpi + editable SVG/PDF. One selected turning case illustrates a local gain; aggregate results and scene bootstrap determine the broader claim.",
                       "![Qualitative main case](../05_figures/stage2c_qualitative_main_case.png)"]
     lines += ["", "## 【Git】", "",f"branch={git('branch','--show-current')}；report generation commit={git('rev-parse','HEAD')}。",

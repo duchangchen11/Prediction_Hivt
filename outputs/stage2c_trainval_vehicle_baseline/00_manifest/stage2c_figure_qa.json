@@ -1,0 +1,40 @@
+{
+  "stage": "Stage 2C",
+  "status": "PASS",
+  "backend": "Python/matplotlib",
+  "main_figure": {
+    "dimensions_mm": [
+      183,
+      110
+    ],
+    "png_dpi": 600,
+    "svg_editable_text": true,
+    "pdf_embedded_truetype": true,
+    "visual_checks": [
+      "Title and axis labels legible; no clipping",
+      "Square metric axes preserve map geometry",
+      "Legend outside map does not cover trajectories",
+      "All six modes and unchanged probabilities retained",
+      "GT has a visible sustained turn; remaining prediction error displayed"
+    ],
+    "source_data": "04_evaluation/stage2c_qualitative_main_case.json"
+  },
+  "case_figures": {
+    "count": 17,
+    "coverage": {
+      "moving_success": 5,
+      "moving_failure": 5,
+      "stopped": 3,
+      "parked": 3,
+      "main": 1
+    },
+    "original_lane_segments_visible": true,
+    "all_pngs_decoded_by_independent_audit": true
+  },
+  "training_curves": {
+    "warmup": "visually inspected",
+    "nll": "visually inspected"
+  },
+  "scope": "Paper-ready illustrative exports; selected oracle best-FDE case is not an aggregate-performance or top-probability deployment claim.",
+  "quantitative_evaluation": "Fixed full official VAL, paired actor identities, checkpoint SHA and scene bootstrap unchanged by visual review."
+}
