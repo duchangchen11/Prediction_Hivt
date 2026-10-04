@@ -1,0 +1,17 @@
+sample.json: scanned=34149, selected=202, elapsed=0.1s
+sample_annotation.json: scanned=1166187, selected=6094, elapsed=8.4s
+instance.json: scanned=64386, selected=324, elapsed=0.1s
+sample_data.json: scanned=2631083, selected=15673, elapsed=15.3s
+ego_pose.json: scanned=2631083, selected=15673, elapsed=9.8s
+Traceback (most recent call last):
+  File "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/lrj/Prediction_Hivt/scripts/audit_trainval.py", line 113, in <module>
+    audit(args.root, args.cache)
+  File "/home/lrj/Prediction_Hivt/scripts/audit_trainval.py", line 85, in audit
+    api = NuScenesMap(dataroot=str(root), map_name=location)
+  File "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/nuscenes/map_expansion/map_api.py", line 91, in __init__
+    with open(self.json_fname, 'r') as fh:
+FileNotFoundError: [Errno 2] No such file or directory: '/media/lrj/54926A1D926A0438/nuscenes-trainval/maps/expansion/boston-seaport.json'

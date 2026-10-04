@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/ZikangZhou/HiVT",
+  "commit": "6876656ce7671982ebdc29113aaaa028c2931518",
+  "license": "Apache-2.0",
+  "sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "README.md": "b4b0b6a260b0202de4dcab129111f1e83450b0abff1af27c4dc306dd8d47c52f",
+    "datasets/__init__.py": "784d25fb91fedd673b148e19b977694615512122ef8bbd523b4057b444dcf757",
+    "datasets/argoverse_v1_dataset.py": "a823fcd86ed61bf738c9c0ce05c75dda6822cb09f22b6bae7ff096098626a582",
+    "losses/__init__.py": "9977161797dba4de90870d8959594ae81f7106d23b3d7482c6a05d1ab275776f",
+    "losses/laplace_nll_loss.py": "b5eb09521d2a1779c20b7585028b7096f1e1c8d452b713d3f1ac9b4d81dea08f",
+    "losses/soft_target_cross_entropy_loss.py": "176f2b2ac833eb99e909ea159cf613ae9c1b9b25552edc890abebe4cd30d52a1",
+    "metrics/__init__.py": "36fa4afb68817285075f893b57fc0920bd4a50cbd080f818a5d46946fe3cb406",
+    "metrics/ade.py": "7e082d314e5165206e837d5a830b81ad5101b35893c742d74bdbb99cd5461418",
+    "metrics/fde.py": "875ab010c8f48f77d1c52a8c7d6f7585ddfe9b410ca5861ac51f2d378bdd8c30",
+    "metrics/mr.py": "fa087540b78c05c70dfdc8e4842bc6d0484bb486a8497e355f61df99858e397d",
+    "models/__init__.py": "cf6ec6ad098d3f8f234147c7150a00208d40802d8f5809bea499ea1f8fb4a63b",
+    "models/decoder.py": "d3818d089679b71c57d1dff5434a8b5fdb9e2420601e89178351b0c80b0999ee",
+    "models/embedding.py": "0d6ba544e4733ec92b466caa38a0ed848b067bce6a0b0d4cdb18b4081f4a5281",
+    "models/global_interactor.py": "f8992509a1fd01652e049737f23fc480dfa442330b3e6327c89305afe45ad7fa",
+    "models/hivt.py": "5539f2b6c5dd31f53996a899a577f046f455ac030b3299c26dfd344354756248",
+    "models/local_encoder.py": "10f48038dc75a4670b951853073566ffb1fc58bd8c31043626c42f856c334b3e",
+    "train.py": "061b8cbe4a0d4fa71072ee608e831a7cfd133fd27d00e3c80596364bc2e1fd07",
+    "utils.py": "38a173c72cf05877fdfe27d5a25656457a43530c9884e625803c638acd3f1163"
+  }
+}

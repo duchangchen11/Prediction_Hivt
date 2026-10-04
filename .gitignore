@@ -12,3 +12,6 @@ outputs/debug/
 *.pth
 *.ckpt
 *.log
+outputs/stage2/**/processed/
+outputs/stage2/**/cache/
+outputs/stage2/**/predictions.pt

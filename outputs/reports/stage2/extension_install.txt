@@ -1,0 +1,12 @@
+Looking in links: https://data.pyg.org/whl/torch-2.5.0+cu124.html
+Collecting torch-scatter
+  Downloading torch_scatter-2.1.2%2Bpt25cu124-cp310-cp310-linux_x86_64.whl (10.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 5.7 MB/s  0:00:02
+Collecting torch-sparse
+  Downloading torch_sparse-0.6.18%2Bpt25cu124-cp310-cp310-linux_x86_64.whl (5.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.1/5.1 MB 6.2 MB/s  0:00:00
+Requirement already satisfied: scipy in /home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages (from torch-sparse) (1.14.1)
+Requirement already satisfied: numpy<2.3,>=1.23.5 in /home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages (from scipy->torch-sparse) (1.26.4)
+Installing collected packages: torch-scatter, torch-sparse
+
+Successfully installed torch-scatter-2.1.2+pt25cu124 torch-sparse-0.6.18+pt25cu124

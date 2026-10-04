@@ -1,0 +1,881 @@
+你现在开始执行：
+
+Stage 2：nuScenes Vehicle-only HiVT Baseline
+
+项目：
+/home/lrj/Prediction_Hivt
+
+GitHub：
+duchangchen11/Prediction_Hivt
+
+现有环境：
+ped_intent
+
+现有状态：
+Stage 1 已验收通过。
+
+已完成：
+- nuScenes mini 数据完整性检查
+- scene/sample/instance 读取
+- 5帧历史 + 12帧未来窗口
+- 当前 ego 坐标系
+- history/future mask
+- scene-level split
+- Constant Velocity baseline
+- 单元测试
+- metadata 回查
+- 可视化
+
+当前不要重新做 Stage 1。
+
+==================================================
+0. 本阶段唯一目标
+==================================================
+
+建立一个干净的：
+
+nuScenes
+→ vehicle-only
+→ HiVT
+→ K条多模态未来轨迹
+→ minADE / minFDE / Miss Rate
+
+baseline。
+
+当前阶段禁止加入：
+
+- pedestrian
+- bicycle
+- type embedding
+- intent head
+- 自定义动态交互边
+- 行为意图
+- diffusion
+- ego planning
+- 新的创新模块
+
+本阶段目标不是创新。
+
+本阶段目标是得到：
+“原始/最小改动 HiVT 在 nuScenes vehicle forecasting 上的可靠 baseline”。
+
+==================================================
+1. Git 分支
+==================================================
+
+首先：
+
+cd /home/lrj/Prediction_Hivt
+
+确认：
+
+git status
+git log -5 --oneline
+git remote -v
+
+建立：
+
+stage2/vehicle-hivt-baseline
+
+不要直接在 main 上大规模开发。
+
+后续每个重要里程碑单独 commit。
+
+==================================================
+2. 先审计正式 trainval 数据
+==================================================
+
+不要开始长时间训练。
+
+先检查：
+
+/media/lrj/54926A1D926A0438/nuscenes-trainval
+
+本阶段 HiVT 不使用 LiDAR 点云，
+所以不要因为缺 LIDAR_TOP 就重新下载数据。
+
+只检查我们实际需要的：
+
+- v1.0-trainval metadata
+- scene
+- sample
+- sample_annotation
+- instance
+- ego_pose
+- log
+- calibrated_sensor（如果坐标转换需要）
+- HD Map
+
+确认这些接口可以通过 nuscenes-devkit 正常读取。
+
+随机抽：
+
+3～5 个 scene
+
+验证：
+
+scene链
+sample链
+annotation链
+ego pose
+map location
+
+保存：
+
+outputs/reports/trainval_readiness.md
+
+报告必须明确：
+
+TRAJECTORY_METADATA_READY=YES/NO
+HD_MAP_READY=YES/NO
+LIDAR_REQUIRED_FOR_STAGE2=NO
+
+如果轨迹和地图数据满足当前任务，
+即使缺少完整点云，也不要阻止 Stage 2。
+
+==================================================
+3. 获取并冻结 HiVT baseline 来源
+==================================================
+
+检查本机是否已经存在 HiVT 官方代码。
+
+搜索：
+
+/home/lrj
+/home/lrj/code
+/home/lrj/projects
+
+如果已经存在官方 HiVT repo：
+
+记录：
+- 路径
+- remote
+- commit SHA
+- requirements
+- license
+
+不要覆盖。
+
+如果本机没有：
+
+获取公开的原始 HiVT 实现。
+
+必须：
+
+1. 确认论文对应官方/作者实现；
+2. 记录仓库 URL；
+3. 固定 commit SHA；
+4. 不要直接在官方源代码目录里做大量修改。
+
+建议组织：
+
+Prediction_Hivt/
+├── baselines/
+│   └── hivt_official/
+├── models/
+├── datasets/
+...
+
+可以通过复制必要模型代码或独立目录保留 baseline。
+
+生成：
+
+outputs/reports/hivt_source_audit.md
+
+内容：
+
+repo=
+commit=
+original dataset=
+original history length=
+original future length=
+number of modes=
+map representation=
+loss=
+metrics=
+required dependencies=
+
+==================================================
+4. 依赖兼容性检查
+==================================================
+
+继续使用：
+
+ped_intent
+
+当前：
+
+Python 3.10
+PyTorch 2.5.1+cu124
+CUDA OK
+
+不要：
+
+- 创建新 conda env
+- 降级 PyTorch
+- 更换 CUDA
+- 全局升级 numpy/scipy
+
+检查 HiVT 实际需要：
+
+torch_geometric
+torch_scatter
+torch_sparse
+Lightning / pytorch_lightning
+其他依赖
+
+优先安装与：
+
+PyTorch 2.5.1 + CUDA 12.4
+
+匹配的版本。
+
+每次安装前：
+
+pip freeze
+
+每次安装后：
+
+验证：
+
+import torch
+import torch_geometric
+torch.cuda.is_available()
+
+如果原始 HiVT 使用老版本 PyTorch Lightning API，
+不要因此直接降级整个环境。
+
+优先：
+
+保留模型 architecture，
+对训练 wrapper 做最小兼容修改；
+
+必要时可以用原生 PyTorch 训练 loop 替代旧 Lightning Trainer。
+
+但：
+
+HiVT 模型结构、encoder、decoder、loss 的 baseline 行为不能擅自改成新的模型。
+
+保存：
+
+outputs/reports/hivt_environment.md
+
+==================================================
+5. 明确 vehicle-only 定义
+==================================================
+
+Stage 2：
+
+预测对象：
+
+vehicle.*
+
+但排除：
+
+vehicle.bicycle
+
+因此包括例如：
+
+car
+truck
+bus
+motorcycle
+construction vehicle
+trailer
+
+先不要加入：
+
+pedestrian
+bicycle
+
+ego：
+
+可以作为场景上下文，
+但不作为 HiVT prediction target。
+
+prediction loss：
+
+只对具有有效未来轨迹的 vehicle 节点计算。
+
+==================================================
+6. 构建 vehicle-only dataset adapter
+==================================================
+
+不要推翻 Stage 1 数据代码。
+
+在现有 preprocessing 基础上建立：
+
+datasets/nuscenes_hivt_vehicle_dataset.py
+
+目标输出需要适配 HiVT。
+
+至少包含：
+
+agent historical positions
+agent relative displacement
+agent heading
+agent masks
+
+future target
+future mask
+
+agent index
+ego/context information
+
+lane/map polylines
+lane mask
+
+必要的 relative position / rotation 信息
+
+以及：
+
+scene_token
+sample_token
+instance_token
+
+第一版仍然使用：
+
+Th = 5
+Tf = 12
+
+真实时间约：
+
+history ≈ 2s
+future ≈ 6s
+
+仍然使用实际 timestamp。
+
+不要修改已经验证过的坐标系定义：
+
+t0 ego 为原点
++x ego forward
++y ego left
+
+==================================================
+7. HD Map baseline 适配
+==================================================
+
+HiVT baseline 本身包含道路上下文。
+
+因此最终 baseline 不能完全没有地图。
+
+但第一版地图只实现最基础内容：
+
+lane centerline
+
+暂时不要加入创新性的：
+
+crosswalk semantic
+dynamic conflict map
+type-aware map relation
+semantic graph
+adaptive map edge
+
+步骤：
+
+nuScenes HD Map
+→ 当前 ego 附近局部 lane
+→ polyline resampling
+→ ego coordinate
+→ HiVT map encoder input
+
+建议第一版地图范围：
+
+50m 左右
+
+具体范围如果原始 HiVT 有官方设置，
+优先参照其方法；
+必须在报告中记录最终选择。
+
+建立：
+
+preprocessing/extract_lane_polylines.py
+
+并增加地图可视化：
+
+outputs/figures/hivt_map_sample.png
+
+必须检查：
+
+agent轨迹和lane没有错位。
+
+==================================================
+8. 建立 dataset sanity check
+==================================================
+
+随机抽取至少：
+
+100 个 vehicle samples/windows
+
+检查：
+
+NaN = 0
+Inf = 0
+
+所有 shape 一致/可batch
+future mask 正确
+agent index 正确
+lane index 不越界
+scene token 正确
+
+并检查：
+
+train/val scene 无泄漏。
+
+生成：
+
+outputs/reports/hivt_dataset_validation.json
+
+==================================================
+9. 第一项模型实验：
+Tiny-set Overfit
+==================================================
+
+这是硬性要求。
+
+不要直接训练整个 mini。
+
+首先选择：
+
+约 16～64 个训练窗口
+
+vehicle only。
+
+使用 HiVT：
+
+K = 原始 HiVT 默认模式数
+如果原实现就是 K=6，则保留 K=6。
+
+训练足够多 epoch，
+目标不是泛化，
+而是证明模型能记住小数据。
+
+要求记录：
+
+train loss
+regression loss
+classification/mode loss
+minADE
+minFDE
+
+预期：
+
+loss 明显下降；
+
+训练集 minADE/minFDE 明显下降；
+
+轨迹从随机状态变成合理形状。
+
+如果 tiny-set 都不能明显 overfit：
+
+立即停止。
+
+优先排查：
+
+- tensor shape
+- coordinate system
+- target normalization
+- rotation
+- masks
+- multimodal loss
+- decoder output scale
+- learning rate
+- map indexing
+
+禁止通过加入创新模块“解决”。
+
+保存：
+
+outputs/stage2/tiny_overfit/
+
+包括：
+
+config.yaml
+metrics.json
+training_curve.csv
+checkpoint
+prediction figures
+
+至少画：
+
+5 个预测案例。
+
+==================================================
+10. Mini vehicle-only baseline
+==================================================
+
+只有 tiny-set overfit 成功后才能做。
+
+使用：
+
+nuScenes v1.0-mini
+
+仍然采用：
+
+scene-level split。
+
+mini 结果只用于：
+
+pipeline validation
+
+不能作为论文最终结果。
+
+输出：
+
+K条轨迹
+mode probability
+
+至少计算：
+
+minADE
+minFDE
+Miss Rate
+
+Miss Rate 定义：
+
+必须首先检查原始 HiVT / 原 benchmark 实现。
+
+不要自行随意设阈值。
+
+在报告中写清楚：
+
+MR threshold=
+MR definition=
+
+同时保留：
+
+CV baseline
+
+作为 sanity baseline。
+
+比较：
+
+Constant Velocity
+vs
+HiVT vehicle-only
+
+==================================================
+11. 指标定义必须固定
+==================================================
+
+不要再使用模糊 FDE。
+
+对 HiVT 多模态预测明确：
+
+minADE_K
+
+minFDE_K
+
+MR_K
+
+数学含义：
+
+对 K 条预测轨迹，
+根据 benchmark 规则选最佳 mode 后计算。
+
+同时记录：
+
+K=
+
+如果存在概率评分：
+
+mode probability
+
+可以保留 NLL，
+但 Stage 2 不是强制。
+
+必须保证：
+
+所有指标只使用有效 future mask。
+
+正式实验优先使用固定 6 秒 horizon。
+
+如果目标没有完整 6 秒 future：
+
+分别说明：
+
+full-horizon eligible
+partial-future
+
+不要混成一个数字。
+
+==================================================
+12. 可视化
+==================================================
+
+至少产生三类：
+
+A.
+tiny-set overfit prediction
+
+B.
+mini validation success cases
+
+C.
+mini validation failure cases
+
+每张图至少显示：
+
+lane centerlines
+historical trajectory
+GT future
+K predicted futures
+best trajectory
+mode probability（如果方便）
+
+保存：
+
+outputs/figures/stage2/
+
+==================================================
+13. 不要现在加入创新
+==================================================
+
+明确禁止：
+
+h_type
+type_embedding
+pedestrian
+bicycle
+
+dynamic edge weight
+custom GNN
+intent prediction
+
+这些属于 Stage 3 以后。
+
+现在的模型命名：
+
+HiVT-NuScenes-Vehicle-Baseline
+
+不要使用：
+
+Improved HiVT
+Our HiVT
+Proposed Method
+
+==================================================
+14. 正式 trainval 暂时做到“准备就绪”
+==================================================
+
+Stage 2 本轮不要求直接跑长时间 trainval full training。
+
+做到：
+
+trainval metadata Ready
+HD Map Ready
+dataset adapter 可以读取 trainval
+随机若干正式样本可以 forward
+
+即可。
+
+最好完成一个：
+
+trainval 1-batch smoke test
+
+要求：
+
+forward PASS
+loss finite
+backward PASS
+optimizer.step PASS
+
+但不要立即跑完整正式实验。
+
+==================================================
+15. 必须做的模型输出测试
+==================================================
+
+至少测试：
+
+batch size = 1
+
+以及：
+
+batch size > 1
+
+检查：
+
+pred_traj shape
+
+期望类似：
+
+[B / N_target, K, Tf, 2]
+
+mode_prob：
+
+[B / N_target, K]
+
+需要根据最终 batch 设计准确记录。
+
+同时检查：
+
+pred finite
+loss finite
+gradient finite
+
+==================================================
+16. 本轮停止位置
+==================================================
+
+满足下面条件以后立即停止：
+
+[ ] trainval trajectory metadata 可以读取
+[ ] HD Map 可以读取
+[ ] HiVT upstream 已固定 commit
+[ ] ped_intent 中依赖兼容
+[ ] vehicle-only dataset adapter 完成
+[ ] lane centerline 输入完成
+[ ] dataset sanity check PASS
+[ ] tiny-set HiVT 成功 overfit
+[ ] mini HiVT 可以完整训练
+[ ] minADE 可以计算
+[ ] minFDE 可以计算
+[ ] MR 可以计算
+[ ] CV vs HiVT 对比完成
+[ ] trainval 1-batch forward/backward PASS
+
+不要进入：
+
+Multi-Type HiVT。
+
+==================================================
+17. Git
+==================================================
+
+每个关键阶段 commit：
+
+1.
+chore: audit HiVT baseline and dependencies
+
+2.
+feat: adapt nuScenes vehicle dataset for HiVT
+
+3.
+feat: add nuScenes lane context for HiVT baseline
+
+4.
+test: verify HiVT tiny-set overfit
+
+5.
+exp: run vehicle-only HiVT mini baseline
+
+最后：
+
+push 到：
+
+duchangchen11/Prediction_Hivt
+
+保留：
+
+configs
+logs
+metrics
+small reports
+figures
+
+不要上传：
+
+nuScenes raw data
+大型 checkpoint
+大型 processed dataset
+缓存
+conda 环境
+
+==================================================
+18. 最终汇报格式
+==================================================
+
+【HiVT 来源】
+
+repo=
+commit=
+原始dataset=
+核心结构是否保持=
+修改位置=
+
+【环境】
+
+env=
+torch=
+cuda=
+torch_geometric=
+lightning=
+GPU=
+
+【trainval】
+
+trajectory metadata=
+HD Map=
+LiDAR required=NO
+trainval readiness=PASS/FAIL
+
+【数据】
+
+Th=
+Tf=
+vehicle definition=
+train windows=
+val windows=
+
+lane representation=
+map radius=
+
+【Tiny Overfit】
+
+windows=
+epochs=
+initial loss=
+final loss=
+
+initial minADE=
+final minADE=
+
+initial minFDE=
+final minFDE=
+
+OVERFIT=PASS/FAIL
+
+【Mini Baseline】
+
+CV：
+
+ADE=
+FDE=
+
+HiVT：
+
+K=
+minADE=
+minFDE=
+MR=
+
+MR definition=
+
+【trainval smoke test】
+
+forward=
+loss finite=
+backward=
+optimizer step=
+
+PASS/FAIL
+
+【问题】
+
+只列真实发现的问题。
+
+【Git】
+
+branch=
+latest commit=
+push=
+working tree=
+
+【结论】
+
+是否允许进入：
+
+Stage 3 Multi-Type HiVT
+
+YES / NO
