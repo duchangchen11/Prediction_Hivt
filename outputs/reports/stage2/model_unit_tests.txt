@@ -1,0 +1,11 @@
+test_batch_offsets (test_hivt_stage_two.BaselineTest) ... ok
+test_best_fde_mode_ade_not_independent_ade (test_hivt_stage_two.BaselineTest) ... ok
+test_partial_mask_and_strict_mr_threshold (test_hivt_stage_two.BaselineTest) ... ok
+test_repeated_forward_no_target_mutation_and_batch_equivalence (test_hivt_stage_two.BaselineTest) ... /home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.159s
+
+OK

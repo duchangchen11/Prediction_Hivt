@@ -1,0 +1,25 @@
+model_name: HiVT-NuScenes-Vehicle-Baseline
+seed: 2022
+historical_steps: 5
+future_steps: 12
+num_modes: 6
+embed_dim: 64
+num_heads: 8
+dropout: 0.1
+num_temporal_layers: 4
+num_global_layers: 3
+local_radius: 50.0
+lane_resolution: 2.0
+batch_size: 4
+windows: 16
+epochs: 240
+learning_rate: 0.0005
+weight_decay: 0.0001
+evaluation_interval: 10
+minimum_overfit_epochs: 80
+overfit_gate:
+  max_final_to_initial_loss: 0.7
+  max_final_to_initial_minADE: 0.25
+  max_final_to_initial_minFDE: 0.25
+  max_train_minADE_m: 1.0
+  max_train_minFDE_m: 2.0
