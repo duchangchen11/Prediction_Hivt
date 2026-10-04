@@ -1,0 +1,16 @@
+Upload completed through the connected GitHub application.
+Repository: https://github.com/duchangchen11/Prediction_Hivt
+Branch: main
+Implementation commit: 837f3a37f29281801056e768eccd2dd3c63d7ed1
+Implementation tree: d31af95561e335d96cf92cb4894673e038d22f2d
+Original local implementation commit: 19ab030 (retained in stage-one-local-backup)
+
+Command-line HTTPS push lacked credentials. The connected GitHub account has
+write permission. All 74 versioned files were uploaded using Git tree/commit
+operations, including one_window.png. The uploaded tree SHA equals the original
+local tree SHA. Local main was aligned only after verifying tree equality; the
+original local commit was preserved on a backup branch.
+
+Raw nuScenes data, local path configuration and outputs/debug/one_window.pt are
+excluded from Git. Reports, source code, tests and the figure are versioned.
+Final branch state is recorded locally in outputs/debug/git_final_status.txt.
