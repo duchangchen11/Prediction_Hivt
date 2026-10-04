@@ -1,0 +1,57 @@
+seed: 2022
+historical_steps: 5
+future_steps: 12
+num_modes: 6
+embed_dim: 64
+num_heads: 8
+dropout: 0.1
+num_temporal_layers: 4
+num_global_layers: 3
+local_radius: 50.0
+lane_resolution: 2.0
+weight_decay: 0.0001
+batch_size: 4
+evaluation_interval: 10
+scheduler: none
+experiment_A:
+  phase: fixed_scale
+  lr: 0.001
+  max_epochs: 1000
+  max_ADE_m: 0.5
+  max_FDE_m: 1.0
+experiment_B_warmup:
+  phase: fixed_scale
+  lr: 0.001
+  max_epochs: 700
+  max_ADE_m: 1.0
+  max_FDE_m: 2.0
+experiment_B_nll:
+  phase: original_nll
+  lr: 0.0001
+  max_epochs: 300
+  max_ADE_m: 1.0
+  max_FDE_m: 2.0
+  max_ADE_degradation_m: 0.5
+  max_FDE_degradation_m: 1.0
+experiment_C:
+  phase: bounded_scale
+  lr: 0.001
+  max_epochs: 700
+  b_max_values:
+  - 2.0
+  - 4.0
+  - 8.0
+  max_ADE_m: 0.5
+  max_FDE_m: 1.0
+mode_collapse_max_pairwise_distance_m: 0.001
+phase: fixed_scale
+lr: 0.001
+max_epochs: 700
+max_ADE_m: 1.0
+max_FDE_m: 2.0
+experiment: B_warmup
+fresh_initialization: true
+scene_windows: 1
+prediction_targets: 1
+optimizer_state_preserved: false
+metric: best-FDE mode ADE; full and partial horizons reported separately

@@ -7,6 +7,8 @@
 ```bash
 OMP_NUM_THREADS=4 /home/lrj/anaconda3/envs/ped_intent/bin/python -m unittest tests.test_k6_loss_recovery tests.test_hivt_stage_two > outputs/stage2/k6_loss_recovery/unit_tests.txt 2>&1
 /home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_loss_recovery --experiment A > outputs/stage2/k6_loss_recovery/A_run.txt 2>&1
+/home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_loss_recovery --experiment B > outputs/stage2/k6_loss_recovery/B_run.txt 2>&1
+/home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_baseline --stage reference > outputs/stage2/k6_loss_recovery/tiny_reference_run.txt 2>&1
 /home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.report_k6_loss_recovery > outputs/stage2/k6_loss_recovery/report_run.txt 2>&1
 ```
 
@@ -16,7 +18,11 @@ A 保留 K=6 best-mode selection 与原 classification，只使用 mean(abs(y−
 
 仅 B FAIL 时才可测 C 的 b_max=2/4/8。其余配置相同，每个最多700，单移动 gate 沿用 A。优先 warm-up→原 NLL，再选择能通过的最大 b_max；最后才允许明确命名的 permanent fixed regression fallback。
 
-Full Tiny / Mini 的命令和预先定义的 gate 将在它们各自获准启动前补充。原16 tiny windows 不重新抽样；attributes 使用 t0 的真实 annotation，不按未来位移重贴标签。full/partial future 指标分别报告，CV 用真实 timestamps 与过去两个有效位置。mini 只用原 train/val scenes，test 不用于调参。
+Full Tiny gate 在任何恢复训练之前保存于 configs/stage2b_baseline.yaml：overall ADE/FDE 至少比原失败模型好30%；真实 moving 子组至少好50%，且 ADE<5m/FDE<10m。接近 CV 是优先目标，不作为额外强制 gate。固定 scale warm-up 最多700，若 overall<1m/2m 且 moving≤1.5×CV 可提前进入原 NLL；达到700也进入原 NLL（未达到这个优先目标不等于最终 Full Tiny FAIL）。原 NLL 最多300，最终按新 gate 验收。原16 tiny windows 不重新抽样；所有原 eligible vehicle 都参与，mask不改。
+
+原失败模型只在 CPU 上重新推理并按真实 attributes 分组；与旧报告 pooled metrics 的差异检查<1e-3m。CV 和旧 HiVT 使用相同236个 full-horizon actor-window（moving63/stopped73/parked90/unknown10），另有146个 partial targets 单独报告。
+
+mini 只在 Full Tiny PASS 后允许运行，沿用 train146/val48 个原窗口；fresh seed2022，warm-up64 epochs + 原 NLL64 epochs，固定LR .001/1e-4。只在最后 probabilistic phase 内按 validation overall full-horizon minFDE 选择 checkpoint。test 不用于调参、checkpoint selection 或可视化选择。数据、K、宽度、层数和地图变量不变。
 
 实验目录拒绝覆盖。不要直接重复带重定向的命令覆盖已有日志；新实验需使用独立名称。首次新 loss 单测捕获了二维 boolean mask 与坐标切片的索引顺序错误，训练前已修正；失败日志保存为 unit_tests_first_attempt.txt，随后7个测试全部通过。
 

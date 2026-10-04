@@ -1,0 +1,332 @@
+{
+  "experiment": "B_warmup",
+  "epochs": 580,
+  "optimizer_steps": 580,
+  "phase": "fixed_scale",
+  "status": "PASS",
+  "initial_state_sha256": "bd8bff1b8ca27d589f5c659d646838e390a5786d07ee43f29249600016527644",
+  "final_state_sha256": "5e45027d44edc8a2e1ec84075f0100ab2c98ef8003783fabc835dfb2e0842c9c",
+  "elapsed_seconds": 60.762227649000124,
+  "config": {
+    "seed": 2022,
+    "historical_steps": 5,
+    "future_steps": 12,
+    "num_modes": 6,
+    "embed_dim": 64,
+    "num_heads": 8,
+    "dropout": 0.1,
+    "num_temporal_layers": 4,
+    "num_global_layers": 3,
+    "local_radius": 50.0,
+    "lane_resolution": 2.0,
+    "weight_decay": 0.0001,
+    "batch_size": 4,
+    "evaluation_interval": 10,
+    "scheduler": "none",
+    "experiment_A": {
+      "phase": "fixed_scale",
+      "lr": 0.001,
+      "max_epochs": 1000,
+      "max_ADE_m": 0.5,
+      "max_FDE_m": 1.0
+    },
+    "experiment_B_warmup": {
+      "phase": "fixed_scale",
+      "lr": 0.001,
+      "max_epochs": 700,
+      "max_ADE_m": 1.0,
+      "max_FDE_m": 2.0
+    },
+    "experiment_B_nll": {
+      "phase": "original_nll",
+      "lr": 0.0001,
+      "max_epochs": 300,
+      "max_ADE_m": 1.0,
+      "max_FDE_m": 2.0,
+      "max_ADE_degradation_m": 0.5,
+      "max_FDE_degradation_m": 1.0
+    },
+    "experiment_C": {
+      "phase": "bounded_scale",
+      "lr": 0.001,
+      "max_epochs": 700,
+      "b_max_values": [
+        2.0,
+        4.0,
+        8.0
+      ],
+      "max_ADE_m": 0.5,
+      "max_FDE_m": 1.0
+    },
+    "mode_collapse_max_pairwise_distance_m": 0.001,
+    "phase": "fixed_scale",
+    "lr": 0.001,
+    "max_epochs": 700,
+    "max_ADE_m": 1.0,
+    "max_FDE_m": 2.0,
+    "experiment": "B_warmup",
+    "fresh_initialization": true,
+    "scene_windows": 1,
+    "prediction_targets": 1,
+    "optimizer_state_preserved": false,
+    "metric": "best-FDE mode ADE; full and partial horizons reported separately"
+  },
+  "initial": {
+    "metrics": {
+      "full_horizon": {
+        "overall": {
+          "count": 1,
+          "minADE": 26.38825035095215,
+          "minFDE": 48.82434844970703,
+          "MR": 1.0,
+          "independent_minADE": 26.38825035095215
+        },
+        "vehicle.moving": {
+          "count": 1,
+          "minADE": 26.38825035095215,
+          "minFDE": 48.82434844970703,
+          "MR": 1.0,
+          "independent_minADE": 26.38825035095215
+        },
+        "vehicle.stopped": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "vehicle.parked": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "unknown": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        }
+      },
+      "partial_future": {
+        "overall": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "vehicle.moving": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "vehicle.stopped": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "vehicle.parked": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "unknown": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        }
+      }
+    },
+    "actors": [
+      {
+        "scene_token": "bebf5f5b2a674631ab5c88fd1aa9e87a",
+        "sample_token": "baaa60749cd04db7952fd8f4ef8ac837",
+        "instance_token": "c56ebf9c16dc44b8b9cd34fb79f40bc6",
+        "node_in_graph": 36,
+        "horizon": "full_horizon",
+        "attribute_names": [
+          "vehicle.moving"
+        ],
+        "attribute_group": "vehicle.moving",
+        "valid_future_steps": 12,
+        "GT_endpoint_displacement_m": 49.53478240966797,
+        "minADE": 26.38825035095215,
+        "minFDE": 48.82434844970703,
+        "MR": 1.0,
+        "independent_minADE": 26.38825035095215,
+        "best_training_mode": 0,
+        "best_FDE_mode": 0,
+        "mode_probabilities": [
+          0.2903481721878052,
+          0.16063252091407776,
+          0.13783614337444305,
+          0.14216041564941406,
+          0.13306410610675812,
+          0.13595864176750183
+        ]
+      }
+    ],
+    "ADE": 26.38825035095215,
+    "FDE": 48.82434844970703,
+    "MR": 1.0,
+    "loss": 15.293776988983154,
+    "regression_loss": 13.470516204833984,
+    "classification_loss": 1.82326078414917,
+    "location_error": 13.470516204833984,
+    "NLL": 14.163663864135742,
+    "scale_mean": 1.0,
+    "scale_max": 1.0,
+    "raw_processed_scale_mean": 1.102185673183865,
+    "raw_processed_scale_max": 3.332301139831543,
+    "raw_scale_head_mean": -0.06206813785764906,
+    "raw_scale_head_min": -2.269061803817749,
+    "raw_scale_head_max": 2.331301212310791
+  },
+  "final": {
+    "metrics": {
+      "full_horizon": {
+        "overall": {
+          "count": 1,
+          "minADE": 0.12929967045783997,
+          "minFDE": 1.0281591415405273,
+          "MR": 0.0,
+          "independent_minADE": 0.12929967045783997
+        },
+        "vehicle.moving": {
+          "count": 1,
+          "minADE": 0.12929967045783997,
+          "minFDE": 1.0281591415405273,
+          "MR": 0.0,
+          "independent_minADE": 0.12929967045783997
+        },
+        "vehicle.stopped": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "vehicle.parked": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "unknown": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        }
+      },
+      "partial_future": {
+        "overall": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "vehicle.moving": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "vehicle.stopped": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "vehicle.parked": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        },
+        "unknown": {
+          "count": 0,
+          "minADE": null,
+          "minFDE": null,
+          "MR": null,
+          "independent_minADE": null
+        }
+      }
+    },
+    "actors": [
+      {
+        "scene_token": "bebf5f5b2a674631ab5c88fd1aa9e87a",
+        "sample_token": "baaa60749cd04db7952fd8f4ef8ac837",
+        "instance_token": "c56ebf9c16dc44b8b9cd34fb79f40bc6",
+        "node_in_graph": 36,
+        "horizon": "full_horizon",
+        "attribute_names": [
+          "vehicle.moving"
+        ],
+        "attribute_group": "vehicle.moving",
+        "valid_future_steps": 12,
+        "GT_endpoint_displacement_m": 49.53478240966797,
+        "minADE": 0.12929967045783997,
+        "minFDE": 1.0281591415405273,
+        "MR": 0.0,
+        "independent_minADE": 0.12929967045783997,
+        "best_training_mode": 1,
+        "best_FDE_mode": 1,
+        "mode_probabilities": [
+          0.15557779371738434,
+          0.19827106595039368,
+          0.15216588973999023,
+          0.16522933542728424,
+          0.1605442762374878,
+          0.1682116538286209
+        ]
+      }
+    ],
+    "ADE": 0.12929967045783997,
+    "FDE": 1.0281591415405273,
+    "MR": 0.0,
+    "loss": 1.8611860126256943,
+    "regression_loss": 0.07166360318660736,
+    "classification_loss": 1.789522409439087,
+    "location_error": 0.07166360318660736,
+    "NLL": 0.7648108005523682,
+    "scale_mean": 1.0,
+    "scale_max": 1.0,
+    "raw_processed_scale_mean": 1.233168813917372,
+    "raw_processed_scale_max": 3.015636444091797,
+    "raw_scale_head_mean": 0.08400615056355794,
+    "raw_scale_head_min": -1.718286156654358,
+    "raw_scale_head_max": 2.014636516571045
+  },
+  "gradient_first": {
+    "epoch": 1,
+    "lr": 0.001,
+    "loc_grad_norm": 1.7226591877941944,
+    "scale_grad_norm": 0.0,
+    "pi_grad_norm": 1.2469394497394666
+  },
+  "gradient_last": {
+    "epoch": 580,
+    "lr": 0.001,
+    "loc_grad_norm": 3.2988068450070984,
+    "scale_grad_norm": 0.0,
+    "pi_grad_norm": 0.009469121675182142
+  }
+}

@@ -30,11 +30,16 @@ MODE_COLLAPSE=NO；最大 mode pairwise trajectory distance=0.597049m；预先�
 
 ## 【B Warm-up】
 
-NOT_RUN
+warm-up epochs=580；ADE=0.129300m；FDE=1.028159m；PASS。
+B 从 fresh seed2022 初始化，未使用 A final checkpoint。fixed-scale + classification、LR=.001，gate ADE<1/FDE<2，上限700。
+raw pre-ELU scale head mean/min/max=0.084006/-1.718286/2.014637；processed raw scale mean/max=1.233169/3.015636。该分支此时不参与 regression。
+warmup_checkpoint.pt 保存 weights、AdamW state 及 Torch CPU/CUDA RNG。
 
 ## 【Original NLL restored】
 
-NOT_RUN
+epochs=300；ADE=0.014022m；FDE=0.013048m；MR=0.000000；NLL=-1.828557；scale mean/max=0.116970/0.698733；**PASS**。
+从 B warmup_checkpoint 继续，保留 AdamW state，LR降至1e-4，不用 scheduler，运行完整300 epochs。恢复原 free-scale LaplaceNLL 与原 mode classification。
+最终 gate 预注册为 ADE<1/FDE<2，且相对 warm-up 的 ADE 增量≤.5m、FDE 增量≤1m；finite loss/gradients 必须通过。该增量定义在任何 B 结果前写入配置，用于量化‘不能明显退化’。
 
 ## 【C bounded scale】
 
@@ -42,7 +47,9 @@ NOT_RUN：只有 A PASS 且 B FAIL 才允许执行。
 
 ## 【Selected Protocol】
 
-NOT_SELECTED
+protocol=1；name=HiVT-NuScenes-Vehicle-Baseline。
+K=6 fresh fixed-scale warm-up→原 Laplace NLL 严格通过，保留原 probabilistic loss；仅 optimization warm-up 为 nuScenes 约6s任务适配。
+architecture unchanged；保留多模态与 mode probability。
 
 ## 【Full Tiny】
 

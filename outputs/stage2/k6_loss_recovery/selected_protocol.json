@@ -1,0 +1,11 @@
+{
+  "protocol": 1,
+  "model_name": "HiVT-NuScenes-Vehicle-Baseline",
+  "reason": "K=6 fresh fixed-scale warm-up→原 Laplace NLL 严格通过，保留原 probabilistic loss；仅 optimization warm-up 为 nuScenes 约6s任务适配。",
+  "b_max": null,
+  "num_modes": 6,
+  "historical_steps": 5,
+  "future_steps": 12,
+  "architecture_unchanged": true,
+  "phase": "original_nll"
+}

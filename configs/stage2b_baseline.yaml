@@ -1,0 +1,24 @@
+# Frozen before any recovered Full Tiny training.
+tiny:
+  warmup_max_epochs: 700
+  original_nll_epochs: 300
+  fixed_lr: 0.001
+  nll_lr: 0.0001
+  preferred_warmup_max_overall_ADE_m: 1.0
+  preferred_warmup_max_overall_FDE_m: 2.0
+  preferred_warmup_max_moving_to_CV_ratio: 1.5
+  gate:
+    max_overall_to_failed_ADE_ratio: 0.7
+    max_overall_to_failed_FDE_ratio: 0.7
+    max_moving_to_failed_ADE_ratio: 0.5
+    max_moving_to_failed_FDE_ratio: 0.5
+    max_moving_ADE_m: 5.0
+    max_moving_FDE_m: 10.0
+  criterion_note: overall at least 30% better; moving at least 50% better and below 5m/10m; approaching CV preferred, not required
+mini:
+  warmup_epochs: 64
+  original_nll_epochs: 64
+  fixed_lr: 0.001
+  nll_lr: 0.0001
+  checkpoint_selection: lowest validation overall full-horizon minFDE during final probabilistic phase only
+  test_used_for_tuning: false

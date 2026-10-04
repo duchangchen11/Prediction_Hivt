@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import random
+import shutil
 import time
 
 import matplotlib
@@ -71,7 +72,7 @@ def evaluate(model, graphs, attributes, phase="original_nll", b_max=None, batch_
     handle=model.decoder.scale[-1].register_forward_hook(lambda module,inputs,value:captured.update(value=value.detach().clone()))
     try:
         for batch in DataLoader(graphs,batch_size=batch_size,shuffle=False):
-            data=batch.to("cuda"); output=model(data)
+            data=batch.to(next(model.parameters()).device); output=model(data)
             values=model.recovery_loss(output,data,phase,b_max)
             assert all(torch.isfinite(v) for v in values.values())
             mask=data.future_mask & data.target_mask[:,None]
@@ -253,13 +254,83 @@ def verify_previous():
     write_json(ROOT/"freeze_verification.json",{"original_commit":manifest["commit"],"unchanged_files":len(manifest["files"]),"status":"PASS"})
 
 
+def restore_checkpoint(path,config,lr):
+    saved=torch.load(path,weights_only=False,map_location="cpu")
+    model=new_model(config);model.load_state_dict(saved["state_dict"])
+    optimizer=model.optimizer(lr,config["weight_decay"])
+    optimizer.load_state_dict(saved["optimizer_state_dict"])
+    torch.set_rng_state(saved["torch_rng"]);torch.cuda.set_rng_state_all(saved["cuda_rng"])
+    for group in optimizer.param_groups:group["lr"]=lr
+    return model,optimizer
+
+
+def select_protocol(protocol,reason,b_max=None):
+    model_name="HiVT-NuScenes-Vehicle-Baseline"
+    if protocol==2:model_name+=" with bounded uncertainty scale"
+    if protocol==3:model_name="HiVT-NuScenes adapted regression loss"
+    selected={"protocol":protocol,"model_name":model_name,"reason":reason,"b_max":b_max,
+              "num_modes":6,"historical_steps":5,"future_steps":12,"architecture_unchanged":True,
+              "phase":"original_nll" if protocol==1 else "bounded_scale" if protocol==2 else "fixed_scale"}
+    write_json(ROOT/"selected_protocol.json",selected)
+    return selected
+
+
+def run_B(graphs,attributes,config):
+    a=json.loads((ROOT/"A_fixed_scale/metrics.json").read_text())
+    assert a["status"]=="PASS", "A FAIL prohibits B"
+    warm,_,_=train_phase("B_warmup",graphs,attributes,config["experiment_B_warmup"],stop_gate=simple_gate(config["experiment_B_warmup"]))
+    assert warm["initial_state_sha256"]==a["initial_state_sha256"], "B must start from fresh same seed, not A final"
+    checkpoint=ROOT/"warmup_checkpoint.pt"
+    shutil.copy2(ROOT/"B_warmup/checkpoint.pt",checkpoint)
+    if warm["status"]!="PASS":
+        result={"status":"FAIL","reason":"Warm-up did not reach ADE<1/FDE<2 by 700; original NLL not started"}
+        write_json(ROOT/"B_result.json",result);return result
+    settings=config["experiment_B_nll"]
+    model,optimizer=restore_checkpoint(checkpoint,config,settings["lr"])
+    assert state_hash(model)==warm["final_state_sha256"]
+    gate=lambda e:(simple_gate(settings)(e) and e["ADE"]<=warm["final"]["ADE"]+settings["max_ADE_degradation_m"]
+                   and e["FDE"]<=warm["final"]["FDE"]+settings["max_FDE_degradation_m"])
+    restored,_,_=train_phase("B_original_nll",graphs,attributes,settings,model=model,optimizer=optimizer,final_gate=gate)
+    assert restored["initial_state_sha256"]==warm["final_state_sha256"]
+    result={"status":restored["status"],"warmup_epochs":warm["epochs"],"nll_epochs":restored["epochs"],
+            "warmup_ADE":warm["final"]["ADE"],"warmup_FDE":warm["final"]["FDE"],
+            "restored_ADE":restored["final"]["ADE"],"restored_FDE":restored["final"]["FDE"],
+            "ADE_change":restored["final"]["ADE"]-warm["final"]["ADE"],
+            "FDE_change":restored["final"]["FDE"]-warm["final"]["FDE"]}
+    write_json(ROOT/"B_result.json",result)
+    if restored["status"]=="PASS":
+        select_protocol(1,"K=6 fresh fixed-scale warm-up→原 Laplace NLL 严格通过，保留原 probabilistic loss；仅 optimization warm-up 为 nuScenes 约6s任务适配。")
+    return result
+
+
+def run_C(graphs,attributes,config):
+    assert json.loads((ROOT/"A_fixed_scale/metrics.json").read_text())["status"]=="PASS"
+    assert json.loads((ROOT/"B_result.json").read_text())["status"]=="FAIL", "C requires B FAIL"
+    results=[]
+    for b_max in config["experiment_C"]["b_max_values"]:
+        settings={**config["experiment_C"],"b_max":b_max}
+        result,_,_=train_phase(f"C_bmax{int(b_max)}",graphs,attributes,settings,final_gate=simple_gate(settings))
+        results.append(result)
+    passing=[r for r in results if r["status"]=="PASS"]
+    if passing:
+        selected=max(passing,key=lambda r:r["config"]["b_max"])
+        select_protocol(2,"B FAIL；在仅2/4/8三组预注册限制中选择严格通过的最大 b_max，保持最弱 uncertainty 限制。",selected["config"]["b_max"])
+    else:
+        # Explicit user-authorized third-priority fallback; never call it the original loss.
+        select_protocol(3,"Warm-up→原 NLL 与三组 bounded scale 均未通过；A 的 permanent fixed-scale K=6 严格通过，按用户 Protocol 3 使用 adapted regression loss。")
+    write_json(ROOT/"C_result.json",{str(int(r["config"]["b_max"])):r["status"] for r in results})
+
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument("--experiment",choices=("A",),required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument("--experiment",choices=("A","B","C"),required=True);args=parser.parse_args()
     torch.set_num_threads(4)
     config=read_config();graphs=single_graph();attributes=attribute_index()
-    result,model,_=train_phase("A_fixed_scale",graphs,attributes,config["experiment_A"],stop_gate=simple_gate(config["experiment_A"]))
-    if result["status"]=="PASS":mode_audit(model,graphs[0],result["experiment"])
-    else:print("HARD_STOP: K6_FIXED_SCALE FAIL; no further experiments authorized by gate",flush=True)
+    if args.experiment=="A":
+        result,model,_=train_phase("A_fixed_scale",graphs,attributes,config["experiment_A"],stop_gate=simple_gate(config["experiment_A"]))
+        if result["status"]=="PASS":mode_audit(model,graphs[0],result["experiment"])
+        else:print("HARD_STOP: K6_FIXED_SCALE FAIL; no further experiments authorized by gate",flush=True)
+    elif args.experiment=="B":run_B(graphs,attributes,config)
+    else:run_C(graphs,attributes,config)
 
 
 if __name__=="__main__":main()
