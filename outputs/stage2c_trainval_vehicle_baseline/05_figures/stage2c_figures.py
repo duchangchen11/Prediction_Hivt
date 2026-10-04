@@ -49,7 +49,8 @@ def numerical_case(model, dataset, index, row):
     headings=np.unwrap(np.arctan2(moving_segments[:,1],moving_segments[:,0]))
     turn=float(np.degrees(np.abs(headings[-1]-headings[0]))) if len(headings)>1 else 0.
     source={**row,"scene_name":g.scene_name,"history_trajectory_m":g.positions[node,:5].tolist(),
-            "history_mask":g.history_mask[node].tolist(),"GT_trajectory_m":gt.tolist(),"CV_trajectory_m":cv[node].tolist(),
+            "history_mask":g.history_mask[node].tolist(),"history_times_seconds":g.history_times.tolist(),
+            "GT_trajectory_m":gt.tolist(),"CV_trajectory_m":cv[node].tolist(),
             "HiVT_trajectories_m":prediction[node].tolist(),"mode_probabilities":prob[node].tolist(),
             "best_FDE_mode_zero_based":best,"future_times_seconds":g.future_times.tolist(),"turn_degrees":turn,
             "CV_ADE_m":float(cv_error.mean()),"CV_FDE_m":float(cv_error[-1]),
@@ -134,6 +135,10 @@ def main():
         if source["turn_degrees"]>=c["visualization"]["main_case_min_turn_degrees"] and source["CV_ADE_m"]-source["minADE6"]>=.5:
             chosen_main=source;chosen_main["selection_criteria"]=c["visualization"]
             chosen_main["primary_checkpoint_sha256"]=sha256(checkpoint)
+            chosen_main["lane_positions_m"]=g.lane_positions.tolist()
+            chosen_main["lane_vectors_m"]=g.lane_vectors.tolist()
+            chosen_main["origin_global_m"]=g.origin.tolist()
+            chosen_main["ego_yaw_global_rad"]=float(g.ego_yaw)
             atomic_json(ROOT / "04_evaluation/stage2c_qualitative_main_case.json",chosen_main)
             main_figure(g,row["node_in_graph"],source);break
     atomic_json(ROOT / "04_evaluation/stage2c_figure_case_manifest.json",{"coverage":coverage,"cases":cases,

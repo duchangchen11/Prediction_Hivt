@@ -1,0 +1,75 @@
+{
+  "metrics": {
+    "full_horizon": {
+      "overall": {
+        "count": 42332,
+        "minADE6": 0.6962295986801048,
+        "minFDE6": 1.4159014429768175,
+        "MR6": 0.16930454502504017
+      },
+      "vehicle.moving": {
+        "count": 10461,
+        "minADE6": 2.27190118433473,
+        "minFDE6": 4.723351430717532,
+        "MR6": 0.6124653474811204
+      },
+      "vehicle.stopped": {
+        "count": 5599,
+        "minADE6": 0.3499309122552428,
+        "minFDE6": 0.8571065046604347,
+        "MR6": 0.08626540453652438
+      },
+      "vehicle.parked": {
+        "count": 25198,
+        "minADE6": 0.11365318690555713,
+        "minFDE6": 0.15366854777770533,
+        "MR6": 0.003849511866021113
+      },
+      "unknown": {
+        "count": 1074,
+        "minADE6": 0.8224738367199742,
+        "minFDE6": 1.7280085482887704,
+        "MR6": 0.16759776536312848
+      }
+    },
+    "partial_future": {
+      "overall": {
+        "count": 20649,
+        "minADE6": 0.44415135551991763,
+        "minFDE6": 0.8364315969761512,
+        "MR6": 0.08959271635430287
+      },
+      "vehicle.moving": {
+        "count": 5478,
+        "minADE6": 1.309519811521788,
+        "minFDE6": 2.565030722021782,
+        "MR6": 0.30357794815626143
+      },
+      "vehicle.stopped": {
+        "count": 1997,
+        "minADE6": 0.1871380503587508,
+        "minFDE6": 0.34279371423578425,
+        "MR6": 0.04056084126189284
+      },
+      "vehicle.parked": {
+        "count": 12589,
+        "minADE6": 0.09271020219998645,
+        "minFDE6": 0.1259807859999617,
+        "MR6": 0.0023035983795376917
+      },
+      "unknown": {
+        "count": 585,
+        "minADE6": 0.7810057958160153,
+        "minFDE6": 1.6234300657142646,
+        "MR6": 0.13162393162393163
+      }
+    }
+  },
+  "windows": 3603,
+  "candidate_windows": 3619,
+  "empty_supervision_windows": 16,
+  "metric_definition": "ADE of lowest-FDE mode; independent minimum ADE separately; actor-window equal weights; MR endpoint >2m",
+  "K": 6,
+  "split": "val",
+  "test_used": false
+}

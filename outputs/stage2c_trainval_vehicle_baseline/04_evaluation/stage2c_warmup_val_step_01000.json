@@ -1,0 +1,75 @@
+{
+  "metrics": {
+    "full_horizon": {
+      "overall": {
+        "count": 42332,
+        "minADE6": 1.1787890726011592,
+        "minFDE6": 2.474736575344738,
+        "MR6": 0.19902201644146272
+      },
+      "vehicle.moving": {
+        "count": 10461,
+        "minADE6": 4.107948804870601,
+        "minFDE6": 8.817796438104079,
+        "MR6": 0.7277506930503775
+      },
+      "vehicle.stopped": {
+        "count": 5599,
+        "minADE6": 0.379726255117781,
+        "minFDE6": 0.8727702885897,
+        "MR6": 0.08751562779067691
+      },
+      "vehicle.parked": {
+        "count": 25198,
+        "minADE6": 0.14021793361770227,
+        "minFDE6": 0.20238668837248336,
+        "MR6": 0.005555996507659338
+      },
+      "unknown": {
+        "count": 1074,
+        "minADE6": 1.1805845250443208,
+        "minFDE6": 2.35679660061742,
+        "MR6": 0.16945996275605213
+      }
+    },
+    "partial_future": {
+      "overall": {
+        "count": 20649,
+        "minADE6": 0.7255948900327419,
+        "minFDE6": 1.3978147179207725,
+        "MR6": 0.12809337013898978
+      },
+      "vehicle.moving": {
+        "count": 5478,
+        "minADE6": 2.2578094013805194,
+        "minFDE6": 4.457303512115387,
+        "MR6": 0.4390288426433005
+      },
+      "vehicle.stopped": {
+        "count": 1997,
+        "minADE6": 0.20688719550601423,
+        "minFDE6": 0.37711695535434897,
+        "MR6": 0.03805708562844266
+      },
+      "vehicle.parked": {
+        "count": 12589,
+        "minADE6": 0.11598663752004462,
+        "minFDE6": 0.17394059610047105,
+        "MR6": 0.0034156803558662322
+      },
+      "unknown": {
+        "count": 585,
+        "minADE6": 1.2670418365098313,
+        "minFDE6": 2.5701311911563747,
+        "MR6": 0.20683760683760682
+      }
+    }
+  },
+  "windows": 3603,
+  "candidate_windows": 3619,
+  "empty_supervision_windows": 16,
+  "metric_definition": "ADE of lowest-FDE mode; independent minimum ADE separately; actor-window equal weights; MR endpoint >2m",
+  "K": 6,
+  "split": "val",
+  "test_used": false
+}

@@ -1,0 +1,56 @@
+seed: 2022
+historical_steps: 5
+future_steps: 12
+num_modes: 6
+embed_dim: 64
+num_heads: 8
+dropout: 0.1
+num_temporal_layers: 4
+num_global_layers: 3
+local_radius: 50.0
+lane_resolution: 2.0
+weight_decay: 0.0001
+batch_size: 16
+protocol: 1
+scheduler: none
+warmup: &id001
+  lr: 0.001
+  minimum_steps: 2500
+  maximum_steps: 10000
+  plateau_patience: 5
+  stop_rule: after minimum_steps, five consecutive validations without overall full-horizon
+    minFDE improvement, or maximum_steps
+nll:
+  lr: 0.0001
+  maximum_steps: 10000
+  plateau_patience: 5
+validation_interval_steps: 500
+checkpoint_selection: validation full-horizon overall minFDE; final checkpoint from
+  post-update original NLL phase
+moving_checkpoint_diagnostic_only: true
+optimizer_state_preserved: true
+data_loader:
+  workers: 0
+  cache_scenes: 2
+  shuffle: shuffle scene order and window order within each scene, epoch seed 2022+epoch
+bootstrap:
+  replicates: 1000
+  seed: 2022
+  resampling_unit: paired validation scene clusters
+  weighting: pooled actor-window means over resampled scene clusters
+acceptance:
+  maximum_moving_FDE_m: 15.0
+  maximum_overall_FDE_m: 6.0
+  case_B_maximum_moving_to_CV_ratio: 1.15
+  note: predeclared practical generalization guardrails; no split, actor or model
+    changes to beat CV
+visualization:
+  moving_min_GT_displacement_m: 5.0
+  success_max_FDE_m: 2.0
+  success_max_ADE_m: 2.0
+  main_case_min_turn_degrees: 20.0
+  main_case_min_CV_FDE_gain_m: 2.0
+active_phase: fixed_scale
+phase_settings: *id001
+steps_per_epoch: 1052
+data_manifest_sha256: d23d85465cb717c5fb43366e0e8b31a53a50732c9b929eb03d88795f68a0a1a0

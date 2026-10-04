@@ -1,0 +1,24 @@
+{
+  "stage": "Stage 2C",
+  "branch": "stage2c/trainval-vehicle-baseline",
+  "preregistration_push": "VERIFIED",
+  "remote_head": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+  "commits": [
+    {
+      "local": "ed2b71b33bc2a8bacb3f1fbe336caa77a910f6ef",
+      "remote": "8eee5ae7b1dc50d3fed5f8a96bdd40dd81b6fc21",
+      "tree": "642c8a85ca1454c636ed3082ab5e22d0aef8aa44",
+      "message": "chore: prepare Stage2C official nuScenes split"
+    },
+    {
+      "local": "b190549dc2a84003f1052265cd8361f2e4eb3577",
+      "remote": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+      "tree": "500f1530a4eaf8ce25a17ccba9c235525d147899",
+      "message": "feat: preprocess trainval vehicle HiVT dataset"
+    }
+  ],
+  "main_unchanged": "bad99d105d5cbd272ac1541555431d0dc1bf3c8b",
+  "stage2_unchanged": "e68745386e140ed7b1e284026d23cf177d57db27",
+  "training_code_commit": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+  "delivery": "GitHub app Git objects; SHA-identical trees checked before branch creation; local branch aligned by fetch"
+}

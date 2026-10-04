@@ -127,7 +127,9 @@ def train_phase(phase, model=None, optimizer=None, warmup_steps=0, warmup_source
         model, optimizer, saved = checkpoint_restore(resume_path, settings["lr"])
         state = saved["phase_state"]; iterator = saved["iterator"]
         if curve_path.exists():
-            with open(curve_path) as f: rows = [{k: float(v) if v else None for k,v in r.items()} for r in csv.DictReader(f)]
+            with open(curve_path) as f:
+                rows = [{k: float(v) if v else None for k,v in r.items()} for r in csv.DictReader(f)
+                        if int(float(r["phase_step"])) <= state["phase_step"]]
         print("RESUME_TRAIN", label, state["phase_step"], iterator, flush=True)
     elif model is None:
         model = model_new(); optimizer = model.optimizer(settings["lr"], c["weight_decay"])

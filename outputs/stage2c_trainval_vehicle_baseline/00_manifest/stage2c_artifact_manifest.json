@@ -13,6 +13,15 @@
       "mtime_ns": 1791111166944599797
     },
     {
+      "relative_path": "00_manifest/stage2c_checkpoint_manifest.json",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 7401,
+      "sha256": "c41db275b55c197d2ecf0c4daa99cb4f0c566045fe4b46d80439d94b7ff39e90",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116863073315941
+    },
+    {
       "relative_path": "00_manifest/stage2c_common.py",
       "description": "configuration, provenance or reproducibility manifest",
       "file_size": 11253,
@@ -40,13 +49,31 @@
       "mtime_ns": 1791109365014361578
     },
     {
+      "relative_path": "00_manifest/stage2c_final_audit.py",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 8891,
+      "sha256": "aead59a18a0c532d7969157cb914ebdd3c8771b29a9edc482590495585b0070d",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791112380752489128
+    },
+    {
       "relative_path": "00_manifest/stage2c_freeze_verification.json",
       "description": "configuration, provenance or reproducibility manifest",
       "file_size": 189,
       "sha256": "5fd758e603fa5c9dcb128879a30c4c50317c9928023cf677883ce9e5d6efe07b",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791111565598659490
+      "mtime_ns": 1791116911265801512
+    },
+    {
+      "relative_path": "00_manifest/stage2c_git_delivery_state.json",
+      "description": "configuration, provenance or reproducibility manifest",
+      "file_size": 1028,
+      "sha256": "d4e5920dcae73dfb2ae8a522b4d95492ee081d0b66e09ae7a83001ac85638347",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791111670544614631
     },
     {
       "relative_path": "00_manifest/stage2c_git_payload.py",
@@ -182,6 +209,15 @@
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
       "mtime_ns": 1791111093683827946
+    },
+    {
+      "relative_path": "02_preprocessed/stage2c_metadata_cache/stage2c_git_payload_preregistration.json",
+      "description": "scene-level graph or preprocessing index",
+      "file_size": 4567027,
+      "sha256": "a53a64cf93fcf92af742384a532baafe073873a47e32b3652b005aee9b4c9058",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791111575754843787
     },
     {
       "relative_path": "02_preprocessed/stage2c_metadata_cache/stage2c_metadata_index_manifest.json",
@@ -7888,6 +7924,42 @@
       "mtime_ns": 1791110983074951500
     },
     {
+      "relative_path": "03_training/stage2c_nll_config.yaml",
+      "description": "step-based optimization configuration or curve",
+      "file_size": 1603,
+      "sha256": "7f7d0d84b3d9d71e991e9658de099d6a85664d3005683a20ea2b0af65f363f56",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114998440214308
+    },
+    {
+      "relative_path": "03_training/stage2c_nll_curve.csv",
+      "description": "step-based optimization configuration or curve",
+      "file_size": 4154,
+      "sha256": "1c1800c14de8e6e22646f3dda100eb239710efa091dbdf1138d5ff45316af0b8",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116862509310283
+    },
+    {
+      "relative_path": "03_training/stage2c_nll_curve.png",
+      "description": "step-based optimization configuration or curve",
+      "file_size": 123817,
+      "sha256": "7495572eee53a98d3598fa67f9ba136475cf00b1c1decf4f2e709f04fcf0af31",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116862897314176
+    },
+    {
+      "relative_path": "03_training/stage2c_nll_summary.json",
+      "description": "step-based optimization configuration or curve",
+      "file_size": 2635,
+      "sha256": "837f4e6efca92615bf63e2785d6b4b37c3b6b56b2f5bd7abacf51a7585c96a6e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116863157316783
+    },
+    {
       "relative_path": "03_training/stage2c_run_training.py",
       "description": "step-based optimization configuration or curve",
       "file_size": 560,
@@ -7899,11 +7971,47 @@
     {
       "relative_path": "03_training/stage2c_train.py",
       "description": "step-based optimization configuration or curve",
-      "file_size": 16054,
-      "sha256": "3d65951b543243853382904504f3226a5db9d5223240016b93331ddbb78ca3ea",
+      "file_size": 16148,
+      "sha256": "0f7d2dffa566812d1a44c724eb10fa4e0e6067a5042c641a305cb4311e74d584",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791111562258599124
+      "mtime_ns": 1791116907885767321
+    },
+    {
+      "relative_path": "03_training/stage2c_warmup_config.yaml",
+      "description": "step-based optimization configuration or curve",
+      "file_size": 1602,
+      "sha256": "dbbad90697131b2144fe95f127bb144dee56d25615daf94e270fb10082cdba6f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791111652004261442
+    },
+    {
+      "relative_path": "03_training/stage2c_warmup_curve.csv",
+      "description": "step-based optimization configuration or curve",
+      "file_size": 7141,
+      "sha256": "d88f96f00c41b8fade6a6befdf3ef2f6eadfa6de81afe8c09e5d3b1107008262",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114993176015726
+    },
+    {
+      "relative_path": "03_training/stage2c_warmup_curve.png",
+      "description": "step-based optimization configuration or curve",
+      "file_size": 157324,
+      "sha256": "0ecb995bd8981bbe2f56299efbf66cfe07d0e8763f244f58cf471bbf06798c90",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114993564030410
+    },
+    {
+      "relative_path": "03_training/stage2c_warmup_summary.json",
+      "description": "step-based optimization configuration or curve",
+      "file_size": 2621,
+      "sha256": "2d8ee1d2b3f351f4fece174beedbc0a8ec92548cb8f50c58fe440bd7a9348b51",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114993856041460
     },
     {
       "relative_path": "04_evaluation/stage2c_evaluate.py",
@@ -7915,13 +8023,496 @@
       "mtime_ns": 1791109943030310566
     },
     {
-      "relative_path": "05_figures/stage2c_figures.py",
-      "description": "validation qualitative figure with six predicted modes",
-      "file_size": 11107,
-      "sha256": "5a64e088ea88056e1b05be42661e10cb6a669aae8c7de7a3838a4b63c472a844",
+      "relative_path": "04_evaluation/stage2c_nll_val_step_00500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2032,
+      "sha256": "22db4920246056cbd6581ab47e4f59b245b1447f3bdd7a255a0d9aaf3948ad0a",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791110143109798350
+      "mtime_ns": 1791115188634541956
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_01000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2035,
+      "sha256": "e7537ad562554a6157ac592afc8ecccced671829b73e72cb9460683f7c40feec",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791115371471401419
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_01500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2033,
+      "sha256": "7335eeb5fb179f2535dcbafd0cdc0edb3eecb83c68251b65904ef88b23266d2e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791115560291547132
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_02000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2036,
+      "sha256": "76273365d7a33f824b78a4aeed1dc442c117fee37bb4e93fadca505fd63741fe",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791115741742948389
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_02500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2035,
+      "sha256": "1f299d16e0271526f43a73751a446be3f29ce24753bce9abda18b60eb1c4566f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791115933822117468
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_03000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2033,
+      "sha256": "5bcc0cdf9cfb5f172f791e110c7d4ce622c845d3a7897cdf4e40f517d7f5953a",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116111640775211
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_03500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2031,
+      "sha256": "0f568681870e402a83ef628ae389b5810d6f425222beede33e5492f854e447d9",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116305335461039
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_04000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2034,
+      "sha256": "f20a9748548e91d2c8c9cc6b5b3e2a652fa7b5a1220a1ddccd15878e3c6b9c1d",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116489349736555
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_04500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2030,
+      "sha256": "4ce759f5b993146df6cd7852138104fa612fb7fa94f2e69ac1ee83b5ba95eda6",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116673771455040
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_nll_val_step_05000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2036,
+      "sha256": "b57eb03481ee28e86b1f64b1074d954216137018ea43204f56385c63894fd925",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116862897314176
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_00500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2025,
+      "sha256": "d521e6019a2440f119c489a7dcda93a1308d7c1c4338ac5b75c659f75542f049",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791111838155934696
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_01000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2028,
+      "sha256": "867500da5afdda8dd902f6dae0652bc01cbb947db332a2d0320141bcedaf9239",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791112023807823229
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_01500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2032,
+      "sha256": "b8ab2095bbbcd6e82fe0b4a9cd9eaecb2586cbb9af3eb83b623eec842fdf2a5b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791112209575870684
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_02000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2031,
+      "sha256": "9d9943812322ce15f3ef5df107a229cc830e2168eff91f80d8285077feee3a55",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791112397238621051
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_02500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2030,
+      "sha256": "b23dce1138ed3658e20f66d5be59f7cf3c470f35c19d394cbc037f2439dba00a",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791112583645235812
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_03000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2036,
+      "sha256": "e26f55bd5c1d0f41d11bf84d06fd5f5d9ee4191501904a019f0d726a76cdee28",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791112769813228743
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_03500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2036,
+      "sha256": "af4d2138a3eb2c0234878e9a61fde4a31ad9f96dcc8bd493d235cb1b626d849b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791112951721097592
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_04000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2033,
+      "sha256": "625a058d553838ea897f4514e2889e645ebb0416236443023cfd07b73844bc7f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791113137891344062
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_04500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2031,
+      "sha256": "b9873973fc4e7e1e0b1ff6c67e177301de1be2f98bed8b6f2ba0f8652a9ac090",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791113325487376526
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_05000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2030,
+      "sha256": "a0ce69f6873302b01f505bf5bb53885324c1cec13cccc83e149deca4457a6219",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791113504244787823
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_05500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2033,
+      "sha256": "c03d08d90c6c3863f8e3f4daae083a671acdc071e06d645fa9ef81425ae4ed98",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791113693074933058
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_06000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2028,
+      "sha256": "c82d22c9101511c8127d031bb9a4e0a8c39e957a13c12de99cf85d3d89812314",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791113880553714713
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_06500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2035,
+      "sha256": "2a628907c9c77bd42f671b40dd322517319d9d14a96825264ce904b95ef3f5ea",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114068348925299
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_07000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2031,
+      "sha256": "607e52e5cbca1ebfc7f20aa149516261258441f8fdf7d30cec3ccd9ac5024150",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114252932441152
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_07500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2033,
+      "sha256": "e65213ce6a7e739c3e880caf20c1e0067986afe19488d64077a838db37d3f403",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114432914691248
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_08000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2032,
+      "sha256": "6a4d4df30f43820a332d129f4fd6b4b84d4bfce095d0f621ad16c637e8b1a867",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114621117296405
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_08500.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2031,
+      "sha256": "6e3c982b6ae7247cff66b44066d41f8fb471f4864ad721ef7730da119d955b4b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114809532076115
+    },
+    {
+      "relative_path": "04_evaluation/stage2c_warmup_val_step_09000.json",
+      "description": "validation evaluation, paired actor errors or bootstrap",
+      "file_size": 2026,
+      "sha256": "5c2b68ef278e77b2fdeed46f1b2f81361380302a04b211622f79192467f78070",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114993568030561
+    },
+    {
+      "relative_path": "05_figures/stage2c_figures.py",
+      "description": "validation qualitative figure with six predicted modes",
+      "file_size": 11429,
+      "sha256": "3a612257d30739fa080cda8324ace22bad5959bd7d4e9c3e426bf40b3ef16726",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116907885767321
+    },
+    {
+      "relative_path": "07_checkpoints/stage2c_best_moving_minfde.pt",
+      "description": "local model and optimizer checkpoint",
+      "file_size": 8123037,
+      "sha256": "3d707b01bc24025cc32d8c97c2c4edd36fb74f1e9040e758a5219aee04e2c2ab",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791115371531402860,
+      "checkpoint_metadata": {
+        "epoch": 0.9505703422053232,
+        "global_step": 10000,
+        "phase_step": 1000,
+        "phase": "original_nll",
+        "LR": 0.0001,
+        "validation_ADE": 0.7070241621904023,
+        "validation_FDE": 1.4241617327713025,
+        "validation_MR": 0.16828876500047246,
+        "moving_ADE": 2.2829636110696363,
+        "moving_FDE": 4.71311909181684,
+        "git_commit_SHA": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+        "config_sha256": "d1e799b2c2bfe05a10ac24f693faf84761f22c481902bc1e102e114c33bd0855",
+        "phase_config_sha256": "7f7d0d84b3d9d71e991e9658de099d6a85664d3005683a20ea2b0af65f363f56",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": true,
+        "warmup_source_step": 6500,
+        "warmup_executed_steps": 9000,
+        "selection_metric": "moving minFDE6; diagnostic only",
+        "sha256": "3d707b01bc24025cc32d8c97c2c4edd36fb74f1e9040e758a5219aee04e2c2ab",
+        "file_size": 8123037,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage2c_best_overall_minfde.pt",
+      "description": "local model and optimizer checkpoint",
+      "file_size": 8124080,
+      "sha256": "86e717bc24b5998dcee73de2152cc4ab549ea22d845c58478501793663744afe",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791115933898118654,
+      "checkpoint_metadata": {
+        "epoch": 2.376425855513308,
+        "global_step": 11500,
+        "phase_step": 2500,
+        "phase": "original_nll",
+        "LR": 0.0001,
+        "validation_ADE": 0.6968370645682739,
+        "validation_FDE": 1.4158230257880924,
+        "validation_MR": 0.16691864310686952,
+        "moving_ADE": 2.2733090228166914,
+        "moving_FDE": 4.720427871992313,
+        "git_commit_SHA": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+        "config_sha256": "d1e799b2c2bfe05a10ac24f693faf84761f22c481902bc1e102e114c33bd0855",
+        "phase_config_sha256": "7f7d0d84b3d9d71e991e9658de099d6a85664d3005683a20ea2b0af65f363f56",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": true,
+        "warmup_source_step": 6500,
+        "warmup_executed_steps": 9000,
+        "selection_metric": "overall minFDE6",
+        "sha256": "86e717bc24b5998dcee73de2152cc4ab549ea22d845c58478501793663744afe",
+        "file_size": 8124080,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage2c_last_checkpoint.pt",
+      "description": "local model and optimizer checkpoint",
+      "file_size": 8119652,
+      "sha256": "ddc179359e41508e86a96d2d2e41167f66800fec18b690dade334122a1f284ce",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116863053315739,
+      "checkpoint_metadata": {
+        "epoch": 4.752851711026616,
+        "global_step": 14000,
+        "phase_step": 5000,
+        "phase": "original_nll",
+        "LR": 0.0001,
+        "validation_ADE": 0.6937290332678142,
+        "validation_FDE": 1.4192550647454973,
+        "validation_MR": 0.16651705565529623,
+        "moving_ADE": 2.262349543977009,
+        "moving_FDE": 4.731692922049452,
+        "git_commit_SHA": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+        "config_sha256": "d1e799b2c2bfe05a10ac24f693faf84761f22c481902bc1e102e114c33bd0855",
+        "phase_config_sha256": "7f7d0d84b3d9d71e991e9658de099d6a85664d3005683a20ea2b0af65f363f56",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": true,
+        "warmup_source_step": 6500,
+        "warmup_executed_steps": 9000,
+        "selection_metric": "last completed validation",
+        "sha256": "ddc179359e41508e86a96d2d2e41167f66800fec18b690dade334122a1f284ce",
+        "file_size": 8119652,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage2c_nll_last_checkpoint.pt",
+      "description": "local model and optimizer checkpoint",
+      "file_size": 8124144,
+      "sha256": "49ff34e755126fae7e37e8c7b1211e8c47ffc8c0d49ac4a3163ef9b4d311384c",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116862977314978,
+      "checkpoint_metadata": {
+        "epoch": 4.752851711026616,
+        "global_step": 14000,
+        "phase_step": 5000,
+        "phase": "original_nll",
+        "LR": 0.0001,
+        "validation_ADE": 0.6937290332678142,
+        "validation_FDE": 1.4192550647454973,
+        "validation_MR": 0.16651705565529623,
+        "moving_ADE": 2.262349543977009,
+        "moving_FDE": 4.731692922049452,
+        "git_commit_SHA": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+        "config_sha256": "d1e799b2c2bfe05a10ac24f693faf84761f22c481902bc1e102e114c33bd0855",
+        "phase_config_sha256": "7f7d0d84b3d9d71e991e9658de099d6a85664d3005683a20ea2b0af65f363f56",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": true,
+        "warmup_source_step": 6500,
+        "warmup_executed_steps": 9000,
+        "selection_metric": "last completed validation",
+        "sha256": "49ff34e755126fae7e37e8c7b1211e8c47ffc8c0d49ac4a3163ef9b4d311384c",
+        "file_size": 8124144,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage2c_warmup_best_moving.pt",
+      "description": "local model and optimizer checkpoint",
+      "file_size": 8122973,
+      "sha256": "6dd584acc470e9fc223d61ef4629936689e1dcb7995ab596aa86bece6b67d988",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114252992441029,
+      "checkpoint_metadata": {
+        "epoch": 6.653992395437262,
+        "global_step": 7000,
+        "phase_step": 7000,
+        "phase": "fixed_scale",
+        "LR": 0.001,
+        "validation_ADE": 0.7303930439575849,
+        "validation_FDE": 1.4501955886992108,
+        "validation_MR": 0.1693754133988472,
+        "moving_ADE": 2.3361499138652206,
+        "moving_FDE": 4.791195887029795,
+        "git_commit_SHA": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+        "config_sha256": "d1e799b2c2bfe05a10ac24f693faf84761f22c481902bc1e102e114c33bd0855",
+        "phase_config_sha256": "dbbad90697131b2144fe95f127bb144dee56d25615daf94e270fb10082cdba6f",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": false,
+        "warmup_source_step": null,
+        "warmup_executed_steps": 0,
+        "selection_metric": "moving minFDE6; diagnostic only",
+        "sha256": "6dd584acc470e9fc223d61ef4629936689e1dcb7995ab596aa86bece6b67d988",
+        "file_size": 8122973,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage2c_warmup_best_overall.pt",
+      "description": "local model and optimizer checkpoint",
+      "file_size": 8124080,
+      "sha256": "fb70c0938da5d6c2d4b51de6ed271b97e654e98b329f338b336d848cab5c1147",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114068408925101,
+      "checkpoint_metadata": {
+        "epoch": 6.178707224334601,
+        "global_step": 6500,
+        "phase_step": 6500,
+        "phase": "fixed_scale",
+        "LR": 0.001,
+        "validation_ADE": 0.7350573283516887,
+        "validation_FDE": 1.4439321586171687,
+        "validation_MR": 0.17504488330341114,
+        "moving_ADE": 2.413896681922586,
+        "moving_FDE": 4.831393454235178,
+        "git_commit_SHA": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+        "config_sha256": "d1e799b2c2bfe05a10ac24f693faf84761f22c481902bc1e102e114c33bd0855",
+        "phase_config_sha256": "dbbad90697131b2144fe95f127bb144dee56d25615daf94e270fb10082cdba6f",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": false,
+        "warmup_source_step": null,
+        "warmup_executed_steps": 0,
+        "selection_metric": "overall minFDE6",
+        "sha256": "fb70c0938da5d6c2d4b51de6ed271b97e654e98b329f338b336d848cab5c1147",
+        "file_size": 8124080,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage2c_warmup_last_checkpoint.pt",
+      "description": "local model and optimizer checkpoint",
+      "file_size": 8127401,
+      "sha256": "d9b99b3c191328a665dc99c14ea0ce43d351b7e0cda85efad83d63a8a1399951",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791114993652033739,
+      "checkpoint_metadata": {
+        "epoch": 8.55513307984791,
+        "global_step": 9000,
+        "phase_step": 9000,
+        "phase": "fixed_scale",
+        "LR": 0.001,
+        "validation_ADE": 0.7827559305169886,
+        "validation_FDE": 1.4844819632352293,
+        "validation_MR": 0.17521024284229425,
+        "moving_ADE": 2.5671339786327767,
+        "moving_FDE": 4.945658833574318,
+        "git_commit_SHA": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+        "config_sha256": "d1e799b2c2bfe05a10ac24f693faf84761f22c481902bc1e102e114c33bd0855",
+        "phase_config_sha256": "dbbad90697131b2144fe95f127bb144dee56d25615daf94e270fb10082cdba6f",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": false,
+        "warmup_source_step": null,
+        "warmup_executed_steps": 0,
+        "selection_metric": "last completed validation",
+        "sha256": "d9b99b3c191328a665dc99c14ea0ce43d351b7e0cda85efad83d63a8a1399951",
+        "file_size": 8127401,
+        "git_tracked": false
+      }
     },
     {
       "relative_path": "08_logs/stage2c_batch_benchmark.log",
@@ -7951,6 +8542,15 @@
       "mtime_ns": 1791110644995346401
     },
     {
+      "relative_path": "08_logs/stage2c_nll_train.log",
+      "description": "reproducible execution log",
+      "file_size": 9923,
+      "sha256": "4383c51a8916bab33327e98353692d92acb91de4d884b36735556f5dd7884602",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116863233317547
+    },
+    {
       "relative_path": "08_logs/stage2c_preprocess.log",
       "description": "reproducible execution log",
       "file_size": 7407,
@@ -7978,6 +8578,15 @@
       "mtime_ns": 1791109530852983714
     },
     {
+      "relative_path": "08_logs/stage2c_training_driver.log",
+      "description": "reproducible execution log",
+      "file_size": 78,
+      "sha256": "1f59976e83ac9a881113748a0f05bb41d21bf93e1c16eac1b6cb74ecbd7797b3",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116864089326133
+    },
+    {
       "relative_path": "08_logs/stage2c_unit_tests.log",
       "description": "reproducible execution log",
       "file_size": 354,
@@ -7987,13 +8596,22 @@
       "mtime_ns": 1791111268169874531
     },
     {
-      "relative_path": "09_reports/stage2c_execution_commands.md",
-      "description": "Stage 2C report or execution documentation",
-      "file_size": 8931,
-      "sha256": "d1b78cfbf576d2b766eac9f22b7c640bbf930ceaa9d1eb81955b9e89838f690f",
+      "relative_path": "08_logs/stage2c_warmup_train.log",
+      "description": "reproducible execution log",
+      "file_size": 17811,
+      "sha256": "8b323e3adf09df5021f15289d103389500b819c9710449a8a9261b22300f258f",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791110992807013021
+      "mtime_ns": 1791114993948044941
+    },
+    {
+      "relative_path": "09_reports/stage2c_execution_commands.md",
+      "description": "Stage 2C report or execution documentation",
+      "file_size": 9599,
+      "sha256": "78c5b16aceeeb7e1450dc54a0bbe8fc30c4627ec38ac834f00c1b4fd62d87223",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791116907885767321
     },
     {
       "relative_path": "09_reports/stage2c_report.py",
