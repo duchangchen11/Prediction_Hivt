@@ -2,7 +2,7 @@
 import json
 
 from preprocessing.common import PROJECT_ROOT, write_json
-from scripts.k6_loss_recovery import ROOT, verify_previous
+from scripts.k6_loss_recovery import ROOT, GROUPS, verify_previous
 
 
 def read(path):
@@ -87,7 +87,14 @@ def main():
                   "| Group | Count | ADE | FDE | MR |", "|---|---:|---:|---:|---:|"]
         for group,v in tiny["final"]["metrics"]["full_horizon"].items():
             lines.append(f"| {group} | {v['count']} | {number(v['minADE'])} | {number(v['minFDE'])} | {number(v['MR'])} |")
-        lines += ["", "Attributes 使用真实 t0 annotation，不能用未来位移重贴 moving/stopped/parked 标签。Stopped 之后起步的车辆保留在 stopped 组。", ""]
+        lines += ["",f"预先固定的 gate：{tiny['gate']}。最终 epoch 验收，不以最佳中间 epoch 替代。",
+                  "Attributes 使用真实 t0 annotation，不能用未来位移重贴 moving/stopped/parked 标签。Stopped 之后起步的车辆保留在 stopped 组。",
+                  "minADE 使用最低FDE的mode（上游HiVT评估约定），independent_minADE另存JSON；MR=末端误差>2m。Actor-window等权平均，重叠窗口不等于独立车辆。", "",
+                  "Partial future 单独统计，不混入约6s主指标：", "",
+                  "| Group | Count | ADE | FDE | MR |", "|---|---:|---:|---:|---:|"]
+        for group,v in tiny["final"]["metrics"]["partial_future"].items():
+            lines.append(f"| {group} | {v['count']} | {number(v['minADE'])} | {number(v['minFDE'])} | {number(v['MR'])} |")
+        lines.append("")
     else:lines += ["NOT_RUN：只有最终 K=6 protocol 确定后允许重跑。", ""]
     lines += ["## 【CV comparison】", ""]
     if comparison:
@@ -101,11 +108,19 @@ def main():
     else:lines += ["NOT_RUN", ""]
     lines += ["", "## 【Mini】", ""]
     if mini:
-        lines += [f"status={mini['status']}；既有 mini train scenes / val scenes。Test 不用于调参或 checkpoint selection。", "",
+        lines += [f"status={mini['status']}；既有 mini train scenes / val scenes。Test 不用于调参或 checkpoint selection。",
+                  f"Fresh seed2022；warm-up {mini['warmup_epochs']} epochs + 原 NLL {mini['NLL_epochs']} epochs。固定LR .001/.0001，无scheduler。最终NLL阶段按val full-horizon overall minFDE选择 epoch {mini['selected_epoch']}，不选择 warm-up 或 test checkpoint。",
+                  "沿用 Stage 1 mini 自定义6/2/2 scene划分，不是官方nuScenes leaderboard；完成工程 baseline 不等于验证模型泛化优于CV。", "",
                   "| Method | Group | Count | ADE | FDE | MR |", "|---|---|---:|---:|---:|---:|"]
         for method in ("CV","HiVT"):
             for group,v in mini[method]["metrics"]["full_horizon"].items():
                 lines.append(f"| {method} | {group} | {v['count']} | {number(v['minADE'])} | {number(v['minFDE'])} | {number(v['MR'])} |")
+        lines += ["", "Partial future：", "", "| Method | Group | Count | ADE | FDE | MR |", "|---|---|---:|---:|---:|---:|"]
+        for method in ("CV","HiVT"):
+            for group,v in mini[method]["metrics"]["partial_future"].items():
+                lines.append(f"| {method} | {group} | {v['count']} | {number(v['minADE'])} | {number(v['minFDE'])} | {number(v['MR'])} |")
+        lines += ["",f"可视化覆盖：{mini['visualization_coverage']}；完整={mini['visualizations_complete']}。GT≥5m的真实 moving 目标，成功FDE≤2m、失败>2m；优先不同instance。图中lane/history/GT/6 modes/best-FDE/probabilities俱全。",
+                  "[可视化清单与每个case的6条完整轨迹](../stage2/k6_loss_recovery/mini_visualization_audit.json)", ""]
     else:lines += ["NOT_RUN：Full Tiny 未 PASS 时禁止启动。"]
     lines += ["", "## 【Decision】", "", f"Stage2 baseline={decision['Stage2_baseline']}；Allow Stage3 discussion={decision['Allow_Stage3_discussion']}。本轮没有执行 Stage 3，也不 merge main。",
               f"Stop reason={decision['hard_stop']}。", "", "命令记录见 docs/stage2b_execution_commands.md；各实验 config/metrics/curve/gradient logs/figures 全部保留。Weights、optimizer states 和完整冻结副本仅保存在本机。"]

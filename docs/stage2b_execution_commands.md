@@ -9,6 +9,9 @@ OMP_NUM_THREADS=4 /home/lrj/anaconda3/envs/ped_intent/bin/python -m unittest tes
 /home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_loss_recovery --experiment A > outputs/stage2/k6_loss_recovery/A_run.txt 2>&1
 /home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_loss_recovery --experiment B > outputs/stage2/k6_loss_recovery/B_run.txt 2>&1
 /home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_baseline --stage reference > outputs/stage2/k6_loss_recovery/tiny_reference_run.txt 2>&1
+/home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_baseline --stage tiny > outputs/stage2/k6_loss_recovery/full_tiny_run.txt 2>&1
+# 以下仅在 full_tiny_result.json 的 status=PASS 后运行。
+/home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_baseline --stage mini > outputs/stage2/k6_loss_recovery/mini_run.txt 2>&1
 /home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.report_k6_loss_recovery > outputs/stage2/k6_loss_recovery/report_run.txt 2>&1
 ```
 
@@ -23,6 +26,8 @@ Full Tiny gate 在任何恢复训练之前保存于 configs/stage2b_baseline.yam
 原失败模型只在 CPU 上重新推理并按真实 attributes 分组；与旧报告 pooled metrics 的差异检查<1e-3m。CV 和旧 HiVT 使用相同236个 full-horizon actor-window（moving63/stopped73/parked90/unknown10），另有146个 partial targets 单独报告。
 
 mini 只在 Full Tiny PASS 后允许运行，沿用 train146/val48 个原窗口；fresh seed2022，warm-up64 epochs + 原 NLL64 epochs，固定LR .001/1e-4。只在最后 probabilistic phase 内按 validation overall full-horizon minFDE 选择 checkpoint。test 不用于调参、checkpoint selection 或可视化选择。数据、K、宽度、层数和地图变量不变。
+
+Mini 成功/失败可视化按真实 t0 vehicle.moving、完整未来、GT位移≥5m 选择，成功 minFDE≤2m、失败>2m，优先不同 instance。另取2个 stopped 和2个 parked；14张图的窗口、误差、全部6条轨迹与概率记录在 mini_visualization_audit.json。图轴覆盖所有 mode，避免截掉非最佳轨迹。Mini 完成状态表示预定训练/评估/可视化完成，不预设其泛化优于 CV。
 
 实验目录拒绝覆盖。不要直接重复带重定向的命令覆盖已有日志；新实验需使用独立名称。首次新 loss 单测捕获了二维 boolean mask 与坐标切片的索引顺序错误，训练前已修正；失败日志保存为 unit_tests_first_attempt.txt，随后7个测试全部通过。
 

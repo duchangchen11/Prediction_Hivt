@@ -9,7 +9,7 @@ import numpy as np
 import torch
 
 
-def plot_case(data, prediction, probabilities, node, path, label):
+def plot_case(data, prediction, probabilities, node, path, label, fit_all_modes=False):
     lanes = torch.stack([data.lane_positions, data.lane_positions+data.lane_vectors], dim=1).cpu().numpy()
     history = data.positions[node, :5].cpu().numpy().copy()
     history[~data.history_mask[node].cpu().numpy()] = np.nan
@@ -31,7 +31,8 @@ def plot_case(data, prediction, probabilities, node, path, label):
                 label=f"Mode {mode+1}: p={prob[mode]:.2f}")
     trajectory = np.vstack([history[-1], pred[best]])
     ax.plot(trajectory[:, 0], trajectory[:, 1], color=colors(best), lw=3, label=f"Best FDE: mode {best+1}")
-    valid = np.concatenate([history[np.isfinite(history).all(axis=1)], future[fmask], pred[best]])
+    shown = pred.reshape(-1, 2) if fit_all_modes else pred[best]
+    valid = np.concatenate([history[np.isfinite(history).all(axis=1)], future[fmask], shown])
     lower, upper = valid.min(axis=0)-10, valid.max(axis=0)+10
     center, half = (lower+upper)/2, max((upper-lower).max()/2, 15)
     ax.set(xlim=(center[0]-half, center[0]+half), ylim=(center[1]-half, center[1]+half),

@@ -150,7 +150,7 @@ def save_checkpoint(path,model,optimizer,config,epoch):
                 "torch_rng":torch.get_rng_state(),"cuda_rng":torch.cuda.get_rng_state_all()},path)
 
 
-def train_phase(name,graphs,attributes,settings,model=None,optimizer=None,stop_gate=None,final_gate=None):
+def train_phase(name,graphs,attributes,settings,model=None,optimizer=None,stop_gate=None,final_gate=None,validation_graphs=None):
     config=read_config()
     directory=ROOT/name
     if directory.exists():raise RuntimeError(f"Refusing to overwrite {directory}")
@@ -169,6 +169,11 @@ def train_phase(name,graphs,attributes,settings,model=None,optimizer=None,stop_g
     write_json(directory/"initial_metrics.json",initial)
     print("INITIAL",name,json.dumps(scalar_row(0,initial,lr)),flush=True)
     rows=[scalar_row(0,initial,lr)];gradients=[];series=[{"epoch":0,"actors":initial["actors"]}]
+    best_validation=None
+    if validation_graphs is not None:
+        initial_validation=evaluate(model,validation_graphs,attributes,phase,b_max)
+        write_json(directory/"initial_validation_metrics.json",initial_validation)
+        rows[0].update({"validation_"+k:initial_validation[k] for k in ("ADE","FDE","MR")})
     loader=DataLoader(graphs,batch_size=config["batch_size"],shuffle=True,num_workers=0)
     started=time.monotonic();passed=False
     for epoch in range(1,settings["max_epochs"]+1):
@@ -188,6 +193,13 @@ def train_phase(name,graphs,attributes,settings,model=None,optimizer=None,stop_g
         if epoch%config["evaluation_interval"]==0 or epoch in (1,settings["max_epochs"]):
             final=evaluate(model,graphs,attributes,phase,b_max)
             rows.append(scalar_row(epoch,final,lr));series.append({"epoch":epoch,"actors":final["actors"]})
+            if validation_graphs is not None:
+                validation=evaluate(model,validation_graphs,attributes,phase,b_max)
+                rows[-1].update({"validation_"+k:validation[k] for k in ("ADE","FDE","MR")})
+                if best_validation is None or validation["FDE"]<best_validation["FDE"]:
+                    best_validation={"epoch":epoch,**validation}
+                    save_checkpoint(directory/"best_validation_checkpoint.pt",model,optimizer,config,epoch)
+                    write_json(directory/"best_validation_metrics.json",best_validation)
             write_csv(directory/"training_curve.csv",rows)
             print("EVAL",name,json.dumps(rows[-1]),flush=True)
             if stop_gate is not None and stop_gate(final):passed=True;break
@@ -200,6 +212,9 @@ def train_phase(name,graphs,attributes,settings,model=None,optimizer=None,stop_g
     result={"experiment":name,"epochs":epoch,"optimizer_steps":epoch*len(loader),"phase":phase,"status":"PASS" if passed else "FAIL",
             "initial_state_sha256":initial_hash,"final_state_sha256":state_hash(model),"elapsed_seconds":time.monotonic()-started,
             "config":config,"initial":initial,"final":final,"gradient_first":gradients[0],"gradient_last":gradients[-1]}
+    if validation_graphs is not None:
+        result["validation_final"]=evaluate(model,validation_graphs,attributes,phase,b_max)
+        result["best_validation"]=best_validation
     write_json(directory/"metrics.json",result);plot_curve(rows,directory/"training_curve.png")
     if len(graphs)==1:
         g=graphs[0];node=int(torch.where(g.target_mask)[0][0])

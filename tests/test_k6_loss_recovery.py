@@ -46,4 +46,20 @@ class RecoveryLossTest(unittest.TestCase):
         self.assertTrue(torch.equal(raw.detach()[...,2:],torch.full_like(raw.detach()[...,2:],10.)))
 
 
+class TinyAcceptanceTest(unittest.TestCase):
+    def test_good_overall_cannot_hide_failed_moving_subgroup(self):
+        from scripts.k6_baseline import tiny_gate, baseline_config
+        reference={"Original HiVT free-scale failed run":{"metrics":{"full_horizon":{
+            "overall":{"count":236,"minADE":5.57,"minFDE":11.27},
+            "vehicle.moving":{"count":63,"minADE":19.11,"minFDE":38.53}}}}}
+        result={"metrics":{"full_horizon":{"overall":{"count":236,"minADE":.7,"minFDE":1.7},
+                 "vehicle.moving":{"count":63,"minADE":19.,"minFDE":38.}}}}
+        gate=baseline_config()["tiny"]["gate"]
+        self.assertFalse(tiny_gate(result,reference,gate))
+        result["metrics"]["full_horizon"]["vehicle.moving"].update(minADE=2.3,minFDE=5.8)
+        self.assertTrue(tiny_gate(result,reference,gate))
+        result["metrics"]["full_horizon"]["vehicle.moving"]["count"]=62
+        self.assertFalse(tiny_gate(result,reference,gate))
+
+
 if __name__=="__main__":unittest.main()

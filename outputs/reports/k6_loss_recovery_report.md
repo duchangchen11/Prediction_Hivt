@@ -53,12 +53,39 @@ architecture unchanged；保留多模态与 mode probability。
 
 ## 【Full Tiny】
 
-NOT_RUN：只有最终 K=6 protocol 确定后允许重跑。
+status=PASS；原16 tiny windows、原 scene/sample tokens 和原所有 vehicle target masks，未更改数据。完整未来作为主要指标，partial 单独报告。
+
+| Group | Count | ADE | FDE | MR |
+|---|---:|---:|---:|---:|
+| overall | 236 | 0.698441 | 1.743845 | 0.135593 |
+| vehicle.moving | 63 | 2.316497 | 5.846476 | 0.460317 |
+| vehicle.stopped | 73 | 0.078665 | 0.220670 | 0.013699 |
+| vehicle.parked | 90 | 0.061126 | 0.071662 | 0.000000 |
+| unknown | 10 | 0.764878 | 2.066085 | 0.200000 |
+
+预先固定的 gate：{'max_overall_to_failed_ADE_ratio': 0.7, 'max_overall_to_failed_FDE_ratio': 0.7, 'max_moving_to_failed_ADE_ratio': 0.5, 'max_moving_to_failed_FDE_ratio': 0.5, 'max_moving_ADE_m': 5.0, 'max_moving_FDE_m': 10.0}。最终 epoch 验收，不以最佳中间 epoch 替代。
+Attributes 使用真实 t0 annotation，不能用未来位移重贴 moving/stopped/parked 标签。Stopped 之后起步的车辆保留在 stopped 组。
+minADE 使用最低FDE的mode（上游HiVT评估约定），independent_minADE另存JSON；MR=末端误差>2m。Actor-window等权平均，重叠窗口不等于独立车辆。
+
+Partial future 单独统计，不混入约6s主指标：
+
+| Group | Count | ADE | FDE | MR |
+|---|---:|---:|---:|---:|
+| overall | 146 | 0.440118 | 0.975739 | 0.068493 |
+| vehicle.moving | 59 | 0.966960 | 2.216158 | 0.152542 |
+| vehicle.stopped | 14 | 0.204389 | 0.479830 | 0.071429 |
+| vehicle.parked | 70 | 0.050389 | 0.058927 | 0.000000 |
+| unknown | 3 | 0.272659 | 0.287328 | 0.000000 |
 
 ## 【CV comparison】
 
-NOT_RUN
+所有方法使用相同原16 tiny windows、相同 eligible masks、相同 t0 attributes；CV 使用最后两个有效 past observations 和真实 timestamps。
 
+| Method | Overall ADE/FDE | Moving ADE/FDE | Stopped ADE/FDE | Parked ADE/FDE |
+|---|---|---|---|---|
+| CV | 1.403184/3.194129 | 4.529295/10.319965 | 0.149589/0.368106 | 0.166303/0.340148 |
+| Original HiVT free-scale failed run | 5.571721/11.274157 | 19.111268/38.526917 | 0.098331/0.234749 | 0.234403/0.416781 |
+| Recovered HiVT | 0.698441/1.743845 | 2.316497/5.846476 | 0.078665/0.220670 | 0.061126/0.071662 |
 
 ## 【Mini】
 
