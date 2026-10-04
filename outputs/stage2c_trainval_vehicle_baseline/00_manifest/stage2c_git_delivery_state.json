@@ -1,8 +1,9 @@
 {
   "stage": "Stage 2C",
   "branch": "stage2c/trainval-vehicle-baseline",
-  "preregistration_push": "VERIFIED",
-  "remote_head": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
+  "push_through_training_and_evaluation": "VERIFIED",
+  "remote_evaluation_head": "c46da4698a5863eedaa7fbff6d69404fb2fcb238",
+  "training_code_commit": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
   "commits": [
     {
       "local": "ed2b71b33bc2a8bacb3f1fbe336caa77a910f6ef",
@@ -15,10 +16,22 @@
       "remote": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
       "tree": "500f1530a4eaf8ce25a17ccba9c235525d147899",
       "message": "feat: preprocess trainval vehicle HiVT dataset"
+    },
+    {
+      "local": "ca03120fcdf5a7021ce1680c9b5a581bd3dea811",
+      "remote": "5449714edfd83f478246805bfe9f87b60c305eb1",
+      "tree": "9640e6daf3f30e7a9cf832352063a93163464f07",
+      "message": "exp: train full vehicle HiVT baseline"
+    },
+    {
+      "local": "3893eb886e58039c746a53095d0878d983c7e153",
+      "remote": "c46da4698a5863eedaa7fbff6d69404fb2fcb238",
+      "tree": "e97e359c003986a5ee99808cfe5ba3245277adcf",
+      "message": "eval: evaluate vehicle HiVT on nuScenes val"
     }
   ],
   "main_unchanged": "bad99d105d5cbd272ac1541555431d0dc1bf3c8b",
   "stage2_unchanged": "e68745386e140ed7b1e284026d23cf177d57db27",
-  "training_code_commit": "68fc9d1fd75b5bebb1f1986c970f7d6638cf895c",
-  "delivery": "GitHub app Git objects; SHA-identical trees checked before branch creation; local branch aligned by fetch"
+  "delivery": "GitHub app Git objects; exact Git tree SHA verified before each fast-forward ref update; local commits retained on backup branches",
+  "final_docs": "Final report commit follows the verified evaluation commit; final ref/tree verification is saved locally in the ignored Stage2C metadata cache and reported to the user."
 }

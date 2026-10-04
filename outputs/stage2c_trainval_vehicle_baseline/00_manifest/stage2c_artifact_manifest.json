@@ -61,10 +61,10 @@
       "relative_path": "00_manifest/stage2c_final_audit.json",
       "description": "configuration, provenance or reproducibility manifest",
       "file_size": 2526,
-      "sha256": "c9bbefd132b3099acd10ac0d47c40efc084d9b56d602688594d6a7a0a47fd391",
+      "sha256": "bcdd786b2467845310f4ca89af4684063137237d1d4e3a70353c479e73697fd6",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791118693868999559
+      "mtime_ns": 1791119771668919532
     },
     {
       "relative_path": "00_manifest/stage2c_final_audit.py",
@@ -82,16 +82,16 @@
       "sha256": "5fd758e603fa5c9dcb128879a30c4c50317c9928023cf677883ce9e5d6efe07b",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791119056981027573
+      "mtime_ns": 1791120600760003460
     },
     {
       "relative_path": "00_manifest/stage2c_git_delivery_state.json",
       "description": "configuration, provenance or reproducibility manifest",
-      "file_size": 1028,
-      "sha256": "d4e5920dcae73dfb2ae8a522b4d95492ee081d0b66e09ae7a83001ac85638347",
+      "file_size": 1768,
+      "sha256": "37753f18e80b1506491178cbf38a6ab63857ac06442961984cbf2337d3fdb6e5",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791111670544614631
+      "mtime_ns": 1791119743968614083
     },
     {
       "relative_path": "00_manifest/stage2c_git_payload.py",
@@ -236,6 +236,15 @@
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
       "mtime_ns": 1791111093683827946
+    },
+    {
+      "relative_path": "02_preprocessed/stage2c_metadata_cache/stage2c_git_payload_evaluation.json",
+      "description": "scene-level graph or preprocessing index",
+      "file_size": 6003627,
+      "sha256": "25b221496686819581fc8aee084250001152ec7691629144eb4cf4dd186841de",
+      "git_tracked": false,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791119258851259925
     },
     {
       "relative_path": "02_preprocessed/stage2c_metadata_cache/stage2c_git_payload_preregistration.json",
@@ -8859,11 +8868,20 @@
     {
       "relative_path": "08_logs/stage2c_final_audit.log",
       "description": "reproducible execution log",
-      "file_size": 3808,
-      "sha256": "fc6df8abe347e19e7b1200676c6c5e61e582cdf7b1e466bbf1e77803e42e122b",
+      "file_size": 5712,
+      "sha256": "6e518eccbcbf4be6af7e71a8f6036561a8426187fb2f24e227628b24e9c78e88",
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
-      "mtime_ns": 1791118693929000227
+      "mtime_ns": 1791119771728920193
+    },
+    {
+      "relative_path": "08_logs/stage2c_git_checks.log",
+      "description": "reproducible execution log",
+      "file_size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791119057885037578
     },
     {
       "relative_path": "08_logs/stage2c_initialize.log",
@@ -8920,6 +8938,15 @@
       "mtime_ns": 1791109530852983714
     },
     {
+      "relative_path": "08_logs/stage2c_report.log",
+      "description": "reproducible execution log",
+      "file_size": 482,
+      "sha256": "bdf55f3277f9777196b1150df9882e827cd69ae9181e040b02d962dc1f119c69",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791119775948966726
+    },
+    {
       "relative_path": "08_logs/stage2c_training_driver.log",
       "description": "reproducible execution log",
       "file_size": 78,
@@ -8947,6 +8974,15 @@
       "mtime_ns": 1791114993948044941
     },
     {
+      "relative_path": "09_reports/stage2c_decision.json",
+      "description": "Stage 2C report or execution documentation",
+      "file_size": 550,
+      "sha256": "d1ac6575ce2396f38a4fcdebb81a666b0ae7d21716d74313fea230a1dd708b79",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791119775820965314
+    },
+    {
       "relative_path": "09_reports/stage2c_execution_commands.md",
       "description": "Stage 2C report or execution documentation",
       "file_size": 10789,
@@ -8954,6 +8990,15 @@
       "git_tracked": true,
       "created_by_stage": "Stage 2C",
       "mtime_ns": 1791118659840620877
+    },
+    {
+      "relative_path": "09_reports/stage2c_final_report.md",
+      "description": "Stage 2C report or execution documentation",
+      "file_size": 7997,
+      "sha256": "bcfc77a7d405210515622c785630ea14c412eb3e5e1178966204f6afa194edc4",
+      "git_tracked": true,
+      "created_by_stage": "Stage 2C",
+      "mtime_ns": 1791119775836965491
     },
     {
       "relative_path": "09_reports/stage2c_report.py",

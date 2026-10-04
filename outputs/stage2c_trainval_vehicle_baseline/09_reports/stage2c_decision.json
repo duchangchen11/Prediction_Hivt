@@ -1,0 +1,20 @@
+{
+  "case": "A",
+  "reason": "Overall and moving ADE/FDE both improve on CV.",
+  "reasonable_generalization": true,
+  "HiVT_to_CV_ratios": {
+    "overall": {
+      "minADE6": 0.5128769472495143,
+      "minFDE6": 0.4466510851435817
+    },
+    "vehicle.moving": {
+      "minADE6": 0.5250650944509739,
+      "minFDE6": 0.45621686963218433
+    }
+  },
+  "Stage2C": "PASS",
+  "Allow_Stage3": "YES",
+  "Stage3_executed": false,
+  "test_used": false,
+  "criterion_note": "A/B compare point estimates; scene bootstrap CI separately quantifies uncertainty."
+}
