@@ -36,12 +36,15 @@ def main():
             ax.set_xlim(center[0]-half,center[0]+half);ax.set_ylim(center[1]-half,center[1]+half)
             ax.set_aspect('equal',adjustable='box');ax.grid(alpha=.1,lw=.4)
             ax.set_title(f"{c['scene_name']} | {c['instance_token'][:8]}\n{name} | history {hm.sum()}/5, future {fm.sum()}/12",fontsize=8)
+            if len(starts)==0:
+                ax.text(.5,.03,'No nearby lane centerline in view',transform=ax.transAxes,ha='center',fontsize=6,color='#6B737D')
             ax.set_xlabel('ego forward x (m)',fontsize=8);ax.set_ylabel('ego left y (m)',fontsize=8)
             ax.tick_params(labelsize=7)
         fig.suptitle(f'{name.title()}: 10 source-verified actor-windows | History + GT + HD Map | no predictions',fontsize=13)
         axes.flat[0].legend(fontsize=7,loc='best')
         stem=ROOT/f'05_figures/stage3_data_{name}_examples'
         for ext in ('png','pdf','svg'):fig.savefig(str(stem)+'.'+ext,dpi=300)
+        svg=Path(str(stem)+'.svg');svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
         plt.close(fig)
         atomic_json(Path(str(stem)+'_audit.json'),{'status':'PASS','source_json':str(source.relative_to(ROOT)),
                     'source_sha256':sha256(source),'actor_windows':10,'all_masks_respected':True,'predictions_plotted':False,

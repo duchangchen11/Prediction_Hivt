@@ -1,0 +1,15 @@
+{
+  "conclusion": "Ten randomly sampled actor-windows per class preserve instance identity and align histories/futures with the t0 ego map frame.",
+  "evidence_chain": "three class panels use saved annotations, masks, real coordinates and source map centerlines; no model predictions",
+  "archetype": "quantitative grid",
+  "backend": "Python/matplotlib",
+  "exports": [
+    "PNG300dpi",
+    "editable SVG",
+    "TrueType PDF"
+  ],
+  "risks": [
+    "partial future masks must be respected",
+    "one coordinate QA sample is not a prediction result"
+  ]
+}

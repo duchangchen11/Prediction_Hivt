@@ -1,0 +1,12 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+BATCH_BENCHMARK {'batch_size': 16, 'status': 'PASS', 'optimizer_steps': 3, 'peak_allocated_bytes': 4136097792, 'peak_reserved_bytes': 4364173312, 'total_device_bytes': 10366025728, 'peak_reserved_fraction': 0.42100737799750904, 'iteration_seconds': [1.4098959460025071, 1.0767382180019922, 1.0810676559995045], 'mean_steady_iteration_seconds': 1.0789029370007484, 'stable_below_90_percent': True, 'NaN': 0, 'Inf': 0}
+BATCH_BENCHMARK {'batch_size': 8, 'status': 'PASS', 'optimizer_steps': 3, 'peak_allocated_bytes': 2166698496, 'peak_reserved_bytes': 2342518784, 'total_device_bytes': 10366025728, 'peak_reserved_fraction': 0.2259804138506572, 'iteration_seconds': [0.5658609759993851, 0.5775287260003097, 0.5564760859997477], 'mean_steady_iteration_seconds': 0.5670024060000287, 'stable_below_90_percent': True, 'NaN': 0, 'Inf': 0}
+BATCH_BENCHMARK {'batch_size': 4, 'status': 'PASS', 'optimizer_steps': 3, 'peak_allocated_bytes': 1120871424, 'peak_reserved_bytes': 1348468736, 'total_device_bytes': 10366025728, 'peak_reserved_fraction': 0.13008541280749558, 'iteration_seconds': [0.3205262110022886, 0.30529021799884504, 0.31386068600113504], 'mean_steady_iteration_seconds': 0.30957545199999004, 'stable_below_90_percent': True, 'NaN': 0, 'Inf': 0}
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/03_no_type_baseline/stage3_train.py", line 236, in <module>
+    if a.stage == "benchmark": benchmark()
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/03_no_type_baseline/stage3_train.py", line 76, in benchmark
+    "sampling": c["data_loader"]["shuffle"], "primary_checkpoint_selection": c["checkpoint_selection"]})
+KeyError: 'checkpoint_selection'
+RECOVERY: all benchmark trials completed successfully. Added the omitted checkpoint_selection config metadata; training plan saved from the measured trials without rerunning optimization. FORMAL_TRAINING_STARTED=False.

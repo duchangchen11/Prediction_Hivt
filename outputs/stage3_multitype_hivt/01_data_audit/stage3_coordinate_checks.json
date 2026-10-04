@@ -1,0 +1,254 @@
+{
+  "status": "PASS",
+  "samples_per_class": 10,
+  "checks": {
+    "vehicle": [
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 5.070321549283108e-07,
+        "heading_max_error_rad": 1.1859004445113897e-08,
+        "source_map_segments_checked": 15,
+        "map_alignment_max_error_m": 3.6407079170845995e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 4.390412868815474e-07,
+        "heading_max_error_rad": 4.4070077809266195e-08,
+        "source_map_segments_checked": 28,
+        "map_alignment_max_error_m": 5.584631118168446e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 1.0332610145269427e-06,
+        "heading_max_error_rad": 4.5120489122751906e-08,
+        "source_map_segments_checked": 40,
+        "map_alignment_max_error_m": 2.856389422908435e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 4.563407856039703e-07,
+        "heading_max_error_rad": 4.987768775777113e-08,
+        "source_map_segments_checked": 16,
+        "map_alignment_max_error_m": 8.91973992116808e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 2.0279128420952475e-07,
+        "heading_max_error_rad": 7.976104221540936e-10,
+        "source_map_segments_checked": 24,
+        "map_alignment_max_error_m": 4.623717640709096e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 15,
+        "coordinate_max_error_m": 1.4316401575342752e-06,
+        "heading_max_error_rad": 1.067101402796311e-07,
+        "source_map_segments_checked": 98,
+        "map_alignment_max_error_m": 1.8692533755586074e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 1.5541397715423955e-06,
+        "heading_max_error_rad": 1.0953734408403193e-07,
+        "source_map_segments_checked": 40,
+        "map_alignment_max_error_m": 3.791656517547624e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 2.8280260266910773e-07,
+        "heading_max_error_rad": 2.0615017248815093e-08,
+        "source_map_segments_checked": 26,
+        "map_alignment_max_error_m": 9.594533125107631e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 14,
+        "coordinate_max_error_m": 3.979992015956668e-07,
+        "heading_max_error_rad": 6.986793632535182e-08,
+        "source_map_segments_checked": 0,
+        "map_alignment_max_error_m": 0.0,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 11,
+        "coordinate_max_error_m": 8.775926971793524e-07,
+        "heading_max_error_rad": 3.09391650077373e-08,
+        "source_map_segments_checked": 0,
+        "map_alignment_max_error_m": 0.0,
+        "status": "PASS"
+      }
+    ],
+    "pedestrian": [
+      {
+        "instance_chain_edges_checked": 12,
+        "coordinate_max_error_m": 6.832428880443331e-07,
+        "heading_max_error_rad": 4.192241398470742e-08,
+        "source_map_segments_checked": 59,
+        "map_alignment_max_error_m": 1.030369361648772e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 8.52748144097859e-07,
+        "heading_max_error_rad": 6.748459568939325e-10,
+        "source_map_segments_checked": 73,
+        "map_alignment_max_error_m": 1.8415728810216807e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 13,
+        "coordinate_max_error_m": 3.869136548928509e-07,
+        "heading_max_error_rad": 5.1676058099303646e-08,
+        "source_map_segments_checked": 22,
+        "map_alignment_max_error_m": 8.429114508000853e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 8.52421862873598e-07,
+        "heading_max_error_rad": 6.391945639450114e-09,
+        "source_map_segments_checked": 38,
+        "map_alignment_max_error_m": 1.0976265866361456e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 14,
+        "coordinate_max_error_m": 1.6496854868819355e-06,
+        "heading_max_error_rad": 1.1297629498585593e-12,
+        "source_map_segments_checked": 16,
+        "map_alignment_max_error_m": 1.781793311028366e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 8.69763766786491e-07,
+        "heading_max_error_rad": 2.7395410384656316e-08,
+        "source_map_segments_checked": 125,
+        "map_alignment_max_error_m": 2.026224585669148e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 6,
+        "coordinate_max_error_m": 1.7130822698163684e-06,
+        "heading_max_error_rad": 1.4834502515270742e-09,
+        "source_map_segments_checked": 13,
+        "map_alignment_max_error_m": 1.7527556844556581e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 11,
+        "coordinate_max_error_m": 1.723220520943869e-06,
+        "heading_max_error_rad": 6.791719187049239e-09,
+        "source_map_segments_checked": 4,
+        "map_alignment_max_error_m": 7.208105515502766e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 11,
+        "coordinate_max_error_m": 6.658265192527324e-07,
+        "heading_max_error_rad": 5.0616054458885174e-08,
+        "source_map_segments_checked": 14,
+        "map_alignment_max_error_m": 9.52951675992919e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 13,
+        "coordinate_max_error_m": 9.570458132657222e-07,
+        "heading_max_error_rad": 1.3112090968547818e-08,
+        "source_map_segments_checked": 44,
+        "map_alignment_max_error_m": 1.839573636957535e-06,
+        "status": "PASS"
+      }
+    ],
+    "bicycle": [
+      {
+        "instance_chain_edges_checked": 6,
+        "coordinate_max_error_m": 2.0106949705223087e-07,
+        "heading_max_error_rad": 1.8322197092857095e-09,
+        "source_map_segments_checked": 27,
+        "map_alignment_max_error_m": 4.494714451935947e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 13,
+        "coordinate_max_error_m": 1.6972435332718305e-06,
+        "heading_max_error_rad": 7.295162696152602e-09,
+        "source_map_segments_checked": 33,
+        "map_alignment_max_error_m": 1.8829826679330906e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 7,
+        "coordinate_max_error_m": 1.4329816622193903e-06,
+        "heading_max_error_rad": 2.3144568928046283e-08,
+        "source_map_segments_checked": 20,
+        "map_alignment_max_error_m": 1.9862709357112032e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 7.554820058430778e-07,
+        "heading_max_error_rad": 8.4809048672696e-09,
+        "source_map_segments_checked": 21,
+        "map_alignment_max_error_m": 9.112476670283748e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 11,
+        "coordinate_max_error_m": 2.871552169381175e-07,
+        "heading_max_error_rad": 3.5751447136078696e-08,
+        "source_map_segments_checked": 23,
+        "map_alignment_max_error_m": 9.336239517231771e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 10,
+        "coordinate_max_error_m": 4.1143448470393196e-07,
+        "heading_max_error_rad": 1.9095791614631707e-10,
+        "source_map_segments_checked": 64,
+        "map_alignment_max_error_m": 9.36700210884026e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 12,
+        "coordinate_max_error_m": 4.263404207449639e-07,
+        "heading_max_error_rad": 1.1569430657942803e-07,
+        "source_map_segments_checked": 24,
+        "map_alignment_max_error_m": 8.342944222269931e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 15,
+        "coordinate_max_error_m": 3.376886752448627e-06,
+        "heading_max_error_rad": 1.8713164351424894e-08,
+        "source_map_segments_checked": 36,
+        "map_alignment_max_error_m": 3.7612361584602304e-06,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 16,
+        "coordinate_max_error_m": 7.69501639297232e-07,
+        "heading_max_error_rad": 1.4946453408271054e-08,
+        "source_map_segments_checked": 47,
+        "map_alignment_max_error_m": 6.434584627167266e-07,
+        "status": "PASS"
+      },
+      {
+        "instance_chain_edges_checked": 11,
+        "coordinate_max_error_m": 7.826342880434822e-07,
+        "heading_max_error_rad": 1.1688400647358321e-07,
+        "source_map_segments_checked": 24,
+        "map_alignment_max_error_m": 1.839504620342601e-06,
+        "status": "PASS"
+      }
+    ]
+  },
+  "all_windows_checked": true,
+  "previous_vehicle_inputs_unchanged": true
+}

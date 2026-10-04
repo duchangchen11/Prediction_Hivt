@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "source_json": "01_data_audit/stage3_data_pedestrian_examples.json",
+  "source_sha256": "03e4c7910123967fbd030dcf2d227a01c8659ccbd51ea2ad5d16f3dc16dcee08",
+  "actor_windows": 10,
+  "all_masks_respected": true,
+  "predictions_plotted": false,
+  "trajectory_smoothing": false,
+  "trajectory_interpolation": false,
+  "source_coordinates_changed": false
+}

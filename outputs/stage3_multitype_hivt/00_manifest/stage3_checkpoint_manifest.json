@@ -1,0 +1,13 @@
+{
+  "checkpoints": {
+    "07_checkpoints/stage3_tiny_last.pt": {
+      "global_step": 2000,
+      "phase": "tiny original_nll",
+      "sha256": "cda0bd87ea759708bbbc0bb0c2052722440005c01a3db65167245ac1acaefc98",
+      "git_tracked": false,
+      "config_sha256": "00de99c822d8fefc20317f4605244def4e29716b5b5ec36609afa9046d17180c",
+      "selection_metric": "tiny diagnostic only",
+      "git_commit_SHA": "7628db79cb7a079c4e45d7e5f46a54010791571a"
+    }
+  }
+}

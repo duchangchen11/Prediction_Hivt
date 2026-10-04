@@ -27,36 +27,63 @@ def choose_tiny():
     candidates = [i for i,r in enumerate(ds.rows) if all(int(r["full_"+c]) > 0 for c in CLASSES)]
     candidates.sort(key=lambda i: (int(ds.rows[i]["actor_count"]), -int(ds.rows[i]["full_bicycle"]), ds.rows[i]["sample_token"]))
     assert candidates, "No train windows contain eligible full-horizon examples of all three classes"
-    graphs = []; totals = [0,0,0]; records = []
+    graphs = []; totals = [0,0,0]; moving_totals=[0,0,0]; records = []
     for i in candidates:
         g = ds[i]
         counts = [int((g.target_mask & (g.agent_type==t)).sum()) for t in range(3)]
+        displacement=torch.linalg.vector_norm(g.y[:,-1],dim=-1)
+        moving=[int((g.full_horizon_mask&(g.agent_type==t)&(displacement>=threshold)).sum())
+                for t,threshold in enumerate(config()["tiny"]["moving_displacement_m"])]
+        # Include actual motion for every class, rather than testing parked-only
+        # examples; this diagnostic selection never changes formal sampling.
+        if not any(n>0 and moving_totals[t]<config()["tiny"]["minimum_moving_targets"][t] for t,n in enumerate(moving)):
+            if all(n>=minimum for n,minimum in zip(totals,config()["tiny"]["minimum_targets"])):continue
+            if moving[2]==0:continue
         graphs.append(g); totals = [a+b for a,b in zip(totals,counts)]
+        moving_totals=[a+b for a,b in zip(moving_totals,moving)]
         records.append({"scene_name":g.scene_name,"scene_token":g.scene_token,"sample_token":g.sample_token,
-                        "actor_count":g.num_nodes,"targets_per_class":counts,"index":i})
-        if all(n>=minimum for n,minimum in zip(totals,config()["tiny"]["minimum_targets"])):break
+                        "actor_count":g.num_nodes,"targets_per_class":counts,"meaningful_motion_targets_per_class":moving,"index":i})
+        if (all(n>=minimum for n,minimum in zip(totals,config()["tiny"]["minimum_targets"]))
+                and all(n>=minimum for n,minimum in zip(moving_totals,config()["tiny"]["minimum_moving_targets"]))):break
     assert all(n>=minimum for n,minimum in zip(totals,config()["tiny"]["minimum_targets"]))
+    assert all(n>=minimum for n,minimum in zip(moving_totals,config()["tiny"]["minimum_moving_targets"]))
     ds.clear()
     atomic_json(ROOT / "00_manifest/stage3_tiny_selection.json",
                 {"selection":"train-only three-class windows, minimum context size for bounded sanity; all actors retained",
-                 "target_counts":dict(zip(CLASSES,totals)),"windows":records,"full_scene_context_preserved":True,"val_used":False})
+                 "target_counts":dict(zip(CLASSES,totals)),"meaningful_motion_target_counts":dict(zip(CLASSES,moving_totals)),
+                 "windows":records,"full_scene_context_preserved":True,"val_used":False})
     return graphs
 
 
 def io_checks(model, graphs):
     model.eval(); data=Batch.from_data_list(graphs[:2]).cuda()
+    assert torch.equal(data.agent_type,torch.cat([g.agent_type for g in graphs[:2]]).cuda())
+    row,col=data.edge_index
+    assert torch.equal(data.batch[row],data.batch[col]),"Actor edge crossed scene windows"
+    lane_graph=torch.repeat_interleave(torch.arange(len(graphs[:2]),device=data.x.device),
+                                       torch.tensor([len(g.lane_vectors) for g in graphs[:2]],device=data.x.device))
+    if data.lane_actor_index.numel():
+        lanes,actors=data.lane_actor_index
+        assert torch.equal(lane_graph[lanes],data.batch[actors]),"Lane relation crossed scene windows"
     working=model_input(data); assert "agent_type" not in working
     with torch.no_grad():
         original=model(working); prediction=model.ego_predictions(original,data)
+        repeated=model(working)
         targets=data.target_mask
         assert prediction[targets].shape==(int(targets.sum()),6,12,2)
         assert original["mode_prob"][targets].shape==(int(targets.sum()),6)
         perturbed=data.clone();perturbed.agent_type=(data.agent_type+1)%3
         perturbed.positions[:,5:]+=1234;perturbed.y-=777
         perturbed.future_mask=~perturbed.future_mask;perturbed.padding_mask[:,5:]=~perturbed.padding_mask[:,5:]
+        perturbed.future_times+=950;perturbed.ego_future+=990
         changed=model(model_input(perturbed))
-        torch.testing.assert_close(original["raw_prediction"],changed["raw_prediction"],rtol=0,atol=0)
-        torch.testing.assert_close(original["mode_prob"],changed["mode_prob"],rtol=0,atol=0)
+        # CUDA scatter reductions can vary at float32 rounding precision even
+        # for an identical repeated input; measure that control explicitly.
+        repeat_delta=float((original["raw_prediction"]-repeated["raw_prediction"]).abs().max())
+        perturb_delta=float((original["raw_prediction"]-changed["raw_prediction"]).abs().max())
+        torch.testing.assert_close(original["raw_prediction"],repeated["raw_prediction"],rtol=0,atol=1e-5)
+        torch.testing.assert_close(original["raw_prediction"],changed["raw_prediction"],rtol=0,atol=1e-5)
+        torch.testing.assert_close(original["mode_prob"],changed["mode_prob"],rtol=0,atol=1e-6)
     per_class={}
     for t,name in enumerate(CLASSES):
         model.zero_grad(set_to_none=True);sample=data.clone();sample.target_mask=data.target_mask&(data.agent_type==t)
@@ -70,6 +97,9 @@ def io_checks(model, graphs):
                 {"status":"PASS","target_prediction_shape":list(prediction[targets].shape),"target_mode_probability_shape":list(original['mode_prob'][targets].shape),
                  "per_class":per_class,"agent_type_removed_from_model_input":True,"type_and_future_perturbation_invariance":True,
                  "model_class":type(model).__name__,"architecture_identical_to_Stage2C":True,"parameter_count":sum(p.numel() for p in model.parameters()),
+                 "actor_and_lane_edges_do_not_cross_scenes":True,"batched_type_ids_not_incremented":True,
+                 "identical_input_repeat_max_abs_delta":repeat_delta,"type_future_perturb_max_abs_delta":perturb_delta,
+                 "CUDA_float32_prediction_absolute_tolerance":1e-5,
                  "smoke_gradients_discarded":True,"validation_optimizer_steps":0})
 
 

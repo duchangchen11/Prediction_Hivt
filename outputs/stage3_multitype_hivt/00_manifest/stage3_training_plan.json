@@ -1,0 +1,13 @@
+{
+  "train_windows": 16898,
+  "batch_size": 16,
+  "steps_per_epoch": 1057,
+  "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "protocol": 1,
+  "warmup_minimum_steps": 2500,
+  "warmup_maximum_steps": 10000,
+  "nll_maximum_steps": 10000,
+  "validation_interval": 500,
+  "sampling": "shuffle scene order and window order within each scene, epoch seed 2022+epoch",
+  "primary_checkpoint_selection": "validation full-horizon overall multi-type minFDE; final checkpoint from post-update original NLL phase"
+}

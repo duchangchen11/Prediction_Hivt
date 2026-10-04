@@ -22,11 +22,12 @@ def main():
     assert abs(measured['metrics']['full_horizon']['overall']['minFDE6']-saved['metadata']['validation_FDE'])<1e-4
     measured.update(primary_checkpoint=str(checkpoint.relative_to(ROOT)),checkpoint_sha256=sha256(checkpoint),checkpoint_metadata=saved['metadata'])
     atomic_json(ROOT/'03_no_type_baseline/stage3_no_type_val_metrics.json',measured)
-    rows=[{'Method':'Multi-Type HiVT (No Type)','Group':g,**values}
+    main_fields=('minADE6','minFDE6','MR6','Top1ADE6','Top1FDE6','NLL')
+    rows=[{'Method':'Multi-Type HiVT (No Type)','Group':g,'Count':values['count'],**{k:values[k] for k in main_fields}}
           for g,values in measured['metrics']['full_horizon'].items()]
     write_csv(ROOT/'06_tables/stage3_no_type_main_results.csv',rows)
     write_csv(ROOT/'06_tables/stage3_no_type_partial_results.csv',
-              [{'Method':'Multi-Type HiVT (No Type)','Group':g,**values} for g,values in measured['metrics']['partial_future'].items()])
+              [{'Method':'Multi-Type HiVT (No Type)','Group':g,'Count':values['count'],**{k:values[k] for k in main_fields}} for g,values in measured['metrics']['partial_future'].items()])
     scene_rows=[{'scene_token':scene,'Horizon':h,'Group':g,**values} for scene,summaries in measured['scenes'].items()
                 for h,groups in summaries.items() for g,values in groups.items()]
     write_csv(ROOT/'04_evaluation/stage3_no_type_scene_metrics.csv',scene_rows)

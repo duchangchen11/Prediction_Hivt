@@ -88,6 +88,7 @@ def main():
             annotation.xyann=(ox+shift_x*72/fig.dpi,oy+shift_y*72/fig.dpi)
         stem=ROOT/'05_figures'/case['name']
         for ext in ('png','pdf','svg'):fig.savefig(str(stem)+'.'+ext,dpi=300)
+        svg=Path(str(stem)+'.svg');svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
         plt.close(fig)
         assert sha256(path)==source_hash
         with Image.open(str(stem)+'.png') as image:image.verify()

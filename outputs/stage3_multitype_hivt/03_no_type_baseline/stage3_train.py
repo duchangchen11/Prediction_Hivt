@@ -67,7 +67,7 @@ def benchmark():
     CONFIG.write_text(yaml.safe_dump(c, sort_keys=False))
     atomic_json(ROOT / "00_manifest/stage3_batch_benchmark.json", {"trials": rows, "selected_batch_size": selected,
                 "selection": "largest stable tested batch below 90% torch reserved VRAM in high-context train windows",
-                "stress_vehicle_counts": [g.num_nodes for g in graphs], "model_changed": False,
+                "stress_actor_counts": [g.num_nodes for g in graphs], "model_changed": False,
                 "baseline_gpu_memory_note": "CUDA display/process allocations outside PyTorch remain separate"})
     atomic_json(ROOT / "00_manifest/stage3_training_plan.json", {"train_windows": len(ds), "batch_size": selected,
                 "steps_per_epoch": math.ceil(len(ds)/selected), "config_sha256": sha256(CONFIG), "protocol": 1,
@@ -100,11 +100,13 @@ def checkpoint_restore(path, lr):
 
 def plot_curve(rows, path):
     if not rows: return
+    phase_boundary=None
     previous = ROOT / "03_no_type_baseline/stage3_warmup_curve.csv"
     if "nll" in path.name and previous.exists():
         with open(previous) as handle:
             warm=[{k:float(v) if v else None for k,v in r.items()} for r in csv.DictReader(handle)]
         rows=warm+rows
+        phase_boundary=max(r['global_step'] for r in warm)
     write_csv(ROOT / "03_no_type_baseline/stage3_no_type_train_curve.csv",rows)
     with open(ROOT / "03_no_type_baseline/stage3_no_type_train_curve.csv") as handle:
         rows=[{k:float(v) if v else None for k,v in r.items()} for r in csv.DictReader(handle)]
@@ -112,6 +114,9 @@ def plot_curve(rows, path):
                           ("val_fde",("VAL_overall_FDE","VAL_vehicle_FDE","VAL_pedestrian_FDE","VAL_bicycle_FDE"))):
         fig,ax=plt.subplots(figsize=(9,4),layout="constrained")
         for key in keys:ax.plot([r['global_step'] for r in rows],[r[key] for r in rows],marker='o',ms=3,label=key)
+        if phase_boundary is not None:
+            ax.axvline(phase_boundary,color='#737B84',ls='--',lw=.9)
+            ax.text(phase_boundary,.98,' warm-up → original NLL',transform=ax.get_xaxis_transform(),va='top',fontsize=8,color='#555E68')
         ax.set_xlabel('Cumulative executed optimizer step');ax.set_ylabel('Loss' if category=='loss' else 'Full-horizon VAL FDE (m)')
         ax.grid(alpha=.15);ax.legend(fontsize=9)
         fig.savefig(ROOT / f"03_no_type_baseline/stage3_no_type_{category}_curve.png",dpi=200);plt.close(fig)

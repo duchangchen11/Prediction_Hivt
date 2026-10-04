@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "target_prediction_shape": [
+    9,
+    6,
+    12,
+    2
+  ],
+  "target_mode_probability_shape": [
+    9,
+    6
+  ],
+  "per_class": {
+    "vehicle": {
+      "targets": 3,
+      "loss": 12.373116493225098,
+      "finite_nonzero_gradient": true
+    },
+    "pedestrian": {
+      "targets": 4,
+      "loss": 4.563872814178467,
+      "finite_nonzero_gradient": true
+    },
+    "bicycle": {
+      "targets": 2,
+      "loss": 5.629547595977783,
+      "finite_nonzero_gradient": true
+    }
+  },
+  "agent_type_removed_from_model_input": true,
+  "type_and_future_perturbation_invariance": true,
+  "model_class": "HiVTLossRecovery",
+  "architecture_identical_to_Stage2C": true,
+  "parameter_count": 645809,
+  "actor_and_lane_edges_do_not_cross_scenes": true,
+  "batched_type_ids_not_incremented": true,
+  "identical_input_repeat_max_abs_delta": 1.2516975402832031e-06,
+  "type_future_perturb_max_abs_delta": 1.1920928955078125e-06,
+  "CUDA_float32_prediction_absolute_tolerance": 1e-05,
+  "smoke_gradients_discarded": true,
+  "validation_optimizer_steps": 0
+}

@@ -1,0 +1,693 @@
+{
+  "statistics": [
+    {
+      "split": "train",
+      "class": "vehicle",
+      "total_target_actor_windows": 315257,
+      "context_actor_windows": 336643,
+      "full_horizon": 213745,
+      "partial_future": 101512,
+      "history_valid_count_sum": 1507793,
+      "future_valid_count_sum": 3167533,
+      "mean_history_valid_length": 4.782742334032234,
+      "mean_future_valid_length": 10.047462863631894
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "total_target_actor_windows": 109934,
+      "context_actor_windows": 117086,
+      "full_horizon": 73202,
+      "partial_future": 36732,
+      "history_valid_count_sum": 525927,
+      "future_valid_count_sum": 1100210,
+      "mean_history_valid_length": 4.784024960430804,
+      "mean_future_valid_length": 10.007913839212618
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "total_target_actor_windows": 5390,
+      "context_actor_windows": 5895,
+      "full_horizon": 3138,
+      "partial_future": 2252,
+      "history_valid_count_sum": 25315,
+      "future_valid_count_sum": 50900,
+      "mean_history_valid_length": 4.696660482374768,
+      "mean_future_valid_length": 9.443413729128014
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "total_target_actor_windows": 62981,
+      "context_actor_windows": 67312,
+      "full_horizon": 42332,
+      "partial_future": 20649,
+      "history_valid_count_sum": 301317,
+      "future_valid_count_sum": 630108,
+      "mean_history_valid_length": 4.784252393579016,
+      "mean_future_valid_length": 10.004731585716327
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "total_target_actor_windows": 20740,
+      "context_actor_windows": 22343,
+      "full_horizon": 12002,
+      "partial_future": 8738,
+      "history_valid_count_sum": 98902,
+      "future_valid_count_sum": 196310,
+      "mean_history_valid_length": 4.768659594985535,
+      "mean_future_valid_length": 9.465284474445516
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "total_target_actor_windows": 1306,
+      "context_actor_windows": 1441,
+      "full_horizon": 656,
+      "partial_future": 650,
+      "history_valid_count_sum": 6093,
+      "future_valid_count_sum": 11716,
+      "mean_history_valid_length": 4.665390505359878,
+      "mean_future_valid_length": 8.970903522205207
+    }
+  ],
+  "endpoint_displacement_bins": [
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "0–1m",
+      "count": 163976
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "1–2m",
+      "count": 3756
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "2–5m",
+      "count": 3282
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "5–10m",
+      "count": 3761
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "10–20m",
+      "count": 6855
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "20–40m",
+      "count": 15648
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": ">40m",
+      "count": 16467
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "0–1m",
+      "count": 77222
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "1–2m",
+      "count": 1763
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "2–5m",
+      "count": 2363
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "5–10m",
+      "count": 3487
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "10–20m",
+      "count": 5443
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "20–40m",
+      "count": 7287
+    },
+    {
+      "split": "train",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": ">40m",
+      "count": 3947
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "0–1m",
+      "count": 20043
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "1–2m",
+      "count": 1764
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "2–5m",
+      "count": 4451
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "5–10m",
+      "count": 43890
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "10–20m",
+      "count": 2932
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "20–40m",
+      "count": 122
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": ">40m",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "0–1m",
+      "count": 15114
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "1–2m",
+      "count": 3800
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "2–5m",
+      "count": 9747
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "5–10m",
+      "count": 7920
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "10–20m",
+      "count": 148
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "20–40m",
+      "count": 3
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": ">40m",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "0–1m",
+      "count": 2244
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "1–2m",
+      "count": 26
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "2–5m",
+      "count": 58
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "5–10m",
+      "count": 82
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "10–20m",
+      "count": 181
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "20–40m",
+      "count": 513
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": ">40m",
+      "count": 34
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "0–1m",
+      "count": 1816
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "1–2m",
+      "count": 29
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "2–5m",
+      "count": 63
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "5–10m",
+      "count": 98
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "10–20m",
+      "count": 134
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "20–40m",
+      "count": 111
+    },
+    {
+      "split": "train",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": ">40m",
+      "count": 1
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "0–1m",
+      "count": 30878
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "1–2m",
+      "count": 869
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "2–5m",
+      "count": 841
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "5–10m",
+      "count": 945
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "10–20m",
+      "count": 1452
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": "20–40m",
+      "count": 3419
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "full_horizon",
+      "bin": ">40m",
+      "count": 3928
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "0–1m",
+      "count": 14709
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "1–2m",
+      "count": 524
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "2–5m",
+      "count": 741
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "5–10m",
+      "count": 900
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "10–20m",
+      "count": 1381
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": "20–40m",
+      "count": 1699
+    },
+    {
+      "split": "val",
+      "class": "vehicle",
+      "horizon": "partial_future",
+      "bin": ">40m",
+      "count": 695
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "0–1m",
+      "count": 3192
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "1–2m",
+      "count": 313
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "2–5m",
+      "count": 916
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "5–10m",
+      "count": 7321
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "10–20m",
+      "count": 260
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": "20–40m",
+      "count": 0
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "full_horizon",
+      "bin": ">40m",
+      "count": 0
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "0–1m",
+      "count": 3806
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "1–2m",
+      "count": 925
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "2–5m",
+      "count": 2331
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "5–10m",
+      "count": 1659
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "10–20m",
+      "count": 17
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": "20–40m",
+      "count": 0
+    },
+    {
+      "split": "val",
+      "class": "pedestrian",
+      "horizon": "partial_future",
+      "bin": ">40m",
+      "count": 0
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "0–1m",
+      "count": 501
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "1–2m",
+      "count": 10
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "2–5m",
+      "count": 13
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "5–10m",
+      "count": 12
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "10–20m",
+      "count": 32
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": "20–40m",
+      "count": 80
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "full_horizon",
+      "bin": ">40m",
+      "count": 8
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "0–1m",
+      "count": 557
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "1–2m",
+      "count": 12
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "2–5m",
+      "count": 12
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "5–10m",
+      "count": 16
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "10–20m",
+      "count": 30
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": "20–40m",
+      "count": 23
+    },
+    {
+      "split": "val",
+      "class": "bicycle",
+      "horizon": "partial_future",
+      "bin": ">40m",
+      "count": 0
+    }
+  ],
+  "class_ratio_counts": {
+    "train": [
+      315257,
+      109934,
+      5390
+    ],
+    "val": [
+      62981,
+      20740,
+      1306
+    ]
+  },
+  "class_ratio_normalized_to_bicycle": {
+    "train": [
+      58.489239332096474,
+      20.39591836734694,
+      1.0
+    ],
+    "val": [
+      48.224349157733535,
+      15.880551301684532,
+      1.0
+    ]
+  },
+  "oversampling": false,
+  "class_balanced_loss": false,
+  "target_definition": ">=2 observed history, >=1 future; current t0 actors"
+}

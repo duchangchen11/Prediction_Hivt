@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "initial": {
+    "overall": {
+      "count": 29,
+      "ADE": 7.379493199545761,
+      "FDE": 12.643411594218222,
+      "Top1ADE": 7.3942116375627185,
+      "Top1FDE": 12.882738034786849,
+      "NLL": 6.371219721333734,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 13.341507429426366,
+      "FDE": 23.736714315685358,
+      "Top1ADE": 13.333788833834909,
+      "Top1FDE": 23.874359240586106,
+      "NLL": 10.93945423039523,
+      "fixed_scale_regression_loss": 9.263578116893768
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 1.8160826166470845,
+      "FDE": 2.060203429311514,
+      "Top1ADE": 1.848740761478742,
+      "Top1FDE": 2.44800745199124,
+      "NLL": 2.171417474746704,
+      "fixed_scale_regression_loss": 0.9020293951034546
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 7.57595494389534,
+      "FDE": 13.47210626800855,
+      "Top1ADE": 7.595928529898326,
+      "Top1FDE": 13.60089365641276,
+      "NLL": 6.395727614561717,
+      "fixed_scale_regression_loss": 4.307012875874837
+    }
+  },
+  "final": {
+    "overall": {
+      "count": 29,
+      "ADE": 0.04170547536542189,
+      "FDE": 0.05152315948286961,
+      "Top1ADE": 0.04879024745254167,
+      "Top1FDE": 0.07782121463518205,
+      "NLL": -2.351984163810467,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 0.04391173988750035,
+      "FDE": 0.03099145283075896,
+      "Top1ADE": 0.05139719030227174,
+      "Top1FDE": 0.05254587425257672,
+      "NLL": -2.513856226747686,
+      "fixed_scale_regression_loss": 0.029887212595591944
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 0.03699384598682324,
+      "FDE": 0.05503357465689381,
+      "Top1ADE": 0.04533473138387004,
+      "Top1FDE": 0.08254892037560542,
+      "NLL": -2.3882887164751687,
+      "fixed_scale_regression_loss": 0.01822001487016678
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 0.04708391583214203,
+      "FDE": 0.08214379133035739,
+      "Top1ADE": 0.05092188436537981,
+      "Top1FDE": 0.11470392718911171,
+      "NLL": -1.9826096097628276,
+      "fixed_scale_regression_loss": 0.02918169895807902
+    }
+  },
+  "criterion": "all three classes ADE, FDE and fixed-scale diagnostic regression decrease at least50%; all losses/gradients finite",
+  "warmup_steps": 1000,
+  "warmup_best_source_step": 1000,
+  "nll_steps": 1000,
+  "global_steps": 2000,
+  "elapsed_seconds": 247.4337440570016,
+  "full_scene_context_preserved": true,
+  "train_only": true,
+  "model_discarded_for_formal_training": true,
+  "NaN": 0,
+  "Inf": 0,
+  "optimizer_state_preserved_from_best_warmup": true,
+  "git_commit_SHA": "7628db79cb7a079c4e45d7e5f46a54010791571a",
+  "config_sha256": "00de99c822d8fefc20317f4605244def4e29716b5b5ec36609afa9046d17180c"
+}

@@ -25,9 +25,6 @@ nll:
   maximum_steps: 10000
   plateau_patience: 5
 validation_interval_steps: 500
-checkpoint_selection: validation full-horizon overall multi-type minFDE; final checkpoint from post-update original NLL phase
-moving_checkpoint_diagnostic_only: true
-optimizer_state_preserved: true
 data_loader:
   workers: 0
   cache_scenes: 2

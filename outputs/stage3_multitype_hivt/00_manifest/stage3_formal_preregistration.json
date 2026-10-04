@@ -1,0 +1,19 @@
+{
+  "status": "GATES_PASS_BEFORE_FORMAL_TRAINING",
+  "formal_optimization_started": false,
+  "protocol": 1,
+  "batch_size": 16,
+  "model_type_embedding": false,
+  "source_sha256": {
+    "00_manifest/stage3_common.py": "83edfff64aa90d818d58b136d49763aa68e32bc68807525906895eb32e457ad2",
+    "00_manifest/stage3_config.yaml": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+    "02_preprocessed/stage3_dataset.py": "d00360d0abd6ff4edfb61c6f332ccf482808b87e210e1655e9cb1d5e3e4cae35",
+    "03_no_type_baseline/stage3_train.py": "9df14faf9a8924e3ebc0b41b90ad28c33280700dba1e61bc9c44485f61b977d0",
+    "03_no_type_baseline/stage3_tiny.py": "1be63458f89986d8f1370f02049b484509bfe67a97207e8d017d51afa401e9a3"
+  },
+  "tiny_status": "PASS",
+  "tiny_git_at_run": "7628db79cb7a079c4e45d7e5f46a54010791571a",
+  "tiny_trace_note": "Tiny QA helper refinements were present as local working-tree changes at execution; these exact helper files and tiny config/results are included in the gates commit. Official HiVT model and optimizer code remained SHA-frozen.",
+  "prior_branch_head": "7628db79cb7a079c4e45d7e5f46a54010791571a",
+  "data_manifest_sha256": "90e847b377b272c4b273ff8c2907c0b781744f92178d11661965232f9d091347"
+}

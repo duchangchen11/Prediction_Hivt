@@ -1,0 +1,5127 @@
+{
+  "status": "COMPLETE",
+  "scope": "full official trainval",
+  "scene_shards": 850,
+  "resumed_shards": 0,
+  "failed_shards": 0,
+  "NaN": 0,
+  "Inf": 0,
+  "test_used": false,
+  "shards": [
+    {
+      "split": "train",
+      "scene_name": "scene-0001",
+      "relative_path": "02_preprocessed/train/stage3_scene-0001.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0002",
+      "relative_path": "02_preprocessed/train/stage3_scene-0002.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0004",
+      "relative_path": "02_preprocessed/train/stage3_scene-0004.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0005",
+      "relative_path": "02_preprocessed/train/stage3_scene-0005.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0006",
+      "relative_path": "02_preprocessed/train/stage3_scene-0006.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0007",
+      "relative_path": "02_preprocessed/train/stage3_scene-0007.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0008",
+      "relative_path": "02_preprocessed/train/stage3_scene-0008.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0009",
+      "relative_path": "02_preprocessed/train/stage3_scene-0009.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0010",
+      "relative_path": "02_preprocessed/train/stage3_scene-0010.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0011",
+      "relative_path": "02_preprocessed/train/stage3_scene-0011.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0019",
+      "relative_path": "02_preprocessed/train/stage3_scene-0019.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0020",
+      "relative_path": "02_preprocessed/train/stage3_scene-0020.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0021",
+      "relative_path": "02_preprocessed/train/stage3_scene-0021.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0022",
+      "relative_path": "02_preprocessed/train/stage3_scene-0022.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0023",
+      "relative_path": "02_preprocessed/train/stage3_scene-0023.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0024",
+      "relative_path": "02_preprocessed/train/stage3_scene-0024.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0025",
+      "relative_path": "02_preprocessed/train/stage3_scene-0025.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0026",
+      "relative_path": "02_preprocessed/train/stage3_scene-0026.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0027",
+      "relative_path": "02_preprocessed/train/stage3_scene-0027.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0028",
+      "relative_path": "02_preprocessed/train/stage3_scene-0028.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0029",
+      "relative_path": "02_preprocessed/train/stage3_scene-0029.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0030",
+      "relative_path": "02_preprocessed/train/stage3_scene-0030.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0031",
+      "relative_path": "02_preprocessed/train/stage3_scene-0031.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0032",
+      "relative_path": "02_preprocessed/train/stage3_scene-0032.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0033",
+      "relative_path": "02_preprocessed/train/stage3_scene-0033.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0034",
+      "relative_path": "02_preprocessed/train/stage3_scene-0034.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0041",
+      "relative_path": "02_preprocessed/train/stage3_scene-0041.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0042",
+      "relative_path": "02_preprocessed/train/stage3_scene-0042.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0043",
+      "relative_path": "02_preprocessed/train/stage3_scene-0043.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0044",
+      "relative_path": "02_preprocessed/train/stage3_scene-0044.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0045",
+      "relative_path": "02_preprocessed/train/stage3_scene-0045.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0046",
+      "relative_path": "02_preprocessed/train/stage3_scene-0046.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0047",
+      "relative_path": "02_preprocessed/train/stage3_scene-0047.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0048",
+      "relative_path": "02_preprocessed/train/stage3_scene-0048.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0049",
+      "relative_path": "02_preprocessed/train/stage3_scene-0049.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0050",
+      "relative_path": "02_preprocessed/train/stage3_scene-0050.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0051",
+      "relative_path": "02_preprocessed/train/stage3_scene-0051.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0052",
+      "relative_path": "02_preprocessed/train/stage3_scene-0052.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0053",
+      "relative_path": "02_preprocessed/train/stage3_scene-0053.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0054",
+      "relative_path": "02_preprocessed/train/stage3_scene-0054.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0055",
+      "relative_path": "02_preprocessed/train/stage3_scene-0055.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0056",
+      "relative_path": "02_preprocessed/train/stage3_scene-0056.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0057",
+      "relative_path": "02_preprocessed/train/stage3_scene-0057.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0058",
+      "relative_path": "02_preprocessed/train/stage3_scene-0058.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0059",
+      "relative_path": "02_preprocessed/train/stage3_scene-0059.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0060",
+      "relative_path": "02_preprocessed/train/stage3_scene-0060.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0061",
+      "relative_path": "02_preprocessed/train/stage3_scene-0061.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0062",
+      "relative_path": "02_preprocessed/train/stage3_scene-0062.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0063",
+      "relative_path": "02_preprocessed/train/stage3_scene-0063.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0064",
+      "relative_path": "02_preprocessed/train/stage3_scene-0064.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0065",
+      "relative_path": "02_preprocessed/train/stage3_scene-0065.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0066",
+      "relative_path": "02_preprocessed/train/stage3_scene-0066.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0067",
+      "relative_path": "02_preprocessed/train/stage3_scene-0067.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0068",
+      "relative_path": "02_preprocessed/train/stage3_scene-0068.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0069",
+      "relative_path": "02_preprocessed/train/stage3_scene-0069.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0070",
+      "relative_path": "02_preprocessed/train/stage3_scene-0070.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0071",
+      "relative_path": "02_preprocessed/train/stage3_scene-0071.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0072",
+      "relative_path": "02_preprocessed/train/stage3_scene-0072.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0073",
+      "relative_path": "02_preprocessed/train/stage3_scene-0073.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0074",
+      "relative_path": "02_preprocessed/train/stage3_scene-0074.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0075",
+      "relative_path": "02_preprocessed/train/stage3_scene-0075.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0076",
+      "relative_path": "02_preprocessed/train/stage3_scene-0076.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0120",
+      "relative_path": "02_preprocessed/train/stage3_scene-0120.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0121",
+      "relative_path": "02_preprocessed/train/stage3_scene-0121.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0122",
+      "relative_path": "02_preprocessed/train/stage3_scene-0122.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0123",
+      "relative_path": "02_preprocessed/train/stage3_scene-0123.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0124",
+      "relative_path": "02_preprocessed/train/stage3_scene-0124.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0125",
+      "relative_path": "02_preprocessed/train/stage3_scene-0125.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0126",
+      "relative_path": "02_preprocessed/train/stage3_scene-0126.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0127",
+      "relative_path": "02_preprocessed/train/stage3_scene-0127.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0128",
+      "relative_path": "02_preprocessed/train/stage3_scene-0128.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0129",
+      "relative_path": "02_preprocessed/train/stage3_scene-0129.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0130",
+      "relative_path": "02_preprocessed/train/stage3_scene-0130.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0131",
+      "relative_path": "02_preprocessed/train/stage3_scene-0131.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0132",
+      "relative_path": "02_preprocessed/train/stage3_scene-0132.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0133",
+      "relative_path": "02_preprocessed/train/stage3_scene-0133.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0134",
+      "relative_path": "02_preprocessed/train/stage3_scene-0134.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0135",
+      "relative_path": "02_preprocessed/train/stage3_scene-0135.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0138",
+      "relative_path": "02_preprocessed/train/stage3_scene-0138.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0139",
+      "relative_path": "02_preprocessed/train/stage3_scene-0139.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0149",
+      "relative_path": "02_preprocessed/train/stage3_scene-0149.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0150",
+      "relative_path": "02_preprocessed/train/stage3_scene-0150.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0151",
+      "relative_path": "02_preprocessed/train/stage3_scene-0151.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0152",
+      "relative_path": "02_preprocessed/train/stage3_scene-0152.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0154",
+      "relative_path": "02_preprocessed/train/stage3_scene-0154.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0155",
+      "relative_path": "02_preprocessed/train/stage3_scene-0155.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0157",
+      "relative_path": "02_preprocessed/train/stage3_scene-0157.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0158",
+      "relative_path": "02_preprocessed/train/stage3_scene-0158.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0159",
+      "relative_path": "02_preprocessed/train/stage3_scene-0159.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0160",
+      "relative_path": "02_preprocessed/train/stage3_scene-0160.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0161",
+      "relative_path": "02_preprocessed/train/stage3_scene-0161.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0162",
+      "relative_path": "02_preprocessed/train/stage3_scene-0162.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0163",
+      "relative_path": "02_preprocessed/train/stage3_scene-0163.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0164",
+      "relative_path": "02_preprocessed/train/stage3_scene-0164.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0165",
+      "relative_path": "02_preprocessed/train/stage3_scene-0165.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0166",
+      "relative_path": "02_preprocessed/train/stage3_scene-0166.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0167",
+      "relative_path": "02_preprocessed/train/stage3_scene-0167.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0168",
+      "relative_path": "02_preprocessed/train/stage3_scene-0168.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0170",
+      "relative_path": "02_preprocessed/train/stage3_scene-0170.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0171",
+      "relative_path": "02_preprocessed/train/stage3_scene-0171.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0172",
+      "relative_path": "02_preprocessed/train/stage3_scene-0172.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0173",
+      "relative_path": "02_preprocessed/train/stage3_scene-0173.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0174",
+      "relative_path": "02_preprocessed/train/stage3_scene-0174.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0175",
+      "relative_path": "02_preprocessed/train/stage3_scene-0175.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0176",
+      "relative_path": "02_preprocessed/train/stage3_scene-0176.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0177",
+      "relative_path": "02_preprocessed/train/stage3_scene-0177.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0178",
+      "relative_path": "02_preprocessed/train/stage3_scene-0178.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0179",
+      "relative_path": "02_preprocessed/train/stage3_scene-0179.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0180",
+      "relative_path": "02_preprocessed/train/stage3_scene-0180.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0181",
+      "relative_path": "02_preprocessed/train/stage3_scene-0181.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0182",
+      "relative_path": "02_preprocessed/train/stage3_scene-0182.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0183",
+      "relative_path": "02_preprocessed/train/stage3_scene-0183.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0184",
+      "relative_path": "02_preprocessed/train/stage3_scene-0184.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0185",
+      "relative_path": "02_preprocessed/train/stage3_scene-0185.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0187",
+      "relative_path": "02_preprocessed/train/stage3_scene-0187.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0188",
+      "relative_path": "02_preprocessed/train/stage3_scene-0188.pt",
+      "windows": 16
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0190",
+      "relative_path": "02_preprocessed/train/stage3_scene-0190.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0191",
+      "relative_path": "02_preprocessed/train/stage3_scene-0191.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0192",
+      "relative_path": "02_preprocessed/train/stage3_scene-0192.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0193",
+      "relative_path": "02_preprocessed/train/stage3_scene-0193.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0194",
+      "relative_path": "02_preprocessed/train/stage3_scene-0194.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0195",
+      "relative_path": "02_preprocessed/train/stage3_scene-0195.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0196",
+      "relative_path": "02_preprocessed/train/stage3_scene-0196.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0199",
+      "relative_path": "02_preprocessed/train/stage3_scene-0199.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0200",
+      "relative_path": "02_preprocessed/train/stage3_scene-0200.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0202",
+      "relative_path": "02_preprocessed/train/stage3_scene-0202.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0203",
+      "relative_path": "02_preprocessed/train/stage3_scene-0203.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0204",
+      "relative_path": "02_preprocessed/train/stage3_scene-0204.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0206",
+      "relative_path": "02_preprocessed/train/stage3_scene-0206.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0207",
+      "relative_path": "02_preprocessed/train/stage3_scene-0207.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0208",
+      "relative_path": "02_preprocessed/train/stage3_scene-0208.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0209",
+      "relative_path": "02_preprocessed/train/stage3_scene-0209.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0210",
+      "relative_path": "02_preprocessed/train/stage3_scene-0210.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0211",
+      "relative_path": "02_preprocessed/train/stage3_scene-0211.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0212",
+      "relative_path": "02_preprocessed/train/stage3_scene-0212.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0213",
+      "relative_path": "02_preprocessed/train/stage3_scene-0213.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0214",
+      "relative_path": "02_preprocessed/train/stage3_scene-0214.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0218",
+      "relative_path": "02_preprocessed/train/stage3_scene-0218.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0219",
+      "relative_path": "02_preprocessed/train/stage3_scene-0219.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0220",
+      "relative_path": "02_preprocessed/train/stage3_scene-0220.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0222",
+      "relative_path": "02_preprocessed/train/stage3_scene-0222.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0224",
+      "relative_path": "02_preprocessed/train/stage3_scene-0224.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0225",
+      "relative_path": "02_preprocessed/train/stage3_scene-0225.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0226",
+      "relative_path": "02_preprocessed/train/stage3_scene-0226.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0227",
+      "relative_path": "02_preprocessed/train/stage3_scene-0227.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0228",
+      "relative_path": "02_preprocessed/train/stage3_scene-0228.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0229",
+      "relative_path": "02_preprocessed/train/stage3_scene-0229.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0230",
+      "relative_path": "02_preprocessed/train/stage3_scene-0230.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0231",
+      "relative_path": "02_preprocessed/train/stage3_scene-0231.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0232",
+      "relative_path": "02_preprocessed/train/stage3_scene-0232.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0233",
+      "relative_path": "02_preprocessed/train/stage3_scene-0233.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0234",
+      "relative_path": "02_preprocessed/train/stage3_scene-0234.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0235",
+      "relative_path": "02_preprocessed/train/stage3_scene-0235.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0236",
+      "relative_path": "02_preprocessed/train/stage3_scene-0236.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0237",
+      "relative_path": "02_preprocessed/train/stage3_scene-0237.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0238",
+      "relative_path": "02_preprocessed/train/stage3_scene-0238.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0239",
+      "relative_path": "02_preprocessed/train/stage3_scene-0239.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0240",
+      "relative_path": "02_preprocessed/train/stage3_scene-0240.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0241",
+      "relative_path": "02_preprocessed/train/stage3_scene-0241.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0242",
+      "relative_path": "02_preprocessed/train/stage3_scene-0242.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0243",
+      "relative_path": "02_preprocessed/train/stage3_scene-0243.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0244",
+      "relative_path": "02_preprocessed/train/stage3_scene-0244.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0245",
+      "relative_path": "02_preprocessed/train/stage3_scene-0245.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0246",
+      "relative_path": "02_preprocessed/train/stage3_scene-0246.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0247",
+      "relative_path": "02_preprocessed/train/stage3_scene-0247.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0248",
+      "relative_path": "02_preprocessed/train/stage3_scene-0248.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0249",
+      "relative_path": "02_preprocessed/train/stage3_scene-0249.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0250",
+      "relative_path": "02_preprocessed/train/stage3_scene-0250.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0251",
+      "relative_path": "02_preprocessed/train/stage3_scene-0251.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0252",
+      "relative_path": "02_preprocessed/train/stage3_scene-0252.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0253",
+      "relative_path": "02_preprocessed/train/stage3_scene-0253.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0254",
+      "relative_path": "02_preprocessed/train/stage3_scene-0254.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0255",
+      "relative_path": "02_preprocessed/train/stage3_scene-0255.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0256",
+      "relative_path": "02_preprocessed/train/stage3_scene-0256.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0257",
+      "relative_path": "02_preprocessed/train/stage3_scene-0257.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0258",
+      "relative_path": "02_preprocessed/train/stage3_scene-0258.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0259",
+      "relative_path": "02_preprocessed/train/stage3_scene-0259.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0260",
+      "relative_path": "02_preprocessed/train/stage3_scene-0260.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0261",
+      "relative_path": "02_preprocessed/train/stage3_scene-0261.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0262",
+      "relative_path": "02_preprocessed/train/stage3_scene-0262.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0263",
+      "relative_path": "02_preprocessed/train/stage3_scene-0263.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0264",
+      "relative_path": "02_preprocessed/train/stage3_scene-0264.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0283",
+      "relative_path": "02_preprocessed/train/stage3_scene-0283.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0284",
+      "relative_path": "02_preprocessed/train/stage3_scene-0284.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0285",
+      "relative_path": "02_preprocessed/train/stage3_scene-0285.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0286",
+      "relative_path": "02_preprocessed/train/stage3_scene-0286.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0287",
+      "relative_path": "02_preprocessed/train/stage3_scene-0287.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0288",
+      "relative_path": "02_preprocessed/train/stage3_scene-0288.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0289",
+      "relative_path": "02_preprocessed/train/stage3_scene-0289.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0290",
+      "relative_path": "02_preprocessed/train/stage3_scene-0290.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0291",
+      "relative_path": "02_preprocessed/train/stage3_scene-0291.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0292",
+      "relative_path": "02_preprocessed/train/stage3_scene-0292.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0293",
+      "relative_path": "02_preprocessed/train/stage3_scene-0293.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0294",
+      "relative_path": "02_preprocessed/train/stage3_scene-0294.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0295",
+      "relative_path": "02_preprocessed/train/stage3_scene-0295.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0296",
+      "relative_path": "02_preprocessed/train/stage3_scene-0296.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0297",
+      "relative_path": "02_preprocessed/train/stage3_scene-0297.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0298",
+      "relative_path": "02_preprocessed/train/stage3_scene-0298.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0299",
+      "relative_path": "02_preprocessed/train/stage3_scene-0299.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0300",
+      "relative_path": "02_preprocessed/train/stage3_scene-0300.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0301",
+      "relative_path": "02_preprocessed/train/stage3_scene-0301.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0302",
+      "relative_path": "02_preprocessed/train/stage3_scene-0302.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0303",
+      "relative_path": "02_preprocessed/train/stage3_scene-0303.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0304",
+      "relative_path": "02_preprocessed/train/stage3_scene-0304.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0305",
+      "relative_path": "02_preprocessed/train/stage3_scene-0305.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0306",
+      "relative_path": "02_preprocessed/train/stage3_scene-0306.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0315",
+      "relative_path": "02_preprocessed/train/stage3_scene-0315.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0316",
+      "relative_path": "02_preprocessed/train/stage3_scene-0316.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0317",
+      "relative_path": "02_preprocessed/train/stage3_scene-0317.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0318",
+      "relative_path": "02_preprocessed/train/stage3_scene-0318.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0321",
+      "relative_path": "02_preprocessed/train/stage3_scene-0321.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0323",
+      "relative_path": "02_preprocessed/train/stage3_scene-0323.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0324",
+      "relative_path": "02_preprocessed/train/stage3_scene-0324.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0328",
+      "relative_path": "02_preprocessed/train/stage3_scene-0328.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0347",
+      "relative_path": "02_preprocessed/train/stage3_scene-0347.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0348",
+      "relative_path": "02_preprocessed/train/stage3_scene-0348.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0349",
+      "relative_path": "02_preprocessed/train/stage3_scene-0349.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0350",
+      "relative_path": "02_preprocessed/train/stage3_scene-0350.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0351",
+      "relative_path": "02_preprocessed/train/stage3_scene-0351.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0352",
+      "relative_path": "02_preprocessed/train/stage3_scene-0352.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0353",
+      "relative_path": "02_preprocessed/train/stage3_scene-0353.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0354",
+      "relative_path": "02_preprocessed/train/stage3_scene-0354.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0355",
+      "relative_path": "02_preprocessed/train/stage3_scene-0355.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0356",
+      "relative_path": "02_preprocessed/train/stage3_scene-0356.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0357",
+      "relative_path": "02_preprocessed/train/stage3_scene-0357.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0358",
+      "relative_path": "02_preprocessed/train/stage3_scene-0358.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0359",
+      "relative_path": "02_preprocessed/train/stage3_scene-0359.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0360",
+      "relative_path": "02_preprocessed/train/stage3_scene-0360.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0361",
+      "relative_path": "02_preprocessed/train/stage3_scene-0361.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0362",
+      "relative_path": "02_preprocessed/train/stage3_scene-0362.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0363",
+      "relative_path": "02_preprocessed/train/stage3_scene-0363.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0364",
+      "relative_path": "02_preprocessed/train/stage3_scene-0364.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0365",
+      "relative_path": "02_preprocessed/train/stage3_scene-0365.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0366",
+      "relative_path": "02_preprocessed/train/stage3_scene-0366.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0367",
+      "relative_path": "02_preprocessed/train/stage3_scene-0367.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0368",
+      "relative_path": "02_preprocessed/train/stage3_scene-0368.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0369",
+      "relative_path": "02_preprocessed/train/stage3_scene-0369.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0370",
+      "relative_path": "02_preprocessed/train/stage3_scene-0370.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0371",
+      "relative_path": "02_preprocessed/train/stage3_scene-0371.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0372",
+      "relative_path": "02_preprocessed/train/stage3_scene-0372.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0373",
+      "relative_path": "02_preprocessed/train/stage3_scene-0373.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0374",
+      "relative_path": "02_preprocessed/train/stage3_scene-0374.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0375",
+      "relative_path": "02_preprocessed/train/stage3_scene-0375.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0376",
+      "relative_path": "02_preprocessed/train/stage3_scene-0376.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0377",
+      "relative_path": "02_preprocessed/train/stage3_scene-0377.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0378",
+      "relative_path": "02_preprocessed/train/stage3_scene-0378.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0379",
+      "relative_path": "02_preprocessed/train/stage3_scene-0379.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0380",
+      "relative_path": "02_preprocessed/train/stage3_scene-0380.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0381",
+      "relative_path": "02_preprocessed/train/stage3_scene-0381.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0382",
+      "relative_path": "02_preprocessed/train/stage3_scene-0382.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0383",
+      "relative_path": "02_preprocessed/train/stage3_scene-0383.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0384",
+      "relative_path": "02_preprocessed/train/stage3_scene-0384.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0385",
+      "relative_path": "02_preprocessed/train/stage3_scene-0385.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0386",
+      "relative_path": "02_preprocessed/train/stage3_scene-0386.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0388",
+      "relative_path": "02_preprocessed/train/stage3_scene-0388.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0389",
+      "relative_path": "02_preprocessed/train/stage3_scene-0389.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0390",
+      "relative_path": "02_preprocessed/train/stage3_scene-0390.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0391",
+      "relative_path": "02_preprocessed/train/stage3_scene-0391.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0392",
+      "relative_path": "02_preprocessed/train/stage3_scene-0392.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0393",
+      "relative_path": "02_preprocessed/train/stage3_scene-0393.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0394",
+      "relative_path": "02_preprocessed/train/stage3_scene-0394.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0395",
+      "relative_path": "02_preprocessed/train/stage3_scene-0395.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0396",
+      "relative_path": "02_preprocessed/train/stage3_scene-0396.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0397",
+      "relative_path": "02_preprocessed/train/stage3_scene-0397.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0398",
+      "relative_path": "02_preprocessed/train/stage3_scene-0398.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0399",
+      "relative_path": "02_preprocessed/train/stage3_scene-0399.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0400",
+      "relative_path": "02_preprocessed/train/stage3_scene-0400.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0401",
+      "relative_path": "02_preprocessed/train/stage3_scene-0401.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0402",
+      "relative_path": "02_preprocessed/train/stage3_scene-0402.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0403",
+      "relative_path": "02_preprocessed/train/stage3_scene-0403.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0405",
+      "relative_path": "02_preprocessed/train/stage3_scene-0405.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0406",
+      "relative_path": "02_preprocessed/train/stage3_scene-0406.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0407",
+      "relative_path": "02_preprocessed/train/stage3_scene-0407.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0408",
+      "relative_path": "02_preprocessed/train/stage3_scene-0408.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0410",
+      "relative_path": "02_preprocessed/train/stage3_scene-0410.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0411",
+      "relative_path": "02_preprocessed/train/stage3_scene-0411.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0412",
+      "relative_path": "02_preprocessed/train/stage3_scene-0412.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0413",
+      "relative_path": "02_preprocessed/train/stage3_scene-0413.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0414",
+      "relative_path": "02_preprocessed/train/stage3_scene-0414.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0415",
+      "relative_path": "02_preprocessed/train/stage3_scene-0415.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0416",
+      "relative_path": "02_preprocessed/train/stage3_scene-0416.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0417",
+      "relative_path": "02_preprocessed/train/stage3_scene-0417.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0418",
+      "relative_path": "02_preprocessed/train/stage3_scene-0418.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0419",
+      "relative_path": "02_preprocessed/train/stage3_scene-0419.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0420",
+      "relative_path": "02_preprocessed/train/stage3_scene-0420.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0421",
+      "relative_path": "02_preprocessed/train/stage3_scene-0421.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0422",
+      "relative_path": "02_preprocessed/train/stage3_scene-0422.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0423",
+      "relative_path": "02_preprocessed/train/stage3_scene-0423.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0424",
+      "relative_path": "02_preprocessed/train/stage3_scene-0424.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0425",
+      "relative_path": "02_preprocessed/train/stage3_scene-0425.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0426",
+      "relative_path": "02_preprocessed/train/stage3_scene-0426.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0427",
+      "relative_path": "02_preprocessed/train/stage3_scene-0427.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0428",
+      "relative_path": "02_preprocessed/train/stage3_scene-0428.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0429",
+      "relative_path": "02_preprocessed/train/stage3_scene-0429.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0430",
+      "relative_path": "02_preprocessed/train/stage3_scene-0430.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0431",
+      "relative_path": "02_preprocessed/train/stage3_scene-0431.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0432",
+      "relative_path": "02_preprocessed/train/stage3_scene-0432.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0433",
+      "relative_path": "02_preprocessed/train/stage3_scene-0433.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0434",
+      "relative_path": "02_preprocessed/train/stage3_scene-0434.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0435",
+      "relative_path": "02_preprocessed/train/stage3_scene-0435.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0436",
+      "relative_path": "02_preprocessed/train/stage3_scene-0436.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0437",
+      "relative_path": "02_preprocessed/train/stage3_scene-0437.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0438",
+      "relative_path": "02_preprocessed/train/stage3_scene-0438.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0439",
+      "relative_path": "02_preprocessed/train/stage3_scene-0439.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0440",
+      "relative_path": "02_preprocessed/train/stage3_scene-0440.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0441",
+      "relative_path": "02_preprocessed/train/stage3_scene-0441.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0442",
+      "relative_path": "02_preprocessed/train/stage3_scene-0442.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0443",
+      "relative_path": "02_preprocessed/train/stage3_scene-0443.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0444",
+      "relative_path": "02_preprocessed/train/stage3_scene-0444.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0445",
+      "relative_path": "02_preprocessed/train/stage3_scene-0445.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0446",
+      "relative_path": "02_preprocessed/train/stage3_scene-0446.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0447",
+      "relative_path": "02_preprocessed/train/stage3_scene-0447.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0448",
+      "relative_path": "02_preprocessed/train/stage3_scene-0448.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0449",
+      "relative_path": "02_preprocessed/train/stage3_scene-0449.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0450",
+      "relative_path": "02_preprocessed/train/stage3_scene-0450.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0451",
+      "relative_path": "02_preprocessed/train/stage3_scene-0451.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0452",
+      "relative_path": "02_preprocessed/train/stage3_scene-0452.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0453",
+      "relative_path": "02_preprocessed/train/stage3_scene-0453.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0454",
+      "relative_path": "02_preprocessed/train/stage3_scene-0454.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0455",
+      "relative_path": "02_preprocessed/train/stage3_scene-0455.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0456",
+      "relative_path": "02_preprocessed/train/stage3_scene-0456.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0457",
+      "relative_path": "02_preprocessed/train/stage3_scene-0457.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0458",
+      "relative_path": "02_preprocessed/train/stage3_scene-0458.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0459",
+      "relative_path": "02_preprocessed/train/stage3_scene-0459.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0461",
+      "relative_path": "02_preprocessed/train/stage3_scene-0461.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0462",
+      "relative_path": "02_preprocessed/train/stage3_scene-0462.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0463",
+      "relative_path": "02_preprocessed/train/stage3_scene-0463.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0464",
+      "relative_path": "02_preprocessed/train/stage3_scene-0464.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0465",
+      "relative_path": "02_preprocessed/train/stage3_scene-0465.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0467",
+      "relative_path": "02_preprocessed/train/stage3_scene-0467.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0468",
+      "relative_path": "02_preprocessed/train/stage3_scene-0468.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0469",
+      "relative_path": "02_preprocessed/train/stage3_scene-0469.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0471",
+      "relative_path": "02_preprocessed/train/stage3_scene-0471.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0472",
+      "relative_path": "02_preprocessed/train/stage3_scene-0472.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0474",
+      "relative_path": "02_preprocessed/train/stage3_scene-0474.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0475",
+      "relative_path": "02_preprocessed/train/stage3_scene-0475.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0476",
+      "relative_path": "02_preprocessed/train/stage3_scene-0476.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0477",
+      "relative_path": "02_preprocessed/train/stage3_scene-0477.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0478",
+      "relative_path": "02_preprocessed/train/stage3_scene-0478.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0479",
+      "relative_path": "02_preprocessed/train/stage3_scene-0479.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0480",
+      "relative_path": "02_preprocessed/train/stage3_scene-0480.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0499",
+      "relative_path": "02_preprocessed/train/stage3_scene-0499.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0500",
+      "relative_path": "02_preprocessed/train/stage3_scene-0500.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0501",
+      "relative_path": "02_preprocessed/train/stage3_scene-0501.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0502",
+      "relative_path": "02_preprocessed/train/stage3_scene-0502.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0504",
+      "relative_path": "02_preprocessed/train/stage3_scene-0504.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0505",
+      "relative_path": "02_preprocessed/train/stage3_scene-0505.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0506",
+      "relative_path": "02_preprocessed/train/stage3_scene-0506.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0507",
+      "relative_path": "02_preprocessed/train/stage3_scene-0507.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0508",
+      "relative_path": "02_preprocessed/train/stage3_scene-0508.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0509",
+      "relative_path": "02_preprocessed/train/stage3_scene-0509.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0510",
+      "relative_path": "02_preprocessed/train/stage3_scene-0510.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0511",
+      "relative_path": "02_preprocessed/train/stage3_scene-0511.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0512",
+      "relative_path": "02_preprocessed/train/stage3_scene-0512.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0513",
+      "relative_path": "02_preprocessed/train/stage3_scene-0513.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0514",
+      "relative_path": "02_preprocessed/train/stage3_scene-0514.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0515",
+      "relative_path": "02_preprocessed/train/stage3_scene-0515.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0517",
+      "relative_path": "02_preprocessed/train/stage3_scene-0517.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0518",
+      "relative_path": "02_preprocessed/train/stage3_scene-0518.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0525",
+      "relative_path": "02_preprocessed/train/stage3_scene-0525.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0526",
+      "relative_path": "02_preprocessed/train/stage3_scene-0526.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0527",
+      "relative_path": "02_preprocessed/train/stage3_scene-0527.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0528",
+      "relative_path": "02_preprocessed/train/stage3_scene-0528.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0529",
+      "relative_path": "02_preprocessed/train/stage3_scene-0529.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0530",
+      "relative_path": "02_preprocessed/train/stage3_scene-0530.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0531",
+      "relative_path": "02_preprocessed/train/stage3_scene-0531.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0532",
+      "relative_path": "02_preprocessed/train/stage3_scene-0532.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0533",
+      "relative_path": "02_preprocessed/train/stage3_scene-0533.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0534",
+      "relative_path": "02_preprocessed/train/stage3_scene-0534.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0535",
+      "relative_path": "02_preprocessed/train/stage3_scene-0535.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0536",
+      "relative_path": "02_preprocessed/train/stage3_scene-0536.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0537",
+      "relative_path": "02_preprocessed/train/stage3_scene-0537.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0538",
+      "relative_path": "02_preprocessed/train/stage3_scene-0538.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0539",
+      "relative_path": "02_preprocessed/train/stage3_scene-0539.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0541",
+      "relative_path": "02_preprocessed/train/stage3_scene-0541.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0542",
+      "relative_path": "02_preprocessed/train/stage3_scene-0542.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0543",
+      "relative_path": "02_preprocessed/train/stage3_scene-0543.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0544",
+      "relative_path": "02_preprocessed/train/stage3_scene-0544.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0545",
+      "relative_path": "02_preprocessed/train/stage3_scene-0545.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0546",
+      "relative_path": "02_preprocessed/train/stage3_scene-0546.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0566",
+      "relative_path": "02_preprocessed/train/stage3_scene-0566.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0568",
+      "relative_path": "02_preprocessed/train/stage3_scene-0568.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0570",
+      "relative_path": "02_preprocessed/train/stage3_scene-0570.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0571",
+      "relative_path": "02_preprocessed/train/stage3_scene-0571.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0572",
+      "relative_path": "02_preprocessed/train/stage3_scene-0572.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0573",
+      "relative_path": "02_preprocessed/train/stage3_scene-0573.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0574",
+      "relative_path": "02_preprocessed/train/stage3_scene-0574.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0575",
+      "relative_path": "02_preprocessed/train/stage3_scene-0575.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0576",
+      "relative_path": "02_preprocessed/train/stage3_scene-0576.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0577",
+      "relative_path": "02_preprocessed/train/stage3_scene-0577.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0578",
+      "relative_path": "02_preprocessed/train/stage3_scene-0578.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0580",
+      "relative_path": "02_preprocessed/train/stage3_scene-0580.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0582",
+      "relative_path": "02_preprocessed/train/stage3_scene-0582.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0583",
+      "relative_path": "02_preprocessed/train/stage3_scene-0583.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0584",
+      "relative_path": "02_preprocessed/train/stage3_scene-0584.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0585",
+      "relative_path": "02_preprocessed/train/stage3_scene-0585.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0586",
+      "relative_path": "02_preprocessed/train/stage3_scene-0586.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0587",
+      "relative_path": "02_preprocessed/train/stage3_scene-0587.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0588",
+      "relative_path": "02_preprocessed/train/stage3_scene-0588.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0589",
+      "relative_path": "02_preprocessed/train/stage3_scene-0589.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0590",
+      "relative_path": "02_preprocessed/train/stage3_scene-0590.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0591",
+      "relative_path": "02_preprocessed/train/stage3_scene-0591.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0592",
+      "relative_path": "02_preprocessed/train/stage3_scene-0592.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0593",
+      "relative_path": "02_preprocessed/train/stage3_scene-0593.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0594",
+      "relative_path": "02_preprocessed/train/stage3_scene-0594.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0595",
+      "relative_path": "02_preprocessed/train/stage3_scene-0595.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0596",
+      "relative_path": "02_preprocessed/train/stage3_scene-0596.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0597",
+      "relative_path": "02_preprocessed/train/stage3_scene-0597.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0598",
+      "relative_path": "02_preprocessed/train/stage3_scene-0598.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0599",
+      "relative_path": "02_preprocessed/train/stage3_scene-0599.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0600",
+      "relative_path": "02_preprocessed/train/stage3_scene-0600.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0639",
+      "relative_path": "02_preprocessed/train/stage3_scene-0639.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0640",
+      "relative_path": "02_preprocessed/train/stage3_scene-0640.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0641",
+      "relative_path": "02_preprocessed/train/stage3_scene-0641.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0642",
+      "relative_path": "02_preprocessed/train/stage3_scene-0642.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0643",
+      "relative_path": "02_preprocessed/train/stage3_scene-0643.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0644",
+      "relative_path": "02_preprocessed/train/stage3_scene-0644.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0645",
+      "relative_path": "02_preprocessed/train/stage3_scene-0645.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0646",
+      "relative_path": "02_preprocessed/train/stage3_scene-0646.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0647",
+      "relative_path": "02_preprocessed/train/stage3_scene-0647.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0648",
+      "relative_path": "02_preprocessed/train/stage3_scene-0648.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0649",
+      "relative_path": "02_preprocessed/train/stage3_scene-0649.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0650",
+      "relative_path": "02_preprocessed/train/stage3_scene-0650.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0651",
+      "relative_path": "02_preprocessed/train/stage3_scene-0651.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0652",
+      "relative_path": "02_preprocessed/train/stage3_scene-0652.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0653",
+      "relative_path": "02_preprocessed/train/stage3_scene-0653.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0654",
+      "relative_path": "02_preprocessed/train/stage3_scene-0654.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0655",
+      "relative_path": "02_preprocessed/train/stage3_scene-0655.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0656",
+      "relative_path": "02_preprocessed/train/stage3_scene-0656.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0657",
+      "relative_path": "02_preprocessed/train/stage3_scene-0657.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0658",
+      "relative_path": "02_preprocessed/train/stage3_scene-0658.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0659",
+      "relative_path": "02_preprocessed/train/stage3_scene-0659.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0660",
+      "relative_path": "02_preprocessed/train/stage3_scene-0660.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0661",
+      "relative_path": "02_preprocessed/train/stage3_scene-0661.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0662",
+      "relative_path": "02_preprocessed/train/stage3_scene-0662.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0663",
+      "relative_path": "02_preprocessed/train/stage3_scene-0663.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0664",
+      "relative_path": "02_preprocessed/train/stage3_scene-0664.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0665",
+      "relative_path": "02_preprocessed/train/stage3_scene-0665.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0666",
+      "relative_path": "02_preprocessed/train/stage3_scene-0666.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0667",
+      "relative_path": "02_preprocessed/train/stage3_scene-0667.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0668",
+      "relative_path": "02_preprocessed/train/stage3_scene-0668.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0669",
+      "relative_path": "02_preprocessed/train/stage3_scene-0669.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0670",
+      "relative_path": "02_preprocessed/train/stage3_scene-0670.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0671",
+      "relative_path": "02_preprocessed/train/stage3_scene-0671.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0672",
+      "relative_path": "02_preprocessed/train/stage3_scene-0672.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0673",
+      "relative_path": "02_preprocessed/train/stage3_scene-0673.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0674",
+      "relative_path": "02_preprocessed/train/stage3_scene-0674.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0675",
+      "relative_path": "02_preprocessed/train/stage3_scene-0675.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0676",
+      "relative_path": "02_preprocessed/train/stage3_scene-0676.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0677",
+      "relative_path": "02_preprocessed/train/stage3_scene-0677.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0678",
+      "relative_path": "02_preprocessed/train/stage3_scene-0678.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0679",
+      "relative_path": "02_preprocessed/train/stage3_scene-0679.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0681",
+      "relative_path": "02_preprocessed/train/stage3_scene-0681.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0683",
+      "relative_path": "02_preprocessed/train/stage3_scene-0683.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0684",
+      "relative_path": "02_preprocessed/train/stage3_scene-0684.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0685",
+      "relative_path": "02_preprocessed/train/stage3_scene-0685.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0686",
+      "relative_path": "02_preprocessed/train/stage3_scene-0686.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0687",
+      "relative_path": "02_preprocessed/train/stage3_scene-0687.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0688",
+      "relative_path": "02_preprocessed/train/stage3_scene-0688.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0689",
+      "relative_path": "02_preprocessed/train/stage3_scene-0689.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0695",
+      "relative_path": "02_preprocessed/train/stage3_scene-0695.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0696",
+      "relative_path": "02_preprocessed/train/stage3_scene-0696.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0697",
+      "relative_path": "02_preprocessed/train/stage3_scene-0697.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0698",
+      "relative_path": "02_preprocessed/train/stage3_scene-0698.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0700",
+      "relative_path": "02_preprocessed/train/stage3_scene-0700.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0701",
+      "relative_path": "02_preprocessed/train/stage3_scene-0701.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0703",
+      "relative_path": "02_preprocessed/train/stage3_scene-0703.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0704",
+      "relative_path": "02_preprocessed/train/stage3_scene-0704.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0705",
+      "relative_path": "02_preprocessed/train/stage3_scene-0705.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0706",
+      "relative_path": "02_preprocessed/train/stage3_scene-0706.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0707",
+      "relative_path": "02_preprocessed/train/stage3_scene-0707.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0708",
+      "relative_path": "02_preprocessed/train/stage3_scene-0708.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0709",
+      "relative_path": "02_preprocessed/train/stage3_scene-0709.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0710",
+      "relative_path": "02_preprocessed/train/stage3_scene-0710.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0711",
+      "relative_path": "02_preprocessed/train/stage3_scene-0711.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0712",
+      "relative_path": "02_preprocessed/train/stage3_scene-0712.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0713",
+      "relative_path": "02_preprocessed/train/stage3_scene-0713.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0714",
+      "relative_path": "02_preprocessed/train/stage3_scene-0714.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0715",
+      "relative_path": "02_preprocessed/train/stage3_scene-0715.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0716",
+      "relative_path": "02_preprocessed/train/stage3_scene-0716.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0717",
+      "relative_path": "02_preprocessed/train/stage3_scene-0717.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0718",
+      "relative_path": "02_preprocessed/train/stage3_scene-0718.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0719",
+      "relative_path": "02_preprocessed/train/stage3_scene-0719.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0726",
+      "relative_path": "02_preprocessed/train/stage3_scene-0726.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0727",
+      "relative_path": "02_preprocessed/train/stage3_scene-0727.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0728",
+      "relative_path": "02_preprocessed/train/stage3_scene-0728.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0730",
+      "relative_path": "02_preprocessed/train/stage3_scene-0730.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0731",
+      "relative_path": "02_preprocessed/train/stage3_scene-0731.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0733",
+      "relative_path": "02_preprocessed/train/stage3_scene-0733.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0734",
+      "relative_path": "02_preprocessed/train/stage3_scene-0734.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0735",
+      "relative_path": "02_preprocessed/train/stage3_scene-0735.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0736",
+      "relative_path": "02_preprocessed/train/stage3_scene-0736.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0737",
+      "relative_path": "02_preprocessed/train/stage3_scene-0737.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0738",
+      "relative_path": "02_preprocessed/train/stage3_scene-0738.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0739",
+      "relative_path": "02_preprocessed/train/stage3_scene-0739.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0740",
+      "relative_path": "02_preprocessed/train/stage3_scene-0740.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0741",
+      "relative_path": "02_preprocessed/train/stage3_scene-0741.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0744",
+      "relative_path": "02_preprocessed/train/stage3_scene-0744.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0746",
+      "relative_path": "02_preprocessed/train/stage3_scene-0746.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0747",
+      "relative_path": "02_preprocessed/train/stage3_scene-0747.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0749",
+      "relative_path": "02_preprocessed/train/stage3_scene-0749.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0750",
+      "relative_path": "02_preprocessed/train/stage3_scene-0750.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0751",
+      "relative_path": "02_preprocessed/train/stage3_scene-0751.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0752",
+      "relative_path": "02_preprocessed/train/stage3_scene-0752.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0757",
+      "relative_path": "02_preprocessed/train/stage3_scene-0757.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0758",
+      "relative_path": "02_preprocessed/train/stage3_scene-0758.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0759",
+      "relative_path": "02_preprocessed/train/stage3_scene-0759.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0760",
+      "relative_path": "02_preprocessed/train/stage3_scene-0760.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0761",
+      "relative_path": "02_preprocessed/train/stage3_scene-0761.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0762",
+      "relative_path": "02_preprocessed/train/stage3_scene-0762.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0763",
+      "relative_path": "02_preprocessed/train/stage3_scene-0763.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0764",
+      "relative_path": "02_preprocessed/train/stage3_scene-0764.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0765",
+      "relative_path": "02_preprocessed/train/stage3_scene-0765.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0767",
+      "relative_path": "02_preprocessed/train/stage3_scene-0767.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0768",
+      "relative_path": "02_preprocessed/train/stage3_scene-0768.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0769",
+      "relative_path": "02_preprocessed/train/stage3_scene-0769.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0786",
+      "relative_path": "02_preprocessed/train/stage3_scene-0786.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0787",
+      "relative_path": "02_preprocessed/train/stage3_scene-0787.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0789",
+      "relative_path": "02_preprocessed/train/stage3_scene-0789.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0790",
+      "relative_path": "02_preprocessed/train/stage3_scene-0790.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0791",
+      "relative_path": "02_preprocessed/train/stage3_scene-0791.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0792",
+      "relative_path": "02_preprocessed/train/stage3_scene-0792.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0803",
+      "relative_path": "02_preprocessed/train/stage3_scene-0803.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0804",
+      "relative_path": "02_preprocessed/train/stage3_scene-0804.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0805",
+      "relative_path": "02_preprocessed/train/stage3_scene-0805.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0806",
+      "relative_path": "02_preprocessed/train/stage3_scene-0806.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0808",
+      "relative_path": "02_preprocessed/train/stage3_scene-0808.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0809",
+      "relative_path": "02_preprocessed/train/stage3_scene-0809.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0810",
+      "relative_path": "02_preprocessed/train/stage3_scene-0810.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0811",
+      "relative_path": "02_preprocessed/train/stage3_scene-0811.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0812",
+      "relative_path": "02_preprocessed/train/stage3_scene-0812.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0813",
+      "relative_path": "02_preprocessed/train/stage3_scene-0813.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0815",
+      "relative_path": "02_preprocessed/train/stage3_scene-0815.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0816",
+      "relative_path": "02_preprocessed/train/stage3_scene-0816.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0817",
+      "relative_path": "02_preprocessed/train/stage3_scene-0817.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0819",
+      "relative_path": "02_preprocessed/train/stage3_scene-0819.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0820",
+      "relative_path": "02_preprocessed/train/stage3_scene-0820.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0821",
+      "relative_path": "02_preprocessed/train/stage3_scene-0821.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0822",
+      "relative_path": "02_preprocessed/train/stage3_scene-0822.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0847",
+      "relative_path": "02_preprocessed/train/stage3_scene-0847.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0848",
+      "relative_path": "02_preprocessed/train/stage3_scene-0848.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0849",
+      "relative_path": "02_preprocessed/train/stage3_scene-0849.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0850",
+      "relative_path": "02_preprocessed/train/stage3_scene-0850.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0851",
+      "relative_path": "02_preprocessed/train/stage3_scene-0851.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0852",
+      "relative_path": "02_preprocessed/train/stage3_scene-0852.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0853",
+      "relative_path": "02_preprocessed/train/stage3_scene-0853.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0854",
+      "relative_path": "02_preprocessed/train/stage3_scene-0854.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0855",
+      "relative_path": "02_preprocessed/train/stage3_scene-0855.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0856",
+      "relative_path": "02_preprocessed/train/stage3_scene-0856.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0858",
+      "relative_path": "02_preprocessed/train/stage3_scene-0858.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0860",
+      "relative_path": "02_preprocessed/train/stage3_scene-0860.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0861",
+      "relative_path": "02_preprocessed/train/stage3_scene-0861.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0862",
+      "relative_path": "02_preprocessed/train/stage3_scene-0862.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0863",
+      "relative_path": "02_preprocessed/train/stage3_scene-0863.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0864",
+      "relative_path": "02_preprocessed/train/stage3_scene-0864.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0865",
+      "relative_path": "02_preprocessed/train/stage3_scene-0865.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0866",
+      "relative_path": "02_preprocessed/train/stage3_scene-0866.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0868",
+      "relative_path": "02_preprocessed/train/stage3_scene-0868.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0869",
+      "relative_path": "02_preprocessed/train/stage3_scene-0869.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0870",
+      "relative_path": "02_preprocessed/train/stage3_scene-0870.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0871",
+      "relative_path": "02_preprocessed/train/stage3_scene-0871.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0872",
+      "relative_path": "02_preprocessed/train/stage3_scene-0872.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0873",
+      "relative_path": "02_preprocessed/train/stage3_scene-0873.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0875",
+      "relative_path": "02_preprocessed/train/stage3_scene-0875.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0876",
+      "relative_path": "02_preprocessed/train/stage3_scene-0876.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0877",
+      "relative_path": "02_preprocessed/train/stage3_scene-0877.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0878",
+      "relative_path": "02_preprocessed/train/stage3_scene-0878.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0880",
+      "relative_path": "02_preprocessed/train/stage3_scene-0880.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0882",
+      "relative_path": "02_preprocessed/train/stage3_scene-0882.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0883",
+      "relative_path": "02_preprocessed/train/stage3_scene-0883.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0884",
+      "relative_path": "02_preprocessed/train/stage3_scene-0884.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0885",
+      "relative_path": "02_preprocessed/train/stage3_scene-0885.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0886",
+      "relative_path": "02_preprocessed/train/stage3_scene-0886.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0887",
+      "relative_path": "02_preprocessed/train/stage3_scene-0887.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0888",
+      "relative_path": "02_preprocessed/train/stage3_scene-0888.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0889",
+      "relative_path": "02_preprocessed/train/stage3_scene-0889.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0890",
+      "relative_path": "02_preprocessed/train/stage3_scene-0890.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0891",
+      "relative_path": "02_preprocessed/train/stage3_scene-0891.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0892",
+      "relative_path": "02_preprocessed/train/stage3_scene-0892.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0893",
+      "relative_path": "02_preprocessed/train/stage3_scene-0893.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0894",
+      "relative_path": "02_preprocessed/train/stage3_scene-0894.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0895",
+      "relative_path": "02_preprocessed/train/stage3_scene-0895.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0896",
+      "relative_path": "02_preprocessed/train/stage3_scene-0896.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0897",
+      "relative_path": "02_preprocessed/train/stage3_scene-0897.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0898",
+      "relative_path": "02_preprocessed/train/stage3_scene-0898.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0899",
+      "relative_path": "02_preprocessed/train/stage3_scene-0899.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0900",
+      "relative_path": "02_preprocessed/train/stage3_scene-0900.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0901",
+      "relative_path": "02_preprocessed/train/stage3_scene-0901.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0902",
+      "relative_path": "02_preprocessed/train/stage3_scene-0902.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0903",
+      "relative_path": "02_preprocessed/train/stage3_scene-0903.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0945",
+      "relative_path": "02_preprocessed/train/stage3_scene-0945.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0947",
+      "relative_path": "02_preprocessed/train/stage3_scene-0947.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0949",
+      "relative_path": "02_preprocessed/train/stage3_scene-0949.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0952",
+      "relative_path": "02_preprocessed/train/stage3_scene-0952.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0953",
+      "relative_path": "02_preprocessed/train/stage3_scene-0953.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0955",
+      "relative_path": "02_preprocessed/train/stage3_scene-0955.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0956",
+      "relative_path": "02_preprocessed/train/stage3_scene-0956.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0957",
+      "relative_path": "02_preprocessed/train/stage3_scene-0957.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0958",
+      "relative_path": "02_preprocessed/train/stage3_scene-0958.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0959",
+      "relative_path": "02_preprocessed/train/stage3_scene-0959.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0960",
+      "relative_path": "02_preprocessed/train/stage3_scene-0960.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0961",
+      "relative_path": "02_preprocessed/train/stage3_scene-0961.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0975",
+      "relative_path": "02_preprocessed/train/stage3_scene-0975.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0976",
+      "relative_path": "02_preprocessed/train/stage3_scene-0976.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0977",
+      "relative_path": "02_preprocessed/train/stage3_scene-0977.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0978",
+      "relative_path": "02_preprocessed/train/stage3_scene-0978.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0979",
+      "relative_path": "02_preprocessed/train/stage3_scene-0979.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0980",
+      "relative_path": "02_preprocessed/train/stage3_scene-0980.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0981",
+      "relative_path": "02_preprocessed/train/stage3_scene-0981.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0982",
+      "relative_path": "02_preprocessed/train/stage3_scene-0982.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0983",
+      "relative_path": "02_preprocessed/train/stage3_scene-0983.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0984",
+      "relative_path": "02_preprocessed/train/stage3_scene-0984.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0988",
+      "relative_path": "02_preprocessed/train/stage3_scene-0988.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0989",
+      "relative_path": "02_preprocessed/train/stage3_scene-0989.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0990",
+      "relative_path": "02_preprocessed/train/stage3_scene-0990.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0991",
+      "relative_path": "02_preprocessed/train/stage3_scene-0991.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0992",
+      "relative_path": "02_preprocessed/train/stage3_scene-0992.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0994",
+      "relative_path": "02_preprocessed/train/stage3_scene-0994.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0995",
+      "relative_path": "02_preprocessed/train/stage3_scene-0995.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0996",
+      "relative_path": "02_preprocessed/train/stage3_scene-0996.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0997",
+      "relative_path": "02_preprocessed/train/stage3_scene-0997.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0998",
+      "relative_path": "02_preprocessed/train/stage3_scene-0998.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-0999",
+      "relative_path": "02_preprocessed/train/stage3_scene-0999.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1000",
+      "relative_path": "02_preprocessed/train/stage3_scene-1000.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1001",
+      "relative_path": "02_preprocessed/train/stage3_scene-1001.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1002",
+      "relative_path": "02_preprocessed/train/stage3_scene-1002.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1003",
+      "relative_path": "02_preprocessed/train/stage3_scene-1003.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1004",
+      "relative_path": "02_preprocessed/train/stage3_scene-1004.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1005",
+      "relative_path": "02_preprocessed/train/stage3_scene-1005.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1006",
+      "relative_path": "02_preprocessed/train/stage3_scene-1006.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1007",
+      "relative_path": "02_preprocessed/train/stage3_scene-1007.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1008",
+      "relative_path": "02_preprocessed/train/stage3_scene-1008.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1009",
+      "relative_path": "02_preprocessed/train/stage3_scene-1009.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1010",
+      "relative_path": "02_preprocessed/train/stage3_scene-1010.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1011",
+      "relative_path": "02_preprocessed/train/stage3_scene-1011.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1012",
+      "relative_path": "02_preprocessed/train/stage3_scene-1012.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1013",
+      "relative_path": "02_preprocessed/train/stage3_scene-1013.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1014",
+      "relative_path": "02_preprocessed/train/stage3_scene-1014.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1015",
+      "relative_path": "02_preprocessed/train/stage3_scene-1015.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1016",
+      "relative_path": "02_preprocessed/train/stage3_scene-1016.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1017",
+      "relative_path": "02_preprocessed/train/stage3_scene-1017.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1018",
+      "relative_path": "02_preprocessed/train/stage3_scene-1018.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1019",
+      "relative_path": "02_preprocessed/train/stage3_scene-1019.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1020",
+      "relative_path": "02_preprocessed/train/stage3_scene-1020.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1021",
+      "relative_path": "02_preprocessed/train/stage3_scene-1021.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1022",
+      "relative_path": "02_preprocessed/train/stage3_scene-1022.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1023",
+      "relative_path": "02_preprocessed/train/stage3_scene-1023.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1024",
+      "relative_path": "02_preprocessed/train/stage3_scene-1024.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1025",
+      "relative_path": "02_preprocessed/train/stage3_scene-1025.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1044",
+      "relative_path": "02_preprocessed/train/stage3_scene-1044.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1045",
+      "relative_path": "02_preprocessed/train/stage3_scene-1045.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1046",
+      "relative_path": "02_preprocessed/train/stage3_scene-1046.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1047",
+      "relative_path": "02_preprocessed/train/stage3_scene-1047.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1048",
+      "relative_path": "02_preprocessed/train/stage3_scene-1048.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1049",
+      "relative_path": "02_preprocessed/train/stage3_scene-1049.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1050",
+      "relative_path": "02_preprocessed/train/stage3_scene-1050.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1051",
+      "relative_path": "02_preprocessed/train/stage3_scene-1051.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1052",
+      "relative_path": "02_preprocessed/train/stage3_scene-1052.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1053",
+      "relative_path": "02_preprocessed/train/stage3_scene-1053.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1054",
+      "relative_path": "02_preprocessed/train/stage3_scene-1054.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1055",
+      "relative_path": "02_preprocessed/train/stage3_scene-1055.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1056",
+      "relative_path": "02_preprocessed/train/stage3_scene-1056.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1057",
+      "relative_path": "02_preprocessed/train/stage3_scene-1057.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1058",
+      "relative_path": "02_preprocessed/train/stage3_scene-1058.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1074",
+      "relative_path": "02_preprocessed/train/stage3_scene-1074.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1075",
+      "relative_path": "02_preprocessed/train/stage3_scene-1075.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1076",
+      "relative_path": "02_preprocessed/train/stage3_scene-1076.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1077",
+      "relative_path": "02_preprocessed/train/stage3_scene-1077.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1078",
+      "relative_path": "02_preprocessed/train/stage3_scene-1078.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1079",
+      "relative_path": "02_preprocessed/train/stage3_scene-1079.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1080",
+      "relative_path": "02_preprocessed/train/stage3_scene-1080.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1081",
+      "relative_path": "02_preprocessed/train/stage3_scene-1081.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1082",
+      "relative_path": "02_preprocessed/train/stage3_scene-1082.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1083",
+      "relative_path": "02_preprocessed/train/stage3_scene-1083.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1084",
+      "relative_path": "02_preprocessed/train/stage3_scene-1084.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1085",
+      "relative_path": "02_preprocessed/train/stage3_scene-1085.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1086",
+      "relative_path": "02_preprocessed/train/stage3_scene-1086.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1087",
+      "relative_path": "02_preprocessed/train/stage3_scene-1087.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1088",
+      "relative_path": "02_preprocessed/train/stage3_scene-1088.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1089",
+      "relative_path": "02_preprocessed/train/stage3_scene-1089.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1090",
+      "relative_path": "02_preprocessed/train/stage3_scene-1090.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1091",
+      "relative_path": "02_preprocessed/train/stage3_scene-1091.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1092",
+      "relative_path": "02_preprocessed/train/stage3_scene-1092.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1093",
+      "relative_path": "02_preprocessed/train/stage3_scene-1093.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1094",
+      "relative_path": "02_preprocessed/train/stage3_scene-1094.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1095",
+      "relative_path": "02_preprocessed/train/stage3_scene-1095.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1096",
+      "relative_path": "02_preprocessed/train/stage3_scene-1096.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1097",
+      "relative_path": "02_preprocessed/train/stage3_scene-1097.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1098",
+      "relative_path": "02_preprocessed/train/stage3_scene-1098.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1099",
+      "relative_path": "02_preprocessed/train/stage3_scene-1099.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1100",
+      "relative_path": "02_preprocessed/train/stage3_scene-1100.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1101",
+      "relative_path": "02_preprocessed/train/stage3_scene-1101.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1102",
+      "relative_path": "02_preprocessed/train/stage3_scene-1102.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1104",
+      "relative_path": "02_preprocessed/train/stage3_scene-1104.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1105",
+      "relative_path": "02_preprocessed/train/stage3_scene-1105.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1106",
+      "relative_path": "02_preprocessed/train/stage3_scene-1106.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1107",
+      "relative_path": "02_preprocessed/train/stage3_scene-1107.pt",
+      "windows": 25
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1108",
+      "relative_path": "02_preprocessed/train/stage3_scene-1108.pt",
+      "windows": 24
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1109",
+      "relative_path": "02_preprocessed/train/stage3_scene-1109.pt",
+      "windows": 23
+    },
+    {
+      "split": "train",
+      "scene_name": "scene-1110",
+      "relative_path": "02_preprocessed/train/stage3_scene-1110.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0003",
+      "relative_path": "02_preprocessed/val/stage3_scene-0003.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0012",
+      "relative_path": "02_preprocessed/val/stage3_scene-0012.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0013",
+      "relative_path": "02_preprocessed/val/stage3_scene-0013.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0014",
+      "relative_path": "02_preprocessed/val/stage3_scene-0014.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0015",
+      "relative_path": "02_preprocessed/val/stage3_scene-0015.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0016",
+      "relative_path": "02_preprocessed/val/stage3_scene-0016.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0017",
+      "relative_path": "02_preprocessed/val/stage3_scene-0017.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0018",
+      "relative_path": "02_preprocessed/val/stage3_scene-0018.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0035",
+      "relative_path": "02_preprocessed/val/stage3_scene-0035.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0036",
+      "relative_path": "02_preprocessed/val/stage3_scene-0036.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0038",
+      "relative_path": "02_preprocessed/val/stage3_scene-0038.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0039",
+      "relative_path": "02_preprocessed/val/stage3_scene-0039.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0092",
+      "relative_path": "02_preprocessed/val/stage3_scene-0092.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0093",
+      "relative_path": "02_preprocessed/val/stage3_scene-0093.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0094",
+      "relative_path": "02_preprocessed/val/stage3_scene-0094.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0095",
+      "relative_path": "02_preprocessed/val/stage3_scene-0095.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0096",
+      "relative_path": "02_preprocessed/val/stage3_scene-0096.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0097",
+      "relative_path": "02_preprocessed/val/stage3_scene-0097.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0098",
+      "relative_path": "02_preprocessed/val/stage3_scene-0098.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0099",
+      "relative_path": "02_preprocessed/val/stage3_scene-0099.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0100",
+      "relative_path": "02_preprocessed/val/stage3_scene-0100.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0101",
+      "relative_path": "02_preprocessed/val/stage3_scene-0101.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0102",
+      "relative_path": "02_preprocessed/val/stage3_scene-0102.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0103",
+      "relative_path": "02_preprocessed/val/stage3_scene-0103.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0104",
+      "relative_path": "02_preprocessed/val/stage3_scene-0104.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0105",
+      "relative_path": "02_preprocessed/val/stage3_scene-0105.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0106",
+      "relative_path": "02_preprocessed/val/stage3_scene-0106.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0107",
+      "relative_path": "02_preprocessed/val/stage3_scene-0107.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0108",
+      "relative_path": "02_preprocessed/val/stage3_scene-0108.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0109",
+      "relative_path": "02_preprocessed/val/stage3_scene-0109.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0110",
+      "relative_path": "02_preprocessed/val/stage3_scene-0110.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0221",
+      "relative_path": "02_preprocessed/val/stage3_scene-0221.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0268",
+      "relative_path": "02_preprocessed/val/stage3_scene-0268.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0269",
+      "relative_path": "02_preprocessed/val/stage3_scene-0269.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0270",
+      "relative_path": "02_preprocessed/val/stage3_scene-0270.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0271",
+      "relative_path": "02_preprocessed/val/stage3_scene-0271.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0272",
+      "relative_path": "02_preprocessed/val/stage3_scene-0272.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0273",
+      "relative_path": "02_preprocessed/val/stage3_scene-0273.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0274",
+      "relative_path": "02_preprocessed/val/stage3_scene-0274.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0275",
+      "relative_path": "02_preprocessed/val/stage3_scene-0275.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0276",
+      "relative_path": "02_preprocessed/val/stage3_scene-0276.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0277",
+      "relative_path": "02_preprocessed/val/stage3_scene-0277.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0278",
+      "relative_path": "02_preprocessed/val/stage3_scene-0278.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0329",
+      "relative_path": "02_preprocessed/val/stage3_scene-0329.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0330",
+      "relative_path": "02_preprocessed/val/stage3_scene-0330.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0331",
+      "relative_path": "02_preprocessed/val/stage3_scene-0331.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0332",
+      "relative_path": "02_preprocessed/val/stage3_scene-0332.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0344",
+      "relative_path": "02_preprocessed/val/stage3_scene-0344.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0345",
+      "relative_path": "02_preprocessed/val/stage3_scene-0345.pt",
+      "windows": 23
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0346",
+      "relative_path": "02_preprocessed/val/stage3_scene-0346.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0519",
+      "relative_path": "02_preprocessed/val/stage3_scene-0519.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0520",
+      "relative_path": "02_preprocessed/val/stage3_scene-0520.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0521",
+      "relative_path": "02_preprocessed/val/stage3_scene-0521.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0522",
+      "relative_path": "02_preprocessed/val/stage3_scene-0522.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0523",
+      "relative_path": "02_preprocessed/val/stage3_scene-0523.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0524",
+      "relative_path": "02_preprocessed/val/stage3_scene-0524.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0552",
+      "relative_path": "02_preprocessed/val/stage3_scene-0552.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0553",
+      "relative_path": "02_preprocessed/val/stage3_scene-0553.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0554",
+      "relative_path": "02_preprocessed/val/stage3_scene-0554.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0555",
+      "relative_path": "02_preprocessed/val/stage3_scene-0555.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0556",
+      "relative_path": "02_preprocessed/val/stage3_scene-0556.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0557",
+      "relative_path": "02_preprocessed/val/stage3_scene-0557.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0558",
+      "relative_path": "02_preprocessed/val/stage3_scene-0558.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0559",
+      "relative_path": "02_preprocessed/val/stage3_scene-0559.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0560",
+      "relative_path": "02_preprocessed/val/stage3_scene-0560.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0561",
+      "relative_path": "02_preprocessed/val/stage3_scene-0561.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0562",
+      "relative_path": "02_preprocessed/val/stage3_scene-0562.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0563",
+      "relative_path": "02_preprocessed/val/stage3_scene-0563.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0564",
+      "relative_path": "02_preprocessed/val/stage3_scene-0564.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0565",
+      "relative_path": "02_preprocessed/val/stage3_scene-0565.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0625",
+      "relative_path": "02_preprocessed/val/stage3_scene-0625.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0626",
+      "relative_path": "02_preprocessed/val/stage3_scene-0626.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0627",
+      "relative_path": "02_preprocessed/val/stage3_scene-0627.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0629",
+      "relative_path": "02_preprocessed/val/stage3_scene-0629.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0630",
+      "relative_path": "02_preprocessed/val/stage3_scene-0630.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0632",
+      "relative_path": "02_preprocessed/val/stage3_scene-0632.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0633",
+      "relative_path": "02_preprocessed/val/stage3_scene-0633.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0634",
+      "relative_path": "02_preprocessed/val/stage3_scene-0634.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0635",
+      "relative_path": "02_preprocessed/val/stage3_scene-0635.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0636",
+      "relative_path": "02_preprocessed/val/stage3_scene-0636.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0637",
+      "relative_path": "02_preprocessed/val/stage3_scene-0637.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0638",
+      "relative_path": "02_preprocessed/val/stage3_scene-0638.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0770",
+      "relative_path": "02_preprocessed/val/stage3_scene-0770.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0771",
+      "relative_path": "02_preprocessed/val/stage3_scene-0771.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0775",
+      "relative_path": "02_preprocessed/val/stage3_scene-0775.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0777",
+      "relative_path": "02_preprocessed/val/stage3_scene-0777.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0778",
+      "relative_path": "02_preprocessed/val/stage3_scene-0778.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0780",
+      "relative_path": "02_preprocessed/val/stage3_scene-0780.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0781",
+      "relative_path": "02_preprocessed/val/stage3_scene-0781.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0782",
+      "relative_path": "02_preprocessed/val/stage3_scene-0782.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0783",
+      "relative_path": "02_preprocessed/val/stage3_scene-0783.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0784",
+      "relative_path": "02_preprocessed/val/stage3_scene-0784.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0794",
+      "relative_path": "02_preprocessed/val/stage3_scene-0794.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0795",
+      "relative_path": "02_preprocessed/val/stage3_scene-0795.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0796",
+      "relative_path": "02_preprocessed/val/stage3_scene-0796.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0797",
+      "relative_path": "02_preprocessed/val/stage3_scene-0797.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0798",
+      "relative_path": "02_preprocessed/val/stage3_scene-0798.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0799",
+      "relative_path": "02_preprocessed/val/stage3_scene-0799.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0800",
+      "relative_path": "02_preprocessed/val/stage3_scene-0800.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0802",
+      "relative_path": "02_preprocessed/val/stage3_scene-0802.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0904",
+      "relative_path": "02_preprocessed/val/stage3_scene-0904.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0905",
+      "relative_path": "02_preprocessed/val/stage3_scene-0905.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0906",
+      "relative_path": "02_preprocessed/val/stage3_scene-0906.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0907",
+      "relative_path": "02_preprocessed/val/stage3_scene-0907.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0908",
+      "relative_path": "02_preprocessed/val/stage3_scene-0908.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0909",
+      "relative_path": "02_preprocessed/val/stage3_scene-0909.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0910",
+      "relative_path": "02_preprocessed/val/stage3_scene-0910.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0911",
+      "relative_path": "02_preprocessed/val/stage3_scene-0911.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0912",
+      "relative_path": "02_preprocessed/val/stage3_scene-0912.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0913",
+      "relative_path": "02_preprocessed/val/stage3_scene-0913.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0914",
+      "relative_path": "02_preprocessed/val/stage3_scene-0914.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0915",
+      "relative_path": "02_preprocessed/val/stage3_scene-0915.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0916",
+      "relative_path": "02_preprocessed/val/stage3_scene-0916.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0917",
+      "relative_path": "02_preprocessed/val/stage3_scene-0917.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0919",
+      "relative_path": "02_preprocessed/val/stage3_scene-0919.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0920",
+      "relative_path": "02_preprocessed/val/stage3_scene-0920.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0921",
+      "relative_path": "02_preprocessed/val/stage3_scene-0921.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0922",
+      "relative_path": "02_preprocessed/val/stage3_scene-0922.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0923",
+      "relative_path": "02_preprocessed/val/stage3_scene-0923.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0924",
+      "relative_path": "02_preprocessed/val/stage3_scene-0924.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0925",
+      "relative_path": "02_preprocessed/val/stage3_scene-0925.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0926",
+      "relative_path": "02_preprocessed/val/stage3_scene-0926.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0927",
+      "relative_path": "02_preprocessed/val/stage3_scene-0927.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0928",
+      "relative_path": "02_preprocessed/val/stage3_scene-0928.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0929",
+      "relative_path": "02_preprocessed/val/stage3_scene-0929.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0930",
+      "relative_path": "02_preprocessed/val/stage3_scene-0930.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0931",
+      "relative_path": "02_preprocessed/val/stage3_scene-0931.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0962",
+      "relative_path": "02_preprocessed/val/stage3_scene-0962.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0963",
+      "relative_path": "02_preprocessed/val/stage3_scene-0963.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0966",
+      "relative_path": "02_preprocessed/val/stage3_scene-0966.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0967",
+      "relative_path": "02_preprocessed/val/stage3_scene-0967.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0968",
+      "relative_path": "02_preprocessed/val/stage3_scene-0968.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0969",
+      "relative_path": "02_preprocessed/val/stage3_scene-0969.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0971",
+      "relative_path": "02_preprocessed/val/stage3_scene-0971.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-0972",
+      "relative_path": "02_preprocessed/val/stage3_scene-0972.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1059",
+      "relative_path": "02_preprocessed/val/stage3_scene-1059.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1060",
+      "relative_path": "02_preprocessed/val/stage3_scene-1060.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1061",
+      "relative_path": "02_preprocessed/val/stage3_scene-1061.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1062",
+      "relative_path": "02_preprocessed/val/stage3_scene-1062.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1063",
+      "relative_path": "02_preprocessed/val/stage3_scene-1063.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1064",
+      "relative_path": "02_preprocessed/val/stage3_scene-1064.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1065",
+      "relative_path": "02_preprocessed/val/stage3_scene-1065.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1066",
+      "relative_path": "02_preprocessed/val/stage3_scene-1066.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1067",
+      "relative_path": "02_preprocessed/val/stage3_scene-1067.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1068",
+      "relative_path": "02_preprocessed/val/stage3_scene-1068.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1069",
+      "relative_path": "02_preprocessed/val/stage3_scene-1069.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1070",
+      "relative_path": "02_preprocessed/val/stage3_scene-1070.pt",
+      "windows": 25
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1071",
+      "relative_path": "02_preprocessed/val/stage3_scene-1071.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1072",
+      "relative_path": "02_preprocessed/val/stage3_scene-1072.pt",
+      "windows": 24
+    },
+    {
+      "split": "val",
+      "scene_name": "scene-1073",
+      "relative_path": "02_preprocessed/val/stage3_scene-1073.pt",
+      "windows": 24
+    }
+  ],
+  "source_signature": "3170ffc609b0473cb7d80e05a70f7a59968c7a77482dc6edb9a8967d59ee2013",
+  "input_signature": "d00360d0abd6ff4edfb61c6f332ccf482808b87e210e1655e9cb1d5e3e4cae35",
+  "previous_vehicle_actor_windows_exactly_paired": 378238,
+  "splits": {
+    "train": {
+      "scenes": 700,
+      "candidate_windows": 16930,
+      "supervised_windows": 16898
+    },
+    "val": {
+      "scenes": 150,
+      "candidate_windows": 3619,
+      "supervised_windows": 3603
+    }
+  }
+}
