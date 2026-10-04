@@ -1,0 +1,834 @@
+你现在开始执行“大论文——交通参与者预测模块”的第一阶段工作。
+
+项目目标：
+基于 nuScenes 数据集，建立后续改进 HiVT 的多交通参与者轨迹预测工程。
+当前阶段只做：
+
+nuScenes 数据检查
+→ Python/conda 环境检查
+→ 数据读取
+→ 坐标转换
+→ 场景窗口构造
+→ 可视化
+→ 常速度 CV baseline
+
+暂时不要：
+1. 修改完整 HiVT；
+2. 做动态图创新；
+3. 做行为意图预测；
+4. 做扩散规划；
+5. 重新下载已有数据；
+6. 无必要时创建新的 conda 环境。
+
+==================================================
+一、首先做本机资产检查
+==================================================
+
+注意：
+不要假设数据不存在。
+不要假设必须重新安装环境。
+优先复用我电脑上已经存在的数据和 Python 环境。
+
+先执行并记录：
+
+1. 当前系统信息
+
+pwd
+whoami
+uname -a
+
+2. GPU
+
+nvidia-smi
+
+记录：
+GPU 型号
+显存
+Driver
+CUDA Driver Version
+
+3. Python
+
+which python
+python --version
+which pip
+pip --version
+
+4. Conda
+
+which conda
+conda env list
+
+如果 conda 可用，对每一个有可能相关的环境检查：
+
+python version
+torch version
+torch.cuda.is_available()
+torch.version.cuda
+numpy version
+scipy version
+pytorch-lightning/lightning
+torch-geometric
+nuscenes-devkit
+
+重点检查已有的：
+ped_intent
+
+但不要因为它叫 ped_intent 就直接使用。
+必须根据依赖是否兼容来决定。
+
+可以执行类似：
+
+conda run -n ped_intent python - <<'PY'
+import sys
+print("python:", sys.version)
+
+try:
+    import torch
+    print("torch:", torch.__version__)
+    print("cuda available:", torch.cuda.is_available())
+    print("torch cuda:", torch.version.cuda)
+except Exception as e:
+    print("torch error:", repr(e))
+
+mods = [
+    "numpy",
+    "scipy",
+    "sklearn",
+    "pandas",
+    "matplotlib",
+    "nuscenes",
+    "torch_geometric",
+    "pytorch_lightning",
+    "lightning",
+]
+
+for m in mods:
+    try:
+        mod = __import__(m)
+        print(m, "OK", getattr(mod, "__version__", "unknown"))
+    except Exception as e:
+        print(m, "MISSING/ERROR", repr(e))
+PY
+
+对其他疑似相关环境也进行同样检查。
+
+==================================================
+二、自动搜索 nuScenes 数据
+==================================================
+
+优先检查这些位置：
+
+/home/lrj
+/home/lrj/data
+/home/lrj/datasets
+/home/lrj/dataset
+/media/lrj
+
+不要直接全盘深度扫描。
+
+重点寻找：
+
+v1.0-mini
+v1.0-trainval
+samples
+sweeps
+maps
+
+以及以下 metadata：
+
+scene.json
+sample.json
+sample_annotation.json
+instance.json
+ego_pose.json
+log.json
+map.json
+
+可以使用：
+
+find /home/lrj -maxdepth 5 \
+  \( -name "v1.0-mini" -o \
+     -name "v1.0-trainval" -o \
+     -name "scene.json" \) \
+  2>/dev/null
+
+find /media/lrj -maxdepth 6 \
+  \( -name "v1.0-mini" -o \
+     -name "v1.0-trainval" -o \
+     -name "scene.json" \) \
+  2>/dev/null
+
+一旦发现疑似 nuScenes 根目录：
+
+检查目录结构。
+
+要求至少确认：
+
+root/
+├── samples/
+├── sweeps/        （如果存在）
+├── maps/
+├── v1.0-mini/
+或
+├── v1.0-trainval/
+
+并统计：
+
+du -sh 数据根目录
+
+检查 metadata 文件是否完整。
+
+不要下载任何数据。
+
+如果没有找到数据：
+立即停止“数据下载”相关动作，
+只报告搜索过的位置和结果。
+
+==================================================
+三、自动搜索现有相关项目
+==================================================
+
+在 /home/lrj 下检查是否已经存在：
+
+HiVT
+hivt
+nuScenes
+nuscenes
+trajectory
+prediction
+motion
+forecast
+
+相关项目。
+
+例如：
+
+find /home/lrj -maxdepth 3 -type d \
+  \( -iname "*hivt*" \
+     -o -iname "*nuscenes*" \
+     -o -iname "*trajectory*" \
+     -o -iname "*prediction*" \) \
+  2>/dev/null
+
+同时检查 git repo：
+
+find /home/lrj -maxdepth 4 -type d -name ".git" 2>/dev/null
+
+如果发现疑似相关 repo：
+
+进入目录后执行：
+
+git status
+git branch --show-current
+git remote -v
+git log -5 --oneline
+
+不要修改代码。
+
+==================================================
+四、选择 Python 环境
+==================================================
+
+按照以下优先级选择环境：
+
+优先级1：
+已经同时满足
+
+Python >= 3.8
+PyTorch 可正常 import
+torch.cuda.is_available() == True
+numpy/scipy/sklearn 可用
+nuscenes-devkit 可用
+
+的已有环境。
+
+优先级2：
+PyTorch + CUDA 正常，
+只缺 nuscenes-devkit 或少量轻量依赖。
+
+这种情况直接复用该环境，
+后续只安装缺少的小型依赖。
+
+优先级3：
+已有环境版本比较合适，
+但 torch-geometric / lightning 等 HiVT 后续依赖未安装。
+
+仍然优先复用，
+当前 Stage A-C 不需要为了 HiVT 提前安装全部依赖。
+
+不要现在创建新 conda 环境。
+
+只有所有已有环境都明显不兼容时，
+才在报告中建议创建新环境，
+不要自行创建。
+
+最终明确输出：
+
+SELECTED_ENV=<环境名>
+
+并说明选择理由。
+
+==================================================
+五、检查 nuScenes-devkit
+==================================================
+
+在最终选中的环境中测试：
+
+python - <<'PY'
+from nuscenes.nuscenes import NuScenes
+print("nuscenes-devkit import OK")
+PY
+
+如果不存在：
+
+只安装 nuscenes-devkit。
+
+安装完成后重新测试。
+
+不要升级 torch。
+不要升级 CUDA。
+不要批量升级已有包。
+
+==================================================
+六、建立本次工程目录
+==================================================
+
+首先检查是否已经存在交通预测项目。
+
+如果不存在，在：
+
+/home/lrj/
+
+下建立：
+
+traffic_prediction/
+
+目录结构：
+
+traffic_prediction/
+├── data/
+├── preprocessing/
+├── datasets/
+├── models/
+├── losses/
+├── metrics/
+├── configs/
+├── outputs/
+│   ├── figures/
+│   ├── debug/
+│   └── reports/
+├── scripts/
+└── README.md
+
+不要复制 nuScenes 数据进入项目。
+
+使用配置文件或软链接记录实际数据位置。
+
+例如：
+
+configs/local_paths.yaml
+
+内容类似：
+
+nuscenes_root: /真实的数据路径
+nuscenes_version: v1.0-mini
+
+如果正式 trainval 也存在：
+
+nuscenes_trainval_root: /真实路径
+
+==================================================
+七、Stage A：验证 nuScenes 可以正确读取
+==================================================
+
+建立：
+
+preprocessing/inspect_nuscenes.py
+
+功能：
+
+1. 加载 nuScenes；
+2. 打印数据集版本；
+3. scene 数量；
+4. sample 数量；
+5. annotation 数量；
+6. 输出第一个 scene 的：
+   - scene token
+   - scene name
+   - first_sample_token
+   - last_sample_token
+7. 输出第一个 sample 中所有 annotation 类别；
+8. 找到：
+   vehicle
+   pedestrian
+   bicycle
+   的实际类别名称。
+
+不要凭感觉写类别映射。
+根据 nuScenes 实际 category_name 输出结果制定映射。
+
+保存运行日志：
+
+outputs/reports/stage_a_dataset_inspection.txt
+
+==================================================
+八、Stage A2：检查交通参与者类别
+==================================================
+
+统计整个 mini 数据集中：
+
+vehicle.*
+human.pedestrian.*
+vehicle.bicycle
+其他动态类别
+
+分别有多少 annotation。
+
+输出：
+
+类别名称
+annotation 数量
+instance 数量
+
+生成：
+
+outputs/reports/category_statistics.csv
+
+第一版预测类别最终定义为：
+
+vehicle
+pedestrian
+bicycle
+
+但是映射规则必须根据实际 nuScenes taxonomy 实现。
+
+特别注意：
+不要写成未经验证的：
+
+category.startswith("cycle.")
+
+必须根据实际 nuScenes category_name 确认 bicycle 类别。
+
+==================================================
+九、Stage A3：检查时间链
+==================================================
+
+选择一个 scene。
+
+沿 sample：
+
+prev
+next
+
+遍历。
+
+输出：
+
+sample timestamp
+sample_token
+相邻 sample 时间间隔
+
+确认关键帧采样频率。
+
+不要直接假设严格等于 2 Hz，
+实际打印 timestamp 差值验证。
+
+输出：
+
+outputs/reports/sample_timing.txt
+
+==================================================
+十、Stage B：生成一个历史—未来窗口
+==================================================
+
+第一版目标：
+
+历史约 2 秒
+未来 6 秒
+
+在关键帧方案下先测试：
+
+Th = 5
+Tf = 12
+
+当前时刻：
+
+[t0-4 ... t0]
+→
+[t0+1 ... t0+12]
+
+建立：
+
+preprocessing/build_one_window.py
+
+要求：
+
+1. 选择满足历史和未来长度的 t0；
+2. 当前时刻识别所有：
+   vehicle
+   pedestrian
+   bicycle；
+3. 使用 instance_token 追踪同一目标；
+4. 保存历史位置；
+5. 保存未来位置；
+6. 保存有效 mask；
+7. 保存 ego 历史；
+8. 保存 ego future；
+9. 不允许最近邻匹配替代 instance_token。
+
+==================================================
+十一、坐标统一
+==================================================
+
+全部转换到：
+
+当前 t0 自车坐标系。
+
+定义：
+
+origin：
+当前 ego position
+
+x：
+当前 ego heading 正前方
+
+y：
+当前 ego 左侧
+
+必须转换：
+
+agent position
+agent heading
+ego history
+ego future
+
+地图随后也使用完全相同坐标系。
+
+建立独立函数：
+
+global_to_ego()
+
+ego_to_global()
+
+写最小单元测试：
+
+global → ego → global
+
+误差必须非常小。
+
+==================================================
+十二、Stage B2：保存一个 .pt
+==================================================
+
+输出至少包含：
+
+agent_pos        [N, Th, 2]
+agent_velocity   [N, Th, 2]
+agent_heading    [N, Th]
+agent_type       [N]
+history_mask     [N, Th]
+
+future_pos       [N, Tf, 2]
+future_mask      [N, Tf]
+
+ego_history      [Th, 2]
+ego_future       [Tf, 2]
+
+scene_token
+sample_token
+instance_tokens
+
+暂时可以不加入完整地图。
+
+保存：
+
+outputs/debug/one_window.pt
+
+打印所有 tensor：
+
+shape
+dtype
+min
+max
+是否包含 nan
+是否包含 inf
+
+==================================================
+十三、Stage B3：可视化
+==================================================
+
+建立：
+
+preprocessing/visualize_window.py
+
+至少绘制：
+
+ego 当前点
+ego 历史
+ego GT future
+
+车辆历史
+车辆 GT future
+
+行人历史
+行人 GT future
+
+自行车历史
+自行车 GT future
+
+不同类型使用不同 marker 即可。
+
+图中必须明确显示：
+
+当前 ego 朝向为 +x。
+
+保存：
+
+outputs/figures/one_window.png
+
+验收重点：
+
+1. 历史轨迹与未来轨迹连续；
+2. agent 不发生身份跳跃；
+3. ego 前方为 +x；
+4. 不出现轨迹镜像；
+5. 不出现明显旋转错误。
+
+如果这里出现错误：
+停止后续工作，
+先修数据。
+
+==================================================
+十四、Stage C：scene 级数据划分检查
+==================================================
+
+现在不要生成完整训练集。
+
+先写数据划分函数，保证：
+
+先按 scene 划分：
+
+train scenes
+val scenes
+test scenes
+
+然后分别在内部生成 windows。
+
+禁止：
+
+先生成所有 windows
+→ 再随机划分。
+
+写测试：
+
+assert train_scene_tokens.isdisjoint(val_scene_tokens)
+assert train_scene_tokens.isdisjoint(test_scene_tokens)
+assert val_scene_tokens.isdisjoint(test_scene_tokens)
+
+==================================================
+十五、Stage C2：常速度 baseline
+==================================================
+
+建立：
+
+models/constant_velocity.py
+
+方法：
+
+根据历史最后两个有效时间点估计速度：
+
+v = (p_t - p_{t-1}) / dt
+
+然后：
+
+p_future(k) = p_t + k * dt * v
+
+支持：
+
+vehicle
+pedestrian
+bicycle
+
+支持 future_mask。
+
+实现指标：
+
+ADE
+FDE
+
+先不做 minADE，因为 CV 只有一条轨迹。
+
+分别输出：
+
+vehicle ADE/FDE
+pedestrian ADE/FDE
+bicycle ADE/FDE
+overall ADE/FDE
+
+先在少量窗口验证指标。
+
+==================================================
+十六、当前阶段严格停止位置
+==================================================
+
+做到以下内容以后停止：
+
+[ ] 找到 nuScenes 实际路径
+[ ] 找到可复用 Python/conda 环境
+[ ] 确认 GPU/PyTorch/CUDA 可用
+[ ] nuscenes-devkit 可以 import
+[ ] 一个 scene 可以读取
+[ ] 类别 taxonomy 已确认
+[ ] sample 时间间隔已确认
+[ ] 一个历史—未来窗口构造成功
+[ ] instance_token 轨迹连续
+[ ] 当前 ego 坐标系转换正确
+[ ] one_window.pt 正确
+[ ] one_window.png 正确
+[ ] scene-level split 代码正确
+[ ] 常速度 baseline 可以输出 ADE/FDE
+
+做到这里之后：
+
+停止。
+
+不要开始 HiVT。
+
+==================================================
+十七、最终给我的汇报格式
+==================================================
+
+执行完成后不要只说“完成了”。
+
+严格按下面格式汇报：
+
+【1. 本机环境】
+
+GPU：
+Driver：
+CUDA Driver：
+Conda：
+
+检测到的环境：
+- env1：
+  Python：
+  PyTorch：
+  CUDA：
+  nuscenes：
+- env2：
+...
+
+最终选择：
+SELECTED_ENV=
+
+选择理由：
+
+--------------------------------------------------
+
+【2. nuScenes】
+
+实际数据路径：
+
+版本：
+[ ] v1.0-mini
+[ ] v1.0-trainval
+
+目录完整性：
+
+scene 数：
+sample 数：
+annotation 数：
+
+类别统计文件：
+
+--------------------------------------------------
+
+【3. 工程】
+
+工程绝对路径：
+
+Git 状态：
+
+新增文件：
+
+--------------------------------------------------
+
+【4. 数据窗口】
+
+Th：
+Tf：
+dt：
+
+agent 数量：
+
+tensor shape：
+
+是否有 NaN：
+是否有 Inf：
+
+--------------------------------------------------
+
+【5. 坐标检查】
+
+ego +x：
+PASS / FAIL
+
+轨迹连续：
+PASS / FAIL
+
+instance_token：
+PASS / FAIL
+
+可视化文件：
+
+--------------------------------------------------
+
+【6. CV Baseline】
+
+vehicle：
+ADE=
+FDE=
+
+pedestrian：
+ADE=
+FDE=
+
+bicycle：
+ADE=
+FDE=
+
+overall：
+ADE=
+FDE=
+
+--------------------------------------------------
+
+【7. 当前问题】
+
+列出真实存在的问题。
+
+不要猜测。
+
+--------------------------------------------------
+
+【8. 下一步建议】
+
+只说明是否已经具备：
+
+进入 vehicle-only HiVT baseline 阶段
+
+YES / NO
+
+如果 NO：
+明确卡在哪里。
+
+==================================================
+
+所有运行命令、修改文件和实验输出都要保留。
+
+不要删除原数据。
+不要覆盖已有项目。
+不要修改其他论文项目。
+不要自行下载大型数据。
+不要创建新环境，除非我之后明确同意。

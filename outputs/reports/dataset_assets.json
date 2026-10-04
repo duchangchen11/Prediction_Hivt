@@ -1,0 +1,31 @@
+{
+  "mini_root": "/home/lrj/datasets/nuscenes-mini",
+  "mini_disk_usage": "5.6G",
+  "trainval_root": "/media/lrj/54926A1D926A0438/nuscenes-trainval",
+  "trainval_metadata_files_present": [
+    "attribute.json",
+    "calibrated_sensor.json",
+    "category.json",
+    "ego_pose.json",
+    "instance.json",
+    "log.json",
+    "map.json",
+    "sample.json",
+    "sample_annotation.json",
+    "sample_data.json",
+    "scene.json",
+    "sensor.json",
+    "visibility.json"
+  ],
+  "trainval_sensor_integrity_checked": false,
+  "trainval_samples_subdirectories": [
+    "CAM_BACK",
+    "CAM_BACK_LEFT",
+    "CAM_BACK_RIGHT",
+    "CAM_FRONT",
+    "CAM_FRONT_LEFT",
+    "CAM_FRONT_RIGHT"
+  ],
+  "trainval_disk_usage_completed": false,
+  "trainval_disk_usage_timeout_s": 55
+}

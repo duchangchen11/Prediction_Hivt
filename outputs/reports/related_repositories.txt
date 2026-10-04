@@ -1,0 +1,16 @@
+
+REPO /home/lrj/nuscenes_mini_stage1
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+
+REPO /home/lrj/ped_intent_project
+feat/intent_guided_mamba
+origin	https://github.com/duchangchen11/paper_one.git (fetch)
+origin	https://github.com/duchangchen11/paper_one.git (push)
+428336d exp: evaluate JAAD Mamba temporal baselines
+d2b8ee6 feat: add matched Mamba baselines for JAAD
+cb53ed1 feat: audit local versus background scene evidence
+2dcf6da feat: audit scene shortcut and crossing context
+edd0502 feat: attribute joint intention architecture components

@@ -1,0 +1,26 @@
+{
+  "agent_roundtrip_max_error_m": 0.0,
+  "ego_history_roundtrip_max_error_m": 0.0,
+  "ego_future_roundtrip_max_error_m": 0.0,
+  "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+  "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+  "ego_forward_local": [
+    1.000000000000029,
+    -3.6970484120454195e-14
+  ],
+  "ego_left_local": [
+    1.12813688767457e-14,
+    0.9999999999999528
+  ],
+  "history_duration_s": 2.001162,
+  "future_duration_s": 5.999662,
+  "dt_mean_s": 0.5000515,
+  "dt_min_s": 0.499818,
+  "dt_max_s": 0.500973,
+  "instance_chain_edges_checked": 181,
+  "all_current_actors_present": true,
+  "lidar_sample_timestamp_max_offset_us": 0,
+  "max_observed_displacement_m": 4.872527578167197,
+  "max_observed_speed_mps": 9.746848576472473,
+  "stored_float32_roundtrip_max_error_m": 3.115356832950056e-06
+}

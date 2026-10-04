@@ -1,0 +1,54 @@
+{
+  "python": "3.10.21 (main, Aug 27 2026, 14:42:07) [GCC 14.3.0]",
+  "executable": "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+  "modules": {
+    "torch": {
+      "ok": true,
+      "version": "2.5.1+cu124",
+      "cuda_available": true,
+      "cuda_runtime": "12.4",
+      "gpu": "NVIDIA GeForce RTX 3080",
+      "cuda_compute": 6.0
+    },
+    "numpy": {
+      "ok": true,
+      "version": "1.26.4"
+    },
+    "scipy": {
+      "ok": true,
+      "version": "1.14.1"
+    },
+    "sklearn": {
+      "ok": true,
+      "version": "1.5.2"
+    },
+    "pandas": {
+      "ok": true,
+      "version": "2.2.3"
+    },
+    "matplotlib": {
+      "ok": true,
+      "version": "3.9.2"
+    },
+    "nuscenes": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'nuscenes'\")"
+    },
+    "torch_geometric": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'torch_geometric'\")"
+    },
+    "pytorch_lightning": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'pytorch_lightning'\")"
+    },
+    "lightning": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'lightning'\")"
+    },
+    "yaml": {
+      "ok": true,
+      "version": "6.0.2"
+    }
+  }
+}

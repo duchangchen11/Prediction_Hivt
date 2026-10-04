@@ -1,0 +1,50 @@
+{
+  "python": "3.6.13 |Anaconda, Inc.| (default, Jun  4 2021, 14:25:59) \n[GCC 7.5.0]",
+  "executable": "/home/lrj/anaconda3/envs/e2e/bin/python",
+  "modules": {
+    "torch": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'torch'\",)"
+    },
+    "numpy": {
+      "ok": true,
+      "version": "1.19.2"
+    },
+    "scipy": {
+      "ok": true,
+      "version": "1.5.2"
+    },
+    "sklearn": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'sklearn'\",)"
+    },
+    "pandas": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'pandas'\",)"
+    },
+    "matplotlib": {
+      "ok": true,
+      "version": "3.3.4"
+    },
+    "nuscenes": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'nuscenes'\",)"
+    },
+    "torch_geometric": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'torch_geometric'\",)"
+    },
+    "pytorch_lightning": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'pytorch_lightning'\",)"
+    },
+    "lightning": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'lightning'\",)"
+    },
+    "yaml": {
+      "ok": false,
+      "error": "ModuleNotFoundError(\"No module named 'yaml'\",)"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Stage-one versions validated in the existing ped_intent environment.
+# Do not install this wholesale into a shared existing environment. Only add
+# missing dependencies after inspection, constraining existing versions.
+numpy==1.26.4
+scipy==1.14.1
+scikit-learn==1.5.2
+matplotlib==3.9.2
+PyYAML==6.0.2
+nuscenes-devkit==1.2.0
+pyquaternion==0.9.9
+# Existing PyTorch: 2.5.1+cu124, left unchanged.

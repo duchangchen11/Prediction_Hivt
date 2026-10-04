@@ -1,0 +1,527 @@
+你现在继续执行“大论文交通参与者预测模块”。
+
+当前不要修改完整 HiVT。
+当前目标是完成：
+
+环境确认
+→ nuScenes 数据确认
+→ 单场景读取
+→ 历史-未来窗口
+→ ego 坐标转换
+→ 单样本保存
+→ 可视化
+→ 常速度 CV baseline
+
+完成后停止，等待下一条指令。
+
+==================================================
+阶段 0：确认现有环境和数据
+==================================================
+
+1. 优先检查已经存在的 conda 环境。
+
+首先：
+
+conda env list
+
+优先测试已有的 ped_intent 环境。
+
+要求检查：
+
+python --version
+torch.__version__
+torch.cuda.is_available()
+numpy
+scipy
+matplotlib
+sklearn
+nuscenes-devkit
+
+如果 ped_intent 可以正常运行 PyTorch + CUDA，
+就直接使用这个环境。
+
+不要创建新 conda 环境。
+
+如果只缺 nuscenes-devkit，
+只安装 nuscenes-devkit，
+不要升级 torch、CUDA 和其他核心包。
+
+最终记录：
+
+SELECTED_ENV=xxx
+
+2. 搜索现有 nuScenes 数据。
+
+优先搜索：
+
+/home/lrj
+/home/lrj/data
+/home/lrj/dataset
+/home/lrj/datasets
+/media/lrj
+
+寻找：
+
+v1.0-mini
+v1.0-trainval
+samples
+maps
+sweeps
+
+确认真实数据根目录。
+
+不要重新下载数据。
+
+==================================================
+阶段 1：检查或建立交通预测工程
+==================================================
+
+首先检查：
+
+/home/lrj/traffic_prediction
+
+是否已经存在。
+
+如果存在：
+继续使用，不要覆盖。
+
+如果不存在：
+创建：
+
+/home/lrj/traffic_prediction/
+
+至少建立：
+
+preprocessing/
+datasets/
+models/
+metrics/
+configs/
+outputs/
+outputs/figures/
+outputs/reports/
+outputs/debug/
+
+数据不要复制进入工程。
+
+建立：
+
+configs/local_paths.yaml
+
+记录：
+
+nuscenes_root: 实际数据路径
+nuscenes_version: v1.0-mini
+
+如果存在 trainval，也同时记录。
+
+==================================================
+阶段 2：读取一个 nuScenes scene
+==================================================
+
+实现：
+
+preprocessing/inspect_nuscenes.py
+
+要求：
+
+1. 正常加载 NuScenes；
+2. 打印：
+   - version
+   - scene 数量
+   - sample 数量
+   - annotation 数量
+3. 读取第一个 scene；
+4. 输出：
+   - scene name
+   - scene token
+   - first sample token
+   - last sample token
+5. 打印一个 sample 内全部目标类别；
+6. 确认 vehicle / pedestrian / bicycle 的真实 taxonomy。
+
+特别注意：
+
+不要直接照计划中写死：
+cycle.*
+
+必须根据 nuScenes 实际 category_name 确认 bicycle 的名字。
+
+生成：
+
+outputs/reports/dataset_inspection.txt
+
+==================================================
+阶段 3：验证时间采样
+==================================================
+
+沿一个 scene 的 sample.next 遍历。
+
+输出每帧：
+
+timestamp
+sample_token
+相邻两帧 dt
+
+确认关键帧实际采样频率。
+
+保存：
+
+outputs/reports/sample_timing.txt
+
+第一版目标仍然使用：
+
+历史：
+Th = 5
+
+未来：
+Tf = 12
+
+但必须根据实际 timestamp 验证它对应的真实时间长度。
+
+==================================================
+阶段 4：生成一个历史-未来窗口
+==================================================
+
+实现：
+
+preprocessing/build_one_window.py
+
+选择一个满足：
+
+5 帧历史
+12 帧未来
+
+的 t0。
+
+窗口：
+
+[t0-4, ..., t0]
+→
+[t0+1, ..., t0+12]
+
+当前 t0 中读取：
+
+vehicle
+pedestrian
+bicycle
+
+必须使用：
+
+instance_token
+
+关联同一交通参与者。
+
+严禁使用最近邻匹配替代 instance_token。
+
+对每个 agent 保存：
+
+历史位置
+未来位置
+类别
+instance_token
+history_mask
+future_mask
+
+同时保存：
+
+ego_history
+ego_future
+
+==================================================
+阶段 5：统一到当前 ego 坐标系
+==================================================
+
+坐标定义固定为：
+
+原点：
+t0 时刻 ego 位置
+
++x：
+ego 当前前进方向
+
++y：
+ego 左侧
+
+实现独立函数：
+
+global_to_ego()
+
+ego_to_global()
+
+要求：
+
+global
+→ ego
+→ global
+
+能够基本恢复原坐标。
+
+至少测试：
+
+agent position
+ego history
+ego future
+heading
+
+坐标检查没通过就停止，不要继续训练。
+
+==================================================
+阶段 6：保存一个标准 .pt 样本
+==================================================
+
+保存：
+
+outputs/debug/one_window.pt
+
+至少包含：
+
+agent_pos       [N, Th, 2]
+agent_velocity  [N, Th, 2]
+agent_heading   [N, Th]
+agent_type      [N]
+history_mask    [N, Th]
+
+future_pos      [N, Tf, 2]
+future_mask     [N, Tf]
+
+ego_history     [Th, 2]
+ego_future      [Tf, 2]
+
+scene_token
+sample_token
+instance_tokens
+
+暂时不用急着加入完整 HD Map。
+
+对每个 tensor 输出：
+
+shape
+dtype
+min
+max
+nan 数量
+inf 数量
+
+要求：
+
+NaN = 0
+Inf = 0
+
+无效轨迹只能通过 mask 忽略，
+不能把缺失未来点当作真实 (0,0)。
+
+==================================================
+阶段 7：做一张场景可视化
+==================================================
+
+实现：
+
+preprocessing/visualize_window.py
+
+显示：
+
+ego 当前位置
+ego history
+ego GT future
+
+vehicle history / future
+pedestrian history / future
+bicycle history / future
+
+必须能够从图上明显看出：
+
+ego 前进方向是 +x。
+
+保存：
+
+outputs/figures/one_window.png
+
+人工检查：
+
+1. 历史和未来是否连续；
+2. 是否存在目标身份跳变；
+3. 是否发生左右镜像；
+4. 是否存在旋转错误；
+5. 轨迹尺度是否正常。
+
+任何一个明显错误都先修数据。
+
+==================================================
+阶段 8：实现 scene-level 数据划分
+==================================================
+
+必须遵守：
+
+先划分 scene：
+
+train
+val
+test
+
+然后：
+
+分别生成各自 windows。
+
+禁止：
+
+全部窗口生成后随机划分。
+
+加入断言：
+
+train scene 与 val scene 无交集
+train scene 与 test scene 无交集
+val scene 与 test scene 无交集
+
+这一点是硬性要求。
+
+==================================================
+阶段 9：常速度 CV baseline
+==================================================
+
+实现：
+
+models/constant_velocity.py
+
+根据最后两个有效历史点：
+
+v = (p_t - p_{t-1}) / dt
+
+预测：
+
+p_(t+k) = p_t + k * dt * v
+
+实现指标：
+
+ADE
+FDE
+
+必须支持 future_mask。
+
+分别计算：
+
+vehicle
+pedestrian
+bicycle
+overall
+
+输出：
+
+outputs/reports/cv_baseline.json
+
+和：
+
+outputs/reports/cv_baseline.md
+
+==================================================
+阶段 10：到这里停止
+==================================================
+
+本阶段完成条件：
+
+[ ] 已找到现有 nuScenes 数据
+[ ] 已确定可复用 conda 环境
+[ ] PyTorch CUDA 正常
+[ ] nuscenes-devkit 正常
+[ ] 一个 scene 可以读取
+[ ] taxonomy 已确认
+[ ] sample 时间间隔已确认
+[ ] 5+12 窗口构造成功
+[ ] instance_token 轨迹连续
+[ ] ego 坐标系正确
+[ ] one_window.pt 正确
+[ ] one_window.png 正确
+[ ] scene split 无泄漏
+[ ] CV baseline 有 ADE/FDE
+
+全部完成后：
+
+停止。
+
+不要修改 HiVT。
+不要加入 type embedding。
+不要加入 intent head。
+不要加入动态图。
+不要加入 HD Map 创新模块。
+不要做扩散规划。
+
+==================================================
+最终汇报
+==================================================
+
+按照下面格式返回：
+
+1. 环境
+SELECTED_ENV=
+Python=
+PyTorch=
+CUDA available=
+GPU=
+
+2. nuScenes
+ROOT=
+VERSION=
+mini 是否存在=
+trainval 是否存在=
+
+3. taxonomy
+vehicle=
+pedestrian=
+bicycle=
+
+4. 时间
+平均 sample dt=
+Th=5 对应多少秒=
+Tf=12 对应多少秒=
+
+5. 单样本
+N=
+agent_pos shape=
+future_pos shape=
+是否有 NaN=
+是否有 Inf=
+
+6. 坐标
+ego +x：
+PASS / FAIL
+
+轨迹连续：
+PASS / FAIL
+
+instance_token：
+PASS / FAIL
+
+7. 可视化
+文件路径=
+
+8. CV baseline
+
+vehicle
+ADE=
+FDE=
+
+pedestrian
+ADE=
+FDE=
+
+bicycle
+ADE=
+FDE=
+
+overall
+ADE=
+FDE=
+
+9. Git
+工程路径=
+branch=
+commit=
+git status=
+
+10. 是否具备进入下一阶段的条件
+
+vehicle-only HiVT：
+YES / NO
+
+如果 NO：
+说明具体原因。

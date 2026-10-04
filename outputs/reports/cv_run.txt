@@ -1,0 +1,50 @@
+{
+  "vehicle": {
+    "ADE": 1.156408100436918,
+    "FDE": 2.5708477497297304,
+    "FDE_fixed_horizon": 2.7938239499253585,
+    "actor_window_count": 718,
+    "evaluated_actor_windows": 674,
+    "fixed_horizon_actor_windows": 429,
+    "insufficient_history_count": 34,
+    "no_valid_future_count": 10,
+    "valid_future_points": 6661,
+    "mean_last_valid_horizon_s": 4.9249572640949255
+  },
+  "pedestrian": {
+    "ADE": 0.5113570474675703,
+    "FDE": 1.0531882686469292,
+    "FDE_fixed_horizon": 1.3047650290901343,
+    "actor_window_count": 411,
+    "evaluated_actor_windows": 395,
+    "fixed_horizon_actor_windows": 257,
+    "insufficient_history_count": 11,
+    "no_valid_future_count": 5,
+    "valid_future_points": 3904,
+    "mean_last_valid_horizon_s": 4.935377524050616
+  },
+  "bicycle": {
+    "ADE": 0.42455224487154436,
+    "FDE": 0.8524665195080969,
+    "FDE_fixed_horizon": 0.9787307575345039,
+    "actor_window_count": 18,
+    "evaluated_actor_windows": 18,
+    "fixed_horizon_actor_windows": 10,
+    "insufficient_history_count": 0,
+    "no_valid_future_count": 0,
+    "valid_future_points": 183,
+    "mean_last_valid_horizon_s": 5.075403888888888
+  },
+  "overall": {
+    "ADE": 0.9098868756686852,
+    "FDE": 1.990897099157793,
+    "FDE_fixed_horizon": 2.217905739323977,
+    "actor_window_count": 1147,
+    "evaluated_actor_windows": 1087,
+    "fixed_horizon_actor_windows": 696,
+    "insufficient_history_count": 45,
+    "no_valid_future_count": 15,
+    "valid_future_points": 10748,
+    "mean_last_valid_horizon_s": 4.931235131554707
+  }
+}

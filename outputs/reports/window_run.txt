@@ -1,0 +1,21 @@
+agent_pos {'shape': [13, 5, 2], 'dtype': 'torch.float32', 'min': -50.6220817565918, 'max': 37.41582489013672, 'nan_count': 0, 'inf_count': 0}
+agent_velocity {'shape': [13, 5, 2], 'dtype': 'torch.float32', 'min': -7.628345012664795, 'max': 6.4827446937561035, 'nan_count': 0, 'inf_count': 0}
+agent_heading {'shape': [13, 5], 'dtype': 'torch.float32', 'min': -1.7923496961593628, 'max': 3.0454039573669434, 'nan_count': 0, 'inf_count': 0}
+agent_type {'shape': [13], 'dtype': 'torch.int64', 'min': 0, 'max': 2, 'nan_count': 0, 'inf_count': 0}
+history_mask {'shape': [13, 5], 'dtype': 'torch.bool', 'min': False, 'max': True, 'nan_count': 0, 'inf_count': 0}
+velocity_mask {'shape': [13, 5], 'dtype': 'torch.bool', 'min': False, 'max': True, 'nan_count': 0, 'inf_count': 0}
+future_pos {'shape': [13, 12, 2], 'dtype': 'torch.float32', 'min': -50.581443786621094, 'max': 84.79876708984375, 'nan_count': 0, 'inf_count': 0}
+future_mask {'shape': [13, 12], 'dtype': 'torch.bool', 'min': False, 'max': True, 'nan_count': 0, 'inf_count': 0}
+future_heading {'shape': [13, 12], 'dtype': 'torch.float32', 'min': -1.7428908348083496, 'max': 3.023580551147461, 'nan_count': 0, 'inf_count': 0}
+ego_history {'shape': [5, 2], 'dtype': 'torch.float32', 'min': -2.578442335128784, 'max': 0.0008060074760578573, 'nan_count': 0, 'inf_count': 0}
+ego_future {'shape': [12, 2], 'dtype': 'torch.float32', 'min': -0.010135121643543243, 'max': 0.1613483428955078, 'nan_count': 0, 'inf_count': 0}
+ego_history_heading {'shape': [5], 'dtype': 'torch.float32', 'min': 0.0, 'max': 0.045063190162181854, 'nan_count': 0, 'inf_count': 0}
+ego_future_heading {'shape': [12], 'dtype': 'torch.float32', 'min': -0.003295375732704997, 'max': -0.0026423654053360224, 'nan_count': 0, 'inf_count': 0}
+history_times {'shape': [5], 'dtype': 'torch.float64', 'min': -2.001162, 'max': 0.0, 'nan_count': 0, 'inf_count': 0}
+future_times {'shape': [12], 'dtype': 'torch.float64', 'min': 0.499881, 'max': 5.999662, 'nan_count': 0, 'inf_count': 0}
+sample_timestamps_us {'shape': [17], 'dtype': 'torch.int64', 'min': 1535657114648261, 'max': 1535657122649085, 'nan_count': 0, 'inf_count': 0}
+ego_pose_timestamps_us {'shape': [17], 'dtype': 'torch.int64', 'min': 1535657114648261, 'max': 1535657122649085, 'nan_count': 0, 'inf_count': 0}
+ego_origin_global {'shape': [2], 'dtype': 'torch.float64', 'min': 309.31626182989794, 'max': 668.5916209878569, 'nan_count': 0, 'inf_count': 0}
+ego_yaw_global {'shape': [], 'dtype': 'torch.float64', 'min': 2.6814591082481662, 'max': 2.6814591082481662, 'nan_count': 0, 'inf_count': 0}
+{'vehicle': 11, 'pedestrian': 1, 'bicycle': 1}
+{'agent_roundtrip_max_error_m': 0.0, 'ego_history_roundtrip_max_error_m': 0.0, 'ego_future_roundtrip_max_error_m': 0.0, 'heading_roundtrip_max_error_rad': 8.881784197001252e-16, 'ego_heading_roundtrip_max_error_rad': 4.440892098500626e-16, 'ego_forward_local': [1.000000000000029, -3.6970484120454195e-14], 'ego_left_local': [1.12813688767457e-14, 0.9999999999999528], 'history_duration_s': 2.001162, 'future_duration_s': 5.999662, 'dt_mean_s': 0.5000515, 'dt_min_s': 0.499818, 'dt_max_s': 0.500973, 'instance_chain_edges_checked': 181, 'all_current_actors_present': True, 'lidar_sample_timestamp_max_offset_us': 0, 'max_observed_displacement_m': 4.872527578167197, 'max_observed_speed_mps': 9.746848576472473, 'stored_float32_roundtrip_max_error_m': 3.115356832950056e-06}

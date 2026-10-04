@@ -1,0 +1,10 @@
+{
+  "image": "outputs/figures/one_window.png",
+  "reviewed": true,
+  "ego_forward_arrow": "+x",
+  "history_future_continuity": "PASS",
+  "obvious_identity_jump_observed": false,
+  "obvious_mirror_or_rotation_error_observed": false,
+  "source_check": "serialized_window_validation.json",
+  "limitations": "Visual diagnosis supported by source metadata audit; no HD map overlay"
+}

@@ -1,0 +1,121 @@
+
+$ pwd
+/home/lrj/Prediction_Hivt
+
+$ whoami
+lrj
+
+$ uname -a
+Linux lrj-System-Product-Name 5.15.0-139-generic #149~20.04.1-Ubuntu SMP Wed Apr 16 08:29:56 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+$ nvidia-smi
+Sun Oct  4 14:07:10 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.07             Driver Version: 570.133.07     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3080        Off |   00000000:65:00.0  On |                  N/A |
+|  0%   35C    P8             28W /  370W |     317MiB /  10240MiB |     24%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            1309      G   /usr/lib/xorg/Xorg                       35MiB |
+|    0   N/A  N/A            3557      G   /usr/lib/xorg/Xorg                       99MiB |
+|    0   N/A  N/A            3687      G   /usr/bin/gnome-shell                     40MiB |
+|    0   N/A  N/A           55370      G   ...rack-uuid=3190708988185955192         81MiB |
++-----------------------------------------------------------------------------------------+
+
+$ which python
+
+$ python --version
+scripts/asset_audit.sh: line 3: python: command not found
+
+$ which pip
+/usr/bin/pip
+
+$ pip --version
+/usr/bin/pip:6: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import load_entry_point
+pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
+
+$ which conda
+/home/lrj/anaconda3/condabin/conda
+
+$ bash -c test\ \!\ -e\ /home/lrj/traffic_prediction\ \|\|\ ls\ -ld\ /home/lrj/traffic_prediction
+
+$ find /home/lrj -maxdepth 5 \( -name v1.0-mini -o -name v1.0-trainval -o -name scene.json \)
+/home/lrj/datasets/nuscenes-mini/v1.0-mini
+/home/lrj/datasets/nuscenes-mini/v1.0-mini/scene.json
+/home/lrj/data: not present
+/home/lrj/dataset: not present
+
+$ find /home/lrj/datasets -maxdepth 5 \( -name v1.0-mini -o -name v1.0-trainval -o -name scene.json \)
+/home/lrj/datasets/nuscenes-mini/v1.0-mini
+/home/lrj/datasets/nuscenes-mini/v1.0-mini/scene.json
+
+$ find /media/lrj -maxdepth 5 \( -name v1.0-mini -o -name v1.0-trainval -o -name scene.json \)
+/media/lrj/54926A1D926A0438/nuscenes-trainval/v1.0-trainval
+/media/lrj/54926A1D926A0438/nuscenes-trainval/v1.0-trainval/scene.json
+
+$ find /home/lrj -maxdepth 3 -type d \( -iname \*hivt\* -o -iname \*nuscenes\* -o -iname \*trajectory\* -o -iname \*prediction\* -o -iname \*motion\* -o -iname \*forecast\* \)
+/home/lrj/ped_intent_project/checkpoints/trajectory_preserving_joint
+/home/lrj/ped_intent_project/results/trajectory_transformer_zero_scene_15x15_seed123
+/home/lrj/ped_intent_project/results/trajectory_transformer_scene_15x15_seed123
+/home/lrj/ped_intent_project/results/trajectory_preserving_joint
+/home/lrj/ped_intent_project/results/trajectory_transformer_zero_scene_15x15_seed42
+/home/lrj/ped_intent_project/results/trajectory_transformer_zero_scene_15x15_seed2024
+/home/lrj/ped_intent_project/results/trajectory_transformer_scene_15x15_seed42
+/home/lrj/ped_intent_project/results/trajectory_transformer_scene_15x15_seed2024
+/home/lrj/ped_intent_project/results/trajectory_reliability_deconfounding
+/home/lrj/ped_intent_project/results/trajectory_reliability_audit
+/home/lrj/venvs/nuscenes_vlm
+/home/lrj/datasets/nuscenes-mini
+/home/lrj/datasets/nuscenes-mini/prediction
+/home/lrj/nuscenes_mini_stage1
+/home/lrj/nuscenes_mini_stage1/output_trainval_turn8000/_nuscenes_map_root
+/home/lrj/nuscenes_mini_stage1/trajectory_prediction_project
+/home/lrj/nuscenes_mini_stage1/output_trainval_5000_clean/_nuscenes_map_root
+/home/lrj/nuscenes_mini_stage1/validation_future/trajectory_results
+/home/lrj/nuscenes_mini_stage1/validation_future/trajectory_results_smoke
+/home/lrj/Prediction_Hivt
+
+$ find /home/lrj -maxdepth 4 -type d -name .git
+/home/lrj/.git
+/home/lrj/ped_intent_project/.git
+/home/lrj/diffisiondrive/.git
+/home/lrj/diffisiondrive/DiffusionDrive/.git
+/home/lrj/.codex/.tmp/plugins/.git
+/home/lrj/IGGCN_Project/.git
+/home/lrj/Mamba-T/.git
+/home/lrj/stp3/ST-P3/.git
+/home/lrj/nuscenes_mini_stage1/.git
+/home/lrj/Prediction_Hivt/.git
+/home/lrj/.nvm/.git
+/home/lrj/code/ST-P3-main/ST-P3/.git
+
+$ bash -c for\ p\ in\ /home/lrj/miniconda3/bin/conda\ /home/lrj/anaconda3/bin/conda\ /opt/conda/bin/conda\;\ do\ test\ \!\ -x\ \"\$p\"\ \|\|\ \"\$p\"\ env\ list\;\ done
+# conda environments:
+#
+                         /home/lrj/.local/cuda-toolchains/cuda-12.4
+base                     /home/lrj/anaconda3
+causalnncam              /home/lrj/anaconda3/envs/causalnncam
+e2e                      /home/lrj/anaconda3/envs/e2e
+gvin                     /home/lrj/anaconda3/envs/gvin
+interfuser               /home/lrj/anaconda3/envs/interfuser
+media_player             /home/lrj/anaconda3/envs/media_player
+navsim                   /home/lrj/anaconda3/envs/navsim
+ped_intent               /home/lrj/anaconda3/envs/ped_intent
+plant                    /home/lrj/anaconda3/envs/plant
+rl_CARLA-master          /home/lrj/anaconda3/envs/rl_CARLA-master
+rl_CARLA-master1         /home/lrj/anaconda3/envs/rl_CARLA-master1
+stp3                     /home/lrj/anaconda3/envs/stp3
+tfuse                    /home/lrj/anaconda3/envs/tfuse
+

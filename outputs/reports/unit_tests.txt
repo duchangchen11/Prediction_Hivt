@@ -1,0 +1,14 @@
+test_last_two_valid_points_and_irregular_timestamps (test_stage_one.ConstantVelocityTest) ... ok
+test_perfect_linear_motion (test_stage_one.ConstantVelocityTest) ... ok
+test_stale_last_observation_uses_its_timestamp (test_stage_one.ConstantVelocityTest) ... ok
+test_direction_handedness_and_roundtrip (test_stage_one.CoordinatesTest) ... ok
+test_heading_wrap (test_stage_one.CoordinatesTest) ... ok
+test_missing_future_and_last_valid_fde (test_stage_one.MaskedMetricTest) ... ok
+test_prediction_mask_excludes_short_history (test_stage_one.MaskedMetricTest) ... ok
+test_disjoint_reproducible_full_coverage (test_stage_one.SceneSplitTest) ... ok
+test_leak_and_duplicates_rejected (test_stage_one.SceneSplitTest) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.059s
+
+OK

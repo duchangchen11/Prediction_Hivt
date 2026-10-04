@@ -1,0 +1,1242 @@
+{
+  "dataset_version": "v1.0-mini",
+  "window_count": 30,
+  "max_windows_per_scene": 3,
+  "th": 5,
+  "tf": 12,
+  "units": "metres",
+  "selection": "Up to 3 uniformly spaced eligible anchors per scene, after scene split",
+  "purpose": "Pipeline diagnostic; pooled scores are not held-out benchmark results",
+  "metric_definition": {
+    "ADE": "Mean valid displacement per actor-window, then equally across eligible actor-windows",
+    "FDE": "Displacement at each actor's last valid future annotation",
+    "FDE_fixed_horizon": "Final requested frame only; exclude actors missing that frame",
+    "history": "Last two valid history observations, actual timestamp interval; fewer than two excluded",
+    "pooling": "Includes train/val/test diagnostic windows; per-split scores below",
+    "overlap": "Anchors within each scene may overlap; they are not independent samples"
+  },
+  "metrics": {
+    "vehicle": {
+      "ADE": 1.156408100436918,
+      "FDE": 2.5708477497297304,
+      "FDE_fixed_horizon": 2.7938239499253585,
+      "actor_window_count": 718,
+      "evaluated_actor_windows": 674,
+      "fixed_horizon_actor_windows": 429,
+      "insufficient_history_count": 34,
+      "no_valid_future_count": 10,
+      "valid_future_points": 6661,
+      "mean_last_valid_horizon_s": 4.9249572640949255
+    },
+    "pedestrian": {
+      "ADE": 0.5113570474675703,
+      "FDE": 1.0531882686469292,
+      "FDE_fixed_horizon": 1.3047650290901343,
+      "actor_window_count": 411,
+      "evaluated_actor_windows": 395,
+      "fixed_horizon_actor_windows": 257,
+      "insufficient_history_count": 11,
+      "no_valid_future_count": 5,
+      "valid_future_points": 3904,
+      "mean_last_valid_horizon_s": 4.935377524050616
+    },
+    "bicycle": {
+      "ADE": 0.42455224487154436,
+      "FDE": 0.8524665195080969,
+      "FDE_fixed_horizon": 0.9787307575345039,
+      "actor_window_count": 18,
+      "evaluated_actor_windows": 18,
+      "fixed_horizon_actor_windows": 10,
+      "insufficient_history_count": 0,
+      "no_valid_future_count": 0,
+      "valid_future_points": 183,
+      "mean_last_valid_horizon_s": 5.075403888888888
+    },
+    "overall": {
+      "ADE": 0.9098868756686852,
+      "FDE": 1.990897099157793,
+      "FDE_fixed_horizon": 2.217905739323977,
+      "actor_window_count": 1147,
+      "evaluated_actor_windows": 1087,
+      "fixed_horizon_actor_windows": 696,
+      "insufficient_history_count": 45,
+      "no_valid_future_count": 15,
+      "valid_future_points": 10748,
+      "mean_last_valid_horizon_s": 4.931235131554707
+    }
+  },
+  "by_split": {
+    "train": {
+      "vehicle": {
+        "ADE": 1.4193816855094432,
+        "FDE": 3.117457041281246,
+        "FDE_fixed_horizon": 3.7392751591180042,
+        "actor_window_count": 429,
+        "evaluated_actor_windows": 402,
+        "fixed_horizon_actor_windows": 242,
+        "insufficient_history_count": 20,
+        "no_valid_future_count": 7,
+        "valid_future_points": 3832,
+        "mean_last_valid_horizon_s": 4.740527052238801
+      },
+      "pedestrian": {
+        "ADE": 0.5485794756021884,
+        "FDE": 1.119693980061951,
+        "FDE_fixed_horizon": 1.3088165202546203,
+        "actor_window_count": 281,
+        "evaluated_actor_windows": 270,
+        "fixed_horizon_actor_windows": 191,
+        "insufficient_history_count": 8,
+        "no_valid_future_count": 3,
+        "valid_future_points": 2750,
+        "mean_last_valid_horizon_s": 5.091655033333321
+      },
+      "bicycle": {
+        "ADE": 0.31703465204471004,
+        "FDE": 0.6705769151449203,
+        "FDE_fixed_horizon": 0.5315150264650583,
+        "actor_window_count": 13,
+        "evaluated_actor_windows": 13,
+        "fixed_horizon_actor_windows": 8,
+        "insufficient_history_count": 0,
+        "no_valid_future_count": 0,
+        "valid_future_points": 140,
+        "mean_last_valid_horizon_s": 5.3735427692307685
+      },
+      "overall": {
+        "ADE": 1.0552253233050632,
+        "FDE": 2.283580445414119,
+        "FDE_fixed_horizon": 2.628436880015669,
+        "actor_window_count": 723,
+        "evaluated_actor_windows": 685,
+        "fixed_horizon_actor_windows": 441,
+        "insufficient_history_count": 28,
+        "no_valid_future_count": 10,
+        "valid_future_points": 6722,
+        "mean_last_valid_horizon_s": 4.890941299270075
+      }
+    },
+    "val": {
+      "vehicle": {
+        "ADE": 1.2322277556743146,
+        "FDE": 2.882167046439825,
+        "FDE_fixed_horizon": 2.4331356744419357,
+        "actor_window_count": 113,
+        "evaluated_actor_windows": 103,
+        "fixed_horizon_actor_windows": 61,
+        "insufficient_history_count": 7,
+        "no_valid_future_count": 3,
+        "valid_future_points": 1022,
+        "mean_last_valid_horizon_s": 4.958364048543688
+      },
+      "pedestrian": {
+        "ADE": 0.4921855023435349,
+        "FDE": 1.0251019157260808,
+        "FDE_fixed_horizon": 1.3512425012126261,
+        "actor_window_count": 90,
+        "evaluated_actor_windows": 86,
+        "fixed_horizon_actor_windows": 49,
+        "insufficient_history_count": 3,
+        "no_valid_future_count": 1,
+        "valid_future_points": 830,
+        "mean_last_valid_horizon_s": 4.799302534883723
+      },
+      "bicycle": {
+        "ADE": 0.5280638337135315,
+        "FDE": 1.0054851770401,
+        "FDE_fixed_horizon": 1.0054851770401,
+        "actor_window_count": 1,
+        "evaluated_actor_windows": 1,
+        "fixed_horizon_actor_windows": 1,
+        "insufficient_history_count": 0,
+        "no_valid_future_count": 0,
+        "valid_future_points": 12,
+        "mean_last_valid_horizon_s": 6.000737
+      },
+      "overall": {
+        "ADE": 0.8935551361563787,
+        "FDE": 2.031723451119921,
+        "FDE_fixed_horizon": 1.9426814763731248,
+        "actor_window_count": 204,
+        "evaluated_actor_windows": 190,
+        "fixed_horizon_actor_windows": 111,
+        "insufficient_history_count": 10,
+        "no_valid_future_count": 4,
+        "valid_future_points": 1864,
+        "mean_last_valid_horizon_s": 4.891853957894736
+      }
+    },
+    "test": {
+      "vehicle": {
+        "ADE": 0.48466368807829674,
+        "FDE": 1.0808902185767773,
+        "FDE_fixed_horizon": 1.1525762688132033,
+        "actor_window_count": 176,
+        "evaluated_actor_windows": 169,
+        "fixed_horizon_actor_windows": 126,
+        "insufficient_history_count": 7,
+        "no_valid_future_count": 0,
+        "valid_future_points": 1807,
+        "mean_last_valid_horizon_s": 5.343300733727811
+      },
+      "pedestrian": {
+        "ADE": 0.2959390291168044,
+        "FDE": 0.6546981217017254,
+        "FDE_fixed_horizon": 1.1252808557713734,
+        "actor_window_count": 40,
+        "evaluated_actor_windows": 39,
+        "fixed_horizon_actor_windows": 17,
+        "insufficient_history_count": 0,
+        "no_valid_future_count": 1,
+        "valid_future_points": 324,
+        "mean_last_valid_horizon_s": 4.153519102564104
+      },
+      "bicycle": {
+        "ADE": 0.748106524348259,
+        "FDE": 1.40535306930542,
+        "FDE_fixed_horizon": 4.529702186584473,
+        "actor_window_count": 4,
+        "evaluated_actor_windows": 4,
+        "fixed_horizon_actor_windows": 1,
+        "insufficient_history_count": 0,
+        "no_valid_future_count": 0,
+        "valid_future_points": 31,
+        "mean_last_valid_horizon_s": 3.8751192500000005
+      },
+      "overall": {
+        "ADE": 0.45491609206688943,
+        "FDE": 1.0086088960521902,
+        "FDE_fixed_horizon": 1.1728061569802877,
+        "actor_window_count": 220,
+        "evaluated_actor_windows": 212,
+        "fixed_horizon_actor_windows": 144,
+        "insufficient_history_count": 7,
+        "no_valid_future_count": 1,
+        "valid_future_points": 2162,
+        "mean_last_valid_horizon_s": 5.096724273584913
+      }
+    }
+  },
+  "window_summaries": [
+    {
+      "split": "train",
+      "scene_token": "de7d80a1f5fb4c3e82ce8a4f213b450a",
+      "scene_name": "scene-1094",
+      "sample_token": "1e0d1b76ea134c7db0592c4510f5e737",
+      "t0_index": 4,
+      "actor_count": 59,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000908,
+          1.2812739264308228e-13
+        ],
+        "ego_left_local": [
+          -1.2811559692277372e-13,
+          1.0000000000000908
+        ],
+        "history_duration_s": 1.99894,
+        "future_duration_s": 6.002401,
+        "dt_mean_s": 0.5000838125,
+        "dt_min_s": 0.49756200000000006,
+        "dt_max_s": 0.5027650000000001,
+        "instance_chain_edges_checked": 907,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 3.4905028291063576,
+        "max_observed_speed_mps": 6.967001984224422,
+        "stored_float32_roundtrip_max_error_m": 2.117671101586893e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "de7d80a1f5fb4c3e82ce8a4f213b450a",
+      "scene_name": "scene-1094",
+      "sample_token": "7d82aa0c679141d1a71733b85fdcd3ed",
+      "t0_index": 15,
+      "actor_count": 65,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000449,
+          -5.1137573869598356e-14
+        ],
+        "ego_left_local": [
+          5.1146875751054074e-14,
+          1.0000000000000449
+        ],
+        "history_duration_s": 2.001142,
+        "future_duration_s": 5.9991,
+        "dt_mean_s": 0.500015125,
+        "dt_min_s": 0.4495420000000001,
+        "dt_max_s": 0.5530720000000002,
+        "instance_chain_edges_checked": 750,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 5.4295087254741965,
+        "max_observed_speed_mps": 10.733899584271938,
+        "stored_float32_roundtrip_max_error_m": 2.671200263648643e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "de7d80a1f5fb4c3e82ce8a4f213b450a",
+      "scene_name": "scene-1094",
+      "sample_token": "98fa81992fb04e799c329eca220e7164",
+      "t0_index": 27,
+      "actor_count": 29,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 0.0,
+        "ego_forward_local": [
+          1.0000000000000433,
+          -3.6932150747766457e-14
+        ],
+        "ego_left_local": [
+          3.6919074569976324e-14,
+          1.0000000000000433
+        ],
+        "history_duration_s": 1.99556,
+        "future_duration_s": 6.000133,
+        "dt_mean_s": 0.49973081250000007,
+        "dt_min_s": 0.49535400000000007,
+        "dt_max_s": 0.500469,
+        "instance_chain_edges_checked": 335,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 6.239120771390936,
+        "max_observed_speed_mps": 12.467768617143468,
+        "stored_float32_roundtrip_max_error_m": 3.4063798466377193e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "bebf5f5b2a674631ab5c88fd1aa9e87a",
+      "scene_name": "scene-0655",
+      "sample_token": "6af01b48aec7475eac1f8e9add0276ff",
+      "t0_index": 4,
+      "actor_count": 54,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000568,
+          6.053975312218102e-16
+        ],
+        "ego_left_local": [
+          -6.053627598032837e-16,
+          1.0000000000000568
+        ],
+        "history_duration_s": 2.000096,
+        "future_duration_s": 5.749241,
+        "dt_mean_s": 0.4843335625,
+        "dt_min_s": 0.39977899999999994,
+        "dt_max_s": 0.5502,
+        "instance_chain_edges_checked": 712,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 4.1112470127688026,
+        "max_observed_speed_mps": 7.9188916383630685,
+        "stored_float32_roundtrip_max_error_m": 3.7857853385503404e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "bebf5f5b2a674631ab5c88fd1aa9e87a",
+      "scene_name": "scene-0655",
+      "sample_token": "447c96d132e9494e8b03050e8dcae124",
+      "t0_index": 16,
+      "actor_count": 53,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000484,
+          2.218777329559862e-14
+        ],
+        "ego_left_local": [
+          -2.218722775739194e-14,
+          1.0000000000000484
+        ],
+        "history_duration_s": 1.998417,
+        "future_duration_s": 6.051198,
+        "dt_mean_s": 0.5031009375,
+        "dt_min_s": 0.499293,
+        "dt_max_s": 0.5496349999999999,
+        "instance_chain_edges_checked": 724,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 6.14048418286365,
+        "max_observed_speed_mps": 12.297225297570689,
+        "stored_float32_roundtrip_max_error_m": 3.752264774448122e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "bebf5f5b2a674631ab5c88fd1aa9e87a",
+      "scene_name": "scene-0655",
+      "sample_token": "2e024439286d469f8f743fe9266c0e56",
+      "t0_index": 28,
+      "actor_count": 64,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 0.0,
+        "ego_forward_local": [
+          1.000000000000024,
+          -2.150967528158649e-14
+        ],
+        "ego_left_local": [
+          -9.21552580864298e-14,
+          1.0000000000000262
+        ],
+        "history_duration_s": 2.002313,
+        "future_duration_s": 5.998636,
+        "dt_mean_s": 0.5000593125,
+        "dt_min_s": 0.44956700000000005,
+        "dt_max_s": 0.5491299999999995,
+        "instance_chain_edges_checked": 642,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 4.397480414964851,
+        "max_observed_speed_mps": 8.80699117988142,
+        "stored_float32_roundtrip_max_error_m": 3.7426957533170935e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "6f83169d067343658251f72e1dd17dbc",
+      "scene_name": "scene-0553",
+      "sample_token": "2021b6b367984ad7b18464a550d0ae8d",
+      "t0_index": 4,
+      "actor_count": 29,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.999999999999981,
+          -5.986917557841726e-14
+        ],
+        "ego_left_local": [
+          5.987630147282649e-14,
+          0.999999999999981
+        ],
+        "history_duration_s": 1.999511,
+        "future_duration_s": 5.899543,
+        "dt_mean_s": 0.4936908750000001,
+        "dt_min_s": 0.39978099999999994,
+        "dt_max_s": 0.500445,
+        "instance_chain_edges_checked": 454,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 6.5636914156592665,
+        "max_observed_speed_mps": 13.131164606725267,
+        "stored_float32_roundtrip_max_error_m": 5.069718781669508e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "6f83169d067343658251f72e1dd17dbc",
+      "scene_name": "scene-0553",
+      "sample_token": "05bc09f952ab4cf8b754405f20d503c5",
+      "t0_index": 16,
+      "actor_count": 35,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000242,
+          -7.964793667169712e-14
+        ],
+        "ego_left_local": [
+          7.96466040355717e-14,
+          1.0000000000000242
+        ],
+        "history_duration_s": 1.899983,
+        "future_duration_s": 5.949281,
+        "dt_mean_s": 0.490579,
+        "dt_min_s": 0.399781,
+        "dt_max_s": 0.5004409999999999,
+        "instance_chain_edges_checked": 533,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 5.609814613692549,
+        "max_observed_speed_mps": 11.210656175085868,
+        "stored_float32_roundtrip_max_error_m": 3.590764663385926e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "6f83169d067343658251f72e1dd17dbc",
+      "scene_name": "scene-0553",
+      "sample_token": "37535cd306954669a2b21578573b93e3",
+      "t0_index": 28,
+      "actor_count": 34,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000555,
+          7.607000134550299e-14
+        ],
+        "ego_left_local": [
+          -7.603060859856185e-14,
+          1.0000000000000555
+        ],
+        "history_duration_s": 1.949706,
+        "future_duration_s": 6.052154,
+        "dt_mean_s": 0.50011625,
+        "dt_min_s": 0.450072,
+        "dt_max_s": 0.5502030000000001,
+        "instance_chain_edges_checked": 495,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 6.5266348143587845,
+        "max_observed_speed_mps": 13.043122079739538,
+        "stored_float32_roundtrip_max_error_m": 3.047646259801695e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "e233467e827140efa4b42d2b4c435855",
+      "scene_name": "scene-1100",
+      "sample_token": "c36e8482feb041de9f081e76396cf4fe",
+      "t0_index": 4,
+      "actor_count": 24,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 1.3322676295501878e-15,
+        "ego_heading_roundtrip_max_error_rad": 0.0,
+        "ego_forward_local": [
+          0.9999999999999868,
+          -5.0800620326349015e-14
+        ],
+        "ego_left_local": [
+          5.0770890170160325e-14,
+          0.9999999999999868
+        ],
+        "history_duration_s": 2.000076,
+        "future_duration_s": 5.950388,
+        "dt_mean_s": 0.496904,
+        "dt_min_s": 0.4500529999999996,
+        "dt_max_s": 0.5009870000000003,
+        "instance_chain_edges_checked": 374,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 8.491198089786844,
+        "max_observed_speed_mps": 16.98582731669166,
+        "stored_float32_roundtrip_max_error_m": 3.4755239539663307e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "e233467e827140efa4b42d2b4c435855",
+      "scene_name": "scene-1100",
+      "sample_token": "99f903d3f74a4f76a05a4f1e10e49329",
+      "t0_index": 15,
+      "actor_count": 24,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 1.3322676295501878e-15,
+        "ego_heading_roundtrip_max_error_rad": 0.0,
+        "ego_forward_local": [
+          0.9999999999999674,
+          4.03893077028138e-14
+        ],
+        "ego_left_local": [
+          -4.041402419369068e-14,
+          0.9999999999999672
+        ],
+        "history_duration_s": 1.999485,
+        "future_duration_s": 6.049943,
+        "dt_mean_s": 0.5030892499999999,
+        "dt_min_s": 0.45011,
+        "dt_max_s": 0.55022,
+        "instance_chain_edges_checked": 363,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 6.539018351404071,
+        "max_observed_speed_mps": 13.081019175180082,
+        "stored_float32_roundtrip_max_error_m": 3.486194373181206e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "e233467e827140efa4b42d2b4c435855",
+      "scene_name": "scene-1100",
+      "sample_token": "f2a6d0e38153467ba0d02706024e258d",
+      "t0_index": 27,
+      "actor_count": 23,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 0.0,
+        "ego_forward_local": [
+          1.0000000000000628,
+          -4.89912220269218e-14
+        ],
+        "ego_left_local": [
+          -1.0221302957281289e-13,
+          1.0000000000000084
+        ],
+        "history_duration_s": 1.998952,
+        "future_duration_s": 5.999632,
+        "dt_mean_s": 0.4999115,
+        "dt_min_s": 0.49928899999999965,
+        "dt_max_s": 0.5004500000000003,
+        "instance_chain_edges_checked": 342,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 5.8420480141813025,
+        "max_observed_speed_mps": 11.68704116273561,
+        "stored_float32_roundtrip_max_error_m": 4.047357833769638e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "cc8c0bf57f984915a77078b10eb33198",
+      "scene_name": "scene-0061",
+      "sample_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "t0_index": 4,
+      "actor_count": 56,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 0.0,
+        "ego_forward_local": [
+          0.9999999999999257,
+          -4.885187723738734e-14
+        ],
+        "ego_left_local": [
+          -9.515555724874721e-14,
+          0.9999999999999972
+        ],
+        "history_duration_s": 2.049846,
+        "future_duration_s": 6.000148,
+        "dt_mean_s": 0.5031246250000001,
+        "dt_min_s": 0.4495689999999999,
+        "dt_max_s": 0.5502039999999999,
+        "instance_chain_edges_checked": 807,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 6.212921454517179,
+        "max_observed_speed_mps": 11.292094079285897,
+        "stored_float32_roundtrip_max_error_m": 3.4519930522947107e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "cc8c0bf57f984915a77078b10eb33198",
+      "scene_name": "scene-0061",
+      "sample_token": "cd21dbfc3bd749c7b10a5c42562e0c42",
+      "t0_index": 15,
+      "actor_count": 61,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000735,
+          -2.391477622785361e-14
+        ],
+        "ego_left_local": [
+          8.124341384382641e-14,
+          1.000000000000017
+        ],
+        "history_duration_s": 2.050937,
+        "future_duration_s": 6.099677,
+        "dt_mean_s": 0.509413375,
+        "dt_min_s": 0.4495469999999999,
+        "dt_max_s": 0.5993850000000007,
+        "instance_chain_edges_checked": 897,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 4.687872438537571,
+        "max_observed_speed_mps": 10.427227112135009,
+        "stored_float32_roundtrip_max_error_m": 3.7885340589127736e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "cc8c0bf57f984915a77078b10eb33198",
+      "scene_name": "scene-0061",
+      "sample_token": "4246e57f018745c9b2bc68feb3d71b58",
+      "t0_index": 26,
+      "actor_count": 54,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.9999999999999784,
+          2.2161932305838832e-14
+        ],
+        "ego_left_local": [
+          -2.4955427257461226e-15,
+          1.0000000000000562
+        ],
+        "history_duration_s": 2.149899,
+        "future_duration_s": 6.000174,
+        "dt_mean_s": 0.5093795625,
+        "dt_min_s": 0.39981,
+        "dt_max_s": 0.5999370000000006,
+        "instance_chain_edges_checked": 705,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 1.7188885944120742,
+        "max_observed_speed_mps": 2.9513526893517024,
+        "stored_float32_roundtrip_max_error_m": 2.0544454173432314e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "d25718445d89453381c659b9c8734939",
+      "scene_name": "scene-1077",
+      "sample_token": "a63038dfb41843eb8a14485d90c2fa35",
+      "t0_index": 4,
+      "actor_count": 20,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.9999999999999452,
+          4.3837107457980244e-14
+        ],
+        "ego_left_local": [
+          3.589990400807134e-14,
+          1.0000000000000262
+        ],
+        "history_duration_s": 2.001758,
+        "future_duration_s": 5.997911,
+        "dt_mean_s": 0.49997931250000005,
+        "dt_min_s": 0.44953599999999994,
+        "dt_max_s": 0.5501999999999998,
+        "instance_chain_edges_checked": 224,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 12.484526502835402,
+        "max_observed_speed_mps": 25.002957015383664,
+        "stored_float32_roundtrip_max_error_m": 5.20979438078939e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "d25718445d89453381c659b9c8734939",
+      "scene_name": "scene-1077",
+      "sample_token": "2e96e4ef43624c3d9ae8fd5526444fa8",
+      "t0_index": 16,
+      "actor_count": 20,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 0.0,
+        "ego_forward_local": [
+          0.9999999999999551,
+          6.26546384098553e-14
+        ],
+        "ego_left_local": [
+          2.09399551076109e-14,
+          1.0000000000000322
+        ],
+        "history_duration_s": 1.99948,
+        "future_duration_s": 5.950407,
+        "dt_mean_s": 0.49686793749999997,
+        "dt_min_s": 0.44955000000000034,
+        "dt_max_s": 0.5496720000000002,
+        "instance_chain_edges_checked": 209,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 15.59094625094965,
+        "max_observed_speed_mps": 31.191312278207313,
+        "stored_float32_roundtrip_max_error_m": 5.39019117695716e-06
+      }
+    },
+    {
+      "split": "train",
+      "scene_token": "d25718445d89453381c659b9c8734939",
+      "scene_name": "scene-1077",
+      "sample_token": "7bf1cef0e253474e847ee4c2eb955901",
+      "t0_index": 28,
+      "actor_count": 19,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000213,
+          -2.045476466182949e-14
+        ],
+        "ego_left_local": [
+          9.355183300155963e-14,
+          0.9999999999999344
+        ],
+        "history_duration_s": 2.000061,
+        "future_duration_s": 6.000171,
+        "dt_mean_s": 0.5000144999999999,
+        "dt_min_s": 0.44955,
+        "dt_max_s": 0.5502069999999999,
+        "instance_chain_edges_checked": 199,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 10.057325787703142,
+        "max_observed_speed_mps": 18.70424869649883,
+        "stored_float32_roundtrip_max_error_m": 4.898799147667887e-06
+      }
+    },
+    {
+      "split": "val",
+      "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+      "scene_name": "scene-0103",
+      "sample_token": "747aa46b9a4641fe90db05d97db2acea",
+      "t0_index": 4,
+      "actor_count": 36,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.9999999999999911,
+          -6.210913268233763e-14
+        ],
+        "ego_left_local": [
+          -2.397615389172147e-15,
+          1.0000000000000848
+        ],
+        "history_duration_s": 2.000602,
+        "future_duration_s": 5.898444,
+        "dt_mean_s": 0.493690375,
+        "dt_min_s": 0.3992589999999998,
+        "dt_max_s": 0.500438,
+        "instance_chain_edges_checked": 498,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 6.049190441703764,
+        "max_observed_speed_mps": 12.101527280500456,
+        "stored_float32_roundtrip_max_error_m": 2.94814537937782e-06
+      }
+    },
+    {
+      "split": "val",
+      "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+      "scene_name": "scene-0103",
+      "sample_token": "b22fa0b3c34f47b6a360b60f35d5d567",
+      "t0_index": 15,
+      "actor_count": 47,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.9999999999999918,
+          7.567610333737086e-14
+        ],
+        "ego_left_local": [
+          1.1782485095600427e-14,
+          1.0000000000000644
+        ],
+        "history_duration_s": 1.898895,
+        "future_duration_s": 6.000705,
+        "dt_mean_s": 0.493725,
+        "dt_min_s": 0.39925900000000003,
+        "dt_max_s": 0.5502020000000001,
+        "instance_chain_edges_checked": 664,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 5.3236472460147315,
+        "max_observed_speed_mps": 10.649978286557483,
+        "stored_float32_roundtrip_max_error_m": 2.794445322251704e-06
+      }
+    },
+    {
+      "split": "val",
+      "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+      "scene_name": "scene-0103",
+      "sample_token": "cc57c1ea80fe46a7abddfdb15654c872",
+      "t0_index": 27,
+      "actor_count": 61,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000244,
+          2.3153305023865137e-14
+        ],
+        "ego_left_local": [
+          5.0202384151368274e-14,
+          0.9999999999999376
+        ],
+        "history_duration_s": 1.998954,
+        "future_duration_s": 6.000737,
+        "dt_mean_s": 0.49998068749999997,
+        "dt_min_s": 0.40034300000000034,
+        "dt_max_s": 0.5999609999999995,
+        "instance_chain_edges_checked": 806,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 3.4604722221107274,
+        "max_observed_speed_mps": 6.134501914224099,
+        "stored_float32_roundtrip_max_error_m": 2.5573606308171293e-06
+      }
+    },
+    {
+      "split": "val",
+      "scene_token": "c5224b9b454b4ded9b5d2d2634bbda8a",
+      "scene_name": "scene-0796",
+      "sample_token": "092051710b7b4d9294e98dcb3f0f7be1",
+      "t0_index": 4,
+      "actor_count": 23,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.9999999999999986,
+          9.881662267633485e-14
+        ],
+        "ego_left_local": [
+          -9.881664478577377e-14,
+          0.9999999999999987
+        ],
+        "history_duration_s": 2.10069,
+        "future_duration_s": 6.000711,
+        "dt_mean_s": 0.5063375625,
+        "dt_min_s": 0.499314,
+        "dt_max_s": 0.5999570000000001,
+        "instance_chain_edges_checked": 288,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 10.219558698887088,
+        "max_observed_speed_mps": 17.788216428180956,
+        "stored_float32_roundtrip_max_error_m": 3.991375706391409e-06
+      }
+    },
+    {
+      "split": "val",
+      "scene_token": "c5224b9b454b4ded9b5d2d2634bbda8a",
+      "scene_name": "scene-0796",
+      "sample_token": "4aaaf68b9f9f45968a4e862eb03e17ea",
+      "t0_index": 15,
+      "actor_count": 21,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 1.3322676295501878e-15,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.9999999999999355,
+          5.766895474658141e-14
+        ],
+        "ego_left_local": [
+          1.1507379498674584e-13,
+          0.9999999999997877
+        ],
+        "history_duration_s": 2.001165,
+        "future_duration_s": 5.999602,
+        "dt_mean_s": 0.5000479375,
+        "dt_min_s": 0.49710199999999993,
+        "dt_max_s": 0.5021100000000001,
+        "instance_chain_edges_checked": 242,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 8.805389826691579,
+        "max_observed_speed_mps": 17.59628031840011,
+        "stored_float32_roundtrip_max_error_m": 5.0961048145836685e-06
+      }
+    },
+    {
+      "split": "val",
+      "scene_token": "c5224b9b454b4ded9b5d2d2634bbda8a",
+      "scene_name": "scene-0796",
+      "sample_token": "269ccf1fe399403c914e1f649d2a8ca2",
+      "t0_index": 27,
+      "actor_count": 16,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000001381,
+          -5.736682960787662e-15
+        ],
+        "ego_left_local": [
+          1.809645425551102e-13,
+          0.9999999999999932
+        ],
+        "history_duration_s": 1.997804,
+        "future_duration_s": 5.999084,
+        "dt_mean_s": 0.4998055,
+        "dt_min_s": 0.49710199999999993,
+        "dt_max_s": 0.50098,
+        "instance_chain_edges_checked": 178,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 7.7308683212172555,
+        "max_observed_speed_mps": 15.431737345035762,
+        "stored_float32_roundtrip_max_error_m": 5.614799192699138e-06
+      }
+    },
+    {
+      "split": "test",
+      "scene_token": "2fc3753772e241f2ab2cd16a784cc680",
+      "scene_name": "scene-0757",
+      "sample_token": "ebce5a3b3484446580028d6538e69a81",
+      "t0_index": 4,
+      "actor_count": 9,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000353,
+          -3.12146309422556e-14
+        ],
+        "ego_left_local": [
+          -4.458100209720857e-15,
+          0.9999999999999633
+        ],
+        "history_duration_s": 1.89886,
+        "future_duration_s": 5.948189,
+        "dt_mean_s": 0.4904405625,
+        "dt_min_s": 0.399197,
+        "dt_max_s": 0.5005009999999999,
+        "instance_chain_edges_checked": 133,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 4.262655744955282,
+        "max_observed_speed_mps": 8.527365101760097,
+        "stored_float32_roundtrip_max_error_m": 1.6936163547143224e-06
+      }
+    },
+    {
+      "split": "test",
+      "scene_token": "2fc3753772e241f2ab2cd16a784cc680",
+      "scene_name": "scene-0757",
+      "sample_token": "8b6d496ed9d84469b75836ca1c56959f",
+      "t0_index": 16,
+      "actor_count": 12,
+      "audit": {
+        "agent_roundtrip_max_error_m": 2.842170943040401e-14,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 1.3322676295501878e-15,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000417,
+          -2.899162185594598e-14
+        ],
+        "ego_left_local": [
+          2.7290932696949685e-15,
+          0.9999999999999657
+        ],
+        "history_duration_s": 2.000067,
+        "future_duration_s": 6.000727,
+        "dt_mean_s": 0.5000496249999999,
+        "dt_min_s": 0.499818,
+        "dt_max_s": 0.500973,
+        "instance_chain_edges_checked": 170,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 4.631921091728567,
+        "max_observed_speed_mps": 9.266473862033958,
+        "stored_float32_roundtrip_max_error_m": 2.488879658812948e-06
+      }
+    },
+    {
+      "split": "test",
+      "scene_token": "2fc3753772e241f2ab2cd16a784cc680",
+      "scene_name": "scene-0757",
+      "sample_token": "46292fc546f048f29520299220f22798",
+      "t0_index": 28,
+      "actor_count": 15,
+      "audit": {
+        "agent_roundtrip_max_error_m": 2.842170943040401e-14,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.9999999999999806,
+          2.6903455030646306e-14
+        ],
+        "ego_left_local": [
+          -1.4946487060503622e-15,
+          1.0000000000000568
+        ],
+        "history_duration_s": 1.999491,
+        "future_duration_s": 6.000733,
+        "dt_mean_s": 0.500014,
+        "dt_min_s": 0.499281,
+        "dt_max_s": 0.500486,
+        "instance_chain_edges_checked": 190,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 5.087927377626396,
+        "max_observed_speed_mps": 10.16716283215016,
+        "stored_float32_roundtrip_max_error_m": 2.9173303914831195e-06
+      }
+    },
+    {
+      "split": "test",
+      "scene_token": "325cef682f064c55a255f2625c533b75",
+      "scene_name": "scene-0916",
+      "sample_token": "ac8b4d49731d43289579f014cb7c97ef",
+      "t0_index": 4,
+      "actor_count": 57,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          1.0000000000000568,
+          2.9097631354634705e-14
+        ],
+        "ego_left_local": [
+          1.1942248638645453e-14,
+          0.9999999999999508
+        ],
+        "history_duration_s": 1.900566,
+        "future_duration_s": 6.000134,
+        "dt_mean_s": 0.49379375000000003,
+        "dt_min_s": 0.400353,
+        "dt_max_s": 0.500448,
+        "instance_chain_edges_checked": 830,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 2.681185185696761,
+        "max_observed_speed_mps": 5.357901881224581,
+        "stored_float32_roundtrip_max_error_m": 1.8476152945368085e-06
+      }
+    },
+    {
+      "split": "test",
+      "scene_token": "325cef682f064c55a255f2625c533b75",
+      "scene_name": "scene-0916",
+      "sample_token": "a19a80c905674faab7203a3a4e0f5246",
+      "t0_index": 16,
+      "actor_count": 71,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 1.3322676295501878e-15,
+        "ego_forward_local": [
+          0.9999999999999967,
+          7.777938575290887e-15
+        ],
+        "ego_left_local": [
+          3.1920617744947335e-15,
+          1.00000000000011
+        ],
+        "history_duration_s": 1.999524,
+        "future_duration_s": 6.001289,
+        "dt_mean_s": 0.5000508125,
+        "dt_min_s": 0.499293,
+        "dt_max_s": 0.5010009999999996,
+        "instance_chain_edges_checked": 966,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 2.16951837973321,
+        "max_observed_speed_mps": 4.340121789913898,
+        "stored_float32_roundtrip_max_error_m": 3.2630998703098157e-06
+      }
+    },
+    {
+      "split": "test",
+      "scene_token": "325cef682f064c55a255f2625c533b75",
+      "scene_name": "scene-0916",
+      "sample_token": "4b894442c95141f9affd731d9da7b43c",
+      "t0_index": 28,
+      "actor_count": 56,
+      "audit": {
+        "agent_roundtrip_max_error_m": 0.0,
+        "ego_history_roundtrip_max_error_m": 0.0,
+        "ego_future_roundtrip_max_error_m": 0.0,
+        "heading_roundtrip_max_error_rad": 8.881784197001252e-16,
+        "ego_heading_roundtrip_max_error_rad": 4.440892098500626e-16,
+        "ego_forward_local": [
+          0.9999999999999177,
+          3.605743622864277e-14
+        ],
+        "ego_left_local": [
+          -3.478610769099315e-14,
+          1.0000000000000786
+        ],
+        "history_duration_s": 2.002114,
+        "future_duration_s": 5.998517,
+        "dt_mean_s": 0.5000394374999999,
+        "dt_min_s": 0.499321,
+        "dt_max_s": 0.501001,
+        "instance_chain_edges_checked": 762,
+        "all_current_actors_present": true,
+        "lidar_sample_timestamp_max_offset_us": 0,
+        "max_observed_displacement_m": 3.248697739094883,
+        "max_observed_speed_mps": 6.491890355168583,
+        "stored_float32_roundtrip_max_error_m": 1.6898127341846703e-06
+      }
+    }
+  ]
+}
