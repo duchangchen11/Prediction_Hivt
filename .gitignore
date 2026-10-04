@@ -19,3 +19,5 @@ outputs/stage2/moving_overfit_audit/frozen_tiny_overfit/
 outputs/stage2/moving_overfit_audit/frozen_failure_figures/
 # Detailed every-evaluation actor output series are local; final metrics/tables tracked.
 outputs/stage2/moving_overfit_audit/**/output_units.json
+outputs/stage2/k6_loss_recovery/frozen_previous/
+outputs/stage2/k6_loss_recovery/**/actor_series.json

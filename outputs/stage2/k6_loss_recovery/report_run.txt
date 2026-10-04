@@ -1,0 +1,21 @@
+{
+  "A": "PASS",
+  "B_warmup": "NOT_RUN",
+  "B_original_NLL": "NOT_RUN",
+  "C": {
+    "2": "NOT_RUN",
+    "4": "NOT_RUN",
+    "8": "NOT_RUN"
+  },
+  "selected_protocol": null,
+  "Full_Tiny": "NOT_RUN",
+  "Mini": "NOT_RUN",
+  "decision": {
+    "Stage2_baseline": "FAIL",
+    "Allow_Stage3_discussion": "NO",
+    "Stage3_executed": false,
+    "hard_stop": null
+  },
+  "original_commit": "d8b93ae7fb89f9abaefe49d08e987975f21bc5c5",
+  "previous_artifacts_unchanged": true
+}

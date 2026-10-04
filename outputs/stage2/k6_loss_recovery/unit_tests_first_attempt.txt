@@ -1,0 +1,37 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+EEE....
+======================================================================
+ERROR: test_architecture_and_original_loss_unchanged (tests.test_k6_loss_recovery.RecoveryLossTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/tests/test_k6_loss_recovery.py", line 19, in test_architecture_and_original_loss_unchanged
+    a=old.loss(output,data);b=new.recovery_loss(output,data,"original_nll")
+  File "/home/lrj/Prediction_Hivt/models/hivt_loss_recovery.py", line 15, in recovery_loss
+    location_error = (chosen[mask, :2]-target[mask]).abs().mean()
+IndexError: The shape of the mask [2, 12] at index 1 does not match the shape of the indexed tensor [2, 2, 4] at index 1
+
+======================================================================
+ERROR: test_bounded_scale_clamps_only_uncertainty (tests.test_k6_loss_recovery.RecoveryLossTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/tests/test_k6_loss_recovery.py", line 41, in test_bounded_scale_clamps_only_uncertainty
+    values=model.recovery_loss(output,data,"bounded_scale",2.)
+  File "/home/lrj/Prediction_Hivt/models/hivt_loss_recovery.py", line 15, in recovery_loss
+    location_error = (chosen[mask, :2]-target[mask]).abs().mean()
+IndexError: The shape of the mask [2, 12] at index 1 does not match the shape of the indexed tensor [2, 2, 4] at index 1
+
+======================================================================
+ERROR: test_fixed_location_keeps_mode_classification_and_target_mask (tests.test_k6_loss_recovery.RecoveryLossTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/tests/test_k6_loss_recovery.py", line 27, in test_fixed_location_keeps_mode_classification_and_target_mask
+    values=model.recovery_loss(output,data,"fixed_scale")
+  File "/home/lrj/Prediction_Hivt/models/hivt_loss_recovery.py", line 15, in recovery_loss
+    location_error = (chosen[mask, :2]-target[mask]).abs().mean()
+IndexError: The shape of the mask [2, 12] at index 1 does not match the shape of the indexed tensor [2, 2, 4] at index 1
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.549s
+
+FAILED (errors=3)
