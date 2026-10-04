@@ -1,5 +1,6 @@
 """Original-window full tiny recovery and gated train/val mini baseline."""
 import argparse
+import hashlib
 import json
 
 import torch
@@ -135,7 +136,7 @@ def mini_figures(model,graphs,evaluation):
     """Real t0 attributes, full-horizon cases; success means FDE <= 2m."""
     full=[r for r in evaluation["actors"] if r["horizon"]=="full_horizon"]
     moving=[r for r in full if r["attribute_group"]=="vehicle.moving" and r["GT_endpoint_displacement_m"]>=5.]
-    pools={"moving_success":sorted([r for r in moving if r["minFDE"]<=2.],key=lambda r:r["minFDE"]),
+    pools={"moving_success":sorted([r for r in moving if r["minFDE"]<=2.],key=lambda r:(r["minADE"],r["minFDE"])),
            "moving_failure":sorted([r for r in moving if r["minFDE"]>2.],key=lambda r:-r["minFDE"]),
            "stopped":sorted([r for r in full if r["attribute_group"]=="vehicle.stopped"],key=lambda r:r["minFDE"]),
            "parked":sorted([r for r in full if r["attribute_group"]=="vehicle.parked"],key=lambda r:r["minFDE"])}
@@ -165,6 +166,7 @@ def mini_figures(model,graphs,evaluation):
                           "trajectory_ego_m":prediction[node].tolist(),"mode_probabilities":prob[node].tolist()})
     result={"source":"validation only; true t0 attribute names",
             "moving_visual_GT_min_displacement_m":5.,"success_max_FDE_m":2.,"coverage":coverage,"cases":cases,
+            "success_ranking":"lowest ADE among FDE<=2m candidates; prefer distinct instances",
             "complete":all(v["produced"]>=v["requested"] for v in coverage.values())}
     write_json(ROOT/"mini_visualization_audit.json",result)
     return result
@@ -212,17 +214,65 @@ def mini():
             "visualization_coverage":figures["coverage"],"visualizations_complete":figures["complete"],
             "completion_note":"engineering baseline completed; this status does not assert generalization superiority to CV"}
     write_json(ROOT/"mini_result.json",result)
+    compact_mini_artifacts()
     verify_previous()
     print("MINI_RESULT",json.dumps({"status":result["status"],"selected_epoch":result["selected_epoch"],
                                     "CV":cv["metrics"],"HiVT":measured["metrics"],"visuals":figures["coverage"]}),flush=True)
 
 
+def compact_mini_artifacts():
+    """Keep small aggregate reports in Git and retain complete actor records locally."""
+    assert (ROOT/"mini_result.json").exists(),"Compact only after mini completes"
+    paths=[ROOT/"mini_result.json"]
+    for name in ("mini_warmup","mini_original_nll"):
+        paths.extend((ROOT/name).glob("*metrics.json"))
+    audit=[]
+    for path in paths:
+        content=json.loads(path.read_text())
+        def compact(value,keys=()):
+            if not isinstance(value,dict):return value
+            converted={}
+            for key,item in value.items():
+                if key=="actors" and isinstance(item,list):
+                    target=ROOT/"mini_actor_records"/("_".join([path.parent.name,path.stem,*keys,"actors"])+".json")
+                    write_json(target,item)
+                    digest=hashlib.sha256(target.read_bytes()).hexdigest()
+                    converted.update(actor_record_count=len(item),actor_records_local_path=str(target.relative_to(PROJECT_ROOT)),
+                                     actor_records_sha256=digest)
+                    audit.append({"source":str(path.relative_to(PROJECT_ROOT)),"field":".".join((*keys,key)),
+                                  "count":len(item),"local_records":str(target.relative_to(PROJECT_ROOT)),"sha256":digest})
+                else:converted[key]=compact(item,(*keys,key))
+            return converted
+        write_json(path,compact(content))
+    if audit:write_json(ROOT/"mini_actor_record_manifest.json",{"records":audit,"note":"Only bulky per-actor logs moved; all aggregate metrics unchanged. Complete records retained locally and SHA256 indexed."})
+    print("COMPACT_MINI",len(audit),"actor arrays retained locally; aggregate metrics unchanged",flush=True)
+
+
+def replot_mini():
+    result=json.loads((ROOT/"mini_result.json").read_text())
+    assert result["status"]=="COMPLETE" and json.loads((ROOT/"full_tiny_result.json").read_text())["status"]=="PASS"
+    measured=dict(result["HiVT"])
+    if "actors" not in measured:
+        path=PROJECT_ROOT/measured["actor_records_local_path"]
+        assert hashlib.sha256(path.read_bytes()).hexdigest()==measured["actor_records_sha256"]
+        measured["actors"]=json.loads(path.read_text())
+    graphs=torch.load(PROJECT_ROOT/"outputs/stage2/mini/processed/graphs.pt",weights_only=False,map_location="cpu")["val"]
+    model,_=restore_checkpoint(PROJECT_ROOT/result["checkpoint_path"],read_config(),baseline_config()["mini"]["nll_lr"])
+    figures=mini_figures(model,graphs,measured)
+    assert figures["complete"]
+    result.update(visualization_coverage=figures["coverage"],visualizations_complete=figures["complete"])
+    write_json(ROOT/"mini_result.json",result)
+    print("REPLOT_MINI",json.dumps(figures["coverage"]),flush=True)
+
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument("--stage",choices=("reference","tiny","mini"),required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument("--stage",choices=("reference","tiny","mini","compact","figures"),required=True);args=parser.parse_args()
     torch.set_num_threads(4)
     if args.stage=="reference":reference()
     elif args.stage=="tiny":full_tiny()
-    else:mini()
+    elif args.stage=="mini":mini()
+    elif args.stage=="compact":compact_mini_artifacts()
+    else:replot_mini()
 
 
 if __name__=="__main__":main()

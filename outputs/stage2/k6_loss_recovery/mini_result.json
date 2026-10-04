@@ -1,0 +1,244 @@
+{
+  "status": "COMPLETE",
+  "protocol": {
+    "protocol": 1,
+    "model_name": "HiVT-NuScenes-Vehicle-Baseline",
+    "reason": "K=6 fresh fixed-scale warm-up→原 Laplace NLL 严格通过，保留原 probabilistic loss；仅 optimization warm-up 为 nuScenes 约6s任务适配。",
+    "b_max": null,
+    "num_modes": 6,
+    "historical_steps": 5,
+    "future_steps": 12,
+    "architecture_unchanged": true,
+    "phase": "original_nll"
+  },
+  "fresh_initialization": true,
+  "train_windows": 146,
+  "validation_windows": 48,
+  "train_scene_tokens": [
+    "6f83169d067343658251f72e1dd17dbc",
+    "bebf5f5b2a674631ab5c88fd1aa9e87a",
+    "cc8c0bf57f984915a77078b10eb33198",
+    "d25718445d89453381c659b9c8734939",
+    "de7d80a1f5fb4c3e82ce8a4f213b450a",
+    "e233467e827140efa4b42d2b4c435855"
+  ],
+  "validation_scene_tokens": [
+    "c5224b9b454b4ded9b5d2d2634bbda8a",
+    "fcbccedd61424f1b85dcbf8f897f9754"
+  ],
+  "split_note": "existing Stage 1 custom mini 6/2/2 scene split; not official benchmark",
+  "test_used_for_tuning": false,
+  "test_evaluated": false,
+  "warmup_epochs": 64,
+  "NLL_epochs": 64,
+  "checkpoint_selection": "lowest validation overall full-horizon minFDE during final probabilistic phase only",
+  "selected_epoch": 1,
+  "checkpoint_path": "outputs/stage2/k6_loss_recovery/mini_original_nll/best_validation_checkpoint.pt",
+  "CV": {
+    "metrics": {
+      "full_horizon": {
+        "overall": {
+          "count": 583,
+          "minADE": 1.2461415189258453,
+          "minFDE": 2.91483629142185,
+          "MR": 0.2864493996569468,
+          "independent_minADE": 1.2461415189258453
+        },
+        "vehicle.moving": {
+          "count": 216,
+          "minADE": 3.077110185632827,
+          "minFDE": 7.2687653945672706,
+          "MR": 0.7314814814814815,
+          "independent_minADE": 3.077110185632827
+        },
+        "vehicle.stopped": {
+          "count": 50,
+          "minADE": 0.2260088772326708,
+          "minFDE": 0.4329370615631342,
+          "MR": 0.0,
+          "independent_minADE": 0.2260088772326708
+        },
+        "vehicle.parked": {
+          "count": 303,
+          "minADE": 0.12973249251431734,
+          "minFDE": 0.2539839073216463,
+          "MR": 0.009900990099009901,
+          "independent_minADE": 0.12973249251431734
+        },
+        "unknown": {
+          "count": 14,
+          "minADE": 0.8025225959718227,
+          "minFDE": 2.1923039768423354,
+          "MR": 0.42857142857142855,
+          "independent_minADE": 0.8025225959718227
+        }
+      },
+      "partial_future": {
+        "overall": {
+          "count": 260,
+          "minADE": 1.8895627801738626,
+          "minFDE": 4.098381206380705,
+          "MR": 0.34615384615384615,
+          "independent_minADE": 1.8895627801738626
+        },
+        "vehicle.moving": {
+          "count": 145,
+          "minADE": 3.2258890625113494,
+          "minFDE": 7.0264122058621385,
+          "MR": 0.5862068965517241,
+          "independent_minADE": 3.2258890625113494
+        },
+        "vehicle.stopped": {
+          "count": 36,
+          "minADE": 0.15828629017859283,
+          "minFDE": 0.30280151267329025,
+          "MR": 0.027777777777777776,
+          "independent_minADE": 0.15828629017859283
+        },
+        "vehicle.parked": {
+          "count": 64,
+          "minADE": 0.06752639424212248,
+          "minFDE": 0.11476119865619694,
+          "MR": 0.0,
+          "independent_minADE": 0.06752639424212248
+        },
+        "unknown": {
+          "count": 15,
+          "minADE": 0.900827540208896,
+          "minFDE": 1.9002515092492103,
+          "MR": 0.26666666666666666,
+          "independent_minADE": 0.900827540208896
+        }
+      }
+    },
+    "actor_record_count": 843,
+    "actor_records_local_path": "outputs/stage2/k6_loss_recovery/mini_actor_records/k6_loss_recovery_mini_result_CV_actors.json",
+    "actor_records_sha256": "c28c849f84d63faba8af295eebca47a6433c1a2a62ae47397175ebcfdb8d3478",
+    "K": 1,
+    "timestamps": "actual per-window timestamps, past-only last-two observed positions"
+  },
+  "HiVT": {
+    "metrics": {
+      "full_horizon": {
+        "overall": {
+          "count": 583,
+          "minADE": 1.8616803553000119,
+          "minFDE": 3.3862523990934856,
+          "MR": 0.29845626072041165,
+          "independent_minADE": 1.8039046243299597
+        },
+        "vehicle.moving": {
+          "count": 216,
+          "minADE": 4.785299439862785,
+          "minFDE": 8.74116559263267,
+          "MR": 0.7824074074074074,
+          "independent_minADE": 4.645467071724987
+        },
+        "vehicle.stopped": {
+          "count": 50,
+          "minADE": 0.07108401369303465,
+          "minFDE": 0.07280159836634993,
+          "MR": 0.0,
+          "independent_minADE": 0.06667228188365698
+        },
+        "vehicle.parked": {
+          "count": 303,
+          "minADE": 0.06790431908550042,
+          "minFDE": 0.06735555230326361,
+          "MR": 0.0,
+          "independent_minADE": 0.05719024952955962
+        },
+        "unknown": {
+          "count": 14,
+          "minADE": 1.9718399115705065,
+          "minFDE": 4.43175488547422,
+          "MR": 0.35714285714285715,
+          "independent_minADE": 1.9709463421521443
+        }
+      },
+      "partial_future": {
+        "overall": {
+          "count": 260,
+          "minADE": 1.1807161641392248,
+          "minFDE": 2.073072869882722,
+          "MR": 0.2423076923076923,
+          "independent_minADE": 1.13851484420772
+        },
+        "vehicle.moving": {
+          "count": 145,
+          "minADE": 1.9574907352441344,
+          "minFDE": 3.4380874721397614,
+          "MR": 0.3931034482758621,
+          "independent_minADE": 1.8834672899338705
+        },
+        "vehicle.stopped": {
+          "count": 36,
+          "minADE": 0.21995125470372537,
+          "minFDE": 0.36675774388843113,
+          "MR": 0.027777777777777776,
+          "independent_minADE": 0.21529528956549862
+        },
+        "vehicle.parked": {
+          "count": 64,
+          "minADE": 0.03838918662768265,
+          "minFDE": 0.05411139331590675,
+          "MR": 0.0,
+          "independent_minADE": 0.03757520743783971
+        },
+        "unknown": {
+          "count": 15,
+          "minADE": 0.8516595301528772,
+          "minFDE": 1.5873236504693826,
+          "MR": 0.3333333333333333,
+          "independent_minADE": 0.8503772502144178
+        }
+      }
+    },
+    "actor_record_count": 843,
+    "actor_records_local_path": "outputs/stage2/k6_loss_recovery/mini_actor_records/k6_loss_recovery_mini_result_HiVT_actors.json",
+    "actor_records_sha256": "72c960143323def1b9aa1fb693f4ad5c30aa2c596932d78107bc34d3a38b003c",
+    "ADE": 1.8616803553000119,
+    "FDE": 3.3862523990934856,
+    "MR": 0.29845626072041165,
+    "loss": 3.3772931510395114,
+    "regression_loss": 1.486001906582452,
+    "classification_loss": 1.8912912444570593,
+    "location_error": 1.0033861317427346,
+    "NLL": 1.486001906582452,
+    "scale_mean": 0.6907679228008379,
+    "scale_max": 3.885920286178589,
+    "raw_processed_scale_mean": 0.6907679228008379,
+    "raw_processed_scale_max": 3.885920286178589,
+    "raw_scale_head_mean": -0.6582521549570562,
+    "raw_scale_head_min": -2.282653570175171,
+    "raw_scale_head_max": 2.884920358657837
+  },
+  "visualization_coverage": {
+    "moving_success": {
+      "requested": 5,
+      "available_actor_windows": 20,
+      "produced": 5,
+      "distinct_instances": 5
+    },
+    "moving_failure": {
+      "requested": 5,
+      "available_actor_windows": 146,
+      "produced": 5,
+      "distinct_instances": 5
+    },
+    "stopped": {
+      "requested": 2,
+      "available_actor_windows": 50,
+      "produced": 2,
+      "distinct_instances": 2
+    },
+    "parked": {
+      "requested": 2,
+      "available_actor_windows": 303,
+      "produced": 2,
+      "distinct_instances": 2
+    }
+  },
+  "visualizations_complete": true,
+  "completion_note": "engineering baseline completed; this status does not assert generalization superiority to CV"
+}

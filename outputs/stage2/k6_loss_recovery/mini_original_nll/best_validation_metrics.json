@@ -1,0 +1,97 @@
+{
+  "epoch": 1,
+  "metrics": {
+    "full_horizon": {
+      "overall": {
+        "count": 583,
+        "minADE": 1.8616803477344137,
+        "minFDE": 3.386252403219341,
+        "MR": 0.29845626072041165,
+        "independent_minADE": 1.8039045993264247
+      },
+      "vehicle.moving": {
+        "count": 216,
+        "minADE": 4.78529943073065,
+        "minFDE": 8.741165635947793,
+        "MR": 0.7824074074074074,
+        "independent_minADE": 4.645467007058431
+      },
+      "vehicle.stopped": {
+        "count": 50,
+        "minADE": 0.0710840323753655,
+        "minFDE": 0.07280155522748828,
+        "MR": 0.0,
+        "independent_minADE": 0.06667230734601617
+      },
+      "vehicle.parked": {
+        "count": 303,
+        "minADE": 0.06790429969370464,
+        "minFDE": 0.06735553800684735,
+        "MR": 0.0,
+        "independent_minADE": 0.05719023393682226
+      },
+      "unknown": {
+        "count": 14,
+        "minADE": 1.9718400903844409,
+        "minFDE": 4.431754852478791,
+        "MR": 0.35714285714285715,
+        "independent_minADE": 1.9709465451804655
+      }
+    },
+    "partial_future": {
+      "overall": {
+        "count": 260,
+        "minADE": 1.1807161828767185,
+        "minFDE": 2.0730727560213733,
+        "MR": 0.2423076923076923,
+        "independent_minADE": 1.138514867368996
+      },
+      "vehicle.moving": {
+        "count": 145,
+        "minADE": 1.9574907701847881,
+        "minFDE": 3.4380872929147603,
+        "MR": 0.3931034482758621,
+        "independent_minADE": 1.8834673353567206
+      },
+      "vehicle.stopped": {
+        "count": 36,
+        "minADE": 0.219951232869385,
+        "minFDE": 0.3667577004008409,
+        "MR": 0.027777777777777776,
+        "independent_minADE": 0.2152952658685131
+      },
+      "vehicle.parked": {
+        "count": 64,
+        "minADE": 0.03838921216629387,
+        "minFDE": 0.054111392180857365,
+        "MR": 0.0,
+        "independent_minADE": 0.037575230750007904
+      },
+      "unknown": {
+        "count": 15,
+        "minADE": 0.8516594606141249,
+        "minFDE": 1.5873235185941061,
+        "MR": 0.3333333333333333,
+        "independent_minADE": 0.8503771699965
+      }
+    }
+  },
+  "actor_record_count": 843,
+  "actor_records_local_path": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_original_nll_best_validation_metrics_actors.json",
+  "actor_records_sha256": "ea0b87d3d26b6bcb43fd3f69a581cb8bf6a3b4c10816f3a80a1df12d3ed90ef2",
+  "ADE": 1.8616803477344137,
+  "FDE": 3.386252403219341,
+  "MR": 0.29845626072041165,
+  "loss": 3.377293109797118,
+  "regression_loss": 1.4860018671783988,
+  "classification_loss": 1.8912912426187192,
+  "location_error": 1.0033860954660425,
+  "NLL": 1.4860018671783988,
+  "scale_mean": 0.690767915660553,
+  "scale_max": 3.885920286178589,
+  "raw_processed_scale_mean": 0.690767915660553,
+  "raw_processed_scale_max": 3.885920286178589,
+  "raw_scale_head_mean": -0.6582521573371513,
+  "raw_scale_head_min": -2.282653570175171,
+  "raw_scale_head_max": 2.884920358657837
+}

@@ -1,0 +1,89 @@
+{
+  "records": [
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_result.json",
+      "field": "CV.actors",
+      "count": 843,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/k6_loss_recovery_mini_result_CV_actors.json",
+      "sha256": "c28c849f84d63faba8af295eebca47a6433c1a2a62ae47397175ebcfdb8d3478"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_result.json",
+      "field": "HiVT.actors",
+      "count": 843,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/k6_loss_recovery_mini_result_HiVT_actors.json",
+      "sha256": "72c960143323def1b9aa1fb693f4ad5c30aa2c596932d78107bc34d3a38b003c"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_warmup/metrics.json",
+      "field": "initial.actors",
+      "count": 3417,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_warmup_metrics_initial_actors.json",
+      "sha256": "16d6903c34a3459167f0e8f989f3fafad4e0c0715e9c1395e76489e1b4012d84"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_warmup/metrics.json",
+      "field": "final.actors",
+      "count": 3417,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_warmup_metrics_final_actors.json",
+      "sha256": "ee98038fcfa122bfbea353cd8122a98e5ff20cdf787eddcd8ff0a1e6e88d58f8"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_warmup/initial_metrics.json",
+      "field": "actors",
+      "count": 3417,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_warmup_initial_metrics_actors.json",
+      "sha256": "16d6903c34a3459167f0e8f989f3fafad4e0c0715e9c1395e76489e1b4012d84"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_original_nll/metrics.json",
+      "field": "initial.actors",
+      "count": 3417,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_original_nll_metrics_initial_actors.json",
+      "sha256": "4df17d6902b01fbbbfb93cb0eaf0d7f81e50ea1dd18214b8ce9d27b0584009c5"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_original_nll/metrics.json",
+      "field": "final.actors",
+      "count": 3417,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_original_nll_metrics_final_actors.json",
+      "sha256": "67e22a14bb1b6426dfc3e337cc83f04647fdfd44058960bf17fa13693817642b"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_original_nll/metrics.json",
+      "field": "validation_final.actors",
+      "count": 843,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_original_nll_metrics_validation_final_actors.json",
+      "sha256": "2206faaaed98e4c6cf56b3d02b633d661afd1660bc0510be0ef579e09c8d9e35"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_original_nll/metrics.json",
+      "field": "best_validation.actors",
+      "count": 843,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_original_nll_metrics_best_validation_actors.json",
+      "sha256": "ea0b87d3d26b6bcb43fd3f69a581cb8bf6a3b4c10816f3a80a1df12d3ed90ef2"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_original_nll/initial_metrics.json",
+      "field": "actors",
+      "count": 3417,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_original_nll_initial_metrics_actors.json",
+      "sha256": "4df17d6902b01fbbbfb93cb0eaf0d7f81e50ea1dd18214b8ce9d27b0584009c5"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_original_nll/initial_validation_metrics.json",
+      "field": "actors",
+      "count": 843,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_original_nll_initial_validation_metrics_actors.json",
+      "sha256": "717008760c65d8695e369f8d3bf312e57e8103f572ba85e3c8321aea2fa9ef2c"
+    },
+    {
+      "source": "outputs/stage2/k6_loss_recovery/mini_original_nll/best_validation_metrics.json",
+      "field": "actors",
+      "count": 843,
+      "local_records": "outputs/stage2/k6_loss_recovery/mini_actor_records/mini_original_nll_best_validation_metrics_actors.json",
+      "sha256": "ea0b87d3d26b6bcb43fd3f69a581cb8bf6a3b4c10816f3a80a1df12d3ed90ef2"
+    }
+  ],
+  "note": "Only bulky per-actor logs moved; all aggregate metrics unchanged. Complete records retained locally and SHA256 indexed."
+}

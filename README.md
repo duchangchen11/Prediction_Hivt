@@ -99,3 +99,24 @@ Tiny 使用16个训练窗口、240 epochs。确定性eval loss从10.8056降至1.
 按用户条件继续测试 4/8/16 moving targets 与 balanced 的结果见 [诊断报告](outputs/reports/moving_overfit_audit_report.md)，量纲、source target、梯度和各目标真实 attribute 都可追溯。原完整 tiny、mini 完整训练和 Stage 3 均未运行，仍需先解决官方 K=6 moving overfit。
 
 [运行命令](docs/moving_overfit_audit_commands.md) · [Vehicle 运动分布](outputs/reports/vehicle_motion_distribution.md) · [Target audit](outputs/reports/single_moving_target_audit.json) · [梯度 CSV](outputs/reports/moving_gradient_audit.csv)
+
+## Stage 2B：K=6 loss recovery
+
+当前进度：K=6 recovery PASS、Full Tiny PASS、mini baseline 完成。采用 **Protocol 1：fixed-scale warm-up → 原始 learnable-scale Laplace NLL**；HiVT架构、K=6、5/12帧、vehicle定义及地图输入不变，仅适配约6s预测的优化预热。上文保留早期失败实验记录。
+
+单 moving actor：K6 fixed-scale在580 epochs达到ADE/FDE=0.1231/0.9506m；fresh warm-up后恢复原NLL，300 epochs后为0.0140/0.0130m。B PASS，因此未运行bounded-scale C。
+
+原16 tiny windows上的真实 moving 子组（63 actor-windows）ADE/FDE从19.1113/38.5269m下降至2.3165/5.8465m，优于同窗口CV 4.5293/10.3200m。全部236个full-horizon与146个partial targets、stopped/parked均保留。
+
+Mini fresh初始化，64 epochs warm-up + 64 epochs 原NLL；仅按validation选择最终NLL阶段epoch 1。沿用既有6/2/2 scene split，不使用test调参。完整未来validation共583 actor-windows：
+
+| Method | Overall ADE/FDE | Moving ADE/FDE | Stopped ADE/FDE | Parked ADE/FDE |
+|---|---|---|---|---|
+| CV | 1.2461/2.9148 | 3.0771/7.2688 | 0.2260/0.4329 | 0.1297/0.2540 |
+| Recovered HiVT | 1.8617/3.3863 | 4.7853/8.7412 | 0.0711/0.0728 | 0.0679/0.0674 |
+
+Mini validation的moving与overall仍弱于CV；本轮完成baseline工程验收，尚未证明泛化优势。14张validation图包含5个成功moving、5个失败moving、2个stopped及2个parked目标。8个单测通过；175个原实验文件和19个官方源码文件哈希不变。Checkpoint及大型actor日志留本机，小型结果与代码上传本分支。
+
+[完整报告](outputs/reports/k6_loss_recovery_report.md) · [Mini分组CSV](outputs/reports/k6_mini_metrics.csv) · [运行命令](docs/stage2b_execution_commands.md) · [可视化审计](outputs/stage2/k6_loss_recovery/mini_visualization_audit.json)
+
+Stage2 baseline=PASS（本轮约定的recovery/tiny/mini完成验收）；允许讨论Stage3，本轮未执行Stage3，不merge main。

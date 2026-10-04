@@ -27,7 +27,16 @@ Full Tiny gate 在任何恢复训练之前保存于 configs/stage2b_baseline.yam
 
 mini 只在 Full Tiny PASS 后允许运行，沿用 train146/val48 个原窗口；fresh seed2022，warm-up64 epochs + 原 NLL64 epochs，固定LR .001/1e-4。只在最后 probabilistic phase 内按 validation overall full-horizon minFDE 选择 checkpoint。test 不用于调参、checkpoint selection 或可视化选择。数据、K、宽度、层数和地图变量不变。
 
-Mini 成功/失败可视化按真实 t0 vehicle.moving、完整未来、GT位移≥5m 选择，成功 minFDE≤2m、失败>2m，优先不同 instance。另取2个 stopped 和2个 parked；14张图的窗口、误差、全部6条轨迹与概率记录在 mini_visualization_audit.json。图轴覆盖所有 mode，避免截掉非最佳轨迹。Mini 完成状态表示预定训练/评估/可视化完成，不预设其泛化优于 CV。
+Mini 成功/失败可视化按真实 t0 vehicle.moving、完整未来、GT位移≥5m 选择，成功候选 minFDE≤2m、失败>2m，优先不同 instance。图形复核后成功候选按ADE升序选择，避免只展示端点准确而整段误差大的例子；统计、checkpoint、success gate均不变。另取2个 stopped 和2个 parked；14张图的窗口、误差、全部6条轨迹与概率记录在 mini_visualization_audit.json。图轴覆盖所有 mode，避免截掉非最佳轨迹。Mini 完成状态表示预定训练/评估/可视化完成，不预设其泛化优于 CV。
+
+Mini 逐actor明细与每次评估序列保留本机；上传汇总指标、曲线、梯度日志和小型case审计。compact操作只将metrics内的大型actor数组移至忽略目录mini_actor_records/，保留count、路径和SHA256，不修改任何指标或checkpoint：
+
+```bash
+/home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_baseline --stage compact > outputs/stage2/k6_loss_recovery/mini_compact_run.txt 2>&1
+/home/lrj/anaconda3/envs/ped_intent/bin/python -m scripts.k6_baseline --stage figures > outputs/stage2/k6_loss_recovery/mini_figures_run.txt 2>&1
+```
+
+新增 Full Tiny gate 测试确认：overall良好而moving失败必须FAIL；改变moving样本数也必须FAIL。`baseline_unit_tests.txt`记录8个测试通过。CUDA scatter存在浮点归约差异，同seed初始化一致并不保证逐步bitwise相同；报告使用各实验实际输出。
 
 实验目录拒绝覆盖。不要直接重复带重定向的命令覆盖已有日志；新实验需使用独立名称。首次新 loss 单测捕获了二维 boolean mask 与坐标切片的索引顺序错误，训练前已修正；失败日志保存为 unit_tests_first_attempt.txt，随后7个测试全部通过。
 

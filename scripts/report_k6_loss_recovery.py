@@ -1,4 +1,5 @@
 """Stage 2B report with explicit gates, skipped phases and subgroup results."""
+import csv
 import json
 
 from preprocessing.common import PROJECT_ROOT, write_json
@@ -38,7 +39,7 @@ def main():
            "## 【A K6 Fixed Scale】", ""]
     if a:
         f=a["final"]
-        lines += [f"epochs={a['epochs']}；ADE={f['ADE']:.6f}m；FDE={f['FDE']:.6f}m；MR={f['MR']:.6f}；**{a['status']}**。",
+        lines += [f"epochs={a['epochs']}；ADE={f['ADE']:.6f}m；FDE={f['FDE']:.6f}m；MR={f['MR']:.6f}；**K6_FIXED_SCALE={a['status']}**。",
                   "同一 scene-0655 moving actor，GT endpoint 49.5348m；51 vehicle nodes + 666 lane segments 全部保留，只有该车参与监督。",
                   "regression=mean(|y−μ|)，保留原 best-sum-L2 mode selection 和 detached-soft-target mode classification。b=1，regression 不含 log(2) 常数；NLL 另记录。固定 lr=.001，seed2022，上限1000，每10 epoch评估。严格 gate ADE<.5/FDE<1，未放宽。",
                   f"初始 ADE/FDE={a['initial']['ADE']:.6f}/{a['initial']['FDE']:.6f}m；初始模型 SHA256={a['initial_state_sha256']}。",
@@ -52,6 +53,7 @@ def main():
             fmt=lambda xy:"/".join(f"{v:.6f}" for v in xy)
             lines.append(f"| {m['mode']} | {fmt(m['endpoint_local_xy_m'])} | {fmt(m['endpoint_ego_xy_m'])} | {m['endpoint_displacement_m']:.6f} | {m['probability']:.6f} | {m['regression_sum_L2_m']:.6f} | {m['final_FDE_m']:.6f} |")
         lines += ["",f"best training mode={mode['best_training_mode']}；best FDE mode={mode['best_FDE_mode']}；一致={mode['best_modes_agree']}。",
+                  f"mode probabilities={mode['mode_probabilities']}。Mode audit用0–5编号，可视化图例用1–6编号。",
                   f"MODE_COLLAPSE={mode['MODE_COLLAPSE']}；最大 mode pairwise trajectory distance={mode['max_pairwise_trajectory_distance_m']:.6g}m；预先定义 collapse tolerance=.001m。单目标 collapse 可以接受，没有因此修改模型。",
                   "全部6个 mode 的完整12步 local/ego trajectory 与 probability 保存于 k6_mode_audit.json。", ""]
     else:lines += ["NOT_RUN：A 尚未 PASS 或失败。", ""]
@@ -66,7 +68,7 @@ def main():
     lines += ["## 【Original NLL restored】", ""]
     if nll:
         f=nll["final"]
-        lines += [f"epochs={nll['epochs']}；ADE={f['ADE']:.6f}m；FDE={f['FDE']:.6f}m；MR={f['MR']:.6f}；NLL={f['NLL']:.6f}；scale mean/max={f['scale_mean']:.6f}/{f['scale_max']:.6f}；**{nll['status']}**。",
+        lines += [f"epochs={nll['epochs']}；ADE={f['ADE']:.6f}m；FDE={f['FDE']:.6f}m；MR={f['MR']:.6f}；NLL={f['NLL']:.6f}；scale mean/max={f['scale_mean']:.6f}/{f['scale_max']:.6f}；**WARMUP_NLL={nll['status']}**。",
                   "从 B warmup_checkpoint 继续，保留 AdamW state，LR降至1e-4，不用 scheduler，运行完整300 epochs。恢复原 free-scale LaplaceNLL 与原 mode classification。",
                   "最终 gate 预注册为 ADE<1/FDE<2，且相对 warm-up 的 ADE 增量≤.5m、FDE 增量≤1m；finite loss/gradients 必须通过。该增量定义在任何 B 结果前写入配置，用于量化‘不能明显退化’。", ""]
     else:lines += ["NOT_RUN", ""]
@@ -95,6 +97,10 @@ def main():
         for group,v in tiny["final"]["metrics"]["partial_future"].items():
             lines.append(f"| {group} | {v['count']} | {number(v['minADE'])} | {number(v['minFDE'])} | {number(v['MR'])} |")
         lines.append("")
+        tiny_warm=read(ROOT/"full_tiny_warmup/metrics.json")
+        if tiny_warm:
+            f=tiny["final"]
+            lines += [f"Full Tiny fresh初始化；fixed warm-up {tiny_warm['epochs']} epochs，然后原始NLL {tiny['epochs_final_phase']} epochs。最终NLL={f['NLL']:.6f}，scale mean/max={f['scale_mean']:.6f}/{f['scale_max']:.6f}。", ""]
     else:lines += ["NOT_RUN：只有最终 K=6 protocol 确定后允许重跑。", ""]
     lines += ["## 【CV comparison】", ""]
     if comparison:
@@ -121,8 +127,23 @@ def main():
                 lines.append(f"| {method} | {group} | {v['count']} | {number(v['minADE'])} | {number(v['minFDE'])} | {number(v['MR'])} |")
         lines += ["",f"可视化覆盖：{mini['visualization_coverage']}；完整={mini['visualizations_complete']}。GT≥5m的真实 moving 目标，成功FDE≤2m、失败>2m；优先不同instance。图中lane/history/GT/6 modes/best-FDE/probabilities俱全。",
                   "[可视化清单与每个case的6条完整轨迹](../stage2/k6_loss_recovery/mini_visualization_audit.json)", ""]
+        for group in ("overall","vehicle.moving"):
+            h=mini["HiVT"]["metrics"]["full_horizon"][group];c=mini["CV"]["metrics"]["full_horizon"][group]
+            lines.append(f"Validation {group}：HiVT/CV ADE ratio={h['minADE']/c['minADE']:.4f}，FDE ratio={h['minFDE']/c['minFDE']:.4f}。")
+        cv_overall=mini["CV"]["metrics"]["full_horizon"]["overall"];hivt_overall=mini["HiVT"]["metrics"]["full_horizon"]["overall"]
+        if hivt_overall["minADE"]>cv_overall["minADE"] or hivt_overall["minFDE"]>cv_overall["minFDE"]:
+            lines += ["", "本次mini validation的HiVT尚未同时优于CV的ADE/FDE。Full Tiny支持运动拟合问题已改善；预定mini预算内的泛化性能仍需后续研究，本轮没有追加调参。"]
+        lines += ["", "![Mini train/validation curves](../stage2/k6_loss_recovery/mini_original_nll/training_curve.png)", ""]
+        lines += ["![Successful moving target](../stage2/k6_loss_recovery/mini_figures/moving_success_01.png)",
+                  "![Failed moving target](../stage2/k6_loss_recovery/mini_figures/moving_failure_01.png)", ""]
+        with open(PROJECT_ROOT/"outputs/reports/k6_mini_metrics.csv","w",newline="") as f:
+            writer=csv.DictWriter(f,["method","horizon","attribute","count","minADE","minFDE","MR"],lineterminator="\n")
+            writer.writeheader()
+            for method in ("CV","HiVT"):
+                for horizon,groups in mini[method]["metrics"].items():
+                    for group,v in groups.items():writer.writerow({"method":method,"horizon":horizon,"attribute":group,**{k:v[k] for k in ("count","minADE","minFDE","MR")}})
     else:lines += ["NOT_RUN：Full Tiny 未 PASS 时禁止启动。"]
-    lines += ["", "## 【Decision】", "", f"Stage2 baseline={decision['Stage2_baseline']}；Allow Stage3 discussion={decision['Allow_Stage3_discussion']}。本轮没有执行 Stage 3，也不 merge main。",
+    lines += ["", "## 【Decision】", "", f"Stage2 baseline={decision['Stage2_baseline']}；Allow Stage3={decision['Allow_Stage3_discussion']}（仅允许讨论）。本轮没有执行 Stage 3，也不 merge main。",
               f"Stop reason={decision['hard_stop']}。", "", "命令记录见 docs/stage2b_execution_commands.md；各实验 config/metrics/curve/gradient logs/figures 全部保留。Weights、optimizer states 和完整冻结副本仅保存在本机。"]
     (PROJECT_ROOT/"outputs/reports/k6_loss_recovery_report.md").write_text("\n".join(lines)+"\n")
     verify_previous();print(json.dumps(result,indent=2,ensure_ascii=False),flush=True)

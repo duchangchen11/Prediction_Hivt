@@ -139,6 +139,8 @@ def plot_curve(rows,path):
     epochs=[r["epoch"] for r in rows]
     for key in ("loss","regression_loss","classification_loss"):axes[0].plot(epochs,[r[key] for r in rows],label=key)
     for key in ("ADE","FDE","vehicle.moving_ADE","vehicle.moving_FDE"):axes[1].plot(epochs,[r[key] for r in rows],label=key)
+    for key in ("validation_ADE","validation_FDE"):
+        if key in rows[0]:axes[1].plot(epochs,[r[key] for r in rows],ls="--",label=key)
     for key in ("scale_mean","scale_max","raw_processed_scale_mean"):axes[2].plot(epochs,[r[key] for r in rows],label=key)
     for ax in axes:ax.set_xlabel("Epoch");ax.grid(alpha=.2);ax.legend(fontsize=7)
     axes[1].set_ylabel("Full-horizon error (m)");axes[2].set_ylabel("Scale (m)")

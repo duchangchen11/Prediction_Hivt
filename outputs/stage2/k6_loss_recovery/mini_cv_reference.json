@@ -1,0 +1,80 @@
+{
+  "metrics": {
+    "full_horizon": {
+      "overall": {
+        "count": 583,
+        "minADE": 1.2461415189258453,
+        "minFDE": 2.91483629142185,
+        "MR": 0.2864493996569468,
+        "independent_minADE": 1.2461415189258453
+      },
+      "vehicle.moving": {
+        "count": 216,
+        "minADE": 3.077110185632827,
+        "minFDE": 7.2687653945672706,
+        "MR": 0.7314814814814815,
+        "independent_minADE": 3.077110185632827
+      },
+      "vehicle.stopped": {
+        "count": 50,
+        "minADE": 0.2260088772326708,
+        "minFDE": 0.4329370615631342,
+        "MR": 0.0,
+        "independent_minADE": 0.2260088772326708
+      },
+      "vehicle.parked": {
+        "count": 303,
+        "minADE": 0.12973249251431734,
+        "minFDE": 0.2539839073216463,
+        "MR": 0.009900990099009901,
+        "independent_minADE": 0.12973249251431734
+      },
+      "unknown": {
+        "count": 14,
+        "minADE": 0.8025225959718227,
+        "minFDE": 2.1923039768423354,
+        "MR": 0.42857142857142855,
+        "independent_minADE": 0.8025225959718227
+      }
+    },
+    "partial_future": {
+      "overall": {
+        "count": 260,
+        "minADE": 1.8895627801738626,
+        "minFDE": 4.098381206380705,
+        "MR": 0.34615384615384615,
+        "independent_minADE": 1.8895627801738626
+      },
+      "vehicle.moving": {
+        "count": 145,
+        "minADE": 3.2258890625113494,
+        "minFDE": 7.0264122058621385,
+        "MR": 0.5862068965517241,
+        "independent_minADE": 3.2258890625113494
+      },
+      "vehicle.stopped": {
+        "count": 36,
+        "minADE": 0.15828629017859283,
+        "minFDE": 0.30280151267329025,
+        "MR": 0.027777777777777776,
+        "independent_minADE": 0.15828629017859283
+      },
+      "vehicle.parked": {
+        "count": 64,
+        "minADE": 0.06752639424212248,
+        "minFDE": 0.11476119865619694,
+        "MR": 0.0,
+        "independent_minADE": 0.06752639424212248
+      },
+      "unknown": {
+        "count": 15,
+        "minADE": 0.900827540208896,
+        "minFDE": 1.9002515092492103,
+        "MR": 0.26666666666666666,
+        "independent_minADE": 0.900827540208896
+      }
+    }
+  },
+  "K": 1,
+  "timestamps": "actual per-window timestamps, past-only last-two observed positions"
+}

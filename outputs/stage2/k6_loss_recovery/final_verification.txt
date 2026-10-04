@@ -1,0 +1,4 @@
+PASS: 175 old artifacts unchanged; 19 official sources unchanged; core/runtime/data unchanged
+PASS: A/B/tiny gates; mini budget 64+64; train/val scenes disjoint; test never evaluated/tuned
+PASS: all 14 PNGs decode, six complete trajectories/probabilities; five moving success cases ADE/FDE<2m
+PASS: aggregate metrics preserved during log compaction; final selected epoch 1

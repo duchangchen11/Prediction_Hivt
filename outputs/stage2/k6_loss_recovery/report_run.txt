@@ -19,10 +19,10 @@
     "phase": "original_nll"
   },
   "Full_Tiny": "PASS",
-  "Mini": "NOT_RUN",
+  "Mini": "COMPLETE",
   "decision": {
-    "Stage2_baseline": "FAIL",
-    "Allow_Stage3_discussion": "NO",
+    "Stage2_baseline": "PASS",
+    "Allow_Stage3_discussion": "YES",
     "Stage3_executed": false,
     "hard_stop": null
   },
