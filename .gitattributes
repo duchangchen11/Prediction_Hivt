@@ -1,0 +1,5 @@
+* text=auto
+# Preserve captured command output; formatting checks target source/docs.
+outputs/reports/*.txt -whitespace
+outputs/reports/*.csv text eol=lf
+*.png binary
