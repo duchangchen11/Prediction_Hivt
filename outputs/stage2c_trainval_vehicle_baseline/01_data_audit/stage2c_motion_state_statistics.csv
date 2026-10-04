@@ -1,0 +1,17 @@
+split,horizon,motion_state,actor_windows
+train,full_horizon,vehicle.moving,46795
+train,full_horizon,vehicle.stopped,25939
+train,full_horizon,vehicle.parked,136238
+train,full_horizon,unknown,4773
+train,partial_future,vehicle.moving,23060
+train,partial_future,vehicle.stopped,5539
+train,partial_future,vehicle.parked,70391
+train,partial_future,unknown,2522
+val,full_horizon,vehicle.moving,10461
+val,full_horizon,vehicle.stopped,5599
+val,full_horizon,vehicle.parked,25198
+val,full_horizon,unknown,1074
+val,partial_future,vehicle.moving,5478
+val,partial_future,vehicle.stopped,1997
+val,partial_future,vehicle.parked,12589
+val,partial_future,unknown,585

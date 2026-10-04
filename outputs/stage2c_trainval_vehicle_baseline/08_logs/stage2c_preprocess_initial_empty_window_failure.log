@@ -1,0 +1,188 @@
+METADATA_INDEX_RESUME /home/lrj/Prediction_Hivt/outputs/stage2c_trainval_vehicle_baseline/02_preprocessed/stage2c_metadata_cache/stage2c_trajectory_metadata.sqlite
+SCENE_SHARDS 5 resumed 5 elapsed=0.2s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-0009', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SCENE_SHARDS 10 resumed 5 elapsed=5.7s
+SCENE_SHARDS 15 resumed 5 elapsed=9.8s
+SCENE_SHARDS 20 resumed 5 elapsed=14.7s
+SCENE_SHARDS 25 resumed 5 elapsed=20.1s
+SCENE_SHARDS 30 resumed 5 elapsed=26.8s
+SCENE_SHARDS 35 resumed 5 elapsed=32.5s
+SCENE_SHARDS 40 resumed 5 elapsed=38.2s
+SCENE_SHARDS 45 resumed 5 elapsed=44.6s
+SCENE_SHARDS 50 resumed 5 elapsed=54.2s
+SCENE_SHARDS 55 resumed 5 elapsed=63.7s
+SCENE_SHARDS 60 resumed 5 elapsed=70.8s
+SCENE_SHARDS 65 resumed 5 elapsed=76.4s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-0124', 'error': "ValueError('Window has no vehicle at t0')"}
+SCENE_SHARDS 70 resumed 5 elapsed=83.2s
+SCENE_SHARDS 75 resumed 5 elapsed=89.0s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-0138', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SCENE_SHARDS 80 resumed 5 elapsed=96.0s
+SCENE_SHARDS 85 resumed 5 elapsed=101.3s
+SCENE_SHARDS 90 resumed 5 elapsed=107.1s
+SCENE_SHARDS 95 resumed 5 elapsed=115.2s
+SCENE_SHARDS 100 resumed 5 elapsed=122.4s
+SCENE_SHARDS 105 resumed 5 elapsed=128.3s
+SCENE_SHARDS 110 resumed 5 elapsed=132.9s
+SCENE_SHARDS 115 resumed 5 elapsed=138.9s
+SCENE_SHARDS 120 resumed 5 elapsed=144.5s
+SCENE_SHARDS 125 resumed 5 elapsed=152.3s
+SCENE_SHARDS 130 resumed 5 elapsed=160.4s
+SCENE_SHARDS 135 resumed 5 elapsed=167.4s
+SCENE_SHARDS 140 resumed 5 elapsed=173.9s
+SCENE_SHARDS 145 resumed 5 elapsed=182.3s
+SCENE_SHARDS 150 resumed 5 elapsed=190.0s
+SCENE_SHARDS 155 resumed 5 elapsed=197.7s
+SCENE_SHARDS 160 resumed 5 elapsed=206.3s
+SCENE_SHARDS 165 resumed 5 elapsed=215.8s
+SCENE_SHARDS 170 resumed 5 elapsed=225.0s
+SCENE_SHARDS 175 resumed 5 elapsed=233.9s
+SCENE_SHARDS 180 resumed 5 elapsed=243.6s
+SCENE_SHARDS 185 resumed 5 elapsed=254.3s
+SCENE_SHARDS 190 resumed 5 elapsed=264.7s
+SCENE_SHARDS 195 resumed 5 elapsed=272.3s
+SCENE_SHARDS 200 resumed 5 elapsed=281.0s
+SCENE_SHARDS 205 resumed 5 elapsed=290.5s
+SCENE_SHARDS 210 resumed 5 elapsed=297.9s
+SCENE_SHARDS 215 resumed 5 elapsed=304.3s
+SCENE_SHARDS 220 resumed 5 elapsed=310.8s
+SCENE_SHARDS 225 resumed 5 elapsed=318.9s
+SCENE_SHARDS 230 resumed 5 elapsed=325.2s
+SCENE_SHARDS 235 resumed 5 elapsed=332.3s
+SCENE_SHARDS 240 resumed 5 elapsed=339.0s
+SCENE_SHARDS 245 resumed 5 elapsed=345.8s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-0383', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SCENE_SHARDS 250 resumed 5 elapsed=351.1s
+SCENE_SHARDS 255 resumed 5 elapsed=361.0s
+SCENE_SHARDS 260 resumed 5 elapsed=369.7s
+SCENE_SHARDS 265 resumed 5 elapsed=376.1s
+SCENE_SHARDS 270 resumed 5 elapsed=381.5s
+SCENE_SHARDS 275 resumed 5 elapsed=386.3s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-0416', 'error': "ValueError('No supported actors at t0')"}
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-0419', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SCENE_SHARDS 280 resumed 5 elapsed=390.1s
+SCENE_SHARDS 285 resumed 5 elapsed=395.8s
+SCENE_SHARDS 290 resumed 5 elapsed=401.9s
+SCENE_SHARDS 295 resumed 5 elapsed=406.8s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-0437', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-0438', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SCENE_SHARDS 300 resumed 5 elapsed=416.1s
+SCENE_SHARDS 305 resumed 5 elapsed=425.1s
+SCENE_SHARDS 310 resumed 5 elapsed=434.8s
+SCENE_SHARDS 315 resumed 5 elapsed=444.0s
+SCENE_SHARDS 320 resumed 5 elapsed=453.7s
+SCENE_SHARDS 325 resumed 5 elapsed=461.5s
+SCENE_SHARDS 330 resumed 5 elapsed=470.9s
+SCENE_SHARDS 335 resumed 5 elapsed=480.3s
+SCENE_SHARDS 340 resumed 5 elapsed=489.7s
+SCENE_SHARDS 345 resumed 5 elapsed=499.6s
+SCENE_SHARDS 350 resumed 5 elapsed=508.0s
+SCENE_SHARDS 355 resumed 5 elapsed=514.8s
+SCENE_SHARDS 360 resumed 5 elapsed=523.1s
+SCENE_SHARDS 365 resumed 5 elapsed=530.2s
+SCENE_SHARDS 370 resumed 5 elapsed=537.3s
+SCENE_SHARDS 375 resumed 5 elapsed=546.3s
+SCENE_SHARDS 380 resumed 5 elapsed=554.6s
+SCENE_SHARDS 385 resumed 5 elapsed=562.7s
+SCENE_SHARDS 390 resumed 5 elapsed=571.7s
+SCENE_SHARDS 395 resumed 5 elapsed=582.0s
+SCENE_SHARDS 400 resumed 5 elapsed=590.2s
+SCENE_SHARDS 405 resumed 5 elapsed=596.9s
+SCENE_SHARDS 410 resumed 5 elapsed=606.9s
+SCENE_SHARDS 415 resumed 5 elapsed=614.7s
+SCENE_SHARDS 420 resumed 5 elapsed=622.3s
+SCENE_SHARDS 425 resumed 5 elapsed=631.9s
+SCENE_SHARDS 430 resumed 5 elapsed=638.3s
+SCENE_SHARDS 435 resumed 5 elapsed=647.1s
+SCENE_SHARDS 440 resumed 5 elapsed=655.5s
+SCENE_SHARDS 445 resumed 5 elapsed=664.3s
+SCENE_SHARDS 450 resumed 5 elapsed=672.3s
+SCENE_SHARDS 455 resumed 5 elapsed=679.8s
+SCENE_SHARDS 460 resumed 5 elapsed=690.8s
+SCENE_SHARDS 465 resumed 5 elapsed=701.7s
+SCENE_SHARDS 470 resumed 5 elapsed=709.5s
+SCENE_SHARDS 475 resumed 5 elapsed=716.4s
+SCENE_SHARDS 480 resumed 5 elapsed=725.5s
+SCENE_SHARDS 485 resumed 5 elapsed=732.7s
+SCENE_SHARDS 490 resumed 5 elapsed=742.5s
+SCENE_SHARDS 495 resumed 5 elapsed=750.2s
+SCENE_SHARDS 500 resumed 5 elapsed=755.3s
+SCENE_SHARDS 505 resumed 5 elapsed=761.5s
+SCENE_SHARDS 510 resumed 5 elapsed=769.8s
+SCENE_SHARDS 515 resumed 5 elapsed=776.7s
+SCENE_SHARDS 520 resumed 5 elapsed=784.7s
+SCENE_SHARDS 525 resumed 5 elapsed=791.3s
+SCENE_SHARDS 530 resumed 5 elapsed=799.7s
+SCENE_SHARDS 535 resumed 5 elapsed=807.9s
+SCENE_SHARDS 540 resumed 5 elapsed=813.3s
+SCENE_SHARDS 545 resumed 5 elapsed=819.7s
+SCENE_SHARDS 550 resumed 5 elapsed=827.0s
+SCENE_SHARDS 555 resumed 5 elapsed=835.7s
+SCENE_SHARDS 560 resumed 5 elapsed=843.5s
+SCENE_SHARDS 565 resumed 5 elapsed=851.3s
+SCENE_SHARDS 570 resumed 5 elapsed=858.9s
+SCENE_SHARDS 575 resumed 5 elapsed=867.8s
+SCENE_SHARDS 580 resumed 5 elapsed=877.0s
+SCENE_SHARDS 585 resumed 5 elapsed=883.2s
+SCENE_SHARDS 590 resumed 5 elapsed=887.8s
+SCENE_SHARDS 595 resumed 5 elapsed=892.5s
+SCENE_SHARDS 600 resumed 5 elapsed=897.7s
+SCENE_SHARDS 605 resumed 5 elapsed=904.5s
+SCENE_SHARDS 610 resumed 5 elapsed=909.6s
+SCENE_SHARDS 615 resumed 5 elapsed=915.4s
+SCENE_SHARDS 620 resumed 5 elapsed=923.2s
+SCENE_SHARDS 625 resumed 5 elapsed=929.1s
+SCENE_SHARDS 630 resumed 5 elapsed=934.7s
+SCENE_SHARDS 635 resumed 5 elapsed=941.7s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-1020', 'error': "ValueError('Window has no vehicle at t0')"}
+SCENE_SHARDS 640 resumed 5 elapsed=947.1s
+SCENE_SHARDS 645 resumed 5 elapsed=954.3s
+SCENE_SHARDS 650 resumed 5 elapsed=960.4s
+SCENE_SHARDS 655 resumed 5 elapsed=965.2s
+SCENE_SHARDS 660 resumed 5 elapsed=972.6s
+SCENE_SHARDS 665 resumed 5 elapsed=979.7s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-1086', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-1087', 'error': "ValueError('No supported actors at t0')"}
+SCENE_SHARDS 670 resumed 5 elapsed=985.1s
+SCENE_SHARDS 675 resumed 5 elapsed=990.5s
+SCENE_SHARDS 680 resumed 5 elapsed=995.3s
+SHARD_FAIL {'split': 'train', 'scene_name': 'scene-1105', 'error': "ValueError('Window has no vehicle at t0')"}
+SCENE_SHARDS 685 resumed 5 elapsed=1002.8s
+SCENE_SHARDS 690 resumed 7 elapsed=1006.8s
+SCENE_SHARDS 695 resumed 10 elapsed=1009.4s
+SCENE_SHARDS 700 resumed 10 elapsed=1016.4s
+SCENE_SHARDS 705 resumed 10 elapsed=1024.4s
+SCENE_SHARDS 710 resumed 10 elapsed=1032.8s
+SCENE_SHARDS 715 resumed 10 elapsed=1042.2s
+SCENE_SHARDS 720 resumed 10 elapsed=1049.5s
+SCENE_SHARDS 725 resumed 10 elapsed=1055.2s
+SCENE_SHARDS 730 resumed 10 elapsed=1063.0s
+SCENE_SHARDS 735 resumed 10 elapsed=1069.3s
+SCENE_SHARDS 740 resumed 10 elapsed=1077.5s
+SCENE_SHARDS 745 resumed 10 elapsed=1087.6s
+SCENE_SHARDS 750 resumed 10 elapsed=1094.9s
+SCENE_SHARDS 755 resumed 10 elapsed=1103.1s
+SCENE_SHARDS 760 resumed 10 elapsed=1111.2s
+SCENE_SHARDS 765 resumed 10 elapsed=1117.6s
+SCENE_SHARDS 770 resumed 10 elapsed=1126.4s
+SCENE_SHARDS 775 resumed 10 elapsed=1130.6s
+SCENE_SHARDS 780 resumed 10 elapsed=1139.0s
+SCENE_SHARDS 785 resumed 10 elapsed=1147.3s
+SCENE_SHARDS 790 resumed 10 elapsed=1156.4s
+SCENE_SHARDS 795 resumed 10 elapsed=1165.1s
+SCENE_SHARDS 800 resumed 10 elapsed=1176.6s
+SHARD_FAIL {'split': 'val', 'scene_name': 'scene-0919', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SCENE_SHARDS 805 resumed 10 elapsed=1182.9s
+SCENE_SHARDS 810 resumed 10 elapsed=1189.5s
+SCENE_SHARDS 815 resumed 10 elapsed=1195.7s
+SCENE_SHARDS 820 resumed 10 elapsed=1202.0s
+SHARD_FAIL {'split': 'val', 'scene_name': 'scene-1060', 'error': "AssertionError('No eligible targets; must audit explicitly before training')"}
+SCENE_SHARDS 825 resumed 10 elapsed=1206.9s
+SCENE_SHARDS 830 resumed 10 elapsed=1211.9s
+SCENE_SHARDS 835 resumed 10 elapsed=1217.5s
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/outputs/stage2c_trainval_vehicle_baseline/02_preprocessed/stage2c_prepare.py", line 274, in <module>
+    else: preprocessing(smoke=args.stage == "smoke")
+  File "/home/lrj/Prediction_Hivt/outputs/stage2c_trainval_vehicle_baseline/02_preprocessed/stage2c_prepare.py", line 249, in preprocessing
+    assert not failed, "Incomplete preprocessing; inspect failed_shards before training"
+AssertionError: Incomplete preprocessing; inspect failed_shards before training

@@ -1,0 +1,80 @@
+{
+  "trials": [
+    {
+      "batch_size": 4,
+      "status": "PASS",
+      "optimizer_steps": 3,
+      "peak_allocated_bytes": 951526912,
+      "peak_reserved_bytes": 1040187392,
+      "total_device_bytes": 10366025728,
+      "peak_reserved_fraction": 0.10034582387638852,
+      "iteration_seconds": [
+        0.5492844889995467,
+        0.20175505800034443,
+        0.19993221500044456
+      ],
+      "mean_steady_iteration_seconds": 0.2008436365003945,
+      "stable_below_90_percent": true,
+      "NaN": 0,
+      "Inf": 0
+    },
+    {
+      "batch_size": 8,
+      "status": "PASS",
+      "optimizer_steps": 3,
+      "peak_allocated_bytes": 1826394624,
+      "peak_reserved_bytes": 2130706432,
+      "total_device_bytes": 10366025728,
+      "peak_reserved_fraction": 0.20554709084357,
+      "iteration_seconds": [
+        0.3797044279999682,
+        0.3710562319993187,
+        0.3710475670013693
+      ],
+      "mean_steady_iteration_seconds": 0.371051899500344,
+      "stable_below_90_percent": true,
+      "NaN": 0,
+      "Inf": 0
+    },
+    {
+      "batch_size": 16,
+      "status": "PASS",
+      "optimizer_steps": 3,
+      "peak_allocated_bytes": 3351805440,
+      "peak_reserved_bytes": 3416260608,
+      "total_device_bytes": 10366025728,
+      "peak_reserved_fraction": 0.32956319978757437,
+      "iteration_seconds": [
+        0.701193246000912,
+        0.6939735369996924,
+        0.7163076199994975
+      ],
+      "mean_steady_iteration_seconds": 0.705140578499595,
+      "stable_below_90_percent": true,
+      "NaN": 0,
+      "Inf": 0
+    }
+  ],
+  "selected_batch_size": 16,
+  "selection": "largest stable tested batch below 90% torch reserved VRAM in high-context train windows",
+  "stress_vehicle_counts": [
+    103,
+    102,
+    100,
+    100,
+    96,
+    94,
+    94,
+    92,
+    90,
+    89,
+    89,
+    89,
+    89,
+    88,
+    88,
+    88
+  ],
+  "model_changed": false,
+  "baseline_gpu_memory_note": "CUDA display/process allocations outside PyTorch remain separate"
+}

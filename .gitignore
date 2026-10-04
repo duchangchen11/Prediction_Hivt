@@ -29,3 +29,4 @@ outputs/stage2c_trainval_vehicle_baseline/07_checkpoints/*.pt
 outputs/stage2c_trainval_vehicle_baseline/**/*.tmp
 outputs/stage2c_trainval_vehicle_baseline/04_evaluation/stage2c_val_actor_errors.csv
 outputs/stage2c_trainval_vehicle_baseline/04_evaluation/stage2c_cv_actor_errors.csv
+!outputs/stage2c_trainval_vehicle_baseline/08_logs/stage2c_*.log

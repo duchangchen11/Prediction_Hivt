@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "train_scenes": 5,
+  "val_scenes": 5,
+  "scene_tokens_tested": [
+    "73030fb67d3c46cfb5e590168088ae39",
+    "c3e0e9f6ee8d4170a3d22a6179f1ca3a",
+    "25496f19ffd14bd088cb430bfc01a4d7",
+    "6f5133fe62b240e797bac25aeff8b531",
+    "7deb4760e2244f32b57f9d631b535b66",
+    "e7ef871f77f44331aefdebc24ec034b7",
+    "265f002f02d447ad9074813292eef75e",
+    "41fde20fedcd4d22ab26811688612870",
+    "d1e57234fd6a463d963670938f9f556e",
+    "813213458a214a39a1d1fc77fa52fa34"
+  ],
+  "NaN": 0,
+  "Inf": 0,
+  "val_optimizer_steps": 0,
+  "model_scope": "temporary smoke model discarded; fresh formal initialization later",
+  "source": "official trainval"
+}

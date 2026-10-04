@@ -117,9 +117,11 @@ class SceneShardDataset(Dataset):
     """At most a configurable number of scenes resident, never all trainval graphs."""
     def __init__(self, split, cache_scenes=2):
         self.split = split; self.cache_limit = cache_scenes; self.cache = OrderedDict()
-        with open(ROOT / f"02_preprocessed/stage2c_{split}_index.csv") as f: self.rows = list(csv.DictReader(f))
-        self.training_rows = [i for i, r in enumerate(self.rows) if int(r["full_horizon_target_count"]) + int(r["partial_target_count"]) > 0]
-        assert len(self.training_rows) == len(self.rows), "Zero-supervision windows require explicit audit before training"
+        with open(ROOT / f"02_preprocessed/stage2c_{split}_index.csv") as f: self.all_rows = list(csv.DictReader(f))
+        self.rows = [r for r in self.all_rows if int(r["full_horizon_target_count"]) + int(r["partial_target_count"]) > 0]
+        self.empty_rows = [r for r in self.all_rows if int(r["full_horizon_target_count"]) + int(r["partial_target_count"]) == 0]
+        # All anchors remain indexed/sharded. Only rows with zero eligible targets are absent from loss/evaluation.
+        assert len(self.rows) + len(self.empty_rows) == len(self.all_rows)
         self.scene_indices = OrderedDict()
         for i, row in enumerate(self.rows): self.scene_indices.setdefault(row["scene_token"], []).append(i)
     def __len__(self): return len(self.rows)
@@ -156,7 +158,8 @@ class MetricAccumulator:
 
 @torch.no_grad()
 def evaluate(dataset, model=None, phase="original_nll", actor_path=None, progress=False):
-    c = config(); acc = MetricAccumulator(); scene_acc = {}; seen = 0
+    c = config(); acc = MetricAccumulator(); seen = 0
+    scene_acc = {r["scene_token"]: MetricAccumulator() for r in dataset.all_rows}
     if model is not None: model.eval()
     fields = ["scene_name", "scene_token", "sample_token", "instance_token", "node_in_graph", "horizon", "motion_state",
               "valid_future_steps", "GT_endpoint_displacement_m", "minADE6", "minFDE6", "MR6", "independent_minADE6"]
@@ -196,6 +199,7 @@ def evaluate(dataset, model=None, phase="original_nll", actor_path=None, progres
         dataset.clear()
     assert seen == len(dataset)
     return {"metrics": acc.summary(), "scenes": {t: a.summary() for t, a in scene_acc.items()}, "windows": seen,
+            "candidate_windows":len(dataset.all_rows),"empty_supervision_windows":len(dataset.empty_rows),
             "metric_definition": "ADE of lowest-FDE mode; independent minimum ADE separately; actor-window equal weights; MR endpoint >2m",
             "K": 1 if model is None else 6, "split": dataset.split, "test_used": False}
 

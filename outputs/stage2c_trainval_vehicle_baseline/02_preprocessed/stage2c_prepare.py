@@ -27,7 +27,7 @@ from scripts.prepare_hivt_mini import validate_graph
 CACHE = ROOT / "02_preprocessed/stage2c_metadata_cache"
 DB = CACHE / "stage2c_trajectory_metadata.sqlite"
 INDEX_FIELDS = ["split", "scene_name", "scene_token", "sample_token", "window_index", "vehicle_count",
-                "full_horizon_target_count", "partial_target_count", "file_path"]
+                "full_horizon_target_count", "partial_target_count", "file_path", "window_status"]
 GROUPS = ("vehicle.moving", "vehicle.stopped", "vehicle.parked", "unknown")
 BINS = [0., 1., 2., 5., 10., 20., 40., float("inf")]
 BIN_NAMES = ["0–1m", "1–2m", "2–5m", "5–10m", "10–20m", "20–40m", ">40m"]
@@ -196,21 +196,32 @@ def preprocessing(smoke=False):
                     ds.anchors = [(scene["token"], i) for i in range(4, len(chain)-12)]; ds.cache = {}
                     attributes = {a["token"]: a["name"] for a in nusc.attribute}; graphs = []
                     for i in range(len(ds)):
-                        g = ds[i]; validate_graph(g)
+                        try:
+                            g = ds[i]
+                        except ValueError as error:
+                            if str(error) not in ("Window has no vehicle at t0", "No supported actors at t0"): raise
+                            graphs.append(None); ds.cache.clear(); continue
+                        validate_graph(g)
                         current = {nusc.get("sample_annotation", t)["instance_token"]: nusc.get("sample_annotation", t)
                                    for t in nusc.get("sample", g.sample_token)["anns"]}
                         actual = [[attributes[t] for t in current[token]["attribute_tokens"]] for token in g.instance_tokens]
                         g.t0_attribute_names = actual
                         g.t0_motion_state = [next((a for a in names if a in GROUPS), "unknown") for names in actual]
-                        assert g.target_mask.any(), "No eligible targets; must audit explicitly before training"
                         graphs.append(g); ds.cache.clear()
-                    saved = {"scene_token": scene["token"], "source_signature": source_signature, "input_signature": input_signature, "graphs": graphs}
+                    saved = {"scene_token": scene["token"], "source_signature": source_signature, "input_signature": input_signature, "graphs": graphs,
+                             "sample_tokens": [chain[t0]["token"] for _,t0 in ds.anchors]}
                     temp = path.with_name(path.name + ".tmp"); torch.save(saved, temp); os.replace(temp, path)
                 for i, g in enumerate(graphs):
+                    if g is None:
+                        all_rows[name].append(dict(zip(INDEX_FIELDS, [name, scene["name"], scene["token"], saved["sample_tokens"][i], i, 0, 0, 0,
+                                             str(path.relative_to(ROOT)), "no current vehicle"])))
+                        stats[(name,"windows")] += 1
+                        continue
                     validate_graph(g)
                     full = g.target_mask & g.future_mask.all(-1); partial = g.target_mask & ~full
                     all_rows[name].append(dict(zip(INDEX_FIELDS, [name, g.scene_name, g.scene_token, g.sample_token, i, g.num_nodes,
-                        int(full.sum()), int(partial.sum()), str(path.relative_to(ROOT))])))
+                        int(full.sum()), int(partial.sum()), str(path.relative_to(ROOT)),
+                        "supervised" if g.target_mask.any() else "vehicles present but zero eligible targets"])))
                     stats[(name, "windows")] += 1; stats[(name, "vehicle_actor_windows_context_included")] += g.num_nodes
                     for horizon, mask in (("full_horizon", full), ("partial_future", partial)):
                         for node in torch.where(mask)[0].tolist():
@@ -229,6 +240,8 @@ def preprocessing(smoke=False):
                 if smoke: raise
     con.close()
     for name, rows in all_rows.items(): write_csv(ROOT / f"02_preprocessed/stage2c_{name}_index.csv", rows, INDEX_FIELDS)
+    empty_rows=[r for rows in all_rows.values() for r in rows if r["window_status"]!="supervised"]
+    write_csv(ROOT / "01_data_audit/stage2c_empty_windows.csv",empty_rows,INDEX_FIELDS)
     motion_rows = [{"split": s, "horizon": h, "motion_state": g, "actor_windows": stats[(s,h,g)]}
                    for s in ("train","val") for h in ("full_horizon","partial_future") for g in GROUPS]
     displacement_rows = [{"split": s, "horizon": h, "motion_state": g, "endpoint_displacement_bin": b, "actor_windows": bins[(s,h,g,b)]}
@@ -237,7 +250,9 @@ def preprocessing(smoke=False):
     write_csv(ROOT / "01_data_audit/stage2c_vehicle_statistics.csv", displacement_rows)
     summary = {"scope": "10-scene smoke" if smoke else "full official trainval", "status": "FAIL" if failed else "COMPLETE",
                "scene_shards": completed, "resumed_shards": resumed, "failed_shards": failed, "NaN": 0, "Inf": 0,
-               "splits": {s: {"scenes": len({r['scene_token'] for r in rows}), "windows": len(rows),
+               "splits": {s: {"scenes": len({r['scene_token'] for r in rows}),
+                                "windows": sum(r["window_status"]=="supervised" for r in rows),
+                                "candidate_windows":len(rows),"empty_supervision_windows":sum(r["window_status"]!="supervised" for r in rows),
                                 "context_vehicle_actor_windows": stats[(s,'vehicle_actor_windows_context_included')],
                                 "full_horizon_targets": sum(int(r['full_horizon_target_count']) for r in rows),
                                 "partial_targets": sum(int(r['partial_target_count']) for r in rows)} for s,rows in all_rows.items()},
