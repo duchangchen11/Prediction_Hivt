@@ -1,0 +1,58 @@
+{
+  "mode": "tiny",
+  "epochs": 240,
+  "train_windows": 16,
+  "val_windows": 0,
+  "initial": {
+    "metrics": {
+      "full_horizon": {
+        "count": 236,
+        "minADE_K": 7.700447840710818,
+        "minFDE_K": 12.866847914754082,
+        "MR_K": 0.2754237288135593,
+        "independent_minADE_K": 7.578552072583618
+      },
+      "partial_future": {
+        "count": 146,
+        "minADE_K": 6.521360833759177,
+        "minFDE_K": 10.385097310827305,
+        "MR_K": 0.4041095890410959,
+        "independent_minADE_K": 6.4622158146884345
+      }
+    },
+    "loss": 10.805599927902222,
+    "regression_loss": 8.89606374502182,
+    "classification_loss": 1.9095358848571777
+  },
+  "final": {
+    "metrics": {
+      "full_horizon": {
+        "count": 236,
+        "minADE_K": 5.571720993569539,
+        "minFDE_K": 11.274156618486105,
+        "MR_K": 0.2754237288135593,
+        "independent_minADE_K": 5.562629395650928
+      },
+      "partial_future": {
+        "count": 146,
+        "minADE_K": 3.8297976396761815,
+        "minFDE_K": 7.943701045458087,
+        "MR_K": 0.3356164383561644,
+        "independent_minADE_K": 3.8177751981807164
+      }
+    },
+    "loss": 1.5768702030181885,
+    "regression_loss": 0.017859816551208496,
+    "classification_loss": 1.5590103268623352
+  },
+  "K": 6,
+  "model": "HiVT-NuScenes-Vehicle-Baseline",
+  "OVERFIT": false,
+  "gate": {
+    "max_final_to_initial_loss": 0.7,
+    "max_final_to_initial_minADE": 0.25,
+    "max_final_to_initial_minFDE": 0.25,
+    "max_train_minADE_m": 1.0,
+    "max_train_minFDE_m": 2.0
+  }
+}

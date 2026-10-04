@@ -1,0 +1,81 @@
+--- upstream/embedding
+
++++ runtime/embedding
+
+@@ -16,7 +16,7 @@
+
+ import torch
+ import torch.nn as nn
+ 
+-from utils import init_weights
++from .utils import init_weights
+ 
+ 
+ class SingleInputEmbedding(nn.Module):
+--- upstream/decoder
+
++++ runtime/decoder
+
+@@ -17,7 +17,7 @@
+
+ import torch.nn as nn
+ import torch.nn.functional as F
+ 
+-from utils import init_weights
++from .utils import init_weights
+ 
+ 
+ class GRUDecoder(nn.Module):
+--- upstream/global_interactor
+
++++ runtime/global_interactor
+
+@@ -22,10 +22,10 @@
+
+ from torch_geometric.utils import softmax
+ from torch_geometric.utils import subgraph
+ 
+-from models import MultipleInputEmbedding
+-from models import SingleInputEmbedding
+-from utils import TemporalData
+-from utils import init_weights
++from .embedding import MultipleInputEmbedding
++from .embedding import SingleInputEmbedding
++from .utils import TemporalData
++from .utils import init_weights
+ 
+ 
+ class GlobalInteractor(nn.Module):
+--- upstream/local_encoder
+
++++ runtime/local_encoder
+
+@@ -25,11 +25,11 @@
+
+ from torch_geometric.utils import softmax
+ from torch_geometric.utils import subgraph
+ 
+-from models import MultipleInputEmbedding
+-from models import SingleInputEmbedding
+-from utils import DistanceDropEdge
+-from utils import TemporalData
+-from utils import init_weights
++from .embedding import MultipleInputEmbedding
++from .embedding import SingleInputEmbedding
++from .utils import DistanceDropEdge
++from .utils import TemporalData
++from .utils import init_weights
+ 
+ 
+ class LocalEncoder(nn.Module):
+@@ -273,7 +273,8 @@
+
+     def forward(self,
+                 src: torch.Tensor,
+                 src_mask: Optional[torch.Tensor] = None,
+-                src_key_padding_mask: Optional[torch.Tensor] = None) -> torch.Tensor:
++                src_key_padding_mask: Optional[torch.Tensor] = None,
++                is_causal: bool = False) -> torch.Tensor:
+         x = src
+         x = x + self._sa_block(self.norm1(x), src_mask, src_key_padding_mask)
+         x = x + self._ff_block(self.norm2(x))

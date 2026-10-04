@@ -66,3 +66,26 @@ ADE 先对单个 actor-window 的有效未来点求平均，再对 actor-window 
 - `outputs/debug/one_window.pt` 留在本机，通过构造脚本可复现。
 
 当前停止在 CV baseline。后续进入 vehicle-only HiVT 时仍需检查 PyG/Lightning 等依赖兼容性，当前尚未安装，未修改完整 HiVT。
+
+## Stage 2：vehicle-only HiVT
+
+本分支 `stage2/vehicle-hivt-baseline` 已推进到 tiny-set 验收，**OVERFIT=FAIL**；按用户要求停止后续训练，mini baseline 尚未运行，Stage 3 不可进入。[Stage 2 报告](outputs/reports/stage_two_report.md)。上面的环境/停止位置描述保留为 Stage 1 记录。
+
+冻结作者官方 HiVT 提交 `6876656ce7671982ebdc29113aaaa028c2931518`，保留 Apache-2.0 源码及文件哈希。运行组件仅调整包导入、PyG batching 签名、PyTorch causal keyword；核心 encoder/global interactor/MLP decoder 和 loss 保持。使用原生 PyTorch wrapper，PyG 2.6.1 及 scatter/sparse 的 CUDA12.4 wheel 已安装，无需 Lightning。
+
+vehicle adapter 和 lane/connector centerline 输入已完成：当前 ego 坐标、5/12 帧、K=6、HiVT-64、每个 actor 50m 地图半径、2m centerline 间距。mini 为 146/48/50 个 train/val/test windows，沿用 Stage 1 scene split。全窗口和随机100窗口检查通过。trainval 流式抽样5个完整scene、四个地图读取、batch size1/2前后向及optimizer step均通过，未读任何原始点云。
+
+```bash
+conda activate ped_intent
+python -m scripts.audit_trainval
+python -m scripts.prepare_hivt_mini
+python -m scripts.hivt_smoke_test
+python -m unittest discover -s tests -p test_hivt_stage_two.py -v
+python -m scripts.train_hivt_stage2 --mode tiny
+# 本次 tiny 未通过；mini 命令内部也检查 OVERFIT gate，并拒绝启动。
+python -m scripts.diagnose_hivt_overfit
+```
+
+Tiny 使用16个训练窗口、240 epochs。确定性eval loss从10.8056降至1.5769，但full-horizon minADE_6/minFDE_6仍为5.5717/11.2742m。静止目标拟合良好，移动目标仍严重低估未来位移；未把loss下降当作成功overfit。配置、曲线、初始/最终预测、5个失败案例、诊断报告均保留；checkpoint和processed图数据留在本机。
+
+`minADE_K`按官方HiVT/Argoverse规则使用最低FDE的mode计算ADE，另外单独记录独立minimum-ADE。MR沿用上游末端误差>2m；full-horizon（12个未来关键帧均有效，约6s）与partial-future分开报告。本阶段不是nuScenes官方leaderboard实验。

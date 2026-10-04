@@ -1,6 +1,7 @@
 * text=auto
 # Preserve captured command output; formatting checks target source/docs.
 outputs/reports/*.txt -whitespace
+outputs/reports/**/*.txt -whitespace
 outputs/reports/*.csv text eol=lf
 *.png binary
 baselines/hivt_official/** -whitespace

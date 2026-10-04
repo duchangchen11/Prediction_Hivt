@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "dataset": "v1.0-trainval, five complete source scenes in metadata cache",
+  "raw_sensor_files_read": 0,
+  "graphs_read": 5,
+  "tests": [
+    {
+      "batch_windows": 1,
+      "vehicle_nodes": 5,
+      "pred_traj_shape": [
+        5,
+        6,
+        12,
+        2
+      ],
+      "mode_prob_shape": [
+        5,
+        6
+      ],
+      "forward": "PASS",
+      "prediction_finite": true,
+      "loss": {
+        "loss": 17.191747665405273,
+        "regression_loss": 15.28497314453125,
+        "classification_loss": 1.9067738056182861
+      },
+      "loss_finite": true,
+      "backward": "PASS",
+      "gradient_finite": true,
+      "optimizer_step": "PASS"
+    },
+    {
+      "batch_windows": 2,
+      "vehicle_nodes": 19,
+      "pred_traj_shape": [
+        19,
+        6,
+        12,
+        2
+      ],
+      "mode_prob_shape": [
+        19,
+        6
+      ],
+      "forward": "PASS",
+      "prediction_finite": true,
+      "loss": {
+        "loss": 8.611977577209473,
+        "regression_loss": 6.770882606506348,
+        "classification_loss": 1.8410948514938354
+      },
+      "loss_finite": true,
+      "backward": "PASS",
+      "gradient_finite": true,
+      "optimizer_step": "PASS"
+    }
+  ],
+  "parameter_count": 645809,
+  "scene_tokens": [
+    "c74a3a7265ae45f99f65628fbd7cd2a4",
+    "240d15482599449a9bd0432fbfa688ab",
+    "08110c8640454affb5167801442a85fd",
+    "e323a27a0ba94ab5ab11010d778cd41f",
+    "5521cd85ed0e441f8d23938ed09099dd"
+  ]
+}
