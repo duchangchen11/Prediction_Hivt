@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "checkpoint_relative_path": "07_checkpoints/stage3a_plus_best_overall_minfde.pt",
+  "checkpoint_sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+  "source_actor_errors_relative_path": "02_preprocessed/stage3_cache/stage3a_plus_best_actor_errors.csv",
+  "source_actor_errors_sha256": "b0aac284d6b054bda3e7d48ce3e5745d6896ecd67866f0892df36f1eb94a5568",
+  "predictions_reused_without_training_or_reinference_for_subgroup_metrics": true,
+  "split": "official val150",
+  "horizon": "full 12-step future only",
+  "GT_displacement": "norm(GT[t12]-position[t0]), strict > thresholds",
+  "metric_definition": "minADE6 is ADE of best-FDE mode; MR6 endpoint error>2m; Top1 argmax saved model probability",
+  "metrics": [
+    {
+      "Group": "Vehicle >5m",
+      "AgentType": "vehicle",
+      "GT_endpoint_displacement_gt_m": 5,
+      "Count": 9744,
+      "UniqueInstances": 853,
+      "UniqueScenes": 137,
+      "minADE6": 2.643538912692855,
+      "minFDE6": 5.7133616778130945,
+      "MR6": 0.6924261083743842,
+      "Top1ADE6": 5.269742291050234,
+      "Top1FDE6": 12.388213322405385
+    },
+    {
+      "Group": "Pedestrian >1m",
+      "AgentType": "pedestrian",
+      "GT_endpoint_displacement_gt_m": 1,
+      "Count": 8810,
+      "UniqueInstances": 825,
+      "UniqueScenes": 113,
+      "minADE6": 0.6912934250176105,
+      "minFDE6": 1.4267147954938686,
+      "MR6": 0.22803632236095348,
+      "Top1ADE6": 0.8823750792798521,
+      "Top1FDE6": 1.875281949929003
+    },
+    {
+      "Group": "Pedestrian >5m",
+      "AgentType": "pedestrian",
+      "GT_endpoint_displacement_gt_m": 5,
+      "Count": 7581,
+      "UniqueInstances": 716,
+      "UniqueScenes": 110,
+      "minADE6": 0.6742224694745508,
+      "minFDE6": 1.3869418128573687,
+      "MR6": 0.2148793035219628,
+      "Top1ADE6": 0.8368936446597933,
+      "Top1FDE6": 1.7473266187790781
+    },
+    {
+      "Group": "Bicycle >1m",
+      "AgentType": "bicycle",
+      "GT_endpoint_displacement_gt_m": 1,
+      "Count": 155,
+      "UniqueInstances": 15,
+      "UniqueScenes": 13,
+      "minADE6": 1.9519365222223344,
+      "minFDE6": 4.305738156072555,
+      "MR6": 0.6516129032258065,
+      "Top1ADE6": 3.3003517241247238,
+      "Top1FDE6": 7.448723739193332
+    },
+    {
+      "Group": "Bicycle >5m",
+      "AgentType": "bicycle",
+      "GT_endpoint_displacement_gt_m": 5,
+      "Count": 132,
+      "UniqueInstances": 12,
+      "UniqueScenes": 11,
+      "minADE6": 2.1391766346765286,
+      "minFDE6": 4.6844447435754715,
+      "MR6": 0.6666666666666666,
+      "Top1ADE6": 3.6909083821105235,
+      "Top1FDE6": 8.299352910482522
+    }
+  ],
+  "full_horizon_target_count": 54990,
+  "excluded_partial_future_count": 30037,
+  "test_used": false
+}

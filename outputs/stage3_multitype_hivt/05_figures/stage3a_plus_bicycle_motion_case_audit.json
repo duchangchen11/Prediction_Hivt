@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "source_json": "04_evaluation/cases/stage3a_plus_bicycle_motion_case.json",
+  "source_sha256": "91f6c717e00db6d3630c5558f287f38235df136e306e73750f96198403a10b74",
+  "panels": [
+    {
+      "kind": "success",
+      "scene_token": "afd73f70ff7d46d6b772d341c08e31a5",
+      "sample_token": "d09b065aa1c74e31b0742ec36052f9c9",
+      "instance_token": "459d0100e90246b5a04100d3ef145f75",
+      "recomputed_metrics": {
+        "minADE6": 1.3920640651989997,
+        "minFDE6": 0.388501964108664,
+        "Top1ADE6": 1.1534205190994762,
+        "Top1FDE6": 1.105052265397258
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 2.9344457308511096e-08,
+        "minFDE6": 7.851403749370434e-09,
+        "Top1ADE6": 7.079625352623964e-08,
+        "Top1FDE6": 5.094921067261282e-07
+      },
+      "metric_tolerance_m": 0.0001,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        -2.631494849920273,
+        -15.83498764038086
+      ],
+      "zoom_max_xy_m": [
+        7.854179382324219,
+        -10.19140911102295
+      ],
+      "zoom_rule": "last6 GT/best/Top1+2.5m margin",
+      "endpoint_layout_checks": "PASS"
+    },
+    {
+      "kind": "failure",
+      "scene_token": "c65c4acf86954f8cbd53a3541a3bfa3a",
+      "sample_token": "674ac51c90f444ffa066c3aa15991728",
+      "instance_token": "bfc2a98e199f4252a9d87b1167fad828",
+      "recomputed_metrics": {
+        "minADE6": 12.478507678799089,
+        "minFDE6": 27.35076596704829,
+        "Top1ADE6": 12.555828023618837,
+        "Top1FDE6": 29.493493920536316
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 3.1680638024056407e-07,
+        "minFDE6": 7.387768050648447e-07,
+        "Top1ADE6": 7.086358522201408e-08,
+        "Top1FDE6": 1.1327716009645883e-07
+      },
+      "metric_tolerance_m": 0.0001,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        -5.33568000793457,
+        -18.97857666015625
+      ],
+      "zoom_max_xy_m": [
+        27.51909828186035,
+        4.086156845092773
+      ],
+      "zoom_rule": "last6 GT/best/Top1+2.5m margin",
+      "endpoint_layout_checks": "PASS"
+    }
+  ],
+  "trajectory_coordinates_changed": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports": {
+    "png": {
+      "relative_path": "05_figures/stage3a_plus_bicycle_motion_case.png",
+      "sha256": "db699e45db43f67dc73173745134e9ab0fc02fa024e69d4bdaab00cc610ccf4c"
+    },
+    "pdf": {
+      "relative_path": "05_figures/stage3a_plus_bicycle_motion_case.pdf",
+      "sha256": "f74eda6baeef0496096afc0a620802758b6564dd93595c63bcd7cb7fc945cc55"
+    },
+    "svg": {
+      "relative_path": "05_figures/stage3a_plus_bicycle_motion_case.svg",
+      "sha256": "2fce44d7f2a17db8ddb35c6afc9cf53ae2855d7547b51daacd424042bea1cda8"
+    }
+  }
+}

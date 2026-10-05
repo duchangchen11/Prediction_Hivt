@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "source_json": "04_evaluation/cases/stage3a_plus_pedestrian_motion_case.json",
+  "source_sha256": "ea4b185f7234adbf7a4e60e880009a4d0117a8be05016c76e60c6a9c9b79a96a",
+  "panels": [
+    {
+      "kind": "success",
+      "scene_token": "68e79a88244f447f993a72da444b29ba",
+      "sample_token": "112aa7a7edfc4df6b8e9775b14f74e12",
+      "instance_token": "c85eb4594f7b4810b65dbce98be454aa",
+      "recomputed_metrics": {
+        "minADE6": 0.03835430873694399,
+        "minFDE6": 0.0019574730600101283,
+        "Top1ADE6": 0.03835430873694399,
+        "Top1FDE6": 0.0019574730600101283
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 6.133490564538824e-07,
+        "minFDE6": 3.435235576576892e-06,
+        "Top1ADE6": 6.133490564538824e-07,
+        "Top1FDE6": 3.435235576576892e-06
+      },
+      "metric_tolerance_m": 0.0001,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        34.90410614013672,
+        -5.830495357513428
+      ],
+      "zoom_max_xy_m": [
+        43.529624938964844,
+        -0.7762165069580078
+      ],
+      "zoom_rule": "last6 GT/best/Top1+2.5m margin",
+      "endpoint_layout_checks": "PASS"
+    },
+    {
+      "kind": "failure",
+      "scene_token": "201b7c65a61f4bc1a2333ea90ba9a932",
+      "sample_token": "7a344e7e1436415caf180ae067a4203a",
+      "instance_token": "d54bf20a1e9b4b5c8ddd13532a67a279",
+      "recomputed_metrics": {
+        "minADE6": 6.778844813490566,
+        "minFDE6": 15.186551281687931,
+        "Top1ADE6": 9.809504656176918,
+        "Top1FDE6": 21.450833888036136
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.988345754710963e-08,
+        "minFDE6": 1.8763275555500059e-07,
+        "Top1ADE6": 1.472047497230733e-07,
+        "Top1FDE6": 3.8625585574436627e-07
+      },
+      "metric_tolerance_m": 0.0001,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        35.352291107177734,
+        0.6455323696136475
+      ],
+      "zoom_max_xy_m": [
+        61.774715423583984,
+        7.128929615020752
+      ],
+      "zoom_rule": "last6 GT/best/Top1+2.5m margin",
+      "endpoint_layout_checks": "PASS"
+    }
+  ],
+  "trajectory_coordinates_changed": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports": {
+    "png": {
+      "relative_path": "05_figures/stage3a_plus_pedestrian_motion_case.png",
+      "sha256": "47714f4e44da4a70613c4180cefbb5d3bde84283730e1d574aca091b42fbc80f"
+    },
+    "pdf": {
+      "relative_path": "05_figures/stage3a_plus_pedestrian_motion_case.pdf",
+      "sha256": "9205ecefce289c6aa4b4f2fd4b4570e1d651b94b13d17334c89e14fa44dc594c"
+    },
+    "svg": {
+      "relative_path": "05_figures/stage3a_plus_pedestrian_motion_case.svg",
+      "sha256": "21ffbda5c44a4fb5d11ec6e0307c53f2776731477cbc40ac71e3c75062b78d59"
+    }
+  }
+}

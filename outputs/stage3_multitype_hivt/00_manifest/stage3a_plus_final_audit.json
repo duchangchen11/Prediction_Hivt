@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "frozen_files_verified": 705,
+  "frozen_scene_shards_verified": 850,
+  "extension_extra_steps": 3000,
+  "validation_count": 6,
+  "optimizer_LR_batch_loss_model_data_unchanged": true,
+  "final_checkpoint_sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+  "final_VAL_actor_identity_horizon_motion_displacement_match_original": true,
+  "nontrivial_groups_independently_recomputed": 5,
+  "prediction_panels_numeric_audited": 6,
+  "required_PNG_verified": 5,
+  "test_used": false,
+  "Stage3B_executed": false,
+  "decision": {
+    "Stage3A_frozen": "NO",
+    "Ready_for_Stage3B_Type_Embedding": "NO",
+    "original_Stage3A_files_and_shards_unchanged": true,
+    "freeze_definition": "Decision to declare a converged final scientific baseline; distinct from preservation of original files and saved extension checkpoint.",
+    "converged": false,
+    "Stage3B_executed": false,
+    "reason": "Frozen source/data verified; finite motion groups; require five nonimproving validations and vehicle FDE ratios<=1.25, as registered before extension.",
+    "vehicle_retention_FDE_ratios_to_Stage2C": {
+      "vehicle_overall_FDE": 1.037874120665345,
+      "vehicle_moving_FDE": 1.0399186751047589
+    },
+    "final_checkpoint_sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77"
+  },
+  "git_at_audit": "5ac984d72b9000f9ecf185c8b20fad2f4312f360"
+}

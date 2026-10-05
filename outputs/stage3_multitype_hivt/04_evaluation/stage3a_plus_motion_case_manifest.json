@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "figures": [
+    {
+      "name": "stage3a_plus_vehicle_motion_case",
+      "agent_type": "vehicle",
+      "source_json": "04_evaluation/cases/stage3a_plus_vehicle_motion_case.json",
+      "source_sha256": "e3a39fb13bf04f397a1909f77ce1b13fc4defc4b2d9b3c13fb296ae95ab5eeb1"
+    },
+    {
+      "name": "stage3a_plus_pedestrian_motion_case",
+      "agent_type": "pedestrian",
+      "source_json": "04_evaluation/cases/stage3a_plus_pedestrian_motion_case.json",
+      "source_sha256": "ea4b185f7234adbf7a4e60e880009a4d0117a8be05016c76e60c6a9c9b79a96a"
+    },
+    {
+      "name": "stage3a_plus_bicycle_motion_case",
+      "agent_type": "bicycle",
+      "source_json": "04_evaluation/cases/stage3a_plus_bicycle_motion_case.json",
+      "source_sha256": "91f6c717e00db6d3630c5558f287f38235df136e306e73750f96198403a10b74"
+    }
+  ],
+  "case_count": 6,
+  "source_checkpoint_sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77"
+}

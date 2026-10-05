@@ -1,0 +1,40 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+RESTORED_BEST 15000 1.388404393440423 cursor {'epoch': 9, 'next_batch': 487} extension_step 0 LR 0.0001
+EXTENSION_STEP 100 global 15100
+EXTENSION_STEP 200 global 15200
+EXTENSION_STEP 300 global 15300
+EXTENSION_STEP 400 global 15400
+EXTENSION_STEP 500 global 15500
+EXTENSION_VALIDATION {'extension_step': 500, 'global_step': 15500, 'learning_rate': 0.0001, 'best_overall_FDE': 1.388404393440423, 'best_step': 15000, 'improved': 0, 'consecutive_nonimprovements': 1, 'VAL_overall_ADE': 0.6774479515842732, 'VAL_overall_FDE': 1.3933843500947316, 'VAL_overall_MR': 0.16946717585015458, 'VAL_vehicle_ADE': 0.7184961456208706, 'VAL_vehicle_FDE': 1.4830545171147334, 'VAL_vehicle_MR': 0.1701077199281867, 'VAL_pedestrian_ADE': 0.5403935684409547, 'VAL_pedestrian_FDE': 1.0931265034156756, 'VAL_pedestrian_MR': 0.16838860189968338, 'VAL_bicycle_ADE': 0.5360981901953559, 'VAL_bicycle_FDE': 1.1003617366058744, 'VAL_bicycle_MR': 0.14786585365853658}
+EXTENSION_STEP 600 global 15600
+EXTENSION_STEP 700 global 15700
+EXTENSION_STEP 800 global 15800
+EXTENSION_STEP 900 global 15900
+EXTENSION_STEP 1000 global 16000
+EXTENSION_VALIDATION {'extension_step': 1000, 'global_step': 16000, 'learning_rate': 0.0001, 'best_overall_FDE': 1.388404393440423, 'best_step': 15000, 'improved': 0, 'consecutive_nonimprovements': 2, 'VAL_overall_ADE': 0.675744047126338, 'VAL_overall_FDE': 1.390259174408164, 'VAL_overall_MR': 0.16915802873249683, 'VAL_vehicle_ADE': 0.7161364428769847, 'VAL_vehicle_FDE': 1.4787924742890985, 'VAL_vehicle_MR': 0.16961164131153736, 'VAL_pedestrian_ADE': 0.5410229687874156, 'VAL_pedestrian_FDE': 1.0940390671226428, 'VAL_pedestrian_MR': 0.16888851858023662, 'VAL_bicycle_ADE': 0.5340237503387915, 'VAL_bicycle_FDE': 1.0967257553244807, 'VAL_bicycle_MR': 0.1448170731707317}
+EXTENSION_STEP 1100 global 16100
+EXTENSION_STEP 1200 global 16200
+EXTENSION_STEP 1300 global 16300
+EXTENSION_STEP 1400 global 16400
+EXTENSION_STEP 1500 global 16500
+EXTENSION_VALIDATION {'extension_step': 1500, 'global_step': 16500, 'learning_rate': 0.0001, 'best_overall_FDE': 1.388404393440423, 'best_step': 15000, 'improved': 0, 'consecutive_nonimprovements': 3, 'VAL_overall_ADE': 0.6789321210375462, 'VAL_overall_FDE': 1.389928996755568, 'VAL_overall_MR': 0.17032187670485543, 'VAL_vehicle_ADE': 0.7185320144002892, 'VAL_vehicle_FDE': 1.474487241173231, 'VAL_vehicle_MR': 0.17091089483133326, 'VAL_pedestrian_ADE': 0.5473213613389195, 'VAL_pedestrian_FDE': 1.1075297760905076, 'VAL_pedestrian_MR': 0.169305115814031, 'VAL_bicycle_ADE': 0.5314468345608386, 'VAL_bicycle_FDE': 1.1000446122030199, 'VAL_bicycle_MR': 0.15091463414634146}
+EXTENSION_STEP 1600 global 16600
+EXTENSION_STEP 1700 global 16700
+EXTENSION_STEP 1800 global 16800
+EXTENSION_STEP 1900 global 16900
+EXTENSION_STEP 2000 global 17000
+EXTENSION_VALIDATION {'extension_step': 2000, 'global_step': 17000, 'learning_rate': 0.0001, 'best_overall_FDE': 1.388404393440423, 'best_step': 15000, 'improved': 0, 'consecutive_nonimprovements': 4, 'VAL_overall_ADE': 0.6954919985649923, 'VAL_overall_FDE': 1.403909934842269, 'VAL_overall_MR': 0.16812147663211494, 'VAL_vehicle_ADE': 0.7416460732835851, 'VAL_vehicle_FDE': 1.495948027799438, 'VAL_vehicle_MR': 0.1685249929131626, 'VAL_pedestrian_ADE': 0.5415664027047177, 'VAL_pedestrian_FDE': 1.0955071633029323, 'VAL_pedestrian_MR': 0.16755540743209466, 'VAL_bicycle_ADE': 0.5333284475399102, 'VAL_bicycle_FDE': 1.1071012655621617, 'VAL_bicycle_MR': 0.1524390243902439}
+EXTENSION_STEP 2100 global 17100
+EXTENSION_STEP 2200 global 17200
+EXTENSION_STEP 2300 global 17300
+EXTENSION_STEP 2400 global 17400
+EXTENSION_STEP 2500 global 17500
+EXTENSION_VALIDATION {'extension_step': 2500, 'global_step': 17500, 'learning_rate': 0.0001, 'best_overall_FDE': 1.383942962681001, 'best_step': 17500, 'improved': 1, 'consecutive_nonimprovements': 0, 'VAL_overall_ADE': 0.6815137840815567, 'VAL_overall_FDE': 1.383942962681001, 'VAL_overall_MR': 0.16921258410620113, 'VAL_vehicle_ADE': 0.7231517156535802, 'VAL_vehicle_FDE': 1.4709148428649372, 'VAL_vehicle_MR': 0.17013134271945574, 'VAL_pedestrian_ADE': 0.5421298727822419, 'VAL_pedestrian_FDE': 1.0923182423499542, 'VAL_pedestrian_MR': 0.16680553241126478, 'VAL_bicycle_ADE': 0.5447283940014952, 'VAL_bicycle_FDE': 1.1070927515024, 'VAL_bicycle_MR': 0.15396341463414634}
+EXTENSION_STEP 2600 global 17600
+EXTENSION_STEP 2700 global 17700
+EXTENSION_STEP 2800 global 17800
+EXTENSION_STEP 2900 global 17900
+EXTENSION_STEP 3000 global 18000
+EXTENSION_VALIDATION {'extension_step': 3000, 'global_step': 18000, 'learning_rate': 0.0001, 'best_overall_FDE': 1.382144824708836, 'best_step': 18000, 'improved': 1, 'consecutive_nonimprovements': 0, 'VAL_overall_ADE': 0.6732595123682951, 'VAL_overall_FDE': 1.382144824708836, 'VAL_overall_MR': 0.16930350972904165, 'VAL_vehicle_ADE': 0.7135133777899203, 'VAL_vehicle_FDE': 1.4694460849292874, 'VAL_vehicle_MR': 0.16998960597184162, 'VAL_pedestrian_ADE': 0.538545731839718, 'VAL_pedestrian_FDE': 1.0889974512027318, 'VAL_pedestrian_MR': 0.16763872687885353, 'VAL_bicycle_ADE': 0.5403451265081503, 'VAL_bicycle_FDE': 1.1118976130748661, 'VAL_bicycle_MR': 0.15548780487804878}
+NLL_EXTENSION_COMPLETE {'status': 'COMPLETE', 'original_best': {'relative_path': '07_checkpoints/stage3_best_overall_minfde.pt', 'sha256': '9ebd0bb23b44f0a738122cee0316e127063d6af006bff7d057bc0a5470a0384a', 'global_step': 15000, 'overall_minFDE6': 1.388404393440423}, 'final_best': {'relative_path': '07_checkpoints/stage3a_plus_best_overall_minfde.pt', 'sha256': 'c822d418a30802d396b23ed0049282183e34d111b65e9ae6e5975a88b5d57ed3', 'global_step': 18000, 'overall_minFDE6': 1.382144824708836}, 'maximum_extra_steps': 3000, 'validation_interval': 500, 'patience': 5, 'selection': 'full-horizon official VAL overall minFDE6; strict improvement', 'optimizer_hyperparameters_unchanged': True, 'optimizer_and_rng_restored': True, 'initial_iterator': {'epoch': 9, 'next_batch': 487}, 'training_code_git_commit': '5ac984d72b9000f9ecf185c8b20fad2f4312f360', 'type_embedding': False, 'test_used': False, 'executed_extra_steps': 3000, 'best_refreshed': True, 'consecutive_nonimprovements': 0, 'last_checkpoint_sha256': '8a6d9d91d7501989cef2727785c6eca0f38eadabe27b7b15ebcdbf53fe18e452', 'final_iterator': {'epoch': 12, 'next_batch': 316}, 'converged': False, 'convergence_definition': 'five consecutive full VAL evaluations without strict overall minFDE6 improvement', 'stop_reason': 'extra_steps_3000_limit', 'elapsed_seconds_this_invocation': 1936.888576454001, 'final_predictions_relative_path': '02_preprocessed/stage3_cache/stage3a_plus_best_actor_errors.csv', 'NaN': 0, 'Inf': 0, 'final_predictions_sha256': 'b0aac284d6b054bda3e7d48ce3e5745d6896ecd67866f0892df36f1eb94a5568'}

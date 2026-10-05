@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "official VAL full12-step GT motion counts, independent of model checkpoint",
+  "strict_gt_thresholds": true,
+  "source_actor_errors_sha256": "7da56a639fb047bf963c758d016af493bd930293dc68355a6a5a5220f9c935eb",
+  "counts": {
+    "vehicle >5m": 9744,
+    "pedestrian >1m": 8810,
+    "pedestrian >5m": 7581,
+    "bicycle >1m": 155,
+    "bicycle >5m": 132
+  }
+}

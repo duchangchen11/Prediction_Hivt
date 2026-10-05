@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "original_best_retained": false,
+  "corrected_diagnostic_fields": {
+    "moving_ADE": {
+      "before": 2.345720766130882,
+      "after": 2.3312362623505147
+    },
+    "moving_FDE": {
+      "before": 4.923529142510221,
+      "after": 4.90886112390221
+    }
+  },
+  "checkpoint_file_sha256_before": "c822d418a30802d396b23ed0049282183e34d111b65e9ae6e5975a88b5d57ed3",
+  "checkpoint_file_sha256_after": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+  "model_state_content_sha256": "7b3a5a93fdaadf6772ab8aa70d71c20a81e48dbf97d0b40bebd54801ebe8fc7b",
+  "all_nonmetadata_payload_fields_bitwise_identical": true,
+  "model_optimizer_RNG_and_cursor_changed": false,
+  "reason": "Extension checkpoints inherited parent moving_ADE/FDE diagnostics; official selected-VAL JSON is authoritative."
+}

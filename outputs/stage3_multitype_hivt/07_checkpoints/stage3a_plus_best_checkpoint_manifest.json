@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETE",
+  "original_best": {
+    "relative_path": "07_checkpoints/stage3_best_overall_minfde.pt",
+    "sha256": "9ebd0bb23b44f0a738122cee0316e127063d6af006bff7d057bc0a5470a0384a",
+    "global_step": 15000,
+    "overall_minFDE6": 1.388404393440423
+  },
+  "final_best": {
+    "relative_path": "07_checkpoints/stage3a_plus_best_overall_minfde.pt",
+    "sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+    "global_step": 18000,
+    "overall_minFDE6": 1.382144824708836,
+    "model_state_content_sha256": "7b3a5a93fdaadf6772ab8aa70d71c20a81e48dbf97d0b40bebd54801ebe8fc7b"
+  },
+  "maximum_extra_steps": 3000,
+  "validation_interval": 500,
+  "patience": 5,
+  "selection": "full-horizon official VAL overall minFDE6; strict improvement",
+  "optimizer_hyperparameters_unchanged": true,
+  "optimizer_and_rng_restored": true,
+  "initial_iterator": {
+    "epoch": 9,
+    "next_batch": 487
+  },
+  "training_code_git_commit": "5ac984d72b9000f9ecf185c8b20fad2f4312f360",
+  "type_embedding": false,
+  "test_used": false,
+  "executed_extra_steps": 3000,
+  "best_refreshed": true,
+  "consecutive_nonimprovements": 0,
+  "last_checkpoint_sha256": "8a6d9d91d7501989cef2727785c6eca0f38eadabe27b7b15ebcdbf53fe18e452",
+  "final_iterator": {
+    "epoch": 12,
+    "next_batch": 316
+  },
+  "converged": false,
+  "convergence_definition": "five consecutive full VAL evaluations without strict overall minFDE6 improvement",
+  "stop_reason": "extra_steps_3000_limit",
+  "elapsed_seconds_this_invocation": 1936.888576454001,
+  "final_predictions_relative_path": "02_preprocessed/stage3_cache/stage3a_plus_best_actor_errors.csv",
+  "NaN": 0,
+  "Inf": 0,
+  "final_predictions_sha256": "b0aac284d6b054bda3e7d48ce3e5745d6896ecd67866f0892df36f1eb94a5568",
+  "checkpoint_metadata_finalization": {
+    "inherited_moving_diagnostics_aligned_with_selected_VAL": true,
+    "model_optimizer_RNG_and_cursor_unchanged": true
+  }
+}

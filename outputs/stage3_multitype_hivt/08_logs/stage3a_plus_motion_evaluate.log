@@ -1,0 +1,11 @@
+NONTRIVIAL_MOTION {'Group': 'Vehicle >5m', 'AgentType': 'vehicle', 'GT_endpoint_displacement_gt_m': 5, 'Count': 9744, 'UniqueInstances': 853, 'UniqueScenes': 137, 'minADE6': 2.643538912692855, 'minFDE6': 5.7133616778130945, 'MR6': 0.6924261083743842, 'Top1ADE6': 5.269742291050234, 'Top1FDE6': 12.388213322405385}
+NONTRIVIAL_MOTION {'Group': 'Pedestrian >1m', 'AgentType': 'pedestrian', 'GT_endpoint_displacement_gt_m': 1, 'Count': 8810, 'UniqueInstances': 825, 'UniqueScenes': 113, 'minADE6': 0.6912934250176105, 'minFDE6': 1.4267147954938686, 'MR6': 0.22803632236095348, 'Top1ADE6': 0.8823750792798521, 'Top1FDE6': 1.875281949929003}
+NONTRIVIAL_MOTION {'Group': 'Pedestrian >5m', 'AgentType': 'pedestrian', 'GT_endpoint_displacement_gt_m': 5, 'Count': 7581, 'UniqueInstances': 716, 'UniqueScenes': 110, 'minADE6': 0.6742224694745508, 'minFDE6': 1.3869418128573687, 'MR6': 0.2148793035219628, 'Top1ADE6': 0.8368936446597933, 'Top1FDE6': 1.7473266187790781}
+NONTRIVIAL_MOTION {'Group': 'Bicycle >1m', 'AgentType': 'bicycle', 'GT_endpoint_displacement_gt_m': 1, 'Count': 155, 'UniqueInstances': 15, 'UniqueScenes': 13, 'minADE6': 1.9519365222223344, 'minFDE6': 4.305738156072555, 'MR6': 0.6516129032258065, 'Top1ADE6': 3.3003517241247238, 'Top1FDE6': 7.448723739193332}
+NONTRIVIAL_MOTION {'Group': 'Bicycle >5m', 'AgentType': 'bicycle', 'GT_endpoint_displacement_gt_m': 5, 'Count': 132, 'UniqueInstances': 12, 'UniqueScenes': 11, 'minADE6': 2.1391766346765286, 'minFDE6': 4.6844447435754715, 'MR6': 0.6666666666666666, 'Top1ADE6': 3.6909083821105235, 'Top1FDE6': 8.299352910482522}
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+MOTION_CASE_EXPORT vehicle [('success', '0.028408344835042953', '11.180854797363281'), ('failure', '70.2557373046875', '84.72258758544922')]
+MOTION_CASE_EXPORT pedestrian [('success', '0.001960908295586705', '0.001960908295586705'), ('failure', '15.186551094055176', '21.450834274291992')]
+MOTION_CASE_EXPORT bicycle [('success', '0.38850197196006775', '1.1050517559051514'), ('failure', '27.350765228271484', '29.493494033813477')]
+MOTION_EVALUATION_AND_CASES=PASS

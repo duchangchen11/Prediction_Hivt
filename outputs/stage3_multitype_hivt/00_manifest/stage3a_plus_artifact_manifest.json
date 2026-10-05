@@ -1,0 +1,408 @@
+{
+  "stage": "Stage3A+",
+  "self_hash_excluded": true,
+  "artifacts": [
+    {
+      "relative_path": "00_manifest/stage3a_plus_checkpoint_metadata_audit.json",
+      "bytes": 830,
+      "sha256": "0fdee31fea9677d6146656df0a28455176316e3ca5251a845cb7808b4fea9d4a",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_common.py",
+      "bytes": 1963,
+      "sha256": "122bb796636b272fbfe8e55630de7e890bd9188e3fbd7abf62602335256ac080",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_figure_contract.json",
+      "bytes": 1028,
+      "sha256": "378f5c5ce3a293515b2c99381a96a6bf41ed423f69e2e2fcbe47cd036c9b90fa",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_final_audit.json",
+      "bytes": 1408,
+      "sha256": "843012cd85694b1d72c1b07977efd1057c4da60a25cebb2d85029710b72ef32a",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_frozen_stage3a.json",
+      "bytes": 198578,
+      "sha256": "e8318a5b7489606bcb9d4d379acd70d1ce1a89424c22e6f9c90fc06812faa1df",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_initial_freeze_audit.json",
+      "bytes": 100,
+      "sha256": "eab22ab1f9f63d69eb7c12d830185e48f554cc12daf487dcd9aa1d734389dc9a",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_interaction_consistency_audit.json",
+      "bytes": 219,
+      "sha256": "9abb20d4236b28437424b5fba2efe90b6c02c3a2914bade640e09946a032732d",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_motion_population_audit.json",
+      "bytes": 391,
+      "sha256": "7e8fc88a210af2fd701c0a40cf20aa55a3ca31a0afe16fa9e34dff6b02b21b5b",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_preregistration.json",
+      "bytes": 1850,
+      "sha256": "b7c61747926f51cf05d3434ecd1990158347a50b053cfd01f8c64ef35d662ce4",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_requirements.txt",
+      "bytes": 2290,
+      "sha256": "0d58de6e8304ed16e49df56b1777bfceca6982d192521a7b04a5c1f040502eb6",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plus_visual_review.json",
+      "bytes": 1176,
+      "sha256": "c12d43edca92898938d31559dc0da9d03a26c4646a2fe4ca2a8e8d37febb4896",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "01_data_audit/stage3_interaction_density.csv",
+      "bytes": 14282,
+      "sha256": "0bfac7cbf8943fb3e7953b60cf136e3922538b862d01ee067f5aa85c690c422a",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "01_data_audit/stage3_interaction_density.json",
+      "bytes": 178140,
+      "sha256": "1f7e70454af44704b80fa6d3e6c7d5378f71d86f0bbfab5914d67aedce562658",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "01_data_audit/stage3_interaction_density_pair_counts.csv",
+      "bytes": 3590,
+      "sha256": "13849dfb847583fb1757fc246f37c2660438898600101189da1cc3d7185504bf",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "01_data_audit/stage3a_plus_interaction_audit.py",
+      "bytes": 10316,
+      "sha256": "113cbf7e7c843e0725b4f83077edd31c47cf6ec393da5e669b9037ec9fe3032c",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plus_extend_nll.py",
+      "bytes": 11862,
+      "sha256": "1be381051ae0db5a3f7fd5519aa10f1370ebf8a2385c3036e764aa46c490a5b7",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plus_finalize_checkpoint.py",
+      "bytes": 3891,
+      "sha256": "292c562adc77f28c865f89e0239f87a76d16a2b0e9ed876b457ce44fe6da8430",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plus_finalize_curve.py",
+      "bytes": 3420,
+      "sha256": "f57a720bc90c7127faf3a13b9847a1f492b215110ada910b62119abae4800da1",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plus_nll_extension_curve.csv",
+      "bytes": 1951,
+      "sha256": "f76d2dc649cd08c04bce721f8fe737611bf3a0ad1ae255a7bcb7504c94ce7271",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plus_nll_extension_curve.pdf",
+      "bytes": 18847,
+      "sha256": "6437773dc6b4f60ca22c7f3dfe10d63cafe872f20a4b82faa846292d703d52c2",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plus_nll_extension_curve.png",
+      "bytes": 264808,
+      "sha256": "551f4b7aa3a077f97d43b37f999ba56d0c6c09b2507c72b6f2083434a2171519",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plus_nll_extension_curve.svg",
+      "bytes": 29683,
+      "sha256": "ec25369b9a1ab533d21a06d88d3dbbebe9b715660f307027f0750d7bcc04e8a6",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plus_nll_extension_curve_audit.json",
+      "bytes": 679,
+      "sha256": "756d7eb434972a64382c25b771a9685aaf9183ecae59cb962497e2d1441629f2",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3a_plus_bicycle_motion_case.json",
+      "bytes": 231406,
+      "sha256": "91f6c717e00db6d3630c5558f287f38235df136e306e73750f96198403a10b74",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3a_plus_pedestrian_motion_case.json",
+      "bytes": 463719,
+      "sha256": "ea4b185f7234adbf7a4e60e880009a4d0117a8be05016c76e60c6a9c9b79a96a",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3a_plus_vehicle_motion_case.json",
+      "bytes": 412001,
+      "sha256": "e3a39fb13bf04f397a1909f77ce1b13fc4defc4b2d9b3c13fb296ae95ab5eeb1",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nontrivial_motion_metrics.json",
+      "bytes": 2745,
+      "sha256": "09d7cd252b50589d757318f233a1ed8ba25681c33b3510a290677f4cfc183232",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_best_val_metrics.json",
+      "bytes": 793714,
+      "sha256": "72552c1cebb0da6bc026cee24c2222dce051f6dbb9f3c14984ca07d0419bc4ca",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_motion_case_manifest.json",
+      "bytes": 966,
+      "sha256": "83c70ea41a93d976033eb51db6cb2bef312d80242d48294e11c0e4c954e216f7",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_motion_evaluate.py",
+      "bytes": 7983,
+      "sha256": "6e5e668ebd9d594fbb83289aa817146495bb80629227dee1ae7f5316409b7ccc",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_val_step_00500.json",
+      "bytes": 793591,
+      "sha256": "681d6b60cf6dc82013fff981673d6907a376a49166b0c598ffcabc0189bf07f4",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_val_step_01000.json",
+      "bytes": 793852,
+      "sha256": "9f82ffc54b1f6e7a34df59a0c06af4cf44bbd13e13c32924b1bdaa57874ea033",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_val_step_01500.json",
+      "bytes": 793654,
+      "sha256": "16e1fdd1de674ae480d0a88e6cc75444e090d028ca3fc174f92c218c84ba39f3",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_val_step_02000.json",
+      "bytes": 793458,
+      "sha256": "17c0404cf7da2a7fe4472dd18da0cb3d4de6a54b6aa3b9834c445b320478f74d",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_val_step_02500.json",
+      "bytes": 793228,
+      "sha256": "a258b7fea4f1d4a70d2cffe1c4d6916a89ae989c37df5f7a0a7224b7bf8881db",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plus_val_step_03000.json",
+      "bytes": 793714,
+      "sha256": "d68c6d310ebcf291cef5c70ba45e6c4d820dc80806caed4ee428389c9f6168dd",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3_interaction_density.pdf",
+      "bytes": 18613,
+      "sha256": "4186209f071e09bc290efa8398a2c06270a14bd67a8ec4b3a38f98bd8f40df01",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3_interaction_density.png",
+      "bytes": 306158,
+      "sha256": "01ced3a4840e9a29498f79ce7cab469bfe9559e500dda38a591ac13e62b50952",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3_interaction_density.svg",
+      "bytes": 38556,
+      "sha256": "4584005044065fcbd3a337e7ede6786cc352d41e9d2cf1eeb8892e9025113989",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_bicycle_motion_case.pdf",
+      "bytes": 33728,
+      "sha256": "f74eda6baeef0496096afc0a620802758b6564dd93595c63bcd7cb7fc945cc55",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_bicycle_motion_case.png",
+      "bytes": 632456,
+      "sha256": "db699e45db43f67dc73173745134e9ab0fc02fa024e69d4bdaab00cc610ccf4c",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_bicycle_motion_case.svg",
+      "bytes": 118805,
+      "sha256": "2fce44d7f2a17db8ddb35c6afc9cf53ae2855d7547b51daacd424042bea1cda8",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_bicycle_motion_case_audit.json",
+      "bytes": 2807,
+      "sha256": "43f40c4e16209f4a7e1eb6f7c65f5d58350484a1ae646df3ad16232952d1cdd4",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_pedestrian_motion_case.pdf",
+      "bytes": 30131,
+      "sha256": "9205ecefce289c6aa4b4f2fd4b4570e1d651b94b13d17334c89e14fa44dc594c",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_pedestrian_motion_case.png",
+      "bytes": 555374,
+      "sha256": "47714f4e44da4a70613c4180cefbb5d3bde84283730e1d574aca091b42fbc80f",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_pedestrian_motion_case.svg",
+      "bytes": 93485,
+      "sha256": "21ffbda5c44a4fb5d11ec6e0307c53f2776731477cbc40ac71e3c75062b78d59",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_pedestrian_motion_case_audit.json",
+      "bytes": 2830,
+      "sha256": "b26f635503bf26228a3af0e66cb1a16f119ecc3603880c151d1402960e180914",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_plot_motion.py",
+      "bytes": 9126,
+      "sha256": "c3ec784d244228ec0d29b7dfceeabb6c7d27d124e1eb2775f092743efb8df99a",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_vehicle_motion_case.pdf",
+      "bytes": 41874,
+      "sha256": "dbe3d44ba1b2d565e27baa9406a2609b756729ef0353c8a5e6e4413c1dac325d",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_vehicle_motion_case.png",
+      "bytes": 623752,
+      "sha256": "6810855f811495c397475b6d81d978049cd9ab2f6333eef97f78f3c9d7feaac8",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_vehicle_motion_case.svg",
+      "bytes": 197671,
+      "sha256": "fb900a91dc8b654b6f52dd14c851e7ce6e606f792309612c39a4f4df5a6d41ef",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "05_figures/stage3a_plus_vehicle_motion_case_audit.json",
+      "bytes": 2805,
+      "sha256": "505ece1479c19b77d120726d6676732a153840bacf19bea302ac8a17cd206ad3",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "06_tables/stage3_nontrivial_motion_metrics.csv",
+      "bytes": 770,
+      "sha256": "2f704a210f67b174e9c52a687ca8849c3c352a93e68c965bf3b531c98b0a6bba",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "07_checkpoints/stage3a_plus_best_checkpoint_manifest.json",
+      "bytes": 1934,
+      "sha256": "80af0766bc0b9e56fb19b6def459b6bc9ad4584a8e1c9a624e37dd25581e451f",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "07_checkpoints/stage3a_plus_best_overall_minfde.pt",
+      "bytes": 8118159,
+      "sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+      "git_tracked": false
+    },
+    {
+      "relative_path": "07_checkpoints/stage3a_plus_last_checkpoint.pt",
+      "bytes": 8126083,
+      "sha256": "8a6d9d91d7501989cef2727785c6eca0f38eadabe27b7b15ebcdbf53fe18e452",
+      "git_tracked": false
+    },
+    {
+      "relative_path": "08_logs/stage3a_plus_checkpoint_metadata.log",
+      "bytes": 80,
+      "sha256": "efbf2e08417a1cad645896189e1c8a6ad6305e4f6a5e6e17a1b5473029286eb6",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "08_logs/stage3a_plus_curve.log",
+      "bytes": 27,
+      "sha256": "5f9f357d5ef2084fbdb46bc5734ecfd37717b094026cd44ca62fd890d69cc77d",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "08_logs/stage3a_plus_final_audit.log",
+      "bytes": 745,
+      "sha256": "a3b2de43e5168865154f526213705c9d172811b6be2615d082f35de74d6295af",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "08_logs/stage3a_plus_interaction_density.log",
+      "bytes": 547,
+      "sha256": "639ed2bed4bd70e5ba69caa7ba52f5fe95baf91bd78bb1797024cbcdfbf593ca",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "08_logs/stage3a_plus_motion_evaluate.log",
+      "bytes": 2299,
+      "sha256": "6bc1bfcfc04eb6f4df2a4b308dded6885b98e7bc8e91dd41de8e6ea2ce766145",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "08_logs/stage3a_plus_motion_figures.log",
+      "bytes": 159,
+      "sha256": "281ec175294349167618ae104a908fe81b4d3b3a877a8914b1f0401c3316a701",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "08_logs/stage3a_plus_nll_extension.log",
+      "bytes": 6957,
+      "sha256": "e037ee93ec630507c5e27a04cc6d436d2acd71afa75ddd7508511491e767bc14",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "09_reports/stage3a_plus_decision.json",
+      "bytes": 747,
+      "sha256": "987f210ef8c19baa2e4c435860fa8fdbc826d59aa6f68e57696dcbb139e6638f",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "09_reports/stage3a_plus_execution_commands.md",
+      "bytes": 4271,
+      "sha256": "e8f0287f4ed1534c5c536a195f05ba0de315e63643b471b450236614fe4b8b34",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "09_reports/stage3a_plus_final_report.md",
+      "bytes": 6199,
+      "sha256": "2468ee7facb2548d8160c4d93516abaf264fa43ce1260cfa2eb74d139d48f939",
+      "git_tracked": true
+    },
+    {
+      "relative_path": "09_reports/stage3a_plus_report.py",
+      "bytes": 16258,
+      "sha256": "d362bd75102a461db11eccfb0c63681db7eebf3961cc3d79289916386584f60a",
+      "git_tracked": true
+    }
+  ]
+}

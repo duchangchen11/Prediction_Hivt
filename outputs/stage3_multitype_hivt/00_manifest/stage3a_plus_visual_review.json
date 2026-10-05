@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "reviewer": "Codex visual inspection",
+  "date": "2026-10-05",
+  "figures_reviewed": {
+    "03_no_type_baseline/stage3a_plus_nll_extension_curve.png": "551f4b7aa3a077f97d43b37f999ba56d0c6c09b2507c72b6f2083434a2171519",
+    "05_figures/stage3_interaction_density.png": "01ced3a4840e9a29498f79ce7cab469bfe9559e500dda38a591ac13e62b50952",
+    "05_figures/stage3a_plus_vehicle_motion_case.png": "6810855f811495c397475b6d81d978049cd9ab2f6333eef97f78f3c9d7feaac8",
+    "05_figures/stage3a_plus_pedestrian_motion_case.png": "47714f4e44da4a70613c4180cefbb5d3bde84283730e1d574aca091b42fbc80f",
+    "05_figures/stage3a_plus_bicycle_motion_case.png": "db699e45db43f67dc73173745134e9ab0fc02fa024e69d4bdaab00cc610ccf4c"
+  },
+  "required_figure_count": 5,
+  "source_values_and_trajectories_unchanged": true,
+  "endpoints_titles_legends_and_inset_labels_readable": true,
+  "ADE_FDE_display_precision_decimals": 3,
+  "small_nonzero_FDE_not_displayed_as_zero": true,
+  "PDF_text_extractable_verified": true,
+  "oracle_best_vs_Top1_distinction_preserved": true,
+  "motion_cases_per_type": {
+    "success": 1,
+    "failure": 1
+  },
+  "original_Stage3A_protected": true
+}
