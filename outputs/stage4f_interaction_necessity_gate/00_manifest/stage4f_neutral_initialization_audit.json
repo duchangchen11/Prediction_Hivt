@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "backend": "CPU single thread; deterministic real graph scatter",
+  "threshold": 1e-06,
+  "fixed_real_train_batch": [
+    [
+      "fe4fdd7a28754baeac7074ad78f55a52",
+      "0759814ae8164fdd96f95e6bec7e81c1"
+    ],
+    [
+      "0cc28fe2c1064fb9a51f1647c28ca564",
+      "7d59820c242a40609f59a156b2fd43d5"
+    ]
+  ],
+  "raw_prediction_max_abs_diff": 0.0,
+  "mode_logits_max_abs_diff": 0.0,
+  "mode_prob_max_abs_diff": 0.0,
+  "future_perturbation_max_abs_diff": 0.0
+}

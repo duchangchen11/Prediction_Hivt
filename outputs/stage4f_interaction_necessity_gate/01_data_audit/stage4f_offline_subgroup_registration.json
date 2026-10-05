@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "registered_before_formal_training": true,
+  "formal_optimizer_updates": 0,
+  "counts": {
+    "0-1m": {
+      "Count": 3192,
+      "Instances": 352,
+      "Scenes": 86
+    },
+    "1-2m": {
+      "Count": 313,
+      "Instances": 95,
+      "Scenes": 49
+    },
+    "2-5m": {
+      "Count": 916,
+      "Instances": 176,
+      "Scenes": 65
+    },
+    "5-10m": {
+      "Count": 7321,
+      "Instances": 701,
+      "Scenes": 110
+    },
+    "10-20m": {
+      "Count": 260,
+      "Instances": 41,
+      "Scenes": 29
+    },
+    "Pedestrian <5m": {
+      "Count": 4421,
+      "Instances": 493,
+      "Scenes": 100
+    },
+    "Pedestrian 5-10m": {
+      "Count": 7321,
+      "Instances": 701,
+      "Scenes": 110
+    }
+  },
+  "bins": "[0,1),[1,2),[2,5),[5,10),[10,20)",
+  "low_motion": "full-horizon pedestrian GT endpoint displacement <5m; offline analysis only",
+  "interaction_ledger_sha256": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a",
+  "B_actor_sha256": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+  "C_actor_sha256": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7",
+  "future_GT_never_gate_input": true
+}

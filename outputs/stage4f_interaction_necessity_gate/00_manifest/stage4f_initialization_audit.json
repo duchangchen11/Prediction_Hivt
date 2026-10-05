@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "seed": 2022,
+  "max_shared_parameter_diff": 0.0,
+  "Stage3B_shared_parameters": 646001,
+  "Stage4A_shared_parameters": 647609,
+  "additional_gate_parameter_count": 177,
+  "additional_vs_Stage3B": 1785,
+  "total_parameter_count": 647786,
+  "shared_state_SHA256": "b392f959fde4109891bb24462e6467f74437dba5eb055fd03062255e690e31f2",
+  "relation_step0_bitwise_equal_to_Stage4A": true,
+  "relation_final_zero_initialized": true,
+  "gate_shape": [
+    9,
+    16,
+    1
+  ],
+  "initial_gate": 0.1,
+  "gate_final_weight_zero": true,
+  "Stage3B_trained_checkpoint_loaded": false,
+  "Stage4A_trained_checkpoint_loaded": false,
+  "training_CPU_RNG_restored_to_canonical_Stage3B": true,
+  "gate_state_shapes": {
+    "global_interactor.necessity_gate_mlp.0.weight": [
+      16,
+      9
+    ],
+    "global_interactor.necessity_gate_mlp.0.bias": [
+      16
+    ],
+    "global_interactor.necessity_gate_mlp.2.weight": [
+      1,
+      16
+    ],
+    "global_interactor.necessity_gate_mlp.2.bias": [
+      1
+    ]
+  }
+}

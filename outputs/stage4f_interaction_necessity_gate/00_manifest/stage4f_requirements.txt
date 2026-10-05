@@ -1,0 +1,2038 @@
+你现在正式执行：
+
+============================================================
+Stage4F
+Interaction Necessity-Gated Type-Conditioned Interaction
+
+交互需求自适应门控的类型条件交互
+============================================================
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前最新诊断分支：
+stage4a-e/motion-gradient-diagnostic
+
+最新 commit：
+a09ef16ba89e15864b58ba31a19dfb0c48489eb8
+
+从该 commit 创建新分支：
+
+stage4f/interaction-necessity-gate
+
+============================================================
+一、当前已经确认的科学事实
+============================================================
+
+Stage3B：
+Type Embedding = SUPPORTED
+
+Stage3B frozen：
+
+Overall FDE = 1.343260
+Vehicle FDE = 1.431914
+Pedestrian FDE = 1.043875
+Bicycle FDE = 1.099908
+
+Stage4A：
+Always-on Type-conditioned Interaction
+
+Overall FDE = 1.335566
+Vehicle FDE = 1.420021
+Pedestrian FDE = 1.050126
+Bicycle FDE = 1.107962
+
+Stage4A scientific decision：
+
+NOT SUPPORTED
+
+原因：
+
+Vehicle reliably improves，
+但 Pedestrian reliably degrades。
+
+============================================================
+二、Stage4A-E的重要诊断
+============================================================
+
+Pedestrian motion bins：
+
+0–1m：
+Stage3B 0.167310
+Stage4A 0.177058
+Delta +0.009747
+CI completely >0
+
+1–2m：
+0.975018 -> 1.021475
+Delta +0.046457
+CI completely >0
+
+2–5m：
+1.667979 -> 1.732733
+Delta +0.064754
+CI completely >0
+
+5–10m：
+1.312738 -> 1.308181
+Delta -0.004557
+CI slightly <0
+
+因此：
+
+MotionPattern =
+LOW_MOTION_DEGRADATION
+
+GradientConflict =
+WEAK
+
+不能把问题解释为：
+“Vehicle/Pedestrian global gradient conflict 是唯一根因”。
+
+当前最合理的假设：
+
+不同 actor 对额外 interaction enhancement
+的需求不同。
+
+因此需要：
+
+Interaction Necessity Gate。
+
+============================================================
+三、本轮研究问题
+============================================================
+
+回答：
+
+“能否根据目标参与者可观测的历史运动状态和当前邻域结构，
+自适应控制类型条件交互增强强度，
+在保留 moving vehicle 收益的同时，
+避免低运动 pedestrian 的负迁移？”
+
+注意：
+
+Gate 禁止使用任何未来GT。
+
+禁止使用：
+
+future displacement
+future trajectory
+future label
+GT motion bin
+
+运动 bin 只能用于最终离线评价。
+
+============================================================
+四、独立结果目录
+============================================================
+
+新建：
+
+/home/lrj/Prediction_Hivt/
+outputs/stage4f_interaction_necessity_gate/
+
+结构：
+
+00_manifest/
+01_data_audit/
+02_preprocessed/
+03_training/
+04_evaluation/
+05_figures/
+06_tables/
+07_checkpoints/
+08_logs/
+09_reports/
+
+Stage3 和旧 Stage4A：
+
+全部只读。
+
+不要覆盖：
+
+outputs/stage3_multitype_hivt/
+outputs/stage4_type_conditioned_interaction/
+
+============================================================
+五、保持 Stage3B / Stage4A 冻结
+============================================================
+
+冻结参考：
+
+Stage3B checkpoint：
+
+outputs/stage3_multitype_hivt/
+07_checkpoints/stage3b_best_overall_minfde.pt
+
+SHA256：
+
+461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547
+
+Stage4A checkpoint：
+
+outputs/stage4_type_conditioned_interaction/
+07_checkpoints/stage4a_best_overall_minfde.pt
+
+SHA256：
+
+ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb
+
+创建：
+
+00_manifest/
+stage4f_frozen_references.json
+
+记录重要文件 SHA。
+
+============================================================
+六、总体网络结构
+============================================================
+
+Stage3B：
+
+LocalEncoder
+      ↓
+TypeEmbedding
+      ↓
+Original HiVT GlobalInteractor
+      ↓
+Decoder
+
+Stage4A：
+
+LocalEncoder
+      ↓
+TypeEmbedding
+      ↓
+GlobalInteractor
+ + always-on type-pair relation bias
+      ↓
+Decoder
+
+Stage4F：
+
+LocalEncoder
+      ↓
+TypeEmbedding
+      ↓
+GlobalInteractor
+      +
+Type-pair Relation Bias
+      ×
+Interaction Necessity Gate
+      ↓
+Decoder
+
+不增加新的第二套GNN。
+
+============================================================
+七、Stage4F核心公式
+============================================================
+
+Stage4A：
+
+s_ij^(l,h)
+=
+s_base_ij^(l,h)
++
+b_ij^(l,h)
+
+其中：
+
+b_ij
+
+来自：
+
+type pair
+relative position
+relative heading
+
+Stage4F 改为：
+
+s_ij^(l,h)
+=
+s_base_ij^(l,h)
++
+g_i
+*
+b_ij^(l,h)
+
+其中：
+
+g_i ∈ (0,1)
+
+是 target actor i 的：
+
+Interaction Necessity Gate。
+
+注意：
+
+g_i 是 target-level gate。
+
+同一个 target i 的所有 incoming edges
+共享当前 actor 的 gate。
+
+不要做 edge-specific gate。
+
+否则本轮变量太复杂。
+
+============================================================
+八、为什么使用target-level gate
+============================================================
+
+当前诊断发现：
+
+问题和 target 的运动状态高度相关。
+
+所以本轮研究的是：
+
+“这个 actor 是否需要额外交互增强？”
+
+而不是：
+
+“某条 edge 是否存在？”
+
+因此：
+
+Gate 控制 target actor 的整体 relation enhancement intensity。
+
+RelationBias 仍负责：
+
+“谁对谁的关系不同”。
+
+Gate 负责：
+
+“当前 target 到底需要多少额外关系增强”。
+
+============================================================
+九、Relation Bias完全复用Stage4A
+============================================================
+
+必须复用 Stage4A：
+
+pair_id =
+3 * target_type + source_type
+
+9 directed pairs：
+
+V<-V
+V<-P
+V<-B
+
+P<-V
+P<-P
+P<-B
+
+B<-V
+B<-P
+B<-B
+
+PairEmbedding：
+
+Embedding(9,16)
+
+Relation feature：
+
+[
+pair embedding,
+relative x / 50,
+relative y / 50,
+cos(delta heading),
+sin(delta heading)
+]
+
+20维。
+
+Relation MLP：
+
+Linear(20,32)
+ReLU
+Linear(32,24)
+
+reshape：
+
+[E,3,8]
+
+禁止修改：
+
+pair dim
+hidden dim
+relation features
+
+这样 Stage4A -> Stage4F
+唯一主要结构变量就是 necessity gate。
+
+============================================================
+十、Gate输入只能使用历史可观测量
+============================================================
+
+对每个当前有效 actor i，
+构造：
+
+GateFeature_i
+
+由以下内容组成：
+
+1.
+agent type one-hot
+
+vehicle:
+[1,0,0]
+
+pedestrian:
+[0,1,0]
+
+bicycle:
+[0,0,1]
+
+共3维。
+
+--------------------------------------------------
+
+2.
+recent motion
+
+最近两个有效历史点：
+
+d_recent =
+||p_t0 - p_t-1||
+
+取：
+
+log(1 + d_recent)
+
+1维。
+
+--------------------------------------------------
+
+3.
+historical net displacement
+
+第一个有效 history point
+到当前 t0：
+
+d_hist =
+||p_t0 - p_first||
+
+取：
+
+log(1 + d_hist)
+
+1维。
+
+--------------------------------------------------
+
+4.
+historical path length
+
+有效history连续位移和：
+
+L_hist =
+sum ||
+p_t - p_t-1
+||
+
+取：
+
+log(1 + L_hist)
+
+1维。
+
+--------------------------------------------------
+
+5.
+current neighbor count
+
+使用现有：
+
+50m GlobalInteractor topology。
+
+N_i =
+incoming/current valid neighbors
+
+使用：
+
+log(1 + N_i)
+
+1维。
+
+--------------------------------------------------
+
+6.
+minimum neighbor distance
+
+d_min
+
+如果存在邻居：
+
+d_min / 50
+
+如果无邻居：
+
+设为 1.0
+
+1维。
+
+--------------------------------------------------
+
+7.
+heterogeneous neighbor fraction
+
+N_hetero / max(N_i,1)
+
+1维。
+
+============================================================
+十一、Gate输入总维度
+============================================================
+
+总维度：
+
+3
++
+1
++
+1
++
+1
++
+1
++
+1
++
+1
+
+=
+
+9 dimensions
+
+要求：
+
+Gate 不使用：
+
+GT
+future displacement
+future motion state
+decoder output
+prediction errors
+
+============================================================
+十二、Gate网络
+============================================================
+
+定义：
+
+InteractionGateMLP：
+
+Linear(9,16)
+ReLU
+Linear(16,1)
+
+然后：
+
+g_i =
+sigmoid(raw_gate_i)
+
+Gate 为 scalar。
+
+不要 vector gate。
+
+不要 per-head gate。
+
+不要 per-layer gate。
+
+本轮先做最简单、最容易解释的版本。
+
+============================================================
+十三、Gate初始化
+============================================================
+
+要求 conservative initialization。
+
+最后 Linear：
+
+weight = 0
+
+bias = logit(0.1)
+
+即约：
+
+-2.1972246
+
+所以：
+
+初始：
+
+g_i ≈ 0.1
+
+但同时 Stage4F RelationBias MLP
+仍保持 Stage4A 的：
+
+final layer weight = 0
+final layer bias = 0
+
+因此 step0：
+
+relation_bias = 0
+
+Stage4F输出必须和 Stage3B step0一致。
+
+============================================================
+十四、不增加Gate监督损失
+============================================================
+
+Gate 完全通过最终 prediction loss 学习。
+
+禁止：
+
+gate label
+motion-bin supervision
+GT displacement supervision
+L1 gate penalty
+sparsity loss
+
+本轮不要增加额外 loss。
+
+否则不能判断 Gate 本身是否自然学到了 interaction necessity。
+
+============================================================
+十五、代码隔离
+============================================================
+
+新增：
+
+00_manifest/
+stage4f_global_interactor.py
+
+stage4f_model.py
+
+stage4f_common.py
+
+不要直接修改：
+
+models/hivt_runtime/global_interactor.py
+
+不要修改 Stage4A 原文件。
+
+============================================================
+十六、实现位置
+============================================================
+
+在 Stage4A：
+
+alpha_score =
+base_score + relation_bias
+
+的位置改为：
+
+edge_gate =
+gate[target_index]
+
+alpha_score =
+base_score
++
+edge_gate.unsqueeze(-1)
+*
+relation_bias
+
+然后：
+
+softmax
+
+后面：
+
+value
+aggregation
+gate in original HiVT
+FFN
+LayerNorm
+projection
+
+全部保持不变。
+
+============================================================
+十七、注意不要混淆两个gate
+============================================================
+
+原 HiVT 内部已有：
+
+message/update gate
+
+Stage4F 新增的是：
+
+Interaction Necessity Gate
+
+两个完全不同。
+
+代码命名必须明确：
+
+necessity_gate
+
+禁止只写：
+
+gate
+
+防止和原 HiVT gate 混淆。
+
+============================================================
+十八、初始化公平性
+============================================================
+
+Stage4F 正式训练：
+
+必须从头训练。
+
+禁止加载 Stage4A trained weights。
+
+禁止加载 Stage3B trained weights再fine-tune。
+
+seed：
+
+2022
+
+构建 canonical Stage3B step0
+canonical Stage4A step0
+Stage4F step0
+
+所有共同参数必须：
+
+max_abs_diff = 0
+
+Stage4A 与 Stage4F：
+
+Relation module step0 参数也必须一致。
+
+唯一新增：
+
+InteractionGateMLP。
+
+保存：
+
+00_manifest/
+stage4f_initialization_audit.json
+
+============================================================
+十九、Neutral Output Audit
+============================================================
+
+固定真实 batch。
+
+eval mode。
+
+Stage3B step0
+vs
+Stage4F step0
+
+要求：
+
+raw trajectory max diff <1e-6
+
+mode logits max diff <1e-6
+
+mode probabilities max diff <1e-6
+
+原因：
+
+relation bias 初始为0。
+
+保存：
+
+stage4f_neutral_initialization_audit.json
+
+不通过：
+
+STOP。
+
+============================================================
+二十、Gate Feature Unit Tests
+============================================================
+
+至少：
+
+Test 1
+GateFeature shape = [N_current,9]
+
+Test 2
+type one-hot合法。
+
+Test 3
+不读取future tensor。
+
+Test 4
+所有motion statistics
+只来自history t<=t0。
+
+Test 5
+neighbor stats只来自当前50m graph。
+
+Test 6
+no-neighbor actor：
+d_min_norm=1
+hetero_fraction=0
+neighbor_count=0
+
+Test 7
+gate ∈ (0,1)
+
+Test 8
+initial gate≈0.1
+
+Test 9
+relation bias step0=0
+
+Test 10
+Stage4F output=Stage3B step0
+
+Test 11
+无NaN/Inf。
+
+Test 12
+不改变edge_index。
+
+全部保存：
+
+00_manifest/
+stage4f_unit_tests.json
+
+============================================================
+二十一、Gradient Audit
+============================================================
+
+由于：
+
+relation final layer zero-init
+
+第一步：
+
+relation final layer 应有 gradient。
+
+necessity gate 可能因为 relation bias=0，
+第一步 gradient≈0，
+这是允许的。
+
+但正式优化前：
+
+跑10次小更新 diagnostic。
+
+要求：
+
+10 updates 内：
+
+relation_mlp gradient >0
+
+pair_embedding gradient >0
+
+necessity_gate MLP gradient >0
+
+否则 STOP。
+
+保存：
+
+04_evaluation/
+stage4f_gradient_audit.json
+
+============================================================
+二十二、Tiny Overfit
+============================================================
+
+使用 TRAIN tiny。
+
+必须包含：
+
+Vehicle
+Pedestrian
+Bicycle
+
+以及至少：
+
+moving vehicle
+
+low-history-motion pedestrian
+
+moving pedestrian
+
+V-P context
+
+注意：
+
+“low-history-motion”
+只能根据历史轨迹选择，
+不能根据GT future选择。
+
+Tiny 只用于：
+
+代码验证。
+
+不用于模型超参数选择。
+
+要求：
+
+loss下降
+relation bias非0
+gate发生分化
+无NaN/Inf
+
+保存：
+
+04_evaluation/
+stage4f_tiny_overfit.json
+
+============================================================
+二十三、禁止超参数搜索
+============================================================
+
+本轮固定：
+
+gate input dim = 9
+gate hidden = 16
+gate scalar = true
+
+initial gate = 0.1
+
+pair embedding dim =16
+relation hidden =32
+
+禁止测试：
+
+initial gate 0.01/0.25/0.5
+hidden 8/16/32
+不同 gate feature combinations
+
+先做单一正式实验。
+
+============================================================
+二十四、正式数据协议
+============================================================
+
+继续冻结：
+
+official train700
+official val150
+test unused
+
+Th = 5
+Tf = 12
+K = 6
+
+vehicle
+pedestrian
+bicycle
+
+不重新预处理。
+
+不增加 ego node。
+
+Ego 仍仅用于坐标参考。
+
+============================================================
+二十五、训练协议完全复用
+============================================================
+
+batch size =16
+
+seed=2022
+
+embed_dim=64
+heads=8
+global layers=3
+dropout=0.1
+radius=50m
+weight_decay=1e-4
+
+无：
+
+oversampling
+class-balanced loss
+额外 loss
+
+============================================================
+二十六、Phase 1
+============================================================
+
+fixed-scale warm-up：
+
+5000 optimizer updates
+
+LR：
+
+0.001
+
+每500：
+
+完整 official VAL150。
+
+selection：
+
+overall full-horizon minFDE6
+
+============================================================
+二十七、Phase 2
+============================================================
+
+从：
+
+本模型自己的 warm-up best
+
+恢复：
+
+model
+optimizer
+RNG
+
+进入：
+
+original learnable-scale Laplace NLL
+
+LR：
+
+0.0001
+
+最大：
+
+16000 NLL steps
+
+因此：
+
+global max =21000
+
+============================================================
+二十八、Early Stop
+============================================================
+
+每500：
+
+完整 official VAL150。
+
+连续：
+
+5次
+
+overall minFDE 无 strict improvement：
+
+STOP。
+
+否则最大：
+
+21000 global steps。
+
+============================================================
+二十九、Checkpoint
+============================================================
+
+保存：
+
+07_checkpoints/
+stage4f_best_overall_minfde.pt
+
+stage4f_last_checkpoint.pt
+
+stage4f_best_checkpoint_manifest.json
+
+============================================================
+三十、正式最终推理
+============================================================
+
+训练完成后：
+
+必须重新加载：
+
+stage4f_best_overall_minfde.pt
+
+完整 official VAL150
+重新推理。
+
+保存本地：
+
+04_evaluation/
+stage4f_actor_errors.csv
+
+GitHub只记录：
+
+SHA256
+
+小指标文件可以上传。
+
+============================================================
+三十一、主结果
+============================================================
+
+指标继续：
+
+minADE@6
+minFDE@6
+MR@6
+
+Top1ADE
+Top1FDE
+
+NLL
+
+组：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+保存：
+
+06_tables/
+stage4f_main_results.csv
+
+============================================================
+三十二、必须三模型比较
+============================================================
+
+最终同时比较：
+
+B =
+Stage3B TypeEmbedding
+
+C =
+Stage4A Always-on Interaction
+
+D =
+Stage4F Necessity-Gated Interaction
+
+生成：
+
+06_tables/
+stage4f_three_model_ablation.csv
+
+格式：
+
+Group
+Stage3B
+Stage4A
+Stage4F
+
+以及：
+
+D-B
+D-C
+
+主要看：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+vehicle.moving
+
+============================================================
+三十三、运动目标指标
+============================================================
+
+继续：
+
+Vehicle >5m
+
+Pedestrian >1m
+Pedestrian >5m
+
+Bicycle >1m
+Bicycle >5m
+
+保存：
+
+stage4f_nontrivial_motion_metrics.csv
+
+============================================================
+三十四、新增正式 low-motion pedestrian 组
+============================================================
+
+因为这个 subgroup
+来自实验前已经完成的 Stage4A-E diagnosis，
+
+Stage4F训练开始前正式注册：
+
+Pedestrian <5m
+
+定义：
+
+full-horizon pedestrian
+GT endpoint displacement <5m
+
+注意：
+
+这个GT条件只用于离线评价，
+绝不能输入模型。
+
+另外：
+
+Pedestrian 5–10m
+
+单独保留。
+
+记录：
+
+Count
+Instances
+Scenes
+
+Stage3B
+Stage4A
+Stage4F
+
+minFDE / Top1FDE / MR。
+
+============================================================
+三十五、motion bins继续保持
+============================================================
+
+固定：
+
+0–1m
+1–2m
+2–5m
+5–10m
+10–20m
+
+不能改变。
+
+输出：
+
+06_tables/
+stage4f_pedestrian_motion_bin_ablation.csv
+
+三模型：
+
+B
+C
+D
+
+============================================================
+三十六、Interaction-sensitive groups
+============================================================
+
+继续使用原冻结 ledger：
+
+Heterogeneous-20m
+Vehicle hetero-20m
+Pedestrian hetero-20m
+VP-context-20m
+
+禁止重新定义 group。
+
+============================================================
+三十七、严格 pairing
+============================================================
+
+Stage3B
+Stage4A
+Stage4F
+
+actor identity 必须完全一致。
+
+要求：
+
+full =
+54990
+
+partial =
+30037
+
+total =
+85027
+
+检查：
+
+scene
+sample
+instance
+node
+type
+mask
+GT hash
+motion state
+
+任何 mismatch：
+
+STOP。
+
+============================================================
+三十八、Bootstrap
+============================================================
+
+正式：
+
+paired scene-cluster bootstrap
+
+VAL scenes=150
+replicates=1000
+seed=2022
+
+主要做：
+
+Stage4F - Stage3B
+
+同时做关键：
+
+Stage4F - Stage4A
+
+Primary：
+
+Overall minFDE
+
+Main secondary：
+
+Vehicle minFDE
+Pedestrian minFDE
+
+vehicle.moving minFDE
+Vehicle >5m minFDE
+
+Pedestrian <5m minFDE
+Pedestrian 5–10m minFDE
+
+Heterogeneous-20m
+VP-context-20m
+
+Top1 Overall
+Top1 Pedestrian
+
+============================================================
+三十九、最重要：Pedestrian恢复测试
+============================================================
+
+必须重点比较：
+
+D vs C
+
+Pedestrian <5m
+
+目标：
+
+Stage4F 应明显恢复
+Stage4A 造成的 low-motion degradation。
+
+同时比较：
+
+D vs B
+
+要求：
+
+最好不再出现可靠退化。
+
+这是真正验证 necessity gate 的关键。
+
+============================================================
+四十、科学判断规则
+============================================================
+
+Primary：
+
+Stage4F - Stage3B
+Overall minFDE6
+
+SUPPORTED 要求：
+
+1.
+Overall Delta FDE <0
+
+并且
+scene-bootstrap CI upper <0
+
+2.
+Pedestrian overall
+不能可靠退化
+
+即：
+
+D-B Pedestrian CI lower
+不能 >0
+
+3.
+至少一个：
+
+vehicle.moving
+或
+Vehicle >5m
+
+保持可靠改善
+
+4.
+Pedestrian <5m
+
+相对 Stage4A 必须恢复：
+
+D-C Delta <0
+
+且最好 CI upper <0
+
+同时对 Stage3B：
+
+不能出现明显可靠退化。
+
+满足上述大部分，
+且无 major failure：
+
+SUPPORTED。
+
+--------------------------------------------------
+
+PARTIAL：
+
+Overall CI跨0，
+
+但：
+
+moving vehicle可靠改善
+
++
+Pedestrian low-motion恢复
+
++
+Pedestrian overall无可靠退化。
+
+--------------------------------------------------
+
+NOT SUPPORTED：
+
+Pedestrian仍可靠退化，
+
+或者：
+
+gate完全不能恢复low-motion problem，
+
+或者：
+
+Vehicle收益基本消失且overall无收益。
+
+============================================================
+四十一、Gate值必须审计
+============================================================
+
+正式 checkpoint 上，
+
+保存每个 actor 的：
+
+necessity gate g_i
+
+然后统计：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+
+Pedestrian 0–1m
+1–2m
+2–5m
+5–10m
+10–20m
+
+Heterogeneous-20m
+non-heterogeneous
+
+注意：
+
+Pedestrian motion bins
+使用GT仅用于事后分组统计。
+
+Gate训练过程中没有GT信息。
+
+============================================================
+四十二、Gate统计
+============================================================
+
+每组记录：
+
+Count
+mean gate
+std
+median
+p10
+p25
+p75
+p90
+
+fraction gate <0.1
+fraction gate >0.5
+fraction gate >0.9
+
+保存：
+
+04_evaluation/
+stage4f_gate_statistics.json
+
+06_tables/
+stage4f_gate_statistics.csv
+
+============================================================
+四十三、Gate机制成功的理想表现
+============================================================
+
+不要人为强制这个结果。
+
+但如果模型机制有效，
+期望看到：
+
+moving vehicle gate
+高于
+parked/stopped vehicle
+
+以及：
+
+5–10m pedestrian gate
+
+总体高于：
+
+0–1m pedestrian
+
+但只能作为：
+
+post-hoc mechanism evidence。
+
+不能写成因果证明。
+
+============================================================
+四十四、Gate和历史运动量相关性
+============================================================
+
+可以计算：
+
+Spearman correlation：
+
+gate
+
+vs
+
+历史：
+
+recent displacement
+history net displacement
+history path length
+
+以及：
+
+neighbor count
+min neighbor distance
+heterogeneous fraction
+
+这些全部是模型可观测量。
+
+保存：
+
+stage4f_gate_feature_correlations.csv
+
+不要将 correlation
+解释成因果关系。
+
+============================================================
+四十五、Gate collapse检查
+============================================================
+
+检查：
+
+是否几乎所有 actor：
+
+g≈0
+
+或者：
+
+g≈1
+
+如果：
+
+>95% actor
+都落在：
+
+g<0.05
+
+或
+
+g>0.95
+
+记录：
+
+gate collapse = YES
+
+不允许实验后手工改变 gate。
+
+如果模型结果依然好，
+仍然如实汇报 collapse。
+
+============================================================
+四十六、参数效率
+============================================================
+
+Gate预计只增加很少参数。
+
+预计 GateMLP：
+
+9*16+16
++
+16*1+1
+
+≈177 parameters
+
+但必须实际计算。
+
+比较：
+
+Stage3B
+Stage4A
+Stage4F
+
+Parameter count
+
+mean inference latency
+median latency
+peak CUDA memory
+
+500 paired measurements。
+
+============================================================
+四十七、图1：三模型主结果
+============================================================
+
+画：
+
+05_figures/
+stage4f_three_model_fde_comparison.png/pdf/svg
+
+Group：
+
+Overall
+Vehicle
+Pedestrian
+
+三组：
+
+Stage3B
+Stage4A
+Stage4F
+
+不要一张图放太多类别。
+
+============================================================
+四十八、图2：Pedestrian motion bins
+============================================================
+
+画：
+
+stage4f_pedestrian_motion_bin_comparison.png/pdf/svg
+
+横轴：
+
+0–1
+1–2
+2–5
+5–10
+10–20
+
+三条/三组：
+
+Stage3B
+Stage4A
+Stage4F
+
+这张图是论文很重要的一张图。
+
+目的：
+
+直接展示：
+
+Always-on Interaction
+在哪些 pedestrian motion regimes 出问题，
+
+Necessity Gate
+是否恢复。
+
+============================================================
+四十九、图3：Gate distribution
+============================================================
+
+画：
+
+stage4f_gate_distribution_by_group.png/pdf/svg
+
+重点：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+
+ped 0–1m
+ped 2–5m
+ped 5–10m
+
+可以使用：
+
+boxplot / violin
+
+不要过度美化。
+
+保留真实统计。
+
+============================================================
+五十、图4：Interaction context
+============================================================
+
+画：
+
+stage4f_interaction_context_comparison.png
+
+比较：
+
+Stage3B
+Stage4A
+Stage4F
+
+Group：
+
+Vehicle hetero-20m
+Pedestrian hetero-20m
+VP-context-20m
+
+============================================================
+五十一、定性案例
+============================================================
+
+至少选：
+
+1.
+moving vehicle：
+Stage4A有效且Stage4F保留
+
+2.
+low-motion pedestrian：
+Stage4A退化，
+Stage4F恢复
+
+3.
+moving pedestrian：
+Stage4F正常使用interaction
+
+4.
+真实 degradation case
+
+轨迹风格继续：
+
+History 灰圆点
+GT 黑方块
+Best 蓝圆点
+Top1 橙虚线三角
+
+12 future markers。
+
+同actor三列：
+
+Stage3B
+Stage4A
+Stage4F
+
+相同坐标范围。
+
+============================================================
+五十二、low-motion pedestrian case
+============================================================
+
+这张尤其重要。
+
+必须显示：
+
+Stage3B FDE
+Stage4A FDE
+Stage4F FDE
+
+以及：
+
+Stage4F gate value
+
+但不要把：
+
+GT displacement threshold
+
+写成模型输入。
+
+图注明确：
+
+“GT motion bin only used for offline analysis”。
+
+============================================================
+五十三、训练曲线
+============================================================
+
+画：
+
+stage4f_training_comparison.png
+
+Stage3B
+Stage4A
+Stage4F
+
+Overall minFDE
+
+真实500-step points。
+
+无平滑。
+
+============================================================
+五十四、最终报告
+============================================================
+
+输出：
+
+09_reports/
+stage4f_final_report.md
+
+结构：
+
+【Research Motivation】
+
+说明：
+
+Always-on relation enhancement
+帮助vehicle，
+但损害low-motion pedestrian。
+
+【Method】
+
+Gate input=
+Gate architecture=
+Relation architecture=
+Fusion formula=
+
+【No Future Leakage Audit】
+
+明确：
+
+gate未使用未来GT。
+
+【Initialization】
+
+【Training】
+
+【Main Results】
+
+Stage3B / Stage4A / Stage4F
+
+【Vehicle Motion】
+
+【Pedestrian Motion Bins】
+
+【Low-Motion Recovery】
+
+【Interaction Context】
+
+【Bootstrap】
+
+【Gate Behavior】
+
+【Efficiency】
+
+【Qualitative】
+
+【Scientific Decision】
+
+Interaction Necessity Gate =
+SUPPORTED / PARTIAL / NOT SUPPORTED
+
+Stage4F =
+PASS / FAIL
+
+Ready for Reliability Head =
+YES / NO
+
+============================================================
+五十五、进入第二创新的条件
+============================================================
+
+只有：
+
+Stage4F =
+PASS
+
+并且：
+
+Interaction Necessity Gate =
+SUPPORTED
+
+或较强 PARTIAL
+
+同时：
+
+Pedestrian 不再可靠退化
+
+才：
+
+Ready Reliability = YES
+
+如果仍然：
+
+Pedestrian reliable degradation
+
+则：
+
+Ready Reliability = NO
+
+先回来分析。
+
+============================================================
+五十六、不要做这些
+============================================================
+
+本轮禁止：
+
+Reliability Head
+Mode re-ranking
+Future compatibility
+Intent
+ECE
+class-balanced loss
+oversampling
+TTC
+map semantic extension
+dynamic topology
+edge pruning
+额外 random seeds
+超参数搜索
+Diffusion planner
+
+只做 Gate。
+
+============================================================
+五十七、关于额外seed
+============================================================
+
+本轮先：
+
+seed=2022
+
+做结构筛选。
+
+如果 Stage4F SUPPORTED：
+
+下一阶段不马上 Reliability。
+
+先由“大脑AI”决定是否：
+
+补 Stage3B / Stage4F：
+
+42
+123
+2022
+
+三个 seed
+
+作为小论文正式稳定性实验。
+
+当前不要自行跑额外seed。
+
+============================================================
+五十八、Git
+============================================================
+
+建议 commits：
+
+feat: add interaction necessity gate
+
+test: audit history-only gate inputs and neutral initialization
+
+exp: train Stage4F necessity-gated interaction
+
+eval: compare always-on and gated interaction
+
+docs: finalize Stage4F report
+
+push：
+
+stage4f/interaction-necessity-gate
+
+不要 merge main。
+
+============================================================
+五十九、完成后只汇报
+============================================================
+
+Git commit=
+
+Best global step=
+Stop reason=
+
+Additional gate params=
+Total params=
+
+Overall:
+Stage3B=
+Stage4A=
+Stage4F=
+D-B Delta=
+CI=
+
+Vehicle:
+Stage3B=
+Stage4A=
+Stage4F=
+D-B CI=
+
+Pedestrian:
+Stage3B=
+Stage4A=
+Stage4F=
+D-B Delta=
+CI=
+
+vehicle.moving:
+Stage3B=
+Stage4A=
+Stage4F=
+CI=
+
+Vehicle >5m:
+Stage3B=
+Stage4A=
+Stage4F=
+CI=
+
+Pedestrian <5m:
+Stage3B=
+Stage4A=
+Stage4F=
+
+Stage4F - Stage4A Delta=
+CI=
+
+Pedestrian 5-10m:
+Stage3B=
+Stage4A=
+Stage4F=
+
+Gate mean:
+
+Vehicle moving=
+Vehicle parked=
+Vehicle stopped=
+
+Ped 0-1m=
+Ped 1-2m=
+Ped 2-5m=
+Ped 5-10m=
+
+Gate collapse=
+YES / NO
+
+Inference overhead=
+
+Interaction Necessity Gate =
+SUPPORTED / PARTIAL / NOT SUPPORTED
+
+Stage4F =
+PASS / FAIL
+
+Ready Reliability Head =
+YES / NO
+
+完成后 STOP。
+不要进入第二创新。

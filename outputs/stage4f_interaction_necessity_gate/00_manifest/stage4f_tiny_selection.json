@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "coverage": {
+    "vehicle": 11,
+    "pedestrian": 12,
+    "bicycle": 6,
+    "moving_vehicle": 5,
+    "low_history_motion_pedestrian": 3,
+    "moving_pedestrian": 6,
+    "VP_context": 2
+  },
+  "windows": [
+    {
+      "index": 16372,
+      "scene_token": "fe4fdd7a28754baeac7074ad78f55a52",
+      "sample_token": "0759814ae8164fdd96f95e6bec7e81c1",
+      "actor_count": 5
+    },
+    {
+      "index": 5786,
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "7d59820c242a40609f59a156b2fd43d5",
+      "actor_count": 5
+    },
+    {
+      "index": 5787,
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "caa8be4d272d49719693a75c0eb68737",
+      "actor_count": 5
+    },
+    {
+      "index": 5788,
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "d26e36cdf46440ea876587b1174f32de",
+      "actor_count": 5
+    },
+    {
+      "index": 5789,
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "093bafec88934abfb5cfc7637310d0ea",
+      "actor_count": 6
+    },
+    {
+      "index": 5790,
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "c2d9b10fc7434c37944d371dcad779a3",
+      "actor_count": 6
+    }
+  ],
+  "selection": "frozen tiny cohort reused; append only if history coverage missing",
+  "motion_coverage_uses_only_history": true,
+  "history_net_thresholds_m": {
+    "moving_vehicle": 2,
+    "low_pedestrian": 0.2,
+    "moving_pedestrian": 0.5
+  },
+  "future_displacement_or_future_motion_bins_used": false,
+  "full_scene_context_preserved": true,
+  "train_only": true
+}

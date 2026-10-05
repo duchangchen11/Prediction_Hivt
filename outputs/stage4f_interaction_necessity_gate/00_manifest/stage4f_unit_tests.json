@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "Test1_feature_shape": [
+    10,
+    9
+  ],
+  "Test2_onehot_legal": true,
+  "Test3_no_future_tensor_function_signature": "(history, history_padding, agent_type, current_edges)",
+  "Test4_hand_computed_history_only_and_padding_gaps": true,
+  "Test5_neighborhood_from_existing_edges_with_current50m_filter": true,
+  "Test6_no_neighbors_defaults": [
+    0,
+    1,
+    0
+  ],
+  "Test7_gate_open_interval": true,
+  "Test8_initial_gate_0p1": true,
+  "Test9_relation_final_zero": true,
+  "Test10_neutral_output": {
+    "raw_prediction": 0.0,
+    "mode_logits": 0.0,
+    "mode_prob": 0.0
+  },
+  "Test11_all_finite": true,
+  "Test12_edge_index_unchanged": true,
+  "shared_B_and_C_step0_bitwise_equal": true,
+  "future_counterfactual_output_equal": true,
+  "target_gate_broadcast_all_edges_heads_layers": true,
+  "original_layers_reused_without_modification": true
+}
