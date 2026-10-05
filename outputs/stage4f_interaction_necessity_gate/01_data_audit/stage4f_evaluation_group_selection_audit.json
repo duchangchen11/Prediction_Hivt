@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "counts": {
+    "overall": 54990,
+    "vehicle": 42332,
+    "pedestrian": 12002,
+    "Pedestrian <5m": 4421,
+    "Pedestrian 5-10m": 7321,
+    "Heterogeneous-20m": 25113,
+    "Vehicle hetero-20m": 14813,
+    "Pedestrian hetero-20m": 9732,
+    "VP-context-20m": 23209
+  },
+  "inputs": "frozen B identity and original interaction ledger; no current model metrics",
+  "motion_bin_and_interaction_group_dispatch_unambiguous": true
+}

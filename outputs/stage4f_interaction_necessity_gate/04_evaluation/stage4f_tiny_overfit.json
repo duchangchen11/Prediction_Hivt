@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "initial": {
+    "overall": {
+      "count": 29,
+      "ADE": 7.380437717355531,
+      "FDE": 12.77831465879391,
+      "Top1ADE": 7.39124902157948,
+      "Top1FDE": 13.000222512360278,
+      "NLL": 5.836726217434324,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 13.352704600854354,
+      "FDE": 23.84821865504438,
+      "Top1ADE": 13.346834047274156,
+      "Top1FDE": 23.90052662112496,
+      "NLL": 10.134976365349509,
+      "fixed_scale_regression_loss": 9.269909063975016
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 1.7480835566918056,
+      "FDE": 2.2033455235262713,
+      "Top1ADE": 1.8003912667433422,
+      "Top1FDE": 2.4965412467718124,
+      "NLL": 2.1312333941459656,
+      "fixed_scale_regression_loss": 0.9131478170553843
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 7.695990085601807,
+      "FDE": 13.633428936203321,
+      "Top1ADE": 7.654391984144847,
+      "Top1FDE": 14.023694177468618,
+      "NLL": 5.367586592833201,
+      "fixed_scale_regression_loss": 4.343324472506841
+    }
+  },
+  "final": {
+    "overall": {
+      "count": 29,
+      "ADE": 0.07343652651741586,
+      "FDE": 0.08888826185259326,
+      "Top1ADE": 0.07802826879096442,
+      "Top1FDE": 0.10301037749339795,
+      "NLL": 0.7326658244790702,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 0.06890284016051075,
+      "FDE": 0.05525711000981656,
+      "Top1ADE": 0.07020015421916138,
+      "Top1FDE": 0.05744501508095048,
+      "NLL": 0.7789465297352184,
+      "fixed_scale_regression_loss": 0.05084320095678171
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 0.06377309855694573,
+      "FDE": 0.08232104258301358,
+      "Top1ADE": 0.07185003254562616,
+      "Top1FDE": 0.10982247286786635,
+      "NLL": 0.6942630807558695,
+      "fixed_scale_regression_loss": 0.029339371869961422
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 0.10107514075934887,
+      "FDE": 0.1636798121035099,
+      "Top1ADE": 0.10473628466327985,
+      "Top1FDE": 0.1729226845006148,
+      "NLL": 0.7246233522891998,
+      "fixed_scale_regression_loss": 0.06378261558711529
+    }
+  },
+  "updates": 1000,
+  "phase": "fixed_scale",
+  "criterion": "all3 class fixed-scale regression diagnostics fall; bias nonzero; gate max-min>1e-4; finite",
+  "all_three_class_loss_decreased": true,
+  "gate_differentiated": true,
+  "gate_mean": 0.1980469822883606,
+  "gate_min": 0.13613282144069672,
+  "gate_max": 0.3212624490261078,
+  "mean_absolute_relation_bias": 0.19064120948314667,
+  "gradient_norms_last": {
+    "relation_mlp": 0.0007270285859704018,
+    "pair_embedding": 2.8185650080558844e-05,
+    "necessity_gate_mlp": 0.00023200202849693596,
+    "relation_final": 0.0007171310135163367
+  },
+  "train_only": true,
+  "full_scene_context": true,
+  "future_motion_selection": false,
+  "model_discarded_before_formal": true,
+  "hyperparameters_searched": false,
+  "elapsed_seconds": 121.3779294699998,
+  "NaN": 0,
+  "Inf": 0
+}

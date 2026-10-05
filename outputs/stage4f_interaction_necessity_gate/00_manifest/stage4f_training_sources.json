@@ -1,0 +1,10 @@
+{
+  "training_source_sha256": {
+    "00_manifest/stage4f_common.py": "dd920563e43cbd6be7cc61fdc9f8e6d71091c556d1eadfc467770ac7f0f2eac7",
+    "00_manifest/stage4f_global_interactor.py": "7587c30bb40ca62f5dca4a04ef921fd67f195d0a787fcb727c3aa64994be6245",
+    "00_manifest/stage4f_model.py": "fce142cd5472d119117edfa03b1582f96a284dcb65d1ec41a6c81b6352eb1f1e",
+    "03_training/stage4f_train.py": "e5f81fdc431200cebe890910fd19e31d651bf4c5a2e20d084a8aa17378bf488e"
+  },
+  "frozen_imports_protected_by": "stage4f_frozen_references.json",
+  "no_future_gate_inputs": true
+}

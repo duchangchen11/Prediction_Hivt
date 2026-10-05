@@ -1,0 +1,32 @@
+{
+  "backend": "python",
+  "archetype": "quantitative grid and matched trajectory triptychs",
+  "claim": "Test whether a target history-only scalar gate preserves moving-vehicle gains and recovers low-motion pedestrian harm; outcome determined solely by frozen paired evaluation.",
+  "evidence_chain": {
+    "main": "3models full-horizon Overall/V/P means",
+    "pedestrian": "5fixed motion bins plus paired delta bootstrap intervals",
+    "gate": "raw full-horizon gate distributions and history-feature descriptive associations",
+    "context": "frozen interaction ledger groups",
+    "training": "real500-step points unsmoothed",
+    "cases": "same actor3columns including recovery and degradation examples"
+  },
+  "exports": [
+    "PNG300dpi",
+    "PDFTrueType",
+    "SVGeditabletext"
+  ],
+  "final_width_inches": 7.2,
+  "source_data": "stage4f CSV tables and original case JSON coordinates",
+  "statistics": "150official VAL scenes, seed2022 only; 1000paired scene bootstrap percentile CI; overlapping actor-windows not independent; secondary unadjusted exploratory intervals",
+  "risk_checks": [
+    "no invented favorable cases",
+    "case selection posthoc and purposive",
+    "no trajectory smoothing/interpolation",
+    "GT bin onlyoffline; never gateinput",
+    "gate association not causal",
+    "all3 case axes identical",
+    "12GT/best/top future markers",
+    "real shared500points",
+    "no selective axis clipping"
+  ]
+}

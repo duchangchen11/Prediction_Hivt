@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "backend": "CPU single thread",
+  "own_tiny_checkpoint_sha256": "d1c54c833b3dc9b5784cbbf24e4c89a37a611f38465a65312a895463f4befbb8",
+  "relation_bias_nonzero": true,
+  "gate_nonconstant": true,
+  "source_target_gate_difference_exists": true,
+  "all3_layer_inputs_bitwise_equal_to_target_gate_times_bias": true,
+  "same_target_scalar_all_incoming_edges_all8heads_all3layers": true,
+  "future_counterfactual_gate_bitwise_equal": true,
+  "future_counterfactual_outputs_max_abs_diff": {
+    "raw_prediction": 0.0,
+    "mode_logits": 0.0,
+    "mode_prob": 0.0
+  },
+  "edge_index_unchanged": true,
+  "optimizer_updates": 0,
+  "formal_training_process_unmodified": true
+}

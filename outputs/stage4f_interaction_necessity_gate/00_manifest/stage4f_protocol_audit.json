@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "data_and_shared_architecture_config_equal_to_Stage4A": true,
+  "batch_size": 16,
+  "seed": 2022,
+  "Protocol1": true,
+  "warmup5000_NLL16000_matches_frozen_actual_execution": true,
+  "additional_losses": false,
+  "optimizer_inherited_unchanged": true,
+  "attention_topology_retained_complete_current_graph": true,
+  "gate_neighbors_only_current50m": true,
+  "syntax_checked": true
+}

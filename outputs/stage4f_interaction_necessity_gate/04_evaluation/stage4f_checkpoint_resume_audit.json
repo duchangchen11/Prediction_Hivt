@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "checkpoint_SHA_at_read": "30b380b9ad860b1c11e9d491310d61826d890050495059ca69d3b737760a5f60",
+  "audited_global_step": 1000,
+  "model_state_bitwise_reloaded": true,
+  "optimizer_param_groups_and_all_states_bitwise_reloaded": true,
+  "CPU_RNG_bitwise_restored": true,
+  "CUDA_RNG_serialized": true,
+  "CUDA_restore_applied_in_formal_restore_function": true,
+  "audit_backend": "CPU only; no formal training process state changed",
+  "sampler_epoch": 0,
+  "sampler_cursor": {
+    "epoch": 0,
+    "next_batch": 1000
+  },
+  "next_batch_indices": [
+    1685,
+    1704,
+    1690,
+    1695,
+    1688,
+    1694,
+    1692,
+    1697,
+    1701,
+    1700,
+    1703,
+    1706,
+    1693,
+    1707,
+    1689,
+    1702
+  ],
+  "phase_state_matches_metadata": true,
+  "optimizer_updates_in_audit": 0,
+  "source_prefix_order_repeated_exactly": true
+}
