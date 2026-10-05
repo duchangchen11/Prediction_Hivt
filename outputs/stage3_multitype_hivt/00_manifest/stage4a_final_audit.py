@@ -12,6 +12,12 @@ import yaml
 def main():
     torch.set_num_threads(4)
     training=read_json(SUMMARY);prereg=read_json(PREREG)
+    architecture=read_json(ROOT/'00_manifest/stage4a_architecture_review.json');assert architecture['status']=='PASS'
+    subgroup=read_json(ROOT/'04_evaluation/stage4a_interaction_subgroup_audit.json')
+    assert subgroup['registered_before_formal_training'] and subgroup['formal_optimizer_updates_at_registration']==0
+    assert subgroup['preregistration_sha256']==sha256(PREREG)
+    assert not subgroup['future_or_prediction_used_to_define_membership']
+    assert read_json(ROOT/'00_manifest/stage4a_training_sources.json')['preregistration_sha256']==sha256(PREREG)
     assert training['status']=='COMPLETE' and training['warmup_steps']==5000
     assert training['NLL_steps']+5000==training['final_executed_global_step']<=21000
     assert training['NLL_steps']%500==0 and training['from_scratch'] and not training['Stage3B_trained_weights_loaded']
@@ -77,6 +83,39 @@ def main():
     for name in ('stage4a_tiny_overfit.json','stage4a_gradient_audit.json','stage4a_pairing_audit.json','stage4a_metrics.json','stage4a_bootstrap_ci.json','stage4a_qualitative_case_manifest.json','stage4a_interaction_subgroup_audit.json','stage4a_relation_bias_statistics.json','stage4a_efficiency_audit.json'):
         assert read_json(ROOT/'04_evaluation'/name)['status']=='PASS'
     assert read_json(ROOT/'04_evaluation/stage4a_pairing_audit.json')['paired_full_horizon_actors']==54990
+    actual_sha=sha256(ROOT/'04_evaluation/stage4a_actor_errors.csv')
+    base_sha=sha256(ROOT/'04_evaluation/stage3b_type_embedding_actor_errors.csv')
+    member_sha=sha256(ROOT/subgroup['membership_relative_path'])
+    assert member_sha==subgroup['membership_sha256']
+    fresh=read_json(ROOT/'04_evaluation/stage4a_metrics.json')
+    assert fresh['fresh_complete_official_VAL'] and fresh['NaN']==fresh['Inf']==0
+    assert fresh['actor_errors_sha256']==actual_sha and fresh['checkpoint_sha256']==training['checkpoint_sha256']
+    for group in GROUPS:
+        for metric in ('minADE6','minFDE6','MR6','Top1ADE6','Top1FDE6','NLL'):
+            assert abs(fresh['metrics']['full_horizon'][group][metric]-training['selected_full_horizon_metrics'][group][metric])<1e-6
+    pair=read_json(ROOT/'04_evaluation/stage4a_pairing_audit.json')
+    ci=read_json(ROOT/'04_evaluation/stage4a_bootstrap_ci.json')
+    for artifact in (pair,ci):
+        assert artifact['B_actor_errors_sha256']==base_sha and artifact['C_actor_errors_sha256']==actual_sha
+        assert artifact['interaction_membership_sha256']==member_sha
+    assert pair['paired_partial_future_actors']==30037 and pair['paired_total_actor_windows']==85027
+    assert ci['replicates']==1000 and ci['seed']==2022 and ci['scene_count']==150
+    efficiency=read_json(ROOT/'04_evaluation/stage4a_efficiency_audit.json')
+    assert efficiency['Stage4A_checkpoint_sha256']==training['checkpoint_sha256']
+    assert efficiency['Stage3B_checkpoint_sha256']==sha256(ROOT/'07_checkpoints/stage3b_best_overall_minfde.pt')
+    assert efficiency['paired_measured_batches']>=500 and efficiency['eval_mode'] and efficiency['identical_input_tensors_per_pair']
+    assert efficiency['additional_parameters']==1608 and efficiency['parameters_C']==647609
+    assert efficiency['batch_timing_source_sha256']==sha256(ROOT/'06_tables/stage4a_efficiency_batch_timings.csv')
+    bias=read_json(ROOT/'04_evaluation/stage4a_relation_bias_statistics.json')
+    assert bias['checkpoint_sha256']==training['checkpoint_sha256'] and not bias['causal_interpretation']
+    assert bias['source_csv_sha256']==sha256(ROOT/'06_tables/stage4a_relation_bias_statistics.csv')
+    assert bias['aggregate_csv_sha256']==sha256(ROOT/'06_tables/stage4a_relation_bias_pair_aggregate.csv')
+    cases=read_json(ROOT/'04_evaluation/stage4a_qualitative_case_manifest.json')
+    assert cases['checkpoint_SHA256']=={'Stage3B':efficiency['Stage3B_checkpoint_sha256'],'Stage4A':training['checkpoint_sha256']}
+    assert cases['actor_CSV_SHA256']=={'Stage3B':base_sha,'Stage4A':actual_sha,'membership':member_sha}
+    if training['converged_by_patience']:assert training['stop_reason']=='patience_5'
+    else:assert training['stopped_by_budget'] and training['stop_reason']=='global21000_budget'
+
     exports=[]
     for directory in ('05_figures','03_type_interaction'):
         for path in sorted((ROOT/directory).glob('stage4a_*_audit.json')):

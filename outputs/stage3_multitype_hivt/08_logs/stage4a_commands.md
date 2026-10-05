@@ -45,3 +45,13 @@ The training source SHA256 and exact preregistration Git commit are recorded bef
 formal execution. Real CSV rows and matching full-VAL JSON record every500 updates.
 No Stage4B Reliability, Intent, future compatibility, calibration, topology changes,
 class-balanced loss, oversampling, extra seeds or hyperparameter search are executed.
+
+## 2026-10-05 authorized continuation
+
+User explicitly authorized continuation of current Stage4A. Resume from own saved NLL global5500 checkpoint; unsaved5600–5700 log updates replayed. Model, AdamW, RNG and scene sampler cursor restored; registered training sources unchanged. Training PID43145. Final evaluator waits for training exit and COMPLETE summary; figures wait for all four evaluation stages. Stage4B remains outside scope.
+
+```bash
+/home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage3_multitype_hivt/03_type_interaction/stage4a_train.py
+/home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage3_multitype_hivt/04_evaluation/stage4a_wait_evaluate.py --training-pid 43145
+/home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage3_multitype_hivt/05_figures/stage4a_wait_figures.py
+```
