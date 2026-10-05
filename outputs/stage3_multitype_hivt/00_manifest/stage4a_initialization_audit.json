@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "seed": 2022,
+  "Stage3B_shared_parameter_count": 646001,
+  "Stage4A_shared_parameter_count": 646001,
+  "shared_parameter_count": 646001,
+  "shared_parameter_tensor_count": 276,
+  "additional_parameter_count": 1608,
+  "total_parameter_count": 647609,
+  "relative_parameter_increase_percent": 0.24891602334980906,
+  "shared_parameter_hash": "f1a33cb2a94334cf8818aa29a9a6b663939b3c3d2c364f1429fe788e4595e9f0",
+  "shared_state_SHA256": "bbd3245d253200531ccc2734f31fe1cfd4f50efca1f817787c655f2bad37e90a",
+  "shared_state_hash": "bbd3245d253200531ccc2734f31fe1cfd4f50efca1f817787c655f2bad37e90a",
+  "max_shared_parameter_diff": 0.0,
+  "shared_buffers_bitwise_equal": true,
+  "pair_embedding_shape": [
+    9,
+    16
+  ],
+  "bias_network_shapes": {
+    "input": 20,
+    "hidden": 32,
+    "output": 24,
+    "reshape": [
+      "E",
+      3,
+      8
+    ]
+  },
+  "new_state_shapes": {
+    "global_interactor.relation_mlp.0.bias": [
+      32
+    ],
+    "global_interactor.relation_mlp.2.bias": [
+      24
+    ],
+    "global_interactor.relation_mlp.0.weight": [
+      32,
+      20
+    ],
+    "global_interactor.pair_embedding.weight": [
+      9,
+      16
+    ],
+    "global_interactor.relation_mlp.2.weight": [
+      24,
+      32
+    ]
+  },
+  "new_state_hash": "96a1f4f2ab7b15f0a55c740317865aff6cb0aa94ff5fb62b801bcb735d5b253c",
+  "relation_bias_final_layer_zero_initialized": true,
+  "source": "exact frozen canonical Stage3B seed2022 step0 constructor, shared name/shape exact copy",
+  "Stage3B_trained_checkpoint_loaded": false,
+  "training_CPU_RNG_restored_to_Stage3B_post_constructor_state": true
+}

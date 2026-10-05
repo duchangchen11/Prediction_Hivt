@@ -1,0 +1,106 @@
+{
+  "status": "REGISTERED_BEFORE_TRAINING",
+  "seed": 2022,
+  "frozen_Stage3B_commit": "824c87d7c1bdb89ef1b79572f463bf864a4b840a",
+  "Stage3B_checkpoint_SHA256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+  "Stage3B_actor_errors_sha256": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+  "Stage3B_config_sha256": "5afcf18547930f57af16eb7770709333a663365693b948079a945bde9bb3fa91",
+  "Stage4A_config_sha256": "3e8cd2e6a07046636db6c08a5818b216c293a92d0ea02d2ff2825d025a2a1ea3",
+  "only_configuration_additions": {
+    "type_conditioned_interaction": true,
+    "pair_embedding_dim": 16,
+    "relation_bias_hidden_dim": 32,
+    "directed_type_pair": true,
+    "relation_bias_zero_init": true
+  },
+  "model_change": {
+    "pair_embedding": [
+      9,
+      16
+    ],
+    "relation_feature_dim": 20,
+    "relative_position": "source minus target, transformed by existing target rotation, divided by50m",
+    "relative_heading": "source angle minus target angle, cos/sin",
+    "MLP": [
+      20,
+      32,
+      24
+    ],
+    "layers": 3,
+    "heads": 8,
+    "reshape": [
+      "E",
+      3,
+      8
+    ],
+    "insertion": "add scalar relation bias to original attention score immediately before softmax",
+    "zero_final_weight_and_bias": true,
+    "new_parameters_expected": 1608,
+    "original_values_rel_embed_topology_and_decoder_unchanged": true
+  },
+  "shared_initialization": "canonical frozen Stage3B seed2022 step0; exact shared name/shape copy; no trained weights",
+  "formal_fixed_scale_warmup_steps": 5000,
+  "formal_NLL_maximum_steps": 16000,
+  "formal_maximum_global_step": 21000,
+  "validation_interval": 500,
+  "NLL_patience": 5,
+  "warmup_to_NLL_transition": "restore own warmup best model+AdamW+RNG, only LR0.001->0.0001; reset NLL sampler cursor as Stage3B",
+  "warmup_selection": "full-horizon official VAL overall minFDE6 strict improvement",
+  "final_selection": "post-update original NLL full-horizon official VAL overall minFDE6 strict improvement",
+  "budget_note": "exact Stage3B actual registered5000+16000 execution; copied YAML historical budget fields preserved unchanged",
+  "tiny_hyperparameter_selection": false,
+  "hyperparameter_search": false,
+  "extra_training_seeds": false,
+  "interaction_subgroup": {
+    "name": "Heterogeneous-20m",
+    "radius_m": 20.0,
+    "definition": "t0-visible target has >=1 different-type t0-visible vehicle/pedestrian/bicycle context actor within Euclidean20m inclusive",
+    "VP_context": "vehicle target with pedestrian neighbor OR pedestrian target with vehicle neighbor",
+    "exclude_self": true,
+    "ego_node": false,
+    "future_used_for_membership": false,
+    "prediction_used_for_membership": false,
+    "registered_before_formal_training": true
+  },
+  "bootstrap": {
+    "replicates": 1000,
+    "seed": 2022,
+    "resampling_unit": "paired official VAL scene",
+    "scenes": 150,
+    "confidence": 0.95,
+    "weighting": "pool actor-window deltas in resampled clusters"
+  },
+  "primary_endpoint": "overall full-horizon minFDE6; delta=Stage4A-Stage3B",
+  "major_class_degradation_guard": {
+    "classes": [
+      "vehicle",
+      "pedestrian",
+      "bicycle"
+    ],
+    "abnormal": "any class minFDE6 paired scene-bootstrap CI95 lower>0",
+    "rule": "SUPPORTED and PARTIAL require no reliable major-class degradation; otherwise NOT SUPPORTED and ReadyNO",
+    "Bicycle_note": "small samples; used only as conservative harm guard, no strong improvement claim"
+  },
+  "scientific_decision": {
+    "SUPPORTED": "overall deltaFDE<0 and CI95 upper<0 and no major-class harm guard",
+    "PARTIAL": "overall CI contains0 without reliable overall harm; >=1 registered interaction-relevant group deltaFDE<0 and CI95 upper<0; no major-class harm guard",
+    "interaction_relevant_groups": [
+      "Heterogeneous-20m",
+      "VP-context-20m",
+      "Pedestrian >5m",
+      "Vehicle >5m"
+    ],
+    "NOT_SUPPORTED": "reliable overall/major-class degradation, or neither primary nor interaction-relevant reliable improvement"
+  },
+  "technical_PASS_separate_from_effect_direction": true,
+  "Ready_Stage4B_rule": "technicalPASS and SUPPORTED/PARTIAL and no reliable overall/major-class harm",
+  "relation_bias_diagnostics": "model internal statistics; no causal effect or physical importance claim",
+  "class_balanced_loss": false,
+  "oversampling": false,
+  "data_reprocessed": false,
+  "test_used": false,
+  "Reliability_Head": false,
+  "Intent_Head": false,
+  "dynamic_graph_reconstruction": false,
+  "Stage4B_executed": false
+}

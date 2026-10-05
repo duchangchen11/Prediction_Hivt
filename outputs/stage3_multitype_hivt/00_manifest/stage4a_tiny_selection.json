@@ -1,0 +1,205 @@
+{
+  "selection": "train-only three-class windows, minimum context size for bounded sanity; all actors retained",
+  "target_counts": {
+    "vehicle": 11,
+    "pedestrian": 12,
+    "bicycle": 6
+  },
+  "meaningful_motion_target_counts": {
+    "vehicle": 5,
+    "pedestrian": 2,
+    "bicycle": 5
+  },
+  "windows": [
+    {
+      "scene_name": "scene-1088",
+      "scene_token": "fe4fdd7a28754baeac7074ad78f55a52",
+      "sample_token": "0759814ae8164fdd96f95e6bec7e81c1",
+      "actor_count": 5,
+      "targets_per_class": [
+        1,
+        3,
+        1
+      ],
+      "meaningful_motion_targets_per_class": [
+        0,
+        2,
+        0
+      ],
+      "index": 16372,
+      "directed_global_edge_counts": {
+        "V<-V": 0,
+        "V<-P": 3,
+        "V<-B": 1,
+        "P<-V": 3,
+        "P<-P": 6,
+        "P<-B": 3,
+        "B<-V": 1,
+        "B<-P": 3,
+        "B<-B": 0
+      }
+    },
+    {
+      "scene_name": "scene-0377",
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "7d59820c242a40609f59a156b2fd43d5",
+      "actor_count": 5,
+      "targets_per_class": [
+        2,
+        1,
+        1
+      ],
+      "meaningful_motion_targets_per_class": [
+        1,
+        0,
+        1
+      ],
+      "index": 5786,
+      "directed_global_edge_counts": {
+        "V<-V": 6,
+        "V<-P": 3,
+        "V<-B": 3,
+        "P<-V": 3,
+        "P<-P": 0,
+        "P<-B": 1,
+        "B<-V": 3,
+        "B<-P": 1,
+        "B<-B": 0
+      }
+    },
+    {
+      "scene_name": "scene-0377",
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "caa8be4d272d49719693a75c0eb68737",
+      "actor_count": 5,
+      "targets_per_class": [
+        2,
+        1,
+        1
+      ],
+      "meaningful_motion_targets_per_class": [
+        1,
+        0,
+        1
+      ],
+      "index": 5787,
+      "directed_global_edge_counts": {
+        "V<-V": 2,
+        "V<-P": 4,
+        "V<-B": 2,
+        "P<-V": 4,
+        "P<-P": 2,
+        "P<-B": 2,
+        "B<-V": 2,
+        "B<-P": 2,
+        "B<-B": 0
+      }
+    },
+    {
+      "scene_name": "scene-0377",
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "d26e36cdf46440ea876587b1174f32de",
+      "actor_count": 5,
+      "targets_per_class": [
+        2,
+        2,
+        1
+      ],
+      "meaningful_motion_targets_per_class": [
+        1,
+        0,
+        1
+      ],
+      "index": 5788,
+      "directed_global_edge_counts": {
+        "V<-V": 2,
+        "V<-P": 4,
+        "V<-B": 2,
+        "P<-V": 4,
+        "P<-P": 2,
+        "P<-B": 2,
+        "B<-V": 2,
+        "B<-P": 2,
+        "B<-B": 0
+      }
+    },
+    {
+      "scene_name": "scene-0377",
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "093bafec88934abfb5cfc7637310d0ea",
+      "actor_count": 6,
+      "targets_per_class": [
+        2,
+        2,
+        1
+      ],
+      "meaningful_motion_targets_per_class": [
+        1,
+        0,
+        1
+      ],
+      "index": 5789,
+      "directed_global_edge_counts": {
+        "V<-V": 2,
+        "V<-P": 6,
+        "V<-B": 2,
+        "P<-V": 6,
+        "P<-P": 6,
+        "P<-B": 3,
+        "B<-V": 2,
+        "B<-P": 3,
+        "B<-B": 0
+      }
+    },
+    {
+      "scene_name": "scene-0377",
+      "scene_token": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample_token": "c2d9b10fc7434c37944d371dcad779a3",
+      "actor_count": 6,
+      "targets_per_class": [
+        2,
+        3,
+        1
+      ],
+      "meaningful_motion_targets_per_class": [
+        1,
+        0,
+        1
+      ],
+      "index": 5790,
+      "directed_global_edge_counts": {
+        "V<-V": 2,
+        "V<-P": 6,
+        "V<-B": 2,
+        "P<-V": 6,
+        "P<-P": 6,
+        "P<-B": 3,
+        "B<-V": 2,
+        "B<-P": 3,
+        "B<-B": 0
+      }
+    }
+  ],
+  "full_scene_context_preserved": true,
+  "val_used": false,
+  "same_exact_actor_windows_as_Stage3A": true,
+  "Stage3A_selection_sha256": "609fdc1c1245c64bd68647a1708a13933452c9793a90b47aca400de84f0eb56b",
+  "status": "PASS",
+  "same_exact_actor_windows_as_Stage3B": true,
+  "Stage3B_selection_sha256": "b9c821aebb8a1615a0ceeddfaa01112db6ed7dee079c1e2893f3a09534f1614a",
+  "directed_global_edge_counts": {
+    "V<-V": 14,
+    "V<-P": 26,
+    "V<-B": 12,
+    "P<-V": 26,
+    "P<-P": 22,
+    "P<-B": 14,
+    "B<-V": 12,
+    "B<-P": 14,
+    "B<-B": 0
+  },
+  "required_heterogeneous_edge_coverage": true,
+  "V_B_and_B_V_available_and_retained": true,
+  "tiny_selection_changed": false,
+  "formal_train_and_val_selection_changed": false
+}

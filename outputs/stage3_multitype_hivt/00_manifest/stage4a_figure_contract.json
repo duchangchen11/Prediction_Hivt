@@ -1,0 +1,40 @@
+{
+  "backend": "python",
+  "archetype": "quantitative grid and separate matched-actor trajectory panels",
+  "conclusion": "Measure whether a neutral-initialized directed relation bias improves frozen Stage3B predictions overall and in preregistered spatial interaction contexts; the outcome is unknown before evaluation.",
+  "evidence_chain": {
+    "training": "Actual full official VAL150 points every500 optimizer updates, no smoothing, phase boundary and both selected best steps.",
+    "main_ablation": "Identically defined paired full-horizon Overall/Vehicle/Pedestrian/Bicycle minFDE6, exact value labels.",
+    "interaction_context": "All, Heterogeneous-20m, VP-context-20m, Vehicle >5m and Pedestrian >5m under fixed source/target geometry membership.",
+    "relation_bias": "Nine target-by-source entries of layer/head aggregated mean absolute bias; model diagnostic only, no causal interpretation.",
+    "cases": "Same real actor/window/GT and same axes in both panels; largest gains/degradation illustrate behavior and are not population-effect estimates."
+  },
+  "statistics": {
+    "split": "official train700 / VAL150 / test unused",
+    "seed": 2022,
+    "n_definition": "Correlated actor-windows; formal inference resamples paired scene clusters.",
+    "metric": "minFDE@6; minADE@6 uses the best-FDE mode; MR endpoint>2m; Top1 uses maximum mode probability.",
+    "interval": "Paired150-scene cluster percentile bootstrap,1000 replicates seed2022; bars show exact means without artificial error bars."
+  },
+  "exports": ["PNG300dpi", "editable SVG", "TrueType PDF"],
+  "figure_size_inches": {"quantitative": [7.4, 4.2], "cases": "9.5 wide; adaptive compact equal-aspect rectangles"},
+  "white_background": true,
+  "smoothing": false,
+  "fabricated_or_manually_adjusted_trajectory_points": false,
+  "trajectory_case_policy": {
+    "vehicle_improvement": "Vehicle, GT>5m prioritized, Heterogeneous-20m true, negative Stage4A-minus-Stage3B FDE; largest gain with deterministic identity tie-break.",
+    "pedestrian_improvement": "Pedestrian, GT>5m prioritized, Heterogeneous-20m true, negative Stage4A-minus-Stage3B FDE; largest gain with deterministic identity tie-break.",
+    "degradation": "Positive FDE delta; GT>5m prioritized; largest degradation with deterministic identity tie-break.",
+    "VP_context": "Distinct real V/P actor with nearest opposite-type actor<=20m at t0; GT future and predictions never define spatial context eligibility.",
+    "neighbors": "Only nearest eligible heterogeneous context actor history and observed GT, faint thin lines; no neighbor prediction modes.",
+    "neighbor_caption": "t0 spatial interaction context; no causal interaction inferred.",
+    "pairing": "Same actor/window/GT/axes/equal aspect; reproduce each model's original full VAL16 batch.",
+    "style": {"History": "grey circle", "GT": "black solid square linewidth2.5", "Best-FDE": "blue solid circle linewidth2.5", "Top1": "orange dashed triangle linewidth2.0"},
+    "future_markers_per_trajectory": 12,
+    "metric_recompute_absolute_tolerance_m": 0.0001,
+    "inset": "Only GT turn>30deg or hard trajectory overlap; bounding box from actual last6 target future points, never hardcoded.",
+    "map": "Local lane segments faint grey alpha0.22 linewidth0.5; lanes never determine axes limits.",
+    "layout": "Separate header for endpoint numbers and any inset; identical compact limits in both panels."
+  },
+  "review_risks": ["Correlated repeated actors", "Rare moving bicycles", "Purposive illustrative case selection", "Attention bias is not causal influence", "Unchanged20m membership", "No reuse of training VAL best numbers as fresh final evaluation", "All12 markers and unclipped source text"]
+}

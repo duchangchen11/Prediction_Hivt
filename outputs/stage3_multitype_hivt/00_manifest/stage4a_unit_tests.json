@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "Test1_actor_type_only_012": true,
+  "invalid_actor_type_shape_dtype_and_range_rejections": 5,
+  "Test2_pair_id_range_0_to_8": true,
+  "Test3_V_from_P_and_P_from_V_different": true,
+  "Test4_all_nine_pairs_legal_embedding": [
+    9,
+    16
+  ],
+  "Test5_relation_feature_shape": [
+    40,
+    20
+  ],
+  "Test6_relation_bias_shape": [
+    40,
+    3,
+    8
+  ],
+  "Test7_zero_init_all_bias_exact_zero": true,
+  "Test8_step0_matches_Stage3B": {
+    "raw_prediction": 8.642673492431641e-07,
+    "mode_logits": 5.066394805908203e-07,
+    "mode_prob": 1.4901161193847656e-07
+  },
+  "Test9_raw_prediction_shape": [
+    6,
+    10,
+    12,
+    4
+  ],
+  "Test9_mode_probability_shape": [
+    10,
+    6
+  ],
+  "Test10_NaN": 0,
+  "Test10_Inf": 0,
+  "Test11_actor_actor_only_no_lane_lookup": true,
+  "Test12_edge_index_unchanged": true,
+  "target_frame_source_minus_target_geometry_exact": true,
+  "heading_cos_sin_source_minus_target_exact": true,
+  "future_perturbation_max_abs_diff": 9.5367431640625e-07,
+  "lane_actor_edges_and_input_x_unchanged": true,
+  "bias_added_only_before_softmax": true,
+  "tests_optimizer_updates": 0
+}

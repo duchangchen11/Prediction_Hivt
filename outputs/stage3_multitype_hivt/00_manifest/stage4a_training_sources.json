@@ -1,0 +1,13 @@
+{
+  "status": "REGISTERED_BEFORE_FORMAL_TRAINING",
+  "training_source_sha256": {
+    "00_manifest/stage4a_global_interactor.py": "ad547282644a4004ab5aca37d065747146be5d11d39497a9eda3d85c605882ff",
+    "00_manifest/stage4a_model.py": "1cba9908794c925f500faf2a74b03c27990759eb61132f3d03e752ab758c71b7",
+    "00_manifest/stage4a_common.py": "e5a6d19d3570654f6b7a801419e472b7d22f6fb446d08aecc2294bf257daecf0",
+    "03_type_interaction/stage4a_train.py": "02e7e3adc4eaa78483b345c40ae9e0cbf6a1153ffc5a5fd4338682c5b85231e3",
+    "03_type_interaction/stage4a_tiny.py": "860caba2d3c0a15b580e7118e0c6f466bb8423eb15d4c0c938b73a03ed0fb771"
+  },
+  "all_pretraining_gates": "PASS",
+  "tiny_model_discarded_for_formal": true,
+  "preregistration_sha256": "aa85a0cd189662695b177a7327272d3ca23bff9527a95010091767d1f62bebe4"
+}

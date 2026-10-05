@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "updates": [
+    {
+      "optimizer_update": 1,
+      "loss": 6.48248291015625,
+      "gradient_norms": {
+        "pair_embedding": 0.0,
+        "first_MLP_layer": 0.0,
+        "final_MLP_layer": 0.011455398984253407,
+        "TypeEmbedding": 0.03690606355667114
+      },
+      "mean_absolute_bias_after_update": 0.003966428339481354
+    },
+    {
+      "optimizer_update": 2,
+      "loss": 6.396791934967041,
+      "gradient_norms": {
+        "pair_embedding": 1.1151799299113918e-05,
+        "first_MLP_layer": 5.7612483942648396e-05,
+        "final_MLP_layer": 0.008977930061519146,
+        "TypeEmbedding": 0.027111949399113655
+      },
+      "mean_absolute_bias_after_update": 0.006163251586258411
+    },
+    {
+      "optimizer_update": 3,
+      "loss": 6.296571731567383,
+      "gradient_norms": {
+        "pair_embedding": 9.996856533689424e-06,
+        "first_MLP_layer": 5.1579878345364705e-05,
+        "final_MLP_layer": 0.0048947324976325035,
+        "TypeEmbedding": 0.020399317145347595
+      },
+      "mean_absolute_bias_after_update": 0.007965615950524807
+    },
+    {
+      "optimizer_update": 4,
+      "loss": 6.233526229858398,
+      "gradient_norms": {
+        "pair_embedding": 1.1930055734410416e-05,
+        "first_MLP_layer": 5.6748187489574775e-05,
+        "final_MLP_layer": 0.004319236613810062,
+        "TypeEmbedding": 0.020973235368728638
+      },
+      "mean_absolute_bias_after_update": 0.009555697441101074
+    },
+    {
+      "optimizer_update": 5,
+      "loss": 6.1973042488098145,
+      "gradient_norms": {
+        "pair_embedding": 1.1682090189424343e-05,
+        "first_MLP_layer": 5.490686817211099e-05,
+        "final_MLP_layer": 0.003402146976441145,
+        "TypeEmbedding": 0.016954272985458374
+      },
+      "mean_absolute_bias_after_update": 0.010989654809236526
+    },
+    {
+      "optimizer_update": 6,
+      "loss": 6.178000450134277,
+      "gradient_norms": {
+        "pair_embedding": 1.0766777450044174e-05,
+        "first_MLP_layer": 4.864794755121693e-05,
+        "final_MLP_layer": 0.002880858024582267,
+        "TypeEmbedding": 0.018783817067742348
+      },
+      "mean_absolute_bias_after_update": 0.012282001785933971
+    },
+    {
+      "optimizer_update": 7,
+      "loss": 6.150646209716797,
+      "gradient_norms": {
+        "pair_embedding": 1.2133397831348702e-05,
+        "first_MLP_layer": 6.071459938539192e-05,
+        "final_MLP_layer": 0.002890047151595354,
+        "TypeEmbedding": 0.019993076100945473
+      },
+      "mean_absolute_bias_after_update": 0.013425233773887157
+    },
+    {
+      "optimizer_update": 8,
+      "loss": 6.11223840713501,
+      "gradient_norms": {
+        "pair_embedding": 1.1882004400831647e-05,
+        "first_MLP_layer": 5.033989145886153e-05,
+        "final_MLP_layer": 0.002633842173963785,
+        "TypeEmbedding": 0.017048867419362068
+      },
+      "mean_absolute_bias_after_update": 0.0144690265879035
+    },
+    {
+      "optimizer_update": 9,
+      "loss": 6.070556640625,
+      "gradient_norms": {
+        "pair_embedding": 1.082796006812714e-05,
+        "first_MLP_layer": 5.2558432798832655e-05,
+        "final_MLP_layer": 0.002566231181845069,
+        "TypeEmbedding": 0.01744580641388893
+      },
+      "mean_absolute_bias_after_update": 0.015444368124008179
+    },
+    {
+      "optimizer_update": 10,
+      "loss": 6.058627128601074,
+      "gradient_norms": {
+        "pair_embedding": 1.0395152457931545e-05,
+        "first_MLP_layer": 4.6264649427030236e-05,
+        "final_MLP_layer": 0.002137125004082918,
+        "TypeEmbedding": 0.013205942697823048
+      },
+      "mean_absolute_bias_after_update": 0.01640552282333374
+    }
+  ],
+  "optimizer_updates": 10,
+  "first_backward_final_MLP_gradient_nonzero": true,
+  "first_backward_pair_and_first_layer_gradient_zero_allowed": true,
+  "pair_embedding_gradient_nonzero_within_10_updates": true,
+  "first_MLP_gradient_nonzero_within_10_updates": true,
+  "bias_becomes_nonzero": true,
+  "NaN": 0,
+  "Inf": 0,
+  "train_only": true,
+  "validation_used": false,
+  "model_discarded_before_tiny_and_formal": true
+}

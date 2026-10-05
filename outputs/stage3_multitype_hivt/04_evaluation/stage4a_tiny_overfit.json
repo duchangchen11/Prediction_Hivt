@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "initial": {
+    "overall": {
+      "count": 29,
+      "ADE": 7.380437779015508,
+      "FDE": 12.778314619228757,
+      "Top1ADE": 7.3912491510654315,
+      "Top1FDE": 13.000222784691843,
+      "NLL": 5.836726533955541,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 13.3527047959241,
+      "FDE": 23.84821869568391,
+      "Top1ADE": 13.34683426401832,
+      "Top1FDE": 23.900526732206345,
+      "NLL": 10.13497717814012,
+      "fixed_scale_regression_loss": 9.269909232854843
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 1.748083457350731,
+      "FDE": 2.203345477581024,
+      "Top1ADE": 1.800391400853793,
+      "Top1FDE": 2.4965418726205826,
+      "NLL": 2.1312334140141806,
+      "fixed_scale_regression_loss": 0.9131478170553843
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 7.695990224679311,
+      "FDE": 13.63342876235644,
+      "Top1ADE": 7.654391944408417,
+      "Top1FDE": 14.023694038391113,
+      "NLL": 5.367586592833201,
+      "fixed_scale_regression_loss": 4.343324472506841
+    }
+  },
+  "final": {
+    "overall": {
+      "count": 29,
+      "ADE": 0.0378625344741961,
+      "FDE": 0.045587689085895645,
+      "Top1ADE": 0.05483819659927796,
+      "Top1FDE": 0.08216521991737957,
+      "NLL": -2.4151002086442093,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 0.04286062243309888,
+      "FDE": 0.03173102595081383,
+      "Top1ADE": 0.05286702513694763,
+      "Top1FDE": 0.05475018613717773,
+      "NLL": -2.574033011089672,
+      "fixed_scale_regression_loss": 0.030258289848764736
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 0.03570534304405252,
+      "FDE": 0.06100740780433019,
+      "Top1ADE": 0.049333259308089815,
+      "Top1FDE": 0.09624301455914974,
+      "NLL": -2.3393660386403403,
+      "fixed_scale_regression_loss": 0.019180798592666786
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 0.03301375607649485,
+      "FDE": 0.040152134063343205,
+      "Top1ADE": 0.06946188552925985,
+      "Top1FDE": 0.10427052589754264,
+      "NLL": -2.2751917441685996,
+      "fixed_scale_regression_loss": 0.020035540064175923
+    }
+  },
+  "criterion": "three-class ADE/FDE/fixed-scale diagnostics decrease >=50%; finite outputs; relation bias nonzero; pair gradients positive after neutral first update",
+  "warmup_steps": 1000,
+  "warmup_best_source_step": 1000,
+  "NLL_steps": 1000,
+  "global_steps": 2000,
+  "gradient_norm_min": {
+    "pair_embedding": 0.0,
+    "first_MLP_layer": 0.0,
+    "final_MLP_layer": 0.0006237789057195187,
+    "TypeEmbedding": 0.005556951276957989
+  },
+  "gradient_norm_max": {
+    "pair_embedding": 0.0047005172818899155,
+    "first_MLP_layer": 0.024382153525948524,
+    "final_MLP_layer": 0.10895714908838272,
+    "TypeEmbedding": 0.5480349063873291
+  },
+  "first_neutral_pair_and_first_MLP_zero_gradient_expected": true,
+  "final_mean_absolute_relation_bias": 0.14418140053749084,
+  "elapsed_seconds": 230.26315637699736,
+  "same_exact_Stage3B_tiny_windows": true,
+  "full_scene_context_preserved": true,
+  "train_only": true,
+  "model_discarded_for_formal_training": true,
+  "hyperparameters_changed_or_searched": false,
+  "NaN": 0,
+  "Inf": 0,
+  "git_commit_SHA": "824c87d7c1bdb89ef1b79572f463bf864a4b840a"
+}
