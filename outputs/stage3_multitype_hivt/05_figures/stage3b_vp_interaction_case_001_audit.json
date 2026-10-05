@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "No-Type",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 1.439219525568351,
+        "minFDE6": 4.834485315301184,
+        "Top1ADE6": 6.393311245433061,
+        "Top1FDE6": 17.460894437802107
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 3.06851998033153e-07,
+        "minFDE6": 2.1555208729040487e-07,
+        "Top1ADE6": 7.319534134353489e-07,
+        "Top1FDE6": 1.1005279709763727e-06
+      }
+    },
+    {
+      "method": "Type Embedding",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 1.4005269751982299,
+        "minFDE6": 0.3768449814031941,
+        "Top1ADE6": 6.985767975719706,
+        "Top1FDE6": 18.498189180830583
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 5.708174315444126e-07,
+        "minFDE6": 9.031139058812698e-09,
+        "Top1ADE6": 1.343805946518728e-07,
+        "Top1FDE6": 7.453168784365971e-07
+      }
+    }
+  ],
+  "same_xy_limits": true,
+  "xlim_m": [
+    -32.07828267097473,
+    -5.719062013626099
+  ],
+  "ylim_m": [
+    -6.572715714073182,
+    -0.773687169456482
+  ],
+  "equal_aspect": true,
+  "compact_equal_aspect_rectangle": true,
+  "separate_header_for_endpoint_text_and_zoom": true,
+  "inset_rule": {
+    "turn_over30deg": false,
+    "hard_overlap_mean_distance_under1m": false,
+    "VP_GT_proximity_candidate": true,
+    "add_inset": true
+  },
+  "inset_bbox_m": [
+    [
+      -32.22626266479492,
+      -5.463431453704834
+    ],
+    [
+      -9.605086708068848,
+      -1.836150312423706
+    ]
+  ],
+  "lane_alpha": 0.22,
+  "lane_linewidth": 0.5,
+  "lanes_do_not_set_axes_limits": true,
+  "endpoint_annotation_layout": "PASS",
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage3b_vp_interaction_case_001.png": "3b9014285c80f3ef92759034c351a8d6d2ffa9f91bfdf30057d38960e8258273",
+    "05_figures/stage3b_vp_interaction_case_001.pdf": "92eb18df80ad633a304771a73ed7350ea717febd9eda60e1bb6bc78f28f174dc",
+    "05_figures/stage3b_vp_interaction_case_001.svg": "496abc2ca7cb5898ce242281c599861a8ca1f0bd62bed7c083fd3e2afd525697"
+  },
+  "source_json": "04_evaluation/cases/stage3b_vp_interaction_case_001.json",
+  "source_sha256": "bdd4254ce7e87402b40a3c47efc07e3059a3cffcdf08e48146f85cdb2c386faf",
+  "checkpoint_SHA256": {
+    "No-Type": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+    "Type Embedding": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547"
+  },
+  "same_actor_and_GT": true,
+  "redrawn_from_existing_true_JSON_without_inference_or_training": true
+}

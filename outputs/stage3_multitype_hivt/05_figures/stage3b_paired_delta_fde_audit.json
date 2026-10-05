@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "source_SHA256": {
+    "04_evaluation/stage3b_type_embedding_actor_errors.csv": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+    "04_evaluation/stage3a_final_frozen_actor_errors.csv": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+    "05_figures/stage3b_paired_delta_fde_source.csv": "8c05f479b6be02df9010b7449db3d0bb2da523cffb9406f04b647ec7b5b7feb5"
+  },
+  "exports_SHA256": {
+    "05_figures/stage3b_paired_delta_fde.png": "b1f21c236814800cc697447a35f18b60fcb129030d53b07c2d68bdad1f17328e",
+    "05_figures/stage3b_paired_delta_fde.pdf": "12abdfdd67ec6c88edb50e285ded98bd0480df802867bb205ce3328e9f4a9e84",
+    "05_figures/stage3b_paired_delta_fde.svg": "b047d4088d9fa24603b3473ab9c88aeec5b4889a74fa4a13db23fc9e4713b818"
+  },
+  "smoothing": false,
+  "fabricated_data": false,
+  "text_inside_canvas": true,
+  "outliers_hidden_in_boxplot_only": true,
+  "all_data_used_in_quantiles_and_bootstrap": true,
+  "actor_windows_are_correlated": true,
+  "center": "median",
+  "boxes": "25th to75th percentile",
+  "whiskers": "most extreme observed points within1.5 IQR",
+  "descriptive_no_actor_level_significance_test": true,
+  "counts_by_class": {
+    "vehicle": 42332,
+    "pedestrian": 12002,
+    "bicycle": 656
+  },
+  "formal_interval": "paired150-scene cluster percentile bootstrap;1000 replicates seed2022"
+}

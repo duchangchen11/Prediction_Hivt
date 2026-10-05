@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "paired_full_horizon_actors": 54990,
+  "paired_partial_future_actors": 30037,
+  "paired_total_actor_windows": 85027,
+  "scene_sample_instance_horizon_node_identity_equal": true,
+  "agent_type_equal": true,
+  "future_mask_bitwise_equal": true,
+  "GT_trajectory_float32_tensor_SHA256_equal": true,
+  "GT_audit_source": "Original unchanged Stage3A frozen graph ledger; old No-Type CSV has no per-timestep GT columns",
+  "maximum_GT_endpoint_displacement_difference_m": 0.0,
+  "NoType_actor_errors_sha256": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+  "Type_actor_errors_sha256": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+  "frozen_GT_ledger_sha256": "aa46c5ff03290de137c243340b9d844a8949026f35219b01aab16d351728c8a5",
+  "VAL_scenes": 150,
+  "test_used": false
+}

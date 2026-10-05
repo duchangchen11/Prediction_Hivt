@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/05_figures/stage3b_plot_quantitative.py", line 126, in <module>
+    if __name__=='__main__':main()
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/05_figures/stage3b_plot_quantitative.py", line 124, in main
+    distributions();embedding_plot();print('STAGE3B_QUANTITATIVE_FIGURES=PASS',flush=True)
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/05_figures/stage3b_plot_quantitative.py", line 86, in distributions
+    from stage3b_pairing_ledger import actor_key
+ModuleNotFoundError: No module named 'stage3b_pairing_ledger'

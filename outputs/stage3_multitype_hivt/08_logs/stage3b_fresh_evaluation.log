@@ -1,0 +1,23 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+VAL_EVALUATE 208 / 3603
+VAL_EVALUATE 400 / 3603
+VAL_EVALUATE 608 / 3603
+VAL_EVALUATE 800 / 3603
+VAL_EVALUATE 1008 / 3603
+VAL_EVALUATE 1200 / 3603
+VAL_EVALUATE 1408 / 3603
+VAL_EVALUATE 1600 / 3603
+VAL_EVALUATE 1808 / 3603
+VAL_EVALUATE 2000 / 3603
+VAL_EVALUATE 2208 / 3603
+VAL_EVALUATE 2400 / 3603
+VAL_EVALUATE 2608 / 3603
+VAL_EVALUATE 2800 / 3603
+VAL_EVALUATE 3008 / 3603
+VAL_EVALUATE 3200 / 3603
+VAL_EVALUATE 3408 / 3603
+VAL_EVALUATE 3600 / 3603
+VAL_EVALUATE 3603 / 3603
+STAGE3B_FRESH_EVALUATION=PASS {'count': 54990, 'minADE6': 0.6664055579881727, 'minFDE6': 1.3432604479902643, 'MR6': 0.16310238225131843, 'Top1ADE6': 1.1967154493427707, 'Top1FDE6': 2.6879838266997953, 'NLL': -0.7053926356940361, 'independent_minADE6': 0.6299520804950893}
+STAGE3B_PAIRED_BOOTSTRAP {'minADE6': {'estimate_m': -0.0045534038281439615, 'CI95_m': [-0.008803013829562353, -0.000444389244880503], 'bootstrap_std_m': 0.00209309183438747, 'valid_replicates': 1000, 'actor_windows': 54990, 'unique_scenes_with_targets': 150}, 'minFDE6': {'estimate_m': -0.02123906801201191, 'CI95_m': [-0.03423594077871144, -0.010795820272671012], 'bootstrap_std_m': 0.005901132296199922, 'valid_replicates': 1000, 'actor_windows': 54990, 'unique_scenes_with_targets': 150}, 'Top1FDE6': {'estimate_m': -0.03532398613526935, 'CI95_m': [-0.06441049514505086, -0.008999255726377919], 'bootstrap_std_m': 0.013692862083995444, 'valid_replicates': 1000, 'actor_windows': 54990, 'unique_scenes_with_targets': 150}}

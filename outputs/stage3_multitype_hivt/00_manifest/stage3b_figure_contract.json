@@ -1,0 +1,39 @@
+{
+  "backend": "python",
+  "archetype": "quantitative comparison with separate matched-actor trajectory panels",
+  "conclusion": "Measure the direction, uncertainty and motion/mode-ranking pattern of the one-variable Type Embedding effect; result is unknown before evaluation",
+  "sources": "Frozen No-Type and fresh Type CSV/JSON, paired scene bootstrap, real saved trajectories and embedding weights",
+  "exports": [
+    "PNG300dpi",
+    "editable SVG",
+    "TrueType PDF"
+  ],
+  "white_background": true,
+  "smoothing": false,
+  "generated_or_manually_adjusted_trajectory_points": false,
+  "quantitative_figures": {
+    "training_comparison": "Two overall FDE histories, actual500-step markers and both best annotations; same axes",
+    "per_class_fde": "Overall/V/P/B two bars each, exact value labels",
+    "top1_fde": "Overall/V/P/B/V>5/P>5 two bars each",
+    "paired_delta_fde": "Class-specific actor-window descriptive distributions with visible zero; formal inference is scene-cluster bootstrap",
+    "embedding_similarity": "Three-vector L2 norms and pairwise cosine; no tSNE, no physical-semantic inference"
+  },
+  "trajectory_case_policy": {
+    "vehicle_improvement": "GT>5m; prioritize NoType FDE>2m, Type-NoType FDE<=-2m",
+    "pedestrian_improvement": "GT>5m; prioritize NoType FDE>2m, Type-NoType FDE<=-1m",
+    "degradation": "Prioritize GT>5m and Type-NoType FDE>=2m; if absent report honestly",
+    "V_P_interaction": "If available, opposite-class t0 neighbor<=20m and aligned full-future GT proximity<=5m; spatial evidence does not prove causality",
+    "pairing": "Same actor/window/GT/xlim/ylim/equal aspect; own original VAL16 batch for numerical replay",
+    "style": {
+      "History": "grey circles linewidth1.5",
+      "GT": "black solid squares linewidth2.5 zorder10",
+      "Best_FDE": "blue solid circles linewidth2.5 zorder11",
+      "Top1": "orange dashed triangles linewidth2 zorder9"
+    },
+    "future_markers_per_trajectory": 12,
+    "metric_recompute_absolute_tolerance_m": 0.0001,
+    "endpoint_text": "Best and Top1 FDE in reserved upper-right panel text, avoid trajectories",
+    "insets": "Only turns/crossing/hard overlap; bbox of actual last6 points, no hardcoded coordinates",
+    "map": "Nearby lanes only, faint grey alpha<=.25 linewidth.5"
+  }
+}

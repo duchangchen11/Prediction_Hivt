@@ -1,0 +1,482 @@
+{
+  "status": "PASS",
+  "TypeEmbedding": "SUPPORTED",
+  "Reason": "Overall delta FDE <0 and scene-bootstrap CI95 entirely <0.",
+  "Stage3B": "PASS",
+  "Ready_Stage4": "YES",
+  "primary_endpoint": "Overall full-horizon minFDE6; Type-NoType",
+  "preregistered_rules_sha256": "987ef229a9d94681bc0e3e7f5d5052c501294dd2b290c2d1e60edaedc07bd9ca",
+  "technical_PASS_independent_of_effect_direction": true,
+  "Stage4_executed": false,
+  "Ready_does_not_authorize_Stage4_execution": true,
+  "training": {
+    "status": "COMPLETE",
+    "warmup_steps": 5000,
+    "NLL_steps": 10500,
+    "final_executed_global_step": 15500,
+    "best_global_step": 13000,
+    "stop_reason": "patience_5",
+    "converged_by_patience": true,
+    "stopped_by_budget": false,
+    "warmup_best_source_step": 3500,
+    "training_code_git_commit": "0358a4434c50d6690b5ea4bae61012ccf3b24654",
+    "config_sha256": "5afcf18547930f57af16eb7770709333a663365693b948079a945bde9bb3fa91",
+    "NaN": 0,
+    "Inf": 0,
+    "TypeEmbedding_gradient_verified": true,
+    "checkpoint_relative_path": "07_checkpoints/stage3b_best_overall_minfde.pt",
+    "checkpoint_sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+    "model_state_content_sha256": "0b983df4830bab63e6a4888aff64f68cf468674be4e25dbeda4687b7a338a980",
+    "selected_full_horizon_metrics": {
+      "overall": {
+        "count": 54990,
+        "minADE6": 0.666405558886893,
+        "minFDE6": 1.343260452434294,
+        "MR6": 0.16310238225131843,
+        "Top1ADE6": 1.1967154500960957,
+        "Top1FDE6": 2.6879838252651815,
+        "NLL": -0.705392634714633,
+        "independent_minADE6": 0.6299520826640598
+      },
+      "vehicle": {
+        "count": 42332,
+        "minADE6": 0.7083468561064444,
+        "minFDE6": 1.4319135090133701,
+        "MR6": 0.1657611263346877,
+        "Top1ADE6": 1.3432958400926995,
+        "Top1FDE6": 3.0503234454641066,
+        "NLL": -0.8767452025772426,
+        "independent_minADE6": 0.6658966879837105
+      },
+      "pedestrian": {
+        "count": 12002,
+        "minADE6": 0.5257077837921819,
+        "minFDE6": 1.0438751799201036,
+        "MR6": 0.15489085152474588,
+        "Top1ADE6": 0.6998686923861468,
+        "Top1FDE6": 1.457705984993562,
+        "NLL": -0.09927354992414861,
+        "independent_minADE6": 0.5098115270880141
+      },
+      "bicycle": {
+        "count": 656,
+        "minADE6": 0.534081935089134,
+        "minFDE6": 1.0999080890347037,
+        "MR6": 0.14176829268292682,
+        "Top1ADE6": 0.8279863596975835,
+        "Top1FDE6": 1.8148646738613379,
+        "NLL": -0.737320001933235,
+        "independent_minADE6": 0.5084885394205296
+      },
+      "vehicle.moving": {
+        "count": 10461,
+        "minADE6": 2.3281892205433343,
+        "minFDE6": 4.791532249533707,
+        "MR6": 0.59707484944078,
+        "Top1ADE6": 4.656182580229546,
+        "Top1FDE6": 10.73485851359289,
+        "NLL": 1.3364606907459584,
+        "independent_minADE6": 2.190682771508761
+      },
+      "vehicle.stopped": {
+        "count": 5599,
+        "minADE6": 0.3500351665828586,
+        "minFDE6": 0.8688875584123331,
+        "MR6": 0.08715842114663333,
+        "Top1ADE6": 0.5083234123633631,
+        "Top1FDE6": 1.3133993218013493,
+        "NLL": -1.2270370971993523,
+        "independent_minADE6": 0.33238765668359077
+      },
+      "vehicle.parked": {
+        "count": 25198,
+        "minADE6": 0.10982340215333146,
+        "minFDE6": 0.14641494736067953,
+        "MR6": 0.004087626002063656,
+        "Top1ADE6": 0.15519767070710405,
+        "Top1FDE6": 0.24849031880126576,
+        "NLL": -1.7166787504180199,
+        "independent_minADE6": 0.10152393637188958
+      },
+      "unknown": {
+        "count": 1074,
+        "minADE6": 0.8411309976137011,
+        "minFDE6": 1.8037975028275886,
+        "MR6": 0.16759776536312848,
+        "Top1ADE6": 1.3028862557940408,
+        "Top1FDE6": 2.9923233955040045,
+        "NLL": -0.9013420308574174,
+        "independent_minADE6": 0.7940106932057572
+      }
+    },
+    "selection_rule": "post-update original-NLL full-horizon official VAL overall minFDE6 strict improvement",
+    "maximum_global_step": 21000,
+    "validation_interval": 500,
+    "patience": 5,
+    "from_scratch": true,
+    "NoType_trained_weights_loaded": false,
+    "test_used": false,
+    "Stage4_executed": false
+  },
+  "ablation": [
+    {
+      "Group": "Overall",
+      "Count": "54990",
+      "NoType_minADE6": "0.6709589618163166",
+      "Type_minADE6": "0.6664055579881727",
+      "Delta_ADE": "-0.004553403828143954",
+      "Relative_ADE_change": "-0.006786411818418344",
+      "NoType_minFDE6": "1.3644995160022764",
+      "Type_minFDE6": "1.3432604479902643",
+      "Delta_FDE": "-0.02123906801201203",
+      "Relative_FDE_change": "-0.01556546393965639",
+      "NoType_MR6": "0.16612111292962356",
+      "Type_MR6": "0.16310238225131843",
+      "Delta_MR": "-0.0030187306783051315",
+      "NoType_Top1FDE6": "2.7233078128350643",
+      "Type_Top1FDE6": "2.6879838266997953",
+      "Delta_Top1FDE": "-0.03532398613526899"
+    },
+    {
+      "Group": "Vehicle",
+      "Count": "42332",
+      "NoType_minADE6": "0.7116870079873753",
+      "Type_minADE6": "0.7083468551104406",
+      "Delta_ADE": "-0.0033401528769346767",
+      "Relative_ADE_change": "-0.004693289099628932",
+      "NoType_minFDE6": "1.4497227910431145",
+      "Type_minFDE6": "1.431913503594373",
+      "Delta_FDE": "-0.01780928744874144",
+      "Relative_FDE_change": "-0.012284615761560305",
+      "NoType_MR6": "0.16703675706321458",
+      "Type_MR6": "0.1657611263346877",
+      "Delta_MR": "-0.0012756307285268775",
+      "NoType_Top1FDE6": "3.0946296673947096",
+      "Type_Top1FDE6": "3.050323446404509",
+      "Delta_Top1FDE": "-0.04430622099020054"
+    },
+    {
+      "Group": "Pedestrian",
+      "Count": "12002",
+      "NoType_minADE6": "0.5347706506078744",
+      "Type_minADE6": "0.5257077834027405",
+      "Delta_ADE": "-0.00906286720513394",
+      "Relative_ADE_change": "-0.016947203805654197",
+      "NoType_minFDE6": "1.0776230195413068",
+      "Type_minFDE6": "1.0438751791916105",
+      "Delta_FDE": "-0.033747840349696245",
+      "Relative_FDE_change": "-0.03131692599148551",
+      "NoType_MR6": "0.16372271288118648",
+      "Type_MR6": "0.15489085152474588",
+      "Delta_MR": "-0.008831861356440596",
+      "NoType_Top1FDE6": "1.4662909021487494",
+      "Type_Top1FDE6": "1.4577059884125274",
+      "Delta_Top1FDE": "-0.008584913736221944"
+    },
+    {
+      "Group": "Bicycle",
+      "Count": "656",
+      "NoType_minADE6": "0.5344230786005671",
+      "Type_minADE6": "0.5340819311505339",
+      "Delta_ADE": "-0.000341147450033219",
+      "Relative_ADE_change": "-0.0006383471517108561",
+      "NoType_minFDE6": "1.113615417672696",
+      "Type_minFDE6": "1.0999080795273342",
+      "Delta_FDE": "-0.013707338145361847",
+      "Relative_FDE_change": "-0.01230886168405275",
+      "NoType_MR6": "0.15091463414634146",
+      "Type_MR6": "0.14176829268292682",
+      "Delta_MR": "-0.009146341463414642",
+      "NoType_Top1FDE6": "1.7597715549665027",
+      "Type_Top1FDE6": "1.8148646708824545",
+      "Delta_Top1FDE": "0.055093115915951785"
+    },
+    {
+      "Group": "vehicle.moving",
+      "Count": "10461",
+      "NoType_minADE6": "2.3149347588296254",
+      "Type_minADE6": "2.3281892157698723",
+      "Delta_ADE": "0.01325445694024685",
+      "Relative_ADE_change": "0.0057256287200715674",
+      "NoType_minFDE6": "4.8268723842924635",
+      "Type_minFDE6": "4.791532241041964",
+      "Delta_FDE": "-0.03534014325049917",
+      "Relative_FDE_change": "-0.0073215408315957424",
+      "NoType_MR6": "0.6008029825064526",
+      "Type_MR6": "0.59707484944078",
+      "Delta_MR": "-0.0037281330656725453",
+      "NoType_Top1FDE6": "10.799044491157717",
+      "Type_Top1FDE6": "10.734858524045563",
+      "Delta_Top1FDE": "-0.06418596711215407"
+    },
+    {
+      "Group": "Vehicle >5m",
+      "Count": "9744",
+      "NoType_minADE6": "2.632744836435181",
+      "Type_minADE6": "2.6471446265607206",
+      "Delta_ADE": "0.014399790125539713",
+      "Relative_ADE_change": "0.005469497053515251",
+      "NoType_minFDE6": "5.630972214031718",
+      "Type_minFDE6": "5.579886783630287",
+      "Delta_FDE": "-0.05108543040143143",
+      "Relative_FDE_change": "-0.009072222071018671",
+      "NoType_MR6": "0.6841133004926109",
+      "Type_MR6": "0.6764162561576355",
+      "Delta_MR": "-0.0076970443349754225",
+      "NoType_Top1FDE6": "12.193457451108223",
+      "Type_Top1FDE6": "12.105360582287",
+      "Delta_Top1FDE": "-0.08809686882122314"
+    },
+    {
+      "Group": "Pedestrian >5m",
+      "Count": "7581",
+      "NoType_minADE6": "0.6686461276929178",
+      "Type_minADE6": "0.6596353514263226",
+      "Delta_ADE": "-0.009010776266595188",
+      "Relative_ADE_change": "-0.013476151125986144",
+      "NoType_minFDE6": "1.3726620162323881",
+      "Type_minFDE6": "1.3403887217720813",
+      "Delta_FDE": "-0.0322732944603068",
+      "Relative_FDE_change": "-0.02351146464217672",
+      "NoType_MR6": "0.21303258145363407",
+      "Type_MR6": "0.20564569318031922",
+      "Delta_MR": "-0.007386888273314851",
+      "NoType_Top1FDE6": "1.7503838149807418",
+      "Type_Top1FDE6": "1.7433697143908806",
+      "Delta_Top1FDE": "-0.007014100589861183"
+    },
+    {
+      "Group": "Bicycle >5m",
+      "Count": "132",
+      "NoType_minADE6": "2.099067771976644",
+      "Type_minADE6": "2.117074791003357",
+      "Delta_ADE": "0.018007019026712978",
+      "Relative_ADE_change": "0.008578579151713705",
+      "NoType_minFDE6": "4.673725628491604",
+      "Type_minFDE6": "4.625798727526809",
+      "Delta_FDE": "-0.04792690096479468",
+      "Relative_FDE_change": "-0.010254538835704523",
+      "NoType_MR6": "0.6515151515151515",
+      "Type_MR6": "0.5984848484848485",
+      "Delta_MR": "-0.05303030303030298",
+      "NoType_Top1FDE6": "7.45215996558016",
+      "Type_Top1FDE6": "7.759411226167823",
+      "Delta_Top1FDE": "0.3072512605876634"
+    }
+  ],
+  "nontrivial_motion": [
+    {
+      "Group": "Vehicle >5m",
+      "AgentType": "vehicle",
+      "GT_endpoint_displacement_gt_m": "5",
+      "Count": "9744",
+      "UniqueInstances": "853",
+      "UniqueScenes": "137",
+      "minADE6": "2.6471446265607206",
+      "minFDE6": "5.579886783630287",
+      "MR6": "0.6764162561576355",
+      "Top1ADE6": "5.1776950663668275",
+      "Top1FDE6": "12.105360582287"
+    },
+    {
+      "Group": "Pedestrian >1m",
+      "AgentType": "pedestrian",
+      "GT_endpoint_displacement_gt_m": "1",
+      "Count": "8810",
+      "UniqueInstances": "825",
+      "UniqueScenes": "113",
+      "minADE6": "0.6717116618998323",
+      "minFDE6": "1.3614683099288867",
+      "MR6": "0.21044267877412032",
+      "Top1ADE6": "0.8794283331216447",
+      "Top1FDE6": "1.8621723931068295"
+    },
+    {
+      "Group": "Pedestrian >5m",
+      "AgentType": "pedestrian",
+      "GT_endpoint_displacement_gt_m": "5",
+      "Count": "7581",
+      "UniqueInstances": "716",
+      "UniqueScenes": "110",
+      "minADE6": "0.6596353514263226",
+      "minFDE6": "1.3403887217720813",
+      "MR6": "0.20564569318031922",
+      "Top1ADE6": "0.8389392448966354",
+      "Top1FDE6": "1.7433697143908806"
+    },
+    {
+      "Group": "Bicycle >1m",
+      "AgentType": "bicycle",
+      "GT_endpoint_displacement_gt_m": "1",
+      "Count": "155",
+      "UniqueInstances": "15",
+      "UniqueScenes": "13",
+      "minADE6": "1.9354241138504398",
+      "minFDE6": "4.25575967911751",
+      "MR6": "0.5935483870967742",
+      "Top1ADE6": "3.0434872642640145",
+      "Top1FDE6": "6.993361007398175"
+    },
+    {
+      "Group": "Bicycle >5m",
+      "AgentType": "bicycle",
+      "GT_endpoint_displacement_gt_m": "5",
+      "Count": "132",
+      "UniqueInstances": "12",
+      "UniqueScenes": "11",
+      "minADE6": "2.117074791003357",
+      "minFDE6": "4.625798727526809",
+      "MR6": "0.5984848484848485",
+      "Top1ADE6": "3.369153434805798",
+      "Top1FDE6": "7.759411226167823"
+    }
+  ],
+  "bootstrap": {
+    "overall": {
+      "minADE6": {
+        "estimate_m": -0.0045534038281439615,
+        "CI95_m": [
+          -0.008803013829562353,
+          -0.000444389244880503
+        ],
+        "bootstrap_std_m": 0.00209309183438747,
+        "valid_replicates": 1000,
+        "actor_windows": 54990,
+        "unique_scenes_with_targets": 150
+      },
+      "minFDE6": {
+        "estimate_m": -0.02123906801201191,
+        "CI95_m": [
+          -0.03423594077871144,
+          -0.010795820272671012
+        ],
+        "bootstrap_std_m": 0.005901132296199922,
+        "valid_replicates": 1000,
+        "actor_windows": 54990,
+        "unique_scenes_with_targets": 150
+      },
+      "Top1FDE6": {
+        "estimate_m": -0.03532398613526935,
+        "CI95_m": [
+          -0.06441049514505086,
+          -0.008999255726377919
+        ],
+        "bootstrap_std_m": 0.013692862083995444,
+        "valid_replicates": 1000,
+        "actor_windows": 54990,
+        "unique_scenes_with_targets": 150
+      }
+    },
+    "vehicle": {
+      "minADE6": {
+        "estimate_m": -0.0033401528769346532,
+        "CI95_m": [
+          -0.008784037859518659,
+          0.001700952798566315
+        ],
+        "bootstrap_std_m": 0.0026558804095595146,
+        "valid_replicates": 1000,
+        "actor_windows": 42332,
+        "unique_scenes_with_targets": 150
+      },
+      "minFDE6": {
+        "estimate_m": -0.017809287448741426,
+        "CI95_m": [
+          -0.03376498329926625,
+          -0.004626124170856467
+        ],
+        "bootstrap_std_m": 0.007547153592060011,
+        "valid_replicates": 1000,
+        "actor_windows": 42332,
+        "unique_scenes_with_targets": 150
+      }
+    },
+    "pedestrian": {
+      "minADE6": {
+        "estimate_m": -0.009062867205133893,
+        "CI95_m": [
+          -0.012719524964851563,
+          -0.005178674638306431
+        ],
+        "bootstrap_std_m": 0.0018885388361458207,
+        "valid_replicates": 1000,
+        "actor_windows": 12002,
+        "unique_scenes_with_targets": 121
+      },
+      "minFDE6": {
+        "estimate_m": -0.03374784034969634,
+        "CI95_m": [
+          -0.042389354518526205,
+          -0.025997113273905793
+        ],
+        "bootstrap_std_m": 0.004236724793105875,
+        "valid_replicates": 1000,
+        "actor_windows": 12002,
+        "unique_scenes_with_targets": 121
+      }
+    },
+    "vehicle.moving": {
+      "minFDE6": {
+        "estimate_m": -0.03534014325049832,
+        "CI95_m": [
+          -0.09612054591443679,
+          0.018673794592280846
+        ],
+        "bootstrap_std_m": 0.02954208274090442,
+        "valid_replicates": 1000,
+        "actor_windows": 10461,
+        "unique_scenes_with_targets": 137
+      }
+    },
+    "Vehicle >5m": {
+      "minFDE6": {
+        "estimate_m": -0.051085430401431285,
+        "CI95_m": [
+          -0.12116189192090221,
+          0.0047459714872683445
+        ],
+        "bootstrap_std_m": 0.031635429424533144,
+        "valid_replicates": 1000,
+        "actor_windows": 9744,
+        "unique_scenes_with_targets": 137
+      }
+    },
+    "Pedestrian >5m": {
+      "minFDE6": {
+        "estimate_m": -0.03227329446030666,
+        "CI95_m": [
+          -0.04099298472725452,
+          -0.023803655433449998
+        ],
+        "bootstrap_std_m": 0.0043666315565203,
+        "valid_replicates": 1000,
+        "actor_windows": 7581,
+        "unique_scenes_with_targets": 110
+      }
+    },
+    "bicycle": {
+      "minADE6": {
+        "estimate_m": -0.0003411474500331324,
+        "CI95_m": [
+          -0.015812689689847823,
+          0.01905333185359992
+        ],
+        "bootstrap_std_m": 0.009134024252092431,
+        "valid_replicates": 1000,
+        "actor_windows": 656,
+        "unique_scenes_with_targets": 47
+      },
+      "minFDE6": {
+        "estimate_m": -0.013707338145361906,
+        "CI95_m": [
+          -0.04845428284266646,
+          0.025441877855268608
+        ],
+        "bootstrap_std_m": 0.01886247738665642,
+        "valid_replicates": 1000,
+        "actor_windows": 656,
+        "unique_scenes_with_targets": 47
+      }
+    }
+  }
+}

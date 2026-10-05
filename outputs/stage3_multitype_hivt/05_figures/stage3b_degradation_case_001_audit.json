@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "No-Type",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 3.6827683127694955,
+        "minFDE6": 9.28116267315862,
+        "Top1ADE6": 12.810130319784093,
+        "Top1FDE6": 30.39079292483284
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.7010397086458795e-06,
+        "minFDE6": 4.111957299102187e-07,
+        "Top1ADE6": 1.7068882698367815e-06,
+        "Top1FDE6": 7.551241377967699e-06
+      }
+    },
+    {
+      "method": "Type Embedding",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 7.786699224314965,
+        "minFDE6": 18.216328419234312,
+        "Top1ADE6": 13.478066669260016,
+        "Top1FDE6": 31.236893994820324
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.9780776128186517e-06,
+        "minFDE6": 4.970047914554243e-06,
+        "Top1ADE6": 2.2486304374069732e-07,
+        "Top1FDE6": 6.127236211739273e-07
+      }
+    }
+  ],
+  "same_xy_limits": true,
+  "xlim_m": [
+    15.977694282531736,
+    82.67748950958253
+  ],
+  "ylim_m": [
+    -4.682029419231415,
+    9.991925530719758
+  ],
+  "equal_aspect": true,
+  "compact_equal_aspect_rectangle": true,
+  "separate_header_for_endpoint_text_and_zoom": true,
+  "inset_rule": {
+    "turn_over30deg": false,
+    "hard_overlap_mean_distance_under1m": false,
+    "VP_GT_proximity_candidate": false,
+    "add_inset": false
+  },
+  "inset_bbox_m": null,
+  "lane_alpha": 0.22,
+  "lane_linewidth": 0.5,
+  "lanes_do_not_set_axes_limits": true,
+  "endpoint_annotation_layout": "PASS",
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage3b_degradation_case_001.png": "8979e7f7e1167b57939f97719c74d83a0541b656969e843f4f3e5e872f841afe",
+    "05_figures/stage3b_degradation_case_001.pdf": "06d8f53c7445fae8a7ebf17596312f3662754e3e717b9ce61258caca43db08ce",
+    "05_figures/stage3b_degradation_case_001.svg": "536de682748df1bfc36faa6491cca5b208b821e8397be94ab48291b4a5ea7ad6"
+  },
+  "source_json": "04_evaluation/cases/stage3b_degradation_case_001.json",
+  "source_sha256": "82f48b0feafa8e10f75ace5f48205c4b0c7fe2a99b83fab9c43949fe8afa5312",
+  "checkpoint_SHA256": {
+    "No-Type": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+    "Type Embedding": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547"
+  },
+  "same_actor_and_GT": true,
+  "redrawn_from_existing_true_JSON_without_inference_or_training": true
+}

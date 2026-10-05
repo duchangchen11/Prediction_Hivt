@@ -1,0 +1,11 @@
+EVIDENCE_TASK_START fresh_evaluation
+EVIDENCE_TASK_PASS fresh_evaluation
+EVIDENCE_TASK_START qualitative
+EVIDENCE_TASK_PASS qualitative
+EVIDENCE_TASK_START quantitative
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/00_manifest/stage3b_finish_evidence.py", line 46, in <module>
+    if __name__=='__main__':main()
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/00_manifest/stage3b_finish_evidence.py", line 41, in main
+    raise RuntimeError('Evidence task failed: '+name+'; inspect '+str(log))
+RuntimeError: Evidence task failed: quantitative; inspect /home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/08_logs/stage3b_quantitative.log

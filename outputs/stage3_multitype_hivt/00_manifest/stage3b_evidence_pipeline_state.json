@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "training_pid": 26486,
+  "started_UTC": "2026-10-05T07:45:16.740866+00:00",
+  "training_started_by_pipeline": false,
+  "Stage4_executed": false,
+  "steps": [
+    {
+      "task": "fresh_evaluation",
+      "script": "04_evaluation/stage3b_evaluate.py",
+      "status": "PASS",
+      "started_UTC": "2026-10-05T09:52:53.416434+00:00",
+      "log": "08_logs/stage3b_fresh_evaluation.log",
+      "exit_code": 0,
+      "finished_UTC": "2026-10-05T09:53:56.287899+00:00"
+    },
+    {
+      "task": "qualitative",
+      "script": "05_figures/stage3b_plot_cases.py",
+      "status": "PASS",
+      "started_UTC": "2026-10-05T09:53:56.289174+00:00",
+      "log": "08_logs/stage3b_qualitative.log",
+      "exit_code": 0,
+      "finished_UTC": "2026-10-05T09:54:08.493493+00:00"
+    },
+    {
+      "task": "quantitative",
+      "script": "05_figures/stage3b_plot_quantitative.py",
+      "status": "FAIL",
+      "started_UTC": "2026-10-05T09:54:08.501365+00:00",
+      "log": "08_logs/stage3b_quantitative.log",
+      "exit_code": 1,
+      "finished_UTC": "2026-10-05T09:54:15.466134+00:00"
+    },
+    {
+      "task": "quantitative",
+      "script": "05_figures/stage3b_plot_quantitative.py",
+      "attempt": 2,
+      "status": "PASS",
+      "started_UTC": "2026-10-05T09:55:33.675247+00:00",
+      "log": "08_logs/stage3b_quantitative_retry2.log",
+      "exit_code": 0,
+      "finished_UTC": "2026-10-05T09:55:42.893736+00:00"
+    },
+    {
+      "task": "export_QA",
+      "script": "05_figures/stage3b_check_exports.py",
+      "attempt": 1,
+      "status": "PASS",
+      "started_UTC": "2026-10-05T09:55:42.894872+00:00",
+      "log": "08_logs/stage3b_export_QA.log",
+      "exit_code": 0,
+      "finished_UTC": "2026-10-05T09:55:47.327203+00:00"
+    },
+    {
+      "task": "final_audit",
+      "script": "00_manifest/stage3b_final_audit.py",
+      "attempt": 1,
+      "status": "PASS",
+      "started_UTC": "2026-10-05T09:55:47.328035+00:00",
+      "log": "08_logs/stage3b_final_audit.log",
+      "exit_code": 0,
+      "finished_UTC": "2026-10-05T09:56:03.350666+00:00"
+    }
+  ],
+  "resumed_UTC": "2026-10-05T09:55:33.674863+00:00",
+  "finished_UTC": "2026-10-05T09:56:03.351254+00:00",
+  "manual_visual_review_and_final_report_still_required": true
+}

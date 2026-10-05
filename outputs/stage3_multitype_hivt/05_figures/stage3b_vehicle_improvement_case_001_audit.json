@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "No-Type",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 10.00664670211769,
+        "minFDE6": 19.20519814083829,
+        "Top1ADE6": 29.638769664465016,
+        "Top1FDE6": 55.06860683594571
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 4.078676614227561e-07,
+        "minFDE6": 3.961822841347384e-06,
+        "Top1ADE6": 5.146847428250112e-07,
+        "Top1FDE6": 4.943765574694226e-07
+      }
+    },
+    {
+      "method": "Type Embedding",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 4.268126319411645,
+        "minFDE6": 10.12843595347603,
+        "Top1ADE6": 26.650691245996697,
+        "Top1FDE6": 54.11949239010762
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.262191186235384e-06,
+        "minFDE6": 1.3508598151190654e-07,
+        "Top1ADE6": 4.9819586109833836e-06,
+        "Top1FDE6": 8.442353710336192e-06
+      }
+    }
+  ],
+  "same_xy_limits": true,
+  "xlim_m": [
+    -6.98776153564453,
+    85.13545135498046
+  ],
+  "ylim_m": [
+    -16.05736068725586,
+    27.521735229492187
+  ],
+  "equal_aspect": true,
+  "compact_equal_aspect_rectangle": true,
+  "separate_header_for_endpoint_text_and_zoom": true,
+  "inset_rule": {
+    "turn_over30deg": false,
+    "hard_overlap_mean_distance_under1m": false,
+    "VP_GT_proximity_candidate": false,
+    "add_inset": false
+  },
+  "inset_bbox_m": null,
+  "lane_alpha": 0.22,
+  "lane_linewidth": 0.5,
+  "lanes_do_not_set_axes_limits": true,
+  "endpoint_annotation_layout": "PASS",
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage3b_vehicle_improvement_case_001.png": "bc2078c25144ab0b08c78161332a2916c2aac03f0a19e8d637f2b245636c2806",
+    "05_figures/stage3b_vehicle_improvement_case_001.pdf": "73b4b9ac687245eea09e4f3c4804226a26cf269790e8baa63cb640acebbd17ad",
+    "05_figures/stage3b_vehicle_improvement_case_001.svg": "156aa5dfc9e0c774a572cb4217f74b6c5f7b02fb8356842263787ab171797d83"
+  },
+  "source_json": "04_evaluation/cases/stage3b_vehicle_improvement_case_001.json",
+  "source_sha256": "f92e7aa558ac117539dc8907643299c201d749bacd6a96bacc10aed1a9ed7ba3",
+  "checkpoint_SHA256": {
+    "No-Type": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+    "Type Embedding": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547"
+  },
+  "same_actor_and_GT": true,
+  "redrawn_from_existing_true_JSON_without_inference_or_training": true
+}

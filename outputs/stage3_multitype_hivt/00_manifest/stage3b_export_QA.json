@@ -1,0 +1,178 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "figure_count": 11,
+  "figures": [
+    {
+      "figure": "stage3b_degradation_case_001",
+      "audit_sha256": "b3daadf03101810fd146f852f1f2e780b5989733499185de745642de9cb4d593",
+      "PNG_pixels": [
+        2850,
+        960
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 35,
+      "paired_case_numeric_and_marker_audits": "PASS"
+    },
+    {
+      "figure": "stage3b_paired_delta_fde",
+      "audit_sha256": "ff1112d6d9debdf6413baed65a9816e50ce908febef1b39abcaa4d6390cf0cb6",
+      "PNG_pixels": [
+        1950,
+        1200
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 10
+    },
+    {
+      "figure": "stage3b_pedestrian_improvement_case_001",
+      "audit_sha256": "a8e75ad4dfb99b32f5d7f77c833ff24c4ad8a3d18f8df8cd28ffd767beb54d03",
+      "PNG_pixels": [
+        2850,
+        991
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 33,
+      "paired_case_numeric_and_marker_audits": "PASS"
+    },
+    {
+      "figure": "stage3b_per_class_fde_comparison",
+      "audit_sha256": "82bf06d6e972d64683d13ae5c2c5bdefc5b108869b3a87bdccef5025b07d17e6",
+      "PNG_pixels": [
+        2220,
+        1200
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 24
+    },
+    {
+      "figure": "stage3b_top1_fde_comparison",
+      "audit_sha256": "c502d82d500fa1a901b04d022f63829a81808c83f64407a5018127e81afe47b7",
+      "PNG_pixels": [
+        2220,
+        1200
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 31
+    },
+    {
+      "figure": "stage3b_training_comparison",
+      "audit_sha256": "31bcbb9bb5133fe26e315fc9441f161c341e56244a8d3fc93c9a31f6bcce989a",
+      "PNG_pixels": [
+        2220,
+        1260
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 21
+    },
+    {
+      "figure": "stage3b_type_embedding_similarity",
+      "audit_sha256": "8d5aded10d95592801f41ca17c8d781b2bd77eeb747f7ba6a663b976f6a5fe61",
+      "PNG_pixels": [
+        1320,
+        1200
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 29
+    },
+    {
+      "figure": "stage3b_vehicle_improvement_case_001",
+      "audit_sha256": "692dd84e507a3c4509f5bad5b1014dddc4fc8dfd98e25eb41dcc1ed97ed358e7",
+      "PNG_pixels": [
+        2850,
+        1184
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 35,
+      "paired_case_numeric_and_marker_audits": "PASS"
+    },
+    {
+      "figure": "stage3b_vp_interaction_case_001",
+      "audit_sha256": "40e5530d5a0f16140e966c7cb7bad963034de809c5bad2ef5d2770a1779fb1a3",
+      "PNG_pixels": [
+        2850,
+        985
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 43,
+      "paired_case_numeric_and_marker_audits": "PASS"
+    },
+    {
+      "figure": "stage3b_loss_curve",
+      "audit_sha256": "6974344544e731e551d982b844205d546c87bb6ba9fb631fa7a8fdd12943fb69",
+      "PNG_pixels": [
+        2220,
+        1140
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 22
+    },
+    {
+      "figure": "stage3b_val_fde_curve",
+      "audit_sha256": "1617d9dbd773edfdf53e5f27a6e6bd8a48b1007b61a4616285bc249a3404fec0",
+      "PNG_pixels": [
+        2220,
+        1140
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 23
+    }
+  ],
+  "all_exports_editable_and_valid": true,
+  "manual_visual_review_required_for_final_delivery": true
+}

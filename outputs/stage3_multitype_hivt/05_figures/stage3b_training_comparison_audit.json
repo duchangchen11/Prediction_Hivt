@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "source_SHA256": {
+    "03_no_type_baseline/stage3_no_type_train_curve.csv": "4458cb15f37c05b758307d063240209c765589d78a56aff371a75a0c1eb18ead",
+    "03_no_type_baseline/stage3a_plus_nll_extension_curve.csv": "f76d2dc649cd08c04bce721f8fe737611bf3a0ad1ae255a7bcb7504c94ce7271",
+    "03_no_type_baseline/stage3a_plusplus_nll_curve.csv": "dae8a6c9fc722a69622a5cae3eaefb44c009643145f6ba88a02824cef9b33ce6",
+    "03_type_embedding/stage3b_training_curve.csv": "1fc6da08741558cf973e31e18ba50001549fe0669a205a5ab88a9a914332d489",
+    "05_figures/stage3b_training_comparison_source.csv": "f52799196e4c80ec9e8174692153bc3b36676c0c138d7831069d0dc65312ba47"
+  },
+  "exports_SHA256": {
+    "05_figures/stage3b_training_comparison.png": "1d2d282613a0e9ffcc84bb4104d9099e3f68b2b45cc40c1abde3fc3c83aa1e79",
+    "05_figures/stage3b_training_comparison.pdf": "b402a765e63c4ec2adc5a5e5364945aa9471c1fbf5a3a9f9d37a8bd8d65ea206",
+    "05_figures/stage3b_training_comparison.svg": "1c29ce0a811a3c32bc6c8ddd8f73d6d329a1423d1883acac4fd4b135a3da1a53"
+  },
+  "smoothing": false,
+  "fabricated_data": false,
+  "text_inside_canvas": true,
+  "actual_markers_every500_steps": true
+}

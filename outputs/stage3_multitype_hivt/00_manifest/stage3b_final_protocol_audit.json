@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "training_and_validation_protocol": "PASS",
+  "same_seed_shared_initialization": "PASS",
+  "config_only_type_embedding_changed": true,
+  "training_code_unchanged_since_preregistration": true,
+  "training_code_git_commit": "0358a4434c50d6690b5ea4bae61012ccf3b24654",
+  "all_actual500step_VAL_points_verified": 31,
+  "TypeEmbedding_gradient_min": 0.000664512743242085,
+  "checkpoint_optimizer_and_cursor": {
+    "best": {
+      "global_step": 13000,
+      "NLL_steps": 8000,
+      "TypeEmbedding_AdamW_updates": 11500,
+      "cursor": {
+        "epoch": 7,
+        "next_batch": 601
+      },
+      "sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547"
+    },
+    "last": {
+      "global_step": 15500,
+      "NLL_steps": 10500,
+      "TypeEmbedding_AdamW_updates": 14000,
+      "cursor": {
+        "epoch": 9,
+        "next_batch": 987
+      },
+      "sha256": "85f18ff056419a18ae8670fff60d29e40ee92fa28e43f6bb4d8c9f43a847cb84"
+    }
+  },
+  "frozen_prior_files_verified": 846,
+  "frozen_scene_shards_verified": 850,
+  "old_results_unchanged": true,
+  "Stage2C_untracked_redraw_files_unchanged": 5,
+  "frozen_NoType_branch_unchanged": true,
+  "paired_full_horizon_actor_windows": 54990,
+  "figure_audits_verified": [
+    "05_figures/stage3b_degradation_case_001_audit.json",
+    "05_figures/stage3b_paired_delta_fde_audit.json",
+    "05_figures/stage3b_pedestrian_improvement_case_001_audit.json",
+    "05_figures/stage3b_per_class_fde_comparison_audit.json",
+    "05_figures/stage3b_top1_fde_comparison_audit.json",
+    "05_figures/stage3b_training_comparison_audit.json",
+    "05_figures/stage3b_type_embedding_similarity_audit.json",
+    "05_figures/stage3b_vehicle_improvement_case_001_audit.json",
+    "05_figures/stage3b_vp_interaction_case_001_audit.json",
+    "03_type_embedding/stage3b_loss_curve_audit.json",
+    "03_type_embedding/stage3b_val_fde_curve_audit.json"
+  ],
+  "test_used": false,
+  "Stage4_executed": false,
+  "scientific_support_is_separate_from_technical_PASS": true
+}

@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "figures": [
+    {
+      "name": "stage3b_vehicle_improvement_case_001",
+      "source_json": "04_evaluation/cases/stage3b_vehicle_improvement_case_001.json",
+      "source_sha256": "f92e7aa558ac117539dc8907643299c201d749bacd6a96bacc10aed1a9ed7ba3",
+      "case_kind": "improvement",
+      "delta_FDE_m": -9.076766014099121,
+      "agent_type": "vehicle",
+      "VP_context": null,
+      "actor_key": [
+        "6a24a80e2ea3493c81f5fdb9fe78c28a",
+        "b7e99fb76ffa4e339880fa0a233e8f27",
+        "5859747aae214c83999a764fb30494ec",
+        "full_horizon"
+      ],
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage3b_pedestrian_improvement_case_001",
+      "source_json": "04_evaluation/cases/stage3b_pedestrian_improvement_case_001.json",
+      "source_sha256": "212a06fcf482f5d129777a67cbbd2ab37add81aa1453d788023e987257b54d45",
+      "case_kind": "improvement",
+      "delta_FDE_m": -2.2314839363098145,
+      "agent_type": "pedestrian",
+      "VP_context": null,
+      "actor_key": [
+        "201b7c65a61f4bc1a2333ea90ba9a932",
+        "f38ef51177c84c2a9fa32584b79e601e",
+        "0acd1f5ab85a4f0a8b3310c513687a95",
+        "full_horizon"
+      ],
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage3b_degradation_case_001",
+      "source_json": "04_evaluation/cases/stage3b_degradation_case_001.json",
+      "source_sha256": "82f48b0feafa8e10f75ace5f48205c4b0c7fe2a99b83fab9c43949fe8afa5312",
+      "case_kind": "degradation",
+      "delta_FDE_m": 8.935171127319336,
+      "agent_type": "vehicle",
+      "VP_context": null,
+      "actor_key": [
+        "2eb4d7f00e584a548aa0b899638bfb0a",
+        "b006ca82a2654951ae8f42300f66f3c4",
+        "ce359c2b8ea14cbb828521ca78733cad",
+        "full_horizon"
+      ],
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage3b_vp_interaction_case_001",
+      "source_json": "04_evaluation/cases/stage3b_vp_interaction_case_001.json",
+      "source_sha256": "bdd4254ce7e87402b40a3c47efc07e3059a3cffcdf08e48146f85cdb2c386faf",
+      "case_kind": "V-P GT proximity",
+      "delta_FDE_m": -4.457640558481216,
+      "agent_type": "vehicle",
+      "VP_context": {
+        "neighbor_node": 7,
+        "neighbor_instance_token": "1a1e877cfa0c4ff2815647238f436acf",
+        "neighbor_agent_type": "pedestrian",
+        "t0_distance_m": 13.418140411376953,
+        "min_aligned_GT_future_distance_m": 4.178693771362305,
+        "closest_future_timestep": 7,
+        "description": "GT proximity / interaction candidate; no causal interaction inferred."
+      },
+      "actor_key": [
+        "aacd6706a091407fb1b0e5343d27da7e",
+        "ef8f7932dae845618d4a4d23d64fab2f",
+        "a4a3f32fd95b4a6686f09494233cc90d",
+        "full_horizon"
+      ],
+      "metric_audit": "PASS"
+    }
+  ],
+  "omitted_cases": [],
+  "case_count": 4,
+  "checkpoint_SHA256": {
+    "No-Type": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+    "Type Embedding": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547"
+  },
+  "actor_CSV_SHA256": {
+    "No-Type": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+    "Type Embedding": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c"
+  },
+  "selected_after_locked_quantitative_evaluation": true,
+  "no_training": true,
+  "VP_GT_proximity_does_not_prove_causal_interaction": true
+}

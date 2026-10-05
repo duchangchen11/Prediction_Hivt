@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "reviewed_UTC": "2026-10-05T10:04:06.092311+00:00",
+  "reviewer": "Codex root visual inspection of actual final PNG exports",
+  "figure_count": 11,
+  "figures": {
+    "stage3b_degradation_case_001_audit.json": {
+      "audit_sha256": "b3daadf03101810fd146f852f1f2e780b5989733499185de745642de9cb4d593",
+      "PNG_sha256": "8979e7f7e1167b57939f97719c74d83a0541b656969e843f4f3e5e872f841afe"
+    },
+    "stage3b_paired_delta_fde_audit.json": {
+      "audit_sha256": "ff1112d6d9debdf6413baed65a9816e50ce908febef1b39abcaa4d6390cf0cb6",
+      "PNG_sha256": "b1f21c236814800cc697447a35f18b60fcb129030d53b07c2d68bdad1f17328e"
+    },
+    "stage3b_pedestrian_improvement_case_001_audit.json": {
+      "audit_sha256": "a8e75ad4dfb99b32f5d7f77c833ff24c4ad8a3d18f8df8cd28ffd767beb54d03",
+      "PNG_sha256": "4dfdcc030e43f23775896300f9c01b83a875c17f1034f4091966ce8293097242"
+    },
+    "stage3b_per_class_fde_comparison_audit.json": {
+      "audit_sha256": "82bf06d6e972d64683d13ae5c2c5bdefc5b108869b3a87bdccef5025b07d17e6",
+      "PNG_sha256": "462055556249e9be83aa3d773e11ead59bc7feee586383d54c75c3ea748399bd"
+    },
+    "stage3b_top1_fde_comparison_audit.json": {
+      "audit_sha256": "c502d82d500fa1a901b04d022f63829a81808c83f64407a5018127e81afe47b7",
+      "PNG_sha256": "578e3309f6a1fc046bbcff5b077cb30763a42e8f2d94a5eaf9978ea828a95992"
+    },
+    "stage3b_training_comparison_audit.json": {
+      "audit_sha256": "31bcbb9bb5133fe26e315fc9441f161c341e56244a8d3fc93c9a31f6bcce989a",
+      "PNG_sha256": "1d2d282613a0e9ffcc84bb4104d9099e3f68b2b45cc40c1abde3fc3c83aa1e79"
+    },
+    "stage3b_type_embedding_similarity_audit.json": {
+      "audit_sha256": "8d5aded10d95592801f41ca17c8d781b2bd77eeb747f7ba6a663b976f6a5fe61",
+      "PNG_sha256": "f4adc5a893baba1346a356e9f305c0881222cf43fe7fa3c3570367e41a429d51"
+    },
+    "stage3b_vehicle_improvement_case_001_audit.json": {
+      "audit_sha256": "692dd84e507a3c4509f5bad5b1014dddc4fc8dfd98e25eb41dcc1ed97ed358e7",
+      "PNG_sha256": "bc2078c25144ab0b08c78161332a2916c2aac03f0a19e8d637f2b245636c2806"
+    },
+    "stage3b_vp_interaction_case_001_audit.json": {
+      "audit_sha256": "40e5530d5a0f16140e966c7cb7bad963034de809c5bad2ef5d2770a1779fb1a3",
+      "PNG_sha256": "3b9014285c80f3ef92759034c351a8d6d2ffa9f91bfdf30057d38960e8258273"
+    },
+    "stage3b_loss_curve_audit.json": {
+      "audit_sha256": "6974344544e731e551d982b844205d546c87bb6ba9fb631fa7a8fdd12943fb69",
+      "PNG_sha256": "6ce4521d843c66f97594127dc90c45ffa7656e0bc0ac142e60fe7c47a9686ac6"
+    },
+    "stage3b_val_fde_curve_audit.json": {
+      "audit_sha256": "1617d9dbd773edfdf53e5f27a6e6bd8a48b1007b61a4616285bc249a3404fec0",
+      "PNG_sha256": "3a1febcf221215cedf4d3231bc5dbb019f4f59be1ecadd1e93c0b180e17137df"
+    }
+  },
+  "manual_checks": [
+    "All labels and legends readable within canvas",
+    "Top1 bar value labels separated",
+    "Trajectory panels share identical coordinate limits and equal aspect",
+    "Endpoint boxes outside trajectories",
+    "12 original future markers plotted without edits or smoothing",
+    "Conditional last6-point insets only",
+    "Lane backgrounds faint and do not determine axes",
+    "Compact trajectory layouts",
+    "Embedding title clear of colorbar",
+    "No physical-semantic inference from embedding distances"
+  ],
+  "numerical_and_editable_export_checks": "stage3b_export_QA.json",
+  "source_predictions_or_experiment_data_modified": false
+}

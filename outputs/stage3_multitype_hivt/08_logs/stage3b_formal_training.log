@@ -1,0 +1,195 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+PHASE_START warmup step 0 cursor {'epoch': 0, 'next_batch': 0} warm_source 0
+TRAIN_STEP warmup global 100 type_gradient 0.003734859637916088
+TRAIN_STEP warmup global 200 type_gradient 0.005851016845554113
+TRAIN_STEP warmup global 300 type_gradient 0.008571580983698368
+TRAIN_STEP warmup global 400 type_gradient 0.004525118041783571
+TRAIN_STEP warmup global 500 type_gradient 0.007104468531906605
+FULL_VAL warmup global 500 FDE 4.087472434168629 best 500 4.087472434168629 bad 0
+TRAIN_STEP warmup global 600 type_gradient 0.008421196602284908
+TRAIN_STEP warmup global 700 type_gradient 0.016029758378863335
+TRAIN_STEP warmup global 800 type_gradient 0.005351161118596792
+TRAIN_STEP warmup global 900 type_gradient 0.010609515942633152
+TRAIN_STEP warmup global 1000 type_gradient 0.008228030987083912
+FULL_VAL warmup global 1000 FDE 2.39705192152498 best 1000 2.39705192152498 bad 0
+TRAIN_STEP warmup global 1100 type_gradient 0.010387076064944267
+TRAIN_STEP warmup global 1200 type_gradient 0.03139721602201462
+TRAIN_STEP warmup global 1300 type_gradient 0.014150516130030155
+TRAIN_STEP warmup global 1400 type_gradient 0.016826175153255463
+TRAIN_STEP warmup global 1500 type_gradient 0.007130357902497053
+FULL_VAL warmup global 1500 FDE 1.7946413310496352 best 1500 1.7946413310496352 bad 0
+TRAIN_STEP warmup global 1600 type_gradient 0.00276553095318377
+TRAIN_STEP warmup global 1700 type_gradient 0.01017861720174551
+TRAIN_STEP warmup global 1800 type_gradient 0.039098482578992844
+TRAIN_STEP warmup global 1900 type_gradient 0.028929555788636208
+TRAIN_STEP warmup global 2000 type_gradient 0.010639559477567673
+FULL_VAL warmup global 2000 FDE 1.5183918491766402 best 2000 1.5183918491766402 bad 0
+TRAIN_STEP warmup global 2100 type_gradient 0.00510394899174571
+TRAIN_STEP warmup global 2200 type_gradient 0.006634436547756195
+TRAIN_STEP warmup global 2300 type_gradient 0.0036004739813506603
+TRAIN_STEP warmup global 2400 type_gradient 0.009129423648118973
+TRAIN_STEP warmup global 2500 type_gradient 0.011122793890535831
+FULL_VAL warmup global 2500 FDE 1.4630704352273922 best 2500 1.4630704352273922 bad 0
+TRAIN_STEP warmup global 2600 type_gradient 0.010799590498209
+TRAIN_STEP warmup global 2700 type_gradient 0.003945361822843552
+TRAIN_STEP warmup global 2800 type_gradient 0.015061138197779655
+TRAIN_STEP warmup global 2900 type_gradient 0.09516394138336182
+TRAIN_STEP warmup global 3000 type_gradient 0.005672605708241463
+FULL_VAL warmup global 3000 FDE 1.4899961953807992 best 2500 1.4630704352273922 bad 1
+TRAIN_STEP warmup global 3100 type_gradient 0.0016016715671867132
+TRAIN_STEP warmup global 3200 type_gradient 0.01675749383866787
+TRAIN_STEP warmup global 3300 type_gradient 0.005975327920168638
+TRAIN_STEP warmup global 3400 type_gradient 0.010144386440515518
+TRAIN_STEP warmup global 3500 type_gradient 0.01842968352138996
+FULL_VAL warmup global 3500 FDE 1.4268268171783998 best 3500 1.4268268171783998 bad 0
+TRAIN_STEP warmup global 3600 type_gradient 0.004439539276063442
+TRAIN_STEP warmup global 3700 type_gradient 0.09335868060588837
+TRAIN_STEP warmup global 3800 type_gradient 0.003915066830813885
+TRAIN_STEP warmup global 3900 type_gradient 0.010584450326859951
+TRAIN_STEP warmup global 4000 type_gradient 0.00951607059687376
+FULL_VAL warmup global 4000 FDE 1.4506463867162072 best 3500 1.4268268171783998 bad 1
+TRAIN_STEP warmup global 4100 type_gradient 0.007379214745014906
+TRAIN_STEP warmup global 4200 type_gradient 0.017679892480373383
+TRAIN_STEP warmup global 4300 type_gradient 0.009965362958610058
+TRAIN_STEP warmup global 4400 type_gradient 0.003926968201994896
+TRAIN_STEP warmup global 4500 type_gradient 0.004895979072898626
+FULL_VAL warmup global 4500 FDE 1.5558823252506957 best 3500 1.4268268171783998 bad 2
+TRAIN_STEP warmup global 4600 type_gradient 0.0026333900168538094
+TRAIN_STEP warmup global 4700 type_gradient 0.052325308322906494
+TRAIN_STEP warmup global 4800 type_gradient 0.011697016656398773
+TRAIN_STEP warmup global 4900 type_gradient 0.002353703835979104
+TRAIN_STEP warmup global 5000 type_gradient 0.00547526590526104
+FULL_VAL warmup global 5000 FDE 1.5830754781383738 best 3500 1.4268268171783998 bad 3
+PHASE_COMPLETE warmup {'status': 'COMPLETE', 'phase': 'fixed_scale', 'phase_steps': 5000, 'global_executed_step': 5000, 'best_global_step': 3500, 'best_overall_FDE': 1.4268268171783998, 'consecutive_nonimprovements': 3, 'converged_by_patience': False, 'stopped_by_budget': False, 'stop_reason': 'warmup_fixed5000', 'warmup_best_source_step': 0, 'final_iterator': {'epoch': 4, 'next_batch': 772}, 'last_checkpoint_sha256': 'e757717c45d110f14ee356954bbccecd56cbf04ee1627c10d164825941e07aea', 'elapsed_seconds_this_invocation': 3155.0193554279977, 'NaN': 0, 'Inf': 0, 'training_code_git_commit': '0358a4434c50d6690b5ea4bae61012ccf3b24654'}
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+PHASE_START nll step 0 cursor {'epoch': 0, 'next_batch': 0} warm_source 3500
+TRAIN_STEP nll global 5100 type_gradient 0.00881317537277937
+TRAIN_STEP nll global 5200 type_gradient 0.014273389242589474
+TRAIN_STEP nll global 5300 type_gradient 0.009470048360526562
+TRAIN_STEP nll global 5400 type_gradient 0.022860141471028328
+TRAIN_STEP nll global 5500 type_gradient 0.019316410645842552
+FULL_VAL nll global 5500 FDE 1.3972121148934098 best 5500 1.3972121148934098 bad 0
+TRAIN_STEP nll global 5600 type_gradient 0.0393553264439106
+TRAIN_STEP nll global 5700 type_gradient 0.01568133942782879
+TRAIN_STEP nll global 5800 type_gradient 0.012223645113408566
+TRAIN_STEP nll global 5900 type_gradient 0.01527222990989685
+TRAIN_STEP nll global 6000 type_gradient 0.055686257779598236
+FULL_VAL nll global 6000 FDE 1.3829151802691562 best 6000 1.3829151802691562 bad 0
+TRAIN_STEP nll global 6100 type_gradient 0.0243550892919302
+TRAIN_STEP nll global 6200 type_gradient 0.04467101767659187
+TRAIN_STEP nll global 6300 type_gradient 0.043326396495103836
+TRAIN_STEP nll global 6400 type_gradient 0.038263313472270966
+TRAIN_STEP nll global 6500 type_gradient 0.03457074984908104
+FULL_VAL nll global 6500 FDE 1.3895455023987748 best 6000 1.3829151802691562 bad 1
+TRAIN_STEP nll global 6600 type_gradient 0.02618408016860485
+TRAIN_STEP nll global 6700 type_gradient 0.04447655752301216
+TRAIN_STEP nll global 6800 type_gradient 0.030378077179193497
+TRAIN_STEP nll global 6900 type_gradient 0.045349109917879105
+TRAIN_STEP nll global 7000 type_gradient 0.03539642319083214
+FULL_VAL nll global 7000 FDE 1.3768789898645297 best 7000 1.3768789898645297 bad 0
+TRAIN_STEP nll global 7100 type_gradient 0.03236068785190582
+TRAIN_STEP nll global 7200 type_gradient 0.07334891706705093
+TRAIN_STEP nll global 7300 type_gradient 0.039701931178569794
+TRAIN_STEP nll global 7400 type_gradient 0.0436636246740818
+TRAIN_STEP nll global 7500 type_gradient 0.13584767282009125
+FULL_VAL nll global 7500 FDE 1.3725720482713057 best 7500 1.3725720482713057 bad 0
+TRAIN_STEP nll global 7600 type_gradient 0.02820534259080887
+TRAIN_STEP nll global 7700 type_gradient 0.05901797115802765
+TRAIN_STEP nll global 7800 type_gradient 0.02076311782002449
+TRAIN_STEP nll global 7900 type_gradient 0.07124195247888565
+TRAIN_STEP nll global 8000 type_gradient 0.03281952440738678
+FULL_VAL nll global 8000 FDE 1.362011791203763 best 8000 1.362011791203763 bad 0
+TRAIN_STEP nll global 8100 type_gradient 0.0632275864481926
+TRAIN_STEP nll global 8200 type_gradient 0.021252721548080444
+TRAIN_STEP nll global 8300 type_gradient 0.022382479161024094
+TRAIN_STEP nll global 8400 type_gradient 0.03438224270939827
+TRAIN_STEP nll global 8500 type_gradient 0.04625312611460686
+FULL_VAL nll global 8500 FDE 1.3662358353636856 best 8000 1.362011791203763 bad 1
+TRAIN_STEP nll global 8600 type_gradient 0.07903014868497849
+TRAIN_STEP nll global 8700 type_gradient 0.023253129795193672
+TRAIN_STEP nll global 8800 type_gradient 0.028172297403216362
+TRAIN_STEP nll global 8900 type_gradient 0.03148562088608742
+TRAIN_STEP nll global 9000 type_gradient 0.039798807352781296
+FULL_VAL nll global 9000 FDE 1.361227730023069 best 9000 1.361227730023069 bad 0
+TRAIN_STEP nll global 9100 type_gradient 0.03964154049754143
+TRAIN_STEP nll global 9200 type_gradient 0.14827656745910645
+TRAIN_STEP nll global 9300 type_gradient 0.03209614381194115
+TRAIN_STEP nll global 9400 type_gradient 0.05531607195734978
+TRAIN_STEP nll global 9500 type_gradient 0.04702604189515114
+FULL_VAL nll global 9500 FDE 1.368633074590338 best 9000 1.361227730023069 bad 1
+TRAIN_STEP nll global 9600 type_gradient 0.0452900156378746
+TRAIN_STEP nll global 9700 type_gradient 0.08862515538930893
+TRAIN_STEP nll global 9800 type_gradient 0.045383527874946594
+TRAIN_STEP nll global 9900 type_gradient 0.03248787298798561
+TRAIN_STEP nll global 10000 type_gradient 0.015619413927197456
+FULL_VAL nll global 10000 FDE 1.372162047481808 best 9000 1.361227730023069 bad 2
+TRAIN_STEP nll global 10100 type_gradient 0.09386404603719711
+TRAIN_STEP nll global 10200 type_gradient 0.02858733758330345
+TRAIN_STEP nll global 10300 type_gradient 0.03115447796881199
+TRAIN_STEP nll global 10400 type_gradient 0.030680835247039795
+TRAIN_STEP nll global 10500 type_gradient 0.10541699081659317
+FULL_VAL nll global 10500 FDE 1.3605663073487326 best 10500 1.3605663073487326 bad 0
+TRAIN_STEP nll global 10600 type_gradient 0.04560196399688721
+TRAIN_STEP nll global 10700 type_gradient 0.057084280997514725
+TRAIN_STEP nll global 10800 type_gradient 0.039152052253484726
+TRAIN_STEP nll global 10900 type_gradient 0.051705315709114075
+TRAIN_STEP nll global 11000 type_gradient 0.020827477797865868
+FULL_VAL nll global 11000 FDE 1.3678786599943593 best 10500 1.3605663073487326 bad 1
+TRAIN_STEP nll global 11100 type_gradient 0.08258650451898575
+TRAIN_STEP nll global 11200 type_gradient 0.06471908837556839
+TRAIN_STEP nll global 11300 type_gradient 0.1302526742219925
+TRAIN_STEP nll global 11400 type_gradient 0.04460105299949646
+TRAIN_STEP nll global 11500 type_gradient 0.06141583248972893
+FULL_VAL nll global 11500 FDE 1.3680361818887161 best 10500 1.3605663073487326 bad 2
+TRAIN_STEP nll global 11600 type_gradient 0.016748888418078423
+TRAIN_STEP nll global 11700 type_gradient 0.0803551897406578
+TRAIN_STEP nll global 11800 type_gradient 0.12484389543533325
+TRAIN_STEP nll global 11900 type_gradient 0.023051129654049873
+TRAIN_STEP nll global 12000 type_gradient 0.039061009883880615
+FULL_VAL nll global 12000 FDE 1.3628480007337669 best 10500 1.3605663073487326 bad 3
+TRAIN_STEP nll global 12100 type_gradient 0.07327380031347275
+TRAIN_STEP nll global 12200 type_gradient 0.0522666797041893
+TRAIN_STEP nll global 12300 type_gradient 0.01753019168972969
+TRAIN_STEP nll global 12400 type_gradient 0.02759946882724762
+TRAIN_STEP nll global 12500 type_gradient 0.04687359184026718
+FULL_VAL nll global 12500 FDE 1.3511173758061674 best 12500 1.3511173758061674 bad 0
+TRAIN_STEP nll global 12600 type_gradient 0.022151987999677658
+TRAIN_STEP nll global 12700 type_gradient 0.028979571536183357
+TRAIN_STEP nll global 12800 type_gradient 0.035223450511693954
+TRAIN_STEP nll global 12900 type_gradient 0.074611134827137
+TRAIN_STEP nll global 13000 type_gradient 0.04658666253089905
+FULL_VAL nll global 13000 FDE 1.343260452434294 best 13000 1.343260452434294 bad 0
+TRAIN_STEP nll global 13100 type_gradient 0.03014921024441719
+TRAIN_STEP nll global 13200 type_gradient 0.016354337334632874
+TRAIN_STEP nll global 13300 type_gradient 0.03223704919219017
+TRAIN_STEP nll global 13400 type_gradient 0.037181053310632706
+TRAIN_STEP nll global 13500 type_gradient 0.022223392501473427
+FULL_VAL nll global 13500 FDE 1.3660733008831705 best 13000 1.343260452434294 bad 1
+TRAIN_STEP nll global 13600 type_gradient 0.016123607754707336
+TRAIN_STEP nll global 13700 type_gradient 0.11972897499799728
+TRAIN_STEP nll global 13800 type_gradient 0.02948623150587082
+TRAIN_STEP nll global 13900 type_gradient 0.11109665036201477
+TRAIN_STEP nll global 14000 type_gradient 0.031000830233097076
+FULL_VAL nll global 14000 FDE 1.3648791875066912 best 13000 1.343260452434294 bad 2
+TRAIN_STEP nll global 14100 type_gradient 0.09369369596242905
+TRAIN_STEP nll global 14200 type_gradient 0.01831391081213951
+TRAIN_STEP nll global 14300 type_gradient 0.02187231555581093
+TRAIN_STEP nll global 14400 type_gradient 0.020620491355657578
+TRAIN_STEP nll global 14500 type_gradient 0.0696139857172966
+FULL_VAL nll global 14500 FDE 1.356635233426243 best 13000 1.343260452434294 bad 3
+TRAIN_STEP nll global 14600 type_gradient 0.1149546355009079
+TRAIN_STEP nll global 14700 type_gradient 0.01348437275737524
+TRAIN_STEP nll global 14800 type_gradient 0.04425424709916115
+TRAIN_STEP nll global 14900 type_gradient 0.02062121219933033
+TRAIN_STEP nll global 15000 type_gradient 0.1015840396285057
+FULL_VAL nll global 15000 FDE 1.3491084907489228 best 13000 1.343260452434294 bad 4
+TRAIN_STEP nll global 15100 type_gradient 0.05195239558815956
+TRAIN_STEP nll global 15200 type_gradient 0.10132629424333572
+TRAIN_STEP nll global 15300 type_gradient 0.07525253295898438
+TRAIN_STEP nll global 15400 type_gradient 0.04918096587061882
+TRAIN_STEP nll global 15500 type_gradient 0.03162146359682083
+FULL_VAL nll global 15500 FDE 1.3546128427909858 best 13000 1.343260452434294 bad 5
+PHASE_COMPLETE nll {'status': 'COMPLETE', 'phase': 'original_nll', 'phase_steps': 10500, 'global_executed_step': 15500, 'best_global_step': 13000, 'best_overall_FDE': 1.343260452434294, 'consecutive_nonimprovements': 5, 'converged_by_patience': True, 'stopped_by_budget': False, 'stop_reason': 'patience_5', 'warmup_best_source_step': 3500, 'final_iterator': {'epoch': 9, 'next_batch': 987}, 'last_checkpoint_sha256': 'f066e3cf883cf7e5cc6ef63157e973dab37c296fd816ad528c0150885710ab60', 'elapsed_seconds_this_invocation': 6656.508973030999, 'NaN': 0, 'Inf': 0, 'training_code_git_commit': '0358a4434c50d6690b5ea4bae61012ccf3b24654'}
+STAGE3B_FORMAL_TRAINING_COMPLETE {'status': 'COMPLETE', 'warmup_steps': 5000, 'NLL_steps': 10500, 'final_executed_global_step': 15500, 'best_global_step': 13000, 'stop_reason': 'patience_5', 'converged_by_patience': True, 'stopped_by_budget': False, 'warmup_best_source_step': 3500, 'training_code_git_commit': '0358a4434c50d6690b5ea4bae61012ccf3b24654', 'config_sha256': '5afcf18547930f57af16eb7770709333a663365693b948079a945bde9bb3fa91', 'NaN': 0, 'Inf': 0, 'TypeEmbedding_gradient_verified': True, 'checkpoint_relative_path': '07_checkpoints/stage3b_best_overall_minfde.pt', 'checkpoint_sha256': '461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547', 'model_state_content_sha256': '0b983df4830bab63e6a4888aff64f68cf468674be4e25dbeda4687b7a338a980', 'selected_full_horizon_metrics': {'overall': {'count': 54990, 'minADE6': 0.666405558886893, 'minFDE6': 1.343260452434294, 'MR6': 0.16310238225131843, 'Top1ADE6': 1.1967154500960957, 'Top1FDE6': 2.6879838252651815, 'NLL': -0.705392634714633, 'independent_minADE6': 0.6299520826640598}, 'vehicle': {'count': 42332, 'minADE6': 0.7083468561064444, 'minFDE6': 1.4319135090133701, 'MR6': 0.1657611263346877, 'Top1ADE6': 1.3432958400926995, 'Top1FDE6': 3.0503234454641066, 'NLL': -0.8767452025772426, 'independent_minADE6': 0.6658966879837105}, 'pedestrian': {'count': 12002, 'minADE6': 0.5257077837921819, 'minFDE6': 1.0438751799201036, 'MR6': 0.15489085152474588, 'Top1ADE6': 0.6998686923861468, 'Top1FDE6': 1.457705984993562, 'NLL': -0.09927354992414861, 'independent_minADE6': 0.5098115270880141}, 'bicycle': {'count': 656, 'minADE6': 0.534081935089134, 'minFDE6': 1.0999080890347037, 'MR6': 0.14176829268292682, 'Top1ADE6': 0.8279863596975835, 'Top1FDE6': 1.8148646738613379, 'NLL': -0.737320001933235, 'independent_minADE6': 0.5084885394205296}, 'vehicle.moving': {'count': 10461, 'minADE6': 2.3281892205433343, 'minFDE6': 4.791532249533707, 'MR6': 0.59707484944078, 'Top1ADE6': 4.656182580229546, 'Top1FDE6': 10.73485851359289, 'NLL': 1.3364606907459584, 'independent_minADE6': 2.190682771508761}, 'vehicle.stopped': {'count': 5599, 'minADE6': 0.3500351665828586, 'minFDE6': 0.8688875584123331, 'MR6': 0.08715842114663333, 'Top1ADE6': 0.5083234123633631, 'Top1FDE6': 1.3133993218013493, 'NLL': -1.2270370971993523, 'independent_minADE6': 0.33238765668359077}, 'vehicle.parked': {'count': 25198, 'minADE6': 0.10982340215333146, 'minFDE6': 0.14641494736067953, 'MR6': 0.004087626002063656, 'Top1ADE6': 0.15519767070710405, 'Top1FDE6': 0.24849031880126576, 'NLL': -1.7166787504180199, 'independent_minADE6': 0.10152393637188958}, 'unknown': {'count': 1074, 'minADE6': 0.8411309976137011, 'minFDE6': 1.8037975028275886, 'MR6': 0.16759776536312848, 'Top1ADE6': 1.3028862557940408, 'Top1FDE6': 2.9923233955040045, 'NLL': -0.9013420308574174, 'independent_minADE6': 0.7940106932057572}}, 'selection_rule': 'post-update original-NLL full-horizon official VAL overall minFDE6 strict improvement', 'maximum_global_step': 21000, 'validation_interval': 500, 'patience': 5, 'from_scratch': True, 'NoType_trained_weights_loaded': False, 'test_used': False, 'Stage4_executed': False}

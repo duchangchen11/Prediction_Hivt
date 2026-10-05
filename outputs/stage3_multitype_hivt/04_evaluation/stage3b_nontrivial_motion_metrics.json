@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "metrics": [
+    {
+      "Group": "Vehicle >5m",
+      "AgentType": "vehicle",
+      "GT_endpoint_displacement_gt_m": 5,
+      "Count": 9744,
+      "UniqueInstances": 853,
+      "UniqueScenes": 137,
+      "minADE6": 2.6471446265607206,
+      "minFDE6": 5.579886783630287,
+      "MR6": 0.6764162561576355,
+      "Top1ADE6": 5.1776950663668275,
+      "Top1FDE6": 12.105360582287
+    },
+    {
+      "Group": "Pedestrian >1m",
+      "AgentType": "pedestrian",
+      "GT_endpoint_displacement_gt_m": 1,
+      "Count": 8810,
+      "UniqueInstances": 825,
+      "UniqueScenes": 113,
+      "minADE6": 0.6717116618998323,
+      "minFDE6": 1.3614683099288867,
+      "MR6": 0.21044267877412032,
+      "Top1ADE6": 0.8794283331216447,
+      "Top1FDE6": 1.8621723931068295
+    },
+    {
+      "Group": "Pedestrian >5m",
+      "AgentType": "pedestrian",
+      "GT_endpoint_displacement_gt_m": 5,
+      "Count": 7581,
+      "UniqueInstances": 716,
+      "UniqueScenes": 110,
+      "minADE6": 0.6596353514263226,
+      "minFDE6": 1.3403887217720813,
+      "MR6": 0.20564569318031922,
+      "Top1ADE6": 0.8389392448966354,
+      "Top1FDE6": 1.7433697143908806
+    },
+    {
+      "Group": "Bicycle >1m",
+      "AgentType": "bicycle",
+      "GT_endpoint_displacement_gt_m": 1,
+      "Count": 155,
+      "UniqueInstances": 15,
+      "UniqueScenes": 13,
+      "minADE6": 1.9354241138504398,
+      "minFDE6": 4.25575967911751,
+      "MR6": 0.5935483870967742,
+      "Top1ADE6": 3.0434872642640145,
+      "Top1FDE6": 6.993361007398175
+    },
+    {
+      "Group": "Bicycle >5m",
+      "AgentType": "bicycle",
+      "GT_endpoint_displacement_gt_m": 5,
+      "Count": 132,
+      "UniqueInstances": 12,
+      "UniqueScenes": 11,
+      "minADE6": 2.117074791003357,
+      "minFDE6": 4.625798727526809,
+      "MR6": 0.5984848484848485,
+      "Top1ADE6": 3.369153434805798,
+      "Top1FDE6": 7.759411226167823
+    }
+  ],
+  "count_unit": "actor-window; overlapping windows not independent",
+  "limited_unique_bicycle_instances_scenes": true,
+  "Bicycle_gt5_significance_test": false,
+  "source_actor_csv_sha256": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c"
+}
