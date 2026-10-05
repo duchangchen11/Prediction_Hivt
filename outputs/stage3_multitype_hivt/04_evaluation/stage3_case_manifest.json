@@ -1,0 +1,125 @@
+{
+  "cases": [
+    {
+      "name": "stage3_vehicle_success_001",
+      "class": "vehicle",
+      "kind": "success",
+      "source_json": "04_evaluation/cases/stage3_vehicle_success_001.json",
+      "scene_token": "d87ec0461e3f4c4ea29b0f0c0ede5167",
+      "sample_token": "55318b9eaf1c4633aff259d87b1bd334",
+      "instance_token": "49aea250d04744409609314be69883c3"
+    },
+    {
+      "name": "stage3_vehicle_success_002",
+      "class": "vehicle",
+      "kind": "success",
+      "source_json": "04_evaluation/cases/stage3_vehicle_success_002.json",
+      "scene_token": "c525507ee2ef4c6d8bb64b0e0cf0dd32",
+      "sample_token": "9d2eedd225094283bb507db7856e60e5",
+      "instance_token": "83646f0a74de467f9c57efef379ceb3a"
+    },
+    {
+      "name": "stage3_vehicle_failure_001",
+      "class": "vehicle",
+      "kind": "failure",
+      "source_json": "04_evaluation/cases/stage3_vehicle_failure_001.json",
+      "scene_token": "8e3364691ee94c698458e0913a29af78",
+      "sample_token": "264f7a3db349473c9032d9ee63b9b828",
+      "instance_token": "25a4ad683da04b759cc5c229d7b96fe5"
+    },
+    {
+      "name": "stage3_vehicle_failure_002",
+      "class": "vehicle",
+      "kind": "failure",
+      "source_json": "04_evaluation/cases/stage3_vehicle_failure_002.json",
+      "scene_token": "3045ed93c2534ec2a5cabea89b186bd9",
+      "sample_token": "ad40b9d838994f6cac6c6d78ec2e174a",
+      "instance_token": "e9bb390eeba449fd95b753a924d77e1b"
+    },
+    {
+      "name": "stage3_pedestrian_success_001",
+      "class": "pedestrian",
+      "kind": "success",
+      "source_json": "04_evaluation/cases/stage3_pedestrian_success_001.json",
+      "scene_token": "2ca15f59d656489a8b1a0be4d9bead4e",
+      "sample_token": "000681a060c04755a1537cf83b53ba57",
+      "instance_token": "af45392abc9747708c2d6b87c7662225"
+    },
+    {
+      "name": "stage3_pedestrian_success_002",
+      "class": "pedestrian",
+      "kind": "success",
+      "source_json": "04_evaluation/cases/stage3_pedestrian_success_002.json",
+      "scene_token": "aacd6706a091407fb1b0e5343d27da7e",
+      "sample_token": "6ad528ad06f3427fa9548d6f8bfe6957",
+      "instance_token": "56ce59f599c84a178dd62205b19f4655"
+    },
+    {
+      "name": "stage3_pedestrian_failure_001",
+      "class": "pedestrian",
+      "kind": "failure",
+      "source_json": "04_evaluation/cases/stage3_pedestrian_failure_001.json",
+      "scene_token": "201b7c65a61f4bc1a2333ea90ba9a932",
+      "sample_token": "7a344e7e1436415caf180ae067a4203a",
+      "instance_token": "d54bf20a1e9b4b5c8ddd13532a67a279"
+    },
+    {
+      "name": "stage3_pedestrian_failure_002",
+      "class": "pedestrian",
+      "kind": "failure",
+      "source_json": "04_evaluation/cases/stage3_pedestrian_failure_002.json",
+      "scene_token": "a2b005c4dd654af48194ada18662c8ca",
+      "sample_token": "fb1f8ae5a6b5424795b51aae5075599b",
+      "instance_token": "32ad35acf26b4b7b9c34f973e422e43e"
+    },
+    {
+      "name": "stage3_bicycle_success_001",
+      "class": "bicycle",
+      "kind": "success",
+      "source_json": "04_evaluation/cases/stage3_bicycle_success_001.json",
+      "scene_token": "6f83169d067343658251f72e1dd17dbc",
+      "sample_token": "b7f64f73e8a548488e6d85d9b0e13242",
+      "instance_token": "e2afd7eaa5c04cff9e59ca025e14249c"
+    },
+    {
+      "name": "stage3_bicycle_success_002",
+      "class": "bicycle",
+      "kind": "success",
+      "source_json": "04_evaluation/cases/stage3_bicycle_success_002.json",
+      "scene_token": "afd73f70ff7d46d6b772d341c08e31a5",
+      "sample_token": "d09b065aa1c74e31b0742ec36052f9c9",
+      "instance_token": "459d0100e90246b5a04100d3ef145f75"
+    },
+    {
+      "name": "stage3_bicycle_failure_001",
+      "class": "bicycle",
+      "kind": "failure",
+      "source_json": "04_evaluation/cases/stage3_bicycle_failure_001.json",
+      "scene_token": "c65c4acf86954f8cbd53a3541a3bfa3a",
+      "sample_token": "674ac51c90f444ffa066c3aa15991728",
+      "instance_token": "bfc2a98e199f4252a9d87b1167fad828"
+    },
+    {
+      "name": "stage3_bicycle_failure_002",
+      "class": "bicycle",
+      "kind": "failure",
+      "source_json": "04_evaluation/cases/stage3_bicycle_failure_002.json",
+      "scene_token": "68e79a88244f447f993a72da444b29ba",
+      "sample_token": "1f1982e0b2a64ec2b2aba3a41175ab6e",
+      "instance_token": "565f61951e6d46a5b3de7d57150f5102"
+    }
+  ],
+  "coverage": {
+    "vehicle_success": 2,
+    "vehicle_failure": 2,
+    "pedestrian_success": 2,
+    "pedestrian_failure": 2,
+    "bicycle_success": 2,
+    "bicycle_failure": 2
+  },
+  "source_checkpoint_sha256": "9ebd0bb23b44f0a738122cee0316e127063d6af006bff7d057bc0a5470a0384a",
+  "selection_predeclared": "class-wise low-FDE meaningful-motion successes; high-FDE failures; different instances within each pair",
+  "coordinate_adjustments": false,
+  "smoothing": false,
+  "primary_metrics_unchanged_by_case_selection": true
+}

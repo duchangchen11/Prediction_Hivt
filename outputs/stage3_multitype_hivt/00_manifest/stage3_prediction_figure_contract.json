@@ -1,0 +1,17 @@
+{
+  "conclusion": "Class-wise examples reveal where the No-Type model fits or misses actual futures, distinguishing oracle best-FDE and model Top1.",
+  "evidence_chain": "saved GT/history/12-step predictions and mode probabilities; paired ADE/FDE numerical audits",
+  "archetype": "asymmetric mixed-modality figure",
+  "backend": "Python/matplotlib",
+  "exports": [
+    "PNG300dpi",
+    "editable SVG",
+    "TrueType PDF",
+    "saved source JSON"
+  ],
+  "risks": [
+    "selected cases do not replace full VAL results",
+    "best-FDE uses GT; Top1 uses model probability",
+    "no smoothing, interpolation or trajectory edits"
+  ]
+}

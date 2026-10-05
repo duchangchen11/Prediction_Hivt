@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "source_json": "04_evaluation/cases/stage3_pedestrian_success_002.json",
+  "source_sha256": "145d9b7d61f90f68d583c798878d30f7bc3a252129e5ee291d945fa17c6bfaea",
+  "recomputed_metrics": {
+    "minADE6": 0.09282536195882024,
+    "minFDE6": 0.009373792349729891,
+    "Top1ADE6": 0.48219416693337797,
+    "Top1FDE6": 1.0904842608881946
+  },
+  "metric_absolute_differences_m": {
+    "minADE6": 8.813220875314443e-09,
+    "minFDE6": 1.6185412148195938e-06,
+    "Top1ADE6": 2.498973214470901e-07,
+    "Top1FDE6": 1.9067240710768374e-06
+  },
+  "metric_tolerance_m": 0.0001,
+  "GT_endpoint": [
+    0.8195496201515198,
+    -26.95377540588379
+  ],
+  "best_endpoint": [
+    0.8250197172164917,
+    -26.946163177490234
+  ],
+  "top1_endpoint": [
+    0.5886551141738892,
+    -25.888015747070312
+  ],
+  "best_mode_zero_based": 2,
+  "top1_mode_zero_based": 4,
+  "future_marker_count_per_trajectory": 12,
+  "zoom_min_xy_m": [
+    -2.3954796195030212,
+    -29.45377540588379
+  ],
+  "zoom_max_xy_m": [
+    3.3250197172164917,
+    -21.13738250732422
+  ],
+  "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+  "trajectory_coordinates_changed": false,
+  "smoothing": false,
+  "interpolation": false,
+  "other_modes_shown": false,
+  "layout_checks": {
+    "endpoint_labels_in_reserved_side_margins": true,
+    "endpoint_text_inside_canvas": true,
+    "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+    "endpoint_text_boxes_figure_fraction": [
+      [
+        0.16032083333333336,
+        0.23940104166666668,
+        0.08545833333333332,
+        0.021197916666666643
+      ],
+      [
+        0.8242208333333334,
+        0.5420260416666667,
+        0.09708333333333326,
+        0.039947916666666715
+      ],
+      [
+        0.8242208333333334,
+        0.3340260416666666,
+        0.10333333333333326,
+        0.039947916666666715
+      ]
+    ]
+  },
+  "exports": {
+    "png": {
+      "relative_path": "05_figures/stage3_pedestrian_success_002.png",
+      "sha256": "efaea5e4cf8ce5e311209b79d30ca2363497bc70cb09d3118ff0d2bfa97ce710"
+    },
+    "pdf": {
+      "relative_path": "05_figures/stage3_pedestrian_success_002.pdf",
+      "sha256": "651b1494d02efe7770fa7e55c043c4d0c80ac0b304e68b07c0d4404745871752"
+    },
+    "svg": {
+      "relative_path": "05_figures/stage3_pedestrian_success_002.svg",
+      "sha256": "966acb2ab670f6daa672d0966c5b4ac4296e49046bf2727a33dc0361e51de8c7"
+    }
+  }
+}

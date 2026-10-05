@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "review_date": "2026-10-05",
+  "reviewer": "Codex visual inspection",
+  "prediction_case_count": 12,
+  "prediction_review_method": "12-case contact sheet and separate full-size vehicle/bicycle success figures",
+  "prediction_layout_fixes": [
+    "Endpoint text moved into reserved margins with leaders to original endpoints",
+    "Inset tick density reduced for narrow zoom panels"
+  ],
+  "prediction_review_findings": {
+    "endpoint_labels_visible": true,
+    "titles_and_legend_readable": true,
+    "inset_labels_readable": true,
+    "no_visual_trajectory_association_jump_detected": true
+  },
+  "prediction_exports_sha256": {
+    "stage3_vehicle_success_001": "ecc19a9726c30700ce3f1bf4bf7190e19bcba935c654146bd54cfd19b4f994c5",
+    "stage3_vehicle_success_002": "d65fc566002af487c5376d5414648e2a0adac768a65d669b92dca97500dc2977",
+    "stage3_vehicle_failure_001": "36db73e8c757588e09f1be295289170616ee869abf07a0e71b483b1c5c04f721",
+    "stage3_vehicle_failure_002": "9ee85bcf3b080403ce78b63c314bbebc6cf36b50bce0da5a8cab78ebec7508c6",
+    "stage3_pedestrian_success_001": "aa84fbf9a35f0d5ff8ead664e394c8940461e8092a0b60c9ee9bd0bf76573700",
+    "stage3_pedestrian_success_002": "efaea5e4cf8ce5e311209b79d30ca2363497bc70cb09d3118ff0d2bfa97ce710",
+    "stage3_pedestrian_failure_001": "cda6820d77edc6fca839dae2b3be9d492c11c51d8a4300998aca2bda4ab4b7f1",
+    "stage3_pedestrian_failure_002": "22d59c83c97f51f99292c092f4bf09a6cb24a9a582a2844c41dad008451bfd05",
+    "stage3_bicycle_success_001": "5ad30fa3f883ca67cbe91f43e8a9c31fb65129376f077f1c231a4754a6d38daf",
+    "stage3_bicycle_success_002": "6bc650a334e837da71baf5afbe9c964639591e6a33e36daf708511f4dc4d7b6e",
+    "stage3_bicycle_failure_001": "26f2a107c933be1d924a4d3fff8e4136144128b466e53400bca24c34b6f2076b",
+    "stage3_bicycle_failure_002": "bca1c8923630c175af73b8e4dd2166b602eae096d49bbf84e86e1397d19c34eb"
+  },
+  "training_curve_review": {
+    "status": "PASS",
+    "loss_lines": 3,
+    "validation_FDE_lines": 4,
+    "phase_boundary_visible": true,
+    "exports_sha256": {
+      "stage3_no_type_loss_curve.png": "2ac2236fc48af679faf8aa7fc73c455bfb272883a8f57e685ec182fc40d0e7c0",
+      "stage3_no_type_val_fde_curve.png": "ccc9dac333e0d4a215ecbb3d7a9b4a47e61a1fe85a1a2249b7a26d025e72ee07"
+    }
+  },
+  "scope": "Visual layout review complements numerical audits; selected examples do not establish population performance.",
+  "source_trajectories_modified": false,
+  "model_retrained_for_layout": false
+}

@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "source_json": "04_evaluation/cases/stage3_vehicle_success_001.json",
+  "source_sha256": "1716a6f8b61473d5c78f8535635ba725e9f04c78ddaf64ca11099c1cf36f9a3e",
+  "recomputed_metrics": {
+    "minADE6": 0.23032254072599503,
+    "minFDE6": 0.021860414830402353,
+    "Top1ADE6": 0.23032254072599503,
+    "Top1FDE6": 0.021860414830402353
+  },
+  "metric_absolute_differences_m": {
+    "minADE6": 9.396927842797442e-07,
+    "minFDE6": 2.855501390897075e-10,
+    "Top1ADE6": 9.396927842797442e-07,
+    "Top1FDE6": 2.855501390897075e-10
+  },
+  "metric_tolerance_m": 0.0001,
+  "GT_endpoint": [
+    38.56791305541992,
+    31.843597412109375
+  ],
+  "best_endpoint": [
+    38.550716400146484,
+    31.830101013183594
+  ],
+  "top1_endpoint": [
+    38.550716400146484,
+    31.830101013183594
+  ],
+  "best_mode_zero_based": 4,
+  "top1_mode_zero_based": 4,
+  "future_marker_count_per_trajectory": 12,
+  "zoom_min_xy_m": [
+    36.050716400146484,
+    29.330101013183594
+  ],
+  "zoom_max_xy_m": [
+    43.91026306152344,
+    34.594844818115234
+  ],
+  "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+  "trajectory_coordinates_changed": false,
+  "smoothing": false,
+  "interpolation": false,
+  "other_modes_shown": false,
+  "layout_checks": {
+    "endpoint_labels_in_reserved_side_margins": true,
+    "endpoint_text_inside_canvas": true,
+    "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+    "endpoint_text_boxes_figure_fraction": [
+      [
+        0.16032083333333336,
+        0.23940104166666668,
+        0.08545833333333332,
+        0.021197916666666643
+      ],
+      [
+        0.8242208333333334,
+        0.5420260416666667,
+        0.09708333333333326,
+        0.039947916666666715
+      ],
+      [
+        0.8242208333333334,
+        0.3340260416666666,
+        0.10333333333333326,
+        0.039947916666666715
+      ]
+    ]
+  },
+  "exports": {
+    "png": {
+      "relative_path": "05_figures/stage3_vehicle_success_001.png",
+      "sha256": "ecc19a9726c30700ce3f1bf4bf7190e19bcba935c654146bd54cfd19b4f994c5"
+    },
+    "pdf": {
+      "relative_path": "05_figures/stage3_vehicle_success_001.pdf",
+      "sha256": "7d59c0b27001f0765dd1d87c44e946abc51faaf095e8f258c0bde50c523a7c7b"
+    },
+    "svg": {
+      "relative_path": "05_figures/stage3_vehicle_success_001.svg",
+      "sha256": "f057e17ff89eadf5df5637a70f0fbb2b62074b1e18f3dbfaea8adaf668c6320d"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "source_json": "04_evaluation/cases/stage3_vehicle_failure_001.json",
+  "source_sha256": "f1d8ec22a9938ac5d85402e250ff154281b4040cf27244d7860e5c99c1963570",
+  "recomputed_metrics": {
+    "minADE6": 37.99172179512199,
+    "minFDE6": 69.54153329694982,
+    "Top1ADE6": 44.944157086904674,
+    "Top1FDE6": 84.08639470329739
+  },
+  "metric_absolute_differences_m": {
+    "minADE6": 3.118116040923269e-07,
+    "minFDE6": 1.1268783026707752e-06,
+    "Top1ADE6": 4.401761586336761e-07,
+    "Top1FDE6": 5.603744881454986e-07
+  },
+  "metric_tolerance_m": 0.0001,
+  "GT_endpoint": [
+    -68.0749282836914,
+    -4.943164825439453
+  ],
+  "best_endpoint": [
+    -137.33065795898438,
+    -11.24147891998291
+  ],
+  "top1_endpoint": [
+    -151.9514617919922,
+    -10.880243301391602
+  ],
+  "best_mode_zero_based": 1,
+  "top1_mode_zero_based": 4,
+  "future_marker_count_per_trajectory": 12,
+  "zoom_min_xy_m": [
+    -154.4514617919922,
+    -13.86857795715332
+  ],
+  "zoom_max_xy_m": [
+    -65.5749282836914,
+    -2.443164825439453
+  ],
+  "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+  "trajectory_coordinates_changed": false,
+  "smoothing": false,
+  "interpolation": false,
+  "other_modes_shown": false,
+  "layout_checks": {
+    "endpoint_labels_in_reserved_side_margins": true,
+    "endpoint_text_inside_canvas": true,
+    "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+    "endpoint_text_boxes_figure_fraction": [
+      [
+        0.16032083333333336,
+        0.23940104166666668,
+        0.08545833333333332,
+        0.021197916666666643
+      ],
+      [
+        0.8242208333333334,
+        0.5420260416666667,
+        0.10420833333333326,
+        0.039947916666666715
+      ],
+      [
+        0.8242208333333334,
+        0.3340260416666666,
+        0.10408333333333326,
+        0.039947916666666715
+      ]
+    ]
+  },
+  "exports": {
+    "png": {
+      "relative_path": "05_figures/stage3_vehicle_failure_001.png",
+      "sha256": "36db73e8c757588e09f1be295289170616ee869abf07a0e71b483b1c5c04f721"
+    },
+    "pdf": {
+      "relative_path": "05_figures/stage3_vehicle_failure_001.pdf",
+      "sha256": "a8246a7305e707c5511847504d10fe5e06ec9cae9e58f567bbe6d9b964755dc9"
+    },
+    "svg": {
+      "relative_path": "05_figures/stage3_vehicle_failure_001.svg",
+      "sha256": "4740251ec0e0f108334ca4980c759bb338ac2b0a8f9573bd0327d28ab938e019"
+    }
+  }
+}

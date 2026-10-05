@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "source_json": "04_evaluation/cases/stage3_pedestrian_failure_001.json",
+  "source_sha256": "9252f244b778b7827b69ff454fca049a12060443efec3b6d9fe94ddfd0553e34",
+  "recomputed_metrics": {
+    "minADE6": 6.519537264578979,
+    "minFDE6": 14.71912318366593,
+    "Top1ADE6": 9.841545697445271,
+    "Top1FDE6": 21.49442513670666
+  },
+  "metric_absolute_differences_m": {
+    "minADE6": 1.8430407777714208e-07,
+    "minFDE6": 2.9700821535527666e-07,
+    "Top1ADE6": 5.924648025512624e-07,
+    "Top1FDE6": 3.1676037082206676e-07
+  },
+  "metric_tolerance_m": 0.0001,
+  "GT_endpoint": [
+    37.852291107177734,
+    4.628929615020752
+  ],
+  "best_endpoint": [
+    52.49867248535156,
+    3.167389392852783
+  ],
+  "top1_endpoint": [
+    59.319034576416016,
+    3.5384082794189453
+  ],
+  "best_mode_zero_based": 1,
+  "top1_mode_zero_based": 4,
+  "future_marker_count_per_trajectory": 12,
+  "zoom_min_xy_m": [
+    35.352291107177734,
+    0.6673893928527832
+  ],
+  "zoom_max_xy_m": [
+    61.819034576416016,
+    7.128929615020752
+  ],
+  "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+  "trajectory_coordinates_changed": false,
+  "smoothing": false,
+  "interpolation": false,
+  "other_modes_shown": false,
+  "layout_checks": {
+    "endpoint_labels_in_reserved_side_margins": true,
+    "endpoint_text_inside_canvas": true,
+    "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+    "endpoint_text_boxes_figure_fraction": [
+      [
+        0.16032083333333336,
+        0.23940104166666668,
+        0.08545833333333332,
+        0.021197916666666643
+      ],
+      [
+        0.8242208333333334,
+        0.5420260416666667,
+        0.10445833333333326,
+        0.039947916666666715
+      ],
+      [
+        0.8242208333333334,
+        0.3340260416666666,
+        0.10433333333333326,
+        0.039947916666666715
+      ]
+    ]
+  },
+  "exports": {
+    "png": {
+      "relative_path": "05_figures/stage3_pedestrian_failure_001.png",
+      "sha256": "cda6820d77edc6fca839dae2b3be9d492c11c51d8a4300998aca2bda4ab4b7f1"
+    },
+    "pdf": {
+      "relative_path": "05_figures/stage3_pedestrian_failure_001.pdf",
+      "sha256": "a87ea8cb832505b8ebd8990fd3c6487f319c8be0946dc3824a9339378c9b22c1"
+    },
+    "svg": {
+      "relative_path": "05_figures/stage3_pedestrian_failure_001.svg",
+      "sha256": "dcf3c8c493f3e05dcebb1da34b6d00abd92f3181c6981f5742eb59b957a8f142"
+    }
+  }
+}

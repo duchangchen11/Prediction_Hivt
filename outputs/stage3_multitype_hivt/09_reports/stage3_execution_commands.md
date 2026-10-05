@@ -2,6 +2,8 @@
 
 Existing Python: `/home/lrj/anaconda3/envs/ped_intent/bin/python`. Official nuScenes source remains read-only. The Stage2C derived metadata SQLite is reused through a read-only connection; it is not copied or modified. No new environment, download or dependency update.
 
+Preprocessing and source-map QA require the original nuScenes volume at the configured path. At the 2026-10-05 resume, that original path was unavailable; the complete850 already-audited scene shards remained available. Resumed training, formal evaluation and prediction plotting use those frozen local shards and saved case JSON, so they do not require reprocessing. See `00_manifest/stage3_resume_environment.json`.
+
 Run, in order, from the project root:
 
 ```bash
@@ -11,6 +13,9 @@ Run, in order, from the project root:
 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/03_no_type_baseline/stage3_train.py --stage benchmark
 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/03_no_type_baseline/stage3_train.py --stage warmup
 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/03_no_type_baseline/stage3_train.py --stage nll
+/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/04_evaluation/stage3_evaluate.py
+/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/05_figures/stage3_plot_predictions.py
+/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/09_reports/stage3_report.py
 ```
 
 Training is gated by the three-class tiny PASS. Tiny uses train-only, full context windows with at least10 vehicle/10 pedestrian/5 bicycle target actor-windows; initial/final ADE and FDE and fixed-scale diagnostic regression must decrease >=50% for each class. No new formal-training weighting, oversampling or architectural changes. Smoke models and tiny weights are discarded; formal initialization uses seed2022 and the exact Stage2C HiVT64 constructor. Model input explicitly removes agent_type; metadata is used only for loss diagnostics and evaluation.

@@ -1,0 +1,192 @@
+{
+  "phase": "original_nll",
+  "phase_steps": 10000,
+  "warmup_executed_steps": 5000,
+  "warmup_source_step": 2500,
+  "best_overall_FDE": 1.388404393440423,
+  "best_moving_FDE": 4.923529142510221,
+  "early_stop": false,
+  "bad_validations": 0,
+  "elapsed_seconds_this_invocation": 6337.253941543,
+  "status": "COMPLETE",
+  "NaN": 0,
+  "Inf": 0,
+  "validation_windows": 3603,
+  "training_windows": 16898,
+  "test_used": false,
+  "last_validation": {
+    "metrics": {
+      "full_horizon": {
+        "overall": {
+          "count": 54990,
+          "minADE6": 0.6773612667027423,
+          "minFDE6": 1.388404393440423,
+          "MR6": 0.17034006182942354,
+          "Top1ADE6": 1.2257896649123539,
+          "Top1FDE6": 2.7634443260942443,
+          "NLL": -0.6931400326615685,
+          "independent_minADE6": 0.6429936983191457
+        },
+        "vehicle": {
+          "count": 42332,
+          "minADE6": 0.7177157086467031,
+          "minFDE6": 1.4753904411723058,
+          "MR6": 0.1710998771614854,
+          "Top1ADE6": 1.3814122153271482,
+          "Top1FDE6": 3.147475760868928,
+          "NLL": -0.8869339434263543,
+          "independent_minADE6": 0.6773013646211701
+        },
+        "pedestrian": {
+          "count": 12002,
+          "minADE6": 0.5427875208501655,
+          "minFDE6": 1.0975853555638764,
+          "MR6": 0.16905515747375438,
+          "Top1ADE6": 0.6886634381919872,
+          "Top1FDE6": 1.441516400084617,
+          "NLL": -0.007469823500505869,
+          "independent_minADE6": 0.5292963325837107
+        },
+        "bicycle": {
+          "count": 656,
+          "minADE6": 0.5353945919327443,
+          "minFDE6": 1.0958993934530044,
+          "MR6": 0.1448170731707317,
+          "Top1ADE6": 1.0105079102458392,
+          "Top1FDE6": 2.167347178358951,
+          "NLL": -0.7323626239057176,
+          "independent_minADE6": 0.5092797557267548
+        },
+        "vehicle.moving": {
+          "count": 10461,
+          "minADE6": 2.345720766130882,
+          "minFDE6": 4.923529142510221,
+          "MR6": 0.6142816174361916,
+          "Top1ADE6": 4.737272362463108,
+          "Top1FDE6": 10.987781829251865,
+          "NLL": 1.3115648730224785,
+          "independent_minADE6": 2.213182387824365
+        },
+        "vehicle.stopped": {
+          "count": 5599,
+          "minADE6": 0.3583313165990455,
+          "minFDE6": 0.8842312570245806,
+          "MR6": 0.08983747097696017,
+          "Top1ADE6": 0.5150822664965423,
+          "Top1FDE6": 1.3285716416914701,
+          "NLL": -1.1584495863629696,
+          "independent_minADE6": 0.3421784952974619
+        },
+        "vehicle.parked": {
+          "count": 25198,
+          "minADE6": 0.11515153748606166,
+          "minFDE6": 0.15663475230518098,
+          "MR6": 0.004881339788872133,
+          "Top1ADE6": 0.17784607575884995,
+          "Top1FDE6": 0.2896678832969261,
+          "NLL": -1.7374812243967206,
+          "independent_minADE6": 0.10768853330800317
+        },
+        "unknown": {
+          "count": 1074,
+          "minADE6": 0.8713882315877454,
+          "minFDE6": 1.9120079136313306,
+          "MR6": 0.17783985102420857,
+          "Top1ADE6": 1.4488125590471381,
+          "Top1FDE6": 3.3128810504219866,
+          "NLL": -0.9299410646347749,
+          "independent_minADE6": 0.8287033060029256
+        }
+      },
+      "partial_future": {
+        "overall": {
+          "count": 30037,
+          "minADE6": 0.3833606508462723,
+          "minFDE6": 0.7147596674058802,
+          "MR6": 0.07281020075240537,
+          "Top1ADE6": 0.6264252264646665,
+          "Top1FDE6": 1.250674293818593,
+          "NLL": -1.103345594191405,
+          "independent_minADE6": 0.3711182363900498
+        },
+        "vehicle": {
+          "count": 20649,
+          "minADE6": 0.4534014200734135,
+          "minFDE6": 0.857245396501678,
+          "MR6": 0.09099714271877572,
+          "Top1ADE6": 0.7609886076303736,
+          "Top1FDE6": 1.5388827725366347,
+          "NLL": -1.145483554563805,
+          "independent_minADE6": 0.43851212719043037
+        },
+        "pedestrian": {
+          "count": 8738,
+          "minADE6": 0.23433941338029254,
+          "minFDE6": 0.4122889191971499,
+          "MR6": 0.03318837262531472,
+          "Top1ADE6": 0.3314476320055408,
+          "Top1FDE6": 0.6203064757385415,
+          "NLL": -0.9460107725152894,
+          "independent_minADE6": 0.2277105833265155
+        },
+        "bicycle": {
+          "count": 650,
+          "minADE6": 0.1616310034716466,
+          "minFDE6": 0.25445440240396866,
+          "MR6": 0.027692307692307693,
+          "Top1ADE6": 0.3170636306079821,
+          "Top1FDE6": 0.5690390897180455,
+          "NLL": -1.879783945077887,
+          "independent_minADE6": 0.15800996151636354
+        },
+        "vehicle.moving": {
+          "count": 5478,
+          "minADE6": 1.3324383829797928,
+          "minFDE6": 2.6156411974908216,
+          "MR6": 0.305403431909456,
+          "Top1ADE6": 2.311165990097092,
+          "Top1FDE6": 4.815923110601507,
+          "NLL": 0.7819375388426523,
+          "independent_minADE6": 1.2913193755665238
+        },
+        "vehicle.stopped": {
+          "count": 1997,
+          "minADE6": 0.19757661271077281,
+          "minFDE6": 0.370006512390509,
+          "MR6": 0.04256384576865298,
+          "Top1ADE6": 0.3122258468949238,
+          "Top1FDE6": 0.6195954375748659,
+          "NLL": -1.1608093867820695,
+          "independent_minADE6": 0.1920220662608527
+        },
+        "vehicle.parked": {
+          "count": 12589,
+          "minADE6": 0.09436565253128149,
+          "minFDE6": 0.1282648287829583,
+          "MR6": 0.002621336087060132,
+          "Top1ADE6": 0.1443698943706418,
+          "Top1FDE6": 0.22516278333044099,
+          "NLL": -1.9802059510574939,
+          "independent_minADE6": 0.08931596421457856
+        },
+        "unknown": {
+          "count": 585,
+          "minADE6": 0.8216389159536642,
+          "minFDE6": 1.7421346627622565,
+          "MR6": 0.15042735042735042,
+          "Top1ADE6": 1.0463228183359696,
+          "Top1FDE6": 2.261294362478607,
+          "NLL": -1.1787943464982458,
+          "independent_minADE6": 0.8087566413359446
+        }
+      }
+    },
+    "windows": 3603,
+    "candidate_windows": 3619,
+    "empty_supervision_windows": 16,
+    "test_used": false,
+    "metric_definition": "ADE of best-FDE mode; MR endpoint>2m; Top1 argmax probability; NLL original best-summed-L2 mode, per-actor valid-time coordinate density mean",
+    "K": 6,
+    "split": "val"
+  }
+}

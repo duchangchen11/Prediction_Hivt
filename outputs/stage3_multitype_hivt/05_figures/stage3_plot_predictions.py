@@ -9,6 +9,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
+from matplotlib.ticker import MaxNLocator
 from PIL import Image
 
 
@@ -54,15 +55,17 @@ def main():
 
         plot(ax,labels=True);ax.set_xlim(center[0]-half,center[0]+half);ax.set_ylim(center[1]-half,center[1]+half)
         ax.set_xlabel('t0 ego forward x (m)');ax.set_ylabel('t0 ego left y (m)')
-        ax.legend(loc='lower center',bbox_to_anchor=(.5,1.015),ncol=2,fontsize=10)
+        legend=ax.legend(loc='lower center',bbox_to_anchor=(.5,1.015),ncol=2,fontsize=10)
         white=dict(boxstyle='square,pad=.15',facecolor='white',edgecolor='none',alpha=.9)
-        # Text offsets affect labels only; all trajectory/endpoint coordinates remain exact.
+        # Reserve the side margins for endpoint text so the inset cannot hide it.
+        # Leaders point to the unchanged, exact endpoint coordinates.
         annotations=[]
-        for xy,text,color,offset in (
-            (gt[-1],'GT endpoint','#161616',(-75,-33)),
-            (best[-1],f"Best endpoint\nFDE = {d['numeric_metrics']['minFDE6']:.2f} m",'#246C9E',(12,27)),
-            (top[-1],f"Top-1 endpoint\nFDE = {d['numeric_metrics']['Top1FDE6']:.2f} m",'#C87B24',(-100,42))):
-            annotations.append(ax.annotate(text,xy=xy,xytext=offset,textcoords='offset points',fontsize=9.5,color=color,zorder=16,bbox=white,
+        for xy,text,color,position,align in (
+            (gt[-1],'GT endpoint','#161616',(-.06,.20),'right'),
+            (best[-1],f"Best endpoint\nFDE = {d['numeric_metrics']['minFDE6']:.2f} m",'#246C9E',(1.06,.68),'left'),
+            (top[-1],f"Top-1 endpoint\nFDE = {d['numeric_metrics']['Top1FDE6']:.2f} m",'#C87B24',(1.06,.36),'left')):
+            annotations.append(ax.annotate(text,xy=xy,xytext=position,textcoords='axes fraction',ha=align,va='center',
+                        annotation_clip=False,fontsize=9.5,color=color,zorder=16,bbox=white,
                         arrowprops={'arrowstyle':'-','color':color,'lw':.75,'shrinkB':7}))
         late=np.r_[gt[-6:],best[-6:],top[-6:]];zl,zh=late.min(0)-2.5,late.max(0)+2.5
         # Choose an inset corner with fewest actual trajectory points underneath.
@@ -72,20 +75,26 @@ def main():
         inset=ax.inset_axes(corner_bounds[int(np.argmin(counts))],zorder=20)
         plot(inset,show_history=False);inset.set_xlim(zl[0],zh[0]);inset.set_ylim(zl[1],zh[1])
         inset.set_title('Zoom: last 6 future points',fontsize=9,pad=4);inset.tick_params(labelsize=8)
+        for axis in (inset.xaxis,inset.yaxis):
+            axis.set_major_locator(MaxNLocator(nbins=2,steps=[1,2,5,10],min_n_ticks=1))
         for spine in inset.spines.values():spine.set_visible(True);spine.set_color('#8D969F')
         ax.indicate_inset_zoom(inset,edgecolor='#77818B',alpha=.5,zorder=2)
-        fig.suptitle(f"{d['scene_name']} | sample {d['sample_token'][:8]} | actor {d['instance_token'][:8]} | {d['agent_type']}\n"
+        title=fig.suptitle(f"{d['scene_name']} | sample {d['sample_token'][:8]} | actor {d['instance_token'][:8]} | {d['agent_type']}\n"
                      f"Best ADE/FDE: {actual['minADE6']:.2f}/{actual['minFDE6']:.2f} m    Top-1 ADE/FDE: {actual['Top1ADE6']:.2f}/{actual['Top1FDE6']:.2f} m",
                      fontsize=13,y=.97)
         fig.text(.5,.035,'12 original future observations per trajectory; best-FDE uses GT, Top-1 uses highest saved probability.',ha='center',fontsize=9,color='#5C646D')
         fig.canvas.draw()
         renderer=fig.canvas.get_renderer();canvas=fig.bbox
-        for annotation in annotations:
-            box=annotation.get_window_extent(renderer)
-            shift_x=max(0,12-box.x0)-max(0,box.x1-canvas.x1+12)
-            shift_y=max(0,12-box.y0)-max(0,box.y1-canvas.y1+12)
-            ox,oy=annotation.xyann
-            annotation.xyann=(ox+shift_x*72/fig.dpi,oy+shift_y*72/fig.dpi)
+        # Check text boxes separately from their leaders, which cross into the axes.
+        text_boxes=[a.get_bbox_patch().get_window_extent(renderer) for a in annotations]
+        occupied=[inset.get_tightbbox(renderer),legend.get_window_extent(renderer),title.get_window_extent(renderer)]
+        for i,box in enumerate(text_boxes):
+            assert box.x0>=12 and box.y0>=12 and box.x1<=canvas.x1-12 and box.y1<=canvas.y1-12, 'Endpoint text outside canvas'
+            assert not any(box.overlaps(other) for other in occupied+text_boxes[:i]), 'Endpoint text obscured'
+        layout={'endpoint_labels_in_reserved_side_margins':True,'endpoint_text_inside_canvas':True,
+                'endpoint_text_overlap_with_inset_title_legend_or_other_labels':False,
+                'endpoint_text_boxes_figure_fraction':[[(b.x0-canvas.x0)/canvas.width,(b.y0-canvas.y0)/canvas.height,
+                                                      b.width/canvas.width,b.height/canvas.height] for b in text_boxes]}
         stem=ROOT/'05_figures'/case['name']
         for ext in ('png','pdf','svg'):fig.savefig(str(stem)+'.'+ext,dpi=300)
         svg=Path(str(stem)+'.svg');svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
@@ -98,6 +107,7 @@ def main():
                'best_mode_zero_based':b,'top1_mode_zero_based':t,'future_marker_count_per_trajectory':12,
                'zoom_min_xy_m':zl.tolist(),'zoom_max_xy_m':zh.tolist(),'zoom_rule':'last6 GT/best/Top1 points+2.5m margin',
                'trajectory_coordinates_changed':False,'smoothing':False,'interpolation':False,'other_modes_shown':False,
+               'layout_checks':layout,
                'exports':{ext:{'relative_path':str(Path(str(stem)+'.'+ext).relative_to(ROOT)),'sha256':sha256(Path(str(stem)+'.'+ext))} for ext in ('png','pdf','svg')}}
         atomic_json(Path(str(stem)+'_audit.json'),audit);audits.append(audit)
     atomic_json(ROOT/'00_manifest/stage3_prediction_figure_qa.json',{'status':'PASS','case_count':len(audits),'numeric_audits':audits})

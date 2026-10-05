@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "source_json": "04_evaluation/cases/stage3_bicycle_failure_001.json",
+  "source_sha256": "8d712ea32fcc2815ea4dd34d4f40c7d5fdbca2f7d39334b50393ea14db25571e",
+  "recomputed_metrics": {
+    "minADE6": 12.745932708515975,
+    "minFDE6": 27.504909051229077,
+    "Top1ADE6": 12.387468175544313,
+    "Top1FDE6": 29.06851627228722
+  },
+  "metric_absolute_differences_m": {
+    "minADE6": 1.2947544725250282e-07,
+    "minFDE6": 4.6415178189818107e-07,
+    "Top1ADE6": 1.116142698265321e-06,
+    "Top1FDE6": 1.412649304199931e-06
+  },
+  "metric_tolerance_m": 0.0001,
+  "GT_endpoint": [
+    25.01909828186035,
+    -1.4207799434661865
+  ],
+  "best_endpoint": [
+    -2.481360912322998,
+    -0.9260416030883789
+  ],
+  "top1_endpoint": [
+    -0.5206634998321533,
+    -15.302393913269043
+  ],
+  "best_mode_zero_based": 1,
+  "top1_mode_zero_based": 4,
+  "future_marker_count_per_trajectory": 12,
+  "zoom_min_xy_m": [
+    -5.473743915557861,
+    -17.802393913269043
+  ],
+  "zoom_max_xy_m": [
+    27.51909828186035,
+    5.021661758422852
+  ],
+  "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+  "trajectory_coordinates_changed": false,
+  "smoothing": false,
+  "interpolation": false,
+  "other_modes_shown": false,
+  "layout_checks": {
+    "endpoint_labels_in_reserved_side_margins": true,
+    "endpoint_text_inside_canvas": true,
+    "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+    "endpoint_text_boxes_figure_fraction": [
+      [
+        0.16032083333333336,
+        0.23940104166666668,
+        0.08545833333333332,
+        0.021197916666666643
+      ],
+      [
+        0.8242208333333334,
+        0.5420260416666667,
+        0.10445833333333326,
+        0.039947916666666715
+      ],
+      [
+        0.8242208333333334,
+        0.3340260416666666,
+        0.10433333333333326,
+        0.039947916666666715
+      ]
+    ]
+  },
+  "exports": {
+    "png": {
+      "relative_path": "05_figures/stage3_bicycle_failure_001.png",
+      "sha256": "26f2a107c933be1d924a4d3fff8e4136144128b466e53400bca24c34b6f2076b"
+    },
+    "pdf": {
+      "relative_path": "05_figures/stage3_bicycle_failure_001.pdf",
+      "sha256": "cc00335d44bfb09743e1f8d37d5644dd0e19fb0442136dac90acf7f81637100f"
+    },
+    "svg": {
+      "relative_path": "05_figures/stage3_bicycle_failure_001.svg",
+      "sha256": "0acdd97415dae687e4f5dc471c20e7b6a713b6860733d1428ffceae9b8fadcbc"
+    }
+  }
+}

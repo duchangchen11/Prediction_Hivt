@@ -1,0 +1,14 @@
+{
+  "Stage3A": "PASS",
+  "Ready_for_Type_Embedding": "YES",
+  "Stage3B_executed": false,
+  "type_information_in_model": false,
+  "test_used": false,
+  "vehicle_FDE_ratios_to_Stage2C": {
+    "overall_FDE": 1.0420726397648552,
+    "moving_FDE": 1.0430260263241948
+  },
+  "readiness_judgement": "engineering and tiny PASS, finite official VAL per-class metrics; vehicle overall/moving FDE degradation<=25% practical guard; no experiment was changed to meet this guard",
+  "vehicle_retention_completed": true,
+  "formal_training_completed": true
+}

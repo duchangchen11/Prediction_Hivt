@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "physical_scene_shards": 850,
+  "all_physical_shards_finite": true,
+  "candidate_anchors": 20549,
+  "class_counts_recomputed_from_shards": true,
+  "tiny_three_class_pass": true,
+  "full_VAL_scene_count": 150,
+  "primary_checkpoint_SHA256": "9ebd0bb23b44f0a738122cee0316e127063d6af006bff7d057bc0a5470a0384a",
+  "primary_config_SHA256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "checkpoint_manifest_verified": true,
+  "formal_optimization_sources_match_preregistration": true,
+  "preprocessed_shard_hashes_match_pretraining_commit": "fbb7eac3a8ca972f77526b30620d194831afc9eb",
+  "paired_vehicle_actor_windows": 62981,
+  "prediction_case_numeric_audits": 12,
+  "prediction_endpoint_label_layout_checks": 12,
+  "figure_png_count": 15,
+  "previous_artifacts_unchanged": true,
+  "test_used": false,
+  "Stage3B_executed": false,
+  "git_at_audit": "fbb7eac3a8ca972f77526b30620d194831afc9eb"
+}

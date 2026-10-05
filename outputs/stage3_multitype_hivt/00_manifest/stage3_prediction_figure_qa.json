@@ -1,0 +1,1026 @@
+{
+  "status": "PASS",
+  "case_count": 12,
+  "numeric_audits": [
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_vehicle_success_001.json",
+      "source_sha256": "1716a6f8b61473d5c78f8535635ba725e9f04c78ddaf64ca11099c1cf36f9a3e",
+      "recomputed_metrics": {
+        "minADE6": 0.23032254072599503,
+        "minFDE6": 0.021860414830402353,
+        "Top1ADE6": 0.23032254072599503,
+        "Top1FDE6": 0.021860414830402353
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 9.396927842797442e-07,
+        "minFDE6": 2.855501390897075e-10,
+        "Top1ADE6": 9.396927842797442e-07,
+        "Top1FDE6": 2.855501390897075e-10
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        38.56791305541992,
+        31.843597412109375
+      ],
+      "best_endpoint": [
+        38.550716400146484,
+        31.830101013183594
+      ],
+      "top1_endpoint": [
+        38.550716400146484,
+        31.830101013183594
+      ],
+      "best_mode_zero_based": 4,
+      "top1_mode_zero_based": 4,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        36.050716400146484,
+        29.330101013183594
+      ],
+      "zoom_max_xy_m": [
+        43.91026306152344,
+        34.594844818115234
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.09708333333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10333333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_vehicle_success_001.png",
+          "sha256": "ecc19a9726c30700ce3f1bf4bf7190e19bcba935c654146bd54cfd19b4f994c5"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_vehicle_success_001.pdf",
+          "sha256": "7d59c0b27001f0765dd1d87c44e946abc51faaf095e8f258c0bde50c523a7c7b"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_vehicle_success_001.svg",
+          "sha256": "f057e17ff89eadf5df5637a70f0fbb2b62074b1e18f3dbfaea8adaf668c6320d"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_vehicle_success_002.json",
+      "source_sha256": "53892446a6ba0456a8d47cc79a160c0a6277bdf7424156d39d4dfe89746f19b4",
+      "recomputed_metrics": {
+        "minADE6": 1.1708075739190014,
+        "minFDE6": 0.033456791198874965,
+        "Top1ADE6": 1.1708075739190014,
+        "Top1FDE6": 0.033456791198874965
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 5.699440868145444e-07,
+        "minFDE6": 6.581797606930451e-12,
+        "Top1ADE6": 5.699440868145444e-07,
+        "Top1FDE6": 6.581797606930451e-12
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        85.34137725830078,
+        -1.0944342613220215
+      ],
+      "best_endpoint": [
+        85.37483215332031,
+        -1.0940780639648438
+      ],
+      "top1_endpoint": [
+        85.37483215332031,
+        -1.0940780639648438
+      ],
+      "best_mode_zero_based": 2,
+      "top1_mode_zero_based": 2,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        59.68035888671875,
+        -3.6240522861480713
+      ],
+      "zoom_max_xy_m": [
+        87.87483215332031,
+        1.5739293694496155
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.09708333333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10333333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_vehicle_success_002.png",
+          "sha256": "d65fc566002af487c5376d5414648e2a0adac768a65d669b92dca97500dc2977"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_vehicle_success_002.pdf",
+          "sha256": "0784ed21a4c0b45661f4f37ce07973d92e02e394a3d56539047c8bce6d604b33"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_vehicle_success_002.svg",
+          "sha256": "dbd35c3f00bc16683524f2e40f8ff9c1b6a2f8f9cbf8ce0c3dc4746b84d0a1d3"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_vehicle_failure_001.json",
+      "source_sha256": "f1d8ec22a9938ac5d85402e250ff154281b4040cf27244d7860e5c99c1963570",
+      "recomputed_metrics": {
+        "minADE6": 37.99172179512199,
+        "minFDE6": 69.54153329694982,
+        "Top1ADE6": 44.944157086904674,
+        "Top1FDE6": 84.08639470329739
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 3.118116040923269e-07,
+        "minFDE6": 1.1268783026707752e-06,
+        "Top1ADE6": 4.401761586336761e-07,
+        "Top1FDE6": 5.603744881454986e-07
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        -68.0749282836914,
+        -4.943164825439453
+      ],
+      "best_endpoint": [
+        -137.33065795898438,
+        -11.24147891998291
+      ],
+      "top1_endpoint": [
+        -151.9514617919922,
+        -10.880243301391602
+      ],
+      "best_mode_zero_based": 1,
+      "top1_mode_zero_based": 4,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        -154.4514617919922,
+        -13.86857795715332
+      ],
+      "zoom_max_xy_m": [
+        -65.5749282836914,
+        -2.443164825439453
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.10420833333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10408333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_vehicle_failure_001.png",
+          "sha256": "36db73e8c757588e09f1be295289170616ee869abf07a0e71b483b1c5c04f721"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_vehicle_failure_001.pdf",
+          "sha256": "a8246a7305e707c5511847504d10fe5e06ec9cae9e58f567bbe6d9b964755dc9"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_vehicle_failure_001.svg",
+          "sha256": "4740251ec0e0f108334ca4980c759bb338ac2b0a8f9573bd0327d28ab938e019"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_vehicle_failure_002.json",
+      "source_sha256": "df3ff6a42bc83f45d4a2c4ce09d16a52db952e87e1ac70586af96462e43241af",
+      "recomputed_metrics": {
+        "minADE6": 38.662023610170486,
+        "minFDE6": 67.1560366854486,
+        "Top1ADE6": 41.773990250051504,
+        "Top1FDE6": 73.84985797075186
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.8414896700846839e-06,
+        "minFDE6": 7.937890003972825e-06,
+        "Top1ADE6": 3.810520112779159e-07,
+        "Top1FDE6": 3.174267675376541e-06
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        2.963870048522949,
+        5.302925109863281
+      ],
+      "best_endpoint": [
+        66.95889282226562,
+        25.663925170898438
+      ],
+      "top1_endpoint": [
+        76.79679107666016,
+        6.8844733238220215
+      ],
+      "best_mode_zero_based": 0,
+      "top1_mode_zero_based": 5,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        0.4638700485229492,
+        2.2372097969055176
+      ],
+      "zoom_max_xy_m": [
+        79.5336685180664,
+        28.163925170898438
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.10433333333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10445833333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_vehicle_failure_002.png",
+          "sha256": "9ee85bcf3b080403ce78b63c314bbebc6cf36b50bce0da5a8cab78ebec7508c6"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_vehicle_failure_002.pdf",
+          "sha256": "a7ec00177353b364315e176aa7d9f12527b56c2eeca4770a849744f20f61b5f9"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_vehicle_failure_002.svg",
+          "sha256": "7f064f16fe3db673f343cd2661ab6e1853dbbfe3c477d9c7c115c2ab39d198a4"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_pedestrian_success_001.json",
+      "source_sha256": "bab0d17ddd5f710599edde27ab46b3d4d1ce00017c630f0580af99fb8a22149e",
+      "recomputed_metrics": {
+        "minADE6": 0.14417520786849825,
+        "minFDE6": 0.008305339767326994,
+        "Top1ADE6": 0.43075165436804025,
+        "Top1FDE6": 0.9316618728314774
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 3.4894077149960623e-07,
+        "minFDE6": 1.902385344190391e-06,
+        "Top1ADE6": 2.842542812242499e-09,
+        "Top1FDE6": 2.8577937349894e-08
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        -4.213704586029053,
+        31.602447509765625
+      ],
+      "best_endpoint": [
+        -4.214330673217773,
+        31.594165802001953
+      ],
+      "top1_endpoint": [
+        -3.9270453453063965,
+        30.71598243713379
+      ],
+      "best_mode_zero_based": 2,
+      "top1_mode_zero_based": 4,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        -6.714330673217773,
+        24.42919158935547
+      ],
+      "zoom_max_xy_m": [
+        -0.2279796600341797,
+        34.102447509765625
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.09708333333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10333333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_pedestrian_success_001.png",
+          "sha256": "aa84fbf9a35f0d5ff8ead664e394c8940461e8092a0b60c9ee9bd0bf76573700"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_pedestrian_success_001.pdf",
+          "sha256": "8a53c3ba5a66441625bf02ee2c57d462a009fa9bd221f2eb0c9bfe47f9591ef5"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_pedestrian_success_001.svg",
+          "sha256": "91a96af5a98e7e819631f4da35aa11e91d7a1001a297942b5f8c88e5b5f19122"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_pedestrian_success_002.json",
+      "source_sha256": "145d9b7d61f90f68d583c798878d30f7bc3a252129e5ee291d945fa17c6bfaea",
+      "recomputed_metrics": {
+        "minADE6": 0.09282536195882024,
+        "minFDE6": 0.009373792349729891,
+        "Top1ADE6": 0.48219416693337797,
+        "Top1FDE6": 1.0904842608881946
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 8.813220875314443e-09,
+        "minFDE6": 1.6185412148195938e-06,
+        "Top1ADE6": 2.498973214470901e-07,
+        "Top1FDE6": 1.9067240710768374e-06
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        0.8195496201515198,
+        -26.95377540588379
+      ],
+      "best_endpoint": [
+        0.8250197172164917,
+        -26.946163177490234
+      ],
+      "top1_endpoint": [
+        0.5886551141738892,
+        -25.888015747070312
+      ],
+      "best_mode_zero_based": 2,
+      "top1_mode_zero_based": 4,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        -2.3954796195030212,
+        -29.45377540588379
+      ],
+      "zoom_max_xy_m": [
+        3.3250197172164917,
+        -21.13738250732422
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.09708333333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10333333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_pedestrian_success_002.png",
+          "sha256": "efaea5e4cf8ce5e311209b79d30ca2363497bc70cb09d3118ff0d2bfa97ce710"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_pedestrian_success_002.pdf",
+          "sha256": "651b1494d02efe7770fa7e55c043c4d0c80ac0b304e68b07c0d4404745871752"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_pedestrian_success_002.svg",
+          "sha256": "966acb2ab670f6daa672d0966c5b4ac4296e49046bf2727a33dc0361e51de8c7"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_pedestrian_failure_001.json",
+      "source_sha256": "9252f244b778b7827b69ff454fca049a12060443efec3b6d9fe94ddfd0553e34",
+      "recomputed_metrics": {
+        "minADE6": 6.519537264578979,
+        "minFDE6": 14.71912318366593,
+        "Top1ADE6": 9.841545697445271,
+        "Top1FDE6": 21.49442513670666
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.8430407777714208e-07,
+        "minFDE6": 2.9700821535527666e-07,
+        "Top1ADE6": 5.924648025512624e-07,
+        "Top1FDE6": 3.1676037082206676e-07
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        37.852291107177734,
+        4.628929615020752
+      ],
+      "best_endpoint": [
+        52.49867248535156,
+        3.167389392852783
+      ],
+      "top1_endpoint": [
+        59.319034576416016,
+        3.5384082794189453
+      ],
+      "best_mode_zero_based": 1,
+      "top1_mode_zero_based": 4,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        35.352291107177734,
+        0.6673893928527832
+      ],
+      "zoom_max_xy_m": [
+        61.819034576416016,
+        7.128929615020752
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.10445833333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10433333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_pedestrian_failure_001.png",
+          "sha256": "cda6820d77edc6fca839dae2b3be9d492c11c51d8a4300998aca2bda4ab4b7f1"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_pedestrian_failure_001.pdf",
+          "sha256": "a87ea8cb832505b8ebd8990fd3c6487f319c8be0946dc3824a9339378c9b22c1"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_pedestrian_failure_001.svg",
+          "sha256": "dcf3c8c493f3e05dcebb1da34b6d00abd92f3181c6981f5742eb59b957a8f142"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_pedestrian_failure_002.json",
+      "source_sha256": "6f77eb8a6889f74b7f55b937ece4f4667a6772d577b6a6ac174e6f53f5e1c52b",
+      "recomputed_metrics": {
+        "minADE6": 5.665385971957764,
+        "minFDE6": 12.068755015064378,
+        "Top1ADE6": 5.581912868981956,
+        "Top1FDE6": 12.317686071326083
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 2.2799340815282676e-07,
+        "minFDE6": 1.3477693094898768e-07,
+        "Top1ADE6": 1.2540280991402142e-07,
+        "Top1FDE6": 9.606534234762876e-09
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        12.151702880859375,
+        6.230066299438477
+      ],
+      "best_endpoint": [
+        13.007043838500977,
+        -5.808340549468994
+      ],
+      "top1_endpoint": [
+        9.250296592712402,
+        -5.741033554077148
+      ],
+      "best_mode_zero_based": 3,
+      "top1_mode_zero_based": 5,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        6.059926986694336,
+        -8.308340549468994
+      ],
+      "zoom_max_xy_m": [
+        15.507043838500977,
+        8.730066299438477
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.10445833333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10458333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_pedestrian_failure_002.png",
+          "sha256": "22d59c83c97f51f99292c092f4bf09a6cb24a9a582a2844c41dad008451bfd05"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_pedestrian_failure_002.pdf",
+          "sha256": "8d7a8ffc5d59b79c7878880cdfc87b37b85c56257afe2c232cea9fce1cda49a9"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_pedestrian_failure_002.svg",
+          "sha256": "3cfa1aca9e81563881257d5f7d00a2a802fcf2387e6fe146b0624ddf7851b2f4"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_bicycle_success_001.json",
+      "source_sha256": "ba429bfc50182fc091eb5d7da16443e3d78ea477e7d43eb62d67f8db76db252b",
+      "recomputed_metrics": {
+        "minADE6": 0.4978569702505433,
+        "minFDE6": 0.25327046092113464,
+        "Top1ADE6": 6.026246659726797,
+        "Top1FDE6": 12.865118488469399
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 2.545112010032824e-08,
+        "minFDE6": 1.924808880615636e-07,
+        "Top1ADE6": 1.1202782257413446e-07,
+        "Top1FDE6": 4.91938315860807e-07
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        15.31679916381836,
+        -37.578792572021484
+      ],
+      "best_endpoint": [
+        15.368505477905273,
+        -37.33085632324219
+      ],
+      "top1_endpoint": [
+        14.911909103393555,
+        -24.720046997070312
+      ],
+      "best_mode_zero_based": 4,
+      "top1_mode_zero_based": 1,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        11.797318458557129,
+        -40.078792572021484
+      ],
+      "zoom_max_xy_m": [
+        17.879481315612793,
+        -20.221872329711914
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.09708333333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10445833333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_bicycle_success_001.png",
+          "sha256": "5ad30fa3f883ca67cbe91f43e8a9c31fb65129376f077f1c231a4754a6d38daf"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_bicycle_success_001.pdf",
+          "sha256": "4580b4c32475d1f76982228a9aceda77e922d9625732027641a33285a127a2f7"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_bicycle_success_001.svg",
+          "sha256": "b0cb8fc8fd077e5d882e16b63cd3c0b0544192fe781ad12a6fa29f5b7e1836f2"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_bicycle_success_002.json",
+      "source_sha256": "910a45a575d8c4e89e3a9330d0cc66516ba47e5d60502e1c28c72422d861af0c",
+      "recomputed_metrics": {
+        "minADE6": 1.5306017986900982,
+        "minFDE6": 0.2990724272223475,
+        "Top1ADE6": 1.2146183860462305,
+        "Top1FDE6": 0.9107438079231884
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 4.164345439594541e-07,
+        "minFDE6": 1.6159734750331722e-07,
+        "Top1ADE6": 1.8002206059186676e-07,
+        "Top1FDE6": 4.4189752079759614e-07
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        5.354179382324219,
+        -13.090322494506836
+      ],
+      "best_endpoint": [
+        5.40244722366333,
+        -13.38547420501709
+      ],
+      "top1_endpoint": [
+        4.4592509269714355,
+        -13.25931167602539
+      ],
+      "best_mode_zero_based": 2,
+      "top1_mode_zero_based": 4,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        -2.631494849920273,
+        -15.88547420501709
+      ],
+      "zoom_max_xy_m": [
+        7.90244722366333,
+        -10.19140911102295
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.09708333333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10333333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_bicycle_success_002.png",
+          "sha256": "6bc650a334e837da71baf5afbe9c964639591e6a33e36daf708511f4dc4d7b6e"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_bicycle_success_002.pdf",
+          "sha256": "6591f20e031cba969bc149efc5054d6a270c23e4b338a1af7b4ea73d1ad2b7ad"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_bicycle_success_002.svg",
+          "sha256": "d6c7c4493b1d17440de0b551fe7a7420501a4605698aac9c92aca0029b5f8ec0"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_bicycle_failure_001.json",
+      "source_sha256": "8d712ea32fcc2815ea4dd34d4f40c7d5fdbca2f7d39334b50393ea14db25571e",
+      "recomputed_metrics": {
+        "minADE6": 12.745932708515975,
+        "minFDE6": 27.504909051229077,
+        "Top1ADE6": 12.387468175544313,
+        "Top1FDE6": 29.06851627228722
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.2947544725250282e-07,
+        "minFDE6": 4.6415178189818107e-07,
+        "Top1ADE6": 1.116142698265321e-06,
+        "Top1FDE6": 1.412649304199931e-06
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        25.01909828186035,
+        -1.4207799434661865
+      ],
+      "best_endpoint": [
+        -2.481360912322998,
+        -0.9260416030883789
+      ],
+      "top1_endpoint": [
+        -0.5206634998321533,
+        -15.302393913269043
+      ],
+      "best_mode_zero_based": 1,
+      "top1_mode_zero_based": 4,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        -5.473743915557861,
+        -17.802393913269043
+      ],
+      "zoom_max_xy_m": [
+        27.51909828186035,
+        5.021661758422852
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.10445833333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10433333333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_bicycle_failure_001.png",
+          "sha256": "26f2a107c933be1d924a4d3fff8e4136144128b466e53400bca24c34b6f2076b"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_bicycle_failure_001.pdf",
+          "sha256": "cc00335d44bfb09743e1f8d37d5644dd0e19fb0442136dac90acf7f81637100f"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_bicycle_failure_001.svg",
+          "sha256": "0acdd97415dae687e4f5dc471c20e7b6a713b6860733d1428ffceae9b8fadcbc"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_json": "04_evaluation/cases/stage3_bicycle_failure_002.json",
+      "source_sha256": "b4d9d83c746ea289cfad660c5101e44f861ff359c82e440eab612f18536b16ac",
+      "recomputed_metrics": {
+        "minADE6": 6.706276389484283,
+        "minFDE6": 14.910785482710416,
+        "Top1ADE6": 6.798854289618273,
+        "Top1FDE6": 15.023944914678637
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 4.4954287670151416e-07,
+        "minFDE6": 1.9233841186405698e-07,
+        "Top1ADE6": 6.142542829934428e-08,
+        "Top1FDE6": 1.0136166253005285e-06
+      },
+      "metric_tolerance_m": 0.0001,
+      "GT_endpoint": [
+        19.53357696533203,
+        7.13880729675293
+      ],
+      "best_endpoint": [
+        18.53415870666504,
+        -7.7384467124938965
+      ],
+      "top1_endpoint": [
+        18.227190017700195,
+        -7.828232288360596
+      ],
+      "best_mode_zero_based": 1,
+      "top1_mode_zero_based": 4,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        15.72552490234375,
+        -10.328871726989746
+      ],
+      "zoom_max_xy_m": [
+        22.424795150756836,
+        9.63880729675293
+      ],
+      "zoom_rule": "last6 GT/best/Top1 points+2.5m margin",
+      "trajectory_coordinates_changed": false,
+      "smoothing": false,
+      "interpolation": false,
+      "other_modes_shown": false,
+      "layout_checks": {
+        "endpoint_labels_in_reserved_side_margins": true,
+        "endpoint_text_inside_canvas": true,
+        "endpoint_text_overlap_with_inset_title_legend_or_other_labels": false,
+        "endpoint_text_boxes_figure_fraction": [
+          [
+            0.16032083333333336,
+            0.23940104166666668,
+            0.08545833333333332,
+            0.021197916666666643
+          ],
+          [
+            0.8242208333333334,
+            0.5420260416666667,
+            0.10433333333333326,
+            0.039947916666666715
+          ],
+          [
+            0.8242208333333334,
+            0.3340260416666666,
+            0.10445833333333326,
+            0.039947916666666715
+          ]
+        ]
+      },
+      "exports": {
+        "png": {
+          "relative_path": "05_figures/stage3_bicycle_failure_002.png",
+          "sha256": "bca1c8923630c175af73b8e4dd2166b602eae096d49bbf84e86e1397d19c34eb"
+        },
+        "pdf": {
+          "relative_path": "05_figures/stage3_bicycle_failure_002.pdf",
+          "sha256": "b7c7dec27642e3cebaf544454f61f025bf6935b6a0f2f9c1b9dc90f85a8734d7"
+        },
+        "svg": {
+          "relative_path": "05_figures/stage3_bicycle_failure_002.svg",
+          "sha256": "5ba3be2b9c6cdfa4102c35ef4e54596eaa2d32e15828dabaae7f3548e81b6f74"
+        }
+      }
+    }
+  ]
+}

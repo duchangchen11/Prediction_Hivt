@@ -1,0 +1,70 @@
+seed: 2022
+historical_steps: 5
+future_steps: 12
+num_modes: 6
+embed_dim: 64
+num_heads: 8
+dropout: 0.1
+num_temporal_layers: 4
+num_global_layers: 3
+local_radius: 50.0
+lane_resolution: 2.0
+weight_decay: 0.0001
+batch_size: 16
+protocol: 1
+scheduler: none
+warmup:
+  lr: 0.001
+  minimum_steps: 2500
+  maximum_steps: 10000
+  plateau_patience: 5
+  stop_rule: after minimum_steps, five consecutive validations without overall full-horizon
+    minFDE improvement, or maximum_steps
+nll: &id001
+  lr: 0.0001
+  maximum_steps: 10000
+  plateau_patience: 5
+validation_interval_steps: 500
+checkpoint_selection: validation full-horizon overall multi-type minFDE; final checkpoint
+  from post-update original NLL phase
+moving_checkpoint_diagnostic_only: true
+optimizer_state_preserved: true
+data_loader:
+  workers: 0
+  cache_scenes: 2
+  shuffle: shuffle scene order and window order within each scene, epoch seed 2022+epoch
+experiment: Multi-Type HiVT (No Type)
+type_embedding: false
+oversampling: false
+class_balanced_loss: false
+test_used: false
+tiny:
+  warmup_lr: 0.001
+  nll_lr: 0.0001
+  warmup_max_steps: 2500
+  warmup_min_steps: 1000
+  nll_max_steps: 1000
+  check_every: 250
+  minimum_targets:
+  - 10
+  - 10
+  - 5
+  minimum_relative_improvement: 0.5
+  selection_split: train only; complete scene context
+  minimum_moving_targets:
+  - 1
+  - 1
+  - 1
+  moving_displacement_m:
+  - 5.0
+  - 1.0
+  - 2.0
+readiness_judgement:
+  maximum_vehicle_overall_FDE_ratio_to_Stage2C: 1.25
+  maximum_vehicle_moving_FDE_ratio_to_Stage2C: 1.25
+  note: practical readiness guard declared before tiny/formal optimization; not a
+    checkpoint selection metric or reason to alter experiments
+active_phase: original_nll
+phase_settings: *id001
+steps_per_epoch: 1057
+data_manifest_sha256: 90e847b377b272c4b273ff8c2907c0b781744f92178d11661965232f9d091347

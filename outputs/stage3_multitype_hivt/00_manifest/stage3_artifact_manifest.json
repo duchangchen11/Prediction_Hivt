@@ -15,11 +15,11 @@
     {
       "relative_path": "00_manifest/stage3_checkpoint_manifest.json",
       "description": "Stage3A 00_manifest",
-      "file_size": 460,
-      "sha256": "06a7e9f05609feafed0eeed59ac0e84d5b512de1d20a426e26c1e0b845de4c2c",
+      "file_size": 15552,
+      "sha256": "87941330cc38ee87bfe5c12f064b4551a685a48a55d98b725d4ddf45360dc252",
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
-      "mtime_ns": 1791126256142633832
+      "mtime_ns": 1791168943380425263
     },
     {
       "relative_path": "00_manifest/stage3_common.py",
@@ -58,6 +58,15 @@
       "mtime_ns": 1791124312340720988
     },
     {
+      "relative_path": "00_manifest/stage3_final_audit.json",
+      "description": "Stage3A 00_manifest",
+      "file_size": 938,
+      "sha256": "3d3c55aabdc04045fa27948cd5c7fd9ecb9724f1218a4ef89b623b1063a1452e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169396992907738
+    },
+    {
       "relative_path": "00_manifest/stage3_formal_preregistration.json",
       "description": "Stage3A 00_manifest",
       "file_size": 1229,
@@ -73,7 +82,7 @@
       "sha256": "6955cca54642b6edaa949da1d1332fad0026cd0abd1141a05379a1cb9581af48",
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
-      "mtime_ns": 1791126818931432027
+      "mtime_ns": 1791169429345227610
     },
     {
       "relative_path": "00_manifest/stage3_frozen_previous.json",
@@ -112,6 +121,24 @@
       "mtime_ns": 1791126008302001217
     },
     {
+      "relative_path": "00_manifest/stage3_prediction_figure_contract.json",
+      "description": "Stage3A 00_manifest",
+      "file_size": 632,
+      "sha256": "1cc63bf7acc4ea85d52a407ce31ff91d0de5c62cd60a66832e5b98b54a4b78d5",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169343548379360
+    },
+    {
+      "relative_path": "00_manifest/stage3_prediction_figure_qa.json",
+      "description": "Stage3A 00_manifest",
+      "file_size": 32975,
+      "sha256": "d6d6139ed6b8c0477b0a687efc24dba3b9b6b1aaf0cec7e449c312ab2925dbea",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169352040463314
+    },
+    {
       "relative_path": "00_manifest/stage3_requirements.txt",
       "description": "Stage3A 00_manifest",
       "file_size": 12898,
@@ -119,6 +146,15 @@
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
       "mtime_ns": 1791124058246062878
+    },
+    {
+      "relative_path": "00_manifest/stage3_resume_environment.json",
+      "description": "Stage3A 00_manifest",
+      "file_size": 383,
+      "sha256": "a5a182d38ed4a7a961d3b31ca7a6f9530e49804a89fbd614eeaec31748784ef8",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791162820167469969
     },
     {
       "relative_path": "00_manifest/stage3_tiny_selection.json",
@@ -137,6 +173,15 @@
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
       "mtime_ns": 1791126807243106252
+    },
+    {
+      "relative_path": "00_manifest/stage3_visual_review.json",
+      "description": "Stage3A 00_manifest",
+      "file_size": 2489,
+      "sha256": "6f44c3a3d00280971288d42e76aebec195f72c9925a2d22bf8331355e554abe0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169374312683503
     },
     {
       "relative_path": "01_data_audit/stage3_class_statistics.csv",
@@ -227,6 +272,24 @@
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
       "mtime_ns": 1791124316428698383
+    },
+    {
+      "relative_path": "02_preprocessed/stage3_cache/stage3_case_contact_sheet.png",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 479404,
+      "sha256": "ab6ff981758723fa444b04004e4e7e6d725fd3b066490c46ca3418accaf49244",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169314420091406
+    },
+    {
+      "relative_path": "02_preprocessed/stage3_cache/stage3_git_payload_gates.json",
+      "description": "Stage3A 02_preprocessed",
+      "file_size": 6929567,
+      "sha256": "7fea6cd6de78048d065125e972cc4328aa0a9d23fd3cbf4649c3c815698f4a76",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791126844100131328
     },
     {
       "relative_path": "02_preprocessed/stage3_cache/stage3_git_payload_prereg.json",
@@ -7933,6 +7996,69 @@
       "mtime_ns": 1791125716713919071
     },
     {
+      "relative_path": "03_no_type_baseline/stage3_nll_config.yaml",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 1812,
+      "sha256": "f51aa960cce22dff7ecf776a540ba5b5539856ad1d84535cbcf41a369263ed85",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791162606254266639
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_nll_curve.csv",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 13247,
+      "sha256": "66e441b7a5101bb2eb45bf4e18670d43f1519d8a5ad3b00aaecba5902c6c5da5",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168942568417243
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_nll_summary.json",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 6522,
+      "sha256": "48e6d463e188c3eab2b930a85c9842d33242bbb1ee18d1c7b00e8fa0e84ec2c9",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168943504426488
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_no_type_loss_curve.png",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 100088,
+      "sha256": "2ac2236fc48af679faf8aa7fc73c455bfb272883a8f57e685ec182fc40d0e7c0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168942728418825
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_no_type_train_curve.csv",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 19560,
+      "sha256": "4458cb15f37c05b758307d063240209c765589d78a56aff371a75a0c1eb18ead",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168942568417243
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_no_type_val_fde_curve.png",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 113391,
+      "sha256": "ccc9dac333e0d4a215ecbb3d7a9b4a47e61a1fe85a1a2249b7a26d025e72ee07",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168942896420483
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_no_type_val_metrics.json",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 793846,
+      "sha256": "1584caad0ccef1173b46217cbddb4d17b24a9cadf8bac92b852bc7441d81e8a5",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168994632931421
+    },
+    {
       "relative_path": "03_no_type_baseline/stage3_tiny.py",
       "description": "Stage3A 03_no_type_baseline",
       "file_size": 11878,
@@ -7978,13 +8104,598 @@
       "mtime_ns": 1791125529416403786
     },
     {
-      "relative_path": "04_evaluation/stage3_evaluate.py",
-      "description": "Stage3A 04_evaluation",
-      "file_size": 7803,
-      "sha256": "ff098007023d873fa7167a200e94245c76fcc6e328c7dcff225ba42c4c6374d2",
+      "relative_path": "03_no_type_baseline/stage3_warmup_config.yaml",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 1811,
+      "sha256": "31a1fd0c727b1e0be16691b73db09bcb0ab1bfc2a1735b02d6f583fa544066bb",
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
-      "mtime_ns": 1791125565030352020
+      "mtime_ns": 1791126907293874780
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_warmup_curve.csv",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 6821,
+      "sha256": "03cd93a4948f48ca19321e087e012482a9e58a653172524596e9b3880fb8d04f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791130042582309722
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3_warmup_summary.json",
+      "description": "Stage3A 03_no_type_baseline",
+      "file_size": 6506,
+      "sha256": "18383ef738516246ad780e67c5f25d2be4efec1d239c62f52e4bc13d99e1e66f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791130043130303049
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_bicycle_failure_001.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 88793,
+      "sha256": "8d712ea32fcc2815ea4dd34d4f40c7d5fdbca2f7d39334b50393ea14db25571e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168998796972548
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_bicycle_failure_002.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 196301,
+      "sha256": "b4d9d83c746ea289cfad660c5101e44f861ff359c82e440eab612f18536b16ac",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168999096975512
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_bicycle_success_001.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 218435,
+      "sha256": "ba429bfc50182fc091eb5d7da16443e3d78ea477e7d43eb62d67f8db76db252b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168998236967017
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_bicycle_success_002.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 96684,
+      "sha256": "910a45a575d8c4e89e3a9330d0cc66516ba47e5d60502e1c28c72422d861af0c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168998576970375
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_pedestrian_failure_001.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 173248,
+      "sha256": "9252f244b778b7827b69ff454fca049a12060443efec3b6d9fe94ddfd0553e34",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168997700961723
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_pedestrian_failure_002.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 96087,
+      "sha256": "6f77eb8a6889f74b7f55b937ece4f4667a6772d577b6a6ac174e6f53f5e1c52b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168997924963935
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_pedestrian_success_001.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 126130,
+      "sha256": "bab0d17ddd5f710599edde27ab46b3d4d1ce00017c630f0580af99fb8a22149e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168996972954531
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_pedestrian_success_002.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 64817,
+      "sha256": "145d9b7d61f90f68d583c798878d30f7bc3a252129e5ee291d945fa17c6bfaea",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168997244957219
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_vehicle_failure_001.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 155376,
+      "sha256": "f1d8ec22a9938ac5d85402e250ff154281b4040cf27244d7860e5c99c1963570",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168996404948923
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_vehicle_failure_002.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 152054,
+      "sha256": "df3ff6a42bc83f45d4a2c4ce09d16a52db952e87e1ac70586af96462e43241af",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168996692951765
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_vehicle_success_001.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 67904,
+      "sha256": "1716a6f8b61473d5c78f8535635ba725e9f04c78ddaf64ca11099c1cf36f9a3e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168995632941295
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3_vehicle_success_002.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 146443,
+      "sha256": "53892446a6ba0456a8d47cc79a160c0a6277bdf7424156d39d4dfe89746f19b4",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168995944944377
+    },
+    {
+      "relative_path": "04_evaluation/stage3_case_manifest.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 4878,
+      "sha256": "5fbd33acd2d9fda264fe13dade083c3ff9d7e248e7708a921e06967ada0fb6d9",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168999112975669
+    },
+    {
+      "relative_path": "04_evaluation/stage3_evaluate.py",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 8800,
+      "sha256": "2149256a7fdd093990bbd72313ee7e2909d72606b6802f1ccc134d0939d1cb6c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791165864739030211
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_00500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5740,
+      "sha256": "5449c1ad352eb82e9e642d806c54417a312c7e19fdd5089edf7f9d25e1d69d40",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791162941236452899
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_01000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5735,
+      "sha256": "11b1068df0aff05b34890192bf7780db059110b8d7b1a1a76eec5690debd8adc",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791163257614445063
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_01500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5721,
+      "sha256": "70454720c9beca8fab5bd3440290214cae7adc8384d8a0f656a75527ba20c5b4",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791163577984384552
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_02000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5724,
+      "sha256": "60530b8b150ff32f7bc287682c5af01002d4999414b3b66ae72e43caed3c953b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791163889572582559
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_02500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5735,
+      "sha256": "2878c9fcde2dbce679015f763b4491e23ab0c3ce4f65153514b976bb2c4657e2",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791164211494371849
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_03000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5731,
+      "sha256": "35c10fc6f508cc15e064172908576f77177ff1fef6634091b1033979dc1dc7cf",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791164516257499997
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_03500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5731,
+      "sha256": "de34847a603b759c4bfb36191da16fbb2c18ae21e82e58ff357d639ce3073d8c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791164840115947796
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_04000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5729,
+      "sha256": "435bb62a6c3b8fcdebf5f53c1e33d26168da5488b05fb2efadcf297365434005",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791165149062941057
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_04500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5731,
+      "sha256": "18b795918b31d7ec5d5036eb02aeacea9c4a98d449358526ba4624ad01b86691",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791165460994160995
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_05000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5725,
+      "sha256": "afcefe967bd5d5075a3a386a6c5c05751ac78b1966aafe0dfa5825fd3d2ce2b4",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791165779971871281
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_05500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5737,
+      "sha256": "fbf5734737f2e1ef6fa3505deac7b48ddfef0fa155ebddec218f7214d72018e1",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791166097109930239
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_06000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5730,
+      "sha256": "0f3403ae9a685fe640f7679107b9f5ac5060f0fabbd36a4d23e86970373d755b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791166401874299204
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_06500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5732,
+      "sha256": "e143c1997ad353ae4ad27e5d38b5e5cf6d0e4e2e4476ce800f2d1f3e2bb68d96",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791166729484012351
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_07000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5719,
+      "sha256": "c75aff6c3403999da137743f91ef480b56ddad33907c65a33b192927eac84ce1",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791167041310328426
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_07500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5732,
+      "sha256": "28658dd3137bc6cfceefc7a037d0f5cb5614b139d8e4562c745332bf70856855",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791167357317041003
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_08000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5729,
+      "sha256": "bc3f677a5e84c9317ce9a956dfa757eb9aae94766aec228e1466a003ffb36447",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791167672891969525
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_08500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5733,
+      "sha256": "2bba8f847fbbb44c37020714f9c144b3ac6c4315b893627ce294a196ec67e31c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791167989179040799
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_09000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5730,
+      "sha256": "daed86e1106e397e1131fe7d496fad4deb0fcb4cb00a9e6236c86c06121a7626",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168309362177340
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_09500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5734,
+      "sha256": "042078fc9f18358b322445ceea823ba3738cb0831539ce5162373a2e5f62729a",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168633769370321
+    },
+    {
+      "relative_path": "04_evaluation/stage3_nll_val_step_10000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5725,
+      "sha256": "0bd617de8e92e3298a6e54ae55615d6cb355de53d8d9a95ac93b638b9b4f66c0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168942900420521
+    },
+    {
+      "relative_path": "04_evaluation/stage3_no_type_actor_errors.csv",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 24990235,
+      "sha256": "7da56a639fb047bf963c758d016af493bd930293dc68355a6a5a5220f9c935eb",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168994576930867
+    },
+    {
+      "relative_path": "04_evaluation/stage3_no_type_scene_metrics.csv",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 376625,
+      "sha256": "f344e9a01260d4c7442cbd1b9f242ee00765c682bc582784cc556fa0cdb4979b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168994648931578
+    },
+    {
+      "relative_path": "04_evaluation/stage3_vehicle_retention_audit.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 375,
+      "sha256": "247e329a9fc77b7085b7d5c65eb7d32f09fc09b85bfb1612d19c952cc71aaf7e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168995320938216
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_00500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5696,
+      "sha256": "034f627c746b152239fa47affe3c63950f55c43d610689a26d6f16ecdfdbbe84",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791127233926668302
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_01000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5702,
+      "sha256": "e34bbf1edc905829da27c2f6a7889840d679b673548c4a77dae4b12fcfee9090",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791127554355066911
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_01500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5705,
+      "sha256": "ceefc5347d9884cbc4d76a63ef68fec0b4e116ba09649779232edf4e8addb8aa",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791127865173692444
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_02000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5711,
+      "sha256": "c9ec143a00bb4e06ee8165eae3af0613fc5557ae270b0540fbf990d98d9f11c7",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791128183322204244
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_02500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5713,
+      "sha256": "1b9d5a96a918a1d7fca95af6c0f47b8adfc2d99bf62fe6c06c24518dcff91ac5",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791128496478329343
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_03000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5700,
+      "sha256": "763710e8dcd4ba387847c3229ec11584c87bfa35c932dd7c04fb646c4a3ec799",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791128805188149351
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_03500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5714,
+      "sha256": "c02e91f53ecdaad07d3366f474d593df575d1018841ef7dd0dfc6a1c7975fbca",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791129113575980501
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_04000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5708,
+      "sha256": "e507b68b2ad323ad353c8e2635ada184f637fa4aae48a5c325fbbe7413343214",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791129420371922805
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_04500.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5694,
+      "sha256": "c56fc6c43a2e471ecd07f77fa0f9f144bfa908f8e550eb8e4fcaeb44513abc61",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791129742701602622
+    },
+    {
+      "relative_path": "04_evaluation/stage3_warmup_val_step_05000.json",
+      "description": "Stage3A 04_evaluation",
+      "file_size": 5710,
+      "sha256": "bda8447f3e394467b816eebd9ace7e868d0193dbdd0cabc92b9303fe26ff1f54",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791130042886306020
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_failure_001.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 26791,
+      "sha256": "cc00335d44bfb09743e1f8d37d5644dd0e19fb0442136dac90acf7f81637100f",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169351280455801
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_failure_001.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 374605,
+      "sha256": "26f2a107c933be1d924a4d3fff8e4136144128b466e53400bca24c34b6f2076b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169350976452795
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_failure_001.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 85113,
+      "sha256": "0acdd97415dae687e4f5dc471c20e7b6a713b6860733d1428ffceae9b8fadcbc",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169351352456510
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_failure_001_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2400,
+      "sha256": "b758cb5e85020567e073ba3a49729bb753ba3dfeb7756a535e61254c132f14ee",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169351356456552
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_failure_002.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 25148,
+      "sha256": "b7c7dec27642e3cebaf544454f61f025bf6935b6a0f2f9c1b9dc90f85a8734d7",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169351968462600
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_failure_002.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 350949,
+      "sha256": "bca1c8923630c175af73b8e4dd2166b602eae096d49bbf84e86e1397d19c34eb",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169351820461139
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_failure_002.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 70035,
+      "sha256": "5ba3be2b9c6cdfa4102c35ef4e54596eaa2d32e15828dabaae7f3548e81b6f74",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169352036463272
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_failure_002_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2393,
+      "sha256": "bebcf6aa5c9f5cedc9e700e19c8ddd6b91f6cd3215918c7ab5a78010f71f1fe7",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169352040463314
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_success_001.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 24298,
+      "sha256": "4580b4c32475d1f76982228a9aceda77e922d9625732027641a33285a127a2f7",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169349844441604
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_success_001.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 360862,
+      "sha256": "5ad30fa3f883ca67cbe91f43e8a9c31fb65129376f077f1c231a4754a6d38daf",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169349692440101
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_success_001.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 63975,
+      "sha256": "b0cb8fc8fd077e5d882e16b63cd3c0b0544192fe781ad12a6fa29f5b7e1836f2",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169349916442313
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_success_001_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2400,
+      "sha256": "f78f17604f56a362bae79d7fa4ee292cd68c945ed19fd9ce870f351ae4f57e46",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169349916442313
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_success_002.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 21367,
+      "sha256": "6591f20e031cba969bc149efc5054d6a270c23e4b338a1af7b4ea73d1ad2b7ad",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169350468447773
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_success_002.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 307131,
+      "sha256": "6bc650a334e837da71baf5afbe9c964639591e6a33e36daf708511f4dc4d7b6e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169350328446388
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_success_002.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 36087,
+      "sha256": "d6c7c4493b1d17440de0b551fe7a7420501a4605698aac9c92aca0029b5f8ec0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169350520448285
+    },
+    {
+      "relative_path": "05_figures/stage3_bicycle_success_002_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2396,
+      "sha256": "f67168dbed328c4a8041fef4b0dbcff544f1c4a1940d7dc6e7f50cd310deb6a2",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169350520448285
     },
     {
       "relative_path": "05_figures/stage3_data_bicycle_examples.pdf",
@@ -8095,6 +8806,150 @@
       "mtime_ns": 1791125813446230193
     },
     {
+      "relative_path": "05_figures/stage3_pedestrian_failure_001.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 23068,
+      "sha256": "a87ea8cb832505b8ebd8990fd3c6487f319c8be0946dc3824a9339378c9b22c1",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169348536428673
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_failure_001.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 298604,
+      "sha256": "cda6820d77edc6fca839dae2b3be9d492c11c51d8a4300998aca2bda4ab4b7f1",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169348236425707
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_failure_001.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 51004,
+      "sha256": "dcf3c8c493f3e05dcebb1da34b6d00abd92f3181c6981f5742eb59b957a8f142",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169348596429264
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_failure_001_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2404,
+      "sha256": "248d3ca0f67f9526f7cb56ae50c08e77c738b4dbe36e33bd2fafb2e860ee8814",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169348600429306
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_failure_002.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 22394,
+      "sha256": "8d7a8ffc5d59b79c7878880cdfc87b37b85c56257afe2c232cea9fce1cda49a9",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169349164434881
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_failure_002.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 301255,
+      "sha256": "22d59c83c97f51f99292c092f4bf09a6cb24a9a582a2844c41dad008451bfd05",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169349020433457
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_failure_002.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 45241,
+      "sha256": "3cfa1aca9e81563881257d5f7d00a2a802fcf2387e6fe146b0624ddf7851b2f4",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169349220435434
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_failure_002_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2406,
+      "sha256": "829e659963c552cd5b6db6fec13f71dc6b848bdfba761f7d074cb03b48f72119",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169349224435472
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_success_001.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 22287,
+      "sha256": "8a53c3ba5a66441625bf02ee2c57d462a009fa9bd221f2eb0c9bfe47f9591ef5",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169347132414792
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_success_001.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 331843,
+      "sha256": "aa84fbf9a35f0d5ff8ead664e394c8940461e8092a0b60c9ee9bd0bf76573700",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169346988413369
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_success_001.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 42352,
+      "sha256": "91a96af5a98e7e819631f4da35aa11e91d7a1001a297942b5f8c88e5b5f19122",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169347188415344
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_success_001_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2412,
+      "sha256": "f079f8c7c3c5e6bdb04eac46f6f9f19f4513cfc336ef6e174ec8ba9cb67f7ed4",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169347192415386
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_success_002.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 21217,
+      "sha256": "651b1494d02efe7770fa7e55c043c4d0c80ac0b304e68b07c0d4404745871752",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169347752420922
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_success_002.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 308266,
+      "sha256": "efaea5e4cf8ce5e311209b79d30ca2363497bc70cb09d3118ff0d2bfa97ce710",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169347616419577
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_success_002.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 34039,
+      "sha256": "966acb2ab670f6daa672d0966c5b4ac4296e49046bf2727a33dc0361e51de8c7",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169347804421434
+    },
+    {
+      "relative_path": "05_figures/stage3_pedestrian_success_002_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2418,
+      "sha256": "322ab0d3da971c9fe8439c48e19791b1c7144e4e41a723d05ffaaf0b1d5cae8d",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169347804421434
+    },
+    {
       "relative_path": "05_figures/stage3_plot_data.py",
       "description": "Stage3A 05_figures",
       "file_size": 3939,
@@ -8106,11 +8961,442 @@
     {
       "relative_path": "05_figures/stage3_plot_predictions.py",
       "description": "Stage3A 05_figures",
-      "file_size": 8732,
-      "sha256": "6014f6799357dac8483f64b8b87417b989bc13ac80250a5e63a1b5d12cad4c50",
+      "file_size": 9793,
+      "sha256": "ef1cc8a93fbd16dfd30a06b69f42307d564e8611f12257ecf3edc3f6552fcd87",
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
-      "mtime_ns": 1791125806725941705
+      "mtime_ns": 1791169340224346499
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_failure_001.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 29165,
+      "sha256": "a8246a7305e707c5511847504d10fe5e06ec9cae9e58f567bbe6d9b964755dc9",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169345764401269
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_failure_001.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 339200,
+      "sha256": "36db73e8c757588e09f1be295289170616ee869abf07a0e71b483b1c5c04f721",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169345468398342
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_failure_001.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 108174,
+      "sha256": "4740251ec0e0f108334ca4980c759bb338ac2b0a8f9573bd0327d28ab938e019",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169345844402059
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_failure_001_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2395,
+      "sha256": "0468e5433c99994434330a38b3dde20163c6b80c47fd2f41b830e46746af8b18",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169345844402059
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_failure_002.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 31224,
+      "sha256": "a7ec00177353b364315e176aa7d9f12527b56c2eeca4770a849744f20f61b5f9",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169346456408110
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_failure_002.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 343476,
+      "sha256": "9ee85bcf3b080403ce78b63c314bbebc6cf36b50bce0da5a8cab78ebec7508c6",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169346292406488
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_failure_002.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 134120,
+      "sha256": "7f064f16fe3db673f343cd2661ab6e1853dbbfe3c477d9c7c115c2ab39d198a4",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169346548409019
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_failure_002_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2389,
+      "sha256": "bebde9c9e493d506b288e5cbd4fa276557e12362a0c7e1c6ef5929a64b6d6a62",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169346552409057
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_success_001.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 20997,
+      "sha256": "7d59c0b27001f0765dd1d87c44e946abc51faaf095e8f258c0bde50c523a7c7b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169344300386793
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_success_001.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 306576,
+      "sha256": "ecc19a9726c30700ce3f1bf4bf7190e19bcba935c654146bd54cfd19b4f994c5",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169344104384858
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_success_001.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 36840,
+      "sha256": "f057e17ff89eadf5df5637a70f0fbb2b62074b1e18f3dbfaea8adaf668c6320d",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169344356387346
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_success_001_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2401,
+      "sha256": "e1b7f7008b8567707376b1c164ee6f0e13315fdbe8be5c4841693ad6eea9114c",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169344356387346
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_success_002.pdf",
+      "description": "Stage3A 05_figures",
+      "file_size": 25828,
+      "sha256": "0784ed21a4c0b45661f4f37ce07973d92e02e394a3d56539047c8bce6d604b33",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169344964393359
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_success_002.png",
+      "description": "Stage3A 05_figures",
+      "file_size": 326520,
+      "sha256": "d65fc566002af487c5376d5414648e2a0adac768a65d669b92dca97500dc2977",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169344804391776
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_success_002.svg",
+      "description": "Stage3A 05_figures",
+      "file_size": 87331,
+      "sha256": "dbd35c3f00bc16683524f2e40f8ff9c1b6a2f8f9cbf8ce0c3dc4746b84d0a1d3",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169345044394150
+    },
+    {
+      "relative_path": "05_figures/stage3_vehicle_success_002_audit.json",
+      "description": "Stage3A 05_figures",
+      "file_size": 2400,
+      "sha256": "5d3f325cba38cb121a1fe81e2c01f3ad1095598486f824022511a0c6cc803b4e",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169345044394150
+    },
+    {
+      "relative_path": "06_tables/stage3_no_type_main_results.csv",
+      "description": "Stage3A 06_tables",
+      "file_size": 1321,
+      "sha256": "12398900bbb9708b6d64af618fca6bf6268f59ad0fb05b387da776629481bd90",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168994632931421
+    },
+    {
+      "relative_path": "06_tables/stage3_no_type_partial_results.csv",
+      "description": "Stage3A 06_tables",
+      "file_size": 1329,
+      "sha256": "dfd55b8244e4efaebbbf884fe7aa2dacf95ad0c68560e54e5bc016c4c6bd0f7b",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168994632931421
+    },
+    {
+      "relative_path": "06_tables/stage3_vehicle_retention.csv",
+      "description": "Stage3A 06_tables",
+      "file_size": 1088,
+      "sha256": "45788aa2fa86d0f3aead312deb59effb98f74f8989fa5e22f6bd0a2e714948fb",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168995300938018
+    },
+    {
+      "relative_path": "07_checkpoints/stage3_best_moving_minfde.pt",
+      "description": "Stage3A 07_checkpoints",
+      "file_size": 8122634,
+      "sha256": "5a9d5dbe6afbb15d8e60282be0d5fa7d263e334b6bb50e48691c51b294d5bed3",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168943204423524,
+      "checkpoint_metadata": {
+        "epoch": 9.460737937559129,
+        "global_step": 15000,
+        "phase_step": 10000,
+        "phase": "original_nll",
+        "LR": 0.0001,
+        "validation_ADE": 0.6773612667027423,
+        "validation_FDE": 1.388404393440423,
+        "validation_MR": 0.17034006182942354,
+        "moving_ADE": 2.345720766130882,
+        "moving_FDE": 4.923529142510221,
+        "git_commit_SHA": "fbb7eac3a8ca972f77526b30620d194831afc9eb",
+        "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+        "phase_config_sha256": "f51aa960cce22dff7ecf776a540ba5b5539856ad1d84535cbcf41a369263ed85",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": true,
+        "warmup_source_step": 2500,
+        "warmup_executed_steps": 5000,
+        "per_class_full_horizon_metrics": {
+          "vehicle": {
+            "count": 42332,
+            "minADE6": 0.7177157086467031,
+            "minFDE6": 1.4753904411723058,
+            "MR6": 0.1710998771614854,
+            "Top1ADE6": 1.3814122153271482,
+            "Top1FDE6": 3.147475760868928,
+            "NLL": -0.8869339434263543,
+            "independent_minADE6": 0.6773013646211701
+          },
+          "pedestrian": {
+            "count": 12002,
+            "minADE6": 0.5427875208501655,
+            "minFDE6": 1.0975853555638764,
+            "MR6": 0.16905515747375438,
+            "Top1ADE6": 0.6886634381919872,
+            "Top1FDE6": 1.441516400084617,
+            "NLL": -0.007469823500505869,
+            "independent_minADE6": 0.5292963325837107
+          },
+          "bicycle": {
+            "count": 656,
+            "minADE6": 0.5353945919327443,
+            "minFDE6": 1.0958993934530044,
+            "MR6": 0.1448170731707317,
+            "Top1ADE6": 1.0105079102458392,
+            "Top1FDE6": 2.167347178358951,
+            "NLL": -0.7323626239057176,
+            "independent_minADE6": 0.5092797557267548
+          }
+        },
+        "selection_metric": "moving minFDE6; diagnostic only",
+        "sha256": "5a9d5dbe6afbb15d8e60282be0d5fa7d263e334b6bb50e48691c51b294d5bed3",
+        "file_size": 8122634,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage3_best_overall_minfde.pt",
+      "description": "Stage3A 07_checkpoints",
+      "file_size": 8123741,
+      "sha256": "9ebd0bb23b44f0a738122cee0316e127063d6af006bff7d057bc0a5470a0384a",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168942984421353,
+      "checkpoint_metadata": {
+        "epoch": 9.460737937559129,
+        "global_step": 15000,
+        "phase_step": 10000,
+        "phase": "original_nll",
+        "LR": 0.0001,
+        "validation_ADE": 0.6773612667027423,
+        "validation_FDE": 1.388404393440423,
+        "validation_MR": 0.17034006182942354,
+        "moving_ADE": 2.345720766130882,
+        "moving_FDE": 4.923529142510221,
+        "git_commit_SHA": "fbb7eac3a8ca972f77526b30620d194831afc9eb",
+        "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+        "phase_config_sha256": "f51aa960cce22dff7ecf776a540ba5b5539856ad1d84535cbcf41a369263ed85",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": true,
+        "warmup_source_step": 2500,
+        "warmup_executed_steps": 5000,
+        "per_class_full_horizon_metrics": {
+          "vehicle": {
+            "count": 42332,
+            "minADE6": 0.7177157086467031,
+            "minFDE6": 1.4753904411723058,
+            "MR6": 0.1710998771614854,
+            "Top1ADE6": 1.3814122153271482,
+            "Top1FDE6": 3.147475760868928,
+            "NLL": -0.8869339434263543,
+            "independent_minADE6": 0.6773013646211701
+          },
+          "pedestrian": {
+            "count": 12002,
+            "minADE6": 0.5427875208501655,
+            "minFDE6": 1.0975853555638764,
+            "MR6": 0.16905515747375438,
+            "Top1ADE6": 0.6886634381919872,
+            "Top1FDE6": 1.441516400084617,
+            "NLL": -0.007469823500505869,
+            "independent_minADE6": 0.5292963325837107
+          },
+          "bicycle": {
+            "count": 656,
+            "minADE6": 0.5353945919327443,
+            "minFDE6": 1.0958993934530044,
+            "MR6": 0.1448170731707317,
+            "Top1ADE6": 1.0105079102458392,
+            "Top1FDE6": 2.167347178358951,
+            "NLL": -0.7323626239057176,
+            "independent_minADE6": 0.5092797557267548
+          }
+        },
+        "selection_metric": "overall minFDE6",
+        "sha256": "9ebd0bb23b44f0a738122cee0316e127063d6af006bff7d057bc0a5470a0384a",
+        "file_size": 8123741,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage3_last_checkpoint.pt",
+      "description": "Stage3A 07_checkpoints",
+      "file_size": 8119313,
+      "sha256": "95ffcd4a743f9e25ba4311faa9b85613c2d90ca85539ef73d0b484af2db1dc0e",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168943360425064,
+      "checkpoint_metadata": {
+        "epoch": 9.460737937559129,
+        "global_step": 15000,
+        "phase_step": 10000,
+        "phase": "original_nll",
+        "LR": 0.0001,
+        "validation_ADE": 0.6773612667027423,
+        "validation_FDE": 1.388404393440423,
+        "validation_MR": 0.17034006182942354,
+        "moving_ADE": 2.345720766130882,
+        "moving_FDE": 4.923529142510221,
+        "git_commit_SHA": "fbb7eac3a8ca972f77526b30620d194831afc9eb",
+        "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+        "phase_config_sha256": "f51aa960cce22dff7ecf776a540ba5b5539856ad1d84535cbcf41a369263ed85",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": true,
+        "warmup_source_step": 2500,
+        "warmup_executed_steps": 5000,
+        "per_class_full_horizon_metrics": {
+          "vehicle": {
+            "count": 42332,
+            "minADE6": 0.7177157086467031,
+            "minFDE6": 1.4753904411723058,
+            "MR6": 0.1710998771614854,
+            "Top1ADE6": 1.3814122153271482,
+            "Top1FDE6": 3.147475760868928,
+            "NLL": -0.8869339434263543,
+            "independent_minADE6": 0.6773013646211701
+          },
+          "pedestrian": {
+            "count": 12002,
+            "minADE6": 0.5427875208501655,
+            "minFDE6": 1.0975853555638764,
+            "MR6": 0.16905515747375438,
+            "Top1ADE6": 0.6886634381919872,
+            "Top1FDE6": 1.441516400084617,
+            "NLL": -0.007469823500505869,
+            "independent_minADE6": 0.5292963325837107
+          },
+          "bicycle": {
+            "count": 656,
+            "minADE6": 0.5353945919327443,
+            "minFDE6": 1.0958993934530044,
+            "MR6": 0.1448170731707317,
+            "Top1ADE6": 1.0105079102458392,
+            "Top1FDE6": 2.167347178358951,
+            "NLL": -0.7323626239057176,
+            "independent_minADE6": 0.5092797557267548
+          }
+        },
+        "selection_metric": "last completed validation",
+        "sha256": "95ffcd4a743f9e25ba4311faa9b85613c2d90ca85539ef73d0b484af2db1dc0e",
+        "file_size": 8119313,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage3_nll_last_checkpoint.pt",
+      "description": "Stage3A 07_checkpoints",
+      "file_size": 8123741,
+      "sha256": "1f89e7e7fb1318db997dc1cc8866114fab4219ef5ab0e0156a98bbcf4bee5db6",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168943284424315,
+      "checkpoint_metadata": {
+        "epoch": 9.460737937559129,
+        "global_step": 15000,
+        "phase_step": 10000,
+        "phase": "original_nll",
+        "LR": 0.0001,
+        "validation_ADE": 0.6773612667027423,
+        "validation_FDE": 1.388404393440423,
+        "validation_MR": 0.17034006182942354,
+        "moving_ADE": 2.345720766130882,
+        "moving_FDE": 4.923529142510221,
+        "git_commit_SHA": "fbb7eac3a8ca972f77526b30620d194831afc9eb",
+        "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+        "phase_config_sha256": "f51aa960cce22dff7ecf776a540ba5b5539856ad1d84535cbcf41a369263ed85",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": true,
+        "warmup_source_step": 2500,
+        "warmup_executed_steps": 5000,
+        "per_class_full_horizon_metrics": {
+          "vehicle": {
+            "count": 42332,
+            "minADE6": 0.7177157086467031,
+            "minFDE6": 1.4753904411723058,
+            "MR6": 0.1710998771614854,
+            "Top1ADE6": 1.3814122153271482,
+            "Top1FDE6": 3.147475760868928,
+            "NLL": -0.8869339434263543,
+            "independent_minADE6": 0.6773013646211701
+          },
+          "pedestrian": {
+            "count": 12002,
+            "minADE6": 0.5427875208501655,
+            "minFDE6": 1.0975853555638764,
+            "MR6": 0.16905515747375438,
+            "Top1ADE6": 0.6886634381919872,
+            "Top1FDE6": 1.441516400084617,
+            "NLL": -0.007469823500505869,
+            "independent_minADE6": 0.5292963325837107
+          },
+          "bicycle": {
+            "count": 656,
+            "minADE6": 0.5353945919327443,
+            "minFDE6": 1.0958993934530044,
+            "MR6": 0.1448170731707317,
+            "Top1ADE6": 1.0105079102458392,
+            "Top1FDE6": 2.167347178358951,
+            "NLL": -0.7323626239057176,
+            "independent_minADE6": 0.5092797557267548
+          }
+        },
+        "selection_metric": "last completed validation",
+        "sha256": "1f89e7e7fb1318db997dc1cc8866114fab4219ef5ab0e0156a98bbcf4bee5db6",
+        "file_size": 8123741,
+        "git_tracked": false
+      }
     },
     {
       "relative_path": "07_checkpoints/stage3_tiny_last.pt",
@@ -8128,6 +9414,201 @@
         "config_sha256": "00de99c822d8fefc20317f4605244def4e29716b5b5ec36609afa9046d17180c",
         "selection_metric": "tiny diagnostic only",
         "git_commit_SHA": "7628db79cb7a079c4e45d7e5f46a54010791571a"
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage3_warmup_best_moving.pt",
+      "description": "Stage3A 07_checkpoints",
+      "file_size": 8122634,
+      "sha256": "c22223499fda88d90a0058703ba09640aeea4e57c9bebb63b521dc5d14d91573",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791128496650323155,
+      "checkpoint_metadata": {
+        "epoch": 2.3651844843897822,
+        "global_step": 2500,
+        "phase_step": 2500,
+        "phase": "fixed_scale",
+        "LR": 0.001,
+        "validation_ADE": 0.7460579691709996,
+        "validation_FDE": 1.4534978063437813,
+        "validation_MR": 0.17583196944899074,
+        "moving_ADE": 2.6353492688977176,
+        "moving_FDE": 5.1697395034380325,
+        "git_commit_SHA": "fbb7eac3a8ca972f77526b30620d194831afc9eb",
+        "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+        "phase_config_sha256": "31a1fd0c727b1e0be16691b73db09bcb0ab1bfc2a1735b02d6f583fa544066bb",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": false,
+        "warmup_source_step": null,
+        "warmup_executed_steps": 0,
+        "per_class_full_horizon_metrics": {
+          "vehicle": {
+            "count": 42332,
+            "minADE6": 0.7946263299959035,
+            "minFDE6": 1.5378300169367451,
+            "MR6": 0.17568269866767458,
+            "Top1ADE6": 1.5372054344063817,
+            "Top1FDE6": 3.250914779915118,
+            "NLL": 1.1491092338737057,
+            "independent_minADE6": 0.7288114658608491
+          },
+          "pedestrian": {
+            "count": 12002,
+            "minADE6": 0.5850518465783479,
+            "minFDE6": 1.1746417344901943,
+            "MR6": 0.17763706048991834,
+            "Top1ADE6": 0.8494869567041199,
+            "Top1FDE6": 1.7527347421671566,
+            "NLL": 1.0402788033268489,
+            "independent_minADE6": 0.5709622371526659
+          },
+          "bicycle": {
+            "count": 656,
+            "minADE6": 0.5576427754471873,
+            "minFDE6": 1.1133749947056923,
+            "MR6": 0.1524390243902439,
+            "Top1ADE6": 0.8559086342873166,
+            "Top1FDE6": 1.7521695919269582,
+            "NLL": 0.9993418181633077,
+            "independent_minADE6": 0.5276544082742298
+          }
+        },
+        "selection_metric": "moving minFDE6; diagnostic only",
+        "sha256": "c22223499fda88d90a0058703ba09640aeea4e57c9bebb63b521dc5d14d91573",
+        "file_size": 8122634,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage3_warmup_best_overall.pt",
+      "description": "Stage3A 07_checkpoints",
+      "file_size": 8123741,
+      "sha256": "e0d15ac415da94f9f7e894e698e6329063c81e62c4e87a726c80d4495cb35ee9",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791128496566326178,
+      "checkpoint_metadata": {
+        "epoch": 2.3651844843897822,
+        "global_step": 2500,
+        "phase_step": 2500,
+        "phase": "fixed_scale",
+        "LR": 0.001,
+        "validation_ADE": 0.7460579691709996,
+        "validation_FDE": 1.4534978063437813,
+        "validation_MR": 0.17583196944899074,
+        "moving_ADE": 2.6353492688977176,
+        "moving_FDE": 5.1697395034380325,
+        "git_commit_SHA": "fbb7eac3a8ca972f77526b30620d194831afc9eb",
+        "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+        "phase_config_sha256": "31a1fd0c727b1e0be16691b73db09bcb0ab1bfc2a1735b02d6f583fa544066bb",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": false,
+        "warmup_source_step": null,
+        "warmup_executed_steps": 0,
+        "per_class_full_horizon_metrics": {
+          "vehicle": {
+            "count": 42332,
+            "minADE6": 0.7946263299959035,
+            "minFDE6": 1.5378300169367451,
+            "MR6": 0.17568269866767458,
+            "Top1ADE6": 1.5372054344063817,
+            "Top1FDE6": 3.250914779915118,
+            "NLL": 1.1491092338737057,
+            "independent_minADE6": 0.7288114658608491
+          },
+          "pedestrian": {
+            "count": 12002,
+            "minADE6": 0.5850518465783479,
+            "minFDE6": 1.1746417344901943,
+            "MR6": 0.17763706048991834,
+            "Top1ADE6": 0.8494869567041199,
+            "Top1FDE6": 1.7527347421671566,
+            "NLL": 1.0402788033268489,
+            "independent_minADE6": 0.5709622371526659
+          },
+          "bicycle": {
+            "count": 656,
+            "minADE6": 0.5576427754471873,
+            "minFDE6": 1.1133749947056923,
+            "MR6": 0.1524390243902439,
+            "Top1ADE6": 0.8559086342873166,
+            "Top1FDE6": 1.7521695919269582,
+            "NLL": 0.9993418181633077,
+            "independent_minADE6": 0.5276544082742298
+          }
+        },
+        "selection_metric": "overall minFDE6",
+        "sha256": "e0d15ac415da94f9f7e894e698e6329063c81e62c4e87a726c80d4495cb35ee9",
+        "file_size": 8123741,
+        "git_tracked": false
+      }
+    },
+    {
+      "relative_path": "07_checkpoints/stage3_warmup_last_checkpoint.pt",
+      "description": "Stage3A 07_checkpoints",
+      "file_size": 8127062,
+      "sha256": "bc59637b2fffce7ebc0bfe052caa5f03c7e9333c7a483edeb379d881304ad4b4",
+      "git_tracked": false,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791130042946305291,
+      "checkpoint_metadata": {
+        "epoch": 4.7303689687795645,
+        "global_step": 5000,
+        "phase_step": 5000,
+        "phase": "fixed_scale",
+        "LR": 0.001,
+        "validation_ADE": 0.7925912290549366,
+        "validation_FDE": 1.5395567225755054,
+        "validation_MR": 0.1857246772140389,
+        "moving_ADE": 2.810316572498914,
+        "moving_FDE": 5.514288035074635,
+        "git_commit_SHA": "fbb7eac3a8ca972f77526b30620d194831afc9eb",
+        "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+        "phase_config_sha256": "31a1fd0c727b1e0be16691b73db09bcb0ab1bfc2a1735b02d6f583fa544066bb",
+        "selection_split": "official val",
+        "selection_horizon": "full_horizon",
+        "optimizer_state_preserved": false,
+        "warmup_source_step": null,
+        "warmup_executed_steps": 0,
+        "per_class_full_horizon_metrics": {
+          "vehicle": {
+            "count": 42332,
+            "minADE6": 0.8578660305437018,
+            "minFDE6": 1.6589320728465964,
+            "MR6": 0.1924785032599452,
+            "Top1ADE6": 2.0740420958077403,
+            "Top1FDE6": 4.299536059880755,
+            "NLL": 1.2054883209043512,
+            "independent_minADE6": 0.8081000533238649
+          },
+          "pedestrian": {
+            "count": 12002,
+            "minADE6": 0.5728189947817353,
+            "minFDE6": 1.1406037652964727,
+            "MR6": 0.16405599066822196,
+            "Top1ADE6": 1.0472234799890563,
+            "Top1FDE6": 2.067629846276522,
+            "NLL": 1.0194752839054193,
+            "independent_minADE6": 0.5564765402745506
+          },
+          "bicycle": {
+            "count": 656,
+            "minADE6": 0.6012702825984623,
+            "minFDE6": 1.1353434079217373,
+            "MR6": 0.14634146341463414,
+            "Top1ADE6": 1.1513677412365768,
+            "Top1FDE6": 2.2716340047758776,
+            "NLL": 1.0135366735843623,
+            "independent_minADE6": 0.566783992275482
+          }
+        },
+        "selection_metric": "last completed validation",
+        "sha256": "bc59637b2fffce7ebc0bfe052caa5f03c7e9333c7a483edeb379d881304ad4b4",
+        "file_size": 8127062,
+        "git_tracked": false
       }
     },
     {
@@ -8149,6 +9630,42 @@
       "mtime_ns": 1791125819770500276
     },
     {
+      "relative_path": "08_logs/stage3_final_audit.log",
+      "description": "Stage3A 08_logs",
+      "file_size": 167,
+      "sha256": "d247d580f25096b88cee226335bf1521794662486726824c7722b1042efb794a",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169397128909083
+    },
+    {
+      "relative_path": "08_logs/stage3_formal_evaluate.log",
+      "description": "Stage3A 08_logs",
+      "file_size": 2826,
+      "sha256": "bf014e572b0578cb147720e83c7f3ff5805f0d6816449b07acde1048342f3b69",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168999280977327
+    },
+    {
+      "relative_path": "08_logs/stage3_nll_train.log",
+      "description": "Stage3A 08_logs",
+      "file_size": 30199,
+      "sha256": "de289349887089155c4d701396d253f770225d7506f335de8e529b98bdb0fdfe",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791168943720428621
+    },
+    {
+      "relative_path": "08_logs/stage3_prediction_figures.log",
+      "description": "Stage3A 08_logs",
+      "file_size": 27,
+      "sha256": "4714ced878c19545845940d6a38b04996526406436742ea79057b85b4e3375df",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169352096463867
+    },
+    {
       "relative_path": "08_logs/stage3_preprocess.log",
       "description": "Stage3A 08_logs",
       "file_size": 8325,
@@ -8167,22 +9684,49 @@
       "mtime_ns": 1791126256302639068
     },
     {
-      "relative_path": "09_reports/stage3_execution_commands.md",
-      "description": "Stage3A 09_reports",
-      "file_size": 3330,
-      "sha256": "ef28f98143ecf4061e589815483e37385892ed4580dd37e8cccf1f068fdd22e3",
+      "relative_path": "08_logs/stage3_warmup_train.log",
+      "description": "Stage3A 08_logs",
+      "file_size": 15304,
+      "sha256": "4ebfc3c03a544fcef8afab781a2aaed2da260e7c34074f6af29df56e55500e96",
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
-      "mtime_ns": 1791125529416403786
+      "mtime_ns": 1791130043226301883
+    },
+    {
+      "relative_path": "09_reports/stage3_execution_commands.md",
+      "description": "Stage3A 09_reports",
+      "file_size": 4079,
+      "sha256": "1e5906cf1dbcc5bb66c585aadfe6199931095a91d5df4d391a88b3e99f440f60",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791163471590501380
     },
     {
       "relative_path": "09_reports/stage3_report.py",
       "description": "Stage3A 09_reports",
-      "file_size": 12886,
-      "sha256": "75ab5a9463bf4106450fac8eaaa41c7f18cd5f28a03fa5544e60a0052c35449b",
+      "file_size": 15950,
+      "sha256": "4a1188000d4774ef56ad3ddf965630b35c7b0fcfe3f1b11b27f067900693de76",
       "git_tracked": true,
       "created_by_stage": "Stage 3A",
-      "mtime_ns": 1791124917593065824
+      "mtime_ns": 1791169300747956254
+    },
+    {
+      "relative_path": "09_reports/stage3a_decision.json",
+      "description": "Stage3A 09_reports",
+      "file_size": 544,
+      "sha256": "fc5548de43ce0491fbf8c126852d4bd1821bd7b89c82341f9da7a98e6cd080cb",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169396968907501
+    },
+    {
+      "relative_path": "09_reports/stage3a_final_report.md",
+      "description": "Stage3A 09_reports",
+      "file_size": 7415,
+      "sha256": "1ef7f08ab5e099ef218c465626b3547f784a62563d8781e73f3da002e0255ad0",
+      "git_tracked": true,
+      "created_by_stage": "Stage 3A",
+      "mtime_ns": 1791169397012907936
     }
   ]
 }
