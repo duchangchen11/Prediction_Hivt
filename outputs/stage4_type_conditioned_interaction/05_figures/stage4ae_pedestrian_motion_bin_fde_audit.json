@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "6a6d1c6267695c0109bbf195d21a4f7a537c05afec1a24389eaec9a4e88bdc3b",
+  "sources": {
+    "06_tables/stage4ae_pedestrian_motion_bin_metrics.csv": "d1b57317224e5ff8bfdcb4711f6ca2ea15d39541a73801c53d0a61605c3bf3bc"
+  },
+  "plotted_values": {
+    "bins": [
+      "0–1",
+      "1–2",
+      "2–5",
+      "5–10",
+      "10–20"
+    ],
+    "Stage3B": [
+      0.1673101786291409,
+      0.9750176696017527,
+      1.6679785809323078,
+      1.3127378462494015,
+      2.118973566778004
+    ],
+    "Stage4A": [
+      0.1770575945989175,
+      1.0214750367059067,
+      1.732733021112053,
+      1.3081805922841307,
+      2.1321280494332315
+    ]
+  },
+  "statistics_and_interpretation": "Frozen full-horizon pedestrian actor-window means; bins [lower,upper). Counts: 3192,313,916,7321,260. No inference.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ae_pedestrian_motion_bin_fde.png",
+      "sha256": "d113652ae5af3e8f24b85d1e61db322ff15f549f6ced62af0c3e449c726080fe",
+      "bytes": 80514,
+      "pixels": [
+        2040,
+        1080
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ae_pedestrian_motion_bin_fde.pdf",
+      "sha256": "c399517f02a90de688fcc6c4411364a443a68c12fe91da6a5efd339606480b1a",
+      "bytes": 12202
+    },
+    "svg": {
+      "path": "05_figures/stage4ae_pedestrian_motion_bin_fde.svg",
+      "sha256": "b02d01ad2372115d6d853dc48596545a077b5e33ff9d0ded9d4182beb4ba1e24",
+      "bytes": 10748
+    }
+  },
+  "editable_PDF_SVG_text_verified": true,
+  "smoothing": false,
+  "mock_data": false
+}

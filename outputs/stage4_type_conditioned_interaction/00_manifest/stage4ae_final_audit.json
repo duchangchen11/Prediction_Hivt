@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "frozen_input_file_count": 243,
+  "Stage4A_and_Stage4AD_files_unchanged": true,
+  "Stage3B_checkpoint_and_previous_stage_files_unchanged": true,
+  "850_scene_shards_unchanged": true,
+  "Stage2C_untracked_redraws_unchanged_and_excluded": true,
+  "checkpoint_B_sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+  "checkpoint_C_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "motion_fixed_counts": [
+    3192,
+    313,
+    916,
+    7321,
+    260
+  ],
+  "paired_full_horizon_actor_windows": 54990,
+  "Part_A_new_inference_calls": 0,
+  "membership_recomputed": false,
+  "Part_B_same_100_batches": true,
+  "Part_B_forward_calls_per_model": 100,
+  "Part_B_grad_calls_per_model": 200,
+  "all_shared_groups_valid_batches": 100,
+  "original_class_mean_NLL_and_classification": true,
+  "official_loss_reduction_reconciliation": "PASS",
+  "complete_context_graph_retained": true,
+  "NaN": 0,
+  "Inf": 0,
+  "shared_None": 0,
+  "parameters_buffers_updated": false,
+  "parameter_grad_buffers_populated": false,
+  "forbidden_update_calls": [],
+  "bootstrap_scene_and_batch_distinguished": true,
+  "actual_supervision_shares_reported": true,
+  "proxy_not_exact_gradient_decomposition": true,
+  "figures": [
+    {
+      "name": "stage4ae_pedestrian_motion_bin_fde",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "numeric_sources_and_hashes": "PASS",
+      "visual_review": "PASS",
+      "labels_clipping_or_overlap": false,
+      "editable_text": true
+    },
+    {
+      "name": "stage4ae_pedestrian_motion_delta",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "numeric_sources_and_hashes": "PASS",
+      "visual_review": "PASS",
+      "labels_clipping_or_overlap": false,
+      "editable_text": true
+    },
+    {
+      "name": "stage4ae_gradient_cosine_comparison",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "numeric_sources_and_hashes": "PASS",
+      "visual_review": "PASS",
+      "labels_clipping_or_overlap": false,
+      "editable_text": true
+    },
+    {
+      "name": "stage4ae_global_gradient_conflict_distribution",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "numeric_sources_and_hashes": "PASS",
+      "visual_review": "PASS",
+      "labels_clipping_or_overlap": false,
+      "editable_text": true
+    },
+    {
+      "name": "stage4ae_class_gradient_norm",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "numeric_sources_and_hashes": "PASS",
+      "visual_review": "PASS",
+      "labels_clipping_or_overlap": false,
+      "editable_text": true
+    },
+    {
+      "name": "stage4ae_gradient_pressure",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "numeric_sources_and_hashes": "PASS",
+      "visual_review": "PASS",
+      "labels_clipping_or_overlap": false,
+      "editable_text": true
+    }
+  ],
+  "MotionPattern": "LOW_MOTION_DEGRADATION",
+  "GradientConflict": "WEAK",
+  "recommended_architecture": "Interaction Necessity Gate",
+  "recommendation_implemented": false,
+  "formal_Stage4A_conclusion_unchanged": "NOT SUPPORTED",
+  "Stage4AD_conclusion_unchanged": "CASE B",
+  "main_merged": false,
+  "test_used": false
+}

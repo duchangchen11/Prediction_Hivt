@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "6a6d1c6267695c0109bbf195d21a4f7a537c05afec1a24389eaec9a4e88bdc3b",
+  "sources": {
+    "06_tables/stage4ae_gradient_conflict_summary.csv": "45fdadaae598f539b8851fa01ea0a16ef8b0da8e200bd17e7498cfb308ff2c6a",
+    "06_tables/stage4ae_gradient_shift_bootstrap.csv": "78dedc75647bb84a0d921acadfeb6bbd507b972f90e24428b5ece4655183501d"
+  },
+  "plotted_values": {
+    "Stage3B": {
+      "mean": [
+        0.20218049070138314,
+        0.0005984242101710607,
+        0.12979769457513793,
+        0.3633018176507804,
+        0.33443994111469744
+      ],
+      "CI95Lower": [
+        0.08647924913944056,
+        -0.0020150912349010436,
+        0.0849727027830208,
+        0.30129784544884836,
+        0.27217608073802274
+      ],
+      "CI95Upper": [
+        0.30310176359251134,
+        0.0033916208145170594,
+        0.17583428447389918,
+        0.4238402067504609,
+        0.3959966708128386
+      ]
+    },
+    "Stage4A": {
+      "mean": [
+        0.12591323716366853,
+        -0.0006023120464108425,
+        0.18878307460049476,
+        0.3300374624379475,
+        0.2878638956406628
+      ],
+      "CI95Lower": [
+        -0.016560376737666374,
+        -0.003962716417020902,
+        0.1329853250886629,
+        0.2351953709823157,
+        0.20360567945594157
+      ],
+      "CI95Upper": [
+        0.26273134776573465,
+        0.0025671682328898284,
+        0.24655695288156207,
+        0.42659122185471077,
+        0.3736081394654016
+      ]
+    }
+  },
+  "statistics_and_interpretation": "Same 100 TRAIN batches; original class-mean NLL+classification; model-mean 95% intervals from paired batch resampling (1000, seed2022). Not independent scene-cluster model significance. Relation Module excluded.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ae_gradient_cosine_comparison.png",
+      "sha256": "a3ee3191a94e6ce522dc447869e5f1f6ac135f16cea10f98cb8505d05d4252a1",
+      "bytes": 75788,
+      "pixels": [
+        2040,
+        1080
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ae_gradient_cosine_comparison.pdf",
+      "sha256": "0b8ff21c032ef81c47b1e8e90963c6783528da091a6b2439ee17f07f79906f3e",
+      "bytes": 12267
+    },
+    "svg": {
+      "path": "05_figures/stage4ae_gradient_cosine_comparison.svg",
+      "sha256": "488f158f9f47317a48acff0bb9d0b7cbecd74dc97761fc88fccce56085280055",
+      "bytes": 12980
+    }
+  },
+  "editable_PDF_SVG_text_verified": true,
+  "smoothing": false,
+  "mock_data": false
+}

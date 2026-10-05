@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "same_100_batch_identity_and_input_tensor_hashes": true,
+  "paired_batch_rows": 1100,
+  "primary_shared_groups_valid_batches": 100,
+  "NaN": 0,
+  "Inf": 0,
+  "summary_rows": 11,
+  "embedding_row_descriptive_only": true,
+  "effective_proxy_not_exact_mixed_gradient_decomposition": true,
+  "bootstrap_is_optimization_diagnostic_only": true,
+  "source_sha256": "add15adc36a10d16400aa59a446ab7e839c82dd9351beca390018aecda8fb4c6"
+}

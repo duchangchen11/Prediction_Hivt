@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "6a6d1c6267695c0109bbf195d21a4f7a537c05afec1a24389eaec9a4e88bdc3b",
+  "sources": {
+    "06_tables/stage4ae_pedestrian_motion_bin_metrics.csv": "d1b57317224e5ff8bfdcb4711f6ca2ea15d39541a73801c53d0a61605c3bf3bc",
+    "06_tables/stage4ae_pedestrian_motion_bin_bootstrap.csv": "fa7c7522840072b1448b1f1363067074d9e1e0f1391448c8fb7e79d1230d3a73"
+  },
+  "plotted_values": {
+    "bins": [
+      "0–1",
+      "1–2",
+      "2–5",
+      "5–10",
+      "10–20"
+    ],
+    "delta": [
+      0.0097474159697766,
+      0.04645736710415385,
+      0.06475444017974538,
+      -0.004557253965270779,
+      0.013154482655227184
+    ],
+    "CI95Lower": [
+      0.00583461204738189,
+      0.019023274461384274,
+      0.03993898143859774,
+      -0.00986837735001344,
+      -0.06054814492810367
+    ],
+    "CI95Upper": [
+      0.013216478772430358,
+      0.0830311891132627,
+      0.09439813535595641,
+      -0.0001588141592296632,
+      0.08939182867441241
+    ]
+  },
+  "statistics_and_interpretation": "Paired official VAL scene-cluster percentile bootstrap CI95, 1000 replicates seed2022; positive is worse. Sparse bins require unique-scene caution; no multiple-comparison correction.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ae_pedestrian_motion_delta.png",
+      "sha256": "a3832cf9d0523baa49c2dee80d14bb0b6c0076ad85d8d231e46f438d41c979ba",
+      "bytes": 87894,
+      "pixels": [
+        2040,
+        1080
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ae_pedestrian_motion_delta.pdf",
+      "sha256": "d834648b506346d92f9c052a86ac9009bcc6aebf457e67bfad902de693b96b34",
+      "bytes": 12325
+    },
+    "svg": {
+      "path": "05_figures/stage4ae_pedestrian_motion_delta.svg",
+      "sha256": "c29456b40a8b1f660236efdee9297468525d6fb968c90ebec1443088c52edc69",
+      "bytes": 11233
+    }
+  },
+  "editable_PDF_SVG_text_verified": true,
+  "smoothing": false,
+  "mock_data": false
+}

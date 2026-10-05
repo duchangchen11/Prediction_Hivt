@@ -1,0 +1,30 @@
+{
+  "stage": "Stage4A-E",
+  "backend": "python",
+  "archetype": "quantitative grid",
+  "core_claim": "Locate pedestrian degradation across fixed GT motion bins and test whether same-batch class-gradient conflict and frequency-weighted pressure increase after Stage4A.",
+  "evidence_chain": {
+    "stage4ae_pedestrian_motion_bin_fde": "Paired frozen Stage3B/Stage4A population means in the five fixed bins, with bar labels.",
+    "stage4ae_pedestrian_motion_delta": "Delta minFDE with paired official VAL scene-cluster 95% bootstrap intervals and a zero line.",
+    "stage4ae_gradient_cosine_comparison": "Compare the same five shared groups across two checkpoints, with paired batch-resampling model-mean intervals.",
+    "stage4ae_global_gradient_conflict_distribution": "Show the 100 ALL SHARED cosine observations per model and x=0 conflict boundary.",
+    "stage4ae_class_gradient_norm": "Stage4A ALL SHARED class-mean gradient norms before frequency weighting.",
+    "stage4ae_gradient_pressure": "Stage4A ALL SHARED mean coordinate-share-weighted gradient norm proxy, on a separate axis/figure."
+  },
+  "exports": ["PNG 300 dpi", "PDF editable TrueType", "SVG editable text"],
+  "dimensions_inches": {"motion_and_cosine": [6.8, 3.6], "distribution_and_pressure": [4.8, 3.3]},
+  "statistics": {
+    "motion": "54990 frozen full-horizon VAL actors; 12002 pedestrian actor-windows; paired scene bootstrap 1000 replicates seed2022; no multiple-comparison correction.",
+    "gradient": "100 identical qualifying TRAIN batches from deterministic index order, one frozen checkpoint per model; batch bootstrap 1000 replicates seed2022 is an optimization diagnostic, not scene-cluster model significance.",
+    "pressure": "Means over the same 100 batches; proxy is not the exact algebraic decomposition of original mixed-loss gradients."
+  },
+  "review_risks": [
+    "Motion bins use future GT displacement for offline diagnosis and cannot be supplied directly at inference.",
+    "Low-count bins/cells require their unique scene counts; contextual comparisons remain descriptive.",
+    "Sequential batches and overlapping windows are dependent and not representative of all TRAIN700.",
+    "Model-mean error bars do not replace paired DeltaCos intervals.",
+    "Gradient conflict does not establish causation of pedestrian degradation.",
+    "Class gradient losses have their own mean reductions; actor frequency and coordinate frequency are reported separately.",
+    "Mean per-batch pressure ratios differ from the ratio of mean pressures."
+  ]
+}

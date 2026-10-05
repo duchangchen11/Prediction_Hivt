@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "fixed_counts": [
+    3192,
+    313,
+    916,
+    7321,
+    260
+  ],
+  "sum_counts": 12002,
+  "strict_paired_full_horizon_actors": 54990,
+  "no_inference": true,
+  "membership_recomputed": false,
+  "pedestrian_overall_B_FDE": 1.0438751791916105,
+  "pedestrian_overall_C_FDE": 1.0501263443386182,
+  "overall_delta": 0.006251165147007655,
+  "low_motion_lt5_contribution": 0.00874604023360888,
+  "moving_ge5_contribution": -0.002494875086601226,
+  "context_metrics_descriptive_only": true,
+  "small_bins_require_unique_scene_caution": [
+    "1-2m",
+    "10-20m"
+  ],
+  "test_used": false
+}

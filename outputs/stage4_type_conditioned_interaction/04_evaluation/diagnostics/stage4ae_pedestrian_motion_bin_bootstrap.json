@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "method": "paired scene-cluster percentile bootstrap",
+  "official_VAL_scenes": 150,
+  "replicates": 1000,
+  "seed": 2022,
+  "confidence": 0.95,
+  "delta": "Stage4A - Stage3B",
+  "weighting": "equal actor-window within pooled resampled scene clusters",
+  "frozen_B_actor_sha256": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+  "frozen_C_actor_sha256": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7",
+  "frozen_membership_sha256": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a",
+  "inference_performed": false,
+  "full_horizon_actors": 54990,
+  "full_horizon_pedestrian": 12002,
+  "bins": {
+    "0-1m": {
+      "Count": 3192,
+      "UniqueInstances": 352,
+      "UniqueScenes": 86,
+      "metrics": {
+        "minFDE6": {
+          "estimate": 0.0097474159697766,
+          "CI95": [
+            0.00583461204738189,
+            0.013216478772430358
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "Top1FDE6": {
+          "estimate": 0.01576136313155244,
+          "CI95": [
+            -0.0036613165813187674,
+            0.03590080461515877
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "minADE6": {
+          "estimate": 0.007617221362314031,
+          "CI95": [
+            0.005523508351179221,
+            0.010100079096629746
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        }
+      }
+    },
+    "1-2m": {
+      "Count": 313,
+      "UniqueInstances": 95,
+      "UniqueScenes": 49,
+      "metrics": {
+        "minFDE6": {
+          "estimate": 0.04645736710415385,
+          "CI95": [
+            0.019023274461384274,
+            0.0830311891132627
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "Top1FDE6": {
+          "estimate": 0.21415095057445593,
+          "CI95": [
+            0.09982092891980113,
+            0.36178558469108485
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "minADE6": {
+          "estimate": 0.015960507130565734,
+          "CI95": [
+            -0.002014673762024073,
+            0.03901704526780917
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        }
+      }
+    },
+    "2-5m": {
+      "Count": 916,
+      "UniqueInstances": 176,
+      "UniqueScenes": 65,
+      "metrics": {
+        "minFDE6": {
+          "estimate": 0.06475444017974538,
+          "CI95": [
+            0.03993898143859774,
+            0.09439813535595641
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "Top1FDE6": {
+          "estimate": 0.12037668631749643,
+          "CI95": [
+            0.034647687545328765,
+            0.20822062883930473
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "minADE6": {
+          "estimate": -0.006176387244534545,
+          "CI95": [
+            -0.01997898903997064,
+            0.006880863271698168
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        }
+      }
+    },
+    "5-10m": {
+      "Count": 7321,
+      "UniqueInstances": 701,
+      "UniqueScenes": 110,
+      "metrics": {
+        "minFDE6": {
+          "estimate": -0.004557253965270779,
+          "CI95": [
+            -0.00986837735001344,
+            -0.0001588141592296632
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "Top1FDE6": {
+          "estimate": -0.05614782684608765,
+          "CI95": [
+            -0.06998965820306069,
+            -0.042421741730366884
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "minADE6": {
+          "estimate": 7.628948867764731e-05,
+          "CI95": [
+            -0.002534673279994283,
+            0.002279548873095354
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        }
+      }
+    },
+    "10-20m": {
+      "Count": 260,
+      "UniqueInstances": 41,
+      "UniqueScenes": 29,
+      "metrics": {
+        "minFDE6": {
+          "estimate": 0.013154482655227184,
+          "CI95": [
+            -0.06054814492810367,
+            0.08939182867441241
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "Top1FDE6": {
+          "estimate": 0.08156438845281418,
+          "CI95": [
+            -0.06139818141443862,
+            0.27068022490381705
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        },
+        "minADE6": {
+          "estimate": 0.011249480640085845,
+          "CI95": [
+            -0.024143801640470006,
+            0.048688300948105924
+          ],
+          "valid_replicates": 1000,
+          "empty_replicates": 0
+        }
+      }
+    }
+  }
+}

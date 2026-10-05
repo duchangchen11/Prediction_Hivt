@@ -1,0 +1,4693 @@
+{
+  "status": "PASS",
+  "models": {
+    "Stage3B": [
+      {
+        "name": "local_encoder.aa_encoder.bos_token",
+        "shape": [
+          5,
+          64
+        ],
+        "numel": 320,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.4.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.4.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.6.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.6.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.7.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.7.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.0.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.2.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.3.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_q.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_q.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_k.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_k.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_v.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_v.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.padding_token",
+        "shape": [
+          5,
+          1,
+          64
+        ],
+        "numel": 320,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.cls_token",
+        "shape": [
+          1,
+          1,
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.pos_embed",
+        "shape": [
+          6,
+          1,
+          64
+        ],
+        "numel": 384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.self_attn.in_proj_weight",
+        "shape": [
+          192,
+          64
+        ],
+        "numel": 12288,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.self_attn.in_proj_bias",
+        "shape": [
+          192
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.self_attn.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.self_attn.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.linear1.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.linear1.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.linear2.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.linear2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.self_attn.in_proj_weight",
+        "shape": [
+          192,
+          64
+        ],
+        "numel": 12288,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.self_attn.in_proj_bias",
+        "shape": [
+          192
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.self_attn.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.self_attn.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.linear1.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.linear1.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.linear2.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.linear2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.self_attn.in_proj_weight",
+        "shape": [
+          192,
+          64
+        ],
+        "numel": 12288,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.self_attn.in_proj_bias",
+        "shape": [
+          192
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.self_attn.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.self_attn.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.linear1.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.linear1.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.linear2.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.linear2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.self_attn.in_proj_weight",
+        "shape": [
+          192,
+          64
+        ],
+        "numel": 12288,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.self_attn.in_proj_bias",
+        "shape": [
+          192
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.self_attn.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.self_attn.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.linear1.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.linear1.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.linear2.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.linear2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.norm.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.norm.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.is_intersection_embed",
+        "shape": [
+          2,
+          64
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.turn_direction_embed",
+        "shape": [
+          3,
+          64
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.traffic_control_embed",
+        "shape": [
+          2,
+          64
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.0.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.2.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.3.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_q.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_q.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_k.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_k.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_v.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_v.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.0.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.2.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.3.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_q_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_q_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_k_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_k_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_k_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_k_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_v_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_v_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_v_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_v_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_q_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_q_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_k_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_k_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_k_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_k_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_v_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_v_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_v_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_v_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_q_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_q_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_k_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_k_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_k_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_k_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_v_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_v_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_v_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_v_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.norm.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.norm.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.multihead_proj.weight",
+        "shape": [
+          384,
+          64
+        ],
+        "numel": 24576,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.multihead_proj.bias",
+        "shape": [
+          384
+        ],
+        "numel": 384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "decoder.aggr_embed.0.weight",
+        "shape": [
+          64,
+          128
+        ],
+        "numel": 8192,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.aggr_embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.aggr_embed.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.aggr_embed.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.0.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.3.weight",
+        "shape": [
+          24,
+          64
+        ],
+        "numel": 1536,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.3.bias",
+        "shape": [
+          24
+        ],
+        "numel": 24,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.0.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.3.weight",
+        "shape": [
+          24,
+          64
+        ],
+        "numel": 1536,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.3.bias",
+        "shape": [
+          24
+        ],
+        "numel": 24,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.0.weight",
+        "shape": [
+          64,
+          128
+        ],
+        "numel": 8192,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.4.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.4.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.6.weight",
+        "shape": [
+          1,
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.6.bias",
+        "shape": [
+          1
+        ],
+        "numel": 1,
+        "group": "Decoder"
+      },
+      {
+        "name": "type_embedding.weight",
+        "shape": [
+          3,
+          64
+        ],
+        "numel": 192,
+        "group": "TypeEmbedding"
+      }
+    ],
+    "Stage4A": [
+      {
+        "name": "local_encoder.aa_encoder.bos_token",
+        "shape": [
+          5,
+          64
+        ],
+        "numel": 320,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.4.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.4.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.6.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.6.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.7.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.center_embed.embed.7.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.0.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.module_list.1.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.0.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.2.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.3.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.nbr_embed.aggr_embed.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_q.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_q.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_k.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_k.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_v.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_v.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.aa_encoder.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.padding_token",
+        "shape": [
+          5,
+          1,
+          64
+        ],
+        "numel": 320,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.cls_token",
+        "shape": [
+          1,
+          1,
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.pos_embed",
+        "shape": [
+          6,
+          1,
+          64
+        ],
+        "numel": 384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.self_attn.in_proj_weight",
+        "shape": [
+          192,
+          64
+        ],
+        "numel": 12288,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.self_attn.in_proj_bias",
+        "shape": [
+          192
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.self_attn.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.self_attn.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.linear1.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.linear1.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.linear2.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.linear2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.0.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.self_attn.in_proj_weight",
+        "shape": [
+          192,
+          64
+        ],
+        "numel": 12288,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.self_attn.in_proj_bias",
+        "shape": [
+          192
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.self_attn.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.self_attn.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.linear1.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.linear1.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.linear2.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.linear2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.1.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.self_attn.in_proj_weight",
+        "shape": [
+          192,
+          64
+        ],
+        "numel": 12288,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.self_attn.in_proj_bias",
+        "shape": [
+          192
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.self_attn.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.self_attn.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.linear1.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.linear1.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.linear2.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.linear2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.2.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.self_attn.in_proj_weight",
+        "shape": [
+          192,
+          64
+        ],
+        "numel": 12288,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.self_attn.in_proj_bias",
+        "shape": [
+          192
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.self_attn.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.self_attn.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.linear1.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.linear1.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.linear2.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.linear2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.layers.3.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.norm.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.temporal_encoder.transformer_encoder.norm.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.is_intersection_embed",
+        "shape": [
+          2,
+          64
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.turn_direction_embed",
+        "shape": [
+          3,
+          64
+        ],
+        "numel": 192,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.traffic_control_embed",
+        "shape": [
+          2,
+          64
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.0.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.module_list.1.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.0.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.2.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.3.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lane_embed.aggr_embed.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_q.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_q.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_k.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_k.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_v.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_v.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "local_encoder.al_encoder.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "LocalEncoder"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.0.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.0.weight",
+        "shape": [
+          64,
+          2
+        ],
+        "numel": 128,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.module_list.1.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.0.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.2.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.3.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.rel_embed.aggr_embed.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_q_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_q_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_k_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_k_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_k_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_k_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_v_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_v_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_v_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_v_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.0.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_q_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_q_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_k_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_k_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_k_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_k_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_v_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_v_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_v_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_v_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.1.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_q_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_q_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_k_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_k_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_k_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_k_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_v_node.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_v_node.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_v_edge.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_v_edge.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_self.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_self.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_ih.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_ih.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_hh.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.lin_hh.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.out_proj.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.out_proj.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.norm1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.norm1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.norm2.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.norm2.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.mlp.0.weight",
+        "shape": [
+          256,
+          64
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.mlp.0.bias",
+        "shape": [
+          256
+        ],
+        "numel": 256,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.mlp.3.weight",
+        "shape": [
+          64,
+          256
+        ],
+        "numel": 16384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.global_interactor_layers.2.mlp.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.norm.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.norm.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.multihead_proj.weight",
+        "shape": [
+          384,
+          64
+        ],
+        "numel": 24576,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.multihead_proj.bias",
+        "shape": [
+          384
+        ],
+        "numel": 384,
+        "group": "GlobalInteractor"
+      },
+      {
+        "name": "global_interactor.pair_embedding.weight",
+        "shape": [
+          9,
+          16
+        ],
+        "numel": 144,
+        "group": "Relation Module"
+      },
+      {
+        "name": "global_interactor.relation_mlp.0.weight",
+        "shape": [
+          32,
+          20
+        ],
+        "numel": 640,
+        "group": "Relation Module"
+      },
+      {
+        "name": "global_interactor.relation_mlp.0.bias",
+        "shape": [
+          32
+        ],
+        "numel": 32,
+        "group": "Relation Module"
+      },
+      {
+        "name": "global_interactor.relation_mlp.2.weight",
+        "shape": [
+          24,
+          32
+        ],
+        "numel": 768,
+        "group": "Relation Module"
+      },
+      {
+        "name": "global_interactor.relation_mlp.2.bias",
+        "shape": [
+          24
+        ],
+        "numel": 24,
+        "group": "Relation Module"
+      },
+      {
+        "name": "decoder.aggr_embed.0.weight",
+        "shape": [
+          64,
+          128
+        ],
+        "numel": 8192,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.aggr_embed.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.aggr_embed.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.aggr_embed.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.0.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.3.weight",
+        "shape": [
+          24,
+          64
+        ],
+        "numel": 1536,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.loc.3.bias",
+        "shape": [
+          24
+        ],
+        "numel": 24,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.0.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.3.weight",
+        "shape": [
+          24,
+          64
+        ],
+        "numel": 1536,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.scale.3.bias",
+        "shape": [
+          24
+        ],
+        "numel": 24,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.0.weight",
+        "shape": [
+          64,
+          128
+        ],
+        "numel": 8192,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.0.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.1.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.1.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.3.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "numel": 4096,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.3.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.4.weight",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.4.bias",
+        "shape": [
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.6.weight",
+        "shape": [
+          1,
+          64
+        ],
+        "numel": 64,
+        "group": "Decoder"
+      },
+      {
+        "name": "decoder.pi.6.bias",
+        "shape": [
+          1
+        ],
+        "numel": 1,
+        "group": "Decoder"
+      },
+      {
+        "name": "type_embedding.weight",
+        "shape": [
+          3,
+          64
+        ],
+        "numel": 192,
+        "group": "TypeEmbedding"
+      }
+    ]
+  },
+  "shared_name_shape_sets_equal": true,
+  "shared_parameter_count": 646001,
+  "relation_parameter_count": 1608,
+  "norm_arithmetic_dtype": "float64",
+  "eps": 1e-12,
+  "class_loss_reduction": "original NLL mean over valid class coordinates plus original classification mean over eligible class actors",
+  "context_actors_removed": false,
+  "classification_soft_targets_detached": true,
+  "loss_source": "unchanged models.hivt_loss_recovery.HiVTLossRecovery.recovery_loss(original_nll) and inherited HiVTNuScenesVehicle.loss",
+  "loss_source_sha256": {
+    "models/hivt_loss_recovery.py": "afe16c1a90d5542beffa6571f2c18db61d4ff7c37c4912aa80bfb40b8002d6cf",
+    "models/hivt_nuscenes.py": "b94c7973360bc4a83dc2fc710fd7fbed7f0046a402ba6803f57ffa2db65d1c68",
+    "models/hivt_runtime/laplace_nll_loss.py": "b5eb09521d2a1779c20b7585028b7096f1e1c8d452b713d3f1ac9b4d81dea08f",
+    "models/hivt_runtime/soft_target_cross_entropy_loss.py": "176f2b2ac833eb99e909ea159cf613ae9c1b9b25552edc890abebe4cd30d52a1"
+  }
+}

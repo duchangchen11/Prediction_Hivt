@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "6a6d1c6267695c0109bbf195d21a4f7a537c05afec1a24389eaec9a4e88bdc3b",
+  "sources": {
+    "06_tables/stage4ae_gradient_conflict_summary.csv": "45fdadaae598f539b8851fa01ea0a16ef8b0da8e200bd17e7498cfb308ff2c6a"
+  },
+  "plotted_values": {
+    "Vehicle": 30.50952270286707,
+    "Pedestrian": 6.116245198892411
+  },
+  "statistics_and_interpretation": "Stage4A ALL SHARED means of w_class × class-mean gradient norm, w from valid supervised coordinate share. Optimization-pressure proxy, not exact mixed-gradient contribution.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ae_gradient_pressure.png",
+      "sha256": "964dd2512b1b54ab12112e472f9bdc466c9596f36cd82c5cfa918437bb1b61c5",
+      "bytes": 49895,
+      "pixels": [
+        1440,
+        990
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ae_gradient_pressure.pdf",
+      "sha256": "d4edbbfa9d8d6b4f0713c1e895202f1f6bee4695b0c1dd438404bac009d63adf",
+      "bytes": 11152
+    },
+    "svg": {
+      "path": "05_figures/stage4ae_gradient_pressure.svg",
+      "sha256": "06bb6fd829a85ecb82c3d48ec3e54060fed0839950bb3aa0e17e5ba73c10c634",
+      "bytes": 6561
+    }
+  },
+  "editable_PDF_SVG_text_verified": true,
+  "smoothing": false,
+  "mock_data": false
+}

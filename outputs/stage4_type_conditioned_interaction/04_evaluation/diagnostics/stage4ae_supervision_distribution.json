@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "dataset": "frozen official TRAIN700",
+  "sample_scope": "first 100 jointly Vehicle/Pedestrian-supervised batches in deterministic index order",
+  "sampled_scene_count": 71,
+  "sampled_window_count": 1600,
+  "scanned_loader_batch_count": 108,
+  "batches": 100,
+  "batch_size": 16,
+  "class_counts": [
+    {
+      "Class": "Vehicle",
+      "SupervisedActorWindows": 20459,
+      "ValidFutureCoordinates": 406922,
+      "PooledActorShare": 0.5966984571411905,
+      "PooledCoordinateShare": 0.6055080546519968,
+      "MeanBatchActorShare": 0.5646290079596814,
+      "MeanBatchCoordinateShare": 0.5824511280792545
+    },
+    {
+      "Class": "Pedestrian",
+      "SupervisedActorWindows": 12979,
+      "ValidFutureCoordinates": 250006,
+      "PooledActorShare": 0.3785399714177385,
+      "PooledCoordinateShare": 0.3720139159625852,
+      "MeanBatchActorShare": 0.4061153122821501,
+      "MeanBatchCoordinateShare": 0.39126852075330887
+    },
+    {
+      "Class": "Bicycle",
+      "SupervisedActorWindows": 849,
+      "ValidFutureCoordinates": 15106,
+      "PooledActorShare": 0.02476157144107096,
+      "PooledCoordinateShare": 0.022478029385418,
+      "MeanBatchActorShare": 0.02925567975816862,
+      "MeanBatchCoordinateShare": 0.026280351167436655
+    }
+  ],
+  "coordinate_definition": "2 scalar spatial coordinates per valid supervised future timestep",
+  "share_reused_exactly_for_both_models": true,
+  "full_TRAIN700_distribution_estimated": false,
+  "proxy": "class valid-coordinate share times class-mean total-loss gradient norm",
+  "proxy_is_exact_mixed_gradient_contribution": false,
+  "mean_of_ratios_is_not_ratio_of_means": true,
+  "manifest_sha256": "8a4593e2a814bc9020d9670dcd6f93b67c99c374417e135c31e0347eb37dbaf5"
+}

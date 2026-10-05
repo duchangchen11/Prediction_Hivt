@@ -1,0 +1,30 @@
+{
+  "stage": "Stage4A-E",
+  "status": "COMPLETE",
+  "completed_UTC": "2026-10-05T16:04:59.494822+00:00",
+  "base_commit": "f9619f7a442933cefd9f5bdf9704dff1212b0ab0",
+  "branch": "stage4a-e/motion-gradient-diagnostic",
+  "cwd": "/home/lrj/Prediction_Hivt",
+  "interpreter": "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+  "commands": [
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage4_type_conditioned_interaction/00_manifest/stage4ae_common.py freeze",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage4_type_conditioned_interaction/04_evaluation/diagnostics/stage4ae_motion_bins.py",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage4_type_conditioned_interaction/04_evaluation/diagnostics/stage4ae_gradients.py",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage4_type_conditioned_interaction/04_evaluation/diagnostics/stage4ae_gradient_summary.py",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage4_type_conditioned_interaction/05_figures/stage4ae_figures.py",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage4_type_conditioned_interaction/09_reports/stage4ae_report.py",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage4_type_conditioned_interaction/00_manifest/stage4ae_finalize.py"
+  ],
+  "logs": [
+    "08_logs/stage4ae_motion_bins.log",
+    "08_logs/stage4ae_gradients.log"
+  ],
+  "gradient_elapsed_seconds": 129.88148482699762,
+  "gradient_peak_GPU_MiB": 2480.509765625,
+  "figure_revision": "X tick label size reduced to prevent adjacent parameter-group labels touching; data unchanged.",
+  "environment_created_or_upgraded": false,
+  "new_model_training": false,
+  "new_gate_or_adapter_implemented": false,
+  "test_used": false,
+  "STOP_after_diagnostic": true
+}

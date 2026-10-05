@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "batches": 100,
+  "batch_size": 16,
+  "fixed_loader_order": "TRAIN index order, shuffle=False, workers=0, seed2022",
+  "models": {
+    "Stage3B": {
+      "checkpoint_sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+      "state_before": "0b983df4830bab63e6a4888aff64f68cf468674be4e25dbeda4687b7a338a980",
+      "state_after": "0b983df4830bab63e6a4888aff64f68cf468674be4e25dbeda4687b7a338a980",
+      "forward_calls": 100,
+      "class_gradient_calls": 200
+    },
+    "Stage4A": {
+      "checkpoint_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+      "state_before": "87e0a6bb72e5dcb516f32a0d9a2985e0489903e1c477bb1a43256d89db05e14f",
+      "state_after": "87e0a6bb72e5dcb516f32a0d9a2985e0489903e1c477bb1a43256d89db05e14f",
+      "forward_calls": 100,
+      "class_gradient_calls": 200
+    }
+  },
+  "original_NLL_loss_reused": true,
+  "full_context_graph_retained": true,
+  "dropout_disabled_eval": true,
+  "grad_enabled": true,
+  "method": "torch.autograd.grad",
+  "optimizer_created": false,
+  "optimizer_step_called": false,
+  "backward_called": false,
+  "parameter_grad_buffers_populated": false,
+  "parameters_buffers_changed": false,
+  "NaN": 0,
+  "Inf": 0,
+  "shared_parameter_None_tensors": 0,
+  "manifest_sha256": "8a4593e2a814bc9020d9670dcd6f93b67c99c374417e135c31e0347eb37dbaf5",
+  "batch_metrics_sha256": "add15adc36a10d16400aa59a446ab7e839c82dd9351beca390018aecda8fb4c6",
+  "embedding_row_metrics_sha256": "dd97814baae17e715146ddd7b786c5d61a31517c7a097b33522b0fea877959fb",
+  "elapsed_seconds": 129.88148482699762,
+  "peak_GPU_MiB": 2480.509765625,
+  "test_used": false,
+  "formal_model_trained": false
+}

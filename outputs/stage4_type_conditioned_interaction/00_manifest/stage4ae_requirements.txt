@@ -1,0 +1,1360 @@
+你现在执行：
+
+============================================================
+Stage4A-E：Motion-Bin + Class Gradient Conflict Diagnostic
+运动分段与类别梯度冲突诊断
+============================================================
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前诊断分支：
+stage4a-d/relation-bias-diagnostic
+
+最新 commit：
+f9619f7a442933cefd9f5bdf9704dff1212b0ab0
+
+Stage3B frozen checkpoint：
+outputs/stage3_multitype_hivt/07_checkpoints/
+stage3b_best_overall_minfde.pt
+
+Stage4A frozen checkpoint：
+outputs/stage4_type_conditioned_interaction/07_checkpoints/
+stage4a_best_overall_minfde.pt
+
+Stage4A checkpoint SHA256：
+ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb
+
+当前已确认：
+
+Stage3B TypeEmbedding：
+SUPPORTED
+
+Stage4A Type-conditioned additive relation bias：
+技术 PASS
+科学结论 NOT SUPPORTED
+
+Stage4A-D：
+CASE B — Mixed evidence
+
+禁止：
+训练新正式模型
+optimizer.step
+修改 frozen checkpoint
+Reliability Head
+Intent
+超参数搜索
+
+============================================================
+1. 本轮只回答两个问题
+============================================================
+
+问题A：
+
+Pedestrian 的可靠退化到底集中在哪类运动目标？
+
+重点验证：
+
+低位移 pedestrian 是否退化，
+而真正运动的 pedestrian 是否保持或改善。
+
+问题B：
+
+Stage4A 加入关系模块以后，
+Vehicle 与 Pedestrian 是否在共享参数上出现明显梯度冲突，
+并且 Vehicle 是否在实际训练贡献上更占优势？
+
+完成这两个诊断后 STOP。
+
+============================================================
+2. 创建新分支
+============================================================
+
+从：
+
+f9619f7a442933cefd9f5bdf9704dff1212b0ab0
+
+创建：
+
+stage4a-e/motion-gradient-diagnostic
+
+不要 merge main。
+
+============================================================
+3. 输出位置
+============================================================
+
+仍使用：
+
+outputs/stage4_type_conditioned_interaction/
+
+新增文件统一前缀：
+
+stage4ae_
+
+主要放：
+
+04_evaluation/diagnostics/
+06_tables/
+05_figures/
+09_reports/
+00_manifest/
+
+不要覆盖 Stage4A / Stage4A-D 文件。
+
+============================================================
+PART A
+Pedestrian Motion-Bin Audit
+============================================================
+
+4. 数据来源
+============================================================
+
+直接读取已经冻结的：
+
+Stage3B actor errors
+Stage4A actor errors
+
+必须严格使用之前 pairing audit 已经确认的：
+
+54990 full-horizon actors
+
+不得重新推理才能做这部分。
+
+不得重新定义 target。
+
+============================================================
+5. Pedestrian motion bins
+============================================================
+
+只看：
+
+full-horizon pedestrian
+
+按 GT endpoint displacement 划分：
+
+Bin A：
+0 <= displacement < 1m
+
+Bin B：
+1 <= displacement < 2m
+
+Bin C：
+2 <= displacement < 5m
+
+Bin D：
+5 <= displacement < 10m
+
+Bin E：
+10 <= displacement < 20m
+
+固定这些区间。
+
+不要实验后改区间。
+
+当前冻结 VAL 数据预期 count：
+
+0–1m：
+3192
+
+1–2m：
+313
+
+2–5m：
+916
+
+5–10m：
+7321
+
+10–20m：
+260
+
+总计：
+
+12002
+
+必须核对：
+
+3192 + 313 + 916 + 7321 + 260 = 12002
+
+不一致则 STOP。
+
+============================================================
+6. 每个 motion bin 比较
+============================================================
+
+比较：
+
+B = Stage3B TypeEmbedding
+
+C = Stage4A Type-conditioned Interaction
+
+每组统计：
+
+Count
+UniqueInstances
+UniqueScenes
+
+minADE6
+minFDE6
+MR6
+
+Top1ADE6
+Top1FDE6
+NLL
+
+Delta：
+
+Stage4A - Stage3B
+
+负值表示 Stage4A 更好。
+
+保存：
+
+06_tables/
+stage4ae_pedestrian_motion_bin_metrics.csv
+
+============================================================
+7. Motion-bin scene bootstrap
+============================================================
+
+对每个 pedestrian motion bin：
+
+paired scene-cluster bootstrap
+
+scene = official VAL scene
+replicates = 1000
+seed = 2022
+
+主要比较：
+
+Delta minFDE6
+
+辅助：
+
+Delta Top1FDE6
+Delta minADE6
+
+输出：
+
+04_evaluation/diagnostics/
+stage4ae_pedestrian_motion_bin_bootstrap.json
+
+06_tables/
+stage4ae_pedestrian_motion_bin_bootstrap.csv
+
+注意：
+
+1–2m 和 10–20m 样本较少，
+必须报告 UniqueScenes，
+不要做过强显著性结论。
+
+============================================================
+8. 再拆 interaction context
+============================================================
+
+使用已经冻结的：
+
+Heterogeneous-20m membership
+
+禁止重新计算 membership。
+
+只针对 pedestrian。
+
+形成：
+
+Pedestrian 0–1m
+  ├─ hetero-20m
+  └─ non-hetero-20m
+
+Pedestrian 1–2m
+  ├─ hetero-20m
+  └─ non-hetero-20m
+
+Pedestrian 2–5m
+  ├─ hetero-20m
+  └─ non-hetero-20m
+
+Pedestrian 5–10m
+  ├─ hetero-20m
+  └─ non-hetero-20m
+
+Pedestrian 10–20m
+  ├─ hetero-20m
+  └─ non-hetero-20m
+
+只做描述性指标：
+
+Count
+UniqueScenes
+Stage3B FDE
+Stage4A FDE
+Delta FDE
+Top1FDE Delta
+
+保存：
+
+06_tables/
+stage4ae_pedestrian_motion_context_cross.csv
+
+不要在很小 cell 上强行做统计显著性声明。
+
+============================================================
+9. Part A 要回答的问题
+============================================================
+
+最终明确回答：
+
+Q1：
+Pedestrian overall degradation 是否主要来自：
+
+0–1m
+1–2m
+2–5m
+
+这些低运动目标？
+
+Q2：
+5–10m / 10–20m pedestrian
+是否保持持平或改善？
+
+Q3：
+退化是否主要出现在：
+
+heterogeneous context
+
+还是：
+
+non-heterogeneous context
+
+如果低运动 pedestrian 特别差，
+记录：
+
+low-motion degradation evidence = YES
+
+否则：
+
+NO / MIXED
+
+============================================================
+PART B
+Vehicle-Pedestrian Gradient Conflict Audit
+============================================================
+
+10. 原则
+============================================================
+
+这一部分：
+
+不训练模型。
+
+禁止：
+
+optimizer.step()
+
+使用：
+
+model.eval()
+
+但不要：
+
+torch.no_grad()
+
+因为需要计算 gradient。
+
+禁止 dropout 随机性。
+
+使用：
+
+torch.autograd.grad()
+
+而不是训练循环 backward + optimizer。
+
+所有梯度只用于诊断。
+
+============================================================
+11. 同时诊断两个模型
+============================================================
+
+必须分别分析：
+
+Model B：
+Stage3B TypeEmbedding frozen checkpoint
+
+Model C：
+Stage4A frozen checkpoint
+
+目的是回答：
+
+梯度冲突是原来就存在，
+还是 Stage4A interaction 后明显增强？
+
+必须使用完全相同的 TRAIN batches。
+
+============================================================
+12. TRAIN batch sampling
+============================================================
+
+使用 frozen official TRAIN700。
+
+batch_size = 16
+
+seed = 2022
+
+使用固定 deterministic order。
+
+从 train loader 顺序扫描。
+
+选取前：
+
+100 个
+
+同时包含：
+
+至少1个 supervised Vehicle target
+至少1个 supervised Pedestrian target
+
+的 batch。
+
+不要求 bicycle。
+
+记录每个 batch：
+
+scene/window identity hash
+vehicle target count
+pedestrian target count
+bicycle target count
+valid future coordinate count per class
+
+保存：
+
+04_evaluation/diagnostics/
+stage4ae_gradient_batch_manifest.csv
+
+必须保证：
+
+Stage3B 和 Stage4A 使用完全相同100 batches。
+
+============================================================
+13. Class-specific loss 定义
+============================================================
+
+必须严格复用当前 original NLL phase 的：
+
+轨迹 prediction
+best-mode selection
+Laplace NLL
+soft-target classification
+
+但增加 class target mask。
+
+分别计算：
+
+L_V
+
+只允许：
+vehicle supervised targets
+参与 loss
+
+L_P
+
+只允许：
+pedestrian supervised targets
+参与 loss
+
+可选描述性：
+
+L_B
+
+只允许：
+bicycle supervised targets
+
+禁止：
+
+通过复制 batch
+删除其他 context actors。
+
+即：
+
+context graph 必须完整保留。
+
+只改变：
+
+哪些 target 对 loss 产生 supervision。
+
+这样 Vehicle/Pedestrian 仍然看到完全相同的交通场景上下文。
+
+============================================================
+14. Loss reduction 要求
+============================================================
+
+为了比较梯度方向：
+
+L_V
+L_P
+
+各自在自己的类别监督样本内取 mean。
+
+不能使用 sum。
+
+否则 Vehicle 样本数量大
+会人为扩大 gradient norm。
+
+因此：
+
+gradient direction conflict
+
+和：
+
+dataset frequency imbalance
+
+要分开分析。
+
+============================================================
+15. 参数组
+============================================================
+
+至少分以下组：
+
+Group 1：
+LocalEncoder
+
+Group 2：
+TypeEmbedding
+
+Group 3：
+GlobalInteractor shared core
+
+Stage4A 中必须排除：
+pair_embedding
+relation_mlp
+
+Group 4：
+Decoder
+
+Stage4A 额外：
+
+Group 5：
+Relation Module
+
+=
+pair_embedding
++
+relation_mlp
+
+另外统计：
+
+ALL SHARED
+
+=
+LocalEncoder
++
+TypeEmbedding
++
+GlobalInteractor shared core
++
+Decoder
+
+Stage3B 没有 Group5。
+
+============================================================
+16. 梯度提取
+============================================================
+
+对每个 batch、每个模型：
+
+Forward 一次。
+
+分别：
+
+g_V =
+grad(L_V, parameters)
+
+g_P =
+grad(L_P, parameters)
+
+使用：
+
+torch.autograd.grad
+
+retain_graph 在需要时正确设置。
+
+禁止参数更新。
+
+每组把所有 parameter gradients flatten 后拼接。
+
+如果 parameter gradient is None：
+
+记录并审计。
+
+shared core 不应该大规模 None。
+
+============================================================
+17. 核心 gradient 指标
+============================================================
+
+对于每个参数组计算：
+
+cos_VP =
+
+g_V · g_P
+/
+(||g_V|| * ||g_P|| + eps)
+
+同时计算：
+
+norm_V
+norm_P
+
+norm_ratio =
+norm_V / (norm_P + eps)
+
+记录：
+
+dot product
+
+============================================================
+18. Conflict Rate
+============================================================
+
+Across 100 batches：
+
+ConflictRate =
+
+number(cos_VP < 0)
+/
+valid batches
+
+同时报告：
+
+mean cosine
+median cosine
+p10
+p25
+p75
+p90
+
+不要只报平均值。
+
+============================================================
+19. Strong-conflict 诊断
+============================================================
+
+额外报告：
+
+fraction(cos < -0.1)
+
+fraction(cos < -0.25)
+
+这只是描述性阈值。
+
+不能当作统计显著性阈值。
+
+============================================================
+20. Stage3B vs Stage4A 对比
+============================================================
+
+核心比较：
+
+Stage3B：
+cos_VP_B
+
+Stage4A：
+cos_VP_C
+
+计算同 batch：
+
+DeltaCos =
+cos_C - cos_B
+
+如果：
+
+DeltaCos < 0
+
+表示 Stage4A 后
+Vehicle/Pedestrian 梯度方向更加冲突。
+
+做：
+
+paired batch bootstrap
+1000 replicates
+seed 2022
+
+比较：
+
+ALL SHARED mean cosine
+
+GlobalInteractor shared cosine
+
+输出95% CI。
+
+注意：
+
+batch不是独立scene cluster统计，
+这里仅为优化诊断，
+不能解释为正式模型显著性结果。
+
+============================================================
+21. 梯度 dominance 不能只看 norm
+============================================================
+
+因为实际训练数据类别严重不均衡：
+
+Vehicle future supervision share
+约73%
+
+Pedestrian
+约25%
+
+Bicycle
+约1%
+
+但本轮要从当前真实 batches
+重新计算实际监督占比。
+
+分别记录：
+
+target actor share
+
+和：
+
+valid future coordinate share
+
+============================================================
+22. Effective gradient pressure proxy
+============================================================
+
+对每个 batch：
+
+w_V =
+vehicle valid supervised coordinates
+/
+(V+P+B valid coordinates)
+
+w_P =
+pedestrian valid supervised coordinates
+/
+total
+
+然后计算描述性 proxy：
+
+effective_V =
+w_V * ||g_V||
+
+effective_P =
+w_P * ||g_P||
+
+effective_ratio =
+effective_V /
+(effective_P + eps)
+
+明确在报告中写：
+
+这是 optimization-pressure proxy，
+不是原始 mixed-loss 梯度的严格代数分解。
+
+不能把它写成数学上完全等价的总梯度贡献。
+
+============================================================
+23. Relation Module 专门分析
+============================================================
+
+Stage4A 的：
+
+pair_embedding
+relation_mlp
+
+必须单独统计：
+
+Vehicle loss gradient norm
+
+Pedestrian loss gradient norm
+
+cos_VP
+
+尤其分析：
+
+pair embeddings：
+
+V<-V
+V<-P
+P<-V
+P<-P
+
+可选输出每个 embedding row 的：
+
+||grad_V||
+||grad_P||
+
+但注意：
+
+这是训练信号诊断，
+不是因果解释。
+
+============================================================
+24. 输出 gradient 表
+============================================================
+
+保存：
+
+06_tables/
+stage4ae_gradient_conflict_summary.csv
+
+字段至少：
+
+Model
+ParameterGroup
+ValidBatches
+
+MeanCosVP
+MedianCosVP
+P10CosVP
+P90CosVP
+
+ConflictRate
+StrongConflictRate_0.1
+StrongConflictRate_0.25
+
+MeanNormV
+MeanNormP
+MeanNormRatio
+
+MeanEffectiveV
+MeanEffectiveP
+MeanEffectiveRatio
+
+============================================================
+25. 输出 batch-level 数据
+============================================================
+
+保存：
+
+04_evaluation/diagnostics/
+stage4ae_gradient_conflict_batches.csv
+
+每一行：
+
+Model
+BatchID
+
+VehicleTargets
+PedestrianTargets
+BicycleTargets
+
+VehicleValidCoordinates
+PedestrianValidCoordinates
+BicycleValidCoordinates
+
+ParameterGroup
+
+CosVP
+NormV
+NormP
+NormRatio
+
+WeightV
+WeightP
+EffectiveV
+EffectiveP
+EffectiveRatio
+
+这样后续可以完整审计。
+
+============================================================
+26. Gradient 数值检查
+============================================================
+
+要求：
+
+NaN = 0
+Inf = 0
+
+每个主要 shared group：
+
+至少95个有效 batch
+同时具有非零 V/P gradients。
+
+如果大量 zero/None：
+
+STOP 排查。
+
+============================================================
+PART C
+Figures
+============================================================
+
+27. 图1：Pedestrian motion bin
+============================================================
+
+画：
+
+05_figures/
+stage4ae_pedestrian_motion_bin_fde.png/pdf/svg
+
+横轴：
+
+0–1
+1–2
+2–5
+5–10
+10–20 m
+
+两组：
+
+Stage3B
+Stage4A
+
+纵轴：
+
+minFDE6(m)
+
+每个柱顶显示数值。
+
+============================================================
+28. 图2：Pedestrian Delta FDE
+============================================================
+
+画：
+
+stage4ae_pedestrian_motion_delta.png/pdf/svg
+
+纵轴：
+
+Delta FDE =
+Stage4A - Stage3B
+
+画0水平线。
+
+负值：
+Stage4A better
+
+正值：
+Stage4A worse
+
+最好同时画 scene-bootstrap 95% CI
+作为 error bar。
+
+============================================================
+29. 图3：Gradient cosine
+============================================================
+
+画：
+
+stage4ae_gradient_cosine_comparison.png/pdf/svg
+
+Parameter groups：
+
+LocalEncoder
+TypeEmbedding
+GlobalInteractor
+Decoder
+All Shared
+
+比较：
+
+Stage3B
+Stage4A
+
+显示：
+
+mean cosine
+
+同时 error bar：
+
+batch distribution CI
+或 paired bootstrap CI。
+
+不要混入 Relation Module，
+因为 Stage3B 没有。
+
+============================================================
+30. 图4：Gradient conflict distribution
+============================================================
+
+画：
+
+stage4ae_global_gradient_conflict_distribution.png/pdf/svg
+
+只画：
+
+ALL SHARED
+
+Stage3B vs Stage4A
+
+显示 batch-level cosine distribution。
+
+必须有：
+
+x=0 conflict boundary。
+
+============================================================
+31. 图5：Effective pressure
+============================================================
+
+画：
+
+stage4ae_gradient_pressure.png/pdf/svg
+
+显示：
+
+Vehicle
+Pedestrian
+
+在 Stage4A 的：
+
+mean class gradient norm
+
+和：
+
+frequency-weighted effective proxy
+
+最好分两张图，
+不要把不同量纲放一个轴。
+
+============================================================
+PART D
+Scientific Decision
+============================================================
+
+32. 最终判断规则
+============================================================
+
+本轮不是判断 Stage4A PASS/FAIL。
+
+只判断机制。
+
+输出：
+
+MotionPattern =
+LOW_MOTION_DEGRADATION
+/
+UNIFORM_PEDESTRIAN_DEGRADATION
+/
+MIXED
+
+GradientConflict =
+SUPPORTED
+/
+WEAK
+/
+NOT_SUPPORTED
+
+============================================================
+33. GradientConflict = SUPPORTED 的建议条件
+============================================================
+
+满足大部分以下证据：
+
+1.
+Stage4A ALL-SHARED
+mean/median cos_VP < Stage3B
+
+2.
+Stage4A conflict rate 明显更高
+
+3.
+GlobalInteractor shared
+也出现同方向变化
+
+4.
+paired batch DeltaCos
+大部分 <0
+
+5.
+Vehicle effective pressure proxy
+明显大于 Pedestrian
+
+不要为了得到 SUPPORTED
+事后创造单一阈值。
+
+综合证据判断。
+
+============================================================
+34. 最终架构决策矩阵
+============================================================
+
+CASE 1：
+
+Motion =
+LOW_MOTION_DEGRADATION
+
+且
+
+GradientConflict =
+SUPPORTED
+
+推荐：
+
+Dynamic Interaction Necessity-Gated Residual Adapter
+
+即：
+
+保留原 HiVT interaction 主路径：
+
+h_base
+
+额外关系分支：
+
+Delta_h_rel
+
+学习 gate：
+
+g_i =
+sigmoid(
+MLP(
+h_i,
+type_i,
+motion_i,
+interaction_context_i
+)
+)
+
+最终：
+
+h_i' =
+h_base
++
+g_i * Delta_h_rel
+
+重点：
+
+moving / interaction-demanding actors
+允许较高 gate
+
+low-motion actors
+允许接近0
+
+--------------------------------------------------
+
+CASE 2：
+
+Motion =
+UNIFORM_PEDESTRIAN_DEGRADATION
+
+且
+
+GradientConflict =
+SUPPORTED
+
+推荐：
+
+Type-Decoupled Residual Interaction Adapter
+
+即：
+
+shared HiVT backbone 保留
+
+relation residual
+按 target type 使用独立小 adapter/gate：
+
+Vehicle adapter
+Pedestrian adapter
+Bicycle adapter
+
+避免 vehicle 优化方向
+强迫 pedestrian 使用同一 residual mapping。
+
+--------------------------------------------------
+
+CASE 3：
+
+Motion =
+LOW_MOTION_DEGRADATION
+
+但
+
+GradientConflict =
+NOT_SUPPORTED / WEAK
+
+推荐：
+
+Interaction Necessity Gate
+
+但不引入复杂类别解耦。
+
+重点根据：
+
+motion magnitude
+relative context
+type
+
+决定是否启用 interaction residual。
+
+--------------------------------------------------
+
+CASE 4：
+
+Motion =
+MIXED
+
+且
+
+GradientConflict =
+NOT_SUPPORTED
+
+则：
+
+当前诊断假设失败。
+
+不要继续改 gate。
+
+下一步重新审查：
+
+relation feature
+interaction location
+global attention insertion方式。
+
+============================================================
+35. 不允许直接训练下一架构
+============================================================
+
+本轮结束以后：
+
+只给 RecommendedArchitecture。
+
+禁止：
+
+实现新 gate
+训练新 adapter
+进入 Reliability
+加入 Intent
+调整 class weights
+oversampling
+
+等“大脑 AI”审查。
+
+============================================================
+36. Final Report
+============================================================
+
+输出：
+
+09_reports/
+stage4ae_motion_gradient_diagnostic_report.md
+
+结构：
+
+【Frozen Inputs】
+
+【Pedestrian Motion-Bin Results】
+
+【Motion × Interaction Context】
+
+【Stage3B Gradient Conflict】
+
+【Stage4A Gradient Conflict】
+
+【Stage3B vs Stage4A Gradient Shift】
+
+【Dataset Supervision Distribution】
+
+【Effective Gradient Pressure Proxy】
+
+【Relation Module Gradients】
+
+【Mechanism Decision】
+
+MotionPattern=
+
+GradientConflict=
+
+【Recommended Architecture】
+
+名称=
+核心公式=
+为什么=
+
+【Limitations】
+
+明确写：
+
+gradient conflict 是 optimization diagnostic，
+不代表因果证明。
+
+motion bins 使用 GT displacement，
+只用于离线评价，
+不能作为推理时直接可用的输入。
+
+============================================================
+37. Git
+============================================================
+
+建议 commit：
+
+diag: audit pedestrian motion bins and class gradient conflict
+
+push：
+
+stage4a-e/motion-gradient-diagnostic
+
+不要 merge main。
+
+============================================================
+38. 最后只向用户汇报
+============================================================
+
+Git commit=
+
+Pedestrian motion bins:
+
+0-1m:
+Stage3B FDE=
+Stage4A FDE=
+Delta=
+CI=
+
+1-2m:
+Stage3B=
+Stage4A=
+Delta=
+
+2-5m:
+Stage3B=
+Stage4A=
+Delta=
+
+5-10m:
+Stage3B=
+Stage4A=
+Delta=
+CI=
+
+10-20m:
+Stage3B=
+Stage4A=
+Delta=
+
+Stage3B ALL-SHARED:
+Mean cosine V/P=
+Conflict rate=
+
+Stage4A ALL-SHARED:
+Mean cosine V/P=
+Conflict rate=
+
+Stage3B GlobalInteractor:
+Mean cosine=
+
+Stage4A GlobalInteractor:
+Mean cosine=
+
+Stage4A RelationModule:
+Mean cosine V/P=
+Conflict rate=
+
+Vehicle/Ped valid-coordinate supervision share=
+
+Mean effective gradient pressure ratio V/P=
+
+MotionPattern=
+LOW_MOTION_DEGRADATION /
+UNIFORM_PEDESTRIAN_DEGRADATION /
+MIXED
+
+GradientConflict=
+SUPPORTED / WEAK / NOT_SUPPORTED
+
+Recommended architecture=
+
+完成后 STOP。
+不要训练下一模型。
