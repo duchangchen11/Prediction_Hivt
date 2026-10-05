@@ -1,0 +1,31 @@
+{
+  "stage": "Stage4A-D",
+  "backend": "python",
+  "archetype": "quantitative grid",
+  "purpose": "Test the over-strong relation bias hypothesis using observed logit scales, actual attention changes, and checkpoint-internal inference sensitivity.",
+  "figures": {
+    "stage4ad_logit_scale_by_target": "Compare mean absolute formal base logits and relation biases across target types; scale alone does not establish harm.",
+    "stage4ad_bias_base_ratio_heatmap": "Compare ratios of pooled absolute means across nine directed target-source pairs.",
+    "stage4ad_attention_entropy_shift": "Show the signed entropy change on real incoming neighborhoods; concentration has no inherent quality interpretation.",
+    "stage4ad_top_neighbor_switch": "Compare actual neighbor identity switching across target types independently from entropy.",
+    "stage4ad_lambda_sensitivity": "Show all five prescribed inference scales without smoothing or selecting a new model.",
+    "stage4ad_lambda_motion_sensitivity": "Show the same five scales on frozen displacement-defined motion groups."
+  },
+  "sources": [
+    "06_tables/stage4ad_attention_scale_summary.csv",
+    "06_tables/stage4ad_pair_scale_summary.csv",
+    "04_evaluation/diagnostics/stage4ad_bias_scale_sensitivity.csv"
+  ],
+  "dimensions_inches": [4.5, 3.2],
+  "exports": ["PNG 300 dpi", "PDF with TrueType text", "SVG with editable text"],
+  "statistics": "Population means on all actual VAL edge-layer-head or target-layer-head observations; no independent-sample confidence intervals.",
+  "review_risks": [
+    "Overlapping actor windows and attention heads are not independent replicates.",
+    "Absolute logit offsets can cancel in softmax; ratio is only a scale diagnostic.",
+    "Target edge weighting differs from target-node weighting; both are explicit in source tables.",
+    "Directed pair entropy contexts overlap and use the whole original neighborhood.",
+    "Lambda=0 retains Stage4A trained shared weights and is not Stage3B.",
+    "Lambda sensitivity does not replace the formal lambda=1 NOT SUPPORTED conclusion.",
+    "Small sensitivity differences require readable numeric source tables and unambiguous axes."
+  ]
+}

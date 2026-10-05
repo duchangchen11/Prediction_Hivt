@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "edge_dtype": [
+    [
+      "batch",
+      "<u2"
+    ],
+    [
+      "source",
+      "<i4"
+    ],
+    [
+      "target",
+      "<i4"
+    ],
+    [
+      "pair",
+      "|u1"
+    ],
+    [
+      "flags",
+      "|u1"
+    ],
+    [
+      "base",
+      "<f4",
+      [
+        8
+      ]
+    ],
+    [
+      "bias",
+      "<f4",
+      [
+        8
+      ]
+    ],
+    [
+      "final",
+      "<f4",
+      [
+        8
+      ]
+    ]
+  ],
+  "node_dtype": [
+    [
+      "batch",
+      "<u2"
+    ],
+    [
+      "target",
+      "<i4"
+    ],
+    [
+      "type",
+      "|u1"
+    ],
+    [
+      "flags",
+      "|u1"
+    ],
+    [
+      "pair_context",
+      "<u2"
+    ],
+    [
+      "entropy_base",
+      "<f4",
+      [
+        8
+      ]
+    ],
+    [
+      "entropy_final",
+      "<f4",
+      [
+        8
+      ]
+    ],
+    [
+      "l1_shift",
+      "<f4",
+      [
+        8
+      ]
+    ],
+    [
+      "switch",
+      "|u1",
+      [
+        8
+      ]
+    ]
+  ],
+  "edge_counts": [
+    3058206,
+    3058206,
+    3058206
+  ],
+  "node_counts": [
+    91064,
+    91064,
+    91064
+  ],
+  "batches": 226,
+  "lambda": 1,
+  "record_unit": "actual edge/window/layer with eight heads; no added neighbors",
+  "attention_unit": "target with at least one actual incoming edge, per layer/head",
+  "flags": {
+    "1": "frozen membership known",
+    "2": "full_horizon",
+    "4": "Heterogeneous-20m",
+    "8": "VP-context-20m"
+  },
+  "pair_context_definition": "whole-neighborhood entropy on targets with >=1 actual incoming edge of this directed pair; context groups overlap",
+  "entropy_log": "natural",
+  "top_neighbor_tie_break": "first edge in original formal edge order",
+  "raw_files_local_only": true,
+  "AST_audit": {
+    "single_additive_statement_intercepted": true,
+    "restored_AST_equals_formal_AST": true,
+    "formal_message_source": "def message(self, x_i: torch.Tensor, x_j: torch.Tensor,\n            edge_attr: torch.Tensor, relation_bias: torch.Tensor,\n            index: torch.Tensor, ptr: OptTensor,\n            size_i: Optional[int]) -> torch.Tensor:\n    query = self.lin_q_node(x_i).view(-1, self.num_heads,\n                                     self.embed_dim // self.num_heads)\n    key_node = self.lin_k_node(x_j).view(-1, self.num_heads,\n                                        self.embed_dim // self.num_heads)\n    key_edge = self.lin_k_edge(edge_attr).view(-1, self.num_heads,\n                                             self.embed_dim // self.num_heads)\n    value_node = self.lin_v_node(x_j).view(-1, self.num_heads,\n                                          self.embed_dim // self.num_heads)\n    value_edge = self.lin_v_edge(edge_attr).view(-1, self.num_heads,\n                                               self.embed_dim // self.num_heads)\n    scale = (self.embed_dim // self.num_heads) ** 0.5\n    alpha = (query * (key_node + key_edge)).sum(dim=-1) / scale\n    alpha = alpha + relation_bias\n    alpha = softmax(alpha, index, ptr, size_i)\n    alpha = self.attn_drop(alpha)\n    return (value_node + value_edge) * alpha.unsqueeze(-1)\n",
+    "diagnostic_message_source": "def message(self, x_i: torch.Tensor, x_j: torch.Tensor, edge_attr: torch.Tensor, relation_bias: torch.Tensor, index: torch.Tensor, ptr: OptTensor, size_i: Optional[int]) -> torch.Tensor:\n    query = self.lin_q_node(x_i).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    key_node = self.lin_k_node(x_j).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    key_edge = self.lin_k_edge(edge_attr).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    value_node = self.lin_v_node(x_j).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    value_edge = self.lin_v_edge(edge_attr).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    scale = (self.embed_dim // self.num_heads) ** 0.5\n    alpha = (query * (key_node + key_edge)).sum(dim=-1) / scale\n    alpha = self.stage4ad_observer.logits(self, alpha, relation_bias, index, ptr, size_i)\n    alpha = softmax(alpha, index, ptr, size_i)\n    alpha = self.attn_drop(alpha)\n    return (value_node + value_edge) * alpha.unsqueeze(-1)",
+    "q_k_node_k_edge_value_projections_unchanged": true,
+    "formal_softmax_and_aggregation_unchanged": true
+  }
+}

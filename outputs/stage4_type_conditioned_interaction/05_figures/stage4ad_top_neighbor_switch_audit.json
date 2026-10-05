@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "175f04d7b0d12fca9aab03f76767fd08a9cfa530e95e6ec4d8af786513e8d0ef",
+  "source": "06_tables/stage4ad_attention_scale_summary.csv",
+  "source_sha256": "6aeaa4d4a238ce06c527b42416223cd019f1d2b4d540cb0f80379e755d12f3c9",
+  "plotted_values": {
+    "Vehicle": 41.53748018232263,
+    "Pedestrian": 45.67948201524713,
+    "Bicycle": 26.41684015729817
+  },
+  "interpretation_and_statistics": "Different source-node identity for argmax attention, same edge order; equal target-layer-head weight.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ad_top_neighbor_switch.png",
+      "sha256": "a7a8fb502ee5c6ab98b9b6ef1c2285a90bf91f4539d2e1f37388fe4ed6bb67ad",
+      "bytes": 50490,
+      "pixels": [
+        1350,
+        960
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ad_top_neighbor_switch.pdf",
+      "sha256": "158fa21396cbad6abb2419487827acd5c4832edca9ad1a43d074e3519c12ea84",
+      "bytes": 11625,
+      "editable_text_verified": true
+    },
+    "svg": {
+      "path": "05_figures/stage4ad_top_neighbor_switch.svg",
+      "sha256": "c748dd4be2ec11029a46f760b9f5f30415f3c4e7fbd8c63aab513794a8d867d1",
+      "bytes": 6569
+    }
+  },
+  "SVG_text_elements": 13,
+  "smoothing": false,
+  "mock_or_generated_data": false
+}

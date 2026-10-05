@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "175f04d7b0d12fca9aab03f76767fd08a9cfa530e95e6ec4d8af786513e8d0ef",
+  "source": "04_evaluation/diagnostics/stage4ad_bias_scale_sensitivity.csv",
+  "source_sha256": "524323dc1769dfbb14dde00490c784ec6d191627a988377936935661dc63cb62",
+  "plotted_values": {
+    "lambda": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "Overall": [
+      1.336105867261472,
+      1.3350035321895852,
+      1.3352924214774735,
+      1.3354880819522499,
+      1.3355660507146223
+    ],
+    "Vehicle": [
+      1.4192333518789022,
+      1.4195879925814643,
+      1.419781208757587,
+      1.419955649860977,
+      1.4200212017192784
+    ],
+    "Pedestrian": [
+      1.0555637329356642,
+      1.0492289749246724,
+      1.0498213154151899,
+      1.0500488772798808,
+      1.0501263329628567
+    ]
+  },
+  "interpretation_and_statistics": "Full official VAL150 and 54990 full-horizon actor windows per lambda, one frozen Stage4A checkpoint; no new model selection or independent-sample CIs.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ad_lambda_sensitivity.png",
+      "sha256": "1c0aee677f13c159a2f966b74e82e18ea2aa34f9bbdb7bc3973403b37d2a02a0",
+      "bytes": 49499,
+      "pixels": [
+        1350,
+        960
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ad_lambda_sensitivity.pdf",
+      "sha256": "125d54288f945dac55046dee7fd18445049615c07897957b0d7c098508a1fa7c",
+      "bytes": 16074,
+      "editable_text_verified": true
+    },
+    "svg": {
+      "path": "05_figures/stage4ad_lambda_sensitivity.svg",
+      "sha256": "b3a146ba897bf42eff0ee4aab571967c352d4a665a667615786c003644b82e25",
+      "bytes": 11406
+    }
+  },
+  "SVG_text_elements": 15,
+  "smoothing": false,
+  "mock_or_generated_data": false
+}

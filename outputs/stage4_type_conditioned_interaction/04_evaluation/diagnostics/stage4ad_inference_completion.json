@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "lambdas": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "official_VAL_scenes_per_lambda": 150,
+  "official_VAL_windows_per_lambda": 3603,
+  "checkpoint_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "parameters_buffers_unchanged": true,
+  "optimizer_created": false,
+  "backward_called": false,
+  "all_frozen_Stage4A_files_unchanged": true,
+  "Stage4A_scientific_conclusion": "NOT SUPPORTED",
+  "Ready_Stage4B": "NO"
+}

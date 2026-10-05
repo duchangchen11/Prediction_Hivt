@@ -1,0 +1,813 @@
+你现在执行：
+
+============================================================
+Stage4A-D：Relation Bias Scale Diagnostic
+不训练，只做诊断
+============================================================
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前 Stage4A 分支：
+stage4a/type-conditioned-interaction
+
+Stage4A 最新 commit：
+528b9501d66368b7d6a3b754f64bc1c5006f7d13
+
+Stage4A 独立目录：
+outputs/stage4_type_conditioned_interaction/
+
+Stage4A final checkpoint：
+outputs/stage4_type_conditioned_interaction/07_checkpoints/
+stage4a_best_overall_minfde.pt
+
+checkpoint SHA256：
+ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb
+
+当前科学结论：
+Stage4A = PASS
+Type-conditioned Interaction = NOT SUPPORTED
+Ready Stage4B = NO
+
+本轮禁止训练。
+
+============================================================
+1. 本轮研究问题
+============================================================
+
+Stage4A 当前结果：
+
+Vehicle：
+FDE 1.431914 -> 1.420021
+可靠改善
+
+vehicle.moving：
+4.791532 -> 4.727113
+可靠改善
+
+Vehicle >5m：
+5.579887 -> 5.516344
+可靠改善
+
+但是 Pedestrian：
+
+1.043875 -> 1.050126
+Delta = +0.006251 m
+
+scene-bootstrap CI95：
+[+0.001364, +0.010847]
+
+即 pedestrian 出现可靠退化。
+
+同时当前 relation bias mean|bias|：
+
+V<-V ≈ 10.69
+V<-P ≈ 7.51
+P<-V ≈ 8.55
+P<-P ≈ 7.98
+
+因此需要检验：
+
+relation bias 是否相对于原始 attention score 过强，
+尤其是否对 pedestrian target 造成过度 attention 重排。
+
+注意：
+
+这是诊断假设，不是已证明结论。
+
+============================================================
+2. 新建诊断分支
+============================================================
+
+从：
+
+528b9501d66368b7d6a3b754f64bc1c5006f7d13
+
+创建：
+
+stage4a-d/relation-bias-diagnostic
+
+禁止修改 Stage4A checkpoint。
+
+禁止重新训练。
+
+============================================================
+3. 输出目录
+============================================================
+
+仍在：
+
+outputs/stage4_type_conditioned_interaction/
+
+新增：
+
+04_evaluation/diagnostics/
+
+所有文件统一：
+
+stage4ad_
+
+前缀。
+
+不要覆盖 Stage4A 正式结果。
+
+============================================================
+4. 不修改训练模型行为
+============================================================
+
+不要修改：
+
+stage4a_best_overall_minfde.pt
+
+不要 optimizer.step()
+
+不要 backward()
+
+不要改变参数。
+
+只允许：
+
+load checkpoint
+model.eval()
+torch.no_grad()
+
+然后使用诊断 hook / diagnostic subclass
+捕获 attention 中间量。
+
+============================================================
+5. 必须记录的 attention 量
+============================================================
+
+当前 Stage4A attention：
+
+base_logit =
+q_i · (k_j + k_edge) / sqrt(d_h)
+
+final_logit =
+base_logit + relation_bias
+
+需要在：
+
+3 global layers
+x
+8 attention heads
+
+全部记录：
+
+base_logit
+relation_bias
+final_logit
+
+注意：
+
+必须使用当前正式 forward 中完全相同的：
+
+edge_index
+q
+k_node
+k_edge
+relation_bias
+
+禁止重新写一套近似公式。
+
+============================================================
+6. 统计维度
+============================================================
+
+至少按以下维度统计：
+
+A. Target type
+
+Vehicle target
+Pedestrian target
+Bicycle target
+
+B. Directed pair
+
+V<-V
+V<-P
+V<-B
+
+P<-V
+P<-P
+P<-B
+
+B<-V
+B<-P
+B<-B
+
+C. Layer
+
+Layer 1
+Layer 2
+Layer 3
+
+D. Head
+
+Head 1~8
+
+============================================================
+7. Logit Scale 指标
+============================================================
+
+每组统计：
+
+count
+
+mean(base_logit)
+std(base_logit)
+
+mean(abs(base_logit))
+median(abs(base_logit))
+p90(abs(base_logit))
+
+mean(bias)
+std(bias)
+
+mean(abs(bias))
+median(abs(bias))
+p90(abs(bias))
+
+mean(abs(final_logit))
+
+同时计算：
+
+scale_ratio =
+mean(abs(bias))
+/
+(mean(abs(base_logit)) + 1e-8)
+
+不要只计算逐edge：
+
+abs(bias)/abs(base)
+
+因为 base 接近0时会异常放大。
+
+可以额外报告：
+
+median(
+ abs(bias) /
+ (abs(base_logit)+1e-3)
+)
+
+但只能作为辅助指标。
+
+============================================================
+8. 重点判断
+============================================================
+
+重点看：
+
+Vehicle target：
+
+mean|bias| / mean|base|
+
+和：
+
+Pedestrian target：
+
+mean|bias| / mean|base|
+
+如果 pedestrian 明显更高，
+说明 relation bias 对 pedestrian 的相对扰动可能过强。
+
+特别比较：
+
+V<-P
+P<-V
+P<-P
+V<-V
+
+============================================================
+9. Attention Entropy
+============================================================
+
+必须比较加 bias 前后 attention distribution。
+
+对于每一个：
+
+target node
+layer
+head
+
+计算原始：
+
+alpha_base =
+softmax(base_logit)
+
+和：
+
+alpha_final =
+softmax(base_logit + bias)
+
+entropy：
+
+H =
+-sum_j alpha_j log(alpha_j)
+
+记录：
+
+H_base
+H_final
+
+Delta_H =
+H_final - H_base
+
+按：
+
+Vehicle target
+Pedestrian target
+Bicycle target
+
+以及 directed pair context
+
+汇总：
+
+mean
+median
+p10
+p90
+
+解释：
+
+Delta_H < 0：
+attention 更集中
+
+Delta_H > 0：
+attention 更分散
+
+不要直接解释成“更好/更坏”。
+
+============================================================
+10. Attention Shift
+============================================================
+
+再计算：
+
+L1 attention shift：
+
+S_i =
+sum_j |
+alpha_final_ij - alpha_base_ij
+|
+
+和：
+
+top-neighbor switch rate
+
+即：
+
+argmax_j alpha_base
+
+是否等于：
+
+argmax_j alpha_final
+
+分别报告：
+
+Vehicle target
+Pedestrian target
+Bicycle target
+
+如果 pedestrian 的：
+
+attention shift
+或
+top-neighbor switch rate
+
+明显更高，
+这是“过度重排”假设的重要证据。
+
+============================================================
+11. 重要：只分析有真实邻居的节点
+============================================================
+
+只对：
+
+GlobalInteractor 当前有效 edge
+
+分析。
+
+不能人为增加邻居。
+
+保留当前：
+
+50m graph topology。
+
+另外再单独统计：
+
+Heterogeneous-20m targets
+
+和：
+
+VP-context-20m targets
+
+使用之前已经冻结的 membership ledger。
+
+不能重新定义 group。
+
+============================================================
+12. Post-hoc Bias Scale Sensitivity
+============================================================
+
+做一个纯诊断 sensitivity。
+
+不训练。
+
+保持同一个 Stage4A checkpoint。
+
+仅在推理时临时改：
+
+final_logit =
+base_logit + lambda * bias
+
+测试：
+
+lambda =
+0.00
+0.25
+0.50
+0.75
+1.00
+
+注意：
+
+lambda=0 的结果
+不等于 Stage3B。
+
+因为 Stage4A shared weights
+已经在包含 bias 的条件下训练过。
+
+所以这里只能用于：
+
+“Stage4A checkpoint 内部对 bias 强度的敏感性诊断”
+
+不能作为正式 baseline。
+
+============================================================
+13. Bias Scale Sensitivity 指标
+============================================================
+
+对每个 lambda
+跑完整 official VAL150。
+
+只需要记录：
+
+Overall minFDE
+Vehicle minFDE
+Pedestrian minFDE
+Bicycle minFDE
+
+vehicle.moving minFDE
+Vehicle >5m minFDE
+Pedestrian >5m minFDE
+
+MR
+
+Top1FDE
+
+Heterogeneous-20m minFDE
+Vehicle hetero-20m minFDE
+Pedestrian hetero-20m minFDE
+VP-context-20m minFDE
+
+保存：
+
+04_evaluation/diagnostics/
+stage4ad_bias_scale_sensitivity.csv
+
+============================================================
+14. 不做 checkpoint selection
+============================================================
+
+非常重要：
+
+lambda sensitivity
+只是诊断。
+
+禁止：
+
+从 lambda=0.25/0.5/0.75
+挑一个最好的
+然后称为新模型。
+
+禁止：
+
+用这个结果覆盖 Stage4A 正式结论。
+
+Stage4A 正式结果仍然：
+
+lambda=1
+
+Type-conditioned Interaction =
+NOT SUPPORTED
+
+============================================================
+15. 诊断图1
+============================================================
+
+画：
+
+stage4ad_logit_scale_by_target.png/pdf/svg
+
+三组：
+
+Vehicle target
+Pedestrian target
+Bicycle target
+
+显示：
+
+mean |base logit|
+mean |relation bias|
+
+建议 grouped bars。
+
+重点是直接看尺度。
+
+============================================================
+16. 诊断图2
+============================================================
+
+画：
+
+stage4ad_bias_base_ratio_heatmap.png/pdf/svg
+
+3x3 directed type pairs：
+
+target × source
+
+显示：
+
+mean|bias|
+/
+mean|base|
+
+不要显示绝对 bias alone。
+
+============================================================
+17. 诊断图3
+============================================================
+
+画：
+
+stage4ad_attention_entropy_shift.png/pdf/svg
+
+Vehicle
+Pedestrian
+Bicycle
+
+显示：
+
+mean Delta entropy
+
+同时可以画：
+
+top-neighbor switch rate
+
+但不要放在同一张拥挤图里。
+
+============================================================
+18. 诊断图4
+============================================================
+
+画：
+
+stage4ad_lambda_sensitivity.png/pdf/svg
+
+横轴：
+
+lambda
+0 / .25 / .5 / .75 / 1
+
+纵轴：
+
+minFDE
+
+只画：
+
+Overall
+Vehicle
+Pedestrian
+
+三条曲线。
+
+另单独画：
+
+stage4ad_lambda_motion_sensitivity.png
+
+Vehicle >5m
+Pedestrian >5m
+
+不要平滑。
+
+============================================================
+19. 核心诊断表
+============================================================
+
+输出：
+
+06_tables/
+stage4ad_attention_scale_summary.csv
+
+字段至少：
+
+TargetType
+Layer
+EdgeCount
+MeanAbsBase
+MeanAbsBias
+BiasBaseRatio
+EntropyBase
+EntropyFinal
+DeltaEntropy
+AttentionL1Shift
+TopNeighborSwitchRate
+
+以及：
+
+stage4ad_pair_scale_summary.csv
+
+Pair
+EdgeCount
+MeanAbsBase
+MeanAbsBias
+BiasBaseRatio
+
+============================================================
+20. 诊断结论规则
+============================================================
+
+输出：
+
+09_reports/
+stage4ad_relation_bias_diagnostic_report.md
+
+最终只允许以下三种结论：
+
+CASE A：
+
+Evidence supports over-strong bias
+
+条件：
+
+Pedestrian 的相对 bias scale /
+attention shift 明显高，
+
+且 lambda < 1 时
+Pedestrian FDE 有一致恢复趋势，
+同时 Vehicle 优势没有完全消失。
+
+推荐下一模型：
+
+bounded target-type adaptive residual gate
+
+CASE B：
+
+Mixed evidence
+
+尺度或 attention shift 存在差异，
+但 lambda sensitivity 不形成清晰趋势。
+
+推荐：
+
+不要直接认定 bias 过强，
+进一步分析 representation / class imbalance。
+
+CASE C：
+
+No evidence for over-strong bias
+
+Pedestrian 与 Vehicle 的 bias/base scale
+没有实质区别，
+
+而减小 lambda
+也不能恢复 pedestrian。
+
+推荐：
+
+放弃“只限制 bias 强度”的修改方向，
+重新设计 interaction mechanism。
+
+============================================================
+21. 如果 CASE A，建议下一方法但不要实现
+============================================================
+
+只在报告中建议：
+
+s_ij^(l,h)
+=
+s_base
++
+gamma_(target_type)^(l,h)
+*
+tanh(b_ij^(l,h))
+
+其中：
+
+gamma 可以按 target type 学习：
+
+gamma_V
+gamma_P
+gamma_B
+
+并建议：
+
+gamma 初始化为小值，
+例如通过 sigmoid / bounded parameterization
+限制调制强度。
+
+但：
+
+本轮禁止实现
+禁止训练。
+
+============================================================
+22. 不要做这些
+============================================================
+
+禁止：
+
+训练新模型
+重新跑 Stage4A
+Reliability Head
+Intent
+class-balanced loss
+oversampling
+map semantics
+TTC
+edge pruning
+dynamic topology
+额外随机种子
+超参数搜索
+
+============================================================
+23. Git
+============================================================
+
+建议 commit：
+
+diag: analyze Stage4A relation bias scale and attention shift
+
+push：
+
+stage4a-d/relation-bias-diagnostic
+
+不要 merge main。
+
+============================================================
+24. 完成后只汇报
+============================================================
+
+Git commit=
+
+Vehicle mean|base|=
+Vehicle mean|bias|=
+Vehicle bias/base ratio=
+
+Pedestrian mean|base|=
+Pedestrian mean|bias|=
+Pedestrian bias/base ratio=
+
+Vehicle attention entropy delta=
+
+Pedestrian attention entropy delta=
+
+Vehicle top-neighbor switch rate=
+
+Pedestrian top-neighbor switch rate=
+
+Lambda sensitivity:
+
+lambda=0:
+Overall=
+Vehicle=
+Pedestrian=
+
+lambda=0.25:
+Overall=
+Vehicle=
+Pedestrian=
+
+lambda=0.50:
+Overall=
+Vehicle=
+Pedestrian=
+
+lambda=0.75:
+Overall=
+Vehicle=
+Pedestrian=
+
+lambda=1.00:
+Overall=
+Vehicle=
+Pedestrian=
+
+Diagnostic conclusion=
+CASE A / CASE B / CASE C
+
+Recommended next architecture=
+
+完成后 STOP。
+不要训练下一模型。

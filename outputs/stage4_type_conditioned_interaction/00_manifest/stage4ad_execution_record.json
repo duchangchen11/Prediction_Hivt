@@ -1,0 +1,51 @@
+{
+  "stage": "Stage4A-D",
+  "status": "COMPLETE",
+  "commands_relative_to_Stage4_root": [
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python 04_evaluation/diagnostics/stage4ad_diagnostic.py freeze",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python -u 04_evaluation/diagnostics/stage4ad_diagnostic.py run",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python -u 04_evaluation/diagnostics/stage4ad_summarize.py",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python 05_figures/stage4ad_figures.py",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python 09_reports/stage4ad_report.py",
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python 00_manifest/stage4ad_finalize.py"
+  ],
+  "actual_cwd": "/home/lrj/Prediction_Hivt",
+  "base_commit": "528b9501d66368b7d6a3b754f64bc1c5006f7d13",
+  "branch": "stage4a-d/relation-bias-diagnostic",
+  "interpreter": "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+  "environment_created_or_upgraded": false,
+  "evaluations": [
+    {
+      "lambda": 0,
+      "elapsed_seconds": 52.84436236700276,
+      "audit_sha256": "96058089f48e7a5e4674efa9a16cdc371ce375a9c942df43350530d70566b0ee"
+    },
+    {
+      "lambda": 0.25,
+      "elapsed_seconds": 55.28754764300538,
+      "audit_sha256": "12fee53ff07a4824f1001a2d5efe55750f1e2bc0a5fd01fdf5b7588d6368c977"
+    },
+    {
+      "lambda": 0.5,
+      "elapsed_seconds": 55.20039348399587,
+      "audit_sha256": "54596454f6c168e9957e9353b95627bbeebdb666bdc665c4259896530ffe49ec"
+    },
+    {
+      "lambda": 0.75,
+      "elapsed_seconds": 53.64042030600103,
+      "audit_sha256": "e02f0d13fff3d9a4f3a014b1d6b552d15955e8ab9042eb63cca008eb67161a80"
+    },
+    {
+      "lambda": 1,
+      "elapsed_seconds": 58.54936409200309,
+      "audit_sha256": "c07e197619ffb1ca5a95249f20bc693ca1ba373f09e60ef268370fef267b871b"
+    }
+  ],
+  "logs": [
+    "08_logs/stage4ad_inference.log",
+    "08_logs/stage4ad_statistics.log"
+  ],
+  "figure_dependency_resolution": "Used existing pdftotext/pdffonts for PDF text/font inspection; no package installation.",
+  "checkpoint_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "STOP_after_diagnostic": true
+}

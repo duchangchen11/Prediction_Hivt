@@ -1,0 +1,376 @@
+{
+  "status": "PASS",
+  "lambda": 1,
+  "metrics": {
+    "Overall": {
+      "Count": 54990,
+      "UniqueInstances": 4323,
+      "UniqueScenes": 150,
+      "minADE6": 0.6609903607757637,
+      "minFDE6": 1.3355660507146223,
+      "MR6": 0.16593926168394255,
+      "Top1ADE6": 1.1791931096708617,
+      "Top1FDE6": 2.6673187238445473,
+      "NLL": -0.55334486327269
+    },
+    "Vehicle": {
+      "Count": 42332,
+      "UniqueInstances": 3144,
+      "UniqueScenes": 150,
+      "minADE6": 0.7005532016531345,
+      "minFDE6": 1.4200212017192784,
+      "MR6": 0.16859586128696966,
+      "Top1ADE6": 1.32302389435274,
+      "Top1FDE6": 3.0267102376476465,
+      "NLL": -0.6922529306983723
+    },
+    "Pedestrian": {
+      "Count": 12002,
+      "UniqueInstances": 1108,
+      "UniqueScenes": 121,
+      "minADE6": 0.5279687064872638,
+      "minFDE6": 1.0501263329628567,
+      "MR6": 0.1573071154807532,
+      "Top1ADE6": 0.6900801676663592,
+      "Top1FDE6": 1.4441876707350567,
+      "NLL": -0.06438300377271552
+    },
+    "Bicycle": {
+      "Count": 656,
+      "UniqueInstances": 71,
+      "UniqueScenes": 47,
+      "minADE6": 0.5417094381381303,
+      "minFDE6": 1.1079624533481476,
+      "MR6": 0.1524390243902439,
+      "Top1ADE6": 0.8464015742817825,
+      "Top1FDE6": 1.8536866157764296,
+      "NLL": -0.535454508782916
+    },
+    "vehicle.moving": {
+      "Count": 10461,
+      "UniqueInstances": 850,
+      "UniqueScenes": 137,
+      "minADE6": 2.2794269187714744,
+      "minFDE6": 4.727112757996075,
+      "MR6": 0.6081636554822675,
+      "Top1ADE6": 4.530560572152864,
+      "Top1FDE6": 10.569072320283844,
+      "NLL": 1.520564177067924
+    },
+    "Vehicle >5m": {
+      "Count": 9744,
+      "UniqueInstances": 853,
+      "UniqueScenes": 137,
+      "minADE6": 2.594056740521311,
+      "minFDE6": 5.516343623529148,
+      "MR6": 0.6954022988505747,
+      "Top1ADE6": 4.961740431270664,
+      "Top1FDE6": 11.752175643288474,
+      "NLL": 1.9192086239537485
+    },
+    "Pedestrian >5m": {
+      "Count": 7581,
+      "UniqueInstances": 716,
+      "UniqueScenes": 110,
+      "minADE6": 0.6600948372947183,
+      "minFDE6": 1.3364388988131077,
+      "MR6": 0.20604141933781822,
+      "Top1ADE6": 0.809768868234466,
+      "Top1FDE6": 1.6919449130558446,
+      "NLL": 0.26510982044311343
+    },
+    "Heterogeneous-20m": {
+      "Count": 25113,
+      "UniqueInstances": 2399,
+      "UniqueScenes": 131,
+      "minADE6": 0.6560301627229845,
+      "minFDE6": 1.3252257521132187,
+      "MR6": 0.17429219925934775,
+      "Top1ADE6": 1.1431370877785287,
+      "Top1FDE6": 2.566502590592947,
+      "NLL": -0.38732983034056817
+    },
+    "Vehicle hetero-20m": {
+      "Count": 14813,
+      "UniqueInstances": 1365,
+      "UniqueScenes": 131,
+      "minADE6": 0.7551434421609893,
+      "minFDE6": 1.5396297866850501,
+      "MR6": 0.19435630864780937,
+      "Top1ADE6": 1.4582564716337787,
+      "Top1FDE6": 3.347678938761723,
+      "NLL": -0.5630205311339985
+    },
+    "Pedestrian hetero-20m": {
+      "Count": 9732,
+      "UniqueInstances": 968,
+      "UniqueScenes": 120,
+      "minADE6": 0.5088496465609932,
+      "minFDE6": 1.0043400330338386,
+      "MR6": 0.14406083025071928,
+      "Top1ADE6": 0.6756772497004534,
+      "Top1FDE6": 1.406670092809128,
+      "NLL": -0.11217742358336878
+    },
+    "VP-context-20m": {
+      "Count": 23209,
+      "UniqueInstances": 2213,
+      "UniqueScenes": 125,
+      "minADE6": 0.6542181857197406,
+      "minFDE6": 1.3183666523260196,
+      "MR6": 0.17428583739066741,
+      "Top1ADE6": 1.1319716741219306,
+      "Top1FDE6": 2.5430039160550195,
+      "NLL": -0.38317066594014726
+    }
+  },
+  "paired_actor_windows": 85027,
+  "paired_full_horizon": 54990,
+  "paired_partial_future": 30037,
+  "GT_and_masks_and_identities_equal": true,
+  "VAL_windows": 3603,
+  "VAL_scenes": 150,
+  "checkpoint_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "state_before": "87e0a6bb72e5dcb516f32a0d9a2985e0489903e1c477bb1a43256d89db05e14f",
+  "state_after": "87e0a6bb72e5dcb516f32a0d9a2985e0489903e1c477bb1a43256d89db05e14f",
+  "no_grad": true,
+  "parameters_changed": false,
+  "lambda1_formal_result_reconciliation": [
+    {
+      "group": "Overall",
+      "metric": "minFDE6",
+      "difference": 1.8799206635833343e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Overall",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Overall",
+      "metric": "Top1FDE6",
+      "difference": 1.2849323489660947e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "Vehicle",
+      "metric": "minFDE6",
+      "difference": 3.850736840504965e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Vehicle",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Vehicle",
+      "metric": "Top1FDE6",
+      "difference": 1.671067965336448e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian",
+      "metric": "minFDE6",
+      "difference": 1.1375761443943588e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian",
+      "metric": "Top1FDE6",
+      "difference": 7.27086546525868e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "Bicycle",
+      "metric": "minFDE6",
+      "difference": 2.460338444087995e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Bicycle",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Bicycle",
+      "metric": "Top1FDE6",
+      "difference": 9.21597642644656e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "minFDE6",
+      "difference": 2.2750142214533753e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "Top1FDE6",
+      "difference": 1.4673160464440116e-08,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "Vehicle >5m",
+      "metric": "minFDE6",
+      "difference": 1.8865399020739915e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Vehicle >5m",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Vehicle >5m",
+      "metric": "Top1FDE6",
+      "difference": 8.053493871784667e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian >5m",
+      "metric": "minFDE6",
+      "difference": 1.5441576461938666e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian >5m",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian >5m",
+      "metric": "Top1FDE6",
+      "difference": 1.0608306011405944e-08,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "Heterogeneous-20m",
+      "metric": "minFDE6",
+      "difference": 5.870366415194894e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Heterogeneous-20m",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Heterogeneous-20m",
+      "metric": "Top1FDE6",
+      "difference": 2.8101806979208277e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "Vehicle hetero-20m",
+      "metric": "minFDE6",
+      "difference": 1.2528019288637893e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Vehicle hetero-20m",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Vehicle hetero-20m",
+      "metric": "Top1FDE6",
+      "difference": 4.769112488922644e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian hetero-20m",
+      "metric": "minFDE6",
+      "difference": 1.5662430241647485e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian hetero-20m",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "Pedestrian hetero-20m",
+      "metric": "Top1FDE6",
+      "difference": 7.467327423071879e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "VP-context-20m",
+      "metric": "minFDE6",
+      "difference": 5.880054221307773e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "VP-context-20m",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "VP-context-20m",
+      "metric": "Top1FDE6",
+      "difference": 3.0426134411953853e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    }
+  ],
+  "actor_csv_sha256": "b7b5f3cdbb44421d85e7ce2476090286316ecd5459d44a655064ac84f229234e",
+  "elapsed_seconds": 58.54936409200309,
+  "test_used": false,
+  "checkpoint_selection": false,
+  "lambda0_is_Stage3B": false
+}

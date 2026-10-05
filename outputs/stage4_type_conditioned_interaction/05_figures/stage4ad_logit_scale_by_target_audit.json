@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "175f04d7b0d12fca9aab03f76767fd08a9cfa530e95e6ec4d8af786513e8d0ef",
+  "source": "06_tables/stage4ad_attention_scale_summary.csv",
+  "source_sha256": "6aeaa4d4a238ce06c527b42416223cd019f1d2b4d540cb0f80379e755d12f3c9",
+  "plotted_values": {
+    "Vehicle": {
+      "base": 8.626372043908026,
+      "bias": 9.996079305332515
+    },
+    "Pedestrian": {
+      "base": 6.7634042225950415,
+      "bias": 8.139240408546257
+    },
+    "Bicycle": {
+      "base": 8.368992581185415,
+      "bias": 1.688626556318213
+    }
+  },
+  "interpretation_and_statistics": "Equal weight for actual edge-layer-head observations; descriptive means, no uncertainty bars.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ad_logit_scale_by_target.png",
+      "sha256": "4be5105f9875f9e4fbdbef9a9c539638a94673a906efc512432ffc8456ca426d",
+      "bytes": 56470,
+      "pixels": [
+        1350,
+        960
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ad_logit_scale_by_target.pdf",
+      "sha256": "0896e108df52b5f03ef477b29888b314dd080f3e250ee5792cdf5128b696c73a",
+      "bytes": 11270,
+      "editable_text_verified": true
+    },
+    "svg": {
+      "path": "05_figures/stage4ad_logit_scale_by_target.svg",
+      "sha256": "ef3b06f626b2c2ffbf8717402ab342f2dabb2657d8edfeab6537a6c3304864e6",
+      "bytes": 8727
+    }
+  },
+  "SVG_text_elements": 19,
+  "smoothing": false,
+  "mock_or_generated_data": false
+}

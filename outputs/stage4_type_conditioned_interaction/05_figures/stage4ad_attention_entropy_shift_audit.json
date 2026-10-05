@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "175f04d7b0d12fca9aab03f76767fd08a9cfa530e95e6ec4d8af786513e8d0ef",
+  "source": "06_tables/stage4ad_attention_scale_summary.csv",
+  "source_sha256": "6aeaa4d4a238ce06c527b42416223cd019f1d2b4d540cb0f80379e755d12f3c9",
+  "plotted_values": {
+    "Vehicle": -0.446528678541868,
+    "Pedestrian": -0.356976562015956,
+    "Bicycle": -0.1094609571612077
+  },
+  "interpretation_and_statistics": "H_final - H_base on whole actual neighborhoods, equal target-layer-head weight; negative means concentration, not improvement.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ad_attention_entropy_shift.png",
+      "sha256": "2d5c74c71c35c3f20bfb593b481940667d94940925246a6d4b31c06c106effc8",
+      "bytes": 50446,
+      "pixels": [
+        1350,
+        960
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ad_attention_entropy_shift.pdf",
+      "sha256": "d30ad3208209c94157651a25c14e59868dd97090d92db835dee02aa6b07cc6a9",
+      "bytes": 11212,
+      "editable_text_verified": true
+    },
+    "svg": {
+      "path": "05_figures/stage4ad_attention_entropy_shift.svg",
+      "sha256": "ced74f980039e5344507a7a36608315a84dcc1b63f3927cb4acbbcb6628e5e92",
+      "bytes": 6817
+    }
+  },
+  "SVG_text_elements": 13,
+  "smoothing": false,
+  "mock_or_generated_data": false
+}

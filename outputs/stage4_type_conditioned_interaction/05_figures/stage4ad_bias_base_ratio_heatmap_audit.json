@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "contract_sha256": "175f04d7b0d12fca9aab03f76767fd08a9cfa530e95e6ec4d8af786513e8d0ef",
+  "source": "06_tables/stage4ad_pair_scale_summary.csv",
+  "source_sha256": "3cb41db31155d36f253c39b925b460301523a4fa7c4cbaa51c137e59af63b10f",
+  "plotted_values": [
+    [
+      1.2344433304284632,
+      0.8865660501933852,
+      0.07416792711785802
+    ],
+    [
+      1.225938862121334,
+      1.2198273854734538,
+      0.03972070747561142
+    ],
+    [
+      0.26557981732029623,
+      0.08655188877275681,
+      0.09984704627955023
+    ]
+  ],
+  "interpretation_and_statistics": "Ratio of pooled absolute means, not average of per-edge ratios; target rows and source columns.",
+  "exports": {
+    "png": {
+      "path": "05_figures/stage4ad_bias_base_ratio_heatmap.png",
+      "sha256": "93c84d6f478f6928318b4e07d56edced453113c160e7f34106210ca847c32120",
+      "bytes": 83348,
+      "pixels": [
+        1350,
+        960
+      ]
+    },
+    "pdf": {
+      "path": "05_figures/stage4ad_bias_base_ratio_heatmap.pdf",
+      "sha256": "ce841173a52aae3499d11864898d34820324efb8c32f5e16b6eb5cef02c280f4",
+      "bytes": 15257,
+      "editable_text_verified": true
+    },
+    "svg": {
+      "path": "05_figures/stage4ad_bias_base_ratio_heatmap.svg",
+      "sha256": "38aee649410ffc4a939947e14c787d8f6281a0adf8db8e4b3be9093c90394612",
+      "bytes": 17041
+    }
+  },
+  "SVG_text_elements": 25,
+  "smoothing": false,
+  "mock_or_generated_data": false
+}

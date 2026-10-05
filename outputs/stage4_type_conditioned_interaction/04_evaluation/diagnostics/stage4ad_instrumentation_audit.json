@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "maximum_absolute_output_differences": {
+    "raw_prediction": 7.62939453125e-06,
+    "mode_prob": 8.940696716308594e-08
+  },
+  "comparison_atol": 1e-05,
+  "comparison_rtol": 1e-05,
+  "GPU_original_protocol_nondeterministic": true,
+  "parameters_buffers_unchanged": true,
+  "no_grad": true,
+  "eval_mode": true,
+  "AST_audit": {
+    "single_additive_statement_intercepted": true,
+    "restored_AST_equals_formal_AST": true,
+    "formal_message_source": "def message(self, x_i: torch.Tensor, x_j: torch.Tensor,\n            edge_attr: torch.Tensor, relation_bias: torch.Tensor,\n            index: torch.Tensor, ptr: OptTensor,\n            size_i: Optional[int]) -> torch.Tensor:\n    query = self.lin_q_node(x_i).view(-1, self.num_heads,\n                                     self.embed_dim // self.num_heads)\n    key_node = self.lin_k_node(x_j).view(-1, self.num_heads,\n                                        self.embed_dim // self.num_heads)\n    key_edge = self.lin_k_edge(edge_attr).view(-1, self.num_heads,\n                                             self.embed_dim // self.num_heads)\n    value_node = self.lin_v_node(x_j).view(-1, self.num_heads,\n                                          self.embed_dim // self.num_heads)\n    value_edge = self.lin_v_edge(edge_attr).view(-1, self.num_heads,\n                                               self.embed_dim // self.num_heads)\n    scale = (self.embed_dim // self.num_heads) ** 0.5\n    alpha = (query * (key_node + key_edge)).sum(dim=-1) / scale\n    alpha = alpha + relation_bias\n    alpha = softmax(alpha, index, ptr, size_i)\n    alpha = self.attn_drop(alpha)\n    return (value_node + value_edge) * alpha.unsqueeze(-1)\n",
+    "diagnostic_message_source": "def message(self, x_i: torch.Tensor, x_j: torch.Tensor, edge_attr: torch.Tensor, relation_bias: torch.Tensor, index: torch.Tensor, ptr: OptTensor, size_i: Optional[int]) -> torch.Tensor:\n    query = self.lin_q_node(x_i).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    key_node = self.lin_k_node(x_j).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    key_edge = self.lin_k_edge(edge_attr).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    value_node = self.lin_v_node(x_j).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    value_edge = self.lin_v_edge(edge_attr).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    scale = (self.embed_dim // self.num_heads) ** 0.5\n    alpha = (query * (key_node + key_edge)).sum(dim=-1) / scale\n    alpha = self.stage4ad_observer.logits(self, alpha, relation_bias, index, ptr, size_i)\n    alpha = softmax(alpha, index, ptr, size_i)\n    alpha = self.attn_drop(alpha)\n    return (value_node + value_edge) * alpha.unsqueeze(-1)",
+    "q_k_node_k_edge_value_projections_unchanged": true,
+    "formal_softmax_and_aggregation_unchanged": true
+  }
+}

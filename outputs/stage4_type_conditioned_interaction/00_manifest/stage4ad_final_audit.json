@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "base_commit": "528b9501d66368b7d6a3b754f64bc1c5006f7d13",
+  "branch": "stage4a-d/relation-bias-diagnostic",
+  "all_protected_Stage4A_files_unchanged": true,
+  "protected_file_count": 173,
+  "previous_stage_files_and_850_scene_shards_unchanged": true,
+  "old_Stage2C_untracked_files_unchanged_and_excluded": true,
+  "checkpoint_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "full_VAL150_passes": 5,
+  "lambda1_formal_result_reconciliation": "PASS",
+  "all_layer_head_target_pair_statistics": "PASS",
+  "head_statistics_rows": 528,
+  "exact_quantiles_and_population_moments": true,
+  "bias_capture_reconciliation": [
+    {
+      "pair": "V<-V",
+      "absolute_mean_bias_difference": 0.0
+    },
+    {
+      "pair": "V<-P",
+      "absolute_mean_bias_difference": 1.7763568394002505e-15
+    },
+    {
+      "pair": "V<-B",
+      "absolute_mean_bias_difference": 1.1102230246251565e-16
+    },
+    {
+      "pair": "P<-V",
+      "absolute_mean_bias_difference": 0.0
+    },
+    {
+      "pair": "P<-P",
+      "absolute_mean_bias_difference": 0.0
+    },
+    {
+      "pair": "P<-B",
+      "absolute_mean_bias_difference": 0.0
+    },
+    {
+      "pair": "B<-V",
+      "absolute_mean_bias_difference": 0.0
+    },
+    {
+      "pair": "B<-P",
+      "absolute_mean_bias_difference": 0.0
+    },
+    {
+      "pair": "B<-B",
+      "absolute_mean_bias_difference": 0.0
+    }
+  ],
+  "attention_uses_actual_final_softmax": true,
+  "frozen_membership_reused": true,
+  "raw_logit_and_attention_source_hashes_verified": true,
+  "figures": [
+    {
+      "name": "stage4ad_logit_scale_by_target",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "visual_review": "PASS",
+      "source_and_export_SHA256": "PASS",
+      "labels": "readable, no overlap or clipping",
+      "sensitivity_note": "absolute curves intentionally share the same metric axis; small changes are quantified in source CSV and report"
+    },
+    {
+      "name": "stage4ad_bias_base_ratio_heatmap",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "visual_review": "PASS",
+      "source_and_export_SHA256": "PASS",
+      "labels": "readable, no overlap or clipping",
+      "sensitivity_note": "absolute curves intentionally share the same metric axis; small changes are quantified in source CSV and report"
+    },
+    {
+      "name": "stage4ad_attention_entropy_shift",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "visual_review": "PASS",
+      "source_and_export_SHA256": "PASS",
+      "labels": "readable, no overlap or clipping",
+      "sensitivity_note": "absolute curves intentionally share the same metric axis; small changes are quantified in source CSV and report"
+    },
+    {
+      "name": "stage4ad_top_neighbor_switch",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "visual_review": "PASS",
+      "source_and_export_SHA256": "PASS",
+      "labels": "readable, no overlap or clipping",
+      "sensitivity_note": "absolute curves intentionally share the same metric axis; small changes are quantified in source CSV and report"
+    },
+    {
+      "name": "stage4ad_lambda_sensitivity",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "visual_review": "PASS",
+      "source_and_export_SHA256": "PASS",
+      "labels": "readable, no overlap or clipping",
+      "sensitivity_note": "absolute curves intentionally share the same metric axis; small changes are quantified in source CSV and report"
+    },
+    {
+      "name": "stage4ad_lambda_motion_sensitivity",
+      "exports": [
+        "png",
+        "pdf",
+        "svg"
+      ],
+      "visual_review": "PASS",
+      "source_and_export_SHA256": "PASS",
+      "labels": "readable, no overlap or clipping",
+      "sensitivity_note": "absolute curves intentionally share the same metric axis; small changes are quantified in source CSV and report"
+    }
+  ],
+  "forbidden_training_calls": [],
+  "parameters_buffers_changed": false,
+  "new_checkpoint_or_model_selection": false,
+  "new_architecture_implemented": false,
+  "diagnostic_conclusion": "CASE B",
+  "formal_Stage4A_conclusion": "NOT SUPPORTED",
+  "Ready_Stage4B": "NO",
+  "test_used": false,
+  "main_merged": false
+}

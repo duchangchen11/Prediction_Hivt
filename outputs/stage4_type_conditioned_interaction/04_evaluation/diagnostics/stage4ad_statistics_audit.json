@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "checkpoint_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "raw_sources": {
+    "04_evaluation/diagnostics/stage4ad_raw_L1_attention.bin": {
+      "bytes": 10381296,
+      "sha256": "f96ae9da9eb860aadfa6bde7ce9e523ba0577fc48f68cbaac9f3c2c6a646f4db"
+    },
+    "04_evaluation/diagnostics/stage4ad_raw_L1_logits.bin": {
+      "bytes": 330286248,
+      "sha256": "e8e1ae07054e860ba4d30e146e373e02d2718dc84a04e067c44911c2d71fc34f"
+    },
+    "04_evaluation/diagnostics/stage4ad_raw_L2_attention.bin": {
+      "bytes": 10381296,
+      "sha256": "4818addd636f188464a887ce4a3d97f57a99c39ccc42ddc14a9894a3ae8ad2cc"
+    },
+    "04_evaluation/diagnostics/stage4ad_raw_L2_logits.bin": {
+      "bytes": 330286248,
+      "sha256": "e847cf5a3e072bb59c0dc7bbfd3727b7d41976c486bd93e00108659bb650c2fd"
+    },
+    "04_evaluation/diagnostics/stage4ad_raw_L3_attention.bin": {
+      "bytes": 10381296,
+      "sha256": "f229bf18a5b551d25f5855d9fb2c80d5725a8815dd580c82efe35839aaaaa353"
+    },
+    "04_evaluation/diagnostics/stage4ad_raw_L3_logits.bin": {
+      "bytes": 330286248,
+      "sha256": "9e71b06729dc8abba83338433e7f671260305b9442b543ff3afe2c211be45eb3"
+    },
+    "04_evaluation/diagnostics/stage4ad_raw_node_identity.csv": {
+      "bytes": 10313229,
+      "sha256": "1722d100f56381a3f1a26b354e3186dab98cd9d2d71da906d37c1635af1e6033"
+    }
+  },
+  "original_edge_window_count": 3058206,
+  "unique_target_window_with_neighbor_count": 91064,
+  "layers": 3,
+  "heads": 8,
+  "all_group_logit_count": 73396944,
+  "core_rows": 12,
+  "pair_rows": 9,
+  "head_rows": 528,
+  "context_rows": 88,
+  "count_definition": "EdgeCount counts edge-layer observations; LogitCount adds head multiplicity. NodeLayerCount counts target-layer observations; NodeHeadCount adds head multiplicity.",
+  "population_std_ddof": 0,
+  "quantiles": "exact np.quantile, linear; no sampling",
+  "target_logit_weighting": "equal edge-layer-head",
+  "target_attention_weighting": "equal target-layer-head among nodes with >=1 actual incoming edge",
+  "pair_context_entropy": "whole incoming neighborhood; pair contexts overlap",
+  "frozen_contexts": "exact registered ledger flags, no recomputed distances or membership",
+  "all_targets_includes_unsupervised_context_nodes": true,
+  "context_targets": "only ledger-known targets; combined full/partial and full-only reported separately",
+  "overlapping_windows_independent": false,
+  "bootstrap_or_significance_test": false
+}
