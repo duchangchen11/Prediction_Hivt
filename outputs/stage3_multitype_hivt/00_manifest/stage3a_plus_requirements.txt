@@ -1,0 +1,24 @@
+Stage 3A+ 收尾审计（用户授权，2026-10-05）
+目录 /home/lrj/Prediction_Hivt，分支 stage3/multitype-hivt。
+禁止 Type Embedding；禁止从头训练；所有新增内容留在 outputs/stage3_multitype_hivt。
+
+1. 从 Stage3A 当前正式最佳 checkpoint 恢复 NLL，最多额外3000 optimizer steps。
+   保持 LR、batch size、loss、数据、模型；每500步完整 official VAL；full-horizon overall minFDE 选 best。
+   连续5次 validation 不改善即 early stop；新 best 独立保存，无改善则保留原 checkpoint。
+   输出 extension curve CSV/PNG 与 07_checkpoints/stage3a_plus_best_checkpoint_manifest.json。
+   汇报原/新 best step、overall FDE、是否刷新；converged按上述5次不改善判定，达到步数上限不等于收敛。
+2. 从最终 best 保存的预测误差统计 full-horizon GT endpoint displacement：
+   Vehicle>5m，Pedestrian>1m/>5m，Bicycle>1m/>5m。
+   Count/minADE6/minFDE6/MR6/Top1ADE6/Top1FDE6；不新增训练。
+   06_tables/stage3_nontrivial_motion_metrics.csv；04_evaluation/stage3_nontrivial_motion_metrics.json。
+3. frozen scene-window/graph：t0欧氏距离10/20/30/50m，对target统计邻居类型、数量均值/中位数、>=1/>=2概率。
+   至少V-V/V-P/V-B/P-P/P-B/B-B，另含 V-V/V-P/V-B interaction window 数。
+   01_data_audit/stage3_interaction_density.csv/.json；05_figures/stage3_interaction_density.png：
+   距离分布、pair count柱状图、每类平均邻居数，保持简洁。
+4. 三类真正运动目标各1 success+1 failure：vehicle moving（且位移>5m），pedestrian>5m，bicycle>5m。
+   每类一张上下双面板图，05_figures/stage3a_plus_{vehicle,pedestrian,bicycle}_motion_case.png，并保存真实JSON。
+   灰色History圆点、黑色GT方形、蓝色Best-FDE圆形、橙色虚线Top1三角；各12步marker。
+   最后6个future points自动zoom；真实数据，不平滑、不插值，四项指标核对<1e-4m。
+5. 09_reports/stage3a_plus_final_report.md 包含【NLL Extension】【Nontrivial Motion】【Interaction Density】【Decision】。
+   汇报 Stage3A frozen YES/NO 和 Ready for Stage3B Type Embedding YES/NO。
+   完成后停止，不执行Type Embedding，不merge main；旧Stage2C未提交重绘文件保持原样不提交。

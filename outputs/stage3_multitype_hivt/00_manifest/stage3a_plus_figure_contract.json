@@ -1,0 +1,25 @@
+{
+  "backend": "Python/matplotlib",
+  "archetype": "quantitative grid",
+  "exports": [
+    "PNG300dpi",
+    "editable SVG",
+    "TrueType PDF",
+    "source JSON/CSV"
+  ],
+  "conclusion": "Bounded NLL continuation tests plateau; motion subsets expose nontrivial errors; frozen proximity counts quantify available context without implying causal interactions.",
+  "evidence_chain": {
+    "extension": "four full-VAL FDE lines from CSV, original best reference",
+    "interaction": "distance histogram + unique pair counts + type-wise mean neighbors from frozen t0 graphs",
+    "motion_cases": "one true success and failure per type from final best existing VAL predictions"
+  },
+  "risks": [
+    "single seed and VAL selection; bounded continuation is not proof of global optimum",
+    "proximity is not causal interaction",
+    "oracle best-FDE differs from model Top1; case ranks do not replace population metrics"
+  ],
+  "motion_markers": 12,
+  "trajectory_edits": false,
+  "smoothing": false,
+  "metric_tolerance_m": 0.0001
+}

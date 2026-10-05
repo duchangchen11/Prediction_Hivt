@@ -1,0 +1,37 @@
+{
+  "status": "REGISTERED_BEFORE_EXTENSION",
+  "original_best_sha256": "9ebd0bb23b44f0a738122cee0316e127063d6af006bff7d057bc0a5470a0384a",
+  "original_best_step": 15000,
+  "original_best_overall_minFDE6": 1.388404393440423,
+  "original_config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "source_sha256": {
+    "00_manifest/stage3a_plus_common.py": "122bb796636b272fbfe8e55630de7e890bd9188e3fbd7abf62602335256ac080",
+    "03_no_type_baseline/stage3a_plus_extend_nll.py": "1be381051ae0db5a3f7fd5519aa10f1370ebf8a2385c3036e764aa46c490a5b7"
+  },
+  "maximum_extra_steps": 3000,
+  "validation_interval": 500,
+  "patience": 5,
+  "improvement": "strictly lower full-horizon overall minFDE6",
+  "converged_definition": "five consecutive validation nonimprovements; budget exhaustion alone is not convergence",
+  "optimizer_rng_and_sampler_cursor_restore": true,
+  "LR_batch_loss_data_architecture_changed": false,
+  "nontrivial_groups": {
+    "vehicle": [
+      5
+    ],
+    "pedestrian": [
+      1,
+      5
+    ],
+    "bicycle": [
+      1,
+      5
+    ]
+  },
+  "horizon": "full 12-step future",
+  "interaction_definition": "t0 Euclidean proximity, self excluded; all present eligible-type context neighbors; target=unchanged supervision mask; all 4 radii; directed target-neighbor statistics and unique unordered pairs/windows reported separately",
+  "readiness_rule": "Stage3A freeze verified; finite final motion metrics; five-validation convergence criterion reached; original practical vehicle overall/moving FDE retention guard<=25%; without tuning any experiment to this rule",
+  "figure_motion_success_failure": "class-wise lowest/highest minFDE among full-horizon motion targets, distinct instances; vehicle t0 moving and displacement>5m; pedestrian/bicycle>5m",
+  "test_used": false,
+  "Stage3B_executed": false
+}
