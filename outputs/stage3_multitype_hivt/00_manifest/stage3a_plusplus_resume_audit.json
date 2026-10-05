@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "source_checkpoint": "07_checkpoints/stage3a_plus_best_overall_minfde.pt",
+  "source_global_step": 18000,
+  "checkpoint_SHA256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+  "model_SHA256": "7b3a5a93fdaadf6772ab8aa70d71c20a81e48dbf97d0b40bebd54801ebe8fc7b",
+  "optimizer_restored": true,
+  "optimizer_state_bitwise_equal": true,
+  "RNG_restored": true,
+  "CPU_RNG_bitwise_equal": true,
+  "CUDA_RNG_bitwise_equal": true,
+  "cursor_restored": true,
+  "sampler_cursor": {
+    "epoch": 12,
+    "next_batch": 316
+  },
+  "sampler_seed": 2022,
+  "sampler_epoch_offset": 100000,
+  "first_recreated_loader_CPU_RNG_draw_cancelled": true,
+  "LR": 0.0001,
+  "batch_size": 16,
+  "loss_mode": "original learnable-scale Laplace NLL",
+  "config_SHA256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "optimizer_param_groups_unchanged": true,
+  "new_warmup": false,
+  "from_scratch": false
+}

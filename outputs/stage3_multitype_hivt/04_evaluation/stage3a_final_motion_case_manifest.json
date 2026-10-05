@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "regenerated": true,
+  "figures": [
+    {
+      "name": "stage3a_final_vehicle_motion_case",
+      "agent_type": "vehicle",
+      "source_json": "04_evaluation/cases/stage3a_final_vehicle_motion_case.json",
+      "source_sha256": "401bc9851f93d18e54a31ad8e6e85290df9b782563716179fdebdb5ddd93e994"
+    },
+    {
+      "name": "stage3a_final_pedestrian_motion_case",
+      "agent_type": "pedestrian",
+      "source_json": "04_evaluation/cases/stage3a_final_pedestrian_motion_case.json",
+      "source_sha256": "ea1d56acd36499c8e0e2d3596918e6c9a419aed84bec7d06d1a06859efe4829b"
+    },
+    {
+      "name": "stage3a_final_bicycle_motion_case",
+      "agent_type": "bicycle",
+      "source_json": "04_evaluation/cases/stage3a_final_bicycle_motion_case.json",
+      "source_sha256": "d83b117d3815ccd860eeecc272eefd123f81d0ba8b8f992e504f0a735e57b767"
+    }
+  ],
+  "case_count": 6,
+  "regeneration_threshold_relative_overall_gain": 0.005,
+  "actual_relative_overall_gain": 0.012766614882192918,
+  "source_checkpoint_relative_path": "07_checkpoints/stage3a_final_frozen_best_overall_minfde.pt",
+  "source_checkpoint_sha256": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+  "source_actor_csv_sha256": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+  "same_six_prior_actor_identities": true,
+  "previous_case_files_unchanged": true
+}

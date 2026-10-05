@@ -1,0 +1,153 @@
+{
+  "stage": "Stage3A++",
+  "status": "PASS",
+  "audit_scope": "Independent read-only source validation and CPU dry-run restore; no GPU initialization, inference or optimizer update.",
+  "source_checkpoint": "07_checkpoints/stage3a_plus_best_overall_minfde.pt",
+  "source_checkpoint_file_sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+  "source_global_step": 18000,
+  "source_overall_minFDE6": 1.382144824708836,
+  "model_state_content_sha256": "7b3a5a93fdaadf6772ab8aa70d71c20a81e48dbf97d0b40bebd54801ebe8fc7b",
+  "model_parameters": 645809,
+  "required_recovery_fields_present": [
+    "state_dict",
+    "optimizer_state_dict",
+    "metadata",
+    "iterator",
+    "config",
+    "torch_rng",
+    "cuda_rng"
+  ],
+  "strict_model_restore_on_CPU": true,
+  "optimizer_restored_on_CPU": true,
+  "optimizer_state_bitwise_equal_after_restore": true,
+  "optimizer_type": "AdamW",
+  "optimizer_parameter_groups": [
+    {
+      "weight_decay": 0.0001,
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "amsgrad": false,
+      "foreach": null,
+      "maximize": false,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null
+    },
+    {
+      "weight_decay": 0.0,
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "amsgrad": false,
+      "foreach": null,
+      "maximize": false,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null
+    }
+  ],
+  "optimizer_parameter_state_count": 275,
+  "optimizer_update_counters": [
+    15500.0
+  ],
+  "optimizer_counter_note": "15500 effective AdamW updates: retained warm-up checkpoint 2500 updates plus 13000 original NLL updates. Global step 18000 includes earlier warm-up execution.",
+  "CPU_RNG_restored_and_bitwise_equal": true,
+  "CUDA_RNG_state_available_and_equal_to_same_step_last": true,
+  "CUDA_RNG_restore_performed_by_independent_audit": false,
+  "CUDA_RNG_restore_note": "GPU restoration must be recorded by the main trainer before its first update; this independent audit deliberately performs no GPU work.",
+  "CPU_RNG_state_bytes": 5056,
+  "CUDA_RNG_state_bytes": [
+    16
+  ],
+  "sampling_cursor_restored_and_validated": true,
+  "iterator": {
+    "epoch": 12,
+    "next_batch": 316
+  },
+  "sampler_epoch_with_NLL_offset": 100012,
+  "training_supervised_windows": 16898,
+  "batches_per_epoch": 1057,
+  "next_batch_dataset_indices": [
+    13586,
+    13585,
+    13590,
+    13593,
+    13595,
+    13591,
+    13598,
+    13587,
+    9676,
+    9665,
+    9679,
+    9669,
+    9670,
+    9662,
+    9678,
+    9675
+  ],
+  "next_batch_identity_sha256": "47478d6ed94d8b405d74ea0eb39c16954105ebfa1c9a80a713d62b134007aa45",
+  "same_step_last_checkpoint": "07_checkpoints/stage3a_plus_last_checkpoint.pt",
+  "same_step_last_sha256": "8a6d9d91d7501989cef2727785c6eca0f38eadabe27b7b15ebcdbf53fe18e452",
+  "best_vs_same_step_last_bitwise_equal": {
+    "state_dict": true,
+    "optimizer_state_dict": true,
+    "torch_rng": true,
+    "cuda_rng": true,
+    "iterator": true,
+    "config": true
+  },
+  "LR": 0.0001,
+  "batch_size": 16,
+  "loss_mode": "original_nll",
+  "scheduler": "none",
+  "num_modes": 6,
+  "historical_steps": 5,
+  "future_steps": 12,
+  "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "config_exactly_equal_to_frozen_current_config": true,
+  "fallback_checkpoint_required": false,
+  "learned_parameter_NaN": 0,
+  "learned_parameter_Inf": 0,
+  "optimizer_state_NaN": 0,
+  "optimizer_state_Inf": 0,
+  "expected_structural_nonfinite_buffers": [
+    {
+      "name": "local_encoder.temporal_encoder.attn_mask",
+      "negative_infinity_count": 15,
+      "equals_original_architecture_constructor": true,
+      "reason": "Fixed causal attention mask; structural -Inf is intentional and is not a learned or predicted numerical failure."
+    }
+  ],
+  "source_files_unchanged_after_audit": true,
+  "source_metadata_keys": [
+    "LR",
+    "config_sha256",
+    "epoch",
+    "extension_original_checkpoint_sha256",
+    "extension_step",
+    "git_commit_SHA",
+    "global_step",
+    "moving_ADE",
+    "moving_FDE",
+    "optimizer_state_preserved",
+    "per_class_full_horizon_metrics",
+    "phase",
+    "phase_config_sha256",
+    "phase_step",
+    "selection_horizon",
+    "selection_metric",
+    "selection_split",
+    "validation_ADE",
+    "validation_FDE",
+    "validation_MR",
+    "warmup_executed_steps",
+    "warmup_source_step"
+  ]
+}

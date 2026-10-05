@@ -1,0 +1,264 @@
+{
+  "status": "PASS",
+  "audit_scope": "Independent CPU-only checkpoint/optimizer/cursor/strict-selection/fresh-actor/table/decision audit",
+  "GPU_initialization_or_forward_pass": false,
+  "optimizer_update_performed": false,
+  "previous_protected_file_hashes_verified": 774,
+  "registered_training_source_hashes_and_commit_verified": 3,
+  "scene_shards_rescanned": false,
+  "interaction_density_recalculated": false,
+  "source_checkpoint_sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+  "source_global_step": 18000,
+  "source_AdamW_step": 15500,
+  "source_model_state_content_sha256": "7b3a5a93fdaadf6772ab8aa70d71c20a81e48dbf97d0b40bebd54801ebe8fc7b",
+  "final_best_global_step": 21000,
+  "final_executed_global_step": 21000,
+  "executed_extra_optimizer_steps": 3000,
+  "checkpoint_audits": {
+    "last": {
+      "global_step": 21000,
+      "phase_step": 16000,
+      "AdamW_state_count": 275,
+      "AdamW_step": 18500.0,
+      "sampler_cursor": {
+        "epoch": 15,
+        "next_batch": 145
+      },
+      "cursor_update_count_verified": 3000,
+      "CPU_and_CUDA_RNG_payload_valid": true
+    },
+    "selected": {
+      "global_step": 21000,
+      "phase_step": 16000,
+      "AdamW_state_count": 275,
+      "AdamW_step": 18500.0,
+      "sampler_cursor": {
+        "epoch": 15,
+        "next_batch": 145
+      },
+      "cursor_update_count_verified": 3000,
+      "CPU_and_CUDA_RNG_payload_valid": true
+    }
+  },
+  "fixed_causal_mask_expected_negative_infinity_count": 15,
+  "learned_parameters_NaN": 0,
+  "learned_parameters_Inf": 0,
+  "final_checkpoint_sha256": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+  "final_model_state_content_sha256": "fda62d7c4ebb339a3b15c69a89686d99fa75f73232866e9e6e6e033e1cd16b86",
+  "last_checkpoint_sha256": "95b3fc907ada623ca83c6fe5122be71188e923a526703f1ede34008ff02e87ee",
+  "strict_selection_recomputed_from_18000_and_every_new_full_VAL": [
+    {
+      "global_step": 18500,
+      "overall_minFDE6": 1.3836625958537816,
+      "strict_improvement": false,
+      "consecutive_nonimprovements": 1,
+      "full_VAL_scenes": 150
+    },
+    {
+      "global_step": 19000,
+      "overall_minFDE6": 1.3740703905425287,
+      "strict_improvement": true,
+      "consecutive_nonimprovements": 0,
+      "full_VAL_scenes": 150
+    },
+    {
+      "global_step": 19500,
+      "overall_minFDE6": 1.3715490691086092,
+      "strict_improvement": true,
+      "consecutive_nonimprovements": 0,
+      "full_VAL_scenes": 150
+    },
+    {
+      "global_step": 20000,
+      "overall_minFDE6": 1.3725873988154762,
+      "strict_improvement": false,
+      "consecutive_nonimprovements": 1,
+      "full_VAL_scenes": 150
+    },
+    {
+      "global_step": 20500,
+      "overall_minFDE6": 1.364847474763029,
+      "strict_improvement": true,
+      "consecutive_nonimprovements": 0,
+      "full_VAL_scenes": 150
+    },
+    {
+      "global_step": 21000,
+      "overall_minFDE6": 1.3644995140203622,
+      "strict_improvement": true,
+      "consecutive_nonimprovements": 0,
+      "full_VAL_scenes": 150
+    }
+  ],
+  "curve_vs_VAL_JSON_max_absolute_difference": 0.0,
+  "fresh_actor_count": 85027,
+  "fresh_numeric_values_checked": 680216,
+  "fresh_actor_errors_sha256": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+  "actor_aggregation_max_absolute_difference": 0.0,
+  "selected_vs_fresh_full_horizon_absolute_differences": {
+    "overall": {
+      "minADE6": 5.604194885933111e-10,
+      "minFDE6": 1.9819141883203883e-09,
+      "MR6": 0.0,
+      "Top1ADE6": 9.103979792257633e-10,
+      "Top1FDE6": 2.5438979811553963e-09,
+      "NLL": 3.883784405189772e-09
+    },
+    "vehicle": {
+      "minADE6": 1.1114291709191093e-09,
+      "minFDE6": 2.5476671883239987e-09,
+      "MR6": 0.0,
+      "Top1ADE6": 1.1199103866488258e-09,
+      "Top1FDE6": 4.383018392672966e-09,
+      "NLL": 6.1648990357099365e-09
+    },
+    "pedestrian": {
+      "minADE6": 1.2781435909658967e-09,
+      "minFDE6": 1.0883027812269574e-10,
+      "MR6": 0.0,
+      "Top1ADE6": 6.30827057257477e-10,
+      "Top1FDE6": 5.7382025797636516e-09,
+      "NLL": 1.1560285367862022e-09
+    },
+    "bicycle": {
+      "minADE6": 1.3586519687081022e-09,
+      "minFDE6": 3.725290298461914e-09,
+      "MR6": 0.0,
+      "Top1ADE6": 1.558829554326735e-08,
+      "Top1FDE6": 3.539167736654747e-08,
+      "NLL": 5.111058543061375e-08
+    },
+    "vehicle.moving": {
+      "minADE6": 7.329368667541303e-09,
+      "minFDE6": 1.20548895310435e-08,
+      "MR6": 0.0,
+      "Top1ADE6": 6.4083733875008875e-09,
+      "Top1FDE6": 1.4190673525149577e-08,
+      "NLL": 4.163815514601765e-09
+    },
+    "vehicle.stopped": {
+      "minADE6": 2.111735231125067e-09,
+      "minFDE6": 1.3808699739215058e-09,
+      "MR6": 0.0,
+      "Top1ADE6": 2.5966084837847347e-09,
+      "Top1FDE6": 3.097824219366885e-10,
+      "NLL": 5.522132395796575e-08
+    },
+    "vehicle.parked": {
+      "minADE6": 9.51817000216515e-10,
+      "minFDE6": 3.7078404790946706e-09,
+      "MR6": 0.0,
+      "Top1ADE6": 1.2459276110821094e-09,
+      "Top1FDE6": 1.2992981135440118e-09,
+      "NLL": 1.9514683202714878e-09
+    },
+    "unknown": {
+      "minADE6": 5.757897492131292e-09,
+      "minFDE6": 7.719116279503169e-08,
+      "MR6": 0.0,
+      "Top1ADE6": 2.582382307991793e-09,
+      "Top1FDE6": 2.4386519470454004e-09,
+      "NLL": 4.1451658883140396e-08
+    }
+  },
+  "motion_group_metrics_independently_recomputed": [
+    {
+      "AgentType": "vehicle",
+      "strict_GT_displacement_threshold_m": 5,
+      "Count": 9744,
+      "UniqueInstances": 853,
+      "UniqueScenes": 137,
+      "minADE6": 2.632744836435181,
+      "minFDE6": 5.630972214031718,
+      "MR6": 0.6841133004926109,
+      "Top1ADE6": 5.178650825131113,
+      "Top1FDE6": 12.193457451108223
+    },
+    {
+      "AgentType": "pedestrian",
+      "strict_GT_displacement_threshold_m": 1,
+      "Count": 8810,
+      "UniqueInstances": 825,
+      "UniqueScenes": 113,
+      "minADE6": 0.6849703097018275,
+      "minFDE6": 1.409272549137453,
+      "MR6": 0.22270147559591374,
+      "Top1ADE6": 0.88971372913806,
+      "Top1FDE6": 1.8875756328081117
+    },
+    {
+      "AgentType": "pedestrian",
+      "strict_GT_displacement_threshold_m": 5,
+      "Count": 7581,
+      "UniqueInstances": 716,
+      "UniqueScenes": 110,
+      "minADE6": 0.6686461276929178,
+      "minFDE6": 1.3726620162323881,
+      "MR6": 0.21303258145363407,
+      "Top1ADE6": 0.8402614734888513,
+      "Top1FDE6": 1.7503838149807418
+    },
+    {
+      "AgentType": "bicycle",
+      "strict_GT_displacement_threshold_m": 1,
+      "Count": 155,
+      "UniqueInstances": 15,
+      "UniqueScenes": 13,
+      "minADE6": 1.9171966677711856,
+      "minFDE6": 4.296504414081573,
+      "MR6": 0.6387096774193548,
+      "Top1ADE6": 2.97491064244701,
+      "Top1FDE6": 6.740913407264217
+    },
+    {
+      "AgentType": "bicycle",
+      "strict_GT_displacement_threshold_m": 5,
+      "Count": 132,
+      "UniqueInstances": 12,
+      "UniqueScenes": 11,
+      "minADE6": 2.099067771976644,
+      "minFDE6": 4.673725628491604,
+      "MR6": 0.6515151515151515,
+      "Top1ADE6": 3.3031351523417416,
+      "Top1FDE6": 7.45215996558016
+    }
+  ],
+  "paired_vehicle_actor_windows": 62981,
+  "future_valid_lengths_and_motion_states_identical": true,
+  "maximum_paired_GT_displacement_difference_m": 0.0,
+  "vehicle_retention_FDE_ratios_independently_recomputed": {
+    "vehicle": 1.0239434997948822,
+    "vehicle.moving": 1.0225497540217563,
+    "vehicle.stopped": 1.023439300591251,
+    "vehicle.parked": 1.0184533736669514,
+    "unknown": 1.0733705172932468
+  },
+  "converged_by_patience": false,
+  "stopped_by_budget": true,
+  "stop_reason": "global_step_21000_budget",
+  "Stage3A_frozen": "YES",
+  "Ready_for_Stage3B_Type_Embedding": "YES",
+  "freeze_by_budget_independent_of_patience": true,
+  "Stage3B_executed": false,
+  "artifact_sha256": {
+    "07_checkpoints/stage3a_final_frozen_checkpoint_manifest.json": "761cabf68199e7fc37b2ce75cf047ff7d496cce696d234ffd3232828bc5916ba",
+    "04_evaluation/stage3a_final_frozen_metrics.json": "4335206d3807990aabb526e8f0f6f9e4c08a7890541ea4efa607798945a99e31",
+    "04_evaluation/stage3a_final_frozen_actor_errors.csv": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+    "09_reports/stage3a_final_frozen_report.md": "d35c870385236a55765bbe013aaeccb1d93986a10228a937185372340853c826",
+    "00_manifest/stage3_config.yaml": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+    "03_no_type_baseline/stage3a_plusplus_nll_curve.csv": "dae8a6c9fc722a69622a5cae3eaefb44c009643145f6ba88a02824cef9b33ce6",
+    "07_checkpoints/stage3a_plusplus_training_manifest.json": "2779a30cf3994b8029edc92c2574920aa0f232b3f83eb9748bc4ba0ae10a461b",
+    "06_tables/stage3a_final_frozen_main_results.csv": "6da4e28377ad26df1f4ff9db462235c25ff2bc0374c5bc0a50b97295e40bc35a",
+    "06_tables/stage3a_final_frozen_nontrivial_motion_metrics.csv": "05f391190760444884290ede96e022e2ae4f75df1c8759c986e54378084b8449",
+    "06_tables/stage3a_final_vehicle_retention.csv": "48e733eb31f669597244c2a8282c8ff064ec3d2eb2e5e81f5d2b10a024de75b5",
+    "09_reports/stage3a_final_frozen_decision.json": "065a586549636690c392638b9122ca86c51ff675aea0f0471d44f09f7db4a290",
+    "04_evaluation/stage3a_plusplus_val_step_18500.json": "1e9823d47bdd412b0367acaeecdb6c4e748d82bc757faab799fea830a28d6128",
+    "04_evaluation/stage3a_plusplus_val_step_19000.json": "49599198dd299b5422bc7f8687cfbee31e136f81c24ffcfa8c95fc8045ac587b",
+    "04_evaluation/stage3a_plusplus_val_step_19500.json": "ffa6e968779bae9ab504d1fb20c6f90820404d3cbde945dabbc54e9eef26d700",
+    "04_evaluation/stage3a_plusplus_val_step_20000.json": "b9a0aa4129b0d5505c9bfad435fa8fbb2bc395575b04ebb64c4edd1d360c93ba",
+    "04_evaluation/stage3a_plusplus_val_step_20500.json": "4598b3bef42ab14b0f019f673ab9f1fe52d162fbd663ddda3004a412a4360055",
+    "04_evaluation/stage3a_plusplus_val_step_21000.json": "24b07af3f0eed95fabcd9e5614388268d1f3689f9d17110b231bc7840ce44770"
+  },
+  "NaN": 0,
+  "Inf": 0
+}

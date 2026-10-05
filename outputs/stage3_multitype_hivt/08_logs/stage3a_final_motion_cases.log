@@ -1,0 +1,6 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+FINAL_MOTION_FIGURE=PASS stage3a_final_vehicle_motion_case
+FINAL_MOTION_FIGURE=PASS stage3a_final_pedestrian_motion_case
+FINAL_MOTION_FIGURE=PASS stage3a_final_bicycle_motion_case
+FINAL_MOTION_CASES=PASS relative_overall_gain= 0.012766614882192918

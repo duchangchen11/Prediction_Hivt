@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "exactly_paired_vehicle_actor_windows": 62981,
+  "full_horizon_vehicle_actor_windows": 42332,
+  "actor_identity_horizon_masks_motion_states_identical": true,
+  "maximum_GT_displacement_difference_m": 0.0,
+  "Stage2C_actor_errors_sha256": "05e456e07448fc71137d34c4543a6c83fe2c848c666275c12ed8ca5e227a2da0",
+  "Stage3A_final_actor_errors_sha256": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+  "reference_checkpoint_sha256": "86e717bc24b5998dcee73de2152cc4ab549ea22d845c58478501793663744afe",
+  "final_checkpoint_sha256": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+  "metrics": [
+    {
+      "Group": "Vehicle overall",
+      "Count": 42332,
+      "Stage2C_minADE6": 0.6968370662957291,
+      "Stage2C_minFDE6": 1.4158230325535786,
+      "Stage2C_MR6": 0.16691864310686952,
+      "Stage3A_minADE6": 0.7116870079873753,
+      "Stage3A_minFDE6": 1.4497227910431145,
+      "Stage3A_MR6": 0.16703675706321458,
+      "Stage3A_over_Stage2C_FDE_ratio": 1.0239434997948822,
+      "FDE_relative_change_percent": 2.3943499794882195
+    },
+    {
+      "Group": "vehicle.moving",
+      "Count": 10461,
+      "Stage2C_minADE6": 2.273309023365338,
+      "Stage2C_minFDE6": 4.720427896352283,
+      "Stage2C_MR6": 0.6026192524615237,
+      "Stage3A_minADE6": 2.3149347588296254,
+      "Stage3A_minFDE6": 4.8268723842924635,
+      "Stage3A_MR6": 0.6008029825064526,
+      "Stage3A_over_Stage2C_FDE_ratio": 1.0225497540217563,
+      "FDE_relative_change_percent": 2.2549754021756296
+    },
+    {
+      "Group": "vehicle.stopped",
+      "Count": 5599,
+      "Stage2C_minADE6": 0.35096299659658226,
+      "Stage2C_minFDE6": 0.8582867073025885,
+      "Stage2C_MR6": 0.08644400785854617,
+      "Stage3A_minADE6": 0.3611560506181624,
+      "Stage3A_minFDE6": 0.8784043474285289,
+      "Stage3A_MR6": 0.0859081978924808,
+      "Stage3A_over_Stage2C_FDE_ratio": 1.023439300591251,
+      "FDE_relative_change_percent": 2.343930059125099
+    },
+    {
+      "Group": "vehicle.parked",
+      "Count": 25198,
+      "Stage2C_minADE6": 0.11383874329852396,
+      "Stage2C_minFDE6": 0.15384662279308112,
+      "Stage2C_MR6": 0.0038891975553615368,
+      "Stage3A_minADE6": 0.11762495450917207,
+      "Stage3A_minFDE6": 0.15668561201088035,
+      "Stage3A_MR6": 0.0043654258274466225,
+      "Stage3A_over_Stage2C_FDE_ratio": 1.0184533736669514,
+      "FDE_relative_change_percent": 1.8453373666951434
+    },
+    {
+      "Group": "unknown",
+      "Count": 1074,
+      "Stage2C_minADE6": 0.8229706940647419,
+      "Stage2C_minFDE6": 1.7430632355582922,
+      "Stage2C_MR6": 0.16759776536312848,
+      "Stage3A_minADE6": 0.8608711162678294,
+      "Stage3A_minFDE6": 1.8709526868260447,
+      "Stage3A_MR6": 0.18156424581005587,
+      "Stage3A_over_Stage2C_FDE_ratio": 1.0733705172932468,
+      "FDE_relative_change_percent": 7.337051729324684
+    }
+  ],
+  "vehicle_retention_FDE_ratios": {
+    "vehicle_overall_FDE": 1.0239434997948822,
+    "vehicle_moving_FDE": 1.0225497540217563
+  },
+  "existing_vehicle_collapse_guard": "overall and moving FDE ratio <=1.25; does not select checkpoints",
+  "vehicle_no_abnormal_collapse": true,
+  "test_used": false
+}

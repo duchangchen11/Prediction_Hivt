@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "training_curve_strict_selection_verified": true,
+  "executed_extra_steps": 3000,
+  "validation_count": 6,
+  "actor_aggregations_independently_verified": true,
+  "motion_group_counts_verified": 5,
+  "exact_vehicle_actor_pairing_verified": true,
+  "NaN": 0,
+  "Inf": 0,
+  "interaction_files_reused_without_scan": {
+    "01_data_audit/stage3_interaction_density.json": "1f7e70454af44704b80fa6d3e6c7d5378f71d86f0bbfab5914d67aedce562658",
+    "01_data_audit/stage3_interaction_density.csv": "0bfac7cbf8943fb3e7953b60cf136e3922538b862d01ee067f5aa85c690c422a"
+  },
+  "motion_cases_update_required": true,
+  "relative_FDE_improvement_vs_18000": 0.012766613448251918,
+  "artifact_sha256": {
+    "04_evaluation/stage3a_final_frozen_metrics.json": "4335206d3807990aabb526e8f0f6f9e4c08a7890541ea4efa607798945a99e31",
+    "07_checkpoints/stage3a_final_frozen_checkpoint_manifest.json": "761cabf68199e7fc37b2ce75cf047ff7d496cce696d234ffd3232828bc5916ba",
+    "09_reports/stage3a_final_frozen_report.md": "d35c870385236a55765bbe013aaeccb1d93986a10228a937185372340853c826",
+    "06_tables/stage3a_final_frozen_main_results.csv": "6da4e28377ad26df1f4ff9db462235c25ff2bc0374c5bc0a50b97295e40bc35a",
+    "06_tables/stage3a_final_frozen_nontrivial_motion_metrics.csv": "05f391190760444884290ede96e022e2ae4f75df1c8759c986e54378084b8449",
+    "06_tables/stage3a_final_vehicle_retention.csv": "48e733eb31f669597244c2a8282c8ff064ec3d2eb2e5e81f5d2b10a024de75b5"
+  },
+  "figure_render_and_export_verification_delegated_to_final_artifact_audit": true,
+  "decision": {
+    "Stage3A_frozen": "YES",
+    "Ready_for_Stage3B_Type_Embedding": "YES",
+    "converged_by_patience": false,
+    "stopped_by_budget": true,
+    "scientific_freeze_rule": "Freeze at patience 5 or global step 21000; no further No-Type extension",
+    "patience_is_not_a_readiness_prerequisite": true,
+    "final_checkpoint_relative_path": "07_checkpoints/stage3a_final_frozen_best_overall_minfde.pt",
+    "final_checkpoint_sha256": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+    "final_best_global_step": 21000,
+    "NaN": 0,
+    "Inf": 0,
+    "checkpoint_valid": true,
+    "official_VAL_complete": true,
+    "vehicle_no_abnormal_collapse": true,
+    "vehicle_retention_FDE_ratios": {
+      "vehicle_overall_FDE": 1.0239434997948822,
+      "vehicle_moving_FDE": 1.0225497540217563
+    },
+    "Stage3B_executed": false,
+    "further_No_Type_training_allowed": false,
+    "future_ablation_protocol": {
+      "maximum_global_step": 21000,
+      "validation_interval": 500,
+      "checkpoint_selection": "full-horizon official VAL overall minFDE6; strict improvement"
+    }
+  },
+  "Stage3B_executed": false,
+  "test_used": false
+}

@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "source_json": "04_evaluation/cases/stage3a_final_vehicle_motion_case.json",
+  "source_sha256": "401bc9851f93d18e54a31ad8e6e85290df9b782563716179fdebdb5ddd93e994",
+  "panels": [
+    {
+      "kind": "success",
+      "scene_token": "30a1a4ccd60047b4a22ee3bf0645f3ad",
+      "sample_token": "ed798a271bb64df0a3c1b21db414fa33",
+      "instance_token": "c61d9a8207284d33a0e908a6db9eea32",
+      "recomputed_metrics": {
+        "minADE6": 1.1471972865369664,
+        "minFDE6": 0.46945790305382434,
+        "Top1ADE6": 5.185884401458828,
+        "Top1FDE6": 11.673571533181264
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 3.9761332137899785e-07,
+        "minFDE6": 8.490149416839898e-09,
+        "Top1ADE6": 2.9352721293562922e-06,
+        "Top1FDE6": 3.868124888839475e-06
+      },
+      "metric_tolerance_m": 0.0001,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        5.7334136962890625,
+        -0.16346168518066406
+      ],
+      "zoom_max_xy_m": [
+        46.14944076538086,
+        5.650863170623779
+      ],
+      "zoom_rule": "last6 GT/best/Top1+2.5m margin",
+      "endpoint_layout_checks": "PASS"
+    },
+    {
+      "kind": "failure",
+      "scene_token": "8e3364691ee94c698458e0913a29af78",
+      "sample_token": "264f7a3db349473c9032d9ee63b9b828",
+      "instance_token": "25a4ad683da04b759cc5c229d7b96fe5",
+      "recomputed_metrics": {
+        "minADE6": 37.67596251618452,
+        "minFDE6": 68.73837874423334,
+        "Top1ADE6": 44.408341925206365,
+        "Top1FDE6": 83.03678158972014
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.8392842306980128e-06,
+        "minFDE6": 5.941498969264103e-06,
+        "Top1ADE6": 1.4711048024196316e-06,
+        "Top1FDE6": 2.786849790936685e-07
+      },
+      "metric_tolerance_m": 0.0001,
+      "future_marker_count_per_trajectory": 12,
+      "zoom_min_xy_m": [
+        -153.39776611328125,
+        -13.82002067565918
+      ],
+      "zoom_max_xy_m": [
+        -65.5749282836914,
+        -2.443164825439453
+      ],
+      "zoom_rule": "last6 GT/best/Top1+2.5m margin",
+      "endpoint_layout_checks": "PASS"
+    }
+  ],
+  "actor_identities_changed": false,
+  "trajectory_coordinates_edited": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports": {
+    "png": {
+      "relative_path": "05_figures/stage3a_final_vehicle_motion_case.png",
+      "sha256": "0867a8dc918f9824afff229e3b7ed053d89e1ac6944305df919dee21fc03b1e1"
+    },
+    "pdf": {
+      "relative_path": "05_figures/stage3a_final_vehicle_motion_case.pdf",
+      "sha256": "ec07c4f528924e6f21c2cc5cc3c282acdb8e7c71f4ac7d5e2808c2235c5c6a41"
+    },
+    "svg": {
+      "relative_path": "05_figures/stage3a_final_vehicle_motion_case.svg",
+      "sha256": "dc947a371ddd16ede902988aefc3f51d520d4a8b3ebcd1fff0a0304718c3e167"
+    }
+  }
+}

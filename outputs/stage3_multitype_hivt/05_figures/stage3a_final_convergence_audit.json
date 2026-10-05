@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "sources_sha256": {
+    "03_no_type_baseline/stage3a_plus_nll_extension_curve.csv": "f76d2dc649cd08c04bce721f8fe737611bf3a0ad1ae255a7bcb7504c94ce7271",
+    "03_no_type_baseline/stage3a_plusplus_nll_curve.csv": "dae8a6c9fc722a69622a5cae3eaefb44c009643145f6ba88a02824cef9b33ce6",
+    "07_checkpoints/stage3a_plus_best_checkpoint_manifest.json": "80af0766bc0b9e56fb19b6def459b6bc9ad4584a8e1c9a624e37dd25581e451f",
+    "07_checkpoints/stage3a_final_frozen_checkpoint_manifest.json": "761cabf68199e7fc37b2ce75cf047ff7d496cce696d234ffd3232828bc5916ba",
+    "00_manifest/stage3a_plusplus_convergence_figure_contract.json": "98699c650b80399a53bfd8ad4f919f620ad5c7b54c5c449dc35e47bed50aa08a"
+  },
+  "original_15000_checkpoint_sha256": "9ebd0bb23b44f0a738122cee0316e127063d6af006bff7d057bc0a5470a0384a",
+  "source_data_relative_path": "05_figures/stage3a_final_convergence_source.csv",
+  "source_data_sha256": "b503ddbc1a2e6148d4132d376a7f735991cdd3057124b1a1cf8d2ed39df5a77e",
+  "observed_global_steps": [
+    15000,
+    15500,
+    16000,
+    16500,
+    17000,
+    17500,
+    18000,
+    18500,
+    19000,
+    19500,
+    20000,
+    20500,
+    21000
+  ],
+  "observations_per_series": 13,
+  "final_executed_global_step": 21000,
+  "frozen_best_global_step": 21000,
+  "frozen_best_selection_time_overall_minFDE6_m": 1.3644995140203622,
+  "reference_steps": [
+    15000,
+    18000,
+    21000
+  ],
+  "marker_only_data": true,
+  "connecting_data_lines": false,
+  "smoothing": false,
+  "fitting": false,
+  "interpolation": false,
+  "fabricated_points": false,
+  "source_data_changed": false,
+  "text_inside_canvas": true,
+  "side_text_overlap": false,
+  "white_background": true,
+  "exports_sha256": {
+    "03_no_type_baseline/stage3a_plusplus_nll_curve.png": "f201d00f6837a28407a2d69588ddfe74653b4aeb836e82ea14e22239cbd8d955",
+    "05_figures/stage3a_final_convergence.png": "f201d00f6837a28407a2d69588ddfe74653b4aeb836e82ea14e22239cbd8d955",
+    "05_figures/stage3a_final_convergence.pdf": "37b5d9603eb7884288aaa1333d3f56b22b22a76f1167ce3fb5ecf5dd830b3e28",
+    "05_figures/stage3a_final_convergence.svg": "8d0e7a38d90b140983b9a1e43d45769b3b93d32bf939249aa0c23381135880ce"
+  }
+}

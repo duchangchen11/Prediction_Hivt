@@ -1,0 +1,25 @@
+{
+  "backend": "python",
+  "archetype": "quantitative grid, paired trajectory success and failure panels",
+  "core_conclusion": "If the overall gain meets the user threshold, compare final frozen predictions on exactly the six previously selected moving actors without changing their GT or actor identity.",
+  "regeneration_gate": "Relative full-horizon overall minFDE6 improvement versus Stage3A+ step 18000 is at least 0.005; otherwise retain the existing case files unchanged.",
+  "selection": "Reuse the original Stage3A+ success/failure actor identities, not newly ranked extremes; retain their prior labels and explicitly identify that selection provenance.",
+  "evidence_chain": "Frozen graph -> exact official VAL batch partition -> final frozen checkpoint inference -> compare errors with final independent actor CSV -> export original future points -> draw.",
+  "style": {
+    "history": "grey circle markers",
+    "GT": "black square markers and solid line",
+    "best_FDE": "blue circle markers and solid line",
+    "Top1": "orange triangle markers and dashed line",
+    "future_points": "All twelve genuine future timestep markers on each trajectory",
+    "zoom": "Actual final six points of GT, best-FDE and Top1, using the established automatic inset placement",
+    "coordinate_edits": false,
+    "smoothing": false,
+    "interpolation": false
+  },
+  "exports": "New stage3a_final_{vehicle,pedestrian,bicycle}_motion_case JSON and PNG/PDF/SVG only; previous Stage3A+ files are immutable.",
+  "review_risks": [
+    "Original selection used best-FDE errors from the 18000 checkpoint; the new source JSON records that provenance.",
+    "Best-FDE uses GT and Top1 uses saved mode probability, so the modes may differ.",
+    "Cases illustrate behavior and do not replace full official VAL or nontrivial-motion metrics."
+  ]
+}

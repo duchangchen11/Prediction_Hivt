@@ -1,0 +1,72 @@
+{
+  "status": "COMPLETE",
+  "recorded_UTC": "2026-10-05T05:08:39.225663+00:00",
+  "commands": [
+    {
+      "operation": "registration",
+      "command": "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/00_manifest/stage3a_plusplus_register.py",
+      "working_directory": "/home/lrj/Prediction_Hivt",
+      "exit_code": 0
+    },
+    {
+      "operation": "original_NLL_continuation",
+      "command": "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/03_no_type_baseline/stage3a_plusplus_extend_nll.py",
+      "working_directory": "/home/lrj/Prediction_Hivt",
+      "exit_code": 0,
+      "log_relative_path": "08_logs/stage3a_plusplus_training.log",
+      "log_sha256": "3d852f3d601625bdb10c8d99d57113915564b4396eddbe963d0ac8d76f2f48e0"
+    },
+    {
+      "operation": "fresh_official_VAL",
+      "command": "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/04_evaluation/stage3a_final_frozen_evaluate.py",
+      "working_directory": "/home/lrj/Prediction_Hivt",
+      "exit_code": 0,
+      "log_relative_path": "08_logs/stage3a_final_frozen_evaluation.log",
+      "log_sha256": "ee3ed4b7f15e933147405eeaa2a17d15ef7ff6df230de827b5594b1bb644b318"
+    },
+    {
+      "operation": "conditional_final_cases",
+      "command": "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/05_figures/stage3a_plusplus_motion_cases.py --checkpoint /home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/07_checkpoints/stage3a_final_frozen_best_overall_minfde.pt",
+      "working_directory": "/home/lrj/Prediction_Hivt",
+      "exit_code": 0,
+      "log_relative_path": "08_logs/stage3a_final_motion_cases.log",
+      "log_sha256": "e61604815752c85b1dc6ad5f25d6782d888dbb390d94d4365db3f94efcdf0835"
+    },
+    {
+      "operation": "final_report",
+      "command": "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/09_reports/stage3a_final_frozen_report.py",
+      "working_directory": "/home/lrj/Prediction_Hivt",
+      "exit_code": 0,
+      "log_relative_path": "08_logs/stage3a_final_frozen_report.log",
+      "log_sha256": "89648acf96325cf90633bf9ece0e32452c40cddfdd94995b8f9c943ee4102f43"
+    },
+    {
+      "operation": "final_convergence_plot",
+      "command": "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/05_figures/stage3a_plusplus_plot_convergence.py",
+      "working_directory": "/home/lrj/Prediction_Hivt",
+      "exit_code": 0,
+      "log_relative_path": "08_logs/stage3a_final_convergence.log",
+      "log_sha256": "1baa4c529e520ba53c24e55b64acea03ded68aefef2f9313049351b7eb7b982d",
+      "invocations": 2,
+      "second_invocation_reason": "Export source CSV with explicit LF so working-tree and committed SHA256 are identical; observation values and selection unchanged"
+    },
+    {
+      "operation": "independent_CPU_audit",
+      "command": "/home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage3_multitype_hivt/00_manifest/stage3a_plusplus_independent_final_audit.py",
+      "working_directory": "/home/lrj/Prediction_Hivt",
+      "exit_code": 0,
+      "log_relative_path": "08_logs/stage3a_final_independent_audit.log",
+      "log_sha256": "4adf6fff0e9683d8f498e1206679e0ec7a5c36fe8bf997201fb907e0b4b6c08c"
+    }
+  ],
+  "training_code_git_commit": "9e54cd84c4372d4c4b949f167b7ca437d27315d1",
+  "final_best_global_step": 21000,
+  "executed_extra_optimizer_steps": 3000,
+  "final_checkpoint_SHA256": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+  "config_SHA256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "frozen_scene_shard_SHA256_verification": "00_manifest/stage3a_plusplus_frozen_shards_audit.json",
+  "preprocessing_rerun": false,
+  "Type_Embedding_executed": false,
+  "new_environment_or_package_upgrade": false,
+  "original_artifacts_preserved": true
+}

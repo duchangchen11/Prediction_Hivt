@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "review_scope": "All three new paired PNG exports and actual Matplotlib trajectory artists rebuilt from unchanged saved JSON; no model inference or trajectory edits.",
+  "figure_count": 3,
+  "panel_count": 6,
+  "cases": [
+    {
+      "agent_type": "vehicle",
+      "source_json_sha256": "401bc9851f93d18e54a31ad8e6e85290df9b782563716179fdebdb5ddd93e994",
+      "final_png_sha256": "0867a8dc918f9824afff229e3b7ed053d89e1ac6944305df919dee21fc03b1e1",
+      "panels": [
+        {
+          "kind": "success",
+          "main_trajectory_artists": {
+            "GT": {
+              "actual_marker_positions": 12,
+              "marker": "s",
+              "linestyle": "-"
+            },
+            "Top-1 (Mode 3)": {
+              "actual_marker_positions": 12,
+              "marker": "^",
+              "linestyle": "--"
+            },
+            "Best-FDE (Mode 1)": {
+              "actual_marker_positions": 12,
+              "marker": "o",
+              "linestyle": "-"
+            }
+          },
+          "automatic_last6_inset_present": true,
+          "minFDE6_m": 0.4694578945636749
+        },
+        {
+          "kind": "failure",
+          "main_trajectory_artists": {
+            "GT": {
+              "actual_marker_positions": 12,
+              "marker": "s",
+              "linestyle": "-"
+            },
+            "Top-1 (Mode 5)": {
+              "actual_marker_positions": 12,
+              "marker": "^",
+              "linestyle": "--"
+            },
+            "Best-FDE (Mode 2)": {
+              "actual_marker_positions": 12,
+              "marker": "o",
+              "linestyle": "-"
+            }
+          },
+          "automatic_last6_inset_present": true,
+          "minFDE6_m": 68.73837280273438
+        }
+      ],
+      "old_exports_verified_unchanged": {
+        "05_figures/stage3a_plus_vehicle_motion_case.png": "6810855f811495c397475b6d81d978049cd9ab2f6333eef97f78f3c9d7feaac8",
+        "05_figures/stage3a_plus_vehicle_motion_case.pdf": "dbe3d44ba1b2d565e27baa9406a2609b756729ef0353c8a5e6e4413c1dac325d",
+        "05_figures/stage3a_plus_vehicle_motion_case.svg": "fb900a91dc8b654b6f52dd14c851e7ce6e606f792309612c39a4f4df5a6d41ef"
+      },
+      "visual_review": "PASS: titles, legends, both panels, endpoints, markers and insets readable; no clipping or label overlap observed."
+    },
+    {
+      "agent_type": "pedestrian",
+      "source_json_sha256": "ea1d56acd36499c8e0e2d3596918e6c9a419aed84bec7d06d1a06859efe4829b",
+      "final_png_sha256": "2d27f3fddc3f6e405416cbdadb5bc20ccf9a6da0dba2553f1506a5eab2dc12fe",
+      "panels": [
+        {
+          "kind": "success",
+          "main_trajectory_artists": {
+            "GT": {
+              "actual_marker_positions": 12,
+              "marker": "s",
+              "linestyle": "-"
+            },
+            "Top-1 (Mode 5)": {
+              "actual_marker_positions": 12,
+              "marker": "^",
+              "linestyle": "--"
+            },
+            "Best-FDE (Mode 5)": {
+              "actual_marker_positions": 12,
+              "marker": "o",
+              "linestyle": "-"
+            }
+          },
+          "automatic_last6_inset_present": true,
+          "minFDE6_m": 0.0743965208530426
+        },
+        {
+          "kind": "failure",
+          "main_trajectory_artists": {
+            "GT": {
+              "actual_marker_positions": 12,
+              "marker": "s",
+              "linestyle": "-"
+            },
+            "Top-1 (Mode 5)": {
+              "actual_marker_positions": 12,
+              "marker": "^",
+              "linestyle": "--"
+            },
+            "Best-FDE (Mode 2)": {
+              "actual_marker_positions": 12,
+              "marker": "o",
+              "linestyle": "-"
+            }
+          },
+          "automatic_last6_inset_present": true,
+          "minFDE6_m": 15.896843910217285
+        }
+      ],
+      "old_exports_verified_unchanged": {
+        "05_figures/stage3a_plus_pedestrian_motion_case.png": "47714f4e44da4a70613c4180cefbb5d3bde84283730e1d574aca091b42fbc80f",
+        "05_figures/stage3a_plus_pedestrian_motion_case.pdf": "9205ecefce289c6aa4b4f2fd4b4570e1d651b94b13d17334c89e14fa44dc594c",
+        "05_figures/stage3a_plus_pedestrian_motion_case.svg": "21ffbda5c44a4fb5d11ec6e0307c53f2776731477cbc40ac71e3c75062b78d59"
+      },
+      "visual_review": "PASS: titles, legends, both panels, endpoints, markers and insets readable; no clipping or label overlap observed."
+    },
+    {
+      "agent_type": "bicycle",
+      "source_json_sha256": "d83b117d3815ccd860eeecc272eefd123f81d0ba8b8f992e504f0a735e57b767",
+      "final_png_sha256": "860d2dcb6b15c6907e430c91e75d83654543f18db1ac34282ac0d931dab9b816",
+      "panels": [
+        {
+          "kind": "success",
+          "main_trajectory_artists": {
+            "GT": {
+              "actual_marker_positions": 12,
+              "marker": "s",
+              "linestyle": "-"
+            },
+            "Top-1 (Mode 5)": {
+              "actual_marker_positions": 12,
+              "marker": "^",
+              "linestyle": "--"
+            },
+            "Best-FDE (Mode 3)": {
+              "actual_marker_positions": 12,
+              "marker": "o",
+              "linestyle": "-"
+            }
+          },
+          "automatic_last6_inset_present": true,
+          "minFDE6_m": 0.3282773494720459
+        },
+        {
+          "kind": "failure",
+          "main_trajectory_artists": {
+            "GT": {
+              "actual_marker_positions": 12,
+              "marker": "s",
+              "linestyle": "-"
+            },
+            "Top-1 (Mode 5)": {
+              "actual_marker_positions": 12,
+              "marker": "^",
+              "linestyle": "--"
+            },
+            "Best-FDE (Mode 6)": {
+              "actual_marker_positions": 12,
+              "marker": "o",
+              "linestyle": "-"
+            }
+          },
+          "automatic_last6_inset_present": true,
+          "minFDE6_m": 27.498027801513672
+        }
+      ],
+      "old_exports_verified_unchanged": {
+        "05_figures/stage3a_plus_bicycle_motion_case.png": "db699e45db43f67dc73173745134e9ab0fc02fa024e69d4bdaab00cc610ccf4c",
+        "05_figures/stage3a_plus_bicycle_motion_case.pdf": "f74eda6baeef0496096afc0a620802758b6564dd93595c63bcd7cb7fc945cc55",
+        "05_figures/stage3a_plus_bicycle_motion_case.svg": "2fce44d7f2a17db8ddb35c6afc9cf53ae2855d7547b51daacd424042bea1cda8"
+      },
+      "visual_review": "PASS: titles, legends, both panels, endpoints, markers and insets readable; no clipping or label overlap observed."
+    }
+  ],
+  "source_model_or_predictions_changed": false
+}

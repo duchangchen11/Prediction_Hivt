@@ -1,0 +1,27 @@
+{
+  "Stage3A_frozen": "YES",
+  "Ready_for_Stage3B_Type_Embedding": "YES",
+  "converged_by_patience": false,
+  "stopped_by_budget": true,
+  "scientific_freeze_rule": "Freeze at patience 5 or global step 21000; no further No-Type extension",
+  "patience_is_not_a_readiness_prerequisite": true,
+  "final_checkpoint_relative_path": "07_checkpoints/stage3a_final_frozen_best_overall_minfde.pt",
+  "final_checkpoint_sha256": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+  "final_best_global_step": 21000,
+  "NaN": 0,
+  "Inf": 0,
+  "checkpoint_valid": true,
+  "official_VAL_complete": true,
+  "vehicle_no_abnormal_collapse": true,
+  "vehicle_retention_FDE_ratios": {
+    "vehicle_overall_FDE": 1.0239434997948822,
+    "vehicle_moving_FDE": 1.0225497540217563
+  },
+  "Stage3B_executed": false,
+  "further_No_Type_training_allowed": false,
+  "future_ablation_protocol": {
+    "maximum_global_step": 21000,
+    "validation_interval": 500,
+    "checkpoint_selection": "full-horizon official VAL overall minFDE6; strict improvement"
+  }
+}

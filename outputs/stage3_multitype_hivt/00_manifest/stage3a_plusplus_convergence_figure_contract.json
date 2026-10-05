@@ -1,0 +1,41 @@
+{
+  "backend": "python",
+  "archetype": "quantitative grid, single validation hero panel",
+  "core_conclusion": "Show the observed official validation trajectory and the checkpoint selected by the fixed overall minFDE6 rule, without inferring convergence between evaluations.",
+  "evidence_chain": {
+    "original_15000": "Original best checkpoint metadata, verified against the existing source manifest SHA256.",
+    "stage3a_plus": "The six immutable official validation observations at steps 15500 through 18000.",
+    "stage3a_plusplus": "Only completed official validation observations at 500-step intervals after step 18000, with a hard maximum of step 21000.",
+    "selection": "Strictly lowest overall full-horizon minFDE6 among the 18000 source and the newly executed observations."
+  },
+  "panel": "Overall, Vehicle, Pedestrian and Bicycle minFDE6 observations on shared axes, distinguished by both marker shape and color.",
+  "drawing": {
+    "background": "white",
+    "data_marks": "One marker at each true validation observation; no connecting/interpolated, fitted, smoothed or resampled data lines.",
+    "reference_lines": "Vertical original-best 15000, Stage3A+ best 18000 and final-best if changed; these are stage references, not inferred data.",
+    "annotation": "Frozen best, actual global step and observed overall minFDE6, placed beside the plot."
+  },
+  "export_contract": {
+    "figure_size_inches": [8.4, 4.3],
+    "editable_text": true,
+    "main_formats": ["png", "pdf", "svg"],
+    "extension_formats": ["png"],
+    "PNG_dpi": 300,
+    "source_data": "05_figures/stage3a_final_convergence_source.csv",
+    "audit": "05_figures/stage3a_final_convergence_audit.json"
+  },
+  "statistics": {
+    "split": "nuScenes official VAL, 150 scenes; no test use",
+    "seed": 2022,
+    "metric": "Actor-window mean endpoint error of the best-FDE mode among K=6; full 12-timestep future only.",
+    "counts": {"Overall": 54990, "Vehicle": 42332, "Pedestrian": 12002, "Bicycle": 656},
+    "uncertainty": "No confidence interval or significance claim; the graph shows true evaluations of one training run.",
+    "selection_rule": "Full-horizon official VAL overall minFDE6, strict improvement."
+  },
+  "review_risks": [
+    "Small changes are shown in the true observed axis range; the y axis is labelled in metres.",
+    "The original 15000 point and the 18000 source are reused observations, not new inference.",
+    "The final independent inference may differ by numerical tolerance from selection-time values; the plot uses original selection-time observations.",
+    "Budget freezing and five-validation patience convergence are separate decisions."
+  ]
+}

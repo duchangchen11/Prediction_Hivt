@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETE",
+  "source_checkpoint_relative_path": "07_checkpoints/stage3a_plus_best_overall_minfde.pt",
+  "source_checkpoint_sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+  "start_global_step": 18000,
+  "maximum_extra_optimizer_steps": 3000,
+  "maximum_global_step": 21000,
+  "validation_interval": 500,
+  "patience": 5,
+  "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "training_code_git_commit": "9e54cd84c4372d4c4b949f167b7ca437d27315d1",
+  "initial_iterator": {
+    "epoch": 12,
+    "next_batch": 316
+  },
+  "selection_rule": "full-horizon official VAL overall minFDE6; strict improvement",
+  "Type_Embedding": false,
+  "test_used": false,
+  "LR": 0.0001,
+  "batch_size": 16,
+  "loss_mode": "original learnable-scale Laplace NLL",
+  "executed_extra_steps": 3000,
+  "final_executed_global_step": 21000,
+  "best_refreshed": true,
+  "final_best_global_step": 21000,
+  "consecutive_nonimprovements": 0,
+  "final_iterator": {
+    "epoch": 15,
+    "next_batch": 145
+  },
+  "last_checkpoint_sha256": "95b3fc907ada623ca83c6fe5122be71188e923a526703f1ede34008ff02e87ee",
+  "NaN": 0,
+  "Inf": 0,
+  "stop_reason": "global_step_21000_budget",
+  "converged_by_patience": false,
+  "stopped_by_budget": true,
+  "elapsed_seconds_this_invocation": 1913.1131896900006,
+  "stage3a_frozen": "YES"
+}

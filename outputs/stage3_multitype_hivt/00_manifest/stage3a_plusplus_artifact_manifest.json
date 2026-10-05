@@ -1,0 +1,439 @@
+{
+  "stage": "Stage3A++ final frozen No-Type",
+  "self_hash_excluded": true,
+  "artifacts": [
+    {
+      "relative_path": "00_manifest/stage3a_final_frozen_independent_audit.json",
+      "bytes": 10018,
+      "sha256": "4e908a7675d47a7d7a7c70c9af8aaa662e2581f118e3cd6d3de95d4002bd9160",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_final_frozen_report_audit.json",
+      "bytes": 2719,
+      "sha256": "40fa953d278c0d87fee85a1a21a68300ffc737f93317e22e0316f2ee48bc9524",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_common.py",
+      "bytes": 1458,
+      "sha256": "aa1d4d18e2dd4a9a64c9efa55fbf2ce9750c2cc5e2401236ebe5916a82a72f96",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_convergence_figure_contract.json",
+      "bytes": 2675,
+      "sha256": "98699c650b80399a53bfd8ad4f919f620ad5c7b54c5c449dc35e47bed50aa08a",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_execution_record.json",
+      "bytes": 3894,
+      "sha256": "510f131e64791c54ad90083c0de84520fa40bd7019950986a6f51f2f5c8a99bf",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_final_preservation_audit.json",
+      "bytes": 791,
+      "sha256": "c8721f69fde14e2730eb1d51d3971820c6e1d7afc79851311c41bec1c858962a",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_finalize_artifacts.py",
+      "bytes": 5090,
+      "sha256": "a3b6cc90884116317c6d15a54e56d76e01c51e62286a2a84b144c6fb41336533",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_frozen_previous.json",
+      "bytes": 209297,
+      "sha256": "1ead802539b094564230a05bb65bb55c84cb3d911ecfefd4b611b9671d53d154",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_frozen_shards_audit.json",
+      "bytes": 499,
+      "sha256": "467e51fed425db5eec153baede8b7910af5757a857ddefcc7f1be76830947e75",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_independent_final_audit.py",
+      "bytes": 23333,
+      "sha256": "3eae3aa5b5d11e3085eb74b6e1dc10846b43de02cc69c05c14969496c93bdb3d",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_independent_resume_audit.json",
+      "bytes": 4482,
+      "sha256": "f0cb1b209403693c55b5af1e518269236c4d4b934fa94d67668bb6ceeffe5dbd",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_motion_figure_contract.json",
+      "bytes": 1837,
+      "sha256": "159a8a244cdf722e05344a6f020740f5116d8780389558d0771c06a484d5d22f",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_preregistration.json",
+      "bytes": 1502,
+      "sha256": "727d406d57875eaf614a2aa485929371e9f5ce8fcfa3c94c5571f6ae572865b1",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_register.py",
+      "bytes": 3210,
+      "sha256": "64afab6e905e82f7ad70017f10f0170e1320d88542b00c8044a704a54ad360d3",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_requirements.txt",
+      "bytes": 10586,
+      "sha256": "b8730708e62d76ca0588ed0f673b14bb7d3b5c4578de6910b22cbfe39a36fec4",
+      "local_only": false
+    },
+    {
+      "relative_path": "00_manifest/stage3a_plusplus_resume_audit.json",
+      "bytes": 948,
+      "sha256": "a3f42e79b197be6bb324770dbbaa530cbc665af415ce16daf5281286c1db5185",
+      "local_only": false
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plusplus_extend_nll.py",
+      "bytes": 12492,
+      "sha256": "4e92097696e03d5c8442a21af90eb93a1e671196121f1bf74ff5d088c3f5f9b1",
+      "local_only": false
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plusplus_nll_curve.csv",
+      "bytes": 4659,
+      "sha256": "dae8a6c9fc722a69622a5cae3eaefb44c009643145f6ba88a02824cef9b33ce6",
+      "local_only": false
+    },
+    {
+      "relative_path": "03_no_type_baseline/stage3a_plusplus_nll_curve.png",
+      "bytes": 180538,
+      "sha256": "f201d00f6837a28407a2d69588ddfe74653b4aeb836e82ea14e22239cbd8d955",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3a_final_bicycle_motion_case.json",
+      "bytes": 232337,
+      "sha256": "d83b117d3815ccd860eeecc272eefd123f81d0ba8b8f992e504f0a735e57b767",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3a_final_pedestrian_motion_case.json",
+      "bytes": 464620,
+      "sha256": "ea1d56acd36499c8e0e2d3596918e6c9a419aed84bec7d06d1a06859efe4829b",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage3a_final_vehicle_motion_case.json",
+      "bytes": 412920,
+      "sha256": "401bc9851f93d18e54a31ad8e6e85290df9b782563716179fdebdb5ddd93e994",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_final_frozen_actor_errors.csv",
+      "bytes": 24980272,
+      "sha256": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+      "local_only": true
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_final_frozen_evaluate.py",
+      "bytes": 16282,
+      "sha256": "a00188b5df59a85ae7dac393940f6ec35c0c1dc5728669e7bf42c3086da971eb",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_final_frozen_evaluation_audit.json",
+      "bytes": 4277,
+      "sha256": "bd7ebbebc1a0524e6075398ae1beaaae5b18504072bb677b929ae6ebdbc1e41b",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_final_frozen_metrics.json",
+      "bytes": 802429,
+      "sha256": "4335206d3807990aabb526e8f0f6f9e4c08a7890541ea4efa607798945a99e31",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_final_frozen_nontrivial_motion_metrics.json",
+      "bytes": 2891,
+      "sha256": "828e1bc298748c0f6f46947989f8fdd035be1b4d92379b7684f26fa43a4b0af7",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_final_motion_case_manifest.json",
+      "bytes": 1388,
+      "sha256": "1852c8d89bda87bdb893981af49880d592451a87b74e0bfdeec4c6d16e0e8c73",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_final_vehicle_retention_audit.json",
+      "bytes": 3189,
+      "sha256": "9e08648c97dc92d55707bc2d892642dd25c8c6481151c0352458884a34b331b5",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plusplus_val_step_18500.json",
+      "bytes": 796474,
+      "sha256": "1e9823d47bdd412b0367acaeecdb6c4e748d82bc757faab799fea830a28d6128",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plusplus_val_step_19000.json",
+      "bytes": 796464,
+      "sha256": "49599198dd299b5422bc7f8687cfbee31e136f81c24ffcfa8c95fc8045ac587b",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plusplus_val_step_19500.json",
+      "bytes": 796758,
+      "sha256": "ffa6e968779bae9ab504d1fb20c6f90820404d3cbde945dabbc54e9eef26d700",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plusplus_val_step_20000.json",
+      "bytes": 796712,
+      "sha256": "b9a0aa4129b0d5505c9bfad435fa8fbb2bc395575b04ebb64c4edd1d360c93ba",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plusplus_val_step_20500.json",
+      "bytes": 796676,
+      "sha256": "4598b3bef42ab14b0f019f673ab9f1fe52d162fbd663ddda3004a412a4360055",
+      "local_only": false
+    },
+    {
+      "relative_path": "04_evaluation/stage3a_plusplus_val_step_21000.json",
+      "bytes": 796533,
+      "sha256": "24b07af3f0eed95fabcd9e5614388268d1f3689f9d17110b231bc7840ce44770",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_bicycle_motion_case.pdf",
+      "bytes": 33042,
+      "sha256": "a331ae81f6d10e22776d3bd07cbdc1b259b0bc9741a37b3b567d0dcd4cd5047a",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_bicycle_motion_case.png",
+      "bytes": 639490,
+      "sha256": "860d2dcb6b15c6907e430c91e75d83654543f18db1ac34282ac0d931dab9b816",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_bicycle_motion_case.svg",
+      "bytes": 119608,
+      "sha256": "1d571806fb836d9925bcbbd40a2efe9e7bbfdc48cd6a9b551e9901b8f4549cca",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_bicycle_motion_case_audit.json",
+      "bytes": 2850,
+      "sha256": "c09bf013ec201ca358642f04f80db42cefe3d8e2b4df709189b668bdb62fa240",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_convergence.pdf",
+      "bytes": 18037,
+      "sha256": "37b5d9603eb7884288aaa1333d3f56b22b22a76f1167ce3fb5ecf5dd830b3e28",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_convergence.png",
+      "bytes": 180538,
+      "sha256": "f201d00f6837a28407a2d69588ddfe74653b4aeb836e82ea14e22239cbd8d955",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_convergence.svg",
+      "bytes": 21444,
+      "sha256": "8d0e7a38d90b140983b9a1e43d45769b3b93d32bf939249aa0c23381135880ce",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_convergence_audit.json",
+      "bytes": 2210,
+      "sha256": "01617270d7184539b8a877e6b500aa9002c4373e5e375eb3913c5038c37a6f3d",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_convergence_source.csv",
+      "bytes": 1271,
+      "sha256": "b503ddbc1a2e6148d4132d376a7f735991cdd3057124b1a1cf8d2ed39df5a77e",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_motion_visual_audit.json",
+      "bytes": 6643,
+      "sha256": "28f0d03a8f4b9f90d66921d59c695c26669f441aadecdde7aab38d08be1bec73",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_pedestrian_motion_case.pdf",
+      "bytes": 29496,
+      "sha256": "f395043b8b0a0d889554c9755d1037f78d5a72db8de1b69816f19778409f58cf",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_pedestrian_motion_case.png",
+      "bytes": 561676,
+      "sha256": "2d27f3fddc3f6e405416cbdadb5bc20ccf9a6da0dba2553f1506a5eab2dc12fe",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_pedestrian_motion_case.svg",
+      "bytes": 93281,
+      "sha256": "dd4387bfa38ab2a976606806e11de7f31bfe8d37466aedfd7019fc564028c82e",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_pedestrian_motion_case_audit.json",
+      "bytes": 2863,
+      "sha256": "8d98de850fe3502240c7fee32e46f8a43ec36b0363fe3627f508dc664e1e3173",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_vehicle_motion_case.pdf",
+      "bytes": 40922,
+      "sha256": "ec07c4f528924e6f21c2cc5cc3c282acdb8e7c71f4ac7d5e2808c2235c5c6a41",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_vehicle_motion_case.png",
+      "bytes": 625433,
+      "sha256": "0867a8dc918f9824afff229e3b7ed053d89e1ac6944305df919dee21fc03b1e1",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_vehicle_motion_case.svg",
+      "bytes": 196005,
+      "sha256": "dc947a371ddd16ede902988aefc3f51d520d4a8b3ebcd1fff0a0304718c3e167",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_final_vehicle_motion_case_audit.json",
+      "bytes": 2852,
+      "sha256": "60f318feecf4db961a57e0ddd82f203609d232170885ae8bfc3c891af0b7dbca",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_plusplus_motion_cases.py",
+      "bytes": 12283,
+      "sha256": "a09e43cf11a455b18f37501750a9ed9526284db83a08c15f0baa502533ecd863",
+      "local_only": false
+    },
+    {
+      "relative_path": "05_figures/stage3a_plusplus_plot_convergence.py",
+      "bytes": 10804,
+      "sha256": "36bb86b63712a4145ab62e8aade82d779ffd9237ee250b21a72a27ca1c275a1b",
+      "local_only": false
+    },
+    {
+      "relative_path": "06_tables/stage3a_final_frozen_main_results.csv",
+      "bytes": 1110,
+      "sha256": "6da4e28377ad26df1f4ff9db462235c25ff2bc0374c5bc0a50b97295e40bc35a",
+      "local_only": false
+    },
+    {
+      "relative_path": "06_tables/stage3a_final_frozen_nontrivial_motion_metrics.csv",
+      "bytes": 763,
+      "sha256": "05f391190760444884290ede96e022e2ae4f75df1c8759c986e54378084b8449",
+      "local_only": false
+    },
+    {
+      "relative_path": "06_tables/stage3a_final_vehicle_retention.csv",
+      "bytes": 1028,
+      "sha256": "48e733eb31f669597244c2a8282c8ff064ec3d2eb2e5e81f5d2b10a024de75b5",
+      "local_only": false
+    },
+    {
+      "relative_path": "07_checkpoints/stage3a_final_frozen_best_overall_minfde.pt",
+      "bytes": 8140711,
+      "sha256": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+      "local_only": true
+    },
+    {
+      "relative_path": "07_checkpoints/stage3a_final_frozen_checkpoint_manifest.json",
+      "bytes": 9011,
+      "sha256": "761cabf68199e7fc37b2ce75cf047ff7d496cce696d234ffd3232828bc5916ba",
+      "local_only": false
+    },
+    {
+      "relative_path": "07_checkpoints/stage3a_plusplus_last_checkpoint.pt",
+      "bytes": 8131407,
+      "sha256": "95b3fc907ada623ca83c6fe5122be71188e923a526703f1ede34008ff02e87ee",
+      "local_only": true
+    },
+    {
+      "relative_path": "07_checkpoints/stage3a_plusplus_training_manifest.json",
+      "bytes": 1366,
+      "sha256": "2779a30cf3994b8029edc92c2574920aa0f232b3f83eb9748bc4ba0ae10a461b",
+      "local_only": false
+    },
+    {
+      "relative_path": "08_logs/stage3a_final_convergence.log",
+      "bytes": 148,
+      "sha256": "1baa4c529e520ba53c24e55b64acea03ded68aefef2f9313049351b7eb7b982d",
+      "local_only": false
+    },
+    {
+      "relative_path": "08_logs/stage3a_final_frozen_evaluation.log",
+      "bytes": 2744,
+      "sha256": "ee3ed4b7f15e933147405eeaa2a17d15ef7ff6df230de827b5594b1bb644b318",
+      "local_only": false
+    },
+    {
+      "relative_path": "08_logs/stage3a_final_frozen_report.log",
+      "bytes": 1015,
+      "sha256": "89648acf96325cf90633bf9ece0e32452c40cddfdd94995b8f9c943ee4102f43",
+      "local_only": false
+    },
+    {
+      "relative_path": "08_logs/stage3a_final_independent_audit.log",
+      "bytes": 329,
+      "sha256": "4adf6fff0e9683d8f498e1206679e0ec7a5c36fe8bf997201fb907e0b4b6c08c",
+      "local_only": false
+    },
+    {
+      "relative_path": "08_logs/stage3a_final_motion_cases.log",
+      "bytes": 500,
+      "sha256": "e61604815752c85b1dc6ad5f25d6782d888dbb390d94d4365db3f94efcdf0835",
+      "local_only": false
+    },
+    {
+      "relative_path": "08_logs/stage3a_plusplus_training.log",
+      "bytes": 15046,
+      "sha256": "3d852f3d601625bdb10c8d99d57113915564b4396eddbe963d0ac8d76f2f48e0",
+      "local_only": false
+    },
+    {
+      "relative_path": "09_reports/stage3a_final_frozen_decision.json",
+      "bytes": 1050,
+      "sha256": "065a586549636690c392638b9122ca86c51ff675aea0f0471d44f09f7db4a290",
+      "local_only": false
+    },
+    {
+      "relative_path": "09_reports/stage3a_final_frozen_report.md",
+      "bytes": 6560,
+      "sha256": "d35c870385236a55765bbe013aaeccb1d93986a10228a937185372340853c826",
+      "local_only": false
+    },
+    {
+      "relative_path": "09_reports/stage3a_final_frozen_report.py",
+      "bytes": 17931,
+      "sha256": "7aeb22f85e73af297a540c16fdcf5612bdf1e6f9d680ce708ab374a9029108ef",
+      "local_only": false
+    },
+    {
+      "relative_path": "09_reports/stage3a_final_report.md",
+      "bytes": 7415,
+      "sha256": "1ef7f08ab5e099ef218c465626b3547f784a62563d8781e73f3da002e0255ad0",
+      "local_only": false
+    }
+  ],
+  "large_checkpoint_and_actor_CSV_upload": false
+}

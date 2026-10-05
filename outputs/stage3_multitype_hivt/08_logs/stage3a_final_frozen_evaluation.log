@@ -1,0 +1,28 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+VAL_EVALUATE 208 / 3603
+VAL_EVALUATE 400 / 3603
+VAL_EVALUATE 608 / 3603
+VAL_EVALUATE 800 / 3603
+VAL_EVALUATE 1008 / 3603
+VAL_EVALUATE 1200 / 3603
+VAL_EVALUATE 1408 / 3603
+VAL_EVALUATE 1600 / 3603
+VAL_EVALUATE 1808 / 3603
+VAL_EVALUATE 2000 / 3603
+VAL_EVALUATE 2208 / 3603
+VAL_EVALUATE 2400 / 3603
+VAL_EVALUATE 2608 / 3603
+VAL_EVALUATE 2800 / 3603
+VAL_EVALUATE 3008 / 3603
+VAL_EVALUATE 3200 / 3603
+VAL_EVALUATE 3408 / 3603
+VAL_EVALUATE 3600 / 3603
+VAL_EVALUATE 3603 / 3603
+FINAL_FROZEN_VAL_EVALUATION=PASS {'overall_minADE6': 0.6709589618163166, 'overall_minFDE6': 1.3644995160022764, 'overall_MR6': 0.16612111292962356, 'vehicle_minFDE6': 1.4497227910431145, 'pedestrian_minFDE6': 1.0776230195413068, 'bicycle_minFDE6': 1.113615417672696, 'vehicle_moving_minFDE6': 4.8268723842924635}
+FINAL_NONTRIVIAL_MOTION {'Group': 'Vehicle >5m', 'AgentType': 'vehicle', 'GT_endpoint_displacement_gt_m': 5, 'Count': 9744, 'UniqueInstances': 853, 'UniqueScenes': 137, 'minADE6': 2.632744836435181, 'minFDE6': 5.630972214031718, 'MR6': 0.6841133004926109, 'Top1ADE6': 5.178650825131113, 'Top1FDE6': 12.193457451108223}
+FINAL_NONTRIVIAL_MOTION {'Group': 'Pedestrian >1m', 'AgentType': 'pedestrian', 'GT_endpoint_displacement_gt_m': 1, 'Count': 8810, 'UniqueInstances': 825, 'UniqueScenes': 113, 'minADE6': 0.6849703097018275, 'minFDE6': 1.409272549137453, 'MR6': 0.22270147559591374, 'Top1ADE6': 0.88971372913806, 'Top1FDE6': 1.8875756328081117}
+FINAL_NONTRIVIAL_MOTION {'Group': 'Pedestrian >5m', 'AgentType': 'pedestrian', 'GT_endpoint_displacement_gt_m': 5, 'Count': 7581, 'UniqueInstances': 716, 'UniqueScenes': 110, 'minADE6': 0.6686461276929178, 'minFDE6': 1.3726620162323881, 'MR6': 0.21303258145363407, 'Top1ADE6': 0.8402614734888513, 'Top1FDE6': 1.7503838149807418}
+FINAL_NONTRIVIAL_MOTION {'Group': 'Bicycle >1m', 'AgentType': 'bicycle', 'GT_endpoint_displacement_gt_m': 1, 'Count': 155, 'UniqueInstances': 15, 'UniqueScenes': 13, 'minADE6': 1.9171966677711856, 'minFDE6': 4.296504414081573, 'MR6': 0.6387096774193548, 'Top1ADE6': 2.97491064244701, 'Top1FDE6': 6.740913407264217}
+FINAL_NONTRIVIAL_MOTION {'Group': 'Bicycle >5m', 'AgentType': 'bicycle', 'GT_endpoint_displacement_gt_m': 5, 'Count': 132, 'UniqueInstances': 12, 'UniqueScenes': 11, 'minADE6': 2.099067771976644, 'minFDE6': 4.673725628491604, 'MR6': 0.6515151515151515, 'Top1ADE6': 3.3031351523417416, 'Top1FDE6': 7.45215996558016}
+VEHICLE_RETENTION {'vehicle_overall_FDE': 1.0239434997948822, 'vehicle_moving_FDE': 1.0225497540217563}
