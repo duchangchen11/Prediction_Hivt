@@ -1,0 +1,27 @@
+{
+  "status": "REGISTERED_BEFORE_TRAINING",
+  "source_checkpoint_sha256": "fa81a63f69aadc3158f20df0e046366172cb333f8db5b8a34cc853f4a0a00e77",
+  "source_global_step": 18000,
+  "source_overall_minFDE6": 1.382144824708836,
+  "config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "source_sha256": {
+    "00_manifest/stage3a_plusplus_common.py": "aa1d4d18e2dd4a9a64c9efa55fbf2ce9750c2cc5e2401236ebe5916a82a72f96",
+    "00_manifest/stage3a_plusplus_register.py": "64afab6e905e82f7ad70017f10f0170e1320d88542b00c8044a704a54ad360d3",
+    "03_no_type_baseline/stage3a_plusplus_extend_nll.py": "4e92097696e03d5c8442a21af90eb93a1e671196121f1bf74ff5d088c3f5f9b1"
+  },
+  "maximum_extra_optimizer_steps": 3000,
+  "maximum_global_step": 21000,
+  "validation_interval": 500,
+  "patience": 5,
+  "checkpoint_selection": "full-horizon official VAL overall minFDE6; strict improvement",
+  "restore_model_optimizer_CPU_CUDA_RNG_sampler_cursor": true,
+  "LR_batch_loss_data_architecture_changed": false,
+  "new_warmup": false,
+  "freeze_rule": "Freeze YES on patience stop or hard global21000 budget; do not extend again",
+  "convergence_rule": "converged_by_patience requires five consecutive nonimprovements",
+  "readiness_rule": "finite valid checkpoint and completed fresh official VAL; existing vehicle overall/moving FDE ratio<=1.25",
+  "optional_case_relative_FDE_gain_threshold": 0.005,
+  "interaction_density_recalculated": false,
+  "test_used": false,
+  "Stage3B_executed": false
+}

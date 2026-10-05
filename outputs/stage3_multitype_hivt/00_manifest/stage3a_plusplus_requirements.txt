@@ -1,0 +1,708 @@
+你现在执行：
+
+Stage 3A++：Multi-Type No-Type Baseline 最终收敛确认与冻结
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前分支：
+stage3/multitype-hivt
+
+当前正式状态：
+Stage3A+ 已完成。
+
+当前最佳 checkpoint：
+global step = 18000
+overall minFDE6 = 1.382144825 m
+
+当前 checkpoint：
+outputs/stage3_multitype_hivt/07_checkpoints/stage3a_plus_best_overall_minfde.pt
+
+当前结论：
+Stage3A frozen = NO
+原因：
+18000 step 仍刷新最佳值，尚未满足连续5次 validation 不改善。
+
+==================================================
+一、本轮唯一目标
+==================================================
+
+确认 No-Type Multi-Type HiVT baseline 的最终训练状态。
+
+本轮禁止：
+
+- Type Embedding
+- Class-balanced loss
+- Oversampling
+- Dynamic Interaction
+- 修改 HiVT 架构
+- 修改 LR
+- 修改 batch size
+- 修改 loss
+- 修改 train/val split
+- 重新预处理
+- 重新从头训练
+
+只允许：
+
+从当前 18000-step 状态继续原始 NLL 训练。
+
+==================================================
+二、训练恢复要求
+==================================================
+
+必须从：
+
+stage3a_plus_best_overall_minfde.pt
+
+恢复：
+
+model state
+optimizer state
+random state
+data-loader / sampling cursor
+
+如果当前 best checkpoint 本身不是可无损恢复训练状态的 checkpoint：
+
+优先使用与 step18000 对应的完整 resumable checkpoint，
+但必须验证模型 state 与 best checkpoint 一致。
+
+保存恢复审计：
+
+00_manifest/stage3a_plusplus_resume_audit.json
+
+记录：
+
+source checkpoint
+source global step
+model SHA256
+optimizer restored
+RNG restored
+cursor restored
+LR
+batch size
+loss mode
+
+==================================================
+三、训练预算
+==================================================
+
+从：
+
+global step 18000
+
+继续最多：
+
+3000 optimizer steps
+
+即：
+
+最大 global step = 21000
+
+每：
+
+500 step
+
+跑一次完整 official VAL。
+
+验证点：
+
+18500
+19000
+19500
+20000
+20500
+21000
+
+==================================================
+四、Early Stop
+==================================================
+
+仍采用：
+
+连续5次 full VAL overall minFDE6 未严格改善
+→ early stop
+
+checkpoint selection：
+
+full-horizon
+official VAL
+overall minFDE6
+strict improvement
+
+但增加硬停止规则：
+
+无论是否满足5次不改善，
+
+到：
+
+global step = 21000
+
+必须停止。
+
+不得继续：
+
+21500
+22000
+...
+
+科研上不再无限追求 0.001m 级别的波动。
+
+==================================================
+五、训练协议保持完全不变
+==================================================
+
+保持：
+
+LR = 1e-4
+batch size = 16
+K = 6
+Th = 5
+Tf = 12
+embed_dim = 64
+
+Loss：
+
+original learnable-scale Laplace NLL
+
+不允许：
+
+重新 warm-up
+
+只继续：
+
+NLL phase。
+
+==================================================
+六、Validation 指标
+==================================================
+
+每500 step保存：
+
+Overall:
+minADE6
+minFDE6
+MR6
+
+Vehicle:
+minADE6
+minFDE6
+MR6
+
+Pedestrian:
+minADE6
+minFDE6
+MR6
+
+Bicycle:
+minADE6
+minFDE6
+MR6
+
+Vehicle moving:
+minADE6
+minFDE6
+MR6
+
+并记录：
+
+Top1ADE6
+Top1FDE6
+
+但 checkpoint 仍然只由：
+
+overall minFDE6
+
+决定。
+
+==================================================
+七、训练曲线
+==================================================
+
+保存：
+
+03_no_type_baseline/
+stage3a_plusplus_nll_curve.csv
+
+以及：
+
+stage3a_plusplus_nll_curve.png
+
+图中必须同时画：
+
+overall minFDE
+vehicle minFDE
+pedestrian minFDE
+bicycle minFDE
+
+并用竖线标出：
+
+original Stage3A best = 15000
+Stage3A+ best = 18000
+
+如果产生新 best：
+
+再标：
+
+Stage3A++ final best
+
+图不要花哨。
+
+白底。
+marker清楚。
+不要使用平滑曲线。
+所有点必须是真实每500-step validation。
+
+==================================================
+八、最终 checkpoint
+==================================================
+
+如果 18000 之后出现新 best：
+
+保存：
+
+07_checkpoints/
+stage3a_final_frozen_best_overall_minfde.pt
+
+如果没有新 best：
+
+18000 checkpoint 直接成为 frozen baseline。
+
+必须生成：
+
+07_checkpoints/
+stage3a_final_frozen_checkpoint_manifest.json
+
+至少记录：
+
+final_best_global_step
+overall_minADE6
+overall_minFDE6
+overall_MR6
+
+vehicle_minFDE6
+pedestrian_minFDE6
+bicycle_minFDE6
+vehicle_moving_minFDE6
+
+checkpoint SHA256
+training code commit
+config SHA256
+
+selection rule
+stop reason
+executed extra steps
+
+==================================================
+九、重新生成最终预测结果
+==================================================
+
+必须使用：
+
+最终 frozen best checkpoint
+
+在 official VAL 上重新跑一次完整 evaluation。
+
+不要直接拼接旧 CSV。
+
+保存：
+
+04_evaluation/
+stage3a_final_frozen_actor_errors.csv
+
+以及：
+
+04_evaluation/
+stage3a_final_frozen_metrics.json
+
+检查：
+
+NaN = 0
+Inf = 0
+
+==================================================
+十、重新计算主指标
+==================================================
+
+基于最终 frozen checkpoint 重新生成：
+
+06_tables/
+stage3a_final_frozen_main_results.csv
+
+字段：
+
+Group
+Count
+minADE6
+minFDE6
+MR6
+Top1ADE6
+Top1FDE6
+NLL
+
+Group：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+==================================================
+十一、重新计算有效运动指标
+==================================================
+
+因为 checkpoint 可能变化，
+
+必须用最终 frozen checkpoint 重新计算：
+
+Vehicle >5m
+
+Pedestrian >1m
+Pedestrian >5m
+
+Bicycle >1m
+Bicycle >5m
+
+输出：
+
+06_tables/
+stage3a_final_frozen_nontrivial_motion_metrics.csv
+
+特别记录：
+
+Count
+UniqueInstances
+UniqueScenes
+minADE6
+minFDE6
+MR6
+Top1ADE6
+Top1FDE6
+
+==================================================
+十二、Vehicle Retention
+==================================================
+
+最终再比较一次：
+
+Stage2C vehicle-only HiVT
+
+vs
+
+Stage3A final frozen No-Type Multi-Type HiVT
+
+必须使用完全相同 VAL vehicle actor。
+
+输出：
+
+06_tables/
+stage3a_final_vehicle_retention.csv
+
+至少：
+
+Vehicle overall
+Vehicle moving
+Vehicle stopped
+Vehicle parked
+
+计算：
+
+Stage3A / Stage2C FDE ratio
+
+==================================================
+十三、Interaction Density 不重新计算
+==================================================
+
+以下文件已经冻结：
+
+stage3_interaction_density.csv
+stage3_interaction_density.json
+
+本轮不要重新扫描。
+
+因为它与 checkpoint 无关。
+
+直接引用 Stage3A+ 结果。
+
+==================================================
+十四、正式画图
+==================================================
+
+本轮不要大量重新画 success/failure 图。
+
+只画一个：
+
+训练收敛主图：
+
+05_figures/
+stage3a_final_convergence.png
+stage3a_final_convergence.pdf
+stage3a_final_convergence.svg
+
+内容：
+
+x轴：
+global step
+
+y轴：
+minFDE6
+
+显示：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+必须包含：
+
+15000
+15500
+...
+21000
+
+实际执行到哪里就画到哪里。
+
+明确标记最终 best：
+
+"Frozen best"
+
+并在图旁写：
+
+step = xxx
+overall minFDE = xxx m
+
+不要画插值曲线。
+
+==================================================
+十五、可选轨迹案例更新
+==================================================
+
+如果最终 best 相比 18000：
+
+overall FDE 提升 < 0.5%
+
+则：
+
+不重新画轨迹案例。
+
+如果提升 >= 0.5%：
+
+重新生成之前三个 motion case：
+
+vehicle
+pedestrian
+bicycle
+
+必须仍从真实 JSON/预测结果画。
+
+轨迹绘图规范：
+
+History：
+灰色圆点
+
+GT：
+黑色实线 + 方形 marker
+
+Best-FDE：
+蓝色实线 + 圆形 marker
+
+Top1：
+橙色虚线 + 三角 marker
+
+Tf=12：
+必须显示12个未来点
+
+转弯/明显分叉：
+自动加最后6个 future points 的 zoom inset
+
+不要画其余5个 mode到正文主图。
+
+==================================================
+十六、最终冻结判断
+==================================================
+
+本轮结束以后：
+
+无论：
+
+early stopping
+
+还是：
+
+达到21000最大预算
+
+都将 Stage3A baseline 正式冻结。
+
+最终写：
+
+Stage3A frozen = YES
+
+但 convergence 字段要真实区分：
+
+情况A：
+连续5次不改善
+
+converged_by_patience = YES
+
+情况B：
+到21000仍刷新best
+
+converged_by_patience = NO
+stopped_by_budget = YES
+
+这两种情况都允许：
+
+Stage3A frozen = YES
+
+因为已经达到预先规定的科学训练预算。
+
+不要再次延长训练。
+
+==================================================
+十七、Stage3B Ready 判定
+==================================================
+
+完成后：
+
+Ready for Stage3B Type Embedding = YES
+
+前提：
+
+NaN=0
+Inf=0
+checkpoint valid
+official VAL evaluation完成
+vehicle性能没有异常崩溃
+
+即使21000仍有小幅改善：
+
+也不再追加 No-Type baseline训练。
+
+Stage3B 必须使用同样的：
+
+最大训练预算
+validation interval
+checkpoint selection rule
+
+保证消融公平。
+
+==================================================
+十八、最终报告
+==================================================
+
+输出：
+
+09_reports/
+stage3a_final_frozen_report.md
+
+格式：
+
+【Training】
+
+Start step=18000
+Final executed step=
+Final best step=
+Stop reason=
+
+converged_by_patience=
+stopped_by_budget=
+
+【Final Overall】
+
+ADE=
+FDE=
+MR=
+Top1 ADE=
+Top1 FDE=
+
+【Per Class】
+
+Vehicle=
+Pedestrian=
+Bicycle=
+
+【Motion Groups】
+
+Vehicle >5m=
+Pedestrian >5m=
+Bicycle >5m=
+
+【Vehicle Retention】
+
+Stage2C vehicle-only=
+Stage3A final No-Type=
+relative change=
+
+【Interaction Dataset】
+
+直接引用冻结统计：
+
+20m mean neighbors:
+Vehicle=
+Pedestrian=
+Bicycle=
+
+V-V pairs=
+V-P pairs=
+V-B pairs=
+
+不要重新计算。
+
+【Scientific Decision】
+
+Stage3A frozen = YES
+
+Final baseline checkpoint=
+Final checkpoint SHA256=
+
+Ready for Stage3B Type Embedding = YES
+
+==================================================
+十九、Git
+==================================================
+
+建议 commit：
+
+exp: finalize Stage3A no-type convergence budget
+
+eval: freeze final Stage3A multi-type baseline
+
+docs: finalize Stage3A frozen report
+
+push：
+
+stage3/multitype-hivt
+
+不要 merge main。
+
+==================================================
+二十、本轮完成后停止
+==================================================
+
+完成后不要开始：
+
+Type Embedding
+
+只向用户汇报：
+
+final best step=
+final overall ADE/FDE/MR=
+vehicle FDE=
+pedestrian FDE=
+bicycle FDE=
+vehicle >5m FDE=
+pedestrian >5m FDE=
+bicycle >5m FDE=
+
+converged_by_patience=
+stopped_by_budget=
+
+Stage3A frozen=
+Ready Stage3B=
+
+Git commit=
