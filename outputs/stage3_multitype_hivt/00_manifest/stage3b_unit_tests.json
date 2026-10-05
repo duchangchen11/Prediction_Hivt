@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "Test1_actor_type_shape": true,
+  "Test2_only_012": true,
+  "invalid_input_rejections": 5,
+  "Test3_same_motion_different_types_differ": true,
+  "Test4_actor_only_type_lookup_no_lane_lookup": true,
+  "local_output_plus_type_equals_global_input": true,
+  "Test5_target_prediction_shape": [
+    9,
+    6,
+    12,
+    2
+  ],
+  "target_mode_probability_shape": [
+    9,
+    6
+  ],
+  "Test6_predictions_and_losses_NaN": 0,
+  "Test6_predictions_and_losses_Inf": 0,
+  "zero_TypeEmbedding_reproduces_unmodified_forward_max_difference": 9.5367431640625e-07,
+  "future_perturbation_invariance": true,
+  "per_class_type_embedding_gradient_norm": {
+    "vehicle": 1.163606882095337,
+    "pedestrian": 0.2562801241874695,
+    "bicycle": 0.2864261865615845
+  },
+  "additional_parameter_count": 192,
+  "tests_optimizer_updates": 0,
+  "trained_NoType_weights_loaded": false,
+  "all_attention_temporal_lane_and_decoder_modules_inherited_unchanged": true
+}

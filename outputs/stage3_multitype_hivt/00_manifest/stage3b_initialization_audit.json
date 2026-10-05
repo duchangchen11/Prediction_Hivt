@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "seed": 2022,
+  "shared_parameter_count": 645809,
+  "shared_parameter_tensor_count": 275,
+  "shared_parameter_hash": "6dc22c2b40defa29da3a9d4f61001b8bf51dc82567129143ce31c5b49ed14447",
+  "shared_state_hash": "f2843303f1531a43bb5646dd79df178258989c26eb6f63ea1c3effefa5da4322",
+  "max_shared_parameter_diff": 0.0,
+  "shared_buffers_bitwise_equal": true,
+  "type_embedding_shape": [
+    3,
+    64
+  ],
+  "type_embedding_init_std": 0.98341304063797,
+  "type_embedding_init": "nn.Embedding default normal; deterministic post-shared-construction RNG stream",
+  "type_embedding_initial_hash": "2e7242978c98fe2f3d825b95a35919a9489ff469711524872171fc7382414793",
+  "additional_parameter_count": 192,
+  "total_parameter_count": 646001,
+  "source": "fresh seed2022 No-Type constructor; no trained checkpoint loaded",
+  "NoType_trained_checkpoint_loaded": false,
+  "training_CPU_RNG_restored_to_NoType_post_constructor_state": true
+}

@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "initial": {
+    "overall": {
+      "count": 29,
+      "ADE": 7.380437729687526,
+      "FDE": 12.778314620256424,
+      "Top1ADE": 7.391249128456773,
+      "Top1FDE": 13.000222712755203,
+      "NLL": 5.83672638186093,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 13.352704730900852,
+      "FDE": 23.8482186794281,
+      "Top1ADE": 13.346834231506694,
+      "Top1FDE": 23.900526650927283,
+      "NLL": 10.134976766326211,
+      "fixed_scale_regression_loss": 9.269909222920736
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 1.7480834871530533,
+      "FDE": 2.2033454875151315,
+      "Top1ADE": 1.8003913462162018,
+      "Top1FDE": 2.4965417037407556,
+      "NLL": 2.1312334636847177,
+      "fixed_scale_regression_loss": 0.9131478766600291
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 7.6959900458653765,
+      "FDE": 13.6334287772576,
+      "Top1ADE": 7.6543920040130615,
+      "Top1FDE": 14.023694177468618,
+      "NLL": 5.367586513360341,
+      "fixed_scale_regression_loss": 4.343324402968089
+    }
+  },
+  "final": {
+    "overall": {
+      "count": 29,
+      "ADE": 0.03622183104142033,
+      "FDE": 0.041325407223133694,
+      "Top1ADE": 0.04474402822811028,
+      "Top1FDE": 0.05531752022818245,
+      "NLL": -2.5681390885649056,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 0.041260537268085914,
+      "FDE": 0.03511807616715404,
+      "Top1ADE": 0.04785692717202685,
+      "Top1FDE": 0.05093274146995761,
+      "NLL": -2.6030451492829756,
+      "fixed_scale_regression_loss": 0.030315934369961422
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 0.023320287466049194,
+      "FDE": 0.041909927424664296,
+      "Top1ADE": 0.0251757997709016,
+      "Top1FDE": 0.046111362908656396,
+      "NLL": -2.641802489757538,
+      "fixed_scale_regression_loss": 0.013731336376319328
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 0.052787290109942354,
+      "FDE": 0.05153647375603517,
+      "Top1ADE": 0.07817350374534726,
+      "Top1FDE": 0.08176859592398007,
+      "NLL": -2.356817841529846,
+      "fixed_scale_regression_loss": 0.018206652176255982
+    }
+  },
+  "criterion": "all three classes ADE/FDE/fixed-scale diagnostic decrease >=50%, TypeEmbedding gradient>0 everyupdate",
+  "warmup_steps": 1000,
+  "warmup_best_source_step": 1000,
+  "NLL_steps": 1000,
+  "global_steps": 2000,
+  "TypeEmbedding_gradient_norm_min": 0.005399416200816631,
+  "TypeEmbedding_gradient_norm_max": 0.7383540868759155,
+  "elapsed_seconds": 229.23727230900113,
+  "same_exact_Stage3A_tiny_windows": true,
+  "full_scene_context_preserved": true,
+  "train_only": true,
+  "model_discarded_for_formal_training": true,
+  "NaN": 0,
+  "Inf": 0,
+  "git_commit_SHA": "baf8b59b44047657dca0a64460dd4005c323af76"
+}

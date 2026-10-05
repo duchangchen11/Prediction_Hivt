@@ -1,0 +1,65 @@
+{
+  "status": "REGISTERED_BEFORE_TRAINING",
+  "seed": 2022,
+  "frozen_NoType_commit": "baf8b59b44047657dca0a64460dd4005c323af76",
+  "NoType_checkpoint_sha256": "e432906f8938f5e37e9f16816a90dac29734762d6e1cde51376aa2b7ef7648f8",
+  "NoType_actor_errors_sha256": "8b5b60ead1cb61bf92500f381709f92e449c29155633daa3258764b74bfa5e22",
+  "NoType_config_sha256": "1199e630be8fab71e5a2dc3f5a21a229d44aac949b27d003444eaed384f8f425",
+  "Type_config_sha256": "5afcf18547930f57af16eb7770709333a663365693b948079a945bde9bb3fa91",
+  "only_configuration_value_changed": "type_embedding: false -> true",
+  "model_change": {
+    "nn_Embedding": [
+      3,
+      64
+    ],
+    "additional_parameters": 192,
+    "insertion": "LocalEncoder output before GlobalInteractor",
+    "fusion": "local + type_embedding(agent_type)",
+    "decoder_receives_augmented_local": true
+  },
+  "shared_initialization": "Fresh No-Type seed2022 constructor; name/shape exact copy; no trained weights",
+  "formal_maximum_global_step": 21000,
+  "formal_fixed_scale_warmup_steps": 5000,
+  "formal_NLL_maximum_steps": 16000,
+  "warmup_to_NLL_transition": "Restore own best warm-up model+AdamW+RNG; lower LR to1e-4; reset NLL sampler cursor, as Stage3A",
+  "warmup_selection": "full-horizon official VAL overall minFDE6 strict improvement",
+  "final_selection": "post-update original-NLL full-horizon official VAL overall minFDE6 strict improvement",
+  "NLL_patience": 5,
+  "validation_interval": 500,
+  "optimizer_state_preserved_at_phase_transition": true,
+  "budget_note": "Execution limits follow this Stage3B request and actual Stage3A 5000+16000 budget; original frozen YAML historical maximum fields are preserved.",
+  "tiny_reuses_exact_Stage3A_windows": true,
+  "tiny_minimum_relative_ADE_FDE_regression_decrease": 0.5,
+  "bootstrap": {
+    "replicates": 1000,
+    "seed": 2022,
+    "resampling_unit": "paired VAL scene",
+    "scenes": 150,
+    "confidence": 0.95,
+    "weighting": "pool all actor-window deltas within resampled scene clusters"
+  },
+  "primary_endpoint": "Overall full-horizon minFDE6; delta=Type-NoType",
+  "scientific_decision": {
+    "SUPPORTED": "Overall deltaFDE<0 and its CI95 upper<0",
+    "PARTIAL": "Overall CI includes0, and Vehicle or Pedestrian deltaFDE CI95 upper<0, without significant overall harm",
+    "NOT_SUPPORTED": "Significant overall harm or no reliable main-group FDE improvement"
+  },
+  "auxiliary_Top1_improvement_does_not_change_primary_support_decision": true,
+  "bicycle_gt5_inference": "descriptive only; limited unique bicycle instances/scenes; no strong significance claim",
+  "Stage3B_PASS_rule": "Integration+tiny pass; unchanged data/hypers; finite completed training and freshVAL; exact pairing; all requested evidence audited, regardless of favorable effect",
+  "Ready_Stage4_rule": "Technical evidence complete and TypeEmbedding SUPPORTED/PARTIAL; otherwise NO; no Stage4 execution authorized",
+  "class_weights": false,
+  "oversampling": false,
+  "new_map_semantics": false,
+  "dynamic_interaction": false,
+  "test_used": false,
+  "Stage4_executed": false,
+  "training_source_sha256": {
+    "00_manifest/stage3b_model.py": "a92dd4cedfc3101987bd29a49824d0cf1de0ff23569a82661eaef8ab56786404",
+    "00_manifest/stage3b_common.py": "6a9a2d0dbdd4bce7a17722250c4376a30cab0b283f5a4ded7aa7507999a730da",
+    "03_type_embedding/stage3b_train.py": "badf88c01f8999eba00da1fe459429bb9b5be5ef8e5508c5f2b506ff0523fa14",
+    "03_type_embedding/stage3b_tiny.py": "227710c9cba8c21a3ad78915cde69b0fbbec2c128503c38d5cb45a0fc8ea8740"
+  },
+  "pretraining_unit_tests": "PASS",
+  "pretraining_tiny": "PASS"
+}

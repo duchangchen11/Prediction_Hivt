@@ -1,0 +1,1399 @@
+你现在开始执行：
+
+Stage 3B：Multi-Type HiVT + Type Embedding
+
+项目：
+/home/lrj/Prediction_Hivt
+
+Stage3A frozen baseline：
+branch = stage3/multitype-hivt
+commit = baf8b59b44047657dca0a64460dd4005c323af76
+
+Frozen No-Type checkpoint：
+outputs/stage3_multitype_hivt/07_checkpoints/
+stage3a_final_frozen_best_overall_minfde.pt
+
+Stage3A frozen overall：
+minADE6 = 0.670959 m
+minFDE6 = 1.364500 m
+MR6 = 0.166121
+Top1FDE6 = 2.723308 m
+
+==================================================
+一、Stage3B研究问题
+==================================================
+
+本轮只回答：
+
+“显式交通参与者类型信息是否能够提升统一多类型 HiVT
+对 vehicle / pedestrian / bicycle 的轨迹预测？”
+
+只允许增加：
+
+Type Embedding
+
+类型：
+
+0 = vehicle
+1 = pedestrian
+2 = bicycle
+
+禁止：
+
+- Type-aware Dynamic Interaction
+- 修改 A-A attention 公式
+- 修改 GlobalInteractor 公式
+- 新增 Intent Head
+- 类别加权
+- oversampling
+- class-balanced loss
+- 新增地图语义
+- 修改 decoder
+- 修改 K
+- Diffusion planning
+
+这必须是一个单变量消融实验。
+
+==================================================
+二、创建新分支
+==================================================
+
+从 frozen commit：
+
+baf8b59b44047657dca0a64460dd4005c323af76
+
+创建：
+
+stage3b/type-embedding
+
+不要继续修改：
+
+stage3/multitype-hivt
+
+不要 merge main。
+
+==================================================
+三、结果目录
+==================================================
+
+继续使用统一 Stage3 根目录：
+
+/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/
+
+不要重新建立新的 Stage3 根目录。
+
+Stage3B 文件统一使用：
+
+stage3b_
+
+前缀。
+
+继续分类保存：
+
+00_manifest/
+04_evaluation/
+05_figures/
+06_tables/
+07_checkpoints/
+08_logs/
+09_reports/
+
+训练曲线可新增：
+
+03_type_embedding/
+
+不要覆盖 Stage3A 文件。
+
+==================================================
+四、最重要：模型修改必须最小化
+==================================================
+
+新增：
+
+nn.Embedding(
+    num_embeddings=3,
+    embedding_dim=64
+)
+
+记：
+
+e_type = E_type(agent_type)
+
+类型映射：
+
+vehicle = 0
+pedestrian = 1
+bicycle = 2
+
+不要 one-hot 直接拼接 raw x/y。
+
+不要修改轨迹输入维度。
+
+==================================================
+五、Type Embedding插入位置
+==================================================
+
+为了保证 Stage3B 只是“类型特征消融”，
+不要修改原始 A-A interaction。
+
+推荐固定插入位置：
+
+LocalEncoder 输出 actor local embedding 后，
+进入 GlobalInteractor 之前。
+
+即：
+
+local_embed = LocalEncoder(...)
+
+type_embed = TypeEmbedding(agent_type)
+
+local_embed_type =
+    local_embed + type_embed
+
+然后：
+
+GlobalInteractor(local_embed_type, ...)
+
+后面的 decoder 使用增强后的 actor representation。
+
+也就是说：
+
+Stage3A：
+
+motion/map/local interaction
+        ↓
+local actor embedding
+        ↓
+GlobalInteractor
+
+Stage3B：
+
+motion/map/local interaction
+        ↓
+local actor embedding
+        +
+type embedding
+        ↓
+GlobalInteractor
+
+这样 Stage3B 不改变：
+
+A-A interaction
+TemporalEncoder
+A-L interaction
+
+Stage4 才真正研究：
+
+Type-aware Dynamic Interaction。
+
+==================================================
+六、禁止改成concat版本
+==================================================
+
+本轮只使用：
+
+h_i = h_i_motion + E_type(c_i)
+
+不要：
+
+concat(h, type)
+→ MLP
+
+不要：
+
+gate
+
+不要：
+
+attention
+
+不要：
+
+type-specific decoder
+
+否则变量太多。
+
+==================================================
+七、初始化公平性审计
+==================================================
+
+Stage3B 必须从头训练。
+
+禁止：
+
+从 Stage3A final trained checkpoint
+加载训练后的 shared weights 再 fine-tune。
+
+否则不是公平的结构消融。
+
+要求：
+
+Stage3A 和 Stage3B 的公共参数在 step=0
+具有一致初始化。
+
+实现方式：
+
+1. seed 与 Stage3A 相同：
+   seed = 2022
+
+2. 构造 No-Type 模型得到公共参数初始 state
+
+3. 构造 Type 模型
+
+4. 将名称和 shape 相同的 shared parameters
+   初始化为完全相同的值
+
+5. 只让新增加的 TypeEmbedding 随机初始化
+
+检查：
+
+max_abs_diff(shared_initial_parameters) = 0
+
+保存：
+
+00_manifest/
+stage3b_initialization_audit.json
+
+必须包含：
+
+seed
+shared_parameter_count
+shared_parameter_hash
+max_shared_parameter_diff
+type_embedding_shape
+type_embedding_init_std
+
+要求：
+
+max_shared_parameter_diff = 0
+
+==================================================
+八、代码单元测试
+==================================================
+
+训练前测试：
+
+Test 1：
+agent_type shape 正确。
+
+Test 2：
+vehicle/pedestrian/bicycle ID 只允许：
+0/1/2。
+
+Test 3：
+同一个 motion embedding，
+改变 type ID 后：
+
+enhanced actor embedding 必须不同。
+
+Test 4：
+TypeEmbedding 不作用于 lane node。
+
+Test 5：
+模型输出仍然：
+
+pred_traj:
+[N_target, 6, 12, 2]
+
+mode_prob:
+[N_target, 6]
+
+Test 6：
+No NaN / Inf。
+
+测试不通过：
+
+立即停止。
+
+==================================================
+九、Tiny Overfit
+==================================================
+
+先做 Stage3B tiny。
+
+使用与 Stage3A tiny 尽量相同的场景和 targets。
+
+至少：
+
+vehicle >= 10
+pedestrian >= 10
+bicycle >= 5
+
+验证：
+
+Vehicle ADE/FDE下降
+Pedestrian ADE/FDE下降
+Bicycle ADE/FDE下降
+
+另外检查：
+
+TypeEmbedding gradient norm > 0
+
+如果：
+
+type_embedding gradient = 0
+
+说明类型信息没有进入训练路径，
+立即停止排查。
+
+保存：
+
+04_evaluation/
+stage3b_tiny_overfit.json
+
+==================================================
+十、正式训练协议必须和Stage3A一致
+==================================================
+
+数据：
+
+official train = 700 scenes
+official val = 150 scenes
+test unused
+
+Th = 5
+Tf = 12
+K = 6
+embed_dim = 64
+batch size = 16
+
+使用 Stage3A frozen config。
+
+除：
+
+type_embedding=True
+
+之外不改变任何训练超参数。
+
+==================================================
+十一、训练阶段
+==================================================
+
+完全复用 Stage3A 两阶段训练：
+
+Phase 1：
+
+fixed-scale location warm-up
+
+保持和 Stage3A 相同：
+
+warm-up budget = 5000 global steps
+
+目的：
+
+先学习轨迹位置。
+
+Phase 2：
+
+original learnable-scale Laplace NLL
+
+从：
+
+global step 5000
+
+继续。
+
+==================================================
+十二、统一最大预算
+==================================================
+
+Stage3B 最大：
+
+global step = 21000
+
+这和 frozen Stage3A 完全一致。
+
+不得因为 Stage3B 还在改善就继续：
+
+21500
+22000
+...
+
+Stage3A 和 Stage3B 必须使用相同科学训练预算。
+
+==================================================
+十三、Validation规则
+==================================================
+
+每：
+
+500 optimizer steps
+
+跑一次完整 official VAL。
+
+checkpoint selection：
+
+full-horizon
+overall minFDE6
+strict improvement
+
+保持与 Stage3A 完全一致。
+
+==================================================
+十四、Early Stop
+==================================================
+
+NLL phase：
+
+连续5次完整 VAL
+overall minFDE6 不改善
+
+允许 early stop。
+
+但是最大：
+
+global step=21000
+
+无论如何必须停止。
+
+记录：
+
+converged_by_patience
+stopped_by_budget
+
+==================================================
+十五、训练曲线
+==================================================
+
+保存：
+
+03_type_embedding/
+stage3b_training_curve.csv
+
+stage3b_loss_curve.png
+stage3b_val_fde_curve.png
+
+训练指标：
+
+total loss
+regression loss
+classification loss
+
+VAL FDE：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+vehicle.moving
+
+不做曲线平滑。
+
+每一个点必须是真实 500-step validation。
+
+==================================================
+十六、正式主指标
+==================================================
+
+与 Stage3A 完全一致：
+
+minADE@6
+minFDE@6
+MR@6
+
+MR：
+
+endpoint error > 2m
+
+同时：
+
+Top1ADE6
+Top1FDE6
+NLL
+
+定义不能改变。
+
+==================================================
+十七、正式主结果分组
+==================================================
+
+Full-horizon：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+Vehicle继续：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+输出：
+
+06_tables/
+stage3b_type_embedding_main_results.csv
+
+==================================================
+十八、有效运动指标
+==================================================
+
+必须重新计算：
+
+Vehicle >5m
+
+Pedestrian >1m
+Pedestrian >5m
+
+Bicycle >1m
+Bicycle >5m
+
+指标：
+
+Count
+UniqueInstances
+UniqueScenes
+
+minADE6
+minFDE6
+MR6
+
+Top1ADE6
+Top1FDE6
+
+保存：
+
+06_tables/
+stage3b_nontrivial_motion_metrics.csv
+
+这是论文判断 TypeEmbedding 是否真正有效的重要指标。
+
+不能只比较 overall。
+
+==================================================
+十九、最重要的No-Type vs Type对比表
+==================================================
+
+生成：
+
+06_tables/
+stage3b_type_embedding_ablation.csv
+
+格式：
+
+Group
+NoType_minADE6
+Type_minADE6
+Delta_ADE
+Relative_ADE_change
+
+NoType_minFDE6
+Type_minFDE6
+Delta_FDE
+Relative_FDE_change
+
+NoType_MR6
+Type_MR6
+Delta_MR
+
+NoType_Top1FDE6
+Type_Top1FDE6
+Delta_Top1FDE
+
+定义：
+
+Delta =
+TypeEmbedding - NoType
+
+所以：
+
+Delta < 0
+表示 TypeEmbedding 更好。
+
+比较：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+vehicle.moving
+Vehicle >5m
+Pedestrian >5m
+Bicycle >5m
+
+==================================================
+二十、必须逐actor严格配对
+==================================================
+
+Stage3A 和 Stage3B：
+
+official VAL actors 必须完全相同。
+
+检查：
+
+scene_token
+sample_token
+instance_token
+future mask
+agent type
+GT trajectory
+
+完全一致。
+
+任何 actor mismatch：
+
+停止统计。
+
+保存：
+
+04_evaluation/
+stage3b_pairing_audit.json
+
+要求：
+
+paired full-horizon actors = 54990
+
+如果不是：
+
+立即报告。
+
+==================================================
+二十一、Bootstrap统计检验
+==================================================
+
+对：
+
+TypeEmbedding - NoType
+
+做：
+
+paired scene-cluster bootstrap
+
+VAL scenes = 150
+replicates = 1000
+seed = 2022
+
+主比较：
+
+Overall:
+ΔADE
+ΔFDE
+ΔTop1FDE
+
+Vehicle:
+ΔADE
+ΔFDE
+
+Pedestrian:
+ΔADE
+ΔFDE
+
+vehicle.moving:
+ΔFDE
+
+Vehicle >5m:
+ΔFDE
+
+Pedestrian >5m:
+ΔFDE
+
+输出：
+
+04_evaluation/
+stage3b_bootstrap_ci.json
+
+06_tables/
+stage3b_bootstrap_ci.csv
+
+95% CI。
+
+定义：
+
+负值有利于 Type Embedding。
+
+==================================================
+二十二、Bicycle统计解释
+==================================================
+
+Bicycle overall 可以 bootstrap。
+
+但是：
+
+Bicycle >5m
+
+只有很少独立 instances/scenes。
+
+所以只做描述性结果。
+
+不要对 Bicycle >5m 做强显著性结论。
+
+报告必须写：
+
+limited unique bicycle instances/scenes
+
+不能将132个重叠 actor-window
+当132个独立实验样本。
+
+==================================================
+二十三、预先确定科学判断规则
+==================================================
+
+Primary endpoint：
+
+Overall full-horizon minFDE6
+
+如果：
+
+ΔFDE < 0
+
+并且 paired scene bootstrap
+95% CI 全部 < 0
+
+则：
+
+Type Embedding overall supported = YES
+
+如果 overall CI 跨0，
+但：
+
+Vehicle 或 Pedestrian
+存在稳定改善，
+且相应 CI < 0，
+
+同时 overall 没有显著变差，
+
+则：
+
+Type Embedding = PARTIAL
+
+如果：
+
+overall显著变差
+
+或所有主要组都没有可靠改善，
+
+则：
+
+Type Embedding supported = NO
+
+不要训练结束以后再修改判断标准。
+
+==================================================
+二十四、注意Top1指标
+==================================================
+
+必须重点观察：
+
+minFDE
+
+vs
+
+Top1FDE
+
+因为 frozen Stage3A 存在：
+
+候选轨迹中存在好模式，
+
+但最高概率模式不一定正确。
+
+尤其：
+
+vehicle.moving
+
+No-Type：
+
+minFDE ≈ 4.83m
+Top1FDE ≈ 10.80m
+
+所以需要判断 Type Embedding 是否改善：
+
+“模式排序能力”。
+
+如果：
+
+minFDE变化小
+
+但：
+
+Top1FDE明显下降
+
+这也是一个有价值的结果。
+
+但必须明确：
+
+这是 probability/mode ranking 改善，
+不是 oracle coverage 明显改善。
+
+==================================================
+二十五、画图总原则
+==================================================
+
+这次不要再生成：
+
+一张图塞很多 mode
+很多文字
+很多小面板
+
+正式论文图要清楚。
+
+所有图：
+
+只能从真实 JSON / CSV 绘制。
+
+禁止：
+
+人工改轨迹
+平滑
+手动画示意数据
+生成式图片冒充实验结果
+
+每张重要图：
+
+PNG
+PDF
+SVG
+
+同时保留 source JSON/CSV。
+
+==================================================
+二十六、图1：训练收敛比较
+==================================================
+
+画：
+
+05_figures/
+stage3b_training_comparison.png
+
+横轴：
+
+global step
+
+纵轴：
+
+overall minFDE6
+
+只画两条：
+
+Stage3A No-Type
+Stage3B Type Embedding
+
+同一坐标范围。
+
+不平滑。
+
+每500 step一个 marker。
+
+明确标：
+
+No-Type frozen best
+Type best
+
+用于说明训练公平性。
+
+==================================================
+二十七、图2：Per-Class FDE消融
+==================================================
+
+画：
+
+stage3b_per_class_fde_comparison.png
+
+Group：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+每组两根柱：
+
+No-Type
+Type Embedding
+
+纵轴：
+
+minFDE6 (m)
+
+柱顶直接显示数值。
+
+不要把 ADE/FDE/MR/Top1 全塞到这张图。
+
+==================================================
+二十八、图3：Top1 FDE比较
+==================================================
+
+单独画：
+
+stage3b_top1_fde_comparison.png
+
+Group：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+Vehicle >5m
+Pedestrian >5m
+
+两组：
+
+No-Type
+TypeEmbedding
+
+纵轴：
+
+Top1FDE6 (m)
+
+目的：
+
+检查 Type Embedding 是否改善 mode ranking。
+
+==================================================
+二十九、图4：Paired Delta FDE
+==================================================
+
+画：
+
+stage3b_paired_delta_fde.png
+
+定义：
+
+ΔFDE =
+Type - NoType
+
+横向0线必须明显。
+
+分别展示：
+
+Vehicle
+Pedestrian
+Bicycle
+
+actor-level delta 可用：
+
+boxplot / compact distribution
+
+但论文解释必须说明：
+
+actor windows并非完全独立，
+正式置信区间来自 scene-cluster bootstrap。
+
+图只用于看分布。
+
+==================================================
+三十、定性对比图
+==================================================
+
+必须是：
+
+同一个 scene
+同一个 actor
+同一个 GT
+同一个坐标范围
+
+比较：
+
+No-Type
+vs
+Type Embedding
+
+不要拿两个不同案例比较。
+
+至少选择：
+
+1个 Vehicle >5m 明显改善案例
+
+1个 Pedestrian >5m 明显改善案例
+
+1个退化案例
+
+如果存在有代表性的 V-P interaction：
+
+再选1个 V-P interaction case。
+
+命名：
+
+stage3b_vehicle_improvement_case_001.png
+stage3b_pedestrian_improvement_case_001.png
+stage3b_degradation_case_001.png
+stage3b_vp_interaction_case_001.png
+
+==================================================
+三十一、每个定性案例怎么画
+==================================================
+
+建议使用两列：
+
+左：
+No-Type
+
+右：
+Type Embedding
+
+两边保持：
+
+完全相同 xlim
+完全相同 ylim
+equal aspect
+
+只画：
+
+History
+GT
+Best-FDE
+Top1
+
+正文图不画其他5个mode。
+
+==================================================
+三十二、轨迹线型统一
+==================================================
+
+History：
+
+灰色圆点
+linewidth=1.5
+
+GT：
+
+黑色实线
+方形 marker
+linewidth=2.5
+zorder=10
+
+Best-FDE：
+
+蓝色实线
+圆形 marker
+linewidth=2.5
+zorder=11
+
+Top1：
+
+橙色虚线
+三角 marker
+linewidth=2.0
+zorder=9
+
+每条 future：
+
+12个 timestep
+必须显示12个 marker。
+
+==================================================
+三十三、终点必须标
+==================================================
+
+每一侧图都显示：
+
+Best FDE = xx.xx m
+
+Top1 FDE = xx.xx m
+
+不要在轨迹附近放过多文字。
+
+建议数值放：
+
+子图右上角的小文本框。
+
+避免挡住轨迹。
+
+==================================================
+三十四、局部放大
+==================================================
+
+只有：
+
+明显转弯
+crossing
+轨迹重合难辨
+
+才加 inset。
+
+自动根据：
+
+GT最后6点
+Best最后6点
+Top1最后6点
+
+计算 bounding box。
+
+不要硬编码坐标。
+
+==================================================
+三十五、地图绘制
+==================================================
+
+HD Map只作为淡灰色背景。
+
+alpha低。
+
+linewidth约0.5。
+
+地图不能抢视觉重点。
+
+只绘制目标轨迹 bounding box 附近 lane。
+
+不要因为远处 lane
+导致坐标轴扩大几十米。
+
+==================================================
+三十六、案例选择原则
+==================================================
+
+Improvement case：
+
+优先使用：
+
+NoType FDE较大
+Type FDE明显降低
+
+同时：
+
+GT displacement >5m
+
+不要选 parked vehicle 当“成功案例”。
+
+Degradation case：
+
+选择：
+
+Type FDE明显高于 NoType
+
+用于真实展示局限。
+
+不要只挑好看的结果。
+
+==================================================
+三十七、绘图数值审计
+==================================================
+
+每张正式轨迹图生成前：
+
+重新计算：
+
+NoType best ADE/FDE
+NoType Top1 ADE/FDE
+
+Type best ADE/FDE
+Type Top1 ADE/FDE
+
+与 source CSV/JSON：
+
+误差 < 1e-4
+
+否则：
+
+不生成正式图。
+
+对应保存：
+
+xxx_audit.json
+
+==================================================
+三十八、Type Embedding可视化
+==================================================
+
+额外输出一个简单分析：
+
+05_figures/
+stage3b_type_embedding_similarity.png
+
+计算训练后3个 embedding：
+
+E_vehicle
+E_pedestrian
+E_bicycle
+
+报告：
+
+L2 norm
+
+cosine similarity：
+
+vehicle-pedestrian
+vehicle-bicycle
+pedestrian-bicycle
+
+不要使用 t-SNE。
+
+因为只有3个向量，
+t-SNE没有意义。
+
+这张图只做辅助分析。
+
+不要把 embedding 距离直接解释成物理语义。
+
+==================================================
+三十九、最终报告
+==================================================
+
+输出：
+
+09_reports/
+stage3b_final_report.md
+
+格式：
+
+【Model Change】
+
+Type embedding dim=
+Insertion point=
+Fusion=
+Additional parameter count=
+
+【Training】
+
+Warm-up steps=
+NLL steps=
+Best global step=
+Stop reason=
+
+【Main Results】
+
+                 No-Type       Type       Delta
+Overall FDE=
+Vehicle FDE=
+Pedestrian FDE=
+Bicycle FDE=
+
+【Top1】
+
+Overall=
+Vehicle=
+Pedestrian=
+Bicycle=
+
+【Nontrivial Motion】
+
+Vehicle >5m=
+Pedestrian >5m=
+Bicycle >5m=
+
+【Bootstrap】
+
+Overall ΔFDE=
+95% CI=
+
+Vehicle ΔFDE=
+95% CI=
+
+Pedestrian ΔFDE=
+95% CI=
+
+Vehicle >5m ΔFDE=
+95% CI=
+
+Pedestrian >5m ΔFDE=
+95% CI=
+
+【Qualitative】
+
+Vehicle improvement=
+Pedestrian improvement=
+Degradation=
+V-P interaction=
+
+【Scientific Decision】
+
+Type Embedding =
+SUPPORTED / PARTIAL / NOT SUPPORTED
+
+Reason=
+
+Stage3B =
+PASS / FAIL
+
+Ready for Stage4 Type-aware Dynamic Interaction =
+YES / NO
+
+==================================================
+四十、Stage3B结束后不要继续Stage4
+==================================================
+
+完成 Stage3B 后停止。
+
+不要自行执行：
+
+Type-aware Dynamic Interaction
+
+不要做：
+
+class-balanced loss
+
+不要做：
+
+Intent Head
+
+等用户和“大脑AI”审查 Stage3B 结果后，
+再决定下一阶段。
+
+==================================================
+四十一、Git
+==================================================
+
+建议 commits：
+
+feat: add participant type embedding to multitype HiVT
+
+test: validate type embedding integration
+
+exp: train Stage3B type embedding baseline
+
+eval: compare type embedding against frozen no-type baseline
+
+docs: finalize Stage3B type embedding report
+
+push：
+
+stage3b/type-embedding
+
+不要 merge main。
+
+==================================================
+四十二、完成后只汇报这些
+==================================================
+
+Git commit=
+
+Best global step=
+
+Overall:
+NoType FDE=
+Type FDE=
+Delta=
+
+Vehicle:
+NoType=
+Type=
+
+Pedestrian:
+NoType=
+Type=
+
+Bicycle:
+NoType=
+Type=
+
+Vehicle >5m:
+NoType=
+Type=
+
+Pedestrian >5m:
+NoType=
+Type=
+
+Bicycle >5m:
+NoType=
+Type=
+
+Top1 overall:
+NoType=
+Type=
+
+Bootstrap overall ΔFDE 95%CI=
+
+Bootstrap vehicle ΔFDE 95%CI=
+
+Bootstrap pedestrian ΔFDE 95%CI=
+
+TypeEmbedding=
+SUPPORTED / PARTIAL / NOT SUPPORTED
+
+Stage3B=
+PASS / FAIL
+
+Ready Stage4=
+YES / NO
