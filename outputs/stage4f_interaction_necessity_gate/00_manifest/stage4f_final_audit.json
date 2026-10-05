@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "Stage4F": "PASS",
+  "initialization_gradient_tiny_checks": "PASS",
+  "fresh_full_VAL_and_pairing": "PASS",
+  "official_train700_val150_test_unused": true,
+  "training_sources_unchanged": true,
+  "old_roots_and_scene_shards_unchanged": true,
+  "gate_only_history_no_future_GT": true,
+  "attention_topology_frozen_complete_graph": true,
+  "gate_feature_neighbor_radius_m": 50,
+  "formal_warmup_updates": 5000,
+  "formal_NLL_updates": 12500,
+  "best_global_step": 15000,
+  "stop_reason": "patience_5",
+  "efficiency500paired_verified": true,
+  "figure_exports": [
+    {
+      "name": "stage4f_case_degradation.png",
+      "PNG_dimensions": [
+        3240,
+        1318
+      ],
+      "SVG_text_nodes": 58,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    },
+    {
+      "name": "stage4f_case_low_motion_pedestrian_recovery.png",
+      "PNG_dimensions": [
+        3240,
+        1677
+      ],
+      "SVG_text_nodes": 76,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    },
+    {
+      "name": "stage4f_case_moving_pedestrian.png",
+      "PNG_dimensions": [
+        3240,
+        1919
+      ],
+      "SVG_text_nodes": 79,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    },
+    {
+      "name": "stage4f_case_moving_vehicle_retention.png",
+      "PNG_dimensions": [
+        3240,
+        1222
+      ],
+      "SVG_text_nodes": 61,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    },
+    {
+      "name": "stage4f_gate_distribution_by_group.png",
+      "PNG_dimensions": [
+        2160,
+        1140
+      ],
+      "SVG_text_nodes": 22,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    },
+    {
+      "name": "stage4f_interaction_context_comparison.png",
+      "PNG_dimensions": [
+        2160,
+        1080
+      ],
+      "SVG_text_nodes": 25,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    },
+    {
+      "name": "stage4f_pedestrian_motion_bin_comparison.png",
+      "PNG_dimensions": [
+        2160,
+        1860
+      ],
+      "SVG_text_nodes": 34,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    },
+    {
+      "name": "stage4f_three_model_fde_comparison.png",
+      "PNG_dimensions": [
+        2160,
+        1080
+      ],
+      "SVG_text_nodes": 25,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    },
+    {
+      "name": "stage4f_training_comparison.png",
+      "PNG_dimensions": [
+        2160,
+        1140
+      ],
+      "SVG_text_nodes": 24,
+      "PDF_selectable_text": true,
+      "PDF_no_Type3": true
+    }
+  ],
+  "manual_visual_QA": "PASS",
+  "artifact_prefix": "stage4f_",
+  "new_root_isolated": true,
+  "full": 54990,
+  "partial": 30037,
+  "total": 85027,
+  "scientific_decision_separate_from_technical_PASS": true,
+  "no_second_innovation": true
+}

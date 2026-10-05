@@ -1,0 +1,13 @@
+Population,Feature,Spearman_rho,Descriptive_p_value,Count,Interpretation
+full_horizon,log1p_recent_displacement,0.8063072532807966,0.0,54990,"descriptive association, not causal; overlapping windows"
+full_horizon,log1p_history_net_displacement,0.8227615745247469,0.0,54990,"descriptive association, not causal; overlapping windows"
+full_horizon,log1p_history_path_length,0.8296537122642298,0.0,54990,"descriptive association, not causal; overlapping windows"
+full_horizon,log1p_neighbor_count,0.23450010722354597,0.0,54990,"descriptive association, not causal; overlapping windows"
+full_horizon,min_neighbor_distance_div50,-0.009737313205708701,0.02240699513288416,54990,"descriptive association, not causal; overlapping windows"
+full_horizon,heterogeneous_neighbor_fraction,0.39979195009088003,0.0,54990,"descriptive association, not causal; overlapping windows"
+all_current_valid_context,log1p_recent_displacement,0.8082051787506793,0.0,91092,"descriptive association, not causal; overlapping windows"
+all_current_valid_context,log1p_history_net_displacement,0.8237567101156333,0.0,91092,"descriptive association, not causal; overlapping windows"
+all_current_valid_context,log1p_history_path_length,0.830113705673966,0.0,91092,"descriptive association, not causal; overlapping windows"
+all_current_valid_context,log1p_neighbor_count,0.25376917426757706,0.0,91092,"descriptive association, not causal; overlapping windows"
+all_current_valid_context,min_neighbor_distance_div50,-0.02896571485801059,2.2502401247571437e-18,91092,"descriptive association, not causal; overlapping windows"
+all_current_valid_context,heterogeneous_neighbor_fraction,0.38987246444586104,0.0,91092,"descriptive association, not causal; overlapping windows"

@@ -1,0 +1,926 @@
+{
+  "stage": "Stage4F",
+  "root": "/home/lrj/Prediction_Hivt/outputs/stage4f_interaction_necessity_gate",
+  "self_hash_excluded": true,
+  "old_roots_read_only": true,
+  "artifacts": [
+    {
+      "relative_path": "00_manifest/stage4f_common.py",
+      "size_bytes": 3573,
+      "sha256": "dd920563e43cbd6be7cc61fdc9f8e6d71091c556d1eadfc467770ac7f0f2eac7",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_config.yaml",
+      "size_bytes": 1829,
+      "sha256": "4477ddbbb6931c0d6bcd68d450d44ca0f62631a8aac0102a97c7a57aaac83b8b",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_figure_contract.json",
+      "size_bytes": 1639,
+      "sha256": "d20feaa5c960fca476940b23fe828b7402994b9c232dddac3e0c23c66f793c71",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_final_audit.json",
+      "size_bytes": 2820,
+      "sha256": "69277088ff00e5dd70caf739abf521737f15c66c63722c7eeece3d75b4d4d466",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_frozen_references.json",
+      "size_bytes": 135766,
+      "sha256": "0125f5ad81665e13ca5f11808adae6478d9be6503c67c18d3618a9eef2a90674",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_global_interactor.py",
+      "size_bytes": 5190,
+      "sha256": "7587c30bb40ca62f5dca4a04ef921fd67f195d0a787fcb727c3aa64994be6245",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_initialization_audit.json",
+      "size_bytes": 1027,
+      "sha256": "ee3f4e6d2c27f94aadedd6838a1403a725c1b19df08ebc7af5e5b55023cd8aae",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_model.py",
+      "size_bytes": 868,
+      "sha256": "fce142cd5472d119117edfa03b1582f96a284dcb65d1ec41a6c81b6352eb1f1e",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_neutral_initialization_audit.json",
+      "size_bytes": 488,
+      "sha256": "c50cf1054136d1ccb78b875d1e6750824d140491f442c6c90e50f2d81396b2e1",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_phase_transition_audit.json",
+      "size_bytes": 515,
+      "sha256": "9379f0d489984e3fb3f95a937a4ae7cf21a2924c1c425f55f96d6ac120f6eddc",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_preregistration.json",
+      "size_bytes": 3634,
+      "sha256": "7f857824e2904fa8bd1f4b8b9acf9dca9df5a283dc9a9610666df91bd1cc2f01",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_protocol_audit.json",
+      "size_bytes": 408,
+      "sha256": "000abfad7a5bf966e18710620d8a1ad78a72d18402da806d3fb3ea91829f357b",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_requirements.txt",
+      "size_bytes": 29358,
+      "sha256": "91317e8c8c4f126868ff759866caaaa8df7022e54ad087cf1d30313ad13b35ba",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_resume_audit.py",
+      "size_bytes": 2732,
+      "sha256": "89d872f974224b8d63e1513e4a6a32eb63ac72b336416f70a7ee94cb6daa207e",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_target_gate_audit.py",
+      "size_bytes": 2856,
+      "sha256": "2147819be53c37aff568dc0d58f01445dc728d4e7895041e43d5b3e7a093fa30",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_tiny_selection.json",
+      "size_bytes": 1637,
+      "sha256": "37ace8f5c45e271f3f1774fb9cdd1984d85615945c22589cf3a76c9158f9ac12",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_training_registration.json",
+      "size_bytes": 356,
+      "sha256": "41f751ae37ddbf7330b0d089738f939547b63d0e9985621c1192663f89d5c2da",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_training_sources.json",
+      "size_bytes": 566,
+      "sha256": "1962117a7f3dee9760dddbb9e1f0d7dc0c299c7d181debaa958ec9b31b46a13b",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "00_manifest/stage4f_unit_tests.json",
+      "size_bytes": 881,
+      "sha256": "a53f5fd51d576e39ab3e5c22eac5bbb2a1068f97b66fee3aa05340aa1bf26f23",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "01_data_audit/stage4f_evaluation_group_selection_audit.json",
+      "size_bytes": 453,
+      "sha256": "aa05223e4351293b3ffcf06edbbd8a95692103677887ab366a12f9d5a45d00b3",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "01_data_audit/stage4f_offline_subgroup_registration.json",
+      "size_bytes": 1191,
+      "sha256": "24f23babe1713c86bc5a920487e01b80027e44e957844bd6ef408571a0df3d7d",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "02_preprocessed/stage4f_input_references.json",
+      "size_bytes": 427,
+      "sha256": "e27d2464c5a67bfa72ac8f14d743016df2c7c8adfa6d0bd51b65d5468f14b88f",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "03_training/stage4f_audits_tiny.py",
+      "size_bytes": 11726,
+      "sha256": "809fe96632d8e9ce2451d4cd8f5a5d65b5052085d89fe4eb17403dbc7fd29717",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "03_training/stage4f_nll_summary.json",
+      "size_bytes": 663,
+      "sha256": "512c6b47d806949295a7d936167232e52b4d54d4391274ee7241b1747529a2b4",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "03_training/stage4f_tiny_curve.csv",
+      "size_bytes": 1050,
+      "sha256": "29e0219b6a503e8596e814655959f34bfc1c17c6ed946e7d21e1de6e98ddcf4a",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "03_training/stage4f_train.py",
+      "size_bytes": 15328,
+      "sha256": "e5f81fdc431200cebe890910fd19e31d651bf4c5a2e20d084a8aa17378bf488e",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "03_training/stage4f_training_curve.csv",
+      "size_bytes": 47256,
+      "sha256": "336a102a0dd28962be76d74146ebbc854697339cdfef283158d9b27483638454",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "03_training/stage4f_training_summary.json",
+      "size_bytes": 3711,
+      "sha256": "bf068e1d779f98d95768436d597c85b47b91bab5b92a8316ff97abb5f34e49bd",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "03_training/stage4f_warmup_summary.json",
+      "size_bytes": 662,
+      "sha256": "3e7e2ac7ad23cd39d5ff69dd50f02d5f2291bd63ae9c36d4d0355d1c7e602f37",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_actor_errors.csv",
+      "size_bytes": 31819816,
+      "sha256": "01f7625d033884cce6e8e551b56336ebe817f3bf2a73b3f4ef2dbbdb2300ee4d",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_actor_gates.csv",
+      "size_bytes": 24565503,
+      "sha256": "3ce22d4cd3b6c7be007ff6d810b6cc30de8aaef0d4b3cc776393880a86851daa",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_bootstrap_ci.json",
+      "size_bytes": 10677,
+      "sha256": "d2bf0adf29cbfaee06105fca97636081d92a2b82ab1325385b106f8887ffdee7",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_case_degradation.json",
+      "size_bytes": 169766,
+      "sha256": "ffb5367db9cc10aabe6fd0bd9fcadace6c23ee8cf611cd8c0eefdaec629a778b",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_case_low_motion_pedestrian_recovery.json",
+      "size_bytes": 141223,
+      "sha256": "bb8164de08b8db7c5a80c9f0cde3011fbcac48fb4a622b7eb8bd8408b5818b3a",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_case_moving_pedestrian.json",
+      "size_bytes": 96414,
+      "sha256": "e7aad83fdfd45a2bb33ca624898cbcceac9080788bea6270db3d9189e6e724ab",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_case_moving_vehicle_retention.json",
+      "size_bytes": 170050,
+      "sha256": "94c16ebaed9f11e2b5af8f1ca28b9281c42471b753c4ee3bc00f8d3d75a511ee",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_checkpoint_resume_audit.json",
+      "size_bytes": 856,
+      "sha256": "a279b4707ef9661989bd203df2c2ef7cb147e34ac5a6e7fdfacfda599c006cd9",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_efficiency.py",
+      "size_bytes": 5199,
+      "sha256": "8d26c321731c4662462e6c4b74e083331a4d459bc1f13310121b9d841ad434e7",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_efficiency_audit.json",
+      "size_bytes": 2270,
+      "sha256": "c46501b83a72e6a20ccbd86d06512abad6afadbfb31c5c3b06c05bc46946b912",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_evaluate.py",
+      "size_bytes": 14820,
+      "sha256": "d0bf773c933167b1ca559e3a1e9f12129c8721fc67e19485d7b8c15acb7709e2",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_fresh_val_reconciliation.json",
+      "size_bytes": 8082,
+      "sha256": "e879211850bf5faa52f0b34ea8d45bad4db9b5ac683eae7283356028bb2e2cb7",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_gate_statistics.json",
+      "size_bytes": 8211,
+      "sha256": "8afde18505ee97141627efb1ffa132a5212226e35b06958c083dc9ded804d529",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_gradient_audit.json",
+      "size_bytes": 3134,
+      "sha256": "860996226512fa385334bf314c9821026272f71679714013e57ccb78efce2421",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_metrics.json",
+      "size_bytes": 795597,
+      "sha256": "b5e55e843fa62575f9ff44017781c3aa27a4f76512e647119f3c590feb3d697a",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_pairing_audit.json",
+      "size_bytes": 733,
+      "sha256": "662dcbf7708154eace6a999c859310cd1dbcf9fab2f9058557e482338fc86262",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_qualitative_case_manifest.json",
+      "size_bytes": 2589,
+      "sha256": "17c5561d16a047bcddb1c5a24e1fa92d02a3f5904675c8ab7f71aca197d36e38",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_scientific_decision.json",
+      "size_bytes": 469,
+      "sha256": "004aa29d37cf5e4bf90224c7cb9e1c523b8e8590e14596b2b877a126cc1ff151",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_target_gate_broadcast_audit.json",
+      "size_bytes": 688,
+      "sha256": "2680502a8ae01b8e18145edd5da7479b84c84a72124374f12c06e4a4c67c1723",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_tiny_overfit.json",
+      "size_bytes": 3048,
+      "sha256": "cafd9b1155dd170779f451d64dcc8225ea6f5477a57ddc8af2d5d3a81c7c9c55",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_00500.json",
+      "size_bytes": 791312,
+      "sha256": "0748f9839c065626560cc60fd8173b7abdd8409a1579afbeb4b5e429702ddd1c",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_01000.json",
+      "size_bytes": 792378,
+      "sha256": "a5886f9aca0a7fbeb3a1c8864746933b92c59690275dd4b13381e8447ae9a96f",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_01500.json",
+      "size_bytes": 792994,
+      "sha256": "1a07020c6674302c16b68754fe57bd81aa9ccacbdc8bdb881bed45f4d505f97d",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_02000.json",
+      "size_bytes": 793293,
+      "sha256": "3436d0aed57f2c1e0a8c7d2f7808ea221655eff6c43ff749a21715abe96e35e1",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_02500.json",
+      "size_bytes": 792963,
+      "sha256": "10d205f13488489c48476029371a92a3a6e709c0594028778ca0f9ad72bd87ad",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_03000.json",
+      "size_bytes": 792457,
+      "sha256": "a434d081c0216a66cee31e91445291f625d43bde75a995913cf3178aaf32eb5c",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_03500.json",
+      "size_bytes": 792986,
+      "sha256": "ad8e68ab69d85f2756924bc84c4ece81e143571fccd48fa9b83460c17ed42335",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_04000.json",
+      "size_bytes": 792361,
+      "sha256": "d8a46de14b13f13bd273760d80ad1c154c8b25bebb099459fe93f735120923be",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_04500.json",
+      "size_bytes": 792378,
+      "sha256": "ce0e6231199b587e3ac3f1fdc740a3b8538d951e185615e11532c1aca2dd4a77",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_05000.json",
+      "size_bytes": 793069,
+      "sha256": "8892399d8a306034d8471eba5865de0ca1c767beac3fd6dfe30913e4eb4ea4e7",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_05500.json",
+      "size_bytes": 795150,
+      "sha256": "57b3a17e5fe834647f222f1269afe6172e16f9308d15c70e27f87163a2f32371",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_06000.json",
+      "size_bytes": 795077,
+      "sha256": "9303f0f46b1f22149f9e15b25439c547428edd8ceefb22186bf72532c43638f9",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_06500.json",
+      "size_bytes": 795071,
+      "sha256": "40265f6cafb809b64623604f1085f9d14f342d558397b60145dde4891dce15f5",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_07000.json",
+      "size_bytes": 795035,
+      "sha256": "403a68d7817bdbace0d71f92e6fcf3548015d8b542ec7289b7e47d9873ad0182",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_07500.json",
+      "size_bytes": 795147,
+      "sha256": "d4991abceb8d9b258fe5144d369c226c5abb5b22e87bd3304b11a2ddebc9f0ce",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_08000.json",
+      "size_bytes": 795155,
+      "sha256": "9a1b1d965ca1db8eae72425634c4fcbcb17096a6008d19e32bc617ed63916ce7",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_08500.json",
+      "size_bytes": 795436,
+      "sha256": "1b23b27c689c861a1bb1745ca2917a2ef6d8a5bc0144fe4d94391af68a4730e2",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_09000.json",
+      "size_bytes": 795290,
+      "sha256": "86c1423c419e92ca177e4469b34870477958b1cdb8c3a8d5dbb1ccbdc485c095",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_09500.json",
+      "size_bytes": 795375,
+      "sha256": "25e74c504394a7348eecb16117df4eba7b5fe5382222744605983a750b78c232",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_10000.json",
+      "size_bytes": 795322,
+      "sha256": "efa62c50e9372784027a7d5ea8cf5aa9197db59341f46a3b6106def731e5dc7f",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_10500.json",
+      "size_bytes": 795148,
+      "sha256": "d75ef4e907252dec91c82ad16bd7ecbb8f91de7c6604a5fc4f8b524f932eb7f1",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_11000.json",
+      "size_bytes": 795140,
+      "sha256": "851b6e809c923f2a285e08b9ccea133a5a50c53195eb58de3655e09fd04933b5",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_11500.json",
+      "size_bytes": 795356,
+      "sha256": "11772151ee474305354697d7bedbf1b9f8f5446db5d2c0e9eca6aba8dd733516",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_12000.json",
+      "size_bytes": 795183,
+      "sha256": "30b3b31e60d2570705e27feb5cd7921fefce9a7c5c0fe4835fe0004cdbcdd08b",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_12500.json",
+      "size_bytes": 795319,
+      "sha256": "4fea4e721804f335d6d843ab34e5aa2953e7a8da5473c92a1d682a1ddb0df106",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_13000.json",
+      "size_bytes": 795584,
+      "sha256": "c89f90028085c71d9df057824ba244d2f97c2a7a0edd669f21f9c7e749a72542",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_13500.json",
+      "size_bytes": 795019,
+      "sha256": "ec8e87aa4b0e381f3cb7ac39244e821e82fb8fea08443b8ef65018e15ffa57c3",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_14000.json",
+      "size_bytes": 795107,
+      "sha256": "818e92fcc2b9fb3b0f846ef9c7e56dee3fa4f39d6947468ff0e46cd1e8fdd277",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_14500.json",
+      "size_bytes": 795341,
+      "sha256": "83c723e1d5cf7faaea6c53b94764b94dd843cad85b9444a8568b9be49b734ea5",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_15000.json",
+      "size_bytes": 795384,
+      "sha256": "a26d6ed092c0f2a2b88da046a8b04425ea2d55663c5c89bc88cc7b9743ef792c",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_15500.json",
+      "size_bytes": 795309,
+      "sha256": "60fc36d72b57e00cbab6ff4fa814df1fd47cee244a87b7975a066d89a1d1ce4f",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_16000.json",
+      "size_bytes": 795491,
+      "sha256": "f926bca1f996549b591433d29965edfce84b814f400935f0d1bdc7f0f27240f3",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_16500.json",
+      "size_bytes": 795494,
+      "sha256": "8df39afb138b19fba18232ddaa91d1679b7bcc6d1e35be63aa4799fe1a5f216b",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_17000.json",
+      "size_bytes": 795246,
+      "sha256": "359159678e0621f52e5b80ac21a1f3e31200250964b9bf188d305a71f92cf808",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/stage4f_val_step_17500.json",
+      "size_bytes": 795369,
+      "sha256": "ef258e7556327e5b31677d73eb2406dbd64b09ab71ee0afe1892dff56de29be4",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_degradation.pdf",
+      "size_bytes": 31234,
+      "sha256": "49282a40053784b3232026fef7c8f70601d9ca4000eae8c94aecc745c1de8391",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_degradation.png",
+      "size_bytes": 287746,
+      "sha256": "92a518d07a88eaf1482c9c704abbaff82578011e483e40ae5c88eed12dcfe049",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_degradation.svg",
+      "size_bytes": 145306,
+      "sha256": "f5739920fd295ea8a47499f5afba5c75eb73f214b64b17d410f66a62f589e3c7",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_degradation_audit.json",
+      "size_bytes": 3693,
+      "sha256": "9b3f6c941b8b62bc4865dddd69c9de8ad871f193a4b38b72be040e1fd118f061",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_low_motion_pedestrian_recovery.pdf",
+      "size_bytes": 30839,
+      "sha256": "68765edcecd36e94eea60b0db84eea4ae586983a3365ac216f433db07c2c4080",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_low_motion_pedestrian_recovery.png",
+      "size_bytes": 331863,
+      "sha256": "6be74c26564d8f362243aa5f273b3785b14ac98fb87bc7f66c9af4f2efc35730",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_low_motion_pedestrian_recovery.svg",
+      "size_bytes": 113094,
+      "sha256": "f21749d94876da45c9a97313b1b9a3f1c14213b2d628b8143dd54353423bd08a",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_low_motion_pedestrian_recovery_audit.json",
+      "size_bytes": 3745,
+      "sha256": "1eab5ec8694f474102f89032430667baf0b6e574767bb13871fe9fc9a9e2ff9c",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_moving_pedestrian.pdf",
+      "size_bytes": 30488,
+      "sha256": "f6eed849663ec9d8236d142db24635ff4f9c45a3335ffaa0c84b0ab90b553185",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_moving_pedestrian.png",
+      "size_bytes": 321117,
+      "sha256": "c6da966dd50cfaf34f324bbae6dacf2a3242f0c955d9ca1871a6e70eadf0a756",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_moving_pedestrian.svg",
+      "size_bytes": 103430,
+      "sha256": "1bff178b4fe0d61b60b9f2381f569617953362805d21c86d87823a81a56d0bb6",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_moving_pedestrian_audit.json",
+      "size_bytes": 3711,
+      "sha256": "d465f4b5792a8cf39d5bef27f4f3fa132e2f2a01a6024dfd92bfb4ec78deb2da",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_moving_vehicle_retention.pdf",
+      "size_bytes": 30710,
+      "sha256": "126b98487a463b541538e20805601edef3c2ecb002e0006b68f433d2b3c15c59",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_moving_vehicle_retention.png",
+      "size_bytes": 260585,
+      "sha256": "f98fc8ddfec7a963b8ee84321b1c68cdd9a7568f611a57edeb591e0d81245e09",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_moving_vehicle_retention.svg",
+      "size_bytes": 140768,
+      "sha256": "e92deebc3e1f6af6dc3f1baca3b61209ba5efdcb7ae64e4268ef228e59af5499",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_case_moving_vehicle_retention_audit.json",
+      "size_bytes": 3733,
+      "sha256": "866c7ba0b21b3d05085cf5bfcf4168a4403464b7a5406934c1f65372530836a4",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_cases.py",
+      "size_bytes": 10349,
+      "sha256": "aaec2c27ec6b875bfa1083caab0101b0a472a3cfff2590f1f54ad535aec20b10",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_gate_distribution_by_group.pdf",
+      "size_bytes": 15141,
+      "sha256": "18d01b6a96dbc243dc50b41352f90f24395745850db1cd20a7544f1d6d2ffccd",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_gate_distribution_by_group.png",
+      "size_bytes": 114368,
+      "sha256": "c9f7420afea02bd963980c87ca18c1accebf82d55b526ff20fee76e14e7f7969",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_gate_distribution_by_group.svg",
+      "size_bytes": 14504,
+      "sha256": "2206eb008f455fcf3f591682cea3f73a0ead4340942719ff5416178fcc0ff2a5",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_gate_distribution_by_group_audit.json",
+      "size_bytes": 839,
+      "sha256": "2020cb2507c7531ca7f5e43b1d50871873b804ad0123e1b72cbb10361e6cb9e1",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_interaction_context_comparison.pdf",
+      "size_bytes": 14995,
+      "sha256": "a4bc1c097729493da44a9a3df002c064408ab55fcf19f31af41aac139bab5aaa",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_interaction_context_comparison.png",
+      "size_bytes": 98031,
+      "sha256": "3bdc7ee0762c2462fa7b82928efbe328061a331f5c79cfe30c8589dff928e32e",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_interaction_context_comparison.svg",
+      "size_bytes": 9715,
+      "sha256": "2f9371d947141ee00f5dc9fb138f166aa146b82a349b7620f5cbfb89821de14d",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_interaction_context_comparison_audit.json",
+      "size_bytes": 743,
+      "sha256": "d91e71a6ea58b29494123a9454a06d11058dbbb3df8e8a446aad0bb45505fcee",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_manual_visual_qa.json",
+      "size_bytes": 3192,
+      "sha256": "79413f32661bd2ec225015752b1da1a99791a585b98abedbc1ee0bab891947b2",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_pedestrian_motion_bin_comparison.pdf",
+      "size_bytes": 17530,
+      "sha256": "086793bfac5bf9cbe9449cd4c94c2a15fa63737ba735038d9d6997982a082fa3",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_pedestrian_motion_bin_comparison.png",
+      "size_bytes": 257990,
+      "sha256": "137cb186bdf377902758a28b773a85f336e808af7c452eeda491eae47473933b",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_pedestrian_motion_bin_comparison.svg",
+      "size_bytes": 25492,
+      "sha256": "c06836f93b2fa70efaf0d4b38bec66eb5216991de59ecef14ad85c80e38ca820",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_pedestrian_motion_bin_comparison_audit.json",
+      "size_bytes": 1074,
+      "sha256": "de7263da977e6d62a0bc8fc2a2d02eabdf6df2e6190fcafe54a9340c873e0da0",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_quantitative.py",
+      "size_bytes": 8996,
+      "sha256": "c84b6aed89a75b840f648f67a799395144bec074d15ec436c9b4aec3790e0ce1",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_three_model_fde_comparison.pdf",
+      "size_bytes": 14435,
+      "sha256": "c02e8da5876abbdda783fb65106369c7d4a08de107f0814843e51fd880c435c4",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_three_model_fde_comparison.png",
+      "size_bytes": 95114,
+      "sha256": "dfe2d861d829f1ccbc031760d78b55157a437b95f24254df0f8a1de098df0862",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_three_model_fde_comparison.svg",
+      "size_bytes": 10628,
+      "sha256": "99cf8e066c79bd9e04bca7a4f3638a5af12c9e3447ddaf7fadfd6da525353b0f",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_three_model_fde_comparison_audit.json",
+      "size_bytes": 731,
+      "sha256": "da3e7a8771e9a24c8523df4319faed4a284fa468927633ad3c79ea0cba9a3a69",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_training_comparison.pdf",
+      "size_bytes": 16650,
+      "sha256": "53147375d6131b3d3211f4dbf25cefe596c052cefd1064c6859136b7d4c5c347",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_training_comparison.png",
+      "size_bytes": 141619,
+      "sha256": "dd99b868c804a13fad9f06b5661c874f34855ed3a889714189e9e3bd5124ff26",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_training_comparison.svg",
+      "size_bytes": 25292,
+      "sha256": "00625beda3320326dc652fe20d009ed832e98cee60b1f566a9634d5087aa8cf9",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4f_training_comparison_audit.json",
+      "size_bytes": 1074,
+      "sha256": "01b61ca7cd494bf36cb1700889d4b4eebc7a3c0ebe27b9e9717ce7fb54380169",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_bootstrap_ci.csv",
+      "size_bytes": 4390,
+      "sha256": "e6938b455d7d608d42519ab6071fb5e9d0edd589f6176a85052cf15aac6f23f7",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_efficiency.csv",
+      "size_bytes": 448,
+      "sha256": "260794a0d82afc70903c4fd634b0cca29b803b3d39a527563af60d676c040899",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_efficiency_batch_timings.csv",
+      "size_bytes": 61277,
+      "sha256": "b843fa8c0254719403b5211591dcb9a34b1575b40f41546c0a3ebc1d185af685",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_gate_feature_correlations.csv",
+      "size_bytes": 1734,
+      "sha256": "ad45a3dad4ffa8bb5c2b7717e60f8d5a35434b2e10658bccc2ebcf86b26767b1",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_gate_statistics.csv",
+      "size_bytes": 3187,
+      "sha256": "bb3c221902e322f442c9bcbee1419d250aa630f7926d65eadcaf370e0bf4d81c",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_interaction_subgroup_metrics.csv",
+      "size_bytes": 2926,
+      "sha256": "dfd700b92d06838f9893ce60f50d121d8ddc82953f6128b32bf96f33cff19c94",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_low_motion_recovery.csv",
+      "size_bytes": 1695,
+      "sha256": "09d6f1b16b66f5d941438861afdd31bf3a119bd2afcf84aceaa2c73623f7322f",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_main_results.csv",
+      "size_bytes": 3622,
+      "sha256": "2da4e6824091055f001f0a1df89973c59664d1e587de5c0a59f00c851265fa8f",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_nontrivial_motion_metrics.csv",
+      "size_bytes": 3444,
+      "sha256": "db701d1ebeb56e15fe990db107a7a0cda6eab53a357d51cf6c234494bd258950",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_pedestrian_motion_bin_ablation.csv",
+      "size_bytes": 3548,
+      "sha256": "66f39a360c5953be3cff864cc3661cc1be370a3ef9faaec435afe91c5e8b481f",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4f_three_model_ablation.csv",
+      "size_bytes": 14652,
+      "sha256": "67658ef0040baf763168b4925964b3a8e393e44cdfddc2d8575164bfae7a2321",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "07_checkpoints/stage4f_best_checkpoint_manifest.json",
+      "size_bytes": 3711,
+      "sha256": "bf068e1d779f98d95768436d597c85b47b91bab5b92a8316ff97abb5f34e49bd",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "07_checkpoints/stage4f_best_overall_minfde.pt",
+      "size_bytes": 8165728,
+      "sha256": "89f2bc886bd5e1cc2a78a05e07c9761d3317f4677237a458ea35450e4f56e110",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "07_checkpoints/stage4f_last_checkpoint.pt",
+      "size_bytes": 8161140,
+      "sha256": "227373603e4a906fc851e4519970526e2c752bd7454f4df655e362ddc5b68afc",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "07_checkpoints/stage4f_nll_last_checkpoint.pt",
+      "size_bytes": 8165728,
+      "sha256": "9760048dbbf0559137e400f1ccfbb1c5f6104dc9135b05f857a40b51279753af",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "07_checkpoints/stage4f_tiny_last.pt",
+      "size_bytes": 2709898,
+      "sha256": "d1c54c833b3dc9b5784cbbf24e4c89a37a611f38465a65312a895463f4befbb8",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "07_checkpoints/stage4f_warmup_best_overall.pt",
+      "size_bytes": 8165728,
+      "sha256": "c929ddabef965da5f527ad0c69ebaa156d648e83999fcc17c6292c66ceff23cc",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "07_checkpoints/stage4f_warmup_last_checkpoint.pt",
+      "size_bytes": 8169169,
+      "sha256": "35f8fea1e5b779b7feb7634769b3f700ba64f9d035992e6ed28daa5088de1271",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_audits_tiny.log",
+      "size_bytes": 4761,
+      "sha256": "630e27125bccb035e51a40e8ee955858268fc801bd69a0d04b4872341c387ad4",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_cases.log",
+      "size_bytes": 2361,
+      "sha256": "2a0a23d5a5edcd826c0d15154d7b0fdd4bf9bec3404b8e2c79b0ab13919f36ca",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_commands.sh",
+      "size_bytes": 957,
+      "sha256": "b2b074165f1af5d8a35ce758ad0b9c56d730e24f0e6c5bf7479ae2c23fae135a",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "08_logs/stage4f_efficiency.log",
+      "size_bytes": 2351,
+      "sha256": "1dbf8abfb7302dfd6be65d54128722f87da7f613e5a2ab580ee1aa527b164cf9",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_evaluation.log",
+      "size_bytes": 1003,
+      "sha256": "a14779a856fcc653761dc33d17a6c45d9d21e5d3c583fdc5678de8c5de24818e",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_finalize.log",
+      "size_bytes": 26,
+      "sha256": "9ae37e5cf260410289ad11b1b7b37f1009fe1da20ef65b18d909edcf96ab3faf",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_formal_training.log",
+      "size_bytes": 19087,
+      "sha256": "7177e04516e892dfe4d68e9f0f930e158476f2044348ceab14a20567b9501bf1",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_quantitative.log",
+      "size_bytes": 26,
+      "sha256": "2f9a5b7eca2c338ba25547d95092fe0d647c9e6f55add0d1bc346042b6734aa5",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_resume_audit.log",
+      "size_bytes": 286,
+      "sha256": "48f15af7ab9300f21107be7ddcfa32311260f68d79c495424402ae1b646e231f",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "08_logs/stage4f_target_gate_audit.log",
+      "size_bytes": 302,
+      "sha256": "781b16563a0c2642e8c6e9f5647a3b24ee332b414de2d3175a8363f2ef59e2da",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "09_reports/stage4f_final_report.md",
+      "size_bytes": 15871,
+      "sha256": "6d6bf88bf81e9e8c6562e902890993b3a06ec03868bbf5310afa9c7d4044fea1",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "09_reports/stage4f_finalize.py",
+      "size_bytes": 18649,
+      "sha256": "9d01823b80186e9e9b23622a00c908dfbcc04ebfd50ada8dc24e06513b61fc9c",
+      "git_eligible": true
+    }
+  ]
+}

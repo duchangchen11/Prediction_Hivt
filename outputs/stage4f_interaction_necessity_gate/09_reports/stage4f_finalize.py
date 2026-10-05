@@ -65,13 +65,15 @@ def technical_audit():
         fonts=subprocess.check_output(['pdffonts',str(pdf)]).decode();assert 'Type 3' not in fonts
         exports.append({'name':p.name,'PNG_dimensions':dimensions,'SVG_text_nodes':len(texts),'PDF_selectable_text':True,'PDF_no_Type3':True})
     assert len(exports)>=9
+    visual=read_json(ROOT/'05_figures/stage4f_manual_visual_qa.json');assert visual['status']=='PASS' and len(visual['figures'])==len(exports)
+    for row in visual['figures']:assert row['visually_reviewed'] and sha256(ROOT/row['file'])==row['sha256']
     scientific=read_json(ROOT/'04_evaluation/stage4f_scientific_decision.json')
     assert scientific['STOP'] and not scientific['Reliability_executed'] and not scientific['additional_seeds_executed']
     result={'status':'PASS','Stage4F':'PASS','initialization_gradient_tiny_checks':'PASS','fresh_full_VAL_and_pairing':'PASS',
         'official_train700_val150_test_unused':True,'training_sources_unchanged':True,'old_roots_and_scene_shards_unchanged':True,
         'gate_only_history_no_future_GT':True,'attention_topology_frozen_complete_graph':True,'gate_feature_neighbor_radius_m':50,
         'formal_warmup_updates':5000,'formal_NLL_updates':train['NLL_steps'],'best_global_step':train['best_global_step'],
-        'stop_reason':train['stop_reason'],'efficiency500paired_verified':True,'figure_exports':exports,
+        'stop_reason':train['stop_reason'],'efficiency500paired_verified':True,'figure_exports':exports,'manual_visual_QA':'PASS',
         'artifact_prefix':'stage4f_','new_root_isolated':True,'full':54990,'partial':30037,'total':85027,
         'scientific_decision_separate_from_technical_PASS':True,'no_second_innovation':True}
     atomic_json(ROOT/'00_manifest/stage4f_final_audit.json',result)
@@ -145,4 +147,4 @@ def inventory():
 
 
 if __name__=='__main__':
-    technical_audit();report();inventory();print('STAGE4F_FINALIZATION_PASS',flush=True)
+    technical_audit();report();print('STAGE4F_FINALIZATION_PASS',flush=True);inventory()

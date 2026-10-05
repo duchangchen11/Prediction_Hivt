@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "GPU": "NVIDIA GeForce RTX 3080",
+  "torch": "2.5.1+cu124",
+  "CUDA": "12.4",
+  "paired_measurements": 500,
+  "execution_order": "cycle through all6 permutations of B/C/D, same preloaded GPU batch per triplet",
+  "timing": "CUDA events around eval forward; I/O, H2D and external input clone excluded; actual model-internal clone included equally",
+  "memory": "separate untimed single-GPU-model pass; warm20, empty_cache, reset_peak, all226 VAL batches",
+  "models": [
+    {
+      "Model": "Stage3B",
+      "parameters": 646001,
+      "mean_inference_ms": 56.683775733947755,
+      "median_inference_ms": 53.27886390686035,
+      "std_inference_ms": 22.83555953441245,
+      "paired_measurements": 500,
+      "warmup_batches": 20,
+      "peak_CUDA_memory_MiB": 1735.67138671875,
+      "peak_reserved_MiB": 3410.0
+    },
+    {
+      "Model": "Stage4A",
+      "parameters": 647609,
+      "mean_inference_ms": 57.43139203643799,
+      "median_inference_ms": 53.50232124328613,
+      "std_inference_ms": 24.48337897879163,
+      "paired_measurements": 500,
+      "warmup_batches": 20,
+      "peak_CUDA_memory_MiB": 1735.6787109375,
+      "peak_reserved_MiB": 3410.0
+    },
+    {
+      "Model": "Stage4F",
+      "parameters": 647786,
+      "mean_inference_ms": 59.520855976104734,
+      "median_inference_ms": 55.42523193359375,
+      "std_inference_ms": 25.715670892145635,
+      "paired_measurements": 500,
+      "warmup_batches": 20,
+      "peak_CUDA_memory_MiB": 1735.68115234375,
+      "peak_reserved_MiB": 3410.0
+    }
+  ],
+  "isolated_memory": {
+    "Stage3B": {
+      "allocated_bytes": 1819983360,
+      "reserved_bytes": 3575644160,
+      "unique_VAL_batches": 226,
+      "GPU_model_count": 1
+    },
+    "Stage4A": {
+      "allocated_bytes": 1819991040,
+      "reserved_bytes": 3575644160,
+      "unique_VAL_batches": 226,
+      "GPU_model_count": 1
+    },
+    "Stage4F": {
+      "allocated_bytes": 1819993600,
+      "reserved_bytes": 3575644160,
+      "unique_VAL_batches": 226,
+      "GPU_model_count": 1
+    }
+  },
+  "gate_parameters": 177,
+  "mean_overhead_D_vs_B_percent": 5.00510102833156,
+  "mean_overhead_D_vs_C_percent": 3.638191354200604,
+  "source_csv_sha256": "b843fa8c0254719403b5211591dcb9a34b1575b40f41546c0a3ebc1d185af685"
+}

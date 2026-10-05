@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "Stage3B",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 1.788701444456141,
+        "minFDE6": 3.8167714198969,
+        "Top1ADE6": 10.869293939075305,
+        "Top1FDE6": 26.318841574525777
+      },
+      "metric_differences": {
+        "minADE6": 8.981509913574826e-08,
+        "minFDE6": 8.736628354100162e-08,
+        "Top1ADE6": 7.261846803885419e-07,
+        "Top1FDE6": 3.596783244574908e-07
+      }
+    },
+    {
+      "method": "Stage4A",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 3.4278921828209223,
+        "minFDE6": 7.750455230993555,
+        "Top1ADE6": 11.023186434055896,
+        "Top1FDE6": 26.553224839808326
+      },
+      "metric_differences": {
+        "minADE6": 6.899772944102267e-07,
+        "minFDE6": 3.666204736241241e-06,
+        "Top1ADE6": 7.040754272935601e-07,
+        "Top1FDE6": 2.7620969333952416e-07
+      }
+    },
+    {
+      "method": "Stage4F",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 4.999848245303202,
+        "minFDE6": 11.967959689828543,
+        "Top1ADE6": 10.99807161715943,
+        "Top1FDE6": 26.52897703931079
+      },
+      "metric_differences": {
+        "minADE6": 3.5635666861821846e-07,
+        "minFDE6": 2.858368439717651e-07,
+        "Top1ADE6": 1.8539758368518733e-06,
+        "Top1FDE6": 4.413578366779802e-06
+      }
+    }
+  ],
+  "same_actor_and_GT": true,
+  "same_xy_limits": true,
+  "xlim": [
+    -62.624958229064944,
+    -26.190618324279786
+  ],
+  "ylim": [
+    -12.061478805541991,
+    13.361913871765136
+  ],
+  "12_future_markers_each_trace": true,
+  "equal_aspect": true,
+  "compact_data_derived_rectangle": true,
+  "inset_last6_points": false,
+  "no_smoothing_or_interpolation": true,
+  "gate_from_history_only": true,
+  "exports_sha256": {
+    "05_figures/stage4f_case_degradation.png": "92a518d07a88eaf1482c9c704abbaff82578011e483e40ae5c88eed12dcfe049",
+    "05_figures/stage4f_case_degradation.pdf": "49282a40053784b3232026fef7c8f70601d9ca4000eae8c94aecc745c1de8391",
+    "05_figures/stage4f_case_degradation.svg": "f5739920fd295ea8a47499f5afba5c75eb73f214b64b17d410f66a62f589e3c7"
+  },
+  "source_json_sha256": "ffb5367db9cc10aabe6fd0bd9fcadace6c23ee8cf611cd8c0eefdaec629a778b"
+}

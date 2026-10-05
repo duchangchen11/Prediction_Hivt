@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "sources_sha256": {
+    "04_evaluation/stage4f_actor_gates.csv": "3ce22d4cd3b6c7be007ff6d810b6cc30de8aaef0d4b3cc776393880a86851daa",
+    "06_tables/stage4f_gate_statistics.csv": "bb3c221902e322f442c9bcbee1419d250aa630f7926d65eadcaf370e0bf4d81c"
+  },
+  "exports_sha256": {
+    "05_figures/stage4f_gate_distribution_by_group.png": "c9f7420afea02bd963980c87ca18c1accebf82d55b526ff20fee76e14e7f7969",
+    "05_figures/stage4f_gate_distribution_by_group.pdf": "18d01b6a96dbc243dc50b41352f90f24395745850db1cd20a7544f1d6d2ffccd",
+    "05_figures/stage4f_gate_distribution_by_group.svg": "2206eb008f455fcf3f591682cea3f73a0ead4340942719ff5416178fcc0ff2a5"
+  },
+  "PNG_dimensions": [
+    2160,
+    1140
+  ],
+  "editable_SVG_text": true,
+  "all_labels_inside_canvas": true,
+  "no_smoothing": true,
+  "actual_data_only": true
+}

@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "moving_vehicle_retention",
+      "case_kind": "Moving vehicle: retained gain",
+      "actor_key": [
+        "57dc3221a3d845b5ab17ff0f98ce336f",
+        "146a1aefbfdd4b83828c1a1ba64a1470",
+        "abd95020531d43599dd31839342be454",
+        "full_horizon"
+      ],
+      "source_json": "04_evaluation/stage4f_case_moving_vehicle_retention.json",
+      "source_sha256": "94c16ebaed9f11e2b5af8f1ca28b9281c42471b753c4ee3bc00f8d3d75a511ee",
+      "gate": 0.20820043981075287,
+      "B_FDE": 9.54739538070398,
+      "C_FDE": 2.8786915861934976,
+      "D_FDE": 4.0705571764880775
+    },
+    {
+      "name": "low_motion_pedestrian_recovery",
+      "case_kind": "Low-motion pedestrian: recovery example",
+      "actor_key": [
+        "112ca771e318478a88cfa692f61ffcac",
+        "f6cb281807244d7f8043e73b66ccb5e1",
+        "fc171de031f5467fa1983b82bfaf3187",
+        "full_horizon"
+      ],
+      "source_json": "04_evaluation/stage4f_case_low_motion_pedestrian_recovery.json",
+      "source_sha256": "bb8164de08b8db7c5a80c9f0cde3011fbcac48fb4a622b7eb8bd8408b5818b3a",
+      "gate": 0.2131672352552414,
+      "B_FDE": 2.2838068149104296,
+      "C_FDE": 3.6272812400085646,
+      "D_FDE": 1.5125077321991893
+    },
+    {
+      "name": "moving_pedestrian",
+      "case_kind": "Moving pedestrian: learned interaction gate",
+      "actor_key": [
+        "93608f0d57794ba6b014314c488e2b4a",
+        "b6354702127042f6b3a3ca6143296331",
+        "b962720ed52541c182407991760d1e9f",
+        "full_horizon"
+      ],
+      "source_json": "04_evaluation/stage4f_case_moving_pedestrian.json",
+      "source_sha256": "e7aad83fdfd45a2bb33ca624898cbcceac9080788bea6270db3d9189e6e724ab",
+      "gate": 0.3077552318572998,
+      "B_FDE": 5.342905764751493,
+      "C_FDE": 5.28543617578075,
+      "D_FDE": 5.328464540675353
+    },
+    {
+      "name": "degradation",
+      "case_kind": "Real degradation relative to Stage3B",
+      "actor_key": [
+        "57dc3221a3d845b5ab17ff0f98ce336f",
+        "39ae634791ef4f89bcd4ba6436e2e458",
+        "4bc1135f466a494b8974df23f2087aff",
+        "full_horizon"
+      ],
+      "source_json": "04_evaluation/stage4f_case_degradation.json",
+      "source_sha256": "ffb5367db9cc10aabe6fd0bd9fcadace6c23ee8cf611cd8c0eefdaec629a778b",
+      "gate": 0.18769274652004242,
+      "B_FDE": 3.8167714198969,
+      "C_FDE": 7.750455230993555,
+      "D_FDE": 11.967959689828543
+    }
+  ],
+  "count": 4,
+  "matched_triptychs": true,
+  "selected_after_quantitative_lock": true,
+  "purposive_examples_not_causal_or_representative": true
+}

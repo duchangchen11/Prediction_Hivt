@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "Stage3B",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 2.290596226376476,
+        "minFDE6": 5.342905764751493,
+        "Top1ADE6": 2.2838030532819875,
+        "Top1FDE6": 5.5179994256572815
+      },
+      "metric_differences": {
+        "minADE6": 2.0342884266000283e-08,
+        "minFDE6": 2.3347848721044784e-07,
+        "Top1ADE6": 1.7128161111656937e-07,
+        "Top1FDE6": 2.534465881609549e-07
+      }
+    },
+    {
+      "method": "Stage4A",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 2.3221349461000496,
+        "minFDE6": 5.28543617578075,
+        "Top1ADE6": 2.2645961472503404,
+        "Top1FDE6": 5.472081977536204
+      },
+      "metric_differences": {
+        "minADE6": 2.551860278643403e-08,
+        "minFDE6": 2.2368884522450116e-08,
+        "Top1ADE6": 1.6183774276257168e-07,
+        "Top1FDE6": 3.1631183894376136e-07
+      }
+    },
+    {
+      "method": "Stage4F",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 2.3769757753981726,
+        "minFDE6": 5.328464540675353,
+        "Top1ADE6": 2.3141292302855363,
+        "Top1FDE6": 5.683785789599797
+      },
+      "metric_differences": {
+        "minADE6": 6.331579704976775e-10,
+        "minFDE6": 3.261871217574708e-08,
+        "Top1ADE6": 1.2228404377978563e-07,
+        "Top1FDE6": 1.257749584482326e-07
+      }
+    }
+  ],
+  "same_actor_and_GT": true,
+  "same_xy_limits": true,
+  "xlim": [
+    -4.063436269760132,
+    7.339309215545654
+  ],
+  "ylim": [
+    0.6156007051467896,
+    14.377745628356934
+  ],
+  "12_future_markers_each_trace": true,
+  "equal_aspect": true,
+  "compact_data_derived_rectangle": true,
+  "inset_last6_points": true,
+  "no_smoothing_or_interpolation": true,
+  "gate_from_history_only": true,
+  "exports_sha256": {
+    "05_figures/stage4f_case_moving_pedestrian.png": "c6da966dd50cfaf34f324bbae6dacf2a3242f0c955d9ca1871a6e70eadf0a756",
+    "05_figures/stage4f_case_moving_pedestrian.pdf": "f6eed849663ec9d8236d142db24635ff4f9c45a3335ffaa0c84b0ab90b553185",
+    "05_figures/stage4f_case_moving_pedestrian.svg": "1bff178b4fe0d61b60b9f2381f569617953362805d21c86d87823a81a56d0bb6"
+  },
+  "source_json_sha256": "e7aad83fdfd45a2bb33ca624898cbcceac9080788bea6270db3d9189e6e724ab"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "sources_sha256": {
+    "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/03_type_embedding/stage3b_training_curve.csv": "1fc6da08741558cf973e31e18ba50001549fe0669a205a5ab88a9a914332d489",
+    "/home/lrj/Prediction_Hivt/outputs/stage4_type_conditioned_interaction/03_type_interaction/stage4a_training_curve.csv": "467bdf43055d3ebd5a34e3a8ae5c46d7cd0b22f1111f3e191d88dc2f4d01ef5b",
+    "03_training/stage4f_training_curve.csv": "336a102a0dd28962be76d74146ebbc854697339cdfef283158d9b27483638454"
+  },
+  "exports_sha256": {
+    "05_figures/stage4f_training_comparison.png": "dd99b868c804a13fad9f06b5661c874f34855ed3a889714189e9e3bd5124ff26",
+    "05_figures/stage4f_training_comparison.pdf": "53147375d6131b3d3211f4dbf25cefe596c052cefd1064c6859136b7d4c5c347",
+    "05_figures/stage4f_training_comparison.svg": "00625beda3320326dc652fe20d009ed832e98cee60b1f566a9634d5087aa8cf9"
+  },
+  "PNG_dimensions": [
+    2160,
+    1140
+  ],
+  "editable_SVG_text": true,
+  "all_labels_inside_canvas": true,
+  "no_smoothing": true,
+  "actual_data_only": true
+}

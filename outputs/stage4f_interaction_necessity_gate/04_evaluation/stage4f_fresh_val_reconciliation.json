@@ -1,0 +1,343 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "group": "overall",
+      "metric": "minADE6",
+      "absolute_difference": 1.5897816396659437e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "minFDE6",
+      "absolute_difference": 8.038210763672282e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "MR6",
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "Top1ADE6",
+      "absolute_difference": 1.1726317694638055e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "Top1FDE6",
+      "absolute_difference": 1.0960827800943207e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "NLL",
+      "absolute_difference": 1.5462863212079014e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "minADE6",
+      "absolute_difference": 3.177605956139473e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "minFDE6",
+      "absolute_difference": 8.109816151957716e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "MR6",
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "Top1ADE6",
+      "absolute_difference": 1.126491122604989e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "Top1FDE6",
+      "absolute_difference": 3.232694112398349e-10,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "NLL",
+      "absolute_difference": 1.511723080049876e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "minADE6",
+      "absolute_difference": 3.803236614530192e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "minFDE6",
+      "absolute_difference": 6.351027259654529e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "MR6",
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "Top1ADE6",
+      "absolute_difference": 1.5788912399727906e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "Top1FDE6",
+      "absolute_difference": 2.574406243738281e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "NLL",
+      "absolute_difference": 1.6235879307657797e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "minADE6",
+      "absolute_difference": 2.204082472090363e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "minFDE6",
+      "absolute_difference": 3.4285732031236194e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "MR6",
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "Top1ADE6",
+      "absolute_difference": 3.282699112538978e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "Top1FDE6",
+      "absolute_difference": 2.3919089597868037e-08,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "NLL",
+      "absolute_difference": 2.3623791811644423e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "minADE6",
+      "absolute_difference": 3.643920720719507e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "minFDE6",
+      "absolute_difference": 3.784053248523378e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "MR6",
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "Top1ADE6",
+      "absolute_difference": 1.0365530656031297e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "Top1FDE6",
+      "absolute_difference": 4.5582382313114067e-10,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "NLL",
+      "absolute_difference": 4.324493652063666e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "minADE6",
+      "absolute_difference": 4.350718563195244e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "minFDE6",
+      "absolute_difference": 1.0752667645164138e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "MR6",
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "Top1ADE6",
+      "absolute_difference": 1.841894636811503e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "Top1FDE6",
+      "absolute_difference": 4.896907990215027e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "NLL",
+      "absolute_difference": 3.289507333192887e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "minADE6",
+      "absolute_difference": 7.499820764422793e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "minFDE6",
+      "absolute_difference": 1.764990598118743e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "MR6",
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "Top1ADE6",
+      "absolute_difference": 1.3666626719199826e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "Top1FDE6",
+      "absolute_difference": 2.337298160570711e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "NLL",
+      "absolute_difference": 4.196077485474348e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "minADE6",
+      "absolute_difference": 1.4060672959281817e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "minFDE6",
+      "absolute_difference": 1.3120353470341684e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "MR6",
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "Top1ADE6",
+      "absolute_difference": 1.2830616125114602e-08,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "Top1FDE6",
+      "absolute_difference": 1.2127029602737593e-08,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "NLL",
+      "absolute_difference": 1.389006054619557e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    }
+  ],
+  "fresh_metrics_authoritative": true,
+  "checkpoint_sha256": "89f2bc886bd5e1cc2a78a05e07c9761d3317f4677237a458ea35450e4f56e110"
+}

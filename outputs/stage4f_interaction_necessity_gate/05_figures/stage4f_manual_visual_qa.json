@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "review": "Direct visual inspection of all9 actual PNG exports; both grouped-bar legends moved above plotting region and re-inspected.",
+  "figures": [
+    {
+      "file": "05_figures/stage4f_case_degradation.png",
+      "sha256": "92a518d07a88eaf1482c9c704abbaff82578011e483e40ae5c88eed12dcfe049",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    },
+    {
+      "file": "05_figures/stage4f_case_low_motion_pedestrian_recovery.png",
+      "sha256": "6be74c26564d8f362243aa5f273b3785b14ac98fb87bc7f66c9af4f2efc35730",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    },
+    {
+      "file": "05_figures/stage4f_case_moving_pedestrian.png",
+      "sha256": "c6da966dd50cfaf34f324bbae6dacf2a3242f0c955d9ca1871a6e70eadf0a756",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    },
+    {
+      "file": "05_figures/stage4f_case_moving_vehicle_retention.png",
+      "sha256": "f98fc8ddfec7a963b8ee84321b1c68cdd9a7568f611a57edeb591e0d81245e09",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    },
+    {
+      "file": "05_figures/stage4f_gate_distribution_by_group.png",
+      "sha256": "c9f7420afea02bd963980c87ca18c1accebf82d55b526ff20fee76e14e7f7969",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    },
+    {
+      "file": "05_figures/stage4f_interaction_context_comparison.png",
+      "sha256": "3bdc7ee0762c2462fa7b82928efbe328061a331f5c79cfe30c8589dff928e32e",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    },
+    {
+      "file": "05_figures/stage4f_pedestrian_motion_bin_comparison.png",
+      "sha256": "137cb186bdf377902758a28b773a85f336e808af7c452eeda491eae47473933b",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    },
+    {
+      "file": "05_figures/stage4f_three_model_fde_comparison.png",
+      "sha256": "dfe2d861d829f1ccbc031760d78b55157a437b95f24254df0f8a1de098df0862",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    },
+    {
+      "file": "05_figures/stage4f_training_comparison.png",
+      "sha256": "dd99b868c804a13fad9f06b5661c874f34855ed3a889714189e9e3bd5124ff26",
+      "visually_reviewed": true,
+      "labels_readable": true,
+      "legend_data_label_overlap": false,
+      "clipping_observed": false
+    }
+  ],
+  "quantitative_values_match_locked_tables": true,
+  "all4_cases_same_actor_and_axis_limits": true,
+  "future12_points_preserved_without_jitter_or_smoothing": true,
+  "overlapping_stationary_points_are_not_displaced": true,
+  "posthoc_cases_not_population_or_causal_evidence": true
+}

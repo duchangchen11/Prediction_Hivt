@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "full": 54990,
+  "partial": 30037,
+  "total": 85027,
+  "identity_fields": [
+    "scene_token",
+    "sample_token",
+    "instance_token",
+    "horizon",
+    "node_in_graph",
+    "agent_type",
+    "agent_type_id",
+    "motion_state",
+    "valid_future_steps",
+    "future_mask_bits",
+    "GT_trajectory_sha256"
+  ],
+  "all_three_models_identical": true,
+  "GT_displacement_max_diff": 0.0,
+  "actor_csv_sha256": {
+    "Stage3B": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+    "Stage4A": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7",
+    "Stage4F": "01f7625d033884cce6e8e551b56336ebe817f3bf2a73b3f4ef2dbbdb2300ee4d"
+  },
+  "frozen_interaction_ledger_reused": true
+}

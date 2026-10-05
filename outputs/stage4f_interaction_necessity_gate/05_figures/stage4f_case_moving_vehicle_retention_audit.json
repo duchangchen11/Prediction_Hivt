@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "Stage3B",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 3.954914519057498,
+        "minFDE6": 9.54739538070398,
+        "Top1ADE6": 12.486589546388863,
+        "Top1FDE6": 28.652143179234223
+      },
+      "metric_differences": {
+        "minADE6": 7.660529757202994e-07,
+        "minFDE6": 3.2547277761807436e-07,
+        "Top1ADE6": 8.390481482933865e-07,
+        "Top1FDE6": 2.99159331973442e-07
+      }
+    },
+    {
+      "method": "Stage4A",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 1.2592136587258898,
+        "minFDE6": 2.8786915861934976,
+        "Top1ADE6": 13.715340853815595,
+        "Top1FDE6": 30.773721232923823
+      },
+      "metric_differences": {
+        "minADE6": 9.194579941862457e-08,
+        "minFDE6": 8.708531096246475e-08,
+        "Top1ADE6": 2.394967477670207e-07,
+        "Top1FDE6": 4.6202246650750567e-07
+      }
+    },
+    {
+      "method": "Stage4F",
+      "styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "recomputed_metrics": {
+        "minADE6": 1.5163506006130822,
+        "minFDE6": 4.0705571764880775,
+        "Top1ADE6": 13.456845201372083,
+        "Top1FDE6": 30.374181162872613
+      },
+      "metric_differences": {
+        "minADE6": 9.800067297671688e-07,
+        "minFDE6": 3.7556713463615665e-06,
+        "Top1ADE6": 8.213621782715563e-08,
+        "Top1FDE6": 5.845639101664801e-07
+      }
+    }
+  ],
+  "same_actor_and_GT": true,
+  "same_xy_limits": true,
+  "xlim": [
+    -60.7840544128418,
+    -21.357631072998046
+  ],
+  "ylim": [
+    -11.331868782043458,
+    12.00217498779297
+  ],
+  "12_future_markers_each_trace": true,
+  "equal_aspect": true,
+  "compact_data_derived_rectangle": true,
+  "inset_last6_points": false,
+  "no_smoothing_or_interpolation": true,
+  "gate_from_history_only": true,
+  "exports_sha256": {
+    "05_figures/stage4f_case_moving_vehicle_retention.png": "f98fc8ddfec7a963b8ee84321b1c68cdd9a7568f611a57edeb591e0d81245e09",
+    "05_figures/stage4f_case_moving_vehicle_retention.pdf": "126b98487a463b541538e20805601edef3c2ecb002e0006b68f433d2b3c15c59",
+    "05_figures/stage4f_case_moving_vehicle_retention.svg": "e92deebc3e1f6af6dc3f1baca3b61209ba5efdcb7ae64e4268ef228e59af5499"
+  },
+  "source_json_sha256": "94c16ebaed9f11e2b5af8f1ca28b9281c42471b753c4ee3bc00f8d3d75a511ee"
+}
