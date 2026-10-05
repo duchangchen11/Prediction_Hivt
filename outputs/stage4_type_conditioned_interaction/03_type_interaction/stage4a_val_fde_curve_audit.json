@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "source_SHA256": {
+    "03_type_interaction/stage4a_training_curve.csv": "467bdf43055d3ebd5a34e3a8ae5c46d7cd0b22f1111f3e191d88dc2f4d01ef5b"
+  },
+  "exports_SHA256": {
+    "03_type_interaction/stage4a_val_fde_curve.png": "1762a6e1f955ba50ce9c9ef939a09416858ee3d658a50fafb65780676b2d1f40",
+    "03_type_interaction/stage4a_val_fde_curve.pdf": "d19faedf49c95d0dcc562e926b3045f343625c2dcbebf4d2ee7080f10ee24f45",
+    "03_type_interaction/stage4a_val_fde_curve.svg": "dec12e086902d5472b8c7b7f84baf080be4a706ab44940e58222e0a4d8900c13"
+  },
+  "smoothing": false,
+  "fabricated_data": false,
+  "text_inside_canvas": true,
+  "backend": "python",
+  "actual_markers_every500_steps": true,
+  "official_VAL_scenes": 150
+}

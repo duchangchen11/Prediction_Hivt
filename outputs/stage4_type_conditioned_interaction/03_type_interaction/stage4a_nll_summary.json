@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE",
+  "phase": "original_nll",
+  "phase_steps": 6500,
+  "global_executed_step": 11500,
+  "best_global_step": 9000,
+  "best_overall_FDE": 1.3355660483845926,
+  "consecutive_nonimprovements": 5,
+  "converged_by_patience": true,
+  "stopped_by_budget": false,
+  "stop_reason": "patience_5",
+  "warmup_best_source_step": 4500,
+  "final_iterator": {
+    "epoch": 6,
+    "next_batch": 158
+  },
+  "last_checkpoint_sha256": "272d7efd8adf29a3a835a6499b36c564336ac7e839f0d65b4ca00e198f57c6d3",
+  "elapsed_seconds_this_invocation": 3841.3874002429948,
+  "NaN": 0,
+  "Inf": 0,
+  "training_code_git_commit": "6a3b840d491bbcc02ae34d33fce221ca0a8f0f6e"
+}

@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "training_PID": 43145,
+  "watcher_started_UTC": "2026-10-05T14:18:24.825779+00:00",
+  "watcher_source_SHA256": "bf28d3a5c1c4c59cc5c74920e5c45edb3d3f85be01d36b3726f66600267bff9c",
+  "evaluator_source_SHA256": "94e8dbda34568900987d4a7cf0b6e85367a52fbc5a61e3b00c945e51865c8d8e",
+  "completed_stages": [
+    "fresh-val",
+    "analyze",
+    "diagnostics",
+    "efficiency"
+  ],
+  "stages": {
+    "fresh-val": {
+      "status": "PASS",
+      "started_UTC": "2026-10-05T14:18:24.863788+00:00",
+      "evaluator_source_SHA256": "94e8dbda34568900987d4a7cf0b6e85367a52fbc5a61e3b00c945e51865c8d8e",
+      "returncode": 0,
+      "completed_UTC": "2026-10-05T14:19:21.996679+00:00",
+      "outputs_SHA256": {
+        "04_evaluation/stage4a_actor_errors.csv": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7",
+        "04_evaluation/stage4a_metrics.json": "d96c68cb98b17e305795452ccf7c3d2410a2decc59ff961d195e716aff4b6a34"
+      }
+    },
+    "analyze": {
+      "status": "PASS",
+      "started_UTC": "2026-10-05T14:19:22.078302+00:00",
+      "evaluator_source_SHA256": "94e8dbda34568900987d4a7cf0b6e85367a52fbc5a61e3b00c945e51865c8d8e",
+      "returncode": 0,
+      "completed_UTC": "2026-10-05T14:19:39.441949+00:00",
+      "outputs_SHA256": {
+        "04_evaluation/stage4a_pairing_audit.json": "63fe275376cf39cec44c36148ac98c4644ff619305af66eb1413f8e8328bd4bd",
+        "04_evaluation/stage4a_analysis_completion.json": "4a0a9c9419c501c659a102a9ed3473a127b4ae449c3c097a831589ef756bb991",
+        "04_evaluation/stage4a_nontrivial_motion_metrics.json": "6d9384203c6b2d7c5db073de394db3709c70732451875e411fa9528a6defc068",
+        "04_evaluation/stage4a_type_interaction_ablation.json": "1f26600081c08148e1c19ea7392e92fa9820039977e61a65878d30ebaf2c8c3f",
+        "04_evaluation/stage4a_bootstrap_ci.json": "133aaa1fdf57fa49bc50e7ff4e02e082aaf6e99effa90ee2783256a7929292f2",
+        "06_tables/stage4a_main_results.csv": "c86d804d770ff16e7c82e6ada336d55c26b5a05612e3bb340fd146e0ef2b7ff1",
+        "06_tables/stage4a_nontrivial_motion_metrics.csv": "59c849eee0deda1179f4eb072c87e3eb4241f91f584b402b2653bde82fe22c66",
+        "06_tables/stage4a_interaction_subgroup_metrics.csv": "91f606af5dbfa7b19e21faef645ed1fd80bd60c5600b033feabe414740aa22c3",
+        "06_tables/stage4a_type_interaction_ablation.csv": "0fbac6d470fae62b464be4377c8a1497582be18d951e77aacc2c4010bc84cdb6",
+        "06_tables/stage4a_bootstrap_ci.csv": "c4a5db55b115836508e19bf44beee0ed751fc533087f889bafa2aa36cc363fa4"
+      }
+    },
+    "diagnostics": {
+      "status": "PASS",
+      "started_UTC": "2026-10-05T14:19:39.462336+00:00",
+      "evaluator_source_SHA256": "94e8dbda34568900987d4a7cf0b6e85367a52fbc5a61e3b00c945e51865c8d8e",
+      "returncode": 0,
+      "completed_UTC": "2026-10-05T14:20:28.111146+00:00",
+      "outputs_SHA256": {
+        "04_evaluation/stage4a_relation_bias_statistics.json": "5a8ab99d0ffb3a1687efbe00fdbf7e4bfeec5978a7b87eff56037a44ac234b88",
+        "06_tables/stage4a_relation_bias_statistics.csv": "079d5db85183cad2d6c9fa82ce3575bd58c95efe39df6d58884b91547d49ab53",
+        "06_tables/stage4a_relation_bias_pair_aggregate.csv": "4b4d9febe461ea026a7cee2bec7890cf7bbae74bc32ba86adda6c6641708b2ac"
+      }
+    },
+    "efficiency": {
+      "status": "PASS",
+      "started_UTC": "2026-10-05T14:20:28.123183+00:00",
+      "evaluator_source_SHA256": "94e8dbda34568900987d4a7cf0b6e85367a52fbc5a61e3b00c945e51865c8d8e",
+      "returncode": 0,
+      "completed_UTC": "2026-10-05T14:24:20.283787+00:00",
+      "outputs_SHA256": {
+        "04_evaluation/stage4a_efficiency_audit.json": "e4d9eaa9474300e45126eb9d4fac303df702d85ea9d2be644cc6888f57d02349",
+        "06_tables/stage4a_efficiency.csv": "2c8755eb6d307a249da5cf66c54433baea6c8873d44e8a7332880d57c6479244",
+        "06_tables/stage4a_efficiency_batch_timings.csv": "33abae7e550357fe30bab66425734067f4bbfb0a72f8a4ec9ab7829d8fee605e"
+      }
+    }
+  },
+  "waiting_policy": "poll 15s; GPU work only after training PID exit and training summary COMPLETE",
+  "formal_training_and_final_evaluation_GPU_concurrent": false,
+  "training_exited_UTC": "2026-10-05T14:18:24.856059+00:00",
+  "checkpoint_SHA256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "training_summary_SHA256": "f7f02a1906cfad70e8104fcdcf6950232847264ce2ff4ff3175b04e30f0ac91b",
+  "training_COMPLETE_verified": true,
+  "no_other_Stage4A_training_process": true,
+  "completed_UTC": "2026-10-05T14:24:20.350491+00:00",
+  "all_evaluation_subprocesses_exited": true,
+  "evaluation_log_SHA256": "9c8de769e0839c7d5524ee78cb89c71c37b39b727b3f7072a38e76dd6ae0a290",
+  "post_evaluation_directory_relocation": "00_manifest/stage4a_relocation_audit.json",
+  "current_operational_evaluator_SHA256": "2589b2011a59e7e99665eaecfdc14ba26c213679ae59f748edb4630cf81a1a2c"
+}

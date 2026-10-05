@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN_READ_ONLY",
+  "Stage4_root": "outputs/stage4_type_conditioned_interaction",
+  "Stage3_input_root": "outputs/stage3_multitype_hivt",
+  "scene_shard_count": 850,
+  "train_scenes": 700,
+  "val_scenes": 150,
+  "test_used": false,
+  "data_copied": false,
+  "data_reprocessed": false,
+  "hash_inventory": "00_manifest/stage4a_frozen_stage3b.json",
+  "hash_inventory_SHA256": "c45435d30103105c18f9a62471ceac913f6ebde1fd023bddb4070c8d215a731b",
+  "registered_GT_ledger": "outputs/stage3_multitype_hivt/02_preprocessed/stage3_cache/stage3b_frozen_no_type_GT_ledger.csv"
+}

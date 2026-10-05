@@ -1,0 +1,86 @@
+
+STAGE4A FINAL EVALUATION RUN 2026-10-05T14:15:23.053802+00:00
+
+COMMAND ["/home/lrj/anaconda3/envs/ped_intent/bin/python", "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py", "--fresh-val"] UTC=2026-10-05T14:15:23.067910+00:00
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+VAL_EVALUATE 208 / 3603
+VAL_EVALUATE 400 / 3603
+VAL_EVALUATE 608 / 3603
+VAL_EVALUATE 800 / 3603
+VAL_EVALUATE 1008 / 3603
+VAL_EVALUATE 1200 / 3603
+VAL_EVALUATE 1408 / 3603
+VAL_EVALUATE 1600 / 3603
+VAL_EVALUATE 1808 / 3603
+VAL_EVALUATE 2000 / 3603
+VAL_EVALUATE 2208 / 3603
+VAL_EVALUATE 2400 / 3603
+VAL_EVALUATE 2608 / 3603
+VAL_EVALUATE 2800 / 3603
+VAL_EVALUATE 3008 / 3603
+VAL_EVALUATE 3200 / 3603
+VAL_EVALUATE 3408 / 3603
+VAL_EVALUATE 3600 / 3603
+VAL_EVALUATE 3603 / 3603
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py", line 627, in <module>
+    main()
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py", line 617, in main
+    fresh_val()
+  File "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py", line 361, in fresh_val
+    assert abs(actual[group][metric] - selected[group][metric]) < 1e-6
+AssertionError
+
+STAGE4A FINAL EVALUATION RUN 2026-10-05T14:18:24.856453+00:00
+
+COMMAND ["/home/lrj/anaconda3/envs/ped_intent/bin/python", "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py", "--fresh-val"] UTC=2026-10-05T14:18:24.864142+00:00
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+VAL_EVALUATE 208 / 3603
+VAL_EVALUATE 400 / 3603
+VAL_EVALUATE 608 / 3603
+VAL_EVALUATE 800 / 3603
+VAL_EVALUATE 1008 / 3603
+VAL_EVALUATE 1200 / 3603
+VAL_EVALUATE 1408 / 3603
+VAL_EVALUATE 1600 / 3603
+VAL_EVALUATE 1808 / 3603
+VAL_EVALUATE 2000 / 3603
+VAL_EVALUATE 2208 / 3603
+VAL_EVALUATE 2400 / 3603
+VAL_EVALUATE 2608 / 3603
+VAL_EVALUATE 2800 / 3603
+VAL_EVALUATE 3008 / 3603
+VAL_EVALUATE 3200 / 3603
+VAL_EVALUATE 3408 / 3603
+VAL_EVALUATE 3600 / 3603
+VAL_EVALUATE 3603 / 3603
+STAGE4A_FRESH_EVALUATION=PASS {'count': 54990, 'minADE6': 0.6609903589752363, 'minFDE6': 1.3355660505266302, 'MR6': 0.16593926168394255, 'Top1ADE6': 1.1791940006676895, 'Top1FDE6': 2.6673200087768962, 'NLL': -0.5533448697810871, 'independent_minADE6': 0.6270383725488954}
+
+COMMAND ["/home/lrj/anaconda3/envs/ped_intent/bin/python", "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py", "--analyze"] UTC=2026-10-05T14:19:22.078651+00:00
+STAGE4A_ANALYSIS=PASS {'minADE6': {'estimate_m': -0.005415199012936342, 'CI95_m': [-0.010581886425297247, -0.0010501322806633338], 'bootstrap_std_m': 0.0024335405379382873, 'valid_replicates': 1000, 'actor_windows': 54990, 'unique_scenes_with_targets': 150}, 'minFDE6': {'estimate_m': -0.007694397463634132, 'CI95_m': [-0.01767157079523892, 0.0012315295569654504], 'bootstrap_std_m': 0.004821711150801458, 'valid_replicates': 1000, 'actor_windows': 54990, 'unique_scenes_with_targets': 150}, 'Top1FDE6': {'estimate_m': -0.020663817922898287, 'CI95_m': [-0.055616468542955336, 0.01339738965215582], 'bootstrap_std_m': 0.017840235433996994, 'valid_replicates': 1000, 'actor_windows': 54990, 'unique_scenes_with_targets': 150}}
+
+COMMAND ["/home/lrj/anaconda3/envs/ped_intent/bin/python", "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py", "--diagnostics"] UTC=2026-10-05T14:19:39.462937+00:00
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+STAGE4A_RELATION_DIAGNOSTICS 512 / 3603
+STAGE4A_RELATION_DIAGNOSTICS 1008 / 3603
+STAGE4A_RELATION_DIAGNOSTICS 1504 / 3603
+STAGE4A_RELATION_DIAGNOSTICS 2000 / 3603
+STAGE4A_RELATION_DIAGNOSTICS 2512 / 3603
+STAGE4A_RELATION_DIAGNOSTICS 3008 / 3603
+STAGE4A_RELATION_DIAGNOSTICS 3504 / 3603
+STAGE4A_RELATION_DIAGNOSTICS=PASS [1784478, 405857, 25016, 405857, 383886, 13304, 25016, 13304, 1488]
+
+COMMAND ["/home/lrj/anaconda3/envs/ped_intent/bin/python", "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py", "--efficiency"] UTC=2026-10-05T14:20:28.123654+00:00
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+STAGE4A_EFFICIENCY_PAIRED_BATCHES 100 / 500
+STAGE4A_EFFICIENCY_PAIRED_BATCHES 200 / 500
+STAGE4A_EFFICIENCY_PAIRED_BATCHES 300 / 500
+STAGE4A_EFFICIENCY_PAIRED_BATCHES 400 / 500
+STAGE4A_EFFICIENCY_PAIRED_BATCHES 500 / 500
+STAGE4A_EFFICIENCY=PASS 0.9267940769501548

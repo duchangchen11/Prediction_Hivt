@@ -1,0 +1,10 @@
+pair_id,target_type,source_type,directed_pair,edge_observation_count,layer_head_count,mean_abs_bias,aggregation
+0,vehicle,vehicle,V<-V,1784478,24,10.692156786543629,Unweighted mean across24 layer/head means; each observes identical edges.
+1,vehicle,pedestrian,V<-P,405857,24,7.512382439601635,Unweighted mean across24 layer/head means; each observes identical edges.
+2,vehicle,bicycle,V<-B,25016,24,0.6377009602062834,Unweighted mean across24 layer/head means; each observes identical edges.
+3,pedestrian,vehicle,P<-V,405857,24,8.5497416667856,Unweighted mean across24 layer/head means; each observes identical edges.
+4,pedestrian,pedestrian,P<-P,383886,24,7.977991034095187,Unweighted mean across24 layer/head means; each observes identical edges.
+5,pedestrian,bicycle,P<-B,13304,24,0.2691688657979708,Unweighted mean across24 layer/head means; each observes identical edges.
+6,bicycle,vehicle,B<-V,25016,24,2.267070494751381,Unweighted mean across24 layer/head means; each observes identical edges.
+7,bicycle,pedestrian,B<-P,13304,24,0.7020687120314172,Unweighted mean across24 layer/head means; each observes identical edges.
+8,bicycle,bicycle,B<-B,1488,24,0.7846023604495421,Unweighted mean across24 layer/head means; each observes identical edges.

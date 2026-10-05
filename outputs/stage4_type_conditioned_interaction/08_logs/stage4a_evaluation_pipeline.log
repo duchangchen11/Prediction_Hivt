@@ -1,0 +1,19 @@
+STAGE4A_FINAL_EVALUATION_WAITING_FOR_TRAINING_PID 43145
+STAGE4A_FINAL_EVALUATION_STAGE_START fresh-val
+STAGE4A_FINAL_EVALUATION_PIPELINE=FAIL Evaluation stage failed: fresh-val
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_wait_evaluate.py", line 165, in <module>
+    main()
+  File "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/04_evaluation/stage4a_wait_evaluate.py", line 139, in main
+    assert process.returncode == 0, "Evaluation stage failed: " + stage
+AssertionError: Evaluation stage failed: fresh-val
+STAGE4A_FINAL_EVALUATION_WAITING_FOR_TRAINING_PID 43145
+STAGE4A_FINAL_EVALUATION_STAGE_START fresh-val
+STAGE4A_FINAL_EVALUATION_STAGE_PASS fresh-val
+STAGE4A_FINAL_EVALUATION_STAGE_START analyze
+STAGE4A_FINAL_EVALUATION_STAGE_PASS analyze
+STAGE4A_FINAL_EVALUATION_STAGE_START diagnostics
+STAGE4A_FINAL_EVALUATION_STAGE_PASS diagnostics
+STAGE4A_FINAL_EVALUATION_STAGE_START efficiency
+STAGE4A_FINAL_EVALUATION_STAGE_PASS efficiency
+STAGE4A_FINAL_EVALUATION_PIPELINE=PASS

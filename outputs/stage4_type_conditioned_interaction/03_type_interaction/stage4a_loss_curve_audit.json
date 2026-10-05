@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "source_SHA256": {
+    "03_type_interaction/stage4a_training_curve.csv": "467bdf43055d3ebd5a34e3a8ae5c46d7cd0b22f1111f3e191d88dc2f4d01ef5b"
+  },
+  "exports_SHA256": {
+    "03_type_interaction/stage4a_loss_curve.png": "420965f22221bc0d60bafa480231c44ab892660a584b514fabe8857104dde597",
+    "03_type_interaction/stage4a_loss_curve.pdf": "09c9034c1d3a1dc24233dddcc6f988a92bcf8ca3ce8b4b67565e5169170039fd",
+    "03_type_interaction/stage4a_loss_curve.svg": "de2896738bd2912e319d501c7da20b7cbfaf5ff1f9caec7d399b14a7443330a9"
+  },
+  "smoothing": false,
+  "fabricated_data": false,
+  "text_inside_canvas": true,
+  "backend": "python",
+  "point_definition": "Mean of preceding500 actual optimizer losses; no extra smoothing."
+}

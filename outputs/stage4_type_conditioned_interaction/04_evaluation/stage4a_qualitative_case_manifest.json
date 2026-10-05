@@ -1,0 +1,387 @@
+{
+  "status": "PASS",
+  "figures": [
+    {
+      "name": "stage4a_vehicle_improvement_case_001",
+      "source_json": "04_evaluation/cases/stage4a_vehicle_improvement_case_001.json",
+      "source_sha256": "920b073932d1935669ed0b54823d5f79cd68928913b229772c4d70086636b0ff",
+      "case_kind": "Heterogeneous-20m improvement",
+      "delta_FDE_m": -6.844547271728516,
+      "agent_type": "vehicle",
+      "t0_spatial_context": {
+        "neighbor_node": 10,
+        "neighbor_instance_token": "865c9b23dfb34067acf18066212ef617",
+        "neighbor_agent_type": "pedestrian",
+        "t0_distance_m": 14.620378471661502,
+        "neighbor_history_trajectory_m": [
+          [
+            55.3543815612793,
+            1.8928583860397339
+          ],
+          [
+            54.70248794555664,
+            1.7903403043746948
+          ],
+          [
+            54.097293853759766,
+            1.7481579780578613
+          ],
+          [
+            53.38840103149414,
+            1.6765615940093994
+          ],
+          [
+            52.69520568847656,
+            1.606890320777893
+          ]
+        ],
+        "neighbor_history_mask": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "neighbor_GT_trajectory_m": [
+          [
+            52.01328659057617,
+            1.4629040956497192
+          ],
+          [
+            51.28433609008789,
+            1.1792733669281006
+          ],
+          [
+            50.58618927001953,
+            0.9016514420509338
+          ],
+          [
+            49.909366607666016,
+            0.5519662499427795
+          ],
+          [
+            49.24729537963867,
+            0.1511390656232834
+          ],
+          [
+            48.65778732299805,
+            -0.23193027079105377
+          ],
+          [
+            47.90071487426758,
+            -0.6343427896499634
+          ],
+          [
+            47.198875427246094,
+            -0.9634565114974976
+          ],
+          [
+            46.4744987487793,
+            -1.2537263631820679
+          ],
+          [
+            45.750118255615234,
+            -1.5439963340759277
+          ],
+          [
+            44.94367599487305,
+            -1.9060126543045044
+          ],
+          [
+            44.1613655090332,
+            -2.3161723613739014
+          ]
+        ],
+        "neighbor_future_mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eligibility": "Different type and t0 euclidean distance<=20m; no future/GT/prediction used.",
+        "interpretation": "t0 spatial interaction context; no causal interaction inferred."
+      },
+      "actor_key": [
+        "f2541977a00a448db9b46a32187d9059",
+        "99659242b7984cf7b4d9d986634357bd",
+        "1ba1a6f8037347b381ec3098bf1405a4",
+        "full_horizon"
+      ],
+      "GT_endpoint_displacement_m": 45.731605529785156,
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage4a_pedestrian_improvement_case_001",
+      "source_json": "04_evaluation/cases/stage4a_pedestrian_improvement_case_001.json",
+      "source_sha256": "1f2c70c4c975207cc96d91f3a8f623305b493a7389e40f4eadf428023d50f44a",
+      "case_kind": "Heterogeneous-20m improvement",
+      "delta_FDE_m": -2.7045251727104187,
+      "agent_type": "pedestrian",
+      "t0_spatial_context": {
+        "neighbor_node": 26,
+        "neighbor_instance_token": "bd9b720ceffc478b8c78dcaf7edf2aa8",
+        "neighbor_agent_type": "vehicle",
+        "t0_distance_m": 4.927519945070846,
+        "neighbor_history_trajectory_m": [
+          [
+            45.378910064697266,
+            11.059233665466309
+          ],
+          [
+            40.01212692260742,
+            10.801876068115234
+          ],
+          [
+            39.1750602722168,
+            11.64494800567627
+          ],
+          [
+            33.38389205932617,
+            11.091238975524902
+          ],
+          [
+            28.161863327026367,
+            10.5903902053833
+          ]
+        ],
+        "neighbor_history_mask": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "neighbor_GT_trajectory_m": [
+          [
+            22.371719360351562,
+            9.937329292297363
+          ],
+          [
+            16.771381378173828,
+            9.290534973144531
+          ],
+          [
+            12.898839950561523,
+            8.950409889221191
+          ],
+          [
+            9.81702995300293,
+            8.66772747039795
+          ],
+          [
+            7.445653915405273,
+            8.66623306274414
+          ],
+          [
+            5.6108784675598145,
+            8.718631744384766
+          ],
+          [
+            4.300591468811035,
+            8.87121868133545
+          ],
+          [
+            3.1862618923187256,
+            8.979971885681152
+          ],
+          [
+            2.079639434814453,
+            9.153383255004883
+          ],
+          [
+            1.107863187789917,
+            9.243598937988281
+          ],
+          [
+            0.13467665016651154,
+            9.333921432495117
+          ],
+          [
+            -0.8364475965499878,
+            9.423378944396973
+          ]
+        ],
+        "neighbor_future_mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eligibility": "Different type and t0 euclidean distance<=20m; no future/GT/prediction used.",
+        "interpretation": "t0 spatial interaction context; no causal interaction inferred."
+      },
+      "actor_key": [
+        "57dc3221a3d845b5ab17ff0f98ce336f",
+        "5a398aba25c34fa8be1598ffd806ded9",
+        "5599f5f42ccd4f26973d1407b15da99d",
+        "full_horizon"
+      ],
+      "GT_endpoint_displacement_m": 9.194841384887695,
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage4a_degradation_case_001",
+      "source_json": "04_evaluation/cases/stage4a_degradation_case_001.json",
+      "source_sha256": "6e27ceae873d90128d3e1e60169bcf80031393bc8e38c3972fa397abda3bd1c2",
+      "case_kind": "Degradation",
+      "delta_FDE_m": 9.157299041748047,
+      "agent_type": "vehicle",
+      "t0_spatial_context": null,
+      "actor_key": [
+        "82cabcf15a1a48aca6bbf082f8710e39",
+        "8269fe5375974424ba92852ed8b33833",
+        "d1ecbeefbbd54baaa9d83a959f90cbad",
+        "full_horizon"
+      ],
+      "GT_endpoint_displacement_m": 28.501991271972656,
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage4a_vp_context_case_001",
+      "source_json": "04_evaluation/cases/stage4a_vp_context_case_001.json",
+      "source_sha256": "333685c25207db349ed994446f8d3a68a95bb3f195b9e66494603116559356f0",
+      "case_kind": "V-P spatial context",
+      "delta_FDE_m": -6.674070358276367,
+      "agent_type": "vehicle",
+      "t0_spatial_context": {
+        "neighbor_node": 44,
+        "neighbor_instance_token": "e16c4123c06b4d32bd1b23c54764f98a",
+        "neighbor_agent_type": "pedestrian",
+        "t0_distance_m": 14.951111839369297,
+        "neighbor_history_trajectory_m": [
+          [
+            -21.158992767333984,
+            -14.15555191040039
+          ],
+          [
+            -20.36041831970215,
+            -13.997586250305176
+          ],
+          [
+            -19.55967903137207,
+            -13.839055061340332
+          ],
+          [
+            -18.759695053100586,
+            -13.681183815002441
+          ],
+          [
+            -17.96112060546875,
+            -13.52321720123291
+          ]
+        ],
+        "neighbor_history_mask": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "neighbor_GT_trajectory_m": [
+          [
+            -17.1369571685791,
+            -13.459793090820312
+          ],
+          [
+            -16.319660186767578,
+            -13.339925765991211
+          ],
+          [
+            -15.502365112304688,
+            -13.22005844116211
+          ],
+          [
+            -14.685822486877441,
+            -13.100850105285645
+          ],
+          [
+            -13.95083999633789,
+            -12.99321460723877
+          ],
+          [
+            -13.142011642456055,
+            -12.830262184143066
+          ],
+          [
+            -12.249930381774902,
+            -12.65159797668457
+          ],
+          [
+            -11.515795707702637,
+            -12.503511428833008
+          ],
+          [
+            -10.627288818359375,
+            -12.3253173828125
+          ],
+          [
+            -9.822601318359375,
+            -12.118151664733887
+          ],
+          [
+            -9.099379539489746,
+            -11.931777954101562
+          ],
+          [
+            -8.296102523803711,
+            -11.724517822265625
+          ]
+        ],
+        "neighbor_future_mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eligibility": "Different type and t0 euclidean distance<=20m; no future/GT/prediction used.",
+        "interpretation": "t0 spatial interaction context; no causal interaction inferred."
+      },
+      "actor_key": [
+        "8e3364691ee94c698458e0913a29af78",
+        "4176983e28014670b8d4599c5e70166a",
+        "7be738e4f76c47c7a6c47ae298e54b70",
+        "full_horizon"
+      ],
+      "GT_endpoint_displacement_m": 11.037956237792969,
+      "metric_audit": "PASS"
+    }
+  ],
+  "omitted_cases": [],
+  "case_count": 4,
+  "checkpoint_SHA256": {
+    "Stage3B": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+    "Stage4A": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb"
+  },
+  "actor_CSV_SHA256": {
+    "Stage3B": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+    "Stage4A": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7",
+    "membership": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a"
+  },
+  "selected_after_locked_quantitative_evaluation": true,
+  "no_training": true,
+  "spatial_interaction_context_does_not_prove_causality": true
+}

@@ -1,0 +1,3 @@
+Model,parameter_count,additional_parameter_percent_vs_Stage3B,mean_inference_ms,median_inference_ms,std_inference_ms,p95_inference_ms,paired_measured_batches,measured_scene_windows,batch_size,peak_CUDA_memory_MiB,peak_CUDA_reserved_memory_MiB,timing_both_models_resident_peak_MiB,max_forward_incremental_peak_MiB
+B_Stage3B,646001,0.0,57.77854949188232,53.88083076477051,24.30073303334588,93.09848175048823,500,7974,16,1735.67138671875,3410.0,1738.185546875,1693.35595703125
+C_Stage4A,647609,0.24891602334980906,58.3140376663208,54.68782424926758,25.374003302723658,94.95792655944824,500,7974,16,1735.6787109375,3410.0,1738.185546875,1693.35595703125

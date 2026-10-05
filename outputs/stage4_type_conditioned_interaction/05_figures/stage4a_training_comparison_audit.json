@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "source_SHA256": {
+    "../stage3_multitype_hivt/03_type_embedding/stage3b_training_curve.csv": "1fc6da08741558cf973e31e18ba50001549fe0669a205a5ab88a9a914332d489",
+    "03_type_interaction/stage4a_training_curve.csv": "467bdf43055d3ebd5a34e3a8ae5c46d7cd0b22f1111f3e191d88dc2f4d01ef5b",
+    "../stage3_multitype_hivt/03_type_embedding/stage3b_training_summary.json": "3595cde20e5a2804ae9d7fb93f80603c4ecb1de63d12e52aafc6e45735f25e94",
+    "03_type_interaction/stage4a_training_summary.json": "f7f02a1906cfad70e8104fcdcf6950232847264ce2ff4ff3175b04e30f0ac91b",
+    "05_figures/stage4a_training_comparison_source.csv": "f24531df26c695db54e9fa8c8a4c34a9ad265ff801e738d6ea6a7b1bb47fd672"
+  },
+  "exports_SHA256": {
+    "05_figures/stage4a_training_comparison.png": "d6ff28c43af609159598a03a2787d0c035af9b74d3bf18ea42165285a10bafe8",
+    "05_figures/stage4a_training_comparison.pdf": "af2360dce45a6871f807065baef2c857e877f7cece4e0dc66b01409615e2a3f7",
+    "05_figures/stage4a_training_comparison.svg": "c8861eeb5f2bb6980a664a9f1ee5d5673c373b0816864773cb10981c413585ae"
+  },
+  "smoothing": false,
+  "fabricated_data": false,
+  "text_inside_canvas": true,
+  "backend": "python",
+  "actual_markers_every500_steps": true,
+  "official_VAL_scenes": 150,
+  "best_markers": [
+    {
+      "method": "Stage3B Type Embedding",
+      "global_step": 13000,
+      "overall_minFDE6": 1.343260452434294
+    },
+    {
+      "method": "Stage4A Type Interaction",
+      "global_step": 9000,
+      "overall_minFDE6": 1.3355660483845926
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "source_SHA256": {
+    "06_tables/stage4a_type_interaction_ablation.csv": "0fbac6d470fae62b464be4377c8a1497582be18d951e77aacc2c4010bc84cdb6",
+    "05_figures/stage4a_fde_ablation_source.csv": "b8a6a589b19fe93c5c8858783bbd154ef994651c31b79d5a0e34460e0f8c7f1b"
+  },
+  "exports_SHA256": {
+    "05_figures/stage4a_fde_ablation.png": "1c2b024b7770a0b58a0d4198e2eebdce5ec0efe852ff6d8c7b0c5255e5e4ced3",
+    "05_figures/stage4a_fde_ablation.pdf": "f7f29b062f0470ad7c29c33bf90cd5114954b87346fdb25a1ade081ae4ece104",
+    "05_figures/stage4a_fde_ablation.svg": "6cefc8060932f465cd64c17b98c832c931f5205c3c3900475ce71df9e49dab02"
+  },
+  "smoothing": false,
+  "fabricated_data": false,
+  "text_inside_canvas": true,
+  "backend": "python",
+  "center": "Actor-window arithmetic mean",
+  "bar_values_exact_source": true,
+  "formal_inference": "Separate paired150-scene cluster bootstrap;1000 replicates seed2022.",
+  "groups": [
+    "Overall",
+    "Vehicle",
+    "Pedestrian",
+    "Bicycle"
+  ]
+}

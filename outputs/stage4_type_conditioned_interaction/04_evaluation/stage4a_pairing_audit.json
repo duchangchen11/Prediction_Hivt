@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "paired_full_horizon_actors": 54990,
+  "paired_partial_future_actors": 30037,
+  "paired_total_actor_windows": 85027,
+  "scene_sample_instance_horizon_node_identity_equal": true,
+  "agent_type_equal": true,
+  "motion_state_equal": true,
+  "future_mask_bitwise_equal": true,
+  "GT_trajectory_float32_tensor_SHA256_equal": true,
+  "GT_audit_source": "Stage3B actor CSV stores whole GT trajectory SHA256 and future-mask bits, copied from unchanged frozen graph tensors",
+  "maximum_GT_endpoint_displacement_difference_m": 0.0,
+  "B_actor_errors_sha256": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+  "C_actor_errors_sha256": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7",
+  "interaction_membership_sha256": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a",
+  "VAL_scenes": 150,
+  "test_used": false
+}

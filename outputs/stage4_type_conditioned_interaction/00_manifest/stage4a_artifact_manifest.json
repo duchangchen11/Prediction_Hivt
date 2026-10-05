@@ -1,0 +1,1177 @@
+{
+  "stage": "Stage4A",
+  "status": "PASS",
+  "root": "/home/lrj/Prediction_Hivt/outputs/stage4_type_conditioned_interaction",
+  "self_hash_excluded": true,
+  "artifacts": [
+    {
+      "relative_path": "00_manifest/stage4a_architecture_review.json",
+      "file_size": 6105,
+      "sha256": "ba36d90c5d8db9c7a2fa41ad3f6d005163cd9115ad9a8f1b03dd6850fdc4e130",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_common.py",
+      "file_size": 11126,
+      "sha256": "9db8fa789072f205369b81837bb626b49ae60d50e3c13273f38071f2b0e73d13",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_config.yaml",
+      "file_size": 1787,
+      "sha256": "3e8cd2e6a07046636db6c08a5818b216c293a92d0ea02d2ff2825d025a2a1ea3",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_delivery_schema_review.json",
+      "file_size": 6491,
+      "sha256": "9888987d170cbd3d9bd6112ba2adf4218d3562ff7c28cdb2d341fa4dd8d8e6de",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_eval_repeat_comparison.json",
+      "file_size": 174,
+      "sha256": "b7a11bf1a0e409745e639e2e8ef980e79879cc2d02dd46716eb4690bd6f8a486",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_evaluation_pipeline_state.json",
+      "file_size": 4820,
+      "sha256": "eec8afba56bf2586f5e185c5ed5a4a21e573b79542d9150d705b211ca0d7b869",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_export_QA.json",
+      "file_size": 4204,
+      "sha256": "541d3ff87c4c5315b9c266c6acd704fb16aabcbbe5e303509ab4b9fb375d92ec",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_figure_contract.json",
+      "file_size": 3724,
+      "sha256": "4830d54561f0f2f6146404dd9378c20751ae9bc5cb4fdf19627a4c744196f7c5",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_figures_pipeline_state.json",
+      "file_size": 8283,
+      "sha256": "f2bb15fd6312c27601ab631954318608547019b52b40055814a64b563665e903",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_final_audit.py",
+      "file_size": 13478,
+      "sha256": "9ed62618fc5fdba9b23ca6e1790f70c49dfa07e99c86c7f0636069cc8e73299a",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_final_protocol_audit.json",
+      "file_size": 2412,
+      "sha256": "e27c34f3612d3f2fb2ea3b404d3ee79e34710d77fcef8f046b0e91b5f41ad891",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_frozen_stage3b.json",
+      "file_size": 245250,
+      "sha256": "c45435d30103105c18f9a62471ceac913f6ebde1fd023bddb4070c8d215a731b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_git_payload.py",
+      "file_size": 3217,
+      "sha256": "ea235b1b0626b6e7d1a7bafd424de7e9e82e70bacebfaa008cdba4fdac458371",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_global_interactor.py",
+      "file_size": 9302,
+      "sha256": "ad547282644a4004ab5aca37d065747146be5d11d39497a9eda3d85c605882ff",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_initialization_audit.json",
+      "file_size": 1616,
+      "sha256": "830c60567c70e9a2fa3975f5d5b2765fe9cbc26194c4e9482413d1e94a674ac7",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_model.py",
+      "file_size": 1171,
+      "sha256": "1cba9908794c925f500faf2a74b03c27990759eb61132f3d03e752ab758c71b7",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_neutral_initialization_audit.json",
+      "file_size": 546,
+      "sha256": "753c783d09d370dd57b8d8cbbd5126b9c3592c3c06909e20e60bdbf82741a1dd",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_phase_transition_audit.json",
+      "file_size": 515,
+      "sha256": "41e2bf0446cf2438ba741e8d2116e773c9103dcd39cce1004922d77684ac0374",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_preregistration.json",
+      "file_size": 4539,
+      "sha256": "aa85a0cd189662695b177a7327272d3ca23bff9527a95010091767d1f62bebe4",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_register.py",
+      "file_size": 8711,
+      "sha256": "e5308ab9d28b1a3b086fa2c4ce607ba2f61d04603d07077f889a3aec57999bb7",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_relocate.py",
+      "file_size": 4114,
+      "sha256": "9ed979ae3e041671e4996835911d2f6a2bf80fba820392b000b28e3ed3d7223c",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_relocation_audit.json",
+      "file_size": 45970,
+      "sha256": "f9661324451e9728f9129742ffe063bfb46177a8fc35fc2b20996da04f444301",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_requirements.txt",
+      "file_size": 28389,
+      "sha256": "98b40e5d1aa7c3b1b7dc79056450ff100b9e640a852749b4458dc12a5c4950ab",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_requirements_original.txt",
+      "file_size": 28093,
+      "sha256": "2d45fcc63d77ffedf5b7dcf307bfa05d0eb501b2f5e79d7ae45bd61800d66695",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_resume_record.json",
+      "file_size": 1929,
+      "sha256": "d35b9f2111853646351f17435f5daa8ab0e5c994e25c772f8e23ecab7590d63f",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_scope_preservation.json",
+      "file_size": 1142,
+      "sha256": "6f96a5f832cb509a7b7d11186d0ee5e8d472a59eacf5f272421925f92202a9a0",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_tiny_selection.json",
+      "file_size": 4543,
+      "sha256": "42d8a322577e9a38d183e4f6a0d611626552d26f1804d9ae6915503c6eaca4b8",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_training_registration.json",
+      "file_size": 247,
+      "sha256": "90b7e3cfda2d738f8cb470a864a3d297e9a634ca16125ce3269a12fab95bd485",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_training_snapshot/00_manifest/stage4a_common.py",
+      "file_size": 10863,
+      "sha256": "e5a6d19d3570654f6b7a801419e472b7d22f6fb446d08aecc2294bf257daecf0",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_training_snapshot/00_manifest/stage4a_global_interactor.py",
+      "file_size": 9302,
+      "sha256": "ad547282644a4004ab5aca37d065747146be5d11d39497a9eda3d85c605882ff",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_training_snapshot/00_manifest/stage4a_model.py",
+      "file_size": 1171,
+      "sha256": "1cba9908794c925f500faf2a74b03c27990759eb61132f3d03e752ab758c71b7",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_training_snapshot/03_type_interaction/stage4a_tiny.py",
+      "file_size": 19366,
+      "sha256": "860caba2d3c0a15b580e7118e0c6f466bb8423eb15d4c0c938b73a03ed0fb771",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_training_snapshot/03_type_interaction/stage4a_train.py",
+      "file_size": 14877,
+      "sha256": "02e7e3adc4eaa78483b345c40ae9e0cbf6a1153ffc5a5fd4338682c5b85231e3",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_training_sources.json",
+      "file_size": 808,
+      "sha256": "2c6523f30f19a0a0751b7c2c787f180770cb199dc45c703b486108381482a64e",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_type_pair_mapping.json",
+      "file_size": 345,
+      "sha256": "0ed69596683b272ed0c6e481040a268b4b988a67d50c03b64d5411945cca2b89",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_unit_tests.json",
+      "file_size": 1144,
+      "sha256": "e546030d38517277aab024e5fe0c87f52a64dbcef8fb490c69ca7179991431c2",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "00_manifest/stage4a_visual_QA.json",
+      "file_size": 2069,
+      "sha256": "f54c9d9be3d2417bbd63245da911b559e04b5bddd26dc6164ed3985e985fe256",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "02_preprocessed/stage4a_frozen_input_references.json",
+      "file_size": 585,
+      "sha256": "fe1f8837b0f5173a12364bb8c65e653e960d30cf7a810e69ea2d59effdeef456",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_loss_curve.pdf",
+      "file_size": 14778,
+      "sha256": "09c9034c1d3a1dc24233dddcc6f988a92bcf8ca3ce8b4b67565e5169170039fd",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_loss_curve.png",
+      "file_size": 148090,
+      "sha256": "420965f22221bc0d60bafa480231c44ab892660a584b514fabe8857104dde597",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_loss_curve.svg",
+      "file_size": 20735,
+      "sha256": "de2896738bd2912e319d501c7da20b7cbfaf5ff1f9caec7d399b14a7443330a9",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_loss_curve_audit.json",
+      "file_size": 744,
+      "sha256": "527da5591aff8ef6341ab793bd25bcb8b51595088b233f9dbd0c8fa6cfde0209",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_nll_summary.json",
+      "file_size": 661,
+      "sha256": "94e260455902f155f2d83c6a2f89b25b40fba092e29f1908e3880d9ed80ccd06",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_tiny.py",
+      "file_size": 19579,
+      "sha256": "c4d532aced53e687c0b73bc0cec45745e755cd803d2a776fb49095a795788d5e",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_tiny_curve.csv",
+      "file_size": 4964,
+      "sha256": "7068e52aac7129ad312196b0141e34d2d3b0ded542dcebc15aa7513a130d2d96",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_train.py",
+      "file_size": 15123,
+      "sha256": "aa1b22daadc2b622d877e15006fea6d85bd17f16ceb6bb8b48e04a40b5f0d371",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_training_curve.csv",
+      "file_size": 29943,
+      "sha256": "467bdf43055d3ebd5a34e3a8ae5c46d7cd0b22f1111f3e191d88dc2f4d01ef5b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_training_summary.json",
+      "file_size": 3663,
+      "sha256": "f7f02a1906cfad70e8104fcdcf6950232847264ce2ff4ff3175b04e30f0ac91b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_val_fde_curve.pdf",
+      "file_size": 15862,
+      "sha256": "d19faedf49c95d0dcc562e926b3045f343625c2dcbebf4d2ee7080f10ee24f45",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_val_fde_curve.png",
+      "file_size": 128174,
+      "sha256": "1762a6e1f955ba50ce9c9ef939a09416858ee3d658a50fafb65780676b2d1f40",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_val_fde_curve.svg",
+      "file_size": 28638,
+      "sha256": "dec12e086902d5472b8c7b7f84baf080be4a706ab44940e58222e0a4d8900c13",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_val_fde_curve_audit.json",
+      "file_size": 733,
+      "sha256": "752d3431eddb4d1d0e29d25a6205a6ef799a06d510ec70834d7b2bf2be8be2ba",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "03_type_interaction/stage4a_warmup_summary.json",
+      "file_size": 663,
+      "sha256": "949821b31f037d2a6d23d225fedb0c815938789c3089188a41c00a58bd631c3b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage4a_degradation_case_001.json",
+      "file_size": 66679,
+      "sha256": "6e27ceae873d90128d3e1e60169bcf80031393bc8e38c3972fa397abda3bd1c2",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage4a_pedestrian_improvement_case_001.json",
+      "file_size": 169037,
+      "sha256": "1f2c70c4c975207cc96d91f3a8f623305b493a7389e40f4eadf428023d50f44a",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage4a_vehicle_improvement_case_001.json",
+      "file_size": 190510,
+      "sha256": "920b073932d1935669ed0b54823d5f79cd68928913b229772c4d70086636b0ff",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/cases/stage4a_vp_context_case_001.json",
+      "file_size": 133635,
+      "sha256": "333685c25207db349ed994446f8d3a68a95bb3f195b9e66494603116559356f0",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_actor_errors.csv",
+      "file_size": 31769460,
+      "sha256": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "local_only"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_analysis_completion.json",
+      "file_size": 616,
+      "sha256": "4a0a9c9419c501c659a102a9ed3473a127b4ae449c3c097a831589ef756bb991",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_bootstrap_ci.json",
+      "file_size": 6421,
+      "sha256": "133aaa1fdf57fa49bc50e7ff4e02e082aaf6e99effa90ee2783256a7929292f2",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_efficiency_audit.json",
+      "file_size": 4563,
+      "sha256": "e4d9eaa9474300e45126eb9d4fac303df702d85ea9d2be644cc6888f57d02349",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_evaluate.py",
+      "file_size": 38458,
+      "sha256": "2589b2011a59e7e99665eaecfdc14ba26c213679ae59f748edb4630cf81a1a2c",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_fresh_val_reconciliation.json",
+      "file_size": 12731,
+      "sha256": "b32646477f143ae32b983fde49e3f5e6190d4f37fad0778fbf80fb2ea6c691ad",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_gradient_audit.json",
+      "file_size": 4093,
+      "sha256": "1440321dfd695541429935291b29c6580069da547274a55025b7f58e8c62000d",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_interaction_membership.csv",
+      "file_size": 21409997,
+      "sha256": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "local_only"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_interaction_subgroup_audit.json",
+      "file_size": 20030,
+      "sha256": "a5bb5b01bb749212ee16d8d7d9712a5553ec20c8a8ba712a3365b00b45a9e9ea",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_metrics.json",
+      "file_size": 795400,
+      "sha256": "d96c68cb98b17e305795452ccf7c3d2410a2decc59ff961d195e716aff4b6a34",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_nontrivial_motion_metrics.json",
+      "file_size": 2192,
+      "sha256": "6d9384203c6b2d7c5db073de394db3709c70732451875e411fa9528a6defc068",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_pairing_audit.json",
+      "file_size": 884,
+      "sha256": "63fe275376cf39cec44c36148ac98c4644ff619305af66eb1413f8e8328bd4bd",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_qualitative_case_manifest.json",
+      "file_size": 10360,
+      "sha256": "3a9e4435190f21b54c68658530756613a3160bd8d2d650da72346707eb00364d",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_relation_bias_statistics.json",
+      "file_size": 70332,
+      "sha256": "5a8ab99d0ffb3a1687efbe00fdbf7e4bfeec5978a7b87eff56037a44ac234b88",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_scientific_decision.json",
+      "file_size": 25201,
+      "sha256": "f2f56602da5dee8ee55c045b986a68f4e63cbeb7c0269da282aad20d1bafac38",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_tiny_overfit.json",
+      "file_size": 3327,
+      "sha256": "c5fb0002c1e1e093f3c652dd2ca263f0f75fd391ca9dccc4f6891ca807d18176",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_type_interaction_ablation.json",
+      "file_size": 10477,
+      "sha256": "1f26600081c08148e1c19ea7392e92fa9820039977e61a65878d30ebaf2c8c3f",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_00500.json",
+      "file_size": 791712,
+      "sha256": "2b670adefdb8e7dc4ab75e5d2e81d495b7673f0aa554fa68c4de48731c642374",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_01000.json",
+      "file_size": 792183,
+      "sha256": "b8b3772e1f3ee6f005a12b9fe9500d85e2cc911a588cd459709d82bcf1e3c50a",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_01500.json",
+      "file_size": 792491,
+      "sha256": "5a22e773e20f43f49efd5a8eb1adbb608e1326138c5313a12e6ae71973fd2925",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_02000.json",
+      "file_size": 793049,
+      "sha256": "9a8c462eb463e069800f698626a0bfc32d15c4d14d5ad344a16c66dc6075663f",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_02500.json",
+      "file_size": 792437,
+      "sha256": "720178fee1d14f1b4ee36c5d523e8237e2138ae0a7eb2cb040daf6330c52b8db",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_03000.json",
+      "file_size": 793274,
+      "sha256": "3fab90395f4597e0729ae1753957090153bfe1c4b165e03c36ed5845642188a1",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_03500.json",
+      "file_size": 792935,
+      "sha256": "f8f9a8ccd6684a39582a137b53f84180acab65b63d23898f4de0fd182150c240",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_04000.json",
+      "file_size": 792999,
+      "sha256": "56e00390388fe7958dca29b2566223d1c563eb440069eb3f803098af13c623ec",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_04500.json",
+      "file_size": 793406,
+      "sha256": "75806711449a60fe128a2c5f10b755e43822097288ef14ed5cfbc6b7f35b197d",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_05000.json",
+      "file_size": 793233,
+      "sha256": "b69b36cea4296b2c681c2da222ac3db4835f05357ae631f72353ec3998f4fb96",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_05500.json",
+      "file_size": 794908,
+      "sha256": "47ee33f43f94e3e2c436068ed9be2301b6d9fc688b048f5018997a053f8ccb22",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_06000.json",
+      "file_size": 794771,
+      "sha256": "bdeb782559384a6b132f2e419345565b50eb68f5141b334546bd4f7a8af4d750",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_06500.json",
+      "file_size": 794778,
+      "sha256": "23fcd229d5d2e11ce5a944cded1fae5a46f3443ab1cfde62bcd0ef2cba0747bc",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_07000.json",
+      "file_size": 795218,
+      "sha256": "3be2fc8e9f36ee6800b2da376ab09b5e5bdffe0b0f1e22d3c4342c19311b2706",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_07500.json",
+      "file_size": 795288,
+      "sha256": "7b2a6f5ccac4c74fb5fb9dc4c46a9fca6ccef01006e03ab664116319b18ae9ff",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_08000.json",
+      "file_size": 795234,
+      "sha256": "4409b6368ce873ce486bd676dc844e950ea26bbae001219dafcb0a5c54b04809",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_08500.json",
+      "file_size": 795192,
+      "sha256": "80729bbe6ac74c64c055bbdfc5972586167c788334e75c67f198f273f0bab48b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_09000.json",
+      "file_size": 794798,
+      "sha256": "93a58c8f1cb7698be78226157c132a27b10d99eee92eba6963ae6ae34d89b512",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_09500.json",
+      "file_size": 795319,
+      "sha256": "e3e69cd8a60050dbfd78ab0ae9eca77e23b06fd8dd5af80c404c716b28fa54f5",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_10000.json",
+      "file_size": 795057,
+      "sha256": "36bf2cfe1167db054b6a3f74e09708d9281c6154fd1fbe25654690f92cf8b488",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_10500.json",
+      "file_size": 795517,
+      "sha256": "55a4c3ea4e1b15dbdd09ef6102236e96e0e99cb3a9b75c4d48d69e3abdd60a8f",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_11000.json",
+      "file_size": 795080,
+      "sha256": "33e7974fe15da48ec9ab81f3d06f9983298d36a285f8161d102de94bd6a3a9b8",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_val_step_11500.json",
+      "file_size": 795293,
+      "sha256": "2cfe5eaf4733acfe4aeaf73be82650b45096999d953740625312e3c7c27c5123",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "04_evaluation/stage4a_wait_evaluate.py",
+      "file_size": 8048,
+      "sha256": "06bef37d29fdd3823efd36ea72e6ddb6e0b90b0efd584a904286d83e9417e37c",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_check_exports.py",
+      "file_size": 4194,
+      "sha256": "51324f135845f555cf7ac860524ecc2a8ed3f175f36766cdb1fdd5a93c2a7572",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_degradation_case_001.pdf",
+      "file_size": 26520,
+      "sha256": "1c7349f744c382c39938f6d679ffa68a940be070bf2fe9cc8310bedf792e1657",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_degradation_case_001.png",
+      "file_size": 237914,
+      "sha256": "0d602700ebad53c7f8f5f4e5bd85c21bd5cc65e6462b480bab63eb353ec66a36",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_degradation_case_001.svg",
+      "file_size": 94284,
+      "sha256": "d8c5a6157eddd9ca8094d8f15bc99c603dcd9734e924c50de6077f15498d63cc",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_degradation_case_001_audit.json",
+      "file_size": 3773,
+      "sha256": "e87b07b4b739a2cc8d7eb5123aec872d5eb8b3cae2a9e84cea228b3a88d2500b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_fde_ablation.pdf",
+      "file_size": 13190,
+      "sha256": "f7f29b062f0470ad7c29c33bf90cd5114954b87346fdb25a1ade081ae4ece104",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_fde_ablation.png",
+      "file_size": 80808,
+      "sha256": "1c2b024b7770a0b58a0d4198e2eebdce5ec0efe852ff6d8c7b0c5255e5e4ced3",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_fde_ablation.svg",
+      "file_size": 10886,
+      "sha256": "6cefc8060932f465cd64c17b98c832c931f5205c3c3900475ce71df9e49dab02",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_fde_ablation_audit.json",
+      "file_size": 1005,
+      "sha256": "f289ef7c600a66ae9a6831c3aff10501793a0bb61bab58b3ed5adf783993033b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_fde_ablation_source.csv",
+      "file_size": 483,
+      "sha256": "b8a6a589b19fe93c5c8858783bbd154ef994651c31b79d5a0e34460e0f8c7f1b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_interaction_context_fde.pdf",
+      "file_size": 13596,
+      "sha256": "81dd6bb9eaec48c45d4aa26c47048daedc4166278c1b33d71c3457cd5a19b4db",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_interaction_context_fde.png",
+      "file_size": 77111,
+      "sha256": "0ef7336b3e0cc95d08f44b83f5ee8e31af1cf744e70f248b88f6567e345bf690",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_interaction_context_fde.svg",
+      "file_size": 11471,
+      "sha256": "07023c364821cbece699cdd9e8e2702e481a248b07c7bddaa58ce37ef62180c8",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_interaction_context_fde_audit.json",
+      "file_size": 1089,
+      "sha256": "28f97e5f1ab9a83f4ec67c0e368379e53ce7e702580aade31e26658c141a66e6",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_interaction_context_fde_source.csv",
+      "file_size": 646,
+      "sha256": "e9b59b42b77e372b5dfdc0f28c065b93b2eef29be641fe3f32bf5f37e42dd3b4",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_pedestrian_improvement_case_001.pdf",
+      "file_size": 32146,
+      "sha256": "de6aaad92773242ebab1bfea41f9d80bb678601ef538d9e10a91c4f2d80b0d79",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_pedestrian_improvement_case_001.png",
+      "file_size": 265671,
+      "sha256": "0a0341ea426a85daa6c16add793dc5e5ca58ff4765fb6397a96e6766991f1ca6",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_pedestrian_improvement_case_001.svg",
+      "file_size": 138025,
+      "sha256": "016e7f4efdd00da505662200688e7b4e9211611c361898d13606ac0936b285b4",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_pedestrian_improvement_case_001_audit.json",
+      "file_size": 3812,
+      "sha256": "023d0aa3799944640a0b5784d62a75047846069a59557fa5ffc39917b4dd8a13",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_plot_cases.py",
+      "file_size": 26546,
+      "sha256": "38b5c15202243f3a49d8e9691793941a6c1b0ce6ad9fd9272b9c46c386de99cb",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_plot_quantitative.py",
+      "file_size": 11525,
+      "sha256": "2a464b079d652fea4a1bb602c9e778a5b5be7f2f1d1c1ed4b55f6a36b7b0bc45",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_training_comparison.pdf",
+      "file_size": 15201,
+      "sha256": "af2360dce45a6871f807065baef2c857e877f7cece4e0dc66b01409615e2a3f7",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_training_comparison.png",
+      "file_size": 152416,
+      "sha256": "d6ff28c43af609159598a03a2787d0c035af9b74d3bf18ea42165285a10bafe8",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_training_comparison.svg",
+      "file_size": 20648,
+      "sha256": "c8861eeb5f2bb6980a664a9f1ee5d5673c373b0816864773cb10981c413585ae",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_training_comparison_audit.json",
+      "file_size": 1545,
+      "sha256": "e3a9edb40db14cffac3a2fdfcb68c27c8d2a06c43e5cbbd005d48bb8ddad015b",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_training_comparison_source.csv",
+      "file_size": 3305,
+      "sha256": "f24531df26c695db54e9fa8c8a4c34a9ad265ff801e738d6ea6a7b1bb47fd672",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_type_pair_bias_heatmap.pdf",
+      "file_size": 20652,
+      "sha256": "0dded95f09152da6366507845113c9a3c906b676ffef3c037372dded299353d9",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_type_pair_bias_heatmap.png",
+      "file_size": 115255,
+      "sha256": "d65e3c090716c988e8fe79f467117297a22909ab90673585fef65d33dd912332",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_type_pair_bias_heatmap.svg",
+      "file_size": 19945,
+      "sha256": "84609c5923f68648d24c20ec6ecda9ba8e16c8f78d8832ca7f1a393a721d8424",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_type_pair_bias_heatmap_audit.json",
+      "file_size": 1329,
+      "sha256": "606ff426a3bd89b25d60bf03d9b477b3d81d85d1bc81da02b6c3627159698d87",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_type_pair_bias_heatmap_source.csv",
+      "file_size": 1253,
+      "sha256": "8d572490505cb6db2a9ef704fc5329cfb717920d3f3a5b4c7b190a4208c4eda2",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_vehicle_improvement_case_001.pdf",
+      "file_size": 31044,
+      "sha256": "50a833a57ed3c8310986eb4330cf06f348034ca9f422922836511b310b1db76d",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_vehicle_improvement_case_001.png",
+      "file_size": 297925,
+      "sha256": "00bf9bd73b0dbb46fc26014455ffdfe746b338f81159c9cfce54510a14923c69",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_vehicle_improvement_case_001.svg",
+      "file_size": 145594,
+      "sha256": "c480176560a9209577b2d4742ef2033dcb375185b8e83ee7491c26ef098e6f13",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_vehicle_improvement_case_001_audit.json",
+      "file_size": 3679,
+      "sha256": "c5ef200efb24348a3a93225dd4f9a33c124d4225b26c02003503a21504b01209",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_vp_context_case_001.pdf",
+      "file_size": 36683,
+      "sha256": "7738030eeb16feb92edff9cdf88c86f74c3e9579e2fb748be0d8d01226a1643e",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_vp_context_case_001.png",
+      "file_size": 289545,
+      "sha256": "48dca0d991c08613575c373cb4f9614de73d0606cf72d7eace8157b0245d94a3",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_vp_context_case_001.svg",
+      "file_size": 190176,
+      "sha256": "2b01e9e92bf0d134cfa0ce9b17cae95473e1f5296922d0f40dbb0fb4697ddfa3",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_vp_context_case_001_audit.json",
+      "file_size": 3770,
+      "sha256": "1158a837e5547ab28d34ffa3c0ed9223e1f130f6d72a5c100d3f7d4d3aefc33e",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "05_figures/stage4a_wait_figures.py",
+      "file_size": 4823,
+      "sha256": "a2ce965ef7348b5e45530fce996a465279eb75e53b476f5f76094d59ba7b43f9",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_bootstrap_ci.csv",
+      "file_size": 1793,
+      "sha256": "c4a5db55b115836508e19bf44beee0ed751fc533087f889bafa2aa36cc363fa4",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_efficiency.csv",
+      "file_size": 650,
+      "sha256": "2c8755eb6d307a249da5cf66c54433baea6c8873d44e8a7332880d57c6479244",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_efficiency_batch_timings.csv",
+      "file_size": 45178,
+      "sha256": "33abae7e550357fe30bab66425734067f4bbfb0a72f8a4ec9ab7829d8fee605e",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_interaction_subgroup_metrics.csv",
+      "file_size": 1353,
+      "sha256": "91f606af5dbfa7b19e21faef645ed1fd80bd60c5600b033feabe414740aa22c3",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_main_results.csv",
+      "file_size": 1105,
+      "sha256": "c86d804d770ff16e7c82e6ada336d55c26b5a05612e3bb340fd146e0ef2b7ff1",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_nontrivial_motion_metrics.csv",
+      "file_size": 769,
+      "sha256": "59c849eee0deda1179f4eb072c87e3eb4241f91f584b402b2653bde82fe22c66",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_relation_bias_pair_aggregate.csv",
+      "file_size": 992,
+      "sha256": "4b4d9febe461ea026a7cee2bec7890cf7bbae74bc32ba86adda6c6641708b2ac",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_relation_bias_statistics.csv",
+      "file_size": 20185,
+      "sha256": "079d5db85183cad2d6c9fa82ce3575bd58c95efe39df6d58884b91547d49ab53",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "06_tables/stage4a_type_interaction_ablation.csv",
+      "file_size": 4849,
+      "sha256": "0fbac6d470fae62b464be4377c8a1497582be18d951e77aacc2c4010bc84cdb6",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "07_checkpoints/stage4a_best_checkpoint_manifest.json",
+      "file_size": 6430,
+      "sha256": "f2a1286db08b661cf90e5e0e48f871fe63d767b96552c94ec83487ead1eaf235",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "07_checkpoints/stage4a_best_overall_minfde.pt",
+      "file_size": 8157952,
+      "sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "local_only"
+    },
+    {
+      "relative_path": "07_checkpoints/stage4a_last_checkpoint.pt",
+      "file_size": 8153428,
+      "sha256": "d2585b49bc99f33fc930329843ae32dfeb8a8ade5af075517aa5e89e0e907a6a",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "local_only"
+    },
+    {
+      "relative_path": "07_checkpoints/stage4a_nll_last_checkpoint.pt",
+      "file_size": 8157952,
+      "sha256": "272d7efd8adf29a3a835a6499b36c564336ac7e839f0d65b4ca00e198f57c6d3",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "local_only"
+    },
+    {
+      "relative_path": "07_checkpoints/stage4a_tiny_last.pt",
+      "file_size": 8135482,
+      "sha256": "f7fc65ba33acf0e79194c09ae49088a4611352d2fb4cc8d30724c5b221d381e8",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "local_only"
+    },
+    {
+      "relative_path": "07_checkpoints/stage4a_warmup_best_overall.pt",
+      "file_size": 8157888,
+      "sha256": "96f113446cb2a91cd2ace40b63facbd6e08e9a508e859ac4b90f117a8c44fe25",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "local_only"
+    },
+    {
+      "relative_path": "07_checkpoints/stage4a_warmup_last_checkpoint.pt",
+      "file_size": 8161281,
+      "sha256": "6795b67be50e671f4ce084d6742a156316d4182d31767f3657b3ba6c1777bb13",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "local_only"
+    },
+    {
+      "relative_path": "08_logs/stage4a_commands.md",
+      "file_size": 4102,
+      "sha256": "508274f43c7d29d91a664a1e9b54d95be35a83b35792945f2e0ec073f27e0191",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_evaluation_pipeline.log",
+      "file_size": 1065,
+      "sha256": "0c5d1538c5542fa04fe4e7cd43b99d8da8623f3bf8de0ac9a7e4b961b9823783",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_figures_pipeline.log",
+      "file_size": 1464,
+      "sha256": "6f6b49191df76fce2a101b4dbfff30c8621b54f50847411d1584b10fed11c6bf",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_final_audit.log",
+      "file_size": 318,
+      "sha256": "00f098144922ad0801c23c649579d2e0d7a985d9654ff873bd56fd9f4081e77a",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_final_evaluation.log",
+      "file_size": 5426,
+      "sha256": "9c8de769e0839c7d5524ee78cb89c71c37b39b727b3f7072a38e76dd6ae0a290",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_finalize.log",
+      "file_size": 57,
+      "sha256": "58df938fb7c28f633fd9151c2e25e93b07f4bc378f4dc1b2e0764a2dc08217b7",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_formal_training.log",
+      "file_size": 14734,
+      "sha256": "e24c10869a9f17bb68e0dae3bae64e7a719a20fe1b1cd480ace64715e5db344f",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_layout_redraw.log",
+      "file_size": 234,
+      "sha256": "c9da1dacea4b114cac7471ab7512ee677e13a7c32c8c39de95f9c96ab7b444a5",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_registration.log",
+      "file_size": 68,
+      "sha256": "334623f17248287e5324014e2e7026938ea65b3219e882c12ea32d6e0403f6f9",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "08_logs/stage4a_tiny_overfit.log",
+      "file_size": 2405,
+      "sha256": "c9dad410d5c7fc3ea71e2b13f08dbd12e6c78b709077b299d3b9550008506099",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "09_reports/stage4a_directory_guide.md",
+      "file_size": 2513,
+      "sha256": "97cc6359e510d47c7b246d5e8f1e2893f73b4660e6404ad93e69d98675677a6a",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "09_reports/stage4a_final_report.md",
+      "file_size": 12994,
+      "sha256": "d0e6a1b1466ebccc88b2c5eb3d7a9f9aac5f71a0e5e44bf3ff9f2a4bbf614e72",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    },
+    {
+      "relative_path": "09_reports/stage4a_finalize.py",
+      "file_size": 16720,
+      "sha256": "950aca26d15a869ec57960b887d511d800ecb7da922b4c8a9c61aa78d2c38a44",
+      "created_by_stage": "Stage4A",
+      "git_delivery": "version_control"
+    }
+  ]
+}

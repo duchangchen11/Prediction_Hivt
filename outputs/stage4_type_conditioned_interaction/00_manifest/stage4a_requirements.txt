@@ -1,0 +1,1876 @@
+2026-10-05 用户补充要求：Stage4 独立目录保存，不与 Stage3 混放。本文件第3节已更新；原始要求全文保存在 stage4a_requirements_original.txt。训练协议、指标及科学判定规则不变，Stage3 冻结输入仅只读引用。
+
+你现在开始执行：
+
+============================================================
+Stage4A：Type-Conditioned Interaction
+类型条件异构交互单变量实验
+============================================================
+
+项目根目录：
+/home/lrj/Prediction_Hivt
+
+当前正式 Stage3B 分支：
+stage3b/type-embedding
+
+Stage3B 最新冻结 commit：
+824c87d7c1bdb89ef1b79572f463bf864a4b840a
+
+Stage3B frozen checkpoint：
+outputs/stage3_multitype_hivt/07_checkpoints/
+stage3b_best_overall_minfde.pt
+
+Stage3B checkpoint SHA256：
+461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547
+
+Stage3B 当前结果：
+Overall FDE = 1.343260 m
+Vehicle FDE = 1.431914 m
+Pedestrian FDE = 1.043875 m
+Bicycle FDE = 1.099908 m
+
+本轮必须严格遵守：
+只增加 Type-Conditioned Relation Bias。
+不执行 Reliability Head。
+不执行 Intent Head。
+不执行动态图拓扑重构。
+不修改 decoder。
+不修改 loss。
+不重新预处理数据。
+
+完成后 STOP，等待“大脑 AI”审查。
+
+============================================================
+0. 研究问题
+============================================================
+
+Stage3B 已经验证：
+
+节点级 Type Embedding：
+
+h_i' = h_i + E_type(c_i)
+
+可以改善 Overall / Vehicle / Pedestrian FDE。
+
+Stage4A 要回答：
+
+“在节点已经知道自身类别的基础上，
+显式建模 source-target 类型组合是否能够进一步改善
+交通参与者之间的交互表示？”
+
+核心区别：
+
+Stage3B：
+agent 知道“我是谁”。
+
+Stage4A：
+interaction edge 进一步知道：
+“谁在影响谁”。
+
+即区分：
+
+Vehicle -> Vehicle
+Vehicle -> Pedestrian
+Vehicle -> Bicycle
+
+Pedestrian -> Vehicle
+Pedestrian -> Pedestrian
+Pedestrian -> Bicycle
+
+Bicycle -> Vehicle
+Bicycle -> Pedestrian
+Bicycle -> Bicycle
+
+共 9 个有向关系。
+
+注意：
+
+V -> P 和 P -> V 必须视为不同关系。
+
+============================================================
+1. 新建分支
+============================================================
+
+必须从：
+
+824c87d7c1bdb89ef1b79572f463bf864a4b840a
+
+创建：
+
+stage4a/type-conditioned-interaction
+
+不要继续修改：
+stage3b/type-embedding
+
+不要 merge main。
+
+============================================================
+2. 冻结 Stage3B
+============================================================
+
+Stage3B 现在正式：
+
+Stage3B frozen = YES
+
+禁止：
+
+继续训练 Stage3B
+重新挑 checkpoint
+修改 Stage3B 图
+覆盖 Stage3B 表格
+修改 Stage3B 模型源码
+
+创建：
+
+outputs/stage3_multitype_hivt/00_manifest/
+stage4a_frozen_stage3b.json
+
+记录至少：
+
+Stage3B commit
+Stage3B checkpoint path
+checkpoint SHA256
+stage3b_model.py SHA256
+stage3b_common.py SHA256
+stage3b_config.yaml SHA256
+stage3b_train.py SHA256
+stage3b_final_report.md SHA256
+stage3b main results SHA256
+stage3b bootstrap SHA256
+850 frozen scene shard hashes
+
+同时保护：
+
+models/hivt_runtime/global_interactor.py
+
+本轮不要直接修改官方/runtime baseline 文件。
+
+============================================================
+3. 输出目录
+============================================================
+
+使用独立 Stage4 根目录：
+
+/home/lrj/Prediction_Hivt/
+outputs/stage4_type_conditioned_interaction/
+
+新增：
+
+03_type_interaction/
+
+所有新文件统一：
+
+stage4a_
+
+前缀。
+
+目录仍使用：
+
+00_manifest/
+01_data_audit/
+02_preprocessed/
+03_type_interaction/
+04_evaluation/
+05_figures/
+06_tables/
+07_checkpoints/
+08_logs/
+09_reports/
+
+不要覆盖 Stage3A/Stage3B 文件。
+
+============================================================
+4. Stage4A 模型结构
+============================================================
+
+Stage3B 模型保留：
+
+local = LocalEncoder(data)
+
+local =
+    local + TypeEmbedding(agent_type)
+
+global =
+    GlobalInteractor(data, local)
+
+Stage4A 仍然保留上述 Type Embedding。
+
+唯一新增：
+
+Type-Conditioned Relation Bias
+
+作用位置：
+
+GlobalInteractor 中
+agent-agent attention softmax 之前。
+
+============================================================
+5. 不修改原 runtime GlobalInteractor
+============================================================
+
+当前基础代码：
+
+models/hivt_runtime/global_interactor.py
+
+禁止直接编辑。
+
+新增：
+
+outputs/stage3_multitype_hivt/00_manifest/
+stage4a_global_interactor.py
+
+和：
+
+stage4a_model.py
+
+Stage4A GlobalInteractor
+复制/继承现有逻辑后，
+仅增加 relation bias。
+
+必须保证原有：
+
+lin_q_node
+lin_k_node
+lin_k_edge
+lin_v_node
+lin_v_edge
+lin_self
+gate
+FFN
+LayerNorm
+multihead_proj
+
+全部保持。
+
+============================================================
+6. 有向 Type Pair 定义
+============================================================
+
+PyG 当前 edge convention：
+
+source = edge_index[0] = j
+target = edge_index[1] = i
+
+因此定义：
+
+pair_id =
+3 * target_type + source_type
+
+即：
+
+pair_id =
+3*c_i + c_j
+
+其中：
+
+vehicle = 0
+pedestrian = 1
+bicycle = 2
+
+必须保存映射：
+
+0 = V <- V
+1 = V <- P
+2 = V <- B
+
+3 = P <- V
+4 = P <- P
+5 = P <- B
+
+6 = B <- V
+7 = B <- P
+8 = B <- B
+
+论文符号可理解为：
+
+j -> i
+
+禁止方向写反。
+
+写 unit test 验证。
+
+============================================================
+7. Relation Feature
+============================================================
+
+不要构建复杂动态图。
+
+使用当前 GlobalInteractor 已经具有的关系信息：
+
+当前时刻相对位置：
+Δp_ij
+
+当前相对航向：
+Δθ_ij
+
+再加入：
+
+有向 type-pair embedding。
+
+定义：
+
+E_pair(c_i,c_j)
+∈ R^16
+
+pair embedding：
+
+nn.Embedding(
+    num_embeddings=9,
+    embedding_dim=16
+)
+
+Relation feature：
+
+r_ij =
+[
+    E_pair(c_i,c_j),
+    Δx_ij / R,
+    Δy_ij / R,
+    cos(Δθ_ij),
+    sin(Δθ_ij)
+]
+
+其中：
+
+R = local_radius = 50 m
+
+所以输入维度：
+
+16 + 2 + 2 = 20
+
+不要加入：
+
+TTC
+地图关系
+未来轨迹
+GT
+intent
+visibility
+人工 risk label
+
+本轮只测类型条件关系。
+
+============================================================
+8. Relation Bias Network
+============================================================
+
+使用一个很小的共享 MLP：
+
+RelationBiasMLP:
+
+Linear(20, 32)
+ReLU
+Linear(32, num_global_layers * num_heads)
+
+当前：
+
+num_global_layers = 3
+num_heads = 8
+
+所以最后输出：
+
+24维
+
+reshape：
+
+[E, 3, 8]
+
+表示：
+
+每条 interaction edge
+每个 GlobalInteractor layer
+每个 attention head
+
+一个 scalar bias。
+
+记：
+
+b_ij^(l,h)
+
+============================================================
+9. Attention 修改
+============================================================
+
+当前 HiVT：
+
+score_ij^(h)
+=
+q_i^h · (k_j^h + k_edge^h)
+/
+sqrt(d_h)
+
+Stage4A：
+
+score_ij^(l,h)
+=
+q_i^h · (k_j^h + k_edge^h)
+/
+sqrt(d_h)
++
+b_ij^(l,h)
+
+然后保持：
+
+alpha_ij =
+softmax_j(score_ij)
+
+后续 value aggregation 完全不改。
+
+注意：
+
+relation bias 加在 softmax 之前。
+
+禁止：
+
+直接乘 attention
+修改 value
+新建额外 message passing
+改变 edge_index
+删除原 rel_embed
+
+============================================================
+10. Neutral Initialization
+============================================================
+
+这一点非常重要。
+
+RelationBiasMLP 最后一层：
+
+weight = 0
+bias = 0
+
+初始化。
+
+因此 step0：
+
+b_ij = 0
+
+Stage4A 在新增模块尚未学习时：
+
+必须与 Stage3B
+产生相同的模型输出。
+
+这用于保证：
+
+“新增模块从 neutral state 开始，
+不是因为随机 relation bias 扰乱 baseline。”
+
+============================================================
+11. 初始化公平性
+============================================================
+
+正式训练从头开始。
+
+禁止：
+
+加载 Stage3B 训练后的 checkpoint
+然后 fine-tune Stage4A。
+
+正确流程：
+
+seed = 2022
+
+先构建 canonical Stage3B step0 model。
+
+再构建 Stage4A model。
+
+所有名称和 shape 相同的：
+
+LocalEncoder
+TypeEmbedding
+原 GlobalInteractor shared parameters
+Decoder
+
+必须逐参数完全一致。
+
+只新增：
+
+pair_embedding
+RelationBiasMLP
+
+要求：
+
+max_shared_parameter_diff = 0
+
+保存：
+
+00_manifest/
+stage4a_initialization_audit.json
+
+必须包含：
+
+seed
+Stage3B shared parameter count
+Stage4A shared parameter count
+additional parameter count
+pair_embedding shape
+bias network shapes
+max_shared_parameter_diff
+shared state SHA256
+
+============================================================
+12. Step0 等价性审计
+============================================================
+
+因为最终 bias layer zero-init，
+
+取一个固定真实 batch：
+
+Stage3B step0
+vs
+Stage4A step0
+
+eval mode 下：
+
+raw_prediction max_abs_diff < 1e-6
+
+mode_logits max_abs_diff < 1e-6
+
+mode_prob max_abs_diff < 1e-6
+
+保存：
+
+00_manifest/
+stage4a_neutral_initialization_audit.json
+
+如果不满足：
+
+STOP。
+
+先排查实现。
+
+============================================================
+13. 参数规模
+============================================================
+
+预计新增参数约：
+
+pair embedding：
+9*16 = 144
+
+bias MLP：
+20*32 + 32
++
+32*24 + 24
+
+约 1464
+
+总新增约：
+
+1608 parameters
+
+执行 AI 必须实际计算，
+不要直接相信这个估算。
+
+最终报告：
+
+Stage3B params =
+Stage4A params =
+additional params =
+relative increase % =
+
+目标：
+
+保持轻量。
+
+============================================================
+14. Unit Tests
+============================================================
+
+新增：
+
+00_manifest/
+stage4a_unit_tests.json
+
+至少测试：
+
+Test 1
+agent type 只能 0/1/2。
+
+Test 2
+pair_id 范围严格 0~8。
+
+Test 3
+V<-P 和 P<-V pair_id 不同。
+
+Test 4
+人工构造 9 种 pair，
+全部能够得到合法 embedding。
+
+Test 5
+relation feature shape：
+[E,20]
+
+Test 6
+bias shape：
+[E,3,8]
+
+Test 7
+zero-init 时所有 bias == 0。
+
+Test 8
+Stage4A step0 output == Stage3B step0。
+
+Test 9
+输出：
+raw_prediction shape
+[K,N,T,4] 或当前正式模型对应 shape
+mode_prob shape
+[N,K]
+保持和 Stage3B 一致。
+
+Test 10
+无 NaN/Inf。
+
+Test 11
+不作用于 lane nodes。
+
+Test 12
+不改变 edge_index。
+
+任一失败：
+
+禁止正式训练。
+
+============================================================
+15. Gradient Audit
+============================================================
+
+因为最后一层 zero-init：
+
+第一个 backward：
+
+RelationBiasMLP 最后一层 gradient > 0
+
+pair embedding 第一更新时可能暂时为 0，
+这是允许的。
+
+但在前 5~10 个 optimizer updates 内：
+
+pair_embedding gradient norm > 0
+
+第一层 MLP gradient norm > 0
+
+最终层 gradient norm > 0
+
+必须记录：
+
+04_evaluation/
+stage4a_gradient_audit.json
+
+如果 10 步后 pair embedding 仍然没有梯度：
+
+STOP。
+
+============================================================
+16. Tiny Overfit
+============================================================
+
+在正式训练前跑 tiny。
+
+优先复用 Stage3B tiny selection。
+
+但先检查该 tiny 是否包含真实 heterogeneous edges。
+
+如果不足：
+
+可以重新选择 tiny TRAIN scenes，
+但只用于代码验证，
+不得改变正式 train/val。
+
+tiny 至少覆盖：
+
+vehicle target
+pedestrian target
+bicycle target
+
+并至少存在：
+
+V-V
+V-P
+P-V
+P-P
+
+若数据允许再包含：
+
+V-B
+B-V
+
+保存：
+
+03_type_interaction/
+stage4a_tiny.py
+stage4a_tiny_curve.csv
+
+04_evaluation/
+stage4a_tiny_overfit.json
+
+Tiny 验证：
+
+loss 能明显下降
+各类输出 finite
+relation bias 从0变成非0
+pair embedding gradient 正常
+
+不要用 tiny 选择超参数。
+
+============================================================
+17. 禁止超参数搜索
+============================================================
+
+本轮固定：
+
+pair_embed_dim = 16
+bias_hidden_dim = 32
+directed_pair = true
+zero_init_final = true
+
+禁止一次测试：
+
+8/16/32
+32/64/128
+不同 radius
+不同 layer 数
+
+否则实验不再干净。
+
+============================================================
+18. 正式训练配置
+============================================================
+
+复制：
+
+stage3b_config.yaml
+
+生成：
+
+00_manifest/
+stage4a_config.yaml
+
+仅新增：
+
+type_conditioned_interaction: true
+pair_embedding_dim: 16
+relation_bias_hidden_dim: 32
+directed_type_pair: true
+relation_bias_zero_init: true
+
+保持：
+
+seed = 2022
+Th = 5
+Tf = 12
+K = 6
+embed_dim = 64
+num_heads = 8
+num_global_layers = 3
+dropout = 0.1
+local_radius = 50m
+batch_size = 16
+weight_decay = 1e-4
+
+oversampling = false
+class_balanced_loss = false
+test_used = false
+
+============================================================
+19. 数据保持冻结
+============================================================
+
+必须继续使用原：
+
+official train700
+official val150
+test unused
+
+850 scene shards。
+
+禁止重新预处理。
+
+禁止：
+
+加 ego node
+删除节点
+改 actor target 定义
+改 vehicle/ped/bicycle label
+改 history/future
+改 map
+
+Ego 仍只是坐标参考，
+不能偷偷加入 interaction graph。
+
+============================================================
+20. Warm-up
+============================================================
+
+完全复制 Stage3B protocol。
+
+Phase 1：
+
+fixed-scale location warm-up
+
+固定执行：
+
+5000 optimizer updates
+
+LR：
+
+0.001
+
+每500 steps：
+
+完整 official VAL150。
+
+warm-up checkpoint selection：
+
+overall full-horizon minFDE6
+
+和 Stage3B 完全一致。
+
+============================================================
+21. NLL Phase
+============================================================
+
+从“本模型自己的 warm-up best”恢复：
+
+model
+optimizer
+RNG
+
+仅修改：
+
+LR：
+0.001 -> 0.0001
+
+然后进入：
+
+original learnable-scale Laplace NLL
+
+NLL 最大：
+
+16000 updates
+
+所以：
+
+global step 最大 = 21000
+
+不是：
+
+warmup5000 + NLL21000。
+
+============================================================
+22. Early Stopping
+============================================================
+
+NLL 每：
+
+500 steps
+
+跑一次完整 VAL150。
+
+selection：
+
+full-horizon overall minFDE6
+strict improvement
+
+连续：
+
+5 次
+
+不改善：
+
+early stop。
+
+最大：
+
+global step 21000
+
+无论有没有继续改善：
+
+都必须 STOP。
+
+============================================================
+23. Checkpoint
+============================================================
+
+正式 best：
+
+07_checkpoints/
+stage4a_best_overall_minfde.pt
+
+last：
+
+stage4a_last_checkpoint.pt
+
+manifest：
+
+stage4a_best_checkpoint_manifest.json
+
+记录：
+
+global step
+phase
+overall metrics
+parameter count
+config SHA
+code commit
+checkpoint SHA
+NaN/Inf
+stop reason
+
+============================================================
+24. 训练曲线
+============================================================
+
+输出：
+
+03_type_interaction/
+stage4a_training_curve.csv
+
+stage4a_loss_curve.png/pdf/svg
+stage4a_val_fde_curve.png/pdf/svg
+
+不平滑。
+
+每个 VAL marker：
+
+必须对应真实 official VAL150。
+
+曲线显示：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+vehicle.moving
+
+============================================================
+25. 最终重新推理
+============================================================
+
+训练结束以后：
+
+禁止直接拿训练日志里的 best 数字当最终结果。
+
+使用：
+
+stage4a_best_overall_minfde.pt
+
+重新跑一次：
+
+完整 official VAL150
+
+输出本地：
+
+04_evaluation/
+stage4a_actor_errors.csv
+
+GitHub 不必上传大型 actor CSV，
+但必须记录 SHA256。
+
+输出：
+
+stage4a_metrics.json
+
+要求：
+
+NaN = 0
+Inf = 0
+
+============================================================
+26. 主指标
+============================================================
+
+与 Stage3B 完全一致：
+
+minADE@6
+minFDE@6
+MR@6
+
+Top1ADE6
+Top1FDE6
+NLL
+
+定义不能改变。
+
+minADE6：
+
+仍为 best-FDE mode 对应 ADE。
+
+MR：
+
+endpoint error > 2m。
+
+============================================================
+27. 主分组
+============================================================
+
+输出：
+
+06_tables/
+stage4a_main_results.csv
+
+Group：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+============================================================
+28. 有效运动组
+============================================================
+
+继续：
+
+Vehicle >5m
+
+Pedestrian >1m
+Pedestrian >5m
+
+Bicycle >1m
+Bicycle >5m
+
+保存：
+
+06_tables/
+stage4a_nontrivial_motion_metrics.csv
+
+字段：
+
+Count
+UniqueInstances
+UniqueScenes
+minADE6
+minFDE6
+MR6
+Top1ADE6
+Top1FDE6
+
+============================================================
+29. 新增：Interaction-sensitive subgroup
+============================================================
+
+这一项非常重要。
+
+Stage4A 是 interaction 模块，
+不能只看所有 actor 平均指标。
+
+新增一个预先定义诊断组：
+
+Heterogeneous-20m
+
+定义：
+
+在 t0 时刻，
+target actor 存在至少一个：
+
+不同 agent type
+
+且欧氏距离 <= 20m
+
+的 context actor。
+
+只使用：
+
+当前 t0
+actor type
+position
+
+不能使用 GT future
+不能用预测结果筛样本。
+
+邻居只包括：
+
+vehicle
+pedestrian
+bicycle
+
+ego 不是 graph node。
+
+============================================================
+30. Heterogeneous-20m 子组继续拆
+============================================================
+
+至少报告：
+
+All heterogeneous <=20m
+
+Vehicle target + different-type neighbor <=20m
+
+Pedestrian target + different-type neighbor <=20m
+
+VP-context <=20m：
+
+vehicle target with pedestrian neighbor
+
+或
+
+pedestrian target with vehicle neighbor
+
+保存：
+
+04_evaluation/
+stage4a_interaction_subgroup_audit.json
+
+06_tables/
+stage4a_interaction_subgroup_metrics.csv
+
+记录：
+
+Count
+UniqueInstances
+UniqueScenes
+
+不要因为结果不好临时改变20m。
+
+20m 来自既有 interaction-density audit，
+本轮预注册后固定。
+
+============================================================
+31. 严格 paired audit
+============================================================
+
+Stage3B vs Stage4A：
+
+必须严格逐 actor 对齐。
+
+检查：
+
+scene_token
+sample_token
+instance_token
+node identity
+agent_type
+future mask
+GT trajectory
+motion state
+
+要求：
+
+full horizon =
+54990
+
+partial =
+30037
+
+total =
+85027
+
+若数量不一致：
+
+STOP。
+
+保存：
+
+04_evaluation/
+stage4a_pairing_audit.json
+
+============================================================
+32. Ablation Table
+============================================================
+
+输出：
+
+06_tables/
+stage4a_type_interaction_ablation.csv
+
+比较：
+
+B = Stage3B TypeEmbedding
+
+C = Stage4A TypeEmbedding
+    + TypeConditionedInteraction
+
+格式：
+
+Group
+B_minADE
+C_minADE
+Delta_ADE
+
+B_minFDE
+C_minFDE
+Delta_FDE
+
+relative_FDE_change
+
+B_MR
+C_MR
+Delta_MR
+
+B_Top1FDE
+C_Top1FDE
+Delta_Top1FDE
+
+定义：
+
+Delta = C - B
+
+负值表示 Stage4A 更好。
+
+============================================================
+33. Paired Scene Bootstrap
+============================================================
+
+使用：
+
+paired scene-cluster bootstrap
+
+official VAL scenes = 150
+
+replicates = 1000
+
+seed = 2022
+
+resampling unit：
+
+scene
+
+不是 actor-window。
+
+输出：
+
+04_evaluation/
+stage4a_bootstrap_ci.json
+
+06_tables/
+stage4a_bootstrap_ci.csv
+
+主指标：
+
+Overall minFDE
+
+辅助：
+
+Overall minADE
+Overall Top1FDE
+
+Vehicle minFDE
+Pedestrian minFDE
+
+vehicle.moving minFDE
+Vehicle >5m minFDE
+Pedestrian >5m minFDE
+
+Heterogeneous-20m minFDE
+VP-context-20m minFDE
+
+Bicycle 仍谨慎解释。
+
+============================================================
+34. 科学判断规则预注册
+============================================================
+
+Primary endpoint：
+
+Stage4A - Stage3B
+Overall full-horizon minFDE6
+
+定义：
+
+Delta < 0
+Stage4A 更好。
+
+SUPPORTED：
+
+Overall ΔFDE < 0
+且
+scene-bootstrap 95%CI upper < 0
+
+同时不能出现主要类别明显异常退化。
+
+PARTIAL：
+
+Overall CI 跨0，
+但 Overall 不存在可靠退化，
+
+并且以下至少一个 interaction-relevant group：
+
+Heterogeneous-20m
+VP-context-20m
+Pedestrian >5m
+Vehicle >5m
+
+ΔFDE <0 且 CI upper <0。
+
+NOT SUPPORTED：
+
+Overall 可靠退化，
+
+或者
+
+Overall 无支持，
+所有 interaction-relevant group
+也无稳定改善。
+
+不能实验结束后修改规则。
+
+============================================================
+35. Relation Bias 诊断
+============================================================
+
+最终 checkpoint 上，
+
+统计9种 directed pair：
+
+V<-V
+V<-P
+V<-B
+P<-V
+P<-P
+P<-B
+B<-V
+B<-P
+B<-B
+
+每类记录：
+
+edge observation count
+mean bias
+std bias
+mean absolute bias
+
+按：
+
+layer
+head
+
+保存：
+
+04_evaluation/
+stage4a_relation_bias_statistics.json
+
+06_tables/
+stage4a_relation_bias_statistics.csv
+
+注意报告中必须说明：
+
+bias/attention 只是模型内部诊断，
+不能解释成因果影响。
+
+============================================================
+36. Bias Heatmap
+============================================================
+
+辅助画：
+
+05_figures/
+stage4a_type_pair_bias_heatmap.png
+stage4a_type_pair_bias_heatmap.pdf
+stage4a_type_pair_bias_heatmap.svg
+
+3x3：
+
+target type × source type
+
+显示：
+
+layer/head 聚合后的 mean |bias|
+
+必须同时输出 source CSV。
+
+不能将 bias 大小直接解释成：
+
+“某类一定更重要”。
+
+只用于证明：
+
+不同 type pair 学到了非完全相同的关系调节。
+
+============================================================
+37. 效率审计
+============================================================
+
+因为论文会称这是：
+
+lightweight interaction adapter
+
+必须测：
+
+Stage3B
+vs
+Stage4A
+
+相同：
+
+GPU
+batch
+VAL batch size
+input
+
+在正式模型 eval mode 下：
+
+warm-up 若干 batch
+
+再测至少：
+
+500 batches/windows 对应稳定统计
+
+记录：
+
+parameter count
+additional parameter %
+mean inference time
+median inference time
+peak CUDA memory
+
+保存：
+
+04_evaluation/
+stage4a_efficiency_audit.json
+
+06_tables/
+stage4a_efficiency.csv
+
+不要只报参数，
+不测时间。
+
+============================================================
+38. 图1：训练公平性
+============================================================
+
+画：
+
+05_figures/
+stage4a_training_comparison.png/pdf/svg
+
+两条：
+
+Stage3B TypeEmbedding
+Stage4A TypeInteraction
+
+横轴：
+
+global step
+
+纵轴：
+
+overall minFDE6
+
+真实点，
+无平滑。
+
+标注：
+
+Stage3B best
+Stage4A best
+
+============================================================
+39. 图2：主消融
+============================================================
+
+画：
+
+stage4a_fde_ablation.png/pdf/svg
+
+Group：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+两组：
+
+Stage3B
+Stage4A
+
+纵轴：
+
+minFDE6(m)
+
+柱顶显示数值。
+
+============================================================
+40. 图3：Interaction-sensitive
+============================================================
+
+画：
+
+stage4a_interaction_context_fde.png/pdf/svg
+
+至少：
+
+All
+Heterogeneous-20m
+VP-context-20m
+Vehicle >5m
+Pedestrian >5m
+
+Stage3B
+vs
+Stage4A
+
+目的：
+
+检查 improvement 是否真的更集中于
+需要交互建模的目标。
+
+============================================================
+41. 定性案例
+============================================================
+
+至少：
+
+1个 vehicle improvement
+且 heterogeneous neighbor <=20m
+
+1个 pedestrian improvement
+且 heterogeneous neighbor <=20m
+
+1个 degradation
+
+优先一个 V-P context case。
+
+必须：
+
+同一个 actor
+同一个 scene
+同一个 GT
+完全相同坐标范围
+
+左：
+
+Stage3B
+
+右：
+
+Stage4A
+
+============================================================
+42. 定性图风格
+============================================================
+
+沿用之前冻结标准：
+
+History：
+灰色圆点
+
+GT：
+黑色实线
+方形 marker
+linewidth≈2.5
+
+Best-FDE：
+蓝色实线
+圆形 marker
+linewidth≈2.5
+
+Top1：
+橙色虚线
+三角 marker
+linewidth≈2.0
+
+future：
+
+全部12 timestep marker。
+
+地图：
+
+浅灰背景
+alpha低
+只画局部 lane。
+
+equal aspect。
+
+必要时 inset：
+
+仅根据最后6个真实点自动计算。
+
+============================================================
+43. Interaction case 邻居显示
+============================================================
+
+如果案例是 V-P interaction：
+
+可以额外显示最近异构 neighbor。
+
+但只显示：
+
+neighbor history
+neighbor GT
+
+使用淡色、细线。
+
+不要加入6个 neighbor预测mode，
+避免图过乱。
+
+图注说明：
+
+“t0 spatial interaction context”
+
+不能说：
+
+“真实因果交互”。
+
+============================================================
+44. 图数值审计
+============================================================
+
+每个案例重新计算：
+
+Stage3B best ADE/FDE
+Stage3B Top1 ADE/FDE
+
+Stage4A best ADE/FDE
+Stage4A Top1 ADE/FDE
+
+与 CSV：
+
+误差 < 1e-4
+
+保存：
+
+xxx_audit.json
+
+否则不允许生成正式图。
+
+============================================================
+45. Stage4A 最终报告
+============================================================
+
+输出：
+
+09_reports/
+stage4a_final_report.md
+
+结构：
+
+【Research Question】
+
+【Model Change】
+
+Type pair definition=
+Pair embedding dim=
+Relation feature=
+Bias MLP=
+Insertion position=
+Additional params=
+
+【Initialization Audit】
+
+shared diff=
+step0 output diff=
+
+【Training】
+
+warmup steps=
+NLL steps=
+best global step=
+stop reason=
+patience/budget=
+
+【Main Results】
+
+Stage3B vs Stage4A
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+vehicle.moving
+
+【Nontrivial Motion】
+
+Vehicle >5m
+Pedestrian >5m
+Bicycle >5m
+
+【Interaction-sensitive Results】
+
+Heterogeneous-20m
+Vehicle hetero-20m
+Pedestrian hetero-20m
+VP-context-20m
+
+【Bootstrap】
+
+Overall ΔFDE + CI
+Vehicle ΔFDE + CI
+Pedestrian ΔFDE + CI
+Vehicle >5m + CI
+Pedestrian >5m + CI
+Heterogeneous-20m + CI
+VP-context-20m + CI
+
+【Relation Bias Analysis】
+
+9 directed pairs
+注意非因果解释
+
+【Efficiency】
+
+params
+latency
+memory
+
+【Qualitative Cases】
+
+【Scientific Decision】
+
+Type-conditioned Interaction =
+SUPPORTED / PARTIAL / NOT SUPPORTED
+
+Stage4A =
+PASS / FAIL
+
+Ready for Stage4B Reliability =
+YES / NO
+
+============================================================
+46. Stage4B Readiness
+============================================================
+
+Stage4A PASS：
+
+表示实现、训练、审计流程正确。
+
+但是：
+
+Ready Stage4B = YES
+
+只在：
+
+Type-conditioned Interaction =
+SUPPORTED
+
+或
+
+PARTIAL
+
+且没有 overall / major class 异常退化时。
+
+如果：
+
+NOT SUPPORTED
+
+则：
+
+Ready Stage4B = NO
+
+停止，
+先回来和“大脑 AI”重新分析 interaction 设计。
+
+============================================================
+47. 不要做这些
+============================================================
+
+本轮绝对禁止：
+
+Reliability Head
+Future Compatibility
+Mode reranking
+ECE calibration
+Intent
+TTC
+Map semantics
+Crosswalk relation
+Dynamic graph reconstruction
+edge pruning
+class-balanced loss
+oversampling
+额外 seed
+超参数搜索
+Diffusion planner
+
+这些全部以后再说。
+
+============================================================
+48. Git commits
+============================================================
+
+建议：
+
+feat: add directed type-conditioned relation bias
+
+test: audit neutral initialization and relation gradients
+
+exp: train Stage4A type-conditioned interaction
+
+eval: compare Stage4A against frozen Stage3B
+
+docs: finalize Stage4A interaction report
+
+push：
+
+stage4a/type-conditioned-interaction
+
+不要 merge main。
+
+============================================================
+49. 完成后只向用户汇报
+============================================================
+
+Git commit=
+
+Best global step=
+
+Stop reason=
+
+Additional parameters=
+
+Overall:
+Stage3B FDE=
+Stage4A FDE=
+Delta=
+95%CI=
+
+Vehicle:
+Stage3B=
+Stage4A=
+Delta=
+95%CI=
+
+Pedestrian:
+Stage3B=
+Stage4A=
+Delta=
+95%CI=
+
+Vehicle >5m:
+Stage3B=
+Stage4A=
+Delta=
+95%CI=
+
+Pedestrian >5m:
+Stage3B=
+Stage4A=
+Delta=
+95%CI=
+
+Heterogeneous-20m:
+Stage3B=
+Stage4A=
+Delta=
+95%CI=
+
+VP-context-20m:
+Stage3B=
+Stage4A=
+Delta=
+95%CI=
+
+Top1 Overall:
+Stage3B=
+Stage4A=
+
+Inference overhead=
+
+Type-conditioned Interaction =
+SUPPORTED / PARTIAL / NOT SUPPORTED
+
+Stage4A =
+PASS / FAIL
+
+Ready Stage4B =
+YES / NO
+
+完成后 STOP。
+不要自行开始 Reliability Head。

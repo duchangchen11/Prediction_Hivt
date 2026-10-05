@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "Stage3B",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 1.757269055086972,
+        "minFDE6": 3.1147213655637787,
+        "Top1ADE6": 2.813428477273158,
+        "Top1FDE6": 5.2550638200020385
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 3.023803407664616e-08,
+        "minFDE6": 1.0210203216232117e-06,
+        "Top1ADE6": 3.1374471554102e-07,
+        "Top1FDE6": 7.630562377514138e-07
+      }
+    },
+    {
+      "method": "Stage4A",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 0.5003252269027889,
+        "minFDE6": 0.4101951589236264,
+        "Top1ADE6": 4.100338590363454,
+        "Top1FDE6": 7.925353189717532
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 2.0277482870589836e-07,
+        "minFDE6": 1.2909411928330172e-08,
+        "Top1ADE6": 1.3134856136076678e-07,
+        "Top1FDE6": 1.3948559818288686e-07
+      }
+    }
+  ],
+  "same_xy_limits": true,
+  "xlim_m": [
+    -3.6093690562248213,
+    48.1518315243721
+  ],
+  "ylim_m": [
+    3.532877070903778,
+    18.67370309114456
+  ],
+  "equal_aspect": true,
+  "compact_equal_aspect_rectangle": true,
+  "separate_header_for_endpoint_text_and_zoom": true,
+  "inset_rule": {
+    "GT_turn_over30deg": false,
+    "hard_overlap_mean_distance_under1m": true,
+    "add_inset": true,
+    "bbox_uses_actual_last6_target_future_points_only": true,
+    "data_bbox_expanded_to_inset_display_aspect": true
+  },
+  "inset_bbox_m": [
+    [
+      15.855484257501269,
+      5.650740928649903
+    ],
+    [
+      40.20439123077998,
+      15.14907615661621
+    ]
+  ],
+  "neighbor_only_history_and_observed_GT": true,
+  "neighbor_eligibility_uses_t0_only": true,
+  "lane_alpha": 0.22,
+  "lane_linewidth": 0.5,
+  "lanes_do_not_set_axes_limits": true,
+  "endpoint_annotation_layout": "PASS",
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage4a_pedestrian_improvement_case_001.png": "0a0341ea426a85daa6c16add793dc5e5ca58ff4765fb6397a96e6766991f1ca6",
+    "05_figures/stage4a_pedestrian_improvement_case_001.pdf": "de6aaad92773242ebab1bfea41f9d80bb678601ef538d9e10a91c4f2d80b0d79",
+    "05_figures/stage4a_pedestrian_improvement_case_001.svg": "016e7f4efdd00da505662200688e7b4e9211611c361898d13606ac0936b285b4"
+  },
+  "source_json": "04_evaluation/cases/stage4a_pedestrian_improvement_case_001.json",
+  "source_sha256": "1f2c70c4c975207cc96d91f3a8f623305b493a7389e40f4eadf428023d50f44a",
+  "checkpoint_SHA256": {
+    "Stage3B": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+    "Stage4A": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb"
+  },
+  "same_actor_and_GT": true,
+  "redrawn_from_existing_true_JSON_without_inference_or_training": true
+}

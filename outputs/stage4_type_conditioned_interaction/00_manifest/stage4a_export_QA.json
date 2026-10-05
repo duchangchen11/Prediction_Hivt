@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "figure_count": 10,
+  "figures": [
+    {
+      "figure": "stage4a_degradation_case_001",
+      "audit_sha256": "e87b07b4b739a2cc8d7eb5123aec872d5eb8b3cae2a9e84cea228b3a88d2500b",
+      "PNG_pixels": [
+        2850,
+        1344
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 51,
+      "paired_case_numeric_and_marker_audits": "PASS"
+    },
+    {
+      "figure": "stage4a_fde_ablation",
+      "audit_sha256": "f289ef7c600a66ae9a6831c3aff10501793a0bb61bab58b3ed5adf783993033b",
+      "PNG_pixels": [
+        2220,
+        1260
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 24
+    },
+    {
+      "figure": "stage4a_interaction_context_fde",
+      "audit_sha256": "28f97e5f1ab9a83f4ec67c0e368379e53ce7e702580aade31e26658c141a66e6",
+      "PNG_pixels": [
+        2220,
+        1260
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 29
+    },
+    {
+      "figure": "stage4a_pedestrian_improvement_case_001",
+      "audit_sha256": "023d0aa3799944640a0b5784d62a75047846069a59557fa5ffc39917b4dd8a13",
+      "PNG_pixels": [
+        2850,
+        1203
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 48,
+      "paired_case_numeric_and_marker_audits": "PASS"
+    },
+    {
+      "figure": "stage4a_training_comparison",
+      "audit_sha256": "e3a9edb40db14cffac3a2fdfcb68c27c8d2a06c43e5cbbd005d48bb8ddad015b",
+      "PNG_pixels": [
+        2220,
+        1260
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 21
+    },
+    {
+      "figure": "stage4a_type_pair_bias_heatmap",
+      "audit_sha256": "606ff426a3bd89b25d60bf03d9b477b3d81d85d1bc81da02b6c3627159698d87",
+      "PNG_pixels": [
+        1500,
+        1260
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 25
+    },
+    {
+      "figure": "stage4a_vehicle_improvement_case_001",
+      "audit_sha256": "c5ef200efb24348a3a93225dd4f9a33c124d4225b26c02003503a21504b01209",
+      "PNG_pixels": [
+        2850,
+        1148
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 40,
+      "paired_case_numeric_and_marker_audits": "PASS"
+    },
+    {
+      "figure": "stage4a_vp_context_case_001",
+      "audit_sha256": "1158a837e5547ab28d34ffa3c0ed9223e1f130f6d72a5c100d3f7d4d3aefc33e",
+      "PNG_pixels": [
+        2850,
+        1338
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 56,
+      "paired_case_numeric_and_marker_audits": "PASS"
+    },
+    {
+      "figure": "stage4a_loss_curve",
+      "audit_sha256": "527da5591aff8ef6341ab793bd25bcb8b51595088b233f9dbd0c8fa6cfde0209",
+      "PNG_pixels": [
+        2220,
+        1140
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 20
+    },
+    {
+      "figure": "stage4a_val_fde_curve",
+      "audit_sha256": "752d3431eddb4d1d0e29d25a6205a6ef799a06d510ec70834d7b2bf2be8be2ba",
+      "PNG_pixels": [
+        2220,
+        1140
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PDF_text_selectable": true,
+      "PDF_TrueType_font": true,
+      "SVG_editable_text_nodes": 21
+    }
+  ],
+  "all_exports_editable_and_valid": true,
+  "all_source_hashes_verified": true,
+  "manual_visual_review_required_for_final_delivery": true
+}

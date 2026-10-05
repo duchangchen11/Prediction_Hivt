@@ -1,0 +1,443 @@
+{
+  "status": "PASS",
+  "checkpoint_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "checks": [
+    {
+      "group": "overall",
+      "metric": "minADE6",
+      "training_best_value": 0.660990360083915,
+      "fresh_value": 0.6609903589752363,
+      "absolute_difference": 1.108678704397903e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "minFDE6",
+      "training_best_value": 1.3355660483845926,
+      "fresh_value": 1.3355660505266302,
+      "absolute_difference": 2.142037658359186e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "MR6",
+      "training_best_value": 0.16593926168394255,
+      "fresh_value": 0.16593926168394255,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "Top1ADE6",
+      "training_best_value": 1.1791931066475563,
+      "fresh_value": 1.1791940006676895,
+      "absolute_difference": 8.94020133257456e-07,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "Top1FDE6",
+      "training_best_value": 2.667318717783818,
+      "fresh_value": 2.6673200087768962,
+      "absolute_difference": 1.2909930782178947e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "NLL",
+      "training_best_value": -0.5533448653357275,
+      "fresh_value": -0.5533448697810871,
+      "absolute_difference": 4.445359635951718e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "minADE6",
+      "training_best_value": 0.7005532003754755,
+      "fresh_value": 0.7005531989069462,
+      "absolute_difference": 1.468529298165322e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "minFDE6",
+      "training_best_value": 1.420021195413089,
+      "fresh_value": 1.4200211978685415,
+      "absolute_difference": 2.455452507987843e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "MR6",
+      "training_best_value": 0.16859586128696966,
+      "fresh_value": 0.16859586128696966,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "Top1ADE6",
+      "training_best_value": 1.323023890816714,
+      "fresh_value": 1.3230250518964048,
+      "absolute_difference": 1.161079690836786e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "Top1FDE6",
+      "training_best_value": 3.0267102319128663,
+      "fresh_value": 3.026711908715612,
+      "absolute_difference": 1.676802745542716e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "NLL",
+      "training_best_value": -0.6922529338529032,
+      "fresh_value": -0.6922529385779203,
+      "absolute_difference": 4.725017044293622e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "minADE6",
+      "training_best_value": 0.5279687071378394,
+      "fresh_value": 0.5279687081583988,
+      "absolute_difference": 1.0205594147549846e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "minFDE6",
+      "training_best_value": 1.0501263424625098,
+      "fresh_value": 1.0501263443386182,
+      "absolute_difference": 1.8761083797613765e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "MR6",
+      "training_best_value": 0.1573071154807532,
+      "fresh_value": 0.1573071154807532,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "Top1ADE6",
+      "training_best_value": 0.6900801664539016,
+      "fresh_value": 0.6900801676267069,
+      "absolute_difference": 1.1728052973225545e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "Top1FDE6",
+      "training_best_value": 1.4441876654638344,
+      "fresh_value": 1.4441876634641913,
+      "absolute_difference": 1.9996431177560225e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "NLL",
+      "training_best_value": -0.06438300163464548,
+      "fresh_value": -0.06438300184420725,
+      "absolute_difference": 2.0956177071429494e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "minADE6",
+      "training_best_value": 0.5417094506882699,
+      "fresh_value": 0.5417094338449604,
+      "absolute_difference": 1.6843309524894323e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "minFDE6",
+      "training_best_value": 1.10796249116893,
+      "fresh_value": 1.107962477951532,
+      "absolute_difference": 1.3217398064924168e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "MR6",
+      "training_best_value": 0.1524390243902439,
+      "fresh_value": 0.1524390243902439,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "Top1ADE6",
+      "training_best_value": 0.8464015712138129,
+      "fresh_value": 0.8464015670455765,
+      "absolute_difference": 4.168236422685823e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "Top1FDE6",
+      "training_best_value": 1.8536865742374553,
+      "fresh_value": 1.853686624992406,
+      "absolute_difference": 5.075495068673774e-08,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "NLL",
+      "training_best_value": -0.5354545172736923,
+      "fresh_value": -0.5354545811696436,
+      "absolute_difference": 6.389595130773529e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "minADE6",
+      "training_best_value": 2.2794269097937065,
+      "fresh_value": 2.279426906523706,
+      "absolute_difference": 3.270000714650223e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "minFDE6",
+      "training_best_value": 4.72711272521385,
+      "fresh_value": 4.727112735245933,
+      "absolute_difference": 1.0032082720101698e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "MR6",
+      "training_best_value": 0.6081636554822675,
+      "fresh_value": 0.6081636554822675,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "Top1ADE6",
+      "training_best_value": 4.530560556598059,
+      "fresh_value": 4.530560566009216,
+      "absolute_difference": 9.41115718688934e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "Top1FDE6",
+      "training_best_value": 10.569072290233667,
+      "fresh_value": 10.569072305610684,
+      "absolute_difference": 1.5377016993056714e-08,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "NLL",
+      "training_best_value": 1.5205641786426691,
+      "fresh_value": 1.5205641777627656,
+      "absolute_difference": 8.799034834083841e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "minADE6",
+      "training_best_value": 0.3541875150590549,
+      "fresh_value": 0.3541875165733897,
+      "absolute_difference": 1.5143348242041554e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "minFDE6",
+      "training_best_value": 0.8649445037614875,
+      "fresh_value": 0.864944506501354,
+      "absolute_difference": 2.7398665558564517e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "MR6",
+      "training_best_value": 0.08644400785854617,
+      "fresh_value": 0.08644400785854617,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "Top1ADE6",
+      "training_best_value": 0.526208262925217,
+      "fresh_value": 0.526217024952962,
+      "absolute_difference": 8.76202774491297e-06,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "Top1FDE6",
+      "training_best_value": 1.3446712658803706,
+      "fresh_value": 1.3446839071365417,
+      "absolute_difference": 1.2641256171175286e-05,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "NLL",
+      "training_best_value": -1.0232869659974342,
+      "fresh_value": -1.0232870128376452,
+      "absolute_difference": 4.684021104317537e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "minADE6",
+      "training_best_value": 0.11681989363922617,
+      "fresh_value": 0.11681989247749384,
+      "absolute_difference": 1.1617323214530018e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "minFDE6",
+      "training_best_value": 0.15554103247722564,
+      "fresh_value": 0.155541032666009,
+      "absolute_difference": 1.887833500635594e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "MR6",
+      "training_best_value": 0.004206683070084928,
+      "fresh_value": 0.004206683070084928,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "Top1ADE6",
+      "training_best_value": 0.16798573399305755,
+      "fresh_value": 0.1679857334058527,
+      "absolute_difference": 5.872048403077201e-10,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "Top1FDE6",
+      "training_best_value": 0.2669205239857621,
+      "fresh_value": 0.2669205256876628,
+      "absolute_difference": 1.7019006759433353e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "NLL",
+      "training_best_value": -1.533785839269324,
+      "fresh_value": -1.5337858362261625,
+      "absolute_difference": 3.0431615005710455e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "minADE6",
+      "training_best_value": 0.8231001845491596,
+      "fresh_value": 0.8231001778790169,
+      "absolute_difference": 6.6701426604254266e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "minFDE6",
+      "training_best_value": 1.7689607195932076,
+      "fresh_value": 1.7689606999480678,
+      "absolute_difference": 1.964513973717885e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "MR6",
+      "training_best_value": 0.17225325884543763,
+      "fresh_value": 0.17225325884543763,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "Top1ADE6",
+      "training_best_value": 1.3341794918114371,
+      "fresh_value": 1.3341794997987857,
+      "absolute_difference": 7.98734856033434e-09,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "Top1FDE6",
+      "training_best_value": 3.0809632478059865,
+      "fresh_value": 3.0809632480639646,
+      "absolute_difference": 2.579780833400491e-10,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "NLL",
+      "training_best_value": -0.7759346071824959,
+      "fresh_value": -0.7759346120595825,
+      "absolute_difference": 4.877086623444882e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    }
+  ],
+  "selection_metrics_tolerance_unchanged": 1e-06,
+  "Top1_reporting_tolerance": 0.0001,
+  "fresh_metrics_authoritative": true,
+  "checkpoint_reselected": false,
+  "reason": "Original GPU protocol is nondeterministic; argmax can switch at near-tied modes. Top1 reporting reconciliation is separate from best-FDE checkpoint selection and scientific inference."
+}

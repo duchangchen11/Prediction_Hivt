@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "Stage3B",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 10.018452602507095,
+        "minFDE6": 22.252275304179,
+        "Top1ADE6": 18.22245323094335,
+        "Top1FDE6": 40.63906322922593
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 4.184104973603553e-08,
+        "minFDE6": 1.6273994418725124e-07,
+        "Top1ADE6": 1.067247062280785e-06,
+        "Top1FDE6": 1.559592426758627e-06
+      }
+    },
+    {
+      "method": "Stage4A",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "marker": "s",
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "marker": "^",
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "marker": "o",
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 7.030141863759931,
+        "minFDE6": 15.578203224319841,
+        "Top1ADE6": 18.106627531489526,
+        "Top1FDE6": 39.923376788589266
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 4.435215634757128e-07,
+        "minFDE6": 1.8843227369558235e-06,
+        "Top1ADE6": 8.864792242491148e-07,
+        "Top1FDE6": 1.2021333901657272e-06
+      }
+    }
+  ],
+  "same_xy_limits": true,
+  "xlim_m": [
+    -49.557896308898925,
+    27.704088859558105
+  ],
+  "ylim_m": [
+    -18.29458683013916,
+    13.482108764648437
+  ],
+  "equal_aspect": true,
+  "compact_equal_aspect_rectangle": true,
+  "separate_header_for_endpoint_text_and_zoom": true,
+  "inset_rule": {
+    "GT_turn_over30deg": true,
+    "hard_overlap_mean_distance_under1m": false,
+    "add_inset": true,
+    "bbox_uses_actual_last6_target_future_points_only": true,
+    "data_bbox_expanded_to_inset_display_aspect": true
+  },
+  "inset_bbox_m": [
+    [
+      -19.711149291992186,
+      -4.031482892837316
+    ],
+    [
+      26.770698623657225,
+      14.100754993762761
+    ]
+  ],
+  "neighbor_only_history_and_observed_GT": true,
+  "neighbor_eligibility_uses_t0_only": true,
+  "lane_alpha": 0.22,
+  "lane_linewidth": 0.5,
+  "lanes_do_not_set_axes_limits": true,
+  "endpoint_annotation_layout": "PASS",
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage4a_vp_context_case_001.png": "48dca0d991c08613575c373cb4f9614de73d0606cf72d7eace8157b0245d94a3",
+    "05_figures/stage4a_vp_context_case_001.pdf": "7738030eeb16feb92edff9cdf88c86f74c3e9579e2fb748be0d8d01226a1643e",
+    "05_figures/stage4a_vp_context_case_001.svg": "2b01e9e92bf0d134cfa0ce9b17cae95473e1f5296922d0f40dbb0fb4697ddfa3"
+  },
+  "source_json": "04_evaluation/cases/stage4a_vp_context_case_001.json",
+  "source_sha256": "333685c25207db349ed994446f8d3a68a95bb3f195b9e66494603116559356f0",
+  "checkpoint_SHA256": {
+    "Stage3B": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+    "Stage4A": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb"
+  },
+  "same_actor_and_GT": true,
+  "redrawn_from_existing_true_JSON_without_inference_or_training": true
+}

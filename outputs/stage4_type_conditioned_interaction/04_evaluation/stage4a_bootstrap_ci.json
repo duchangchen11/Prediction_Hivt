@@ -1,0 +1,217 @@
+{
+  "status": "PASS",
+  "method": "paired scene-cluster percentile bootstrap",
+  "replicates": 1000,
+  "seed": 2022,
+  "resampling_unit": "official VAL scene",
+  "scene_count": 150,
+  "confidence": 0.95,
+  "delta": "C_Stage4A-B_Stage3B; negative favors Stage4A",
+  "weighting": "pool equally weighted actor-window deltas across complete resampled scene clusters",
+  "Bicycle_gt5_significance_test": false,
+  "Bicycle_gt5_reason": "limited unique bicycle instances/scenes; descriptive only",
+  "Bicycle_overall_CI_role": "pre-registered major-class reliable-degradation guard; no strong improvement claim",
+  "groups": {
+    "overall": {
+      "minADE6": {
+        "estimate_m": -0.005415199012936342,
+        "CI95_m": [
+          -0.010581886425297247,
+          -0.0010501322806633338
+        ],
+        "bootstrap_std_m": 0.0024335405379382873,
+        "valid_replicates": 1000,
+        "actor_windows": 54990,
+        "unique_scenes_with_targets": 150
+      },
+      "minFDE6": {
+        "estimate_m": -0.007694397463634132,
+        "CI95_m": [
+          -0.01767157079523892,
+          0.0012315295569654504
+        ],
+        "bootstrap_std_m": 0.004821711150801458,
+        "valid_replicates": 1000,
+        "actor_windows": 54990,
+        "unique_scenes_with_targets": 150
+      },
+      "Top1FDE6": {
+        "estimate_m": -0.020663817922898287,
+        "CI95_m": [
+          -0.055616468542955336,
+          0.01339738965215582
+        ],
+        "bootstrap_std_m": 0.017840235433996994,
+        "valid_replicates": 1000,
+        "actor_windows": 54990,
+        "unique_scenes_with_targets": 150
+      }
+    },
+    "vehicle": {
+      "minADE6": {
+        "estimate_m": -0.0077936562034943875,
+        "CI95_m": [
+          -0.01424605518712218,
+          -0.0022940901914785257
+        ],
+        "bootstrap_std_m": 0.0031273550097981216,
+        "valid_replicates": 1000,
+        "actor_windows": 42332,
+        "unique_scenes_with_targets": 150
+      },
+      "minFDE6": {
+        "estimate_m": -0.01189230572583153,
+        "CI95_m": [
+          -0.0252490628236296,
+          -0.00015865963030098443
+        ],
+        "bootstrap_std_m": 0.006338460789867202,
+        "valid_replicates": 1000,
+        "actor_windows": 42332,
+        "unique_scenes_with_targets": 150
+      }
+    },
+    "pedestrian": {
+      "minADE6": {
+        "estimate_m": 0.002260924755658323,
+        "CI95_m": [
+          -0.0003240643894924936,
+          0.0048095008616812285
+        ],
+        "bootstrap_std_m": 0.001291455759297891,
+        "valid_replicates": 1000,
+        "actor_windows": 12002,
+        "unique_scenes_with_targets": 121
+      },
+      "minFDE6": {
+        "estimate_m": 0.006251165147007626,
+        "CI95_m": [
+          0.0013643582141224355,
+          0.010847093999526646
+        ],
+        "bootstrap_std_m": 0.002344531239670272,
+        "valid_replicates": 1000,
+        "actor_windows": 12002,
+        "unique_scenes_with_targets": 121
+      }
+    },
+    "bicycle": {
+      "minADE6": {
+        "estimate_m": 0.0076275026944264334,
+        "CI95_m": [
+          -0.0172136931662356,
+          0.03216852656753429
+        ],
+        "bootstrap_std_m": 0.012761251813950901,
+        "valid_replicates": 1000,
+        "actor_windows": 656,
+        "unique_scenes_with_targets": 47
+      },
+      "minFDE6": {
+        "estimate_m": 0.008054398424197954,
+        "CI95_m": [
+          -0.02548091895371101,
+          0.0479795861189872
+        ],
+        "bootstrap_std_m": 0.019125167653629968,
+        "valid_replicates": 1000,
+        "actor_windows": 656,
+        "unique_scenes_with_targets": 47
+      }
+    },
+    "vehicle.moving": {
+      "minFDE6": {
+        "estimate_m": -0.064419505796032,
+        "CI95_m": [
+          -0.11163355994097451,
+          -0.019579556151429926
+        ],
+        "bootstrap_std_m": 0.02341663346627136,
+        "valid_replicates": 1000,
+        "actor_windows": 10461,
+        "unique_scenes_with_targets": 137
+      }
+    },
+    "Vehicle >5m": {
+      "minFDE6": {
+        "estimate_m": -0.06354317896653805,
+        "CI95_m": [
+          -0.11348544215375714,
+          -0.01589415008916412
+        ],
+        "bootstrap_std_m": 0.024808101105463172,
+        "valid_replicates": 1000,
+        "actor_windows": 9744,
+        "unique_scenes_with_targets": 137
+      }
+    },
+    "Pedestrian >5m": {
+      "minFDE6": {
+        "estimate_m": -0.003949807517397218,
+        "CI95_m": [
+          -0.009749950132262292,
+          0.0011065930449211255
+        ],
+        "bootstrap_std_m": 0.00270937045816632,
+        "valid_replicates": 1000,
+        "actor_windows": 7581,
+        "unique_scenes_with_targets": 110
+      }
+    },
+    "Heterogeneous-20m": {
+      "minFDE6": {
+        "estimate_m": -0.010562996839647495,
+        "CI95_m": [
+          -0.02350722514807593,
+          0.0014851181040610522
+        ],
+        "bootstrap_std_m": 0.006498194484012248,
+        "valid_replicates": 1000,
+        "actor_windows": 25113,
+        "unique_scenes_with_targets": 131
+      }
+    },
+    "Vehicle hetero-20m": {
+      "minFDE6": {
+        "estimate_m": -0.021310366278657834,
+        "CI95_m": [
+          -0.04400884881902572,
+          -0.0008352145531650738
+        ],
+        "bootstrap_std_m": 0.010998376490527359,
+        "valid_replicates": 1000,
+        "actor_windows": 14813,
+        "unique_scenes_with_targets": 131
+      }
+    },
+    "Pedestrian hetero-20m": {
+      "minFDE6": {
+        "estimate_m": 0.005209264205731622,
+        "CI95_m": [
+          -5.043071018168231e-05,
+          0.009994592712739033
+        ],
+        "bootstrap_std_m": 0.002523108653410191,
+        "valid_replicates": 1000,
+        "actor_windows": 9732,
+        "unique_scenes_with_targets": 120
+      }
+    },
+    "VP-context-20m": {
+      "minFDE6": {
+        "estimate_m": -0.012060590578078064,
+        "CI95_m": [
+          -0.025652104774570667,
+          0.0008230298010202604
+        ],
+        "bootstrap_std_m": 0.0067203585131399715,
+        "valid_replicates": 1000,
+        "actor_windows": 23209,
+        "unique_scenes_with_targets": 125
+      }
+    }
+  },
+  "interaction_membership_sha256": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a",
+  "B_actor_errors_sha256": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+  "C_actor_errors_sha256": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7"
+}

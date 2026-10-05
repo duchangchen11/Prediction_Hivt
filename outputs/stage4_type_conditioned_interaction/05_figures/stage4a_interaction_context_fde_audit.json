@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "source_SHA256": {
+    "06_tables/stage4a_type_interaction_ablation.csv": "0fbac6d470fae62b464be4377c8a1497582be18d951e77aacc2c4010bc84cdb6",
+    "05_figures/stage4a_interaction_context_fde_source.csv": "e9b59b42b77e372b5dfdc0f28c065b93b2eef29be641fe3f32bf5f37e42dd3b4"
+  },
+  "exports_SHA256": {
+    "05_figures/stage4a_interaction_context_fde.png": "0ef7336b3e0cc95d08f44b83f5ee8e31af1cf744e70f248b88f6567e345bf690",
+    "05_figures/stage4a_interaction_context_fde.pdf": "81dd6bb9eaec48c45d4aa26c47048daedc4166278c1b33d71c3457cd5a19b4db",
+    "05_figures/stage4a_interaction_context_fde.svg": "07023c364821cbece699cdd9e8e2702e481a248b07c7bddaa58ce37ef62180c8"
+  },
+  "smoothing": false,
+  "fabricated_data": false,
+  "text_inside_canvas": true,
+  "backend": "python",
+  "center": "Actor-window arithmetic mean",
+  "bar_values_exact_source": true,
+  "formal_inference": "Separate paired150-scene cluster bootstrap;1000 replicates seed2022.",
+  "groups": [
+    "Overall",
+    "Heterogeneous-20m",
+    "VP-context-20m",
+    "Vehicle >5m",
+    "Pedestrian >5m"
+  ]
+}

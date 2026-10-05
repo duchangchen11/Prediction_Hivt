@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "training_and_validation_protocol": "PASS",
+  "same_seed_shared_initialization": "PASS",
+  "config_only_five_relation_bias_keys_added": true,
+  "training_code_unchanged_since_preregistration": true,
+  "training_code_git_commit": "6a3b840d491bbcc02ae34d33fce221ca0a8f0f6e",
+  "all_actual500step_VAL_points_verified": 23,
+  "separate_Stage4_root": "/home/lrj/Prediction_Hivt/outputs/stage4_type_conditioned_interaction",
+  "Stage3_has_no_Stage4_files": true,
+  "post_training_directory_migration": "PASS",
+  "registered_training_source_snapshots_verified": true,
+  "TypeEmbedding_gradient_min": 0.0006423408049158752,
+  "relation_adapter_first10_gradient_audit": "PASS",
+  "relation_gradient_maxima": {
+    "pair": 0.03497948497533798,
+    "first": 0.029310300946235657,
+    "final": 0.13585244119167328
+  },
+  "checkpoint_optimizer_and_cursor": {
+    "best": {
+      "global_step": 9000,
+      "NLL_steps": 4000,
+      "TypeEmbedding_AdamW_updates": 8500,
+      "cursor": {
+        "epoch": 3,
+        "next_batch": 829
+      },
+      "sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb"
+    },
+    "last": {
+      "global_step": 11500,
+      "NLL_steps": 6500,
+      "TypeEmbedding_AdamW_updates": 11000,
+      "cursor": {
+        "epoch": 6,
+        "next_batch": 158
+      },
+      "sha256": "d2585b49bc99f33fc930329843ae32dfeb8a8ade5af075517aa5e89e0e907a6a"
+    }
+  },
+  "frozen_prior_files_verified": 1006,
+  "frozen_scene_shards_verified": 850,
+  "old_results_unchanged": true,
+  "Stage2C_untracked_redraw_files_unchanged": 5,
+  "frozen_Stage3B_branch_unchanged": true,
+  "paired_full_horizon_actor_windows": 54990,
+  "figure_audits_verified": [
+    "05_figures/stage4a_degradation_case_001_audit.json",
+    "05_figures/stage4a_fde_ablation_audit.json",
+    "05_figures/stage4a_interaction_context_fde_audit.json",
+    "05_figures/stage4a_pedestrian_improvement_case_001_audit.json",
+    "05_figures/stage4a_training_comparison_audit.json",
+    "05_figures/stage4a_type_pair_bias_heatmap_audit.json",
+    "05_figures/stage4a_vehicle_improvement_case_001_audit.json",
+    "05_figures/stage4a_vp_context_case_001_audit.json",
+    "03_type_interaction/stage4a_loss_curve_audit.json",
+    "03_type_interaction/stage4a_val_fde_curve_audit.json"
+  ],
+  "test_used": false,
+  "Stage4B_executed": false,
+  "scientific_support_is_separate_from_technical_PASS": true
+}

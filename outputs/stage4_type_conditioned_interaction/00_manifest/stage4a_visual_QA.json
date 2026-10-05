@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "backend": "python",
+  "review": "Manual visual inspection of all10 generated PNG figures plus repeated inspection of corrected insets",
+  "figure_count": 10,
+  "figures": {
+    "05_figures/stage4a_degradation_case_001.png": "0d602700ebad53c7f8f5f4e5bd85c21bd5cc65e6462b480bab63eb353ec66a36",
+    "05_figures/stage4a_fde_ablation.png": "1c2b024b7770a0b58a0d4198e2eebdce5ec0efe852ff6d8c7b0c5255e5e4ced3",
+    "05_figures/stage4a_interaction_context_fde.png": "0ef7336b3e0cc95d08f44b83f5ee8e31af1cf744e70f248b88f6567e345bf690",
+    "05_figures/stage4a_pedestrian_improvement_case_001.png": "0a0341ea426a85daa6c16add793dc5e5ca58ff4765fb6397a96e6766991f1ca6",
+    "05_figures/stage4a_training_comparison.png": "d6ff28c43af609159598a03a2787d0c035af9b74d3bf18ea42165285a10bafe8",
+    "05_figures/stage4a_type_pair_bias_heatmap.png": "d65e3c090716c988e8fe79f467117297a22909ab90673585fef65d33dd912332",
+    "05_figures/stage4a_vehicle_improvement_case_001.png": "00bf9bd73b0dbb46fc26014455ffdfe746b338f81159c9cfce54510a14923c69",
+    "05_figures/stage4a_vp_context_case_001.png": "48dca0d991c08613575c373cb4f9614de73d0606cf72d7eace8157b0245d94a3",
+    "03_type_interaction/stage4a_loss_curve.png": "420965f22221bc0d60bafa480231c44ab892660a584b514fabe8857104dde597",
+    "03_type_interaction/stage4a_val_fde_curve.png": "1762a6e1f955ba50ce9c9ef939a09416858ee3d658a50fafb65780676b2d1f40"
+  },
+  "checks": [
+    "readable titles and legends",
+    "identical matched-case coordinate axes",
+    "12 original future markers per trajectory verified by export audits",
+    "no endpoint metric box covering trajectories",
+    "pedestrian vertical inset expanded from true last6 point bbox to avoid tick overlap",
+    "main and subgroup bar labels match exact source means",
+    "training curves use actual500step full_VAL points without smoothing",
+    "target/source heatmap axes explicit; internal diagnostic only"
+  ],
+  "layout_correction": "Only automatic inset bounds expanded to physical display aspect; no trajectory edits, interpolation or smoothing"
+}

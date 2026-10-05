@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "GPU": "NVIDIA GeForce RTX 3080",
+  "device": "cuda:0",
+  "torch_version": "2.5.1+cu124",
+  "CUDA_version": "12.4",
+  "eval_mode": true,
+  "timing_method": "CUDA events around forward on preloaded identical GPU tensors; data loading/H2D and input clone excluded",
+  "execution_order": "alternate B-C / C-B by paired batch to reduce order drift",
+  "warmup_batches_per_model": 20,
+  "paired_measured_batches": 500,
+  "minimum_500_batches_satisfied": true,
+  "VAL_input_order": "Frozen official VAL sorted existing dataset order; deterministic cyclic batch repetition after one pass",
+  "unique_VAL_batches": 226,
+  "unique_VAL_windows": 3603,
+  "identical_input_tensors_per_pair": true,
+  "batch_size": 16,
+  "both_models_resident_common_parameter_memory_baseline_bytes": 18279936,
+  "peak_memory_method": "separate untimed isolated pass per model; other model CPU, empty_cache, warmup20, reset peak, all 226 unique identical VAL batches; actual max allocated/reserved",
+  "isolated_memory": {
+    "B_Stage3B": {
+      "peak_allocated_bytes": 1819983360,
+      "peak_reserved_bytes": 3575644160,
+      "unique_batches_measured": 226,
+      "GPU_model_count": 1
+    },
+    "C_Stage4A": {
+      "peak_allocated_bytes": 1819991040,
+      "peak_reserved_bytes": 3575644160,
+      "unique_batches_measured": 226,
+      "GPU_model_count": 1
+    }
+  },
+  "Stage3B_checkpoint_sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+  "Stage4A_checkpoint_sha256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "parameters_B": 646001,
+  "parameters_C": 647609,
+  "additional_parameters": 1608,
+  "additional_parameters_percent": 0.24891602334980906,
+  "mean_latency_overhead_percent": 0.9267940769501548,
+  "median_latency_overhead_percent": 1.497737642576813,
+  "overhead_percent": 0.9267940769501548,
+  "models": {
+    "Stage3B": {
+      "Model": "B_Stage3B",
+      "parameter_count": 646001,
+      "additional_parameter_percent_vs_Stage3B": 0.0,
+      "mean_inference_ms": 57.77854949188232,
+      "median_inference_ms": 53.88083076477051,
+      "std_inference_ms": 24.30073303334588,
+      "p95_inference_ms": 93.09848175048823,
+      "paired_measured_batches": 500,
+      "measured_scene_windows": 7974,
+      "batch_size": 16,
+      "peak_CUDA_memory_MiB": 1735.67138671875,
+      "peak_CUDA_reserved_memory_MiB": 3410.0,
+      "timing_both_models_resident_peak_MiB": 1738.185546875,
+      "max_forward_incremental_peak_MiB": 1693.35595703125
+    },
+    "Stage4A": {
+      "Model": "C_Stage4A",
+      "parameter_count": 647609,
+      "additional_parameter_percent_vs_Stage3B": 0.24891602334980906,
+      "mean_inference_ms": 58.3140376663208,
+      "median_inference_ms": 54.68782424926758,
+      "std_inference_ms": 25.374003302723658,
+      "p95_inference_ms": 94.95792655944824,
+      "paired_measured_batches": 500,
+      "measured_scene_windows": 7974,
+      "batch_size": 16,
+      "peak_CUDA_memory_MiB": 1735.6787109375,
+      "peak_CUDA_reserved_memory_MiB": 3410.0,
+      "timing_both_models_resident_peak_MiB": 1738.185546875,
+      "max_forward_incremental_peak_MiB": 1693.35595703125
+    }
+  },
+  "metrics": [
+    {
+      "Model": "B_Stage3B",
+      "parameter_count": 646001,
+      "additional_parameter_percent_vs_Stage3B": 0.0,
+      "mean_inference_ms": 57.77854949188232,
+      "median_inference_ms": 53.88083076477051,
+      "std_inference_ms": 24.30073303334588,
+      "p95_inference_ms": 93.09848175048823,
+      "paired_measured_batches": 500,
+      "measured_scene_windows": 7974,
+      "batch_size": 16,
+      "peak_CUDA_memory_MiB": 1735.67138671875,
+      "peak_CUDA_reserved_memory_MiB": 3410.0,
+      "timing_both_models_resident_peak_MiB": 1738.185546875,
+      "max_forward_incremental_peak_MiB": 1693.35595703125
+    },
+    {
+      "Model": "C_Stage4A",
+      "parameter_count": 647609,
+      "additional_parameter_percent_vs_Stage3B": 0.24891602334980906,
+      "mean_inference_ms": 58.3140376663208,
+      "median_inference_ms": 54.68782424926758,
+      "std_inference_ms": 25.374003302723658,
+      "p95_inference_ms": 94.95792655944824,
+      "paired_measured_batches": 500,
+      "measured_scene_windows": 7974,
+      "batch_size": 16,
+      "peak_CUDA_memory_MiB": 1735.6787109375,
+      "peak_CUDA_reserved_memory_MiB": 3410.0,
+      "timing_both_models_resident_peak_MiB": 1738.185546875,
+      "max_forward_incremental_peak_MiB": 1693.35595703125
+    }
+  ],
+  "batch_timing_source_sha256": "33abae7e550357fe30bab66425734067f4bbfb0a72f8a4ec9ab7829d8fee605e"
+}

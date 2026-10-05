@@ -1,0 +1,762 @@
+{
+  "status": "PASS",
+  "user_instruction": "Stage4 must have its own directory separate from Stage3",
+  "old_stage4_root": "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt",
+  "new_stage4_root": "/home/lrj/Prediction_Hivt/outputs/stage4_type_conditioned_interaction",
+  "frozen_Stage3_input_root": "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt",
+  "training_completed_before_migration": true,
+  "final_evaluation_completed_before_migration": true,
+  "retraining": false,
+  "best_checkpoint_SHA256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "registered_source_snapshots": {
+    "00_manifest/stage4a_global_interactor.py": "00_manifest/stage4a_training_snapshot/00_manifest/stage4a_global_interactor.py",
+    "00_manifest/stage4a_model.py": "00_manifest/stage4a_training_snapshot/00_manifest/stage4a_model.py",
+    "00_manifest/stage4a_common.py": "00_manifest/stage4a_training_snapshot/00_manifest/stage4a_common.py",
+    "03_type_interaction/stage4a_train.py": "00_manifest/stage4a_training_snapshot/03_type_interaction/stage4a_train.py",
+    "03_type_interaction/stage4a_tiny.py": "00_manifest/stage4a_training_snapshot/03_type_interaction/stage4a_tiny.py"
+  },
+  "files": [
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/__pycache__/stage4a_common.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/__pycache__/stage4a_common.cpython-310.pyc",
+      "bytes": 12340,
+      "SHA256_before_and_after_move": "054911269225cf3017a2a9d588d6d6e814de5b7e2eaaa6abc83725ea2acb16b8"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/__pycache__/stage4a_final_audit.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/__pycache__/stage4a_final_audit.cpython-310.pyc",
+      "bytes": 10926,
+      "SHA256_before_and_after_move": "af834591fb9902b924c19440a2bddf354f6a3108f5eab87bff79eb0da9a7c2a5"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/__pycache__/stage4a_git_payload.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/__pycache__/stage4a_git_payload.cpython-310.pyc",
+      "bytes": 2552,
+      "SHA256_before_and_after_move": "c6ea9476e809a2cb81c91a1e9f2bc8c19254740f03daed1b9faaf715339df8cc"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/__pycache__/stage4a_global_interactor.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/__pycache__/stage4a_global_interactor.cpython-310.pyc",
+      "bytes": 8094,
+      "SHA256_before_and_after_move": "d3da49c8639074aaa2daea4ae1c8827d6163f6a3d57052f02fbe70530c5f458e"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/__pycache__/stage4a_model.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/__pycache__/stage4a_model.cpython-310.pyc",
+      "bytes": 1147,
+      "SHA256_before_and_after_move": "5a4515132eb46de503e7bad60ba48aff43910e5393f8ca353eb0694a0b985588"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/__pycache__/stage4a_register.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/__pycache__/stage4a_register.cpython-310.pyc",
+      "bytes": 8196,
+      "SHA256_before_and_after_move": "308f682f48502f070a9b07c2c8d69beaf9eb3735cdd4844fc20034013a622ad0"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_architecture_review.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_architecture_review.json",
+      "bytes": 6105,
+      "SHA256_before_and_after_move": "ba36d90c5d8db9c7a2fa41ad3f6d005163cd9115ad9a8f1b03dd6850fdc4e130"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_common.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_common.py",
+      "bytes": 10863,
+      "SHA256_before_and_after_move": "e5a6d19d3570654f6b7a801419e472b7d22f6fb446d08aecc2294bf257daecf0"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_config.yaml",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_config.yaml",
+      "bytes": 1787,
+      "SHA256_before_and_after_move": "3e8cd2e6a07046636db6c08a5818b216c293a92d0ea02d2ff2825d025a2a1ea3"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_delivery_schema_review.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_delivery_schema_review.json",
+      "bytes": 6473,
+      "SHA256_before_and_after_move": "943270c993a98defb8c5d13ce43194f638de321a5b53e0341f60dd82bbd9b215"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_eval_repeat_comparison.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_eval_repeat_comparison.json",
+      "bytes": 174,
+      "SHA256_before_and_after_move": "b7a11bf1a0e409745e639e2e8ef980e79879cc2d02dd46716eb4690bd6f8a486"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_evaluation_pipeline_state.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_evaluation_pipeline_state.json",
+      "bytes": 4623,
+      "SHA256_before_and_after_move": "21909d14dca220d3184b15edcdf75c856238216b667a9cfdd1cf4bed023525af"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_figure_contract.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_figure_contract.json",
+      "bytes": 3724,
+      "SHA256_before_and_after_move": "4830d54561f0f2f6146404dd9378c20751ae9bc5cb4fdf19627a4c744196f7c5"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_figures_pipeline_state.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_figures_pipeline_state.json",
+      "bytes": 372,
+      "SHA256_before_and_after_move": "208d9e9af077194b1a2c59e876eb00ebeb5121dc41394d258323ecbbf19f5a6a"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_final_audit.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_final_audit.py",
+      "bytes": 12306,
+      "SHA256_before_and_after_move": "3e7265df6dd5987cbe21e6dce131f4f3e1643c4ef7262642a5a670255c6bcf72"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_frozen_stage3b.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_frozen_stage3b.json",
+      "bytes": 245250,
+      "SHA256_before_and_after_move": "c45435d30103105c18f9a62471ceac913f6ebde1fd023bddb4070c8d215a731b"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_git_payload.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_git_payload.py",
+      "bytes": 2504,
+      "SHA256_before_and_after_move": "084a3a009bce725b33fc830ca747e2ce40875346e5bfa5fb7d997ddf4fc2e78e"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_global_interactor.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_global_interactor.py",
+      "bytes": 9302,
+      "SHA256_before_and_after_move": "ad547282644a4004ab5aca37d065747146be5d11d39497a9eda3d85c605882ff"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_initialization_audit.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_initialization_audit.json",
+      "bytes": 1616,
+      "SHA256_before_and_after_move": "830c60567c70e9a2fa3975f5d5b2765fe9cbc26194c4e9482413d1e94a674ac7"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_model.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_model.py",
+      "bytes": 1171,
+      "SHA256_before_and_after_move": "1cba9908794c925f500faf2a74b03c27990759eb61132f3d03e752ab758c71b7"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_neutral_initialization_audit.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_neutral_initialization_audit.json",
+      "bytes": 546,
+      "SHA256_before_and_after_move": "753c783d09d370dd57b8d8cbbd5126b9c3592c3c06909e20e60bdbf82741a1dd"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_phase_transition_audit.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_phase_transition_audit.json",
+      "bytes": 515,
+      "SHA256_before_and_after_move": "41e2bf0446cf2438ba741e8d2116e773c9103dcd39cce1004922d77684ac0374"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_preregistration.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_preregistration.json",
+      "bytes": 4539,
+      "SHA256_before_and_after_move": "aa85a0cd189662695b177a7327272d3ca23bff9527a95010091767d1f62bebe4"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_register.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_register.py",
+      "bytes": 8421,
+      "SHA256_before_and_after_move": "be9cd345b2761ae6a4efe4f351652cb74951b093498ba1a1be3e27cc2db6c941"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_requirements.txt",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_requirements.txt",
+      "bytes": 28093,
+      "SHA256_before_and_after_move": "2d45fcc63d77ffedf5b7dcf307bfa05d0eb501b2f5e79d7ae45bd61800d66695"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_resume_record.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_resume_record.json",
+      "bytes": 1692,
+      "SHA256_before_and_after_move": "64f76e945dba9f54a8f1051ba9db696f03981efb13bb043a79df6104e31aac55"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_scope_preservation.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_scope_preservation.json",
+      "bytes": 1142,
+      "SHA256_before_and_after_move": "6f96a5f832cb509a7b7d11186d0ee5e8d472a59eacf5f272421925f92202a9a0"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_tiny_selection.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_tiny_selection.json",
+      "bytes": 4543,
+      "SHA256_before_and_after_move": "42d8a322577e9a38d183e4f6a0d611626552d26f1804d9ae6915503c6eaca4b8"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_training_registration.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_training_registration.json",
+      "bytes": 247,
+      "SHA256_before_and_after_move": "90b7e3cfda2d738f8cb470a864a3d297e9a634ca16125ce3269a12fab95bd485"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_training_sources.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_training_sources.json",
+      "bytes": 808,
+      "SHA256_before_and_after_move": "2c6523f30f19a0a0751b7c2c787f180770cb199dc45c703b486108381482a64e"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_type_pair_mapping.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_type_pair_mapping.json",
+      "bytes": 345,
+      "SHA256_before_and_after_move": "0ed69596683b272ed0c6e481040a268b4b988a67d50c03b64d5411945cca2b89"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/00_manifest/stage4a_unit_tests.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/00_manifest/stage4a_unit_tests.json",
+      "bytes": 1144,
+      "SHA256_before_and_after_move": "e546030d38517277aab024e5fe0c87f52a64dbcef8fb490c69ca7179991431c2"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/02_preprocessed/stage3_cache/stage4a_figures_pipeline.lock",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/02_preprocessed/stage4a_cache/stage4a_figures_pipeline.lock",
+      "bytes": 0,
+      "SHA256_before_and_after_move": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/02_preprocessed/stage3_cache/stage4a_first_final_val_actor_errors.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/02_preprocessed/stage4a_cache/stage4a_first_final_val_actor_errors.csv",
+      "bytes": 31769226,
+      "SHA256_before_and_after_move": "434df24571c862eb4b9ffaa6d1075871708b04c13c7fe4b8fea1d54c13fb800c"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/02_preprocessed/stage3_cache/stage4a_git_payload_initial.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/02_preprocessed/stage4a_cache/stage4a_git_payload_initial.json",
+      "bytes": 532816,
+      "SHA256_before_and_after_move": "4d0a2502bca178ea369c0b491227398e1526792abf3b9bd4c4935be136a508db"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/02_preprocessed/stage3_cache/stage4a_git_payload_resume.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/02_preprocessed/stage4a_cache/stage4a_git_payload_resume.json",
+      "bytes": 64545,
+      "SHA256_before_and_after_move": "c1d5956ae5f85cb51d28f252e9da387143a7aefd3d6edae37005aba4402033f7"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/__pycache__/stage4a_tiny.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/__pycache__/stage4a_tiny.cpython-310.pyc",
+      "bytes": 17239,
+      "SHA256_before_and_after_move": "b86cb1f6a3fdd1be7396fcd0a01a172cb5bd647a85bcf4c2f00819f7dc6e5979"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/__pycache__/stage4a_train.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/__pycache__/stage4a_train.cpython-310.pyc",
+      "bytes": 13681,
+      "SHA256_before_and_after_move": "b55c25e02af88512ca61f1af6d35e30fbc59489a282e1eba14142bc774c74cf0"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/stage4a_nll_summary.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/stage4a_nll_summary.json",
+      "bytes": 661,
+      "SHA256_before_and_after_move": "94e260455902f155f2d83c6a2f89b25b40fba092e29f1908e3880d9ed80ccd06"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/stage4a_tiny.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/stage4a_tiny.py",
+      "bytes": 19366,
+      "SHA256_before_and_after_move": "860caba2d3c0a15b580e7118e0c6f466bb8423eb15d4c0c938b73a03ed0fb771"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/stage4a_tiny_curve.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/stage4a_tiny_curve.csv",
+      "bytes": 4964,
+      "SHA256_before_and_after_move": "7068e52aac7129ad312196b0141e34d2d3b0ded542dcebc15aa7513a130d2d96"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/stage4a_train.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/stage4a_train.py",
+      "bytes": 14877,
+      "SHA256_before_and_after_move": "02e7e3adc4eaa78483b345c40ae9e0cbf6a1153ffc5a5fd4338682c5b85231e3"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/stage4a_training_curve.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/stage4a_training_curve.csv",
+      "bytes": 29943,
+      "SHA256_before_and_after_move": "467bdf43055d3ebd5a34e3a8ae5c46d7cd0b22f1111f3e191d88dc2f4d01ef5b"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/stage4a_training_summary.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/stage4a_training_summary.json",
+      "bytes": 3663,
+      "SHA256_before_and_after_move": "f7f02a1906cfad70e8104fcdcf6950232847264ce2ff4ff3175b04e30f0ac91b"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/03_type_interaction/stage4a_warmup_summary.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/03_type_interaction/stage4a_warmup_summary.json",
+      "bytes": 663,
+      "SHA256_before_and_after_move": "949821b31f037d2a6d23d225fedb0c815938789c3089188a41c00a58bd631c3b"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/__pycache__/stage4a_evaluate.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/__pycache__/stage4a_evaluate.cpython-310.pyc",
+      "bytes": 32039,
+      "SHA256_before_and_after_move": "abf3a70a8156fb12cb4d0d42aac3eb976fe4880a1434c859989387e7b51a7740"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/__pycache__/stage4a_wait_evaluate.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/__pycache__/stage4a_wait_evaluate.cpython-310.pyc",
+      "bytes": 7362,
+      "SHA256_before_and_after_move": "396a7cb2c4b965f2906ecfbac43c352e39e22acad333aaab8ad032171e4724b6"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_actor_errors.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_actor_errors.csv",
+      "bytes": 31769460,
+      "SHA256_before_and_after_move": "cc11c75399e641fc5abd329096d5051a96834fc4b3222aa5c4069fd37c188ad7"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_analysis_completion.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_analysis_completion.json",
+      "bytes": 616,
+      "SHA256_before_and_after_move": "4a0a9c9419c501c659a102a9ed3473a127b4ae449c3c097a831589ef756bb991"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_bootstrap_ci.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_bootstrap_ci.json",
+      "bytes": 6421,
+      "SHA256_before_and_after_move": "133aaa1fdf57fa49bc50e7ff4e02e082aaf6e99effa90ee2783256a7929292f2"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_efficiency_audit.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_efficiency_audit.json",
+      "bytes": 4563,
+      "SHA256_before_and_after_move": "e4d9eaa9474300e45126eb9d4fac303df702d85ea9d2be644cc6888f57d02349"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_evaluate.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_evaluate.py",
+      "bytes": 38224,
+      "SHA256_before_and_after_move": "94e8dbda34568900987d4a7cf0b6e85367a52fbc5a61e3b00c945e51865c8d8e"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_fresh_val_reconciliation.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_fresh_val_reconciliation.json",
+      "bytes": 12731,
+      "SHA256_before_and_after_move": "b32646477f143ae32b983fde49e3f5e6190d4f37fad0778fbf80fb2ea6c691ad"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_gradient_audit.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_gradient_audit.json",
+      "bytes": 4093,
+      "SHA256_before_and_after_move": "1440321dfd695541429935291b29c6580069da547274a55025b7f58e8c62000d"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_interaction_membership.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_interaction_membership.csv",
+      "bytes": 21409997,
+      "SHA256_before_and_after_move": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_interaction_subgroup_audit.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_interaction_subgroup_audit.json",
+      "bytes": 20030,
+      "SHA256_before_and_after_move": "a5bb5b01bb749212ee16d8d7d9712a5553ec20c8a8ba712a3365b00b45a9e9ea"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_metrics.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_metrics.json",
+      "bytes": 795400,
+      "SHA256_before_and_after_move": "d96c68cb98b17e305795452ccf7c3d2410a2decc59ff961d195e716aff4b6a34"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_nontrivial_motion_metrics.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_nontrivial_motion_metrics.json",
+      "bytes": 2192,
+      "SHA256_before_and_after_move": "6d9384203c6b2d7c5db073de394db3709c70732451875e411fa9528a6defc068"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_pairing_audit.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_pairing_audit.json",
+      "bytes": 884,
+      "SHA256_before_and_after_move": "63fe275376cf39cec44c36148ac98c4644ff619305af66eb1413f8e8328bd4bd"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_relation_bias_statistics.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_relation_bias_statistics.json",
+      "bytes": 70332,
+      "SHA256_before_and_after_move": "5a8ab99d0ffb3a1687efbe00fdbf7e4bfeec5978a7b87eff56037a44ac234b88"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_tiny_overfit.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_tiny_overfit.json",
+      "bytes": 3327,
+      "SHA256_before_and_after_move": "c5fb0002c1e1e093f3c652dd2ca263f0f75fd391ca9dccc4f6891ca807d18176"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_type_interaction_ablation.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_type_interaction_ablation.json",
+      "bytes": 10477,
+      "SHA256_before_and_after_move": "1f26600081c08148e1c19ea7392e92fa9820039977e61a65878d30ebaf2c8c3f"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_00500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_00500.json",
+      "bytes": 791712,
+      "SHA256_before_and_after_move": "2b670adefdb8e7dc4ab75e5d2e81d495b7673f0aa554fa68c4de48731c642374"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_01000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_01000.json",
+      "bytes": 792183,
+      "SHA256_before_and_after_move": "b8b3772e1f3ee6f005a12b9fe9500d85e2cc911a588cd459709d82bcf1e3c50a"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_01500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_01500.json",
+      "bytes": 792491,
+      "SHA256_before_and_after_move": "5a22e773e20f43f49efd5a8eb1adbb608e1326138c5313a12e6ae71973fd2925"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_02000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_02000.json",
+      "bytes": 793049,
+      "SHA256_before_and_after_move": "9a8c462eb463e069800f698626a0bfc32d15c4d14d5ad344a16c66dc6075663f"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_02500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_02500.json",
+      "bytes": 792437,
+      "SHA256_before_and_after_move": "720178fee1d14f1b4ee36c5d523e8237e2138ae0a7eb2cb040daf6330c52b8db"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_03000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_03000.json",
+      "bytes": 793274,
+      "SHA256_before_and_after_move": "3fab90395f4597e0729ae1753957090153bfe1c4b165e03c36ed5845642188a1"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_03500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_03500.json",
+      "bytes": 792935,
+      "SHA256_before_and_after_move": "f8f9a8ccd6684a39582a137b53f84180acab65b63d23898f4de0fd182150c240"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_04000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_04000.json",
+      "bytes": 792999,
+      "SHA256_before_and_after_move": "56e00390388fe7958dca29b2566223d1c563eb440069eb3f803098af13c623ec"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_04500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_04500.json",
+      "bytes": 793406,
+      "SHA256_before_and_after_move": "75806711449a60fe128a2c5f10b755e43822097288ef14ed5cfbc6b7f35b197d"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_05000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_05000.json",
+      "bytes": 793233,
+      "SHA256_before_and_after_move": "b69b36cea4296b2c681c2da222ac3db4835f05357ae631f72353ec3998f4fb96"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_05500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_05500.json",
+      "bytes": 794908,
+      "SHA256_before_and_after_move": "47ee33f43f94e3e2c436068ed9be2301b6d9fc688b048f5018997a053f8ccb22"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_06000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_06000.json",
+      "bytes": 794771,
+      "SHA256_before_and_after_move": "bdeb782559384a6b132f2e419345565b50eb68f5141b334546bd4f7a8af4d750"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_06500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_06500.json",
+      "bytes": 794778,
+      "SHA256_before_and_after_move": "23fcd229d5d2e11ce5a944cded1fae5a46f3443ab1cfde62bcd0ef2cba0747bc"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_07000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_07000.json",
+      "bytes": 795218,
+      "SHA256_before_and_after_move": "3be2fc8e9f36ee6800b2da376ab09b5e5bdffe0b0f1e22d3c4342c19311b2706"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_07500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_07500.json",
+      "bytes": 795288,
+      "SHA256_before_and_after_move": "7b2a6f5ccac4c74fb5fb9dc4c46a9fca6ccef01006e03ab664116319b18ae9ff"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_08000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_08000.json",
+      "bytes": 795234,
+      "SHA256_before_and_after_move": "4409b6368ce873ce486bd676dc844e950ea26bbae001219dafcb0a5c54b04809"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_08500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_08500.json",
+      "bytes": 795192,
+      "SHA256_before_and_after_move": "80729bbe6ac74c64c055bbdfc5972586167c788334e75c67f198f273f0bab48b"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_09000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_09000.json",
+      "bytes": 794798,
+      "SHA256_before_and_after_move": "93a58c8f1cb7698be78226157c132a27b10d99eee92eba6963ae6ae34d89b512"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_09500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_09500.json",
+      "bytes": 795319,
+      "SHA256_before_and_after_move": "e3e69cd8a60050dbfd78ab0ae9eca77e23b06fd8dd5af80c404c716b28fa54f5"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_10000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_10000.json",
+      "bytes": 795057,
+      "SHA256_before_and_after_move": "36bf2cfe1167db054b6a3f74e09708d9281c6154fd1fbe25654690f92cf8b488"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_10500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_10500.json",
+      "bytes": 795517,
+      "SHA256_before_and_after_move": "55a4c3ea4e1b15dbdd09ef6102236e96e0e99cb3a9b75c4d48d69e3abdd60a8f"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_11000.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_11000.json",
+      "bytes": 795080,
+      "SHA256_before_and_after_move": "33e7974fe15da48ec9ab81f3d06f9983298d36a285f8161d102de94bd6a3a9b8"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_val_step_11500.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_val_step_11500.json",
+      "bytes": 795293,
+      "SHA256_before_and_after_move": "2cfe5eaf4733acfe4aeaf73be82650b45096999d953740625312e3c7c27c5123"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/04_evaluation/stage4a_wait_evaluate.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/04_evaluation/stage4a_wait_evaluate.py",
+      "bytes": 7842,
+      "SHA256_before_and_after_move": "bf28d3a5c1c4c59cc5c74920e5c45edb3d3f85be01d36b3726f66600267bff9c"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/05_figures/__pycache__/stage4a_check_exports.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/05_figures/__pycache__/stage4a_check_exports.cpython-310.pyc",
+      "bytes": 3877,
+      "SHA256_before_and_after_move": "098571dce1526407decb14452a20cfb21ac2276b0343973d83ee0130932327c2"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/05_figures/__pycache__/stage4a_plot_cases.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/05_figures/__pycache__/stage4a_plot_cases.cpython-310.pyc",
+      "bytes": 22528,
+      "SHA256_before_and_after_move": "7a255e10f8576c34e5698319fded75a55344bc7a1e2f41494ddf903fa70731c9"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/05_figures/__pycache__/stage4a_plot_quantitative.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/05_figures/__pycache__/stage4a_plot_quantitative.cpython-310.pyc",
+      "bytes": 12798,
+      "SHA256_before_and_after_move": "14ab1998c679ba6b37043219cf25324a0ea09dab0ad0b91014058b3960cfe5d4"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/05_figures/__pycache__/stage4a_wait_figures.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/05_figures/__pycache__/stage4a_wait_figures.cpython-310.pyc",
+      "bytes": 4164,
+      "SHA256_before_and_after_move": "0bbf2bcdbba164d17df4cd5285b31b7c8247a91f9c896268de54cd24179e1cc8"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/05_figures/stage4a_check_exports.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/05_figures/stage4a_check_exports.py",
+      "bytes": 3988,
+      "SHA256_before_and_after_move": "a18d5d77c26b07344a996dc33017c50d67ceb55fa0f6ab63d21fb241f9315557"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/05_figures/stage4a_plot_cases.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/05_figures/stage4a_plot_cases.py",
+      "bytes": 25620,
+      "SHA256_before_and_after_move": "36af3ace8bdb2ef89c3e4f2d1a0152a3662d1fce0a9790695cfbe7be2b6ea5bc"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/05_figures/stage4a_plot_quantitative.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/05_figures/stage4a_plot_quantitative.py",
+      "bytes": 11291,
+      "SHA256_before_and_after_move": "6a6ebeab433fb797a8139009060badc67394cc6d1623e486c2e119a8bf96fe4f"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/05_figures/stage4a_wait_figures.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/05_figures/stage4a_wait_figures.py",
+      "bytes": 4616,
+      "SHA256_before_and_after_move": "26668ec36d753c50cc5182182eee2261dcd7b6875714b97bc9c7559a1126f867"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_bootstrap_ci.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_bootstrap_ci.csv",
+      "bytes": 1793,
+      "SHA256_before_and_after_move": "c4a5db55b115836508e19bf44beee0ed751fc533087f889bafa2aa36cc363fa4"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_efficiency.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_efficiency.csv",
+      "bytes": 650,
+      "SHA256_before_and_after_move": "2c8755eb6d307a249da5cf66c54433baea6c8873d44e8a7332880d57c6479244"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_efficiency_batch_timings.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_efficiency_batch_timings.csv",
+      "bytes": 45178,
+      "SHA256_before_and_after_move": "33abae7e550357fe30bab66425734067f4bbfb0a72f8a4ec9ab7829d8fee605e"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_interaction_subgroup_metrics.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_interaction_subgroup_metrics.csv",
+      "bytes": 1353,
+      "SHA256_before_and_after_move": "91f606af5dbfa7b19e21faef645ed1fd80bd60c5600b033feabe414740aa22c3"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_main_results.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_main_results.csv",
+      "bytes": 1105,
+      "SHA256_before_and_after_move": "c86d804d770ff16e7c82e6ada336d55c26b5a05612e3bb340fd146e0ef2b7ff1"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_nontrivial_motion_metrics.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_nontrivial_motion_metrics.csv",
+      "bytes": 769,
+      "SHA256_before_and_after_move": "59c849eee0deda1179f4eb072c87e3eb4241f91f584b402b2653bde82fe22c66"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_relation_bias_pair_aggregate.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_relation_bias_pair_aggregate.csv",
+      "bytes": 992,
+      "SHA256_before_and_after_move": "4b4d9febe461ea026a7cee2bec7890cf7bbae74bc32ba86adda6c6641708b2ac"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_relation_bias_statistics.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_relation_bias_statistics.csv",
+      "bytes": 20185,
+      "SHA256_before_and_after_move": "079d5db85183cad2d6c9fa82ce3575bd58c95efe39df6d58884b91547d49ab53"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/06_tables/stage4a_type_interaction_ablation.csv",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/06_tables/stage4a_type_interaction_ablation.csv",
+      "bytes": 4849,
+      "SHA256_before_and_after_move": "0fbac6d470fae62b464be4377c8a1497582be18d951e77aacc2c4010bc84cdb6"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/07_checkpoints/stage4a_best_checkpoint_manifest.json",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/07_checkpoints/stage4a_best_checkpoint_manifest.json",
+      "bytes": 3663,
+      "SHA256_before_and_after_move": "f7f02a1906cfad70e8104fcdcf6950232847264ce2ff4ff3175b04e30f0ac91b"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/07_checkpoints/stage4a_best_overall_minfde.pt",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/07_checkpoints/stage4a_best_overall_minfde.pt",
+      "bytes": 8157952,
+      "SHA256_before_and_after_move": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/07_checkpoints/stage4a_last_checkpoint.pt",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/07_checkpoints/stage4a_last_checkpoint.pt",
+      "bytes": 8153428,
+      "SHA256_before_and_after_move": "d2585b49bc99f33fc930329843ae32dfeb8a8ade5af075517aa5e89e0e907a6a"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/07_checkpoints/stage4a_nll_last_checkpoint.pt",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/07_checkpoints/stage4a_nll_last_checkpoint.pt",
+      "bytes": 8157952,
+      "SHA256_before_and_after_move": "272d7efd8adf29a3a835a6499b36c564336ac7e839f0d65b4ca00e198f57c6d3"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/07_checkpoints/stage4a_tiny_last.pt",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/07_checkpoints/stage4a_tiny_last.pt",
+      "bytes": 8135482,
+      "SHA256_before_and_after_move": "f7fc65ba33acf0e79194c09ae49088a4611352d2fb4cc8d30724c5b221d381e8"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/07_checkpoints/stage4a_warmup_best_overall.pt",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/07_checkpoints/stage4a_warmup_best_overall.pt",
+      "bytes": 8157888,
+      "SHA256_before_and_after_move": "96f113446cb2a91cd2ace40b63facbd6e08e9a508e859ac4b90f117a8c44fe25"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/07_checkpoints/stage4a_warmup_last_checkpoint.pt",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/07_checkpoints/stage4a_warmup_last_checkpoint.pt",
+      "bytes": 8161281,
+      "SHA256_before_and_after_move": "6795b67be50e671f4ce084d6742a156316d4182d31767f3657b3ba6c1777bb13"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/08_logs/stage4a_commands.md",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/08_logs/stage4a_commands.md",
+      "bytes": 3500,
+      "SHA256_before_and_after_move": "40410dc18165fdf267f11495375cc7e5b7e341295aa5df2c1d151265413a335a"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/08_logs/stage4a_evaluation_pipeline.log",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/08_logs/stage4a_evaluation_pipeline.log",
+      "bytes": 1065,
+      "SHA256_before_and_after_move": "0c5d1538c5542fa04fe4e7cd43b99d8da8623f3bf8de0ac9a7e4b961b9823783"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/08_logs/stage4a_figures_pipeline.log",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/08_logs/stage4a_figures_pipeline.log",
+      "bytes": 162,
+      "SHA256_before_and_after_move": "fb5b95022ade3d6fc6d060076829942cffa16596865b8172d625cc0b48b0cdee"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/08_logs/stage4a_final_evaluation.log",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/08_logs/stage4a_final_evaluation.log",
+      "bytes": 5426,
+      "SHA256_before_and_after_move": "9c8de769e0839c7d5524ee78cb89c71c37b39b727b3f7072a38e76dd6ae0a290"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/08_logs/stage4a_formal_training.log",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/08_logs/stage4a_formal_training.log",
+      "bytes": 14734,
+      "SHA256_before_and_after_move": "e24c10869a9f17bb68e0dae3bae64e7a719a20fe1b1cd480ace64715e5db344f"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/08_logs/stage4a_registration.log",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/08_logs/stage4a_registration.log",
+      "bytes": 68,
+      "SHA256_before_and_after_move": "334623f17248287e5324014e2e7026938ea65b3219e882c12ea32d6e0403f6f9"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/08_logs/stage4a_tiny_overfit.log",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/08_logs/stage4a_tiny_overfit.log",
+      "bytes": 2405,
+      "SHA256_before_and_after_move": "c9dad410d5c7fc3ea71e2b13f08dbd12e6c78b709077b299d3b9550008506099"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/09_reports/__pycache__/stage4a_finalize.cpython-310.pyc",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/09_reports/__pycache__/stage4a_finalize.cpython-310.pyc",
+      "bytes": 16819,
+      "SHA256_before_and_after_move": "24cd16420d0389771719e1a50cee22ab2914ff241c4cb0d766ca872b7faa0158"
+    },
+    {
+      "old_project_path": "outputs/stage3_multitype_hivt/09_reports/stage4a_finalize.py",
+      "new_project_path": "outputs/stage4_type_conditioned_interaction/09_reports/stage4a_finalize.py",
+      "bytes": 15948,
+      "SHA256_before_and_after_move": "65508384374c0135ecb2a0cb8120b4766f3e2dcebdfe3d45831afd83319a4960"
+    }
+  ],
+  "original_requirements_preserved": "00_manifest/stage4a_requirements_original.txt",
+  "frozen_prior_files_verified": 1006,
+  "frozen_scene_shards_verified": 850,
+  "registered_training_source_snapshots_verified": true,
+  "core_function_AST_checks": {
+    "00_manifest/stage4a_common.py:model_new": true,
+    "00_manifest/stage4a_common.py:model_input": true,
+    "00_manifest/stage4a_common.py:GT_fingerprint": true,
+    "00_manifest/stage4a_common.py:evaluate": true,
+    "00_manifest/stage4a_common.py:evaluate_graphs": true,
+    "03_type_interaction/stage4a_train.py:checkpoint_save": true,
+    "03_type_interaction/stage4a_train.py:restore": true,
+    "03_type_interaction/stage4a_train.py:recover_rows": true,
+    "03_type_interaction/stage4a_train.py:train_phase": true,
+    "03_type_interaction/stage4a_tiny.py:rotate_working": true,
+    "03_type_interaction/stage4a_tiny.py:gradient_audit": true,
+    "00_manifest/stage4a_global_interactor.py:byte_identical": true,
+    "00_manifest/stage4a_model.py:byte_identical": true
+  },
+  "post_training_path_adapter_SHA256": {
+    "00_manifest/stage4a_global_interactor.py": "ad547282644a4004ab5aca37d065747146be5d11d39497a9eda3d85c605882ff",
+    "00_manifest/stage4a_model.py": "1cba9908794c925f500faf2a74b03c27990759eb61132f3d03e752ab758c71b7",
+    "00_manifest/stage4a_common.py": "9db8fa789072f205369b81837bb626b49ae60d50e3c13273f38071f2b0e73d13",
+    "03_type_interaction/stage4a_train.py": "aa1b22daadc2b622d877e15006fea6d85bd17f16ceb6bb8b48e04a40b5f0d371",
+    "03_type_interaction/stage4a_tiny.py": "c4d532aced53e687c0b73bc0cec45745e755cd803d2a776fb49095a795788d5e"
+  },
+  "stage3_has_no_stage4_files": true,
+  "no_checkpoint_or_metric_content_changed": true
+}

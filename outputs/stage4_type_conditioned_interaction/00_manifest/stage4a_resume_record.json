@@ -1,0 +1,47 @@
+{
+  "user_authorization": "Explicit user reply authorizes continuation of current Stage4A",
+  "resume_date_Asia_Shanghai": "2026-10-05",
+  "training_PID": 43145,
+  "checkpoint_global_step": 5500,
+  "previous_unsaved_log_global_step": 5700,
+  "restore": "model, AdamW, CPU/CUDA RNG and iterator from own NLL last checkpoint; replay unsaved updates",
+  "training_source_modified": false,
+  "Stage4B_authorized": false,
+  "commands": [
+    [
+      "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+      "-u",
+      "outputs/stage3_multitype_hivt/03_type_interaction/stage4a_train.py"
+    ],
+    [
+      "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+      "-u",
+      "outputs/stage3_multitype_hivt/04_evaluation/stage4a_wait_evaluate.py",
+      "--training-pid",
+      "43145"
+    ],
+    [
+      "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+      "-u",
+      "outputs/stage3_multitype_hivt/05_figures/stage4a_wait_figures.py"
+    ]
+  ],
+  "status": "COMPLETE",
+  "numerical_reproducibility": "Original seed_all seeds Python/NumPy/Torch but does not enable deterministic algorithms; GPU scatter operations may vary. RNG/cursor/optimizer restore does not promise bitwise replay. Unsaved global5600 gradients differed (0.017512895166873932 before interruption, 0.017098456621170044 after resume). No protocol or training source changes.",
+  "frozen_inputs_checked_on_resume": {
+    "status": "PASS",
+    "protected_files": 1006,
+    "scene_shards": 850
+  },
+  "final_executed_global_step": 11500,
+  "best_global_step": 9000,
+  "stop_reason": "patience_5",
+  "final_checkpoint_SHA256": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+  "separate_Stage4_output_root": "outputs/stage4_type_conditioned_interaction",
+  "final_evaluation": "PASS",
+  "final_protocol_audit": "PASS",
+  "visual_export_QA": "PASS",
+  "Stage4A": "PASS",
+  "Type_conditioned_Interaction": "NOT SUPPORTED",
+  "Ready_Stage4B": "NO"
+}

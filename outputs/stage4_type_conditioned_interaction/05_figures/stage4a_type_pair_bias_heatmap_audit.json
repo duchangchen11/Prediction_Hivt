@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "source_SHA256": {
+    "06_tables/stage4a_relation_bias_statistics.csv": "079d5db85183cad2d6c9fa82ce3575bd58c95efe39df6d58884b91547d49ab53",
+    "05_figures/stage4a_type_pair_bias_heatmap_source.csv": "8d572490505cb6db2a9ef704fc5329cfb717920d3f3a5b4c7b190a4208c4eda2"
+  },
+  "exports_SHA256": {
+    "05_figures/stage4a_type_pair_bias_heatmap.png": "d65e3c090716c988e8fe79f467117297a22909ab90673585fef65d33dd912332",
+    "05_figures/stage4a_type_pair_bias_heatmap.pdf": "0dded95f09152da6366507845113c9a3c906b676ffef3c037372dded299353d9",
+    "05_figures/stage4a_type_pair_bias_heatmap.svg": "84609c5923f68648d24c20ec6ecda9ba8e16c8f78d8832ca7f1a393a721d8424"
+  },
+  "smoothing": false,
+  "fabricated_data": false,
+  "text_inside_canvas": true,
+  "backend": "python",
+  "rows": "target type",
+  "columns": "source type",
+  "pair_id_definition": "3*target_type+source_type",
+  "values": [
+    [
+      10.692156786543629,
+      7.512382439601635,
+      0.6377009602062834
+    ],
+    [
+      8.5497416667856,
+      7.977991034095187,
+      0.2691688657979708
+    ],
+    [
+      2.267070494751381,
+      0.7020687120314172,
+      0.7846023604495421
+    ]
+  ],
+  "diagnostic_only_not_causal_influence": true,
+  "aggregation": "Unweighted mean of24 layer/head mean absolute bias entries for each directed pair."
+}
