@@ -1,0 +1,22 @@
+{
+  "official_VAL_scenes": 150,
+  "windows": 3603,
+  "batch_size": 16,
+  "shuffle": false,
+  "layers": 3,
+  "heads": 8,
+  "primary_population": "full-horizon prediction targets; all actual incoming neighbors retained",
+  "edge_pairing_population": "all current-valid nodes and actual complete directed edges, including partial/context actors",
+  "topology": "GlobalInteractor complete current-valid directed graph; no self edges. LocalEncoder radius50m; gate neighbor features <=50m existing edges.",
+  "EdgeWeighted": "logit metrics average actual edge-layer-head observations; attention metrics additionally degree-weight targets. GateMean degree-weighted.",
+  "TargetWeighted": "first average incoming edges per target/layer/head, then equally average targets/layers/heads. Attention metrics standard equal target-layer-head mean.",
+  "target_without_incoming": "excluded from undefined edge/attention statistics; identities and explicit zero-degree count retained",
+  "pair_population": "full-horizon targets with every incoming source type; EdgeWeighted; Pair Layer=All or1/2/3",
+  "entropy": "natural log; 0log0=0",
+  "argmax_tie_break": "first edge in unchanged formal edge order",
+  "eps": 1e-08,
+  "GT_motion_bins": "offline membership only; no new model features or altered input",
+  "base_attention_reference": "actual-layer base logits passed to the unchanged PyG softmax over complete incoming neighborhoods; no base-only model rollout or model selection",
+  "scientific_classification": "descriptive concordance across raw/effective/normalized/attention patterns and groups/layers; no significance cutoff, no performance-decision revision",
+  "no_backward_optimizer_training_selection_counterfactual_variants": true
+}

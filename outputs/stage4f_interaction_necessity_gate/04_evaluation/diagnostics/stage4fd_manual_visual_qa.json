@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "figures": [
+    {
+      "path": "05_figures/stage4fd_attention_shift_comparison.png",
+      "sha256": "093790816838f157beac558c836cd9800191dccb4d588f5a3a9bf9301f519328",
+      "visually_reviewed": true,
+      "clipping": false,
+      "legend_label_overlap": false
+    },
+    {
+      "path": "05_figures/stage4fd_compensation_index.png",
+      "sha256": "5ba0aa4b4fcee138f3eb2bde2400de1689ea177f51a6c5ff552414fc2bfa6db3",
+      "visually_reviewed": true,
+      "clipping": false,
+      "legend_label_overlap": false
+    },
+    {
+      "path": "05_figures/stage4fd_layer_compensation.png",
+      "sha256": "9fba6d70bac28a9d4fb2bac37046c29e948208d4a0734ee8dedfb75d62d378f8",
+      "visually_reviewed": true,
+      "clipping": false,
+      "legend_label_overlap": false
+    },
+    {
+      "path": "05_figures/stage4fd_raw_effective_bias_by_group.png",
+      "sha256": "1ed69941c9254f7dbb56a7e44a0daebafb0517eb3b925cc17014216152e9c138",
+      "visually_reviewed": true,
+      "clipping": false,
+      "legend_label_overlap": false
+    }
+  ],
+  "review": "Direct visual inspection of all4 actual PNGs; layer pooled ratios plus all24 head indices retained; original CSV-grounded values, no smoothing."
+}

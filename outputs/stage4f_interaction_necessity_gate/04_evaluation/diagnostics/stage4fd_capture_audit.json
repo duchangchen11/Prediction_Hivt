@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "VAL_scenes": 150,
+  "windows": 3603,
+  "batches": 226,
+  "actual_edges": 3058206,
+  "edge_head_observations": 73396944,
+  "EdgeKey_schema": [
+    "scene_token",
+    "sample_token",
+    "source_instance_token",
+    "target_instance_token"
+  ],
+  "ordered_EdgeKey_sha256": "5de4d5e961027808bad820f578f25b5cfb5a3006f9110168024fd30d991c565a",
+  "EdgeHeadKey_layers": [
+    1,
+    2,
+    3
+  ],
+  "EdgeHeadKey_heads": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "all_ordered_edges_and_each_layer_head_paired": true,
+  "window_order_sha256": "320e1f66a5359b066e863fdcedf1a9edd248b9ca9a501b13bfb2b00031d901b6",
+  "all_current_valid_targets": 91092,
+  "full_targets": 54990,
+  "partial_targets": 30037,
+  "context_only": 6065,
+  "zero_incoming_current_targets": 28,
+  "complete_directed_current_valid_graph_verified_every_window": true,
+  "original_inputs_unchanged": true,
+  "forward_algebra_max_diff": {
+    "A": 0.0,
+    "F": 0.0
+  },
+  "actual_softmax_max_diff": {
+    "A": 3.5762786865234375e-07,
+    "F": 5.960464477539062e-07
+  },
+  "parameters_buffers_unchanged": true,
+  "all_parameters_grad_None": true,
+  "no_training_optimizer_backward_selection": true,
+  "raw_target_head_schema": {
+    "dtype": [
+      [
+        "id",
+        "<u8"
+      ],
+      [
+        "type",
+        "|u1"
+      ],
+      [
+        "population",
+        "|u1"
+      ],
+      [
+        "flags",
+        "|u1"
+      ],
+      [
+        "motion",
+        "|u1"
+      ],
+      [
+        "displacement",
+        "<f8"
+      ],
+      [
+        "degree",
+        "<i4"
+      ],
+      [
+        "gate",
+        "<f8"
+      ],
+      [
+        "values",
+        "<f8",
+        [
+          3,
+          8,
+          13
+        ]
+      ]
+    ],
+    "metrics": [
+      "A_base",
+      "A_raw",
+      "F_base",
+      "F_raw",
+      "F_effective",
+      "A_shift",
+      "F_shift",
+      "A_switch",
+      "F_switch",
+      "A_Hbase",
+      "A_Hfinal",
+      "F_Hbase",
+      "F_Hfinal"
+    ],
+    "row_count": 91092,
+    "size_bytes": 230280576,
+    "sha256": "2659c82b8cbb78a86ae7193be37ce96e2a3720279f2676cf63ba6862d00ccbbe"
+  },
+  "raw_identity_sha256": "935058b938a3da9f6a9b2442b9974404a1afc345a47ea4ddad86f4f0c5613699",
+  "checkpoint_sha256": {
+    "A": "ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb",
+    "F": "89f2bc886bd5e1cc2a78a05e07c9761d3317f4677237a458ea35450e4f56e110"
+  },
+  "elapsed_seconds": 78.3211804349994
+}

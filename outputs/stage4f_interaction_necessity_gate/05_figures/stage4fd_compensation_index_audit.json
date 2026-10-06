@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "CSV_source_sha256": {
+    "06_tables/stage4fd_effective_strength_by_group.csv": "d00a141bdf83af6c7a4da2f9ec8c6eb39e7aa585c129f26553744f9253578a1b"
+  },
+  "plot_vs_CSV_checks": [
+    {
+      "Group": "vehicle.moving",
+      "Metric": "CompensationIndex",
+      "CSV": 0.12486078116448936,
+      "plotted": 0.12486078116448936,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "CompensationIndex",
+      "CSV": 0.12836901069714554,
+      "plotted": 0.12836901069714554,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Metric": "CompensationIndex",
+      "CSV": 0.1432538933093776,
+      "plotted": 0.1432538933093776,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Metric": "CompensationIndex",
+      "CSV": 0.1435249344278968,
+      "plotted": 0.1435249344278968,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Metric": "CompensationIndex",
+      "CSV": 0.1433192203712563,
+      "plotted": 0.1433192203712563,
+      "absolute_difference": 0.0
+    }
+  ],
+  "max_absolute_difference": 0.0,
+  "exports_sha256": {
+    "05_figures/stage4fd_compensation_index.png": "5ba0aa4b4fcee138f3eb2bde2400de1689ea177f51a6c5ff552414fc2bfa6db3",
+    "05_figures/stage4fd_compensation_index.pdf": "6b8ecd2a20b7ee41ed15dfe71442ef1dde6775e1b69a366e2b7ed1e121a82906",
+    "05_figures/stage4fd_compensation_index.svg": "673c581f85b8fb10d71ac94cf1441f8852062e875687fdd6ce4c77b7735647c3"
+  },
+  "PNG_dimensions": [
+    2160,
+    990
+  ],
+  "Weighting": "EdgeWeighted",
+  "reference1_is_descriptive_not_significance": true,
+  "no_smoothing_or_interpolation": true,
+  "labels_inside_canvas": true,
+  "numeric_audit": "unrounded plotted artist arrays vs full-precision CSV; textual bar labels round to3 decimals and heatmap labels to2 for readability"
+}

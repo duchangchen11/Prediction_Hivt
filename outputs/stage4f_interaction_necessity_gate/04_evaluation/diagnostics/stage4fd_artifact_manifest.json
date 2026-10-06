@@ -1,0 +1,290 @@
+{
+  "stage": "Stage4F-D",
+  "status": "PASS",
+  "self_hash_excluded": true,
+  "base_commit": "514f3809e837626b6976b0f5b17be65d465ca9e6",
+  "artifacts": [
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_capture.log",
+      "size_bytes": 1072,
+      "sha256": "1a73745c4ef5ed13ba1d9d762d2b1da1e321bf2e645cc64bcce96de6950e6793",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_capture.py",
+      "size_bytes": 15031,
+      "sha256": "a06c3650565b80302289c77688c26420500c728ec2ffeb484694704e229e95da",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_capture_audit.json",
+      "size_bytes": 2457,
+      "sha256": "e4a44fc1a65e742e3a072cd28b72322506ae9d0443f6ce20a76754fd2f62f846",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_commands.sh",
+      "size_bytes": 873,
+      "sha256": "9afcd424e69e2832fed53dc07877a0f8558e938f7bc6b7490047d667f16a305d",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_common.py",
+      "size_bytes": 8649,
+      "sha256": "6f4b5338b7eee1200241c43e123b7eb1e6c274bfe87c9cc7b01b37a2f91969e3",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_figure_contract.json",
+      "size_bytes": 1280,
+      "sha256": "ed061b0e7c9d17bfbaf1da554215808501a8265d3e7c67eaf9cdeba14ea8b1d5",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_figures.log",
+      "size_bytes": 22,
+      "sha256": "52866ec64f0315e5b63a84dbb7c0cc6e3545e4626b0143f2ca92f20fbad5d3a7",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_final_audit.json",
+      "size_bytes": 686,
+      "sha256": "294fea7d223a18e7234cb32be89171499d9ddf904b6476fd05f460d1565f6858",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_frozen_inputs.json",
+      "size_bytes": 25729,
+      "sha256": "32a6f02a7a65fc7dc0f34bcbb1304ab379b251342a51470ee42f111041b66a4b",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_instrumentation_audit.json",
+      "size_bytes": 5831,
+      "sha256": "b83cc98b12c237466f4e1c944b258bcddcd2fb79622bc22d348f42443d67c112",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_manual_visual_qa.json",
+      "size_bytes": 1222,
+      "sha256": "8683aa65457dc91f7cf7e73242a81c681dfa38963e94708963e7511da3dcbef2",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_pair_aggregates.json",
+      "size_bytes": 58673,
+      "sha256": "9c05ead151ae9cde4e94d2deb0a9d6666dca17156ab2648cbade0d774487ccbc",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_protocol.json",
+      "size_bytes": 1732,
+      "sha256": "a430528ed48b94e2c194bacd4ab4ddd57bd12d15ab0fc1faa84c51d32110c321",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_raw_target_head.bin",
+      "size_bytes": 230280576,
+      "sha256": "2659c82b8cbb78a86ae7193be37ce96e2a3720279f2676cf63ba6862d00ccbbe",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_raw_target_identity.csv",
+      "size_bytes": 13551658,
+      "sha256": "935058b938a3da9f6a9b2442b9974404a1afc345a47ea4ddad86f4f0c5613699",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_report.log",
+      "size_bytes": 33,
+      "sha256": "ed6559ff5a15b238802c75cdd00e44e018705574c8ce8600b7739e85f42d900d",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_requirements.txt",
+      "size_bytes": 19941,
+      "sha256": "95af8d12901d1d0757616ae14b37ad076b6d2e72033b3b7fe300c93cb2609d36",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_scientific_decision.json",
+      "size_bytes": 10693,
+      "sha256": "cfda51d1baff89c22fcec1ab22d2428b38398c431455444e354785ec02539aa5",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_statistics_audit.json",
+      "size_bytes": 3808,
+      "sha256": "fee442cf2da9ae3c5fba385a8cfab3ad7975870d4228ec433059f8bce426d931",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_summarize.log",
+      "size_bytes": 33,
+      "sha256": "fd19d1905a8a51e2277a6f11724857b0d04496744e6b26606e7d2b9aff0d61ec",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_summarize.py",
+      "size_bytes": 9423,
+      "sha256": "dd46c586d786c43cdbeec08cbd95b63c866038fde4583cac8c6fa43a2449e755",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "04_evaluation/diagnostics/stage4fd_target_strength.csv",
+      "size_bytes": 37790435,
+      "sha256": "763bb984b34940fe023a7da8b71bca8cf8e3d312f982299420a0400fa3bf5ba8",
+      "git_eligible": false
+    },
+    {
+      "relative_path": "05_figures/stage4fd_attention_shift_comparison.pdf",
+      "size_bytes": 14730,
+      "sha256": "a72ec2ceb7dfa22c7598a0b1fdc67dd31ef8f03e2d2b6fd97244d447d97562c9",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_attention_shift_comparison.png",
+      "size_bytes": 108471,
+      "sha256": "093790816838f157beac558c836cd9800191dccb4d588f5a3a9bf9301f519328",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_attention_shift_comparison.svg",
+      "size_bytes": 10974,
+      "sha256": "0a81ff88ee68a90443754a37647e53889eeb5f5d2a11fc13005b74fdd402e012",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_attention_shift_comparison_audit.json",
+      "size_bytes": 2892,
+      "sha256": "2d278c604dded74d4c6d58effabe92044b445ea953f5554ba9d8691ab04dcb8e",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_compensation_index.pdf",
+      "size_bytes": 13441,
+      "sha256": "6b8ecd2a20b7ee41ed15dfe71442ef1dde6775e1b69a366e2b7ed1e121a82906",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_compensation_index.png",
+      "size_bytes": 89274,
+      "sha256": "5ba0aa4b4fcee138f3eb2bde2400de1689ea177f51a6c5ff552414fc2bfa6db3",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_compensation_index.svg",
+      "size_bytes": 8955,
+      "sha256": "673c581f85b8fb10d71ac94cf1441f8852062e875687fdd6ce4c77b7735647c3",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_compensation_index_audit.json",
+      "size_bytes": 1917,
+      "sha256": "1a9bc10d53c645e6b74376a9f7c3a3afe405e1627e81c06dbc2d0ab565f40c05",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_figures.py",
+      "size_bytes": 8705,
+      "sha256": "5f0b78613707948884dc0afbd859b7f064565e84dd46f3a1bc5b5286d2ff21fa",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_layer_compensation.pdf",
+      "size_bytes": 20188,
+      "sha256": "ec2867cfd01f3f9235fbaf4c30b7a3b71dd0957f5e9fc78a124e753cd78c0ab3",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_layer_compensation.png",
+      "size_bytes": 157670,
+      "sha256": "9fba6d70bac28a9d4fb2bac37046c29e948208d4a0734ee8dedfb75d62d378f8",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_layer_compensation.svg",
+      "size_bytes": 26053,
+      "sha256": "31084c60ed8d981861578dcbbad480a43b7487fd597f6662f6ab702873e7ad3f",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_layer_compensation_audit.json",
+      "size_bytes": 6682,
+      "sha256": "1536c4e5a3127fa516c6badd047268c193abbe43ff080d1f44eecfc8e15f3d32",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_raw_effective_bias_by_group.pdf",
+      "size_bytes": 16350,
+      "sha256": "c3d07a22614020507ec65c6f1e6a2b8e36e27af37c53a160a6e0dcff4f6473eb",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_raw_effective_bias_by_group.png",
+      "size_bytes": 123955,
+      "sha256": "1ed69941c9254f7dbb56a7e44a0daebafb0517eb3b925cc17014216152e9c138",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_raw_effective_bias_by_group.svg",
+      "size_bytes": 13508,
+      "sha256": "3ec6fcdd4ebb5e9dccce09702dfd963e091aea07f02f3cb0e788726cfa6fbbb5",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "05_figures/stage4fd_raw_effective_bias_by_group_audit.json",
+      "size_bytes": 3820,
+      "sha256": "1eea9b22f44105fb725ae543f2aa703c2239a9a0632a4f16abfebdafbab4ea4b",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4fd_effective_strength_by_group.csv",
+      "size_bytes": 22754,
+      "sha256": "d00a141bdf83af6c7a4da2f9ec8c6eb39e7aa585c129f26553744f9253578a1b",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4fd_effective_strength_by_pair.csv",
+      "size_bytes": 6265,
+      "sha256": "b2b36192c404ee2f5a4d6c317b056a6aee6c95c6906d58d8c27b26dfea7bec2c",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4fd_gate_bias_correlations.csv",
+      "size_bytes": 1473,
+      "sha256": "12b15d48d7ce1892999e6b31bed8ca7248fdf69d3792f19705cfa909d697e160",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4fd_layer_head_statistics.csv",
+      "size_bytes": 540299,
+      "sha256": "5e99834e51eb59b2dfa882221857717e3dd814949bcd95b534051ba21c8719c4",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4fd_layer_statistics.csv",
+      "size_bytes": 67559,
+      "sha256": "db035453e1be8103654d9b6625b3720d56f15918bd32483898fde5d997a42d76",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "06_tables/stage4fd_pair_head_statistics.csv",
+      "size_bytes": 32988,
+      "sha256": "3a1dcc1a5317b4b929f36bad6b11a71f3c1d6b1e7d2dd7ffbab55886c93db102",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "09_reports/stage4fd_effective_interaction_strength_report.md",
+      "size_bytes": 19997,
+      "sha256": "3ec2a4798a207edefcc22da90791246168e9b803b17a9ba79fd31d8e753b5a7a",
+      "git_eligible": true
+    },
+    {
+      "relative_path": "09_reports/stage4fd_report.py",
+      "size_bytes": 16471,
+      "sha256": "4f63c484b1a3ca2a150b97d6a0741c259a8c37a7ecc5ceec56ac4db5988d83e8",
+      "git_eligible": true
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "status": "PASS",
+  "CSV_source_sha256": {
+    "06_tables/stage4fd_layer_statistics.csv": "db035453e1be8103654d9b6625b3720d56f15918bd32483898fde5d997a42d76",
+    "06_tables/stage4fd_layer_head_statistics.csv": "5e99834e51eb59b2dfa882221857717e3dd814949bcd95b534051ba21c8719c4"
+  },
+  "plot_vs_CSV_checks": [
+    {
+      "Layer": 1,
+      "Metric": "RawAmplification",
+      "CSV": 0.14539121665836455,
+      "plotted": 0.14539121665836455,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Metric": "RawAmplification",
+      "CSV": 0.1711807826667438,
+      "plotted": 0.1711807826667438,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Metric": "RawAmplification",
+      "CSV": 0.11606720801719646,
+      "plotted": 0.11606720801719646,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Metric": "EffectiveRetention",
+      "CSV": 0.03317788224053233,
+      "plotted": 0.03317788224053233,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Metric": "EffectiveRetention",
+      "CSV": 0.03899419540257177,
+      "plotted": 0.03899419540257177,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Metric": "EffectiveRetention",
+      "CSV": 0.026514757917068154,
+      "plotted": 0.026514757917068154,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Head": 1,
+      "Metric": "CompensationIndex",
+      "CSV": 0.23355962465033167,
+      "plotted": 0.23355962465033167,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Head": 2,
+      "Metric": "CompensationIndex",
+      "CSV": 0.38111347260413986,
+      "plotted": 0.38111347260413986,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Head": 3,
+      "Metric": "CompensationIndex",
+      "CSV": 0.057033913320021425,
+      "plotted": 0.057033913320021425,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Head": 4,
+      "Metric": "CompensationIndex",
+      "CSV": 0.07417433904247503,
+      "plotted": 0.07417433904247503,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Head": 5,
+      "Metric": "CompensationIndex",
+      "CSV": 0.0612856875227631,
+      "plotted": 0.0612856875227631,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Head": 6,
+      "Metric": "CompensationIndex",
+      "CSV": 0.18722704550824126,
+      "plotted": 0.18722704550824126,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Head": 7,
+      "Metric": "CompensationIndex",
+      "CSV": 0.1240608449431261,
+      "plotted": 0.1240608449431261,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 1,
+      "Head": 8,
+      "Metric": "CompensationIndex",
+      "CSV": 0.17519161008117387,
+      "plotted": 0.17519161008117387,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Head": 1,
+      "Metric": "CompensationIndex",
+      "CSV": 0.1387542526677233,
+      "plotted": 0.1387542526677233,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Head": 2,
+      "Metric": "CompensationIndex",
+      "CSV": 0.19628574683891867,
+      "plotted": 0.19628574683891867,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Head": 3,
+      "Metric": "CompensationIndex",
+      "CSV": 2.154562952348208,
+      "plotted": 2.154562952348208,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Head": 4,
+      "Metric": "CompensationIndex",
+      "CSV": 0.08145706462934793,
+      "plotted": 0.08145706462934793,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Head": 5,
+      "Metric": "CompensationIndex",
+      "CSV": 0.021035430302214733,
+      "plotted": 0.021035430302214733,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Head": 6,
+      "Metric": "CompensationIndex",
+      "CSV": 0.45713093448059433,
+      "plotted": 0.45713093448059433,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Head": 7,
+      "Metric": "CompensationIndex",
+      "CSV": 0.18235117731783101,
+      "plotted": 0.18235117731783101,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 2,
+      "Head": 8,
+      "Metric": "CompensationIndex",
+      "CSV": 0.11890547822065856,
+      "plotted": 0.11890547822065856,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Head": 1,
+      "Metric": "CompensationIndex",
+      "CSV": 0.5631846929151962,
+      "plotted": 0.5631846929151962,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Head": 2,
+      "Metric": "CompensationIndex",
+      "CSV": 0.08027447563489157,
+      "plotted": 0.08027447563489157,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Head": 3,
+      "Metric": "CompensationIndex",
+      "CSV": 0.06749569051433549,
+      "plotted": 0.06749569051433549,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Head": 4,
+      "Metric": "CompensationIndex",
+      "CSV": 0.08134935375457057,
+      "plotted": 0.08134935375457057,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Head": 5,
+      "Metric": "CompensationIndex",
+      "CSV": 0.052762974409150544,
+      "plotted": 0.052762974409150544,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Head": 6,
+      "Metric": "CompensationIndex",
+      "CSV": 0.23530377485889753,
+      "plotted": 0.23530377485889753,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Head": 7,
+      "Metric": "CompensationIndex",
+      "CSV": 0.013272758114900522,
+      "plotted": 0.013272758114900522,
+      "absolute_difference": 0.0
+    },
+    {
+      "Layer": 3,
+      "Head": 8,
+      "Metric": "CompensationIndex",
+      "CSV": 0.23939878244377422,
+      "plotted": 0.23939878244377422,
+      "absolute_difference": 0.0
+    }
+  ],
+  "max_absolute_difference": 0.0,
+  "exports_sha256": {
+    "05_figures/stage4fd_layer_compensation.png": "9fba6d70bac28a9d4fb2bac37046c29e948208d4a0734ee8dedfb75d62d378f8",
+    "05_figures/stage4fd_layer_compensation.pdf": "ec2867cfd01f3f9235fbaf4c30b7a3b71dd0957f5e9fc78a124e753cd78c0ab3",
+    "05_figures/stage4fd_layer_compensation.svg": "31084c60ed8d981861578dcbbad480a43b7487fd597f6662f6ab702873e7ad3f"
+  },
+  "PNG_dimensions": [
+    2160,
+    990
+  ],
+  "Weighting": "EdgeWeighted",
+  "reference1_is_descriptive_not_significance": true,
+  "no_smoothing_or_interpolation": true,
+  "labels_inside_canvas": true,
+  "numeric_audit": "unrounded plotted artist arrays vs full-precision CSV; textual bar labels round to3 decimals and heatmap labels to2 for readability"
+}

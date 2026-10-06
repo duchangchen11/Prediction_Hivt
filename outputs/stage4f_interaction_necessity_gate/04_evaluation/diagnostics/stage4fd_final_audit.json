@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "frozen_inputs_unchanged": true,
+  "model_parameters_unchanged": true,
+  "full_VAL_edge_pairing": "PASS",
+  "actual_forward_algebra": "PASS",
+  "statistics_both_weightings": "PASS",
+  "all_24_heads_retained": "PASS",
+  "CSV_figure_absolute_difference_max": 0.0,
+  "four_PNG_PDF_SVG_exports": [
+    "stage4fd_attention_shift_comparison.png",
+    "stage4fd_compensation_index.png",
+    "stage4fd_layer_compensation.png",
+    "stage4fd_raw_effective_bias_by_group.png"
+  ],
+  "manual_visual_QA": "PASS",
+  "no_backward_optimizer_train_checkpoint_selection": true,
+  "original_scientific_conclusions_unchanged": true,
+  "GateCompensation": "MIXED",
+  "STOP": true
+}

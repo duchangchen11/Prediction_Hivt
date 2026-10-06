@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "CSV_source_sha256": {
+    "06_tables/stage4fd_effective_strength_by_group.csv": "d00a141bdf83af6c7a4da2f9ec8c6eb39e7aa585c129f26553744f9253578a1b"
+  },
+  "plot_vs_CSV_checks": [
+    {
+      "Group": "vehicle.moving",
+      "Metric": "A_AttentionL1Shift",
+      "CSV": 0.5888777909995215,
+      "plotted": 0.5888777909995215,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "A_AttentionL1Shift",
+      "CSV": 0.7966067753760916,
+      "plotted": 0.7966067753760916,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Metric": "A_AttentionL1Shift",
+      "CSV": 0.7930161423473348,
+      "plotted": 0.7930161423473348,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Metric": "A_AttentionL1Shift",
+      "CSV": 0.8091096998200253,
+      "plotted": 0.8091096998200253,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Metric": "A_AttentionL1Shift",
+      "CSV": 0.8268777461648587,
+      "plotted": 0.8268777461648587,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.moving",
+      "Metric": "F_AttentionL1Shift",
+      "CSV": 0.08394762994943669,
+      "plotted": 0.08394762994943669,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "F_AttentionL1Shift",
+      "CSV": 0.03963415251379587,
+      "plotted": 0.03963415251379587,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Metric": "F_AttentionL1Shift",
+      "CSV": 0.08128670103116825,
+      "plotted": 0.08128670103116825,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Metric": "F_AttentionL1Shift",
+      "CSV": 0.08991243642591841,
+      "plotted": 0.08991243642591841,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Metric": "F_AttentionL1Shift",
+      "CSV": 0.09625734861249481,
+      "plotted": 0.09625734861249481,
+      "absolute_difference": 0.0
+    }
+  ],
+  "max_absolute_difference": 0.0,
+  "exports_sha256": {
+    "05_figures/stage4fd_attention_shift_comparison.png": "093790816838f157beac558c836cd9800191dccb4d588f5a3a9bf9301f519328",
+    "05_figures/stage4fd_attention_shift_comparison.pdf": "a72ec2ceb7dfa22c7598a0b1fdc67dd31ef8f03e2d2b6fd97244d447d97562c9",
+    "05_figures/stage4fd_attention_shift_comparison.svg": "0a81ff88ee68a90443754a37647e53889eeb5f5d2a11fc13005b74fdd402e012"
+  },
+  "PNG_dimensions": [
+    2160,
+    1080
+  ],
+  "Weighting": "EdgeWeighted",
+  "reference1_is_descriptive_not_significance": true,
+  "no_smoothing_or_interpolation": true,
+  "labels_inside_canvas": true,
+  "numeric_audit": "unrounded plotted artist arrays vs full-precision CSV; textual bar labels round to3 decimals and heatmap labels to2 for readability"
+}

@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "capture_sha256": "e4a44fc1a65e742e3a072cd28b72322506ae9d0443f6ce20a76754fd2f62f846",
+  "raw_target_head_sha256": "2659c82b8cbb78a86ae7193be37ce96e2a3720279f2676cf63ba6862d00ccbbe",
+  "target_table": {
+    "relative_path": "04_evaluation/diagnostics/stage4fd_target_strength.csv",
+    "sha256": "763bb984b34940fe023a7da8b71bca8cf8e3d312f982299420a0400fa3bf5ba8",
+    "row_count": 91092,
+    "schema": [
+      "id",
+      "scene_token",
+      "sample_token",
+      "target_instance_token",
+      "type",
+      "motion_group",
+      "horizon",
+      "GT_endpoint_displacement_m",
+      "HasIncomingEdges",
+      "IncomingEdgeCount",
+      "gate",
+      "A_mean_abs_base",
+      "A_mean_abs_raw",
+      "F_mean_abs_base",
+      "F_mean_abs_raw",
+      "F_mean_abs_effective",
+      "A_attention_shift",
+      "F_attention_shift",
+      "A_top_neighbor_switch_rate",
+      "F_top_neighbor_switch_rate",
+      "A_entropy_base",
+      "A_entropy_final",
+      "F_entropy_base",
+      "F_entropy_final"
+    ],
+    "Git": "local_only",
+    "undefined_no_neighbor_metrics": "blank; excluded from group means"
+  },
+  "pair_vs_target_stream_absolute_differences": {
+    "A_raw": 2.6645352591003757e-14,
+    "F_raw": 9.547918011776346e-15,
+    "F_effective": 1.942890293094024e-15,
+    "gate": 0.0
+  },
+  "frozen_gate_actor_records_matched": 85027,
+  "frozen_gate_max_absolute_difference": 0.0,
+  "Weightings": [
+    "EdgeWeighted",
+    "TargetWeighted"
+  ],
+  "primary_population": "full-horizon targets with >=1 actual incoming edge",
+  "group_rows": 42,
+  "layer_rows": 126,
+  "layer_head_rows": 1008,
+  "pair_layers": 36,
+  "pair_heads": 216,
+  "groups": {
+    "Overall": {
+      "TargetCount": 54972,
+      "EdgeCount": 1803580
+    },
+    "Vehicle": {
+      "TargetCount": 42314,
+      "EdgeCount": 1374095
+    },
+    "Pedestrian": {
+      "TargetCount": 12002,
+      "EdgeCount": 412728
+    },
+    "Bicycle": {
+      "TargetCount": 656,
+      "EdgeCount": 16757
+    },
+    "vehicle.moving": {
+      "TargetCount": 10446,
+      "EdgeCount": 287346
+    },
+    "vehicle.stopped": {
+      "TargetCount": 5599,
+      "EdgeCount": 160435
+    },
+    "vehicle.parked": {
+      "TargetCount": 25195,
+      "EdgeCount": 893352
+    },
+    "unknown": {
+      "TargetCount": 1074,
+      "EdgeCount": 32962
+    },
+    "Pedestrian 0-1m": {
+      "TargetCount": 3192,
+      "EdgeCount": 119354
+    },
+    "Pedestrian 1-2m": {
+      "TargetCount": 313,
+      "EdgeCount": 10472
+    },
+    "Pedestrian 2-5m": {
+      "TargetCount": 916,
+      "EdgeCount": 31926
+    },
+    "Pedestrian 5-10m": {
+      "TargetCount": 7321,
+      "EdgeCount": 242779
+    },
+    "Pedestrian 10-20m": {
+      "TargetCount": 260,
+      "EdgeCount": 8197
+    },
+    "Pedestrian <5m": {
+      "TargetCount": 4421,
+      "EdgeCount": 161752
+    },
+    "Heterogeneous-20m": {
+      "TargetCount": 25113,
+      "EdgeCount": 865396
+    },
+    "non-heterogeneous": {
+      "TargetCount": 29859,
+      "EdgeCount": 938184
+    },
+    "Vehicle hetero-20m": {
+      "TargetCount": 14813,
+      "EdgeCount": 497012
+    },
+    "Pedestrian hetero-20m": {
+      "TargetCount": 9732,
+      "EdgeCount": 353017
+    },
+    "VP-context-20m": {
+      "TargetCount": 23209,
+      "EdgeCount": 812105
+    },
+    "Partial targets (auxiliary)": {
+      "TargetCount": 30027,
+      "EdgeCount": 1052730
+    },
+    "All current-valid (auxiliary)": {
+      "TargetCount": 91064,
+      "EdgeCount": 3058206
+    }
+  },
+  "metric_definition": "ratios of means with eps1e-8; CompensationIndex=EffectiveRetention/(corresponding weighted gate mean+eps)",
+  "attention_full_neighborhood": true,
+  "attention_EdgeWeighted_degree_weighted_and_TargetWeighted_standard_mean": true,
+  "GT_only_offline_grouping": true,
+  "no_statistical_significance_threshold": true
+}

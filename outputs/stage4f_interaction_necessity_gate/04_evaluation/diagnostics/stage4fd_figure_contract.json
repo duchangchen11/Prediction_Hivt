@@ -1,0 +1,28 @@
+{
+  "archetype": "quantitative grid",
+  "backend": "Python matplotlib",
+  "conclusion": "Determine whether raw relation amplification offsets gate attenuation, and whether actual attention shifts persist; conclusion follows frozen measurements.",
+  "evidence_chain": [
+    "raw A / raw F / effective F contrast across fixed motion groups",
+    "CompensationIndex relative to descriptive raw-unchanged reference1",
+    "actual complete-neighborhood attention L1 shifts",
+    "Pedestrian layer1/2/3 amplification and effective retention"
+  ],
+  "primary_display_weighting": "EdgeWeighted, stated on each figure; corresponding TargetWeighted values retained in tables/report",
+  "exports": [
+    "PNG300dpi",
+    "PDF selectable TrueType text",
+    "SVG editable text"
+  ],
+  "figure_width_in": 7.2,
+  "font_pt": 8,
+  "source": "stage4fd_ CSV only; numerical figure audit maximum absolute difference<1e-8",
+  "review_risks": [
+    "GateMean by edges differs from unweighted actor mean",
+    "amplitude is sensitive to logit offset; attention is required supporting evidence",
+    "reference1 is not significance cutoff",
+    "cross-model independently trained base states differ",
+    "GT motion bins offline only",
+    "no smoothing, thresholds, causal or performance claims"
+  ]
+}

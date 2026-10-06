@@ -1,0 +1,1355 @@
+你现在执行：
+
+============================================================
+Stage4F-D：Effective Interaction Strength Audit
+有效交互强度 / Gate Compensation 审计
+============================================================
+
+项目根目录：
+/home/lrj/Prediction_Hivt
+
+当前正式 Stage4F 分支：
+stage4f/interaction-necessity-gate
+
+Stage4F 最新 commit：
+514f3809e837626b6976b0f5b17be65d465ca9e6
+
+从该 commit 创建：
+
+stage4f-d/effective-interaction-strength-audit
+
+============================================================
+0. 当前冻结科学结论
+============================================================
+
+Stage3B TypeEmbedding：
+SUPPORTED
+
+Stage4A Always-on Type Interaction：
+技术 PASS
+科学 NOT SUPPORTED
+
+Stage4F Necessity Gate：
+技术 PASS
+科学 NOT SUPPORTED
+
+Stage4F：
+Ready Reliability Head = NO
+
+禁止修改上述结论。
+
+============================================================
+1. Frozen checkpoints
+============================================================
+
+Stage4A：
+
+outputs/stage4_type_conditioned_interaction/
+07_checkpoints/stage4a_best_overall_minfde.pt
+
+SHA256：
+
+ff25266ba6a44630cfec01ae1596ef7de05f0d71f06f9676f6ea7ef327775ecb
+
+
+Stage4F：
+
+outputs/stage4f_interaction_necessity_gate/
+07_checkpoints/stage4f_best_overall_minfde.pt
+
+SHA256：
+
+89f2bc886bd5e1cc2a78a05e07c9761d3317f4677237a458ea35450e4f56e110
+
+全部：
+
+model.eval()
+
+torch.no_grad()
+
+禁止：
+
+backward
+optimizer
+训练
+fine-tune
+checkpoint selection
+
+============================================================
+2. 核心研究问题
+============================================================
+
+Stage4A：
+
+s_A =
+s_base_A + b_A
+
+Stage4F：
+
+s_F =
+s_base_F + g_i * b_F
+
+其中：
+
+g_i ≈ 0.15~0.35
+
+但：
+
+b_F
+
+和 gate 是联合训练的。
+
+需要检验是否出现：
+
+g_i ↓
+
+同时：
+
+|b_F| ↑
+
+导致：
+
+|g_i b_F|
+
+并没有真正比：
+
+|b_A|
+
+减小。
+
+即检验：
+
+“relation branch compensation”。
+
+============================================================
+3. 输出位置
+============================================================
+
+继续放在：
+
+outputs/stage4f_interaction_necessity_gate/
+
+新增：
+
+04_evaluation/diagnostics/
+
+统一前缀：
+
+stage4fd_
+
+表格放：
+
+06_tables/
+
+报告：
+
+09_reports/
+stage4fd_effective_interaction_strength_report.md
+
+禁止覆盖 Stage4F 原结果。
+
+============================================================
+4. 必须使用完全相同 VAL
+============================================================
+
+使用：
+
+official VAL150
+
+3603 windows
+
+Stage4A 和 Stage4F：
+
+必须用完全相同 scene/window 顺序。
+
+禁止改变：
+
+数据
+padding
+actor
+edge
+type
+GT
+map
+
+============================================================
+5. Edge pairing
+============================================================
+
+Stage4A 和 Stage4F
+实际 GlobalInteractor topology 必须严格配对。
+
+注意：
+
+当前冻结实现已经确认：
+
+GlobalInteractor =
+current-valid complete directed graph
+
+50m radius 只作用于 LocalEncoder；
+
+Stage4F gate feature 中的 neighbor statistics
+才限制到 existing edges 内的 <=50m neighbors。
+
+本轮不得再错误描述为：
+
+“GlobalInteractor 是50m graph”。
+
+============================================================
+6. 每条edge唯一身份
+============================================================
+
+构造：
+
+EdgeKey =
+
+scene_token
+sample_token
+source_instance_token
+target_instance_token
+
+要求：
+
+Stage4A
+Stage4F
+
+EdgeKey 集合完全一致。
+
+再扩展：
+
+EdgeHeadKey =
+
+EdgeKey
++ layer
++ head
+
+共：
+
+3 layers
+×
+8 heads。
+
+如 edge pairing 不一致：
+
+STOP。
+
+============================================================
+7. 捕获Stage4A量
+============================================================
+
+对 Stage4A 捕获：
+
+base_A_ij^(l,h)
+
+relation_A_ij^(l,h) = b_A
+
+final_A =
+base_A + b_A
+
+以及：
+
+alpha_base_A
+
+alpha_final_A
+
+必须从真实正式 forward 中捕获。
+
+禁止重新写近似公式。
+
+============================================================
+8. 捕获Stage4F量
+============================================================
+
+Stage4F 捕获：
+
+base_F
+
+raw_relation_F =
+b_F
+
+gate_i =
+g_i
+
+effective_relation_F =
+
+g_i * b_F
+
+final_F =
+
+base_F + g_i*b_F
+
+以及：
+
+alpha_base_F
+
+alpha_final_F
+
+============================================================
+9. 必须验证实际forward
+============================================================
+
+审计代码必须证明：
+
+Stage4A：
+
+captured_final_A
+=
+base_A + b_A
+
+Stage4F：
+
+captured_final_F
+=
+base_F + g*b_F
+
+max_abs_diff < 1e-6
+
+否则：
+
+STOP。
+
+============================================================
+10. 核心统计量
+============================================================
+
+对每个预定义 group
+统计：
+
+A_raw =
+mean(|b_A|)
+
+F_raw =
+mean(|b_F|)
+
+F_effective =
+mean(|g*b_F|)
+
+以及：
+
+RawAmplification =
+
+F_raw / (A_raw + 1e-8)
+
+EffectiveRetention =
+
+F_effective / (A_raw + 1e-8)
+
+其中：
+
+RawAmplification > 1
+
+表示 Stage4F relation branch
+学到了比 Stage4A 更大的 raw bias。
+
+EffectiveRetention ≈ 1
+
+表示虽然有 gate，
+真正进入 attention 的扰动仍接近 Stage4A。
+
+============================================================
+11. Gate-adjusted compensation index
+============================================================
+
+同一组内计算：
+
+EdgeWeightedGateMean =
+
+按该组所有 edge-layer-head observation
+对应 target gate 的平均值。
+
+然后：
+
+ExpectedRetentionWithoutCompensation
+≈
+EdgeWeightedGateMean
+
+定义描述性：
+
+CompensationIndex =
+
+EffectiveRetention
+/
+(EdgeWeightedGateMean + 1e-8)
+
+解释：
+
+≈1：
+没有明显 amplitude compensation
+
+明显 >1：
+raw relation magnitude
+在补偿 gate shrinkage
+
+明显 <1：
+relation branch 本身也减弱
+
+注意：
+
+这是描述性指标。
+
+不要人为规定显著性阈值。
+
+============================================================
+12. Base-normalized interaction strength
+============================================================
+
+Stage4A：
+
+NormalizedInteraction_A =
+
+mean|b_A|
+/
+(mean|base_A| + eps)
+
+Stage4F：
+
+NormalizedInteraction_F =
+
+mean|g*b_F|
+/
+(mean|base_F| + eps)
+
+输出：
+
+NormalizedInteractionRetention =
+
+NormalizedInteraction_F
+/
+(NormalizedInteraction_A + eps)
+
+这比单独比较绝对 bias
+更有意义。
+
+============================================================
+13. Attention-level实际效果
+============================================================
+
+仅比较 logits 不够。
+
+必须对每个：
+
+target node
+layer
+head
+
+计算完整 incoming neighborhood softmax。
+
+Stage4A：
+
+L1Shift_A =
+
+sum_j |
+alpha_final_A - alpha_base_A
+|
+
+Stage4F：
+
+L1Shift_F =
+
+sum_j |
+alpha_final_F - alpha_base_F
+|
+
+再计算：
+
+AttentionShiftRetention =
+
+mean(L1Shift_F)
+/
+(mean(L1Shift_A)+eps)
+
+============================================================
+14. Neighbor switch
+============================================================
+
+分别计算：
+
+Stage4A：
+
+argmax alpha_base_A
+vs
+argmax alpha_final_A
+
+Stage4F：
+
+argmax alpha_base_F
+vs
+argmax alpha_final_F
+
+统计：
+
+TopNeighborSwitchRate_A
+
+TopNeighborSwitchRate_F
+
+以及：
+
+DeltaSwitchRate =
+F - A
+
+============================================================
+15. Attention entropy
+============================================================
+
+继续计算：
+
+H_base
+H_final
+
+DeltaEntropy =
+H_final - H_base
+
+Stage4A / Stage4F 分别统计。
+
+不能把：
+
+entropy更低
+
+自动解释为更好。
+
+只描述：
+
+attention concentration change。
+
+============================================================
+16. 第一组：主要 target types
+============================================================
+
+至少统计：
+
+Overall
+
+Vehicle
+Pedestrian
+Bicycle
+
+============================================================
+17. 第二组：Vehicle motion
+============================================================
+
+必须：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+
+因为 Stage4F gate：
+
+moving ≈0.308
+stopped≈0.167
+parked≈0.165
+
+需要判断：
+
+gate不同以后
+effective interaction
+是否真的不同。
+
+============================================================
+18. 第三组：Pedestrian motion bins
+============================================================
+
+必须保持冻结：
+
+0–1m
+1–2m
+2–5m
+5–10m
+10–20m
+
+只用于离线分组。
+
+禁止 GT 输入模型。
+
+重点：
+
+0–1m
+2–5m
+5–10m
+
+============================================================
+19. 第四组：Interaction context
+============================================================
+
+复用冻结 membership：
+
+Heterogeneous-20m
+non-heterogeneous
+
+Vehicle hetero-20m
+Pedestrian hetero-20m
+VP-context-20m
+
+禁止重新定义成员。
+
+============================================================
+20. Directed pair统计
+============================================================
+
+对9类：
+
+V<-V
+V<-P
+V<-B
+
+P<-V
+P<-P
+P<-B
+
+B<-V
+B<-P
+B<-B
+
+分别输出：
+
+A_raw
+F_raw
+F_effective
+RawAmplification
+EffectiveRetention
+CompensationIndex
+
+============================================================
+21. Layer统计
+============================================================
+
+分别：
+
+Layer1
+Layer2
+Layer3
+
+不能只看 pooled。
+
+特别检查：
+
+Pedestrian Layer2 / Layer3
+
+因为 Stage4A-D
+曾观察到这些层相对 interaction scale 较高。
+
+============================================================
+22. Head统计
+============================================================
+
+保留全部：
+
+3 × 8 = 24
+
+layer/head statistics。
+
+主报告不必全部铺开，
+但 CSV 必须完整。
+
+============================================================
+23. Target-level compensation分析
+============================================================
+
+为了避免 edge count
+主导结果，
+
+再对每一个 target actor/window：
+
+先计算：
+
+mean_edge_head |b_A|
+
+mean_edge_head |b_F|
+
+mean_edge_head |g*b_F|
+
+然后再进行 target-level averaging。
+
+因此同时报告：
+
+EdgeWeighted statistics
+
+和：
+
+TargetWeighted statistics
+
+两种。
+
+不能只报告一种。
+
+============================================================
+24. Gate和raw bias关系
+============================================================
+
+对 Stage4F target-level：
+
+计算：
+
+Spearman correlation：
+
+gate
+
+vs
+
+mean raw |b_F|
+
+以及：
+
+gate
+
+vs
+
+mean effective |g*b_F|
+
+分别：
+
+Overall
+Vehicle
+Pedestrian
+
+以及：
+
+Pedestrian <5m
+Pedestrian 5–10m
+
+如果：
+
+gate 越低
+raw |b_F| 越高
+
+即负相关，
+
+这是 compensation 的辅助证据。
+
+但不能解释为因果。
+
+============================================================
+25. 最重要的Pedestrian检查
+============================================================
+
+对于：
+
+Ped 0–1m
+Ped 1–2m
+Ped 2–5m
+Ped 5–10m
+
+输出一张核心表：
+
+Group
+GateMean
+A_RawBias
+F_RawBias
+F_EffectiveBias
+RawAmplification
+EffectiveRetention
+CompensationIndex
+AttentionShift_A
+AttentionShift_F
+
+我们真正想知道：
+
+低运动 pedestrian 的 gate
+虽然更低，
+
+但：
+
+F_effective
+
+到底有没有真正下降。
+
+============================================================
+26. 最重要的Vehicle检查
+============================================================
+
+同样输出：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+
+判断：
+
+moving vehicle 较高 gate
+是否对应真正较大的：
+
+effective interaction strength。
+
+============================================================
+27. Compensation强证据模式
+============================================================
+
+不要事后创造统计阈值。
+
+但是如果出现以下一致模式：
+
+1.
+Stage4F raw bias
+明显大于 Stage4A
+
+2.
+Gate mean只有约0.15~0.30
+
+3.
+但 EffectiveRetention
+仍接近 Stage4A
+
+4.
+CompensationIndex
+在多数关键组/层明显>1
+
+5.
+AttentionShiftRetention
+仍然较高
+
+则记录：
+
+GateCompensation =
+SUPPORTED
+
+============================================================
+28. Mixed模式
+============================================================
+
+如果：
+
+raw bias有一定放大，
+
+但 effective interaction
+仍然明显降低，
+
+而且不同 group/layer
+方向不一致，
+
+记录：
+
+GateCompensation =
+MIXED
+
+============================================================
+29. 无补偿模式
+============================================================
+
+如果：
+
+F_raw ≈ A_raw
+
+且：
+
+F_effective
+大约按 gate 比例下降，
+
+attention shift
+也明显下降，
+
+记录：
+
+GateCompensation =
+NOT_SUPPORTED
+
+这种情况下：
+
+Gate确实成功控制了 interaction strength，
+
+但性能仍然变差。
+
+那么说明：
+
+问题不是 amplitude compensation，
+
+而是：
+
+“在 attention-logit 上进行这种
+type-conditioned relation modulation
+本身不合适”。
+
+============================================================
+30. 关键决策
+============================================================
+
+最终只允许：
+
+CASE A
+GateCompensation = SUPPORTED
+
+建议：
+
+下一步考虑
+Bounded Necessity-Gated Interaction
+
+即必须让 relation modulation
+有严格上界，
+
+防止 raw bias 无限制抵消 gate。
+
+但本轮禁止实现。
+
+--------------------------------------------------
+
+CASE B
+GateCompensation = MIXED
+
+建议：
+
+不要立刻训练 bounded variant。
+
+先由“大脑AI”根据：
+
+group/layer pattern
+判断是否值得最后尝试一次。
+
+--------------------------------------------------
+
+CASE C
+GateCompensation = NOT_SUPPORTED
+
+建议：
+
+STOP attention-logit interaction route。
+
+不要继续 Stage4G/H 调 gate。
+
+保留：
+
+Stage3B TypeEmbedding
+
+并重新设计第一创新，
+或者转向更有实验证据的：
+
+Mode Reliability Re-ranking。
+
+============================================================
+31. 不允许做counterfactual model selection
+============================================================
+
+禁止直接测试：
+
+tanh(b)
+
+clip(b)
+
+不同 gate scale
+
+lambda
+
+不同 gate bias
+
+然后挑最好结果。
+
+本轮是：
+
+机制审计。
+
+不是超参数搜索。
+
+============================================================
+32. 不允许训练
+============================================================
+
+绝对禁止：
+
+optimizer.step
+
+backward
+
+新checkpoint
+
+fine-tune
+
+额外seed
+
+Stage4G
+
+Reliability Head
+
+Intent
+
+class-balanced loss
+
+oversampling
+
+任何新模型。
+
+============================================================
+33. 核心输出表
+============================================================
+
+输出：
+
+06_tables/
+stage4fd_effective_strength_by_group.csv
+
+字段：
+
+Group
+Weighting
+
+GateMean
+
+A_MeanAbsBase
+A_MeanAbsRawBias
+A_NormalizedInteraction
+
+F_MeanAbsBase
+F_MeanAbsRawBias
+F_MeanAbsEffectiveBias
+F_NormalizedInteraction
+
+RawAmplification
+EffectiveRetention
+CompensationIndex
+NormalizedInteractionRetention
+
+A_AttentionL1Shift
+F_AttentionL1Shift
+AttentionShiftRetention
+
+A_TopNeighborSwitchRate
+F_TopNeighborSwitchRate
+
+A_DeltaEntropy
+F_DeltaEntropy
+
+============================================================
+34. Pair表
+============================================================
+
+输出：
+
+stage4fd_effective_strength_by_pair.csv
+
+字段：
+
+Pair
+Layer
+EdgeCount
+
+A_Raw
+F_Raw
+F_Effective
+
+RawAmplification
+EffectiveRetention
+CompensationIndex
+
+============================================================
+35. Layer/head表
+============================================================
+
+输出：
+
+stage4fd_layer_head_statistics.csv
+
+保留完整24个layer/head。
+
+============================================================
+36. Target-level原始小表
+============================================================
+
+本地保存：
+
+04_evaluation/diagnostics/
+stage4fd_target_strength.csv
+
+每行至少：
+
+scene
+sample
+target_instance
+type
+motion_group
+gate
+
+A_mean_abs_raw
+F_mean_abs_raw
+F_mean_abs_effective
+
+A_attention_shift
+F_attention_shift
+
+GitHub不需要上传
+如果过大。
+
+记录：
+
+SHA256
+row count
+schema。
+
+============================================================
+37. 图1：Raw vs Effective
+============================================================
+
+画：
+
+05_figures/
+stage4fd_raw_effective_bias_by_group.png/pdf/svg
+
+Group：
+
+vehicle.moving
+vehicle.parked
+
+Ped 0–1m
+Ped 2–5m
+Ped 5–10m
+
+显示：
+
+Stage4A raw bias
+
+Stage4F raw bias
+
+Stage4F effective bias
+
+这是最重要的一张图。
+
+============================================================
+38. 图2：Compensation Index
+============================================================
+
+画：
+
+stage4fd_compensation_index.png/pdf/svg
+
+同样 groups。
+
+y=1 画水平线。
+
+注意：
+
+1不是统计显著性阈值，
+
+只是：
+
+“若raw bias不变化，
+按gate缩放的参考点”。
+
+============================================================
+39. 图3：Attention Shift
+============================================================
+
+画：
+
+stage4fd_attention_shift_comparison.png/pdf/svg
+
+Stage4A
+vs
+Stage4F
+
+Groups：
+
+moving vehicle
+parked vehicle
+Ped0–1
+Ped2–5
+Ped5–10
+
+============================================================
+40. 图4：Layer诊断
+============================================================
+
+画：
+
+stage4fd_layer_compensation.png/pdf/svg
+
+分别：
+
+Layer1
+Layer2
+Layer3
+
+Pedestrian：
+
+RawAmplification
+EffectiveRetention
+
+不要平滑。
+
+============================================================
+41. 数值审计
+============================================================
+
+所有图必须来源于CSV。
+
+图与表数字：
+
+absolute difference <1e-8。
+
+保存：
+
+对应 figure audit JSON。
+
+============================================================
+42. Final Report
+============================================================
+
+输出：
+
+09_reports/
+stage4fd_effective_interaction_strength_report.md
+
+结构：
+
+【Question】
+
+Does the relation branch compensate for
+the necessity gate?
+
+【Frozen Models】
+
+Stage4A
+Stage4F
+
+checkpoint SHA
+
+【Pairing Audit】
+
+VAL scenes=
+windows=
+edges=
+edge-head observations=
+
+【Overall Interaction Strength】
+
+A raw
+F raw
+F effective
+gate
+compensation index
+
+【Vehicle Motion】
+
+moving
+stopped
+parked
+
+【Pedestrian Motion】
+
+0–1
+1–2
+2–5
+5–10
+10–20
+
+【Directed Type Pairs】
+
+重点：
+
+V<-V
+V<-P
+P<-V
+P<-P
+
+【Layer Analysis】
+
+【Attention Shift】
+
+【Gate–Raw Bias Correlation】
+
+【Scientific Decision】
+
+GateCompensation =
+SUPPORTED / MIXED / NOT_SUPPORTED
+
+【Recommended Next Step】
+
+如果SUPPORTED：
+
+Bounded interaction值得进入下一设计讨论
+
+如果MIXED：
+
+等待“大脑AI”判断
+
+如果NOT_SUPPORTED：
+
+建议停止attention-logit interaction路线
+
+============================================================
+43. Git
+============================================================
+
+建议 commit：
+
+diag: audit effective interaction strength and gate compensation
+
+push：
+
+stage4f-d/effective-interaction-strength-audit
+
+不要 merge main。
+
+============================================================
+44. 完成后只汇报
+============================================================
+
+Git commit=
+
+Overall:
+Stage4A raw bias=
+Stage4F raw bias=
+Stage4F effective bias=
+Gate mean=
+Raw amplification=
+Effective retention=
+Compensation index=
+Attention shift A=
+Attention shift F=
+
+Vehicle moving:
+A raw=
+F raw=
+F effective=
+Gate=
+Compensation index=
+
+Vehicle parked:
+A raw=
+F raw=
+F effective=
+Gate=
+Compensation index=
+
+Ped 0-1m:
+A raw=
+F raw=
+F effective=
+Gate=
+Compensation index=
+Attention shift retention=
+
+Ped 1-2m:
+...
+
+Ped 2-5m:
+...
+
+Ped 5-10m:
+...
+
+P<-V:
+Raw amplification=
+Effective retention=
+
+P<-P:
+Raw amplification=
+Effective retention=
+
+Layer1 pedestrian:
+Compensation index=
+
+Layer2 pedestrian:
+Compensation index=
+
+Layer3 pedestrian:
+Compensation index=
+
+Gate vs raw-bias Spearman:
+Overall=
+Vehicle=
+Pedestrian=
+
+GateCompensation =
+SUPPORTED / MIXED / NOT_SUPPORTED
+
+RecommendedNextStep=
+
+完成后 STOP。
+
+禁止训练下一模型。

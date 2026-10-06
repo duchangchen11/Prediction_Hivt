@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "fixed_real_VAL_batch_CPU_single_thread": true,
+  "models": {
+    "A": {
+      "status": "PASS",
+      "prediction_max_differences": {
+        "raw_prediction": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0
+      },
+      "forward_algebra_max_diff": 0.0,
+      "actual_attention_max_diff": 0.0,
+      "AST_audit": {
+        "formal_message_source": "def message(self, x_i: torch.Tensor, x_j: torch.Tensor,\n            edge_attr: torch.Tensor, relation_bias: torch.Tensor,\n            index: torch.Tensor, ptr: OptTensor,\n            size_i: Optional[int]) -> torch.Tensor:\n    query = self.lin_q_node(x_i).view(-1, self.num_heads,\n                                     self.embed_dim // self.num_heads)\n    key_node = self.lin_k_node(x_j).view(-1, self.num_heads,\n                                        self.embed_dim // self.num_heads)\n    key_edge = self.lin_k_edge(edge_attr).view(-1, self.num_heads,\n                                             self.embed_dim // self.num_heads)\n    value_node = self.lin_v_node(x_j).view(-1, self.num_heads,\n                                          self.embed_dim // self.num_heads)\n    value_edge = self.lin_v_edge(edge_attr).view(-1, self.num_heads,\n                                               self.embed_dim // self.num_heads)\n    scale = (self.embed_dim // self.num_heads) ** 0.5\n    alpha = (query * (key_node + key_edge)).sum(dim=-1) / scale\n    alpha = alpha + relation_bias\n    alpha = softmax(alpha, index, ptr, size_i)\n    alpha = self.attn_drop(alpha)\n    return (value_node + value_edge) * alpha.unsqueeze(-1)\n",
+        "instrumented_source": "def message(self, x_i: torch.Tensor, x_j: torch.Tensor, edge_attr: torch.Tensor, relation_bias: torch.Tensor, index: torch.Tensor, ptr: OptTensor, size_i: Optional[int]) -> torch.Tensor:\n    query = self.lin_q_node(x_i).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    key_node = self.lin_k_node(x_j).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    key_edge = self.lin_k_edge(edge_attr).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    value_node = self.lin_v_node(x_j).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    value_edge = self.lin_v_edge(edge_attr).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    scale = (self.embed_dim // self.num_heads) ** 0.5\n    alpha = (query * (key_node + key_edge)).sum(dim=-1) / scale\n    self.stage4fd_observer.before(self, alpha, relation_bias, index, ptr, size_i)\n    alpha = alpha + relation_bias\n    self.stage4fd_observer.after(self, alpha)\n    alpha = softmax(alpha, index, ptr, size_i)\n    alpha = self.attn_drop(alpha)\n    return (value_node + value_edge) * alpha.unsqueeze(-1)",
+        "restored_AST_equals_original": true,
+        "actual_original_addition_softmax_value_aggregation_retained": true,
+        "only_observation_statements_inserted": true
+      }
+    },
+    "F": {
+      "status": "PASS",
+      "prediction_max_differences": {
+        "raw_prediction": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0
+      },
+      "forward_algebra_max_diff": 0.0,
+      "actual_attention_max_diff": 0.0,
+      "AST_audit": {
+        "formal_message_source": "def message(self, x_i: torch.Tensor, x_j: torch.Tensor,\n            edge_attr: torch.Tensor, relation_bias: torch.Tensor,\n            index: torch.Tensor, ptr: OptTensor,\n            size_i: Optional[int]) -> torch.Tensor:\n    query = self.lin_q_node(x_i).view(-1, self.num_heads,\n                                     self.embed_dim // self.num_heads)\n    key_node = self.lin_k_node(x_j).view(-1, self.num_heads,\n                                        self.embed_dim // self.num_heads)\n    key_edge = self.lin_k_edge(edge_attr).view(-1, self.num_heads,\n                                             self.embed_dim // self.num_heads)\n    value_node = self.lin_v_node(x_j).view(-1, self.num_heads,\n                                          self.embed_dim // self.num_heads)\n    value_edge = self.lin_v_edge(edge_attr).view(-1, self.num_heads,\n                                               self.embed_dim // self.num_heads)\n    scale = (self.embed_dim // self.num_heads) ** 0.5\n    alpha = (query * (key_node + key_edge)).sum(dim=-1) / scale\n    alpha = alpha + relation_bias\n    alpha = softmax(alpha, index, ptr, size_i)\n    alpha = self.attn_drop(alpha)\n    return (value_node + value_edge) * alpha.unsqueeze(-1)\n",
+        "instrumented_source": "def message(self, x_i: torch.Tensor, x_j: torch.Tensor, edge_attr: torch.Tensor, relation_bias: torch.Tensor, index: torch.Tensor, ptr: OptTensor, size_i: Optional[int]) -> torch.Tensor:\n    query = self.lin_q_node(x_i).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    key_node = self.lin_k_node(x_j).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    key_edge = self.lin_k_edge(edge_attr).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    value_node = self.lin_v_node(x_j).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    value_edge = self.lin_v_edge(edge_attr).view(-1, self.num_heads, self.embed_dim // self.num_heads)\n    scale = (self.embed_dim // self.num_heads) ** 0.5\n    alpha = (query * (key_node + key_edge)).sum(dim=-1) / scale\n    self.stage4fd_observer.before(self, alpha, relation_bias, index, ptr, size_i)\n    alpha = alpha + relation_bias\n    self.stage4fd_observer.after(self, alpha)\n    alpha = softmax(alpha, index, ptr, size_i)\n    alpha = self.attn_drop(alpha)\n    return (value_node + value_edge) * alpha.unsqueeze(-1)",
+        "restored_AST_equals_original": true,
+        "actual_original_addition_softmax_value_aggregation_retained": true,
+        "only_observation_statements_inserted": true
+      }
+    }
+  }
+}

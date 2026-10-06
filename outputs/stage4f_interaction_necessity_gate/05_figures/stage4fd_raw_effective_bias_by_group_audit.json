@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "CSV_source_sha256": {
+    "06_tables/stage4fd_effective_strength_by_group.csv": "d00a141bdf83af6c7a4da2f9ec8c6eb39e7aa585c129f26553744f9253578a1b"
+  },
+  "plot_vs_CSV_checks": [
+    {
+      "Group": "vehicle.moving",
+      "Metric": "A_MeanAbsRawBias",
+      "CSV": 9.776810462016032,
+      "plotted": 9.776810462016032,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "A_MeanAbsRawBias",
+      "CSV": 10.123886521450244,
+      "plotted": 10.123886521450244,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Metric": "A_MeanAbsRawBias",
+      "CSV": 8.087777743455138,
+      "plotted": 8.087777743455138,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Metric": "A_MeanAbsRawBias",
+      "CSV": 8.221713436591424,
+      "plotted": 8.221713436591424,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Metric": "A_MeanAbsRawBias",
+      "CSV": 8.178792876470817,
+      "plotted": 8.178792876470817,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.moving",
+      "Metric": "F_MeanAbsRawBias",
+      "CSV": 1.22969998447288,
+      "plotted": 1.22969998447288,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "F_MeanAbsRawBias",
+      "CSV": 1.3023903744873218,
+      "plotted": 1.3023903744873218,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Metric": "F_MeanAbsRawBias",
+      "CSV": 1.1576674621455627,
+      "plotted": 1.1576674621455627,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Metric": "F_MeanAbsRawBias",
+      "CSV": 1.1793911700731956,
+      "plotted": 1.1793911700731956,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Metric": "F_MeanAbsRawBias",
+      "CSV": 1.1712924924900332,
+      "plotted": 1.1712924924900332,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.moving",
+      "Metric": "F_MeanAbsEffectiveBias",
+      "CSV": 0.3766978939083715,
+      "plotted": 0.3766978939083715,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "F_MeanAbsEffectiveBias",
+      "CSV": 0.21798728991305907,
+      "plotted": 0.21798728991305907,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Metric": "F_MeanAbsEffectiveBias",
+      "CSV": 0.21287589459300402,
+      "plotted": 0.21287589459300402,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Metric": "F_MeanAbsEffectiveBias",
+      "CSV": 0.25950176280971743,
+      "plotted": 0.25950176280971743,
+      "absolute_difference": 0.0
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Metric": "F_MeanAbsEffectiveBias",
+      "CSV": 0.29314631849490647,
+      "plotted": 0.29314631849490647,
+      "absolute_difference": 0.0
+    }
+  ],
+  "max_absolute_difference": 0.0,
+  "exports_sha256": {
+    "05_figures/stage4fd_raw_effective_bias_by_group.png": "1ed69941c9254f7dbb56a7e44a0daebafb0517eb3b925cc17014216152e9c138",
+    "05_figures/stage4fd_raw_effective_bias_by_group.pdf": "c3d07a22614020507ec65c6f1e6a2b8e36e27af37c53a160a6e0dcff4f6473eb",
+    "05_figures/stage4fd_raw_effective_bias_by_group.svg": "3ec6fcdd4ebb5e9dccce09702dfd963e091aea07f02f3cb0e788726cfa6fbbb5"
+  },
+  "PNG_dimensions": [
+    2160,
+    1080
+  ],
+  "Weighting": "EdgeWeighted",
+  "reference1_is_descriptive_not_significance": true,
+  "no_smoothing_or_interpolation": true,
+  "labels_inside_canvas": true,
+  "numeric_audit": "unrounded plotted artist arrays vs full-precision CSV; textual bar labels round to3 decimals and heatmap labels to2 for readability"
+}
