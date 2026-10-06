@@ -1,0 +1,84 @@
+{
+  "source_csv": "06_tables/stage5a_router_distributions.csv",
+  "source_csv_sha256": "01c47d7144950b90b41422ff4f415e4702be761817a30a4e2bfd7140a2e37501",
+  "statistics_csv_sha256": "f74d12ec4a9dff3cfdabf541b7dbb5b95e8dce93ab806eb41cafa8a9e723260b",
+  "groups": [
+    "vehicle.moving",
+    "vehicle.parked",
+    "Pedestrian 0-1m",
+    "Pedestrian 2-5m",
+    "Pedestrian 5-10m"
+  ],
+  "density_checks": [
+    {
+      "Group": "vehicle.moving",
+      "Expert": 1,
+      "density_integral": 1.0,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "vehicle.moving",
+      "Expert": 2,
+      "density_integral": 1.0,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Expert": 1,
+      "density_integral": 1.0,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Expert": 2,
+      "density_integral": 1.0,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Expert": 1,
+      "density_integral": 1.0,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Expert": 2,
+      "density_integral": 1.0,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Expert": 1,
+      "density_integral": 0.9999999999999999,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Expert": 2,
+      "density_integral": 0.9999999999999999,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Expert": 1,
+      "density_integral": 1.0,
+      "artist_max_abs_diff": 0.0
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Expert": 2,
+      "density_integral": 1.0,
+      "artist_max_abs_diff": 0.0
+    }
+  ],
+  "annotation_decimals": 3,
+  "status": "PASS",
+  "exports_SHA256": {
+    "05_figures/stage5a_router_distribution.png": "11ef5150798dbc8fa53e3fb4b3d331b3457c2c5da31cdd20879d60effbee40f3",
+    "05_figures/stage5a_router_distribution.pdf": "ea14020a461cb8318e621b21ba4ea65701656de644c7847b01355750b6680deb",
+    "05_figures/stage5a_router_distribution.svg": "8567eb8a032d73212ecaae5091d37c9ad9acd7a64a5fd5916c7865c5d2e8d62a"
+  },
+  "annotation_rounding_only": true,
+  "editable_SVG_text": true,
+  "PDF_fonttype": 42
+}

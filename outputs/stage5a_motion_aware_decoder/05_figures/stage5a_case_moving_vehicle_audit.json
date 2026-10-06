@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "Stage3B",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 6.891448305694918,
+        "minFDE6": 17.308634247813085,
+        "Top1ADE6": 18.144069701849954,
+        "Top1FDE6": 41.331017676299176
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 7.615970174512654e-07,
+        "minFDE6": 4.4349179617597656e-07,
+        "Top1ADE6": 3.021909478206908e-08,
+        "Top1FDE6": 1.1357718321391985e-06
+      }
+    },
+    {
+      "method": "Stage5A",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 3.6973756365295984,
+        "minFDE6": 10.214480783463149,
+        "Top1ADE6": 3.6973756365295984,
+        "Top1FDE6": 10.214480783463149
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 3.389832117228764e-07,
+        "minFDE6": 5.702966170417767e-07,
+        "Top1ADE6": 3.389832117228764e-07,
+        "Top1FDE6": 5.702966170417767e-07
+      }
+    }
+  ],
+  "same_xy_limits": true,
+  "xlim_m": [
+    -2.7241783761978127,
+    84.2650812292099
+  ],
+  "ylim_m": [
+    -13.278358208465576,
+    5.859278904724121
+  ],
+  "equal_aspect": true,
+  "compact_equal_aspect_rectangle": true,
+  "separate_header_for_endpoint_text_and_zoom": true,
+  "inset_rule": {
+    "turn_over30deg": false,
+    "hard_overlap_mean_distance_under1m": true,
+    "VP_GT_proximity_candidate": false,
+    "add_inset": true
+  },
+  "inset_bbox_m": [
+    [
+      34.56531600952148,
+      -11.01399941695364
+    ],
+    [
+      82.9412109375,
+      2.9895491148296163
+    ]
+  ],
+  "vertical_inset_layout": false,
+  "inset_equal_physical_aspect": true,
+  "lane_alpha": 0.22,
+  "lane_linewidth": 0.5,
+  "lanes_do_not_set_axes_limits": true,
+  "endpoint_annotation_layout": "PASS",
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage5a_case_moving_vehicle.png": "be8aa20248bde7d450f075eab5c73d61c2afb1146394357870ae185b2cc069a4",
+    "05_figures/stage5a_case_moving_vehicle.pdf": "ca698d4596746f0b919a97596cb4c5270597f70bbaf3a86126881171297ab43d",
+    "05_figures/stage5a_case_moving_vehicle.svg": "df53b1a9a0fcdb8092efa9c27efeef93591a2e3ad5e4f90c07e6a81c55121b51"
+  },
+  "source_json": "04_evaluation/cases/stage5a_case_moving_vehicle.json",
+  "source_sha256": "2ca1c756d0a11a3f148bd94be79663a25417297e31046665a71e9b1af6d6cadb",
+  "checkpoint_SHA256": {
+    "Stage3B": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+    "Stage5A": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7"
+  },
+  "same_actor_and_GT": true
+}

@@ -1,0 +1,59 @@
+{
+  "source_csv": "06_tables/stage5a_comparison_all_groups.csv",
+  "source_csv_sha256": "a3d97b48e343764d39c2237130755848876345fda4a4aaf2394047cf2eeb26ed",
+  "bootstrap_json_sha256": "fe42726348fc54bb6a7b01dadd2665b82b646773c4beeb8af33b8602281faee8",
+  "groups": [
+    "overall",
+    "vehicle",
+    "pedestrian"
+  ],
+  "counts": [
+    54990,
+    42332,
+    12002
+  ],
+  "bar_artist_max_abs_diff": 0.0,
+  "data_values": [
+    [
+      1.3432604479902643,
+      1.337995889847286
+    ],
+    [
+      1.431913503594373,
+      1.4244364569563224
+    ],
+    [
+      1.0438751791916105,
+      1.0473267591766144
+    ]
+  ],
+  "paired_delta": [
+    -0.005264558142978506,
+    -0.007477046638050766,
+    0.0034515799850039137
+  ],
+  "CI95": [
+    [
+      -0.012193473418844558,
+      0.0017449905652007114
+    ],
+    [
+      -0.016383268911279007,
+      0.0014225356032110642
+    ],
+    [
+      -0.0027414242059251677,
+      0.009500224193867026
+    ]
+  ],
+  "bar_annotation_decimals": 3,
+  "status": "PASS",
+  "exports_SHA256": {
+    "05_figures/stage5a_main_fde_comparison.png": "b2d47edf592515a9f3e15f940c6480d779d95fda40e05fb2238ae7735f704e52",
+    "05_figures/stage5a_main_fde_comparison.pdf": "053f90d0b7b2b0aeec4d392a0a0b993cac985ff4ac02b706dc88a7f483ddf84d",
+    "05_figures/stage5a_main_fde_comparison.svg": "278dd87a95a9b6fe4c8d37013ae03f41b7975f365fb2c038bd3c695041395988"
+  },
+  "annotation_rounding_only": true,
+  "editable_SVG_text": true,
+  "PDF_fonttype": 42
+}

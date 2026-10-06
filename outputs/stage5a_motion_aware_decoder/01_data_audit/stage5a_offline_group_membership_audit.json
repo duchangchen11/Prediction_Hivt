@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "groups": [
+    {
+      "Group": "overall",
+      "Count": 54990,
+      "Scenes": 150,
+      "Instances": 4323
+    },
+    {
+      "Group": "vehicle",
+      "Count": 42332,
+      "Scenes": 150,
+      "Instances": 3144
+    },
+    {
+      "Group": "pedestrian",
+      "Count": 12002,
+      "Scenes": 121,
+      "Instances": 1108
+    },
+    {
+      "Group": "bicycle",
+      "Count": 656,
+      "Scenes": 47,
+      "Instances": 71
+    },
+    {
+      "Group": "vehicle.moving",
+      "Count": 10461,
+      "Scenes": 137,
+      "Instances": 850
+    },
+    {
+      "Group": "vehicle.stopped",
+      "Count": 5599,
+      "Scenes": 103,
+      "Instances": 433
+    },
+    {
+      "Group": "vehicle.parked",
+      "Count": 25198,
+      "Scenes": 131,
+      "Instances": 1892
+    },
+    {
+      "Group": "unknown",
+      "Count": 1074,
+      "Scenes": 61,
+      "Instances": 93
+    },
+    {
+      "Group": "Vehicle >5m",
+      "Count": 9744,
+      "Scenes": 137,
+      "Instances": 853
+    },
+    {
+      "Group": "Pedestrian <5m",
+      "Count": 4421,
+      "Scenes": 100,
+      "Instances": 493
+    },
+    {
+      "Group": "Pedestrian >5m",
+      "Count": 7581,
+      "Scenes": 110,
+      "Instances": 716
+    },
+    {
+      "Group": "Pedestrian 0-1m",
+      "Count": 3192,
+      "Scenes": 86,
+      "Instances": 352
+    },
+    {
+      "Group": "Pedestrian 1-2m",
+      "Count": 313,
+      "Scenes": 49,
+      "Instances": 95
+    },
+    {
+      "Group": "Pedestrian 2-5m",
+      "Count": 916,
+      "Scenes": 65,
+      "Instances": 176
+    },
+    {
+      "Group": "Pedestrian 5-10m",
+      "Count": 7321,
+      "Scenes": 110,
+      "Instances": 701
+    },
+    {
+      "Group": "Pedestrian 10-20m",
+      "Count": 260,
+      "Scenes": 29,
+      "Instances": 41
+    }
+  ],
+  "source": "frozen Stage3B VAL actor identities and future displacement; offline analysis only",
+  "model_condition_uses_future_bins": false
+}

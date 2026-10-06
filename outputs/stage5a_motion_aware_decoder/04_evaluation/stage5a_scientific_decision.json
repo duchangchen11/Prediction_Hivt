@@ -1,0 +1,28 @@
+{
+  "Motion_Aware_Decoder": "NOT SUPPORTED",
+  "Stage5A": "PASS",
+  "Ready_Reliability": "NO",
+  "reliable_main_class_harm": false,
+  "important_motion_groups_with_reliable_gain": [
+    "Pedestrian 5-10m"
+  ],
+  "router_collapse": "NO",
+  "expert_functional_collapse": "NO",
+  "overall": {
+    "delta": -0.005264558142978506,
+    "CI95": [
+      -0.012193473418844558,
+      0.0017449905652007114
+    ],
+    "Count": 54990,
+    "Scenes": 150
+  },
+  "rules_sha256": "8997370b5d6b0cfe9d2c79f44d5206fb5802f27cbc517c4ab22274e120015503",
+  "Stage3B_conclusion": "SUPPORTED",
+  "Stage4A_conclusion": "NOT SUPPORTED",
+  "Stage4F_conclusion": "NOT SUPPORTED",
+  "Stage4FD_conclusion": "MIXED",
+  "additional_seeds_executed": false,
+  "Reliability_executed": false,
+  "STOP": true
+}

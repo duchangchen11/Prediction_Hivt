@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "figures": [
+    {
+      "name": "stage5a_case_moving_vehicle",
+      "source_json": "04_evaluation/cases/stage5a_case_moving_vehicle.json",
+      "source_sha256": "2ca1c756d0a11a3f148bd94be79663a25417297e31046665a71e9b1af6d6cadb",
+      "case_kind": "moving vehicle improvement",
+      "delta_FDE_m": -7.094152450561523,
+      "agent_type": "vehicle",
+      "actor_key": [
+        "f24b4682fbb9482aba149534deed1cc9",
+        "966ff6e4ebe34bbbae3f35deae2aded4",
+        "735cbc3bc1f043d294a9783bd3f6c5aa",
+        "full_horizon"
+      ],
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage5a_case_parked_stopped_vehicle",
+      "source_json": "04_evaluation/cases/stage5a_case_parked_stopped_vehicle.json",
+      "source_sha256": "97571f865e44b0a0f10b6d5fe23eabd450c684ff0d528cc173cfff854eef2e2c",
+      "case_kind": "parked/stopped vehicle",
+      "delta_FDE_m": -7.038580417633057,
+      "agent_type": "vehicle",
+      "actor_key": [
+        "201b7c65a61f4bc1a2333ea90ba9a932",
+        "d628f4a6b4a6405c8f4cfbb8d18c6fd8",
+        "9551d77e4a2d421aac1a3094d6cad55a",
+        "full_horizon"
+      ],
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage5a_case_moving_pedestrian",
+      "source_json": "04_evaluation/cases/stage5a_case_moving_pedestrian.json",
+      "source_sha256": "587418c1a55f1faf01a3da9ff22064e64a660c3e704f96d40b7c9d5f4898472e",
+      "case_kind": "moving pedestrian",
+      "delta_FDE_m": -1.7971047163009644,
+      "agent_type": "pedestrian",
+      "actor_key": [
+        "57dc3221a3d845b5ab17ff0f98ce336f",
+        "ee7b0788afbe44fd80d41c97813c9e7b",
+        "5599f5f42ccd4f26973d1407b15da99d",
+        "full_horizon"
+      ],
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage5a_case_degradation",
+      "source_json": "04_evaluation/cases/stage5a_case_degradation.json",
+      "source_sha256": "07ae785706c3293129452dff0cafb5fab6cef643d359209d6396a347e7d5ecd1",
+      "case_kind": "degradation case",
+      "delta_FDE_m": 11.011261463165283,
+      "agent_type": "vehicle",
+      "actor_key": [
+        "57dc3221a3d845b5ab17ff0f98ce336f",
+        "bf0a32cc77d74655b66ecdd4b9108cf6",
+        "bd9b720ceffc478b8c78dcaf7edf2aa8",
+        "full_horizon"
+      ],
+      "metric_audit": "PASS"
+    }
+  ],
+  "case_count": 4,
+  "honest_absence_notes": [],
+  "checkpoint_SHA256": {
+    "Stage3B": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+    "Stage5A": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7"
+  },
+  "actor_CSV_SHA256": {
+    "Stage3B": "04193f3400e4703c4e5381c889ab14697b231e5172a07ccf110531593a96768c",
+    "Stage5A": "92751e8248c5ab22f6581a9cec79912e5e6b521e2e30d65eb1f028d55dbb856d"
+  },
+  "selected_after_locked_quantitative_evaluation": true,
+  "no_training": true
+}

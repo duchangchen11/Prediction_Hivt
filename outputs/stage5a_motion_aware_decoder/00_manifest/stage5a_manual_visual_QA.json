@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "inspection": "all eight final PNGs viewed using view_image after rendering and corrections",
+  "checked_at_UTC": "2026-10-06T05:43:42.010041+00:00",
+  "figure_records": [
+    {
+      "name": "stage5a_main_fde_comparison",
+      "PNG_SHA256": "b2d47edf592515a9f3e15f940c6480d779d95fda40e05fb2238ae7735f704e52",
+      "observations": "Baseline and Stage5A bars, separate delta intervals, zero line, sample sizes and method labels readable; staggered value labels do not overlap.",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_motion_group_comparison",
+      "PNG_SHA256": "5f1245298cfadb3db11219d68093a5b1aaa89fc8e2cf665adc12d9a097af2d8e",
+      "observations": "Moving/parked vehicle and pedestrian groups readable; point improvements and degradation shown together; bar labels separated.",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_router_distribution",
+      "PNG_SHA256": "11ef5150798dbc8fa53e3fb4b3d331b3457c2c5da31cdd20879d60effbee40f3",
+      "observations": "All five probability panels readable with shared density axis, neutral Expert 1/2 names, counts and group means.",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_pedestrian_motion_bins",
+      "PNG_SHA256": "a6bfd7cc2ec7ec68576f2b64479cf36746d7cbd46921cb7985b6b995f7de1669",
+      "observations": "Five bins readable; each paired CI is on E minus B, including harmful middle bins; value labels separated.",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_case_moving_vehicle",
+      "PNG_SHA256": "be8aa20248bde7d450f075eab5c73d61c2afb1146394357870ae185b2cc069a4",
+      "observations": "Identical axes and map context; GT/history/Best/Top1 visible; endpoint boxes stay outside trajectories and last-six-point panels are legible.",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_case_parked_stopped_vehicle",
+      "PNG_SHA256": "5ae4af7c54efdf967ed12eccbe64c6f6fdb5faa9dc5ef6106942861b11566d6b",
+      "observations": "Identical equal-aspect axes; vertical inset rectangle widened without distortion, ticks separated; all trajectories and endpoint boxes readable.",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_case_moving_pedestrian",
+      "PNG_SHA256": "887531cff9926870bf5cdbb6e038ab9a95930360c50b5f4fd1f9f7f8609be9f0",
+      "observations": "Identical equal-aspect axes and legible vertical insets; Best improves while Top1 endpoint remains worse, both metrics displayed.",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_case_degradation",
+      "PNG_SHA256": "57f90ed31dc5e1215b61b7895d838cef53874a84a6d6fcca517fcfa0762dcda4",
+      "observations": "Identical map/frame and axes, trajectory styles preserved, larger Stage5A Best/Top1 errors displayed explicitly.",
+      "status": "PASS"
+    }
+  ],
+  "corrections": [
+    "Staggered baseline/Stage5A bar-value annotations to avoid overlap",
+    "Expanded inset bounds and vertical header space while retaining equal physical scale and all original late points"
+  ],
+  "data_or_trajectory_values_changed": false,
+  "same_case_selection": true,
+  "PNG_PDF_SVG_export_QA": "PASS"
+}

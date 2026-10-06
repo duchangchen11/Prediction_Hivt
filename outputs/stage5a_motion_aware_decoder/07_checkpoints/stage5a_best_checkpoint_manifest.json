@@ -1,0 +1,111 @@
+{
+  "status": "COMPLETE",
+  "warmup_steps": 5000,
+  "NLL_steps": 6500,
+  "final_executed_global_step": 11500,
+  "best_global_step": 9000,
+  "stop_reason": "patience_5",
+  "converged_by_patience": true,
+  "stopped_by_budget": false,
+  "warmup_best_source_step": 3500,
+  "training_code_git_commit": "1b15908ab6daa8a800a45dcf243ab406e4869542",
+  "config_sha256": "cdd0e6326bf54d5d45efcf1be23e0fedb5741e2e16412b4c57367c075bd864a8",
+  "NaN": 0,
+  "Inf": 0,
+  "TypeEmbedding_gradient_verified": true,
+  "ResidualExperts_and_Router_gradient_verified": true,
+  "checkpoint_relative_path": "07_checkpoints/stage5a_best_overall_minfde.pt",
+  "checkpoint_sha256": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7",
+  "model_state_content_sha256": "2d1de854a53f0e5567ebee8ed8a911c2ef8000d2ba8a6e330c2b37707e7f7b3f",
+  "selected_full_horizon_metrics": {
+    "overall": {
+      "count": 54990,
+      "minADE6": 0.6657860151539206,
+      "minFDE6": 1.3379958846645452,
+      "MR6": 0.16375704673577013,
+      "Top1ADE6": 1.2047888425147282,
+      "Top1FDE6": 2.680610849012719,
+      "NLL": -0.6680574389557237,
+      "independent_minADE6": 0.6271459273666317
+    },
+    "vehicle": {
+      "count": 42332,
+      "minADE6": 0.7073923930538392,
+      "minFDE6": 1.4244364478512979,
+      "MR6": 0.1660445998299159,
+      "Top1ADE6": 1.3610973284790975,
+      "Top1FDE6": 3.0537862732106578,
+      "NLL": -0.8293533513486145,
+      "independent_minADE6": 0.6623786366771516
+    },
+    "pedestrian": {
+      "count": 12002,
+      "minADE6": 0.5265178810661916,
+      "minFDE6": 1.0473267654505873,
+      "MR6": 0.1576403932677887,
+      "Top1ADE6": 0.6800310116221979,
+      "Top1FDE6": 1.424744142303239,
+      "NLL": -0.09860389668561313,
+      "independent_minADE6": 0.5094539354599307
+    },
+    "bicycle": {
+      "count": 656,
+      "minADE6": 0.5289185701258248,
+      "minFDE6": 1.0779483968357586,
+      "MR6": 0.12804878048780488,
+      "Top1ADE6": 0.7189544805154494,
+      "Top1FDE6": 1.5764190148359531,
+      "NLL": -0.6781227604648914,
+      "independent_minADE6": 0.5068231168960465
+    },
+    "vehicle.moving": {
+      "count": 10461,
+      "minADE6": 2.3187487000460085,
+      "minFDE6": 4.765633037459269,
+      "MR6": 0.5995602714845617,
+      "Top1ADE6": 4.66324721617328,
+      "Top1FDE6": 10.624262812356465,
+      "NLL": 1.438925977895041,
+      "independent_minADE6": 2.1738525073800474
+    },
+    "vehicle.stopped": {
+      "count": 5599,
+      "minADE6": 0.35736149353642865,
+      "minFDE6": 0.8636839456515176,
+      "MR6": 0.08537238792641542,
+      "Top1ADE6": 0.5227212418894317,
+      "Top1FDE6": 1.3385859259812725,
+      "NLL": -1.1297141097019383,
+      "independent_minADE6": 0.33473067753748664
+    },
+    "vehicle.parked": {
+      "count": 25198,
+      "minADE6": 0.11061360622071477,
+      "minFDE6": 0.1461918856816747,
+      "MR6": 0.0038891975553615368,
+      "Top1ADE6": 0.1701485768895142,
+      "Top1FDE6": 0.2749054866678058,
+      "NLL": -1.7014814055374397,
+      "independent_minADE6": 0.1020926333159405
+    },
+    "unknown": {
+      "count": 1074,
+      "minADE6": 0.8387299624895608,
+      "minFDE6": 1.7937122518343034,
+      "MR6": 0.1685288640595903,
+      "Top1ADE6": 1.509890974848748,
+      "Top1FDE6": 3.4549871367486706,
+      "NLL": -0.8953379581899605,
+      "independent_minADE6": 0.7937189295037703
+    }
+  },
+  "selection_rule": "post-update original-NLL full-horizon official VAL overall minFDE6 strict improvement",
+  "maximum_global_step": 21000,
+  "validation_interval": 500,
+  "patience": 5,
+  "from_scratch": true,
+  "Stage3B_trained_weights_loaded": false,
+  "test_used": false,
+  "Reliability_executed": false,
+  "additional_seeds_executed": false
+}

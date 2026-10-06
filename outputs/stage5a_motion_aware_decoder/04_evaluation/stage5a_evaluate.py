@@ -188,7 +188,7 @@ def decoder_statistics(b):
     routes={actor_key(r):r for r in all_rows if r['horizon']!='context_only'}
     assert routes.keys()==b.keys()
     assert len({actor_key(r) for r in all_rows})==len(all_rows)
-    router_rows=[];expert_rows=[]
+    router_rows=[];expert_rows=[];distribution_rows=[]
     def summarize(group,rr,population):
         r=np.array([[float(x['r1']),float(x['r2'])] for x in rr]);assert np.isfinite(r).all()
         assert np.max(np.abs(r.sum(-1)-1))<1e-6 and ((r>=0)&(r<=1)).all()
@@ -200,6 +200,13 @@ def decoder_statistics(b):
             'expert1_dominant_rate':float((dominant==0).mean()),'expert2_dominant_rate':float((dominant==1).mean()),
             'expert1_probability_gt0p9_rate':float((r[:,0]>.9).mean()),'expert2_probability_gt0p9_rate':float((r[:,1]>.9).mean()),
             'tie_rate':float((r[:,0]==r[:,1]).mean())})
+        for expert_id in range(2):
+            counts,edges=np.histogram(r[:,expert_id],bins=np.linspace(0,1,21))
+            assert int(counts.sum())==len(rr)
+            for j,count in enumerate(counts):
+                distribution_rows.append({'Group':group,'Population':population,'Expert':expert_id+1,
+                    'BinLower':float(edges[j]),'BinUpper':float(edges[j+1]),'BinCount':int(count),
+                    'GroupCount':len(rr),'Density':float(count/(len(rr)*(edges[j+1]-edges[j])))})
         a=np.array([[float(x[k]) for k in ('expert1_norm','expert2_norm','expert_cosine','expert_relative_difference','residual_norm')] for x in rr])
         assert np.isfinite(a).all()
         zero=(a[:,0]<1e-12)&(a[:,1]<1e-12)
@@ -225,6 +232,7 @@ def decoder_statistics(b):
     write_csv(ROOT/'06_tables/stage5a_router_statistics.csv',router_rows)
     write_csv(ROOT/'06_tables/stage5a_expert_statistics.csv',expert_rows)
     write_csv(ROOT/'06_tables/stage5a_router_motion_correlations.csv',correlations)
+    write_csv(ROOT/'06_tables/stage5a_router_distributions.csv',distribution_rows)
     result={'status':'PASS','router_collapse':'YES' if router_collapse else 'NO',
         'expert_functional_collapse':'YES' if expert_collapse else 'NO',
         'all_current_valid_actor_windows':len(all_rows),'supervised_actor_windows':len(routes),

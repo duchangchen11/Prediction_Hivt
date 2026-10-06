@@ -1,0 +1,81 @@
+{
+  "source_csv": "06_tables/stage5a_pedestrian_motion_bins.csv",
+  "source_csv_sha256": "c4ef70415cd6ba7ee882aca0f4f88386ae49655287efdbd2cbd0647275b644cb",
+  "bootstrap_json_sha256": "fe42726348fc54bb6a7b01dadd2665b82b646773c4beeb8af33b8602281faee8",
+  "groups": [
+    "Pedestrian 0-1m",
+    "Pedestrian 1-2m",
+    "Pedestrian 2-5m",
+    "Pedestrian 5-10m",
+    "Pedestrian 10-20m"
+  ],
+  "counts": [
+    3192,
+    313,
+    916,
+    7321,
+    260
+  ],
+  "bar_artist_max_abs_diff": 0.0,
+  "data_values": [
+    [
+      0.1673101786291409,
+      0.17232528167952846
+    ],
+    [
+      0.9750176696017527,
+      1.059186433284237
+    ],
+    [
+      1.6679785809323078,
+      1.7425676693765682
+    ],
+    [
+      1.3127378462494015,
+      1.3019256745829881
+    ],
+    [
+      2.118973566778004,
+      2.15707023895274
+    ]
+  ],
+  "paired_delta": [
+    0.005015103050387543,
+    0.08416876368248424,
+    0.07458908844426046,
+    -0.010812171666413264,
+    0.03809667217473571
+  ],
+  "CI95": [
+    [
+      -0.0008932118987158827,
+      0.011237642215575825
+    ],
+    [
+      0.03321553513193684,
+      0.14404252957716382
+    ],
+    [
+      0.04529411360670636,
+      0.11039726981825662
+    ],
+    [
+      -0.015368871278890665,
+      -0.0066824981696607085
+    ],
+    [
+      -0.06914731616405524,
+      0.1716477538588711
+    ]
+  ],
+  "bar_annotation_decimals": 3,
+  "status": "PASS",
+  "exports_SHA256": {
+    "05_figures/stage5a_pedestrian_motion_bins.png": "a6bfd7cc2ec7ec68576f2b64479cf36746d7cbd46921cb7985b6b995f7de1669",
+    "05_figures/stage5a_pedestrian_motion_bins.pdf": "1f25e182600dc07be7250aba129202c07c7e40e3278a600acb270302283220e9",
+    "05_figures/stage5a_pedestrian_motion_bins.svg": "2641e6e4060a8429d86c96f4e548dccdd1aaea2e896175b619a9ce117c407193"
+  },
+  "annotation_rounding_only": true,
+  "editable_SVG_text": true,
+  "PDF_fonttype": 42
+}

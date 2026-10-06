@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "method": "Stage3B",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 4.3488070950472,
+        "minFDE6": 11.55550776272402,
+        "Top1ADE6": 15.728648181727772,
+        "Top1FDE6": 36.883937575434715
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 7.166898603472305e-07,
+        "minFDE6": 2.758211039122216e-06,
+        "Top1ADE6": 4.0022083425128585e-09,
+        "Top1FDE6": 4.074955910482458e-06
+      }
+    },
+    {
+      "method": "Stage5A",
+      "future_trajectory_styles": [
+        {
+          "label": "GT",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 10
+        },
+        {
+          "label": "Top1",
+          "marker_count": 12,
+          "linewidth": 2.0,
+          "zorder": 9
+        },
+        {
+          "label": "Best-FDE",
+          "marker_count": 12,
+          "linewidth": 2.5,
+          "zorder": 11
+        }
+      ],
+      "metrics_recomputed": {
+        "minADE6": 2.0842480132423433,
+        "minFDE6": 4.516931817350171,
+        "Top1ADE6": 2.0842480132423433,
+        "Top1FDE6": 4.516931817350171
+      },
+      "metric_absolute_differences_m": {
+        "minADE6": 1.857124360959972e-07,
+        "minFDE6": 1.7140481691768628e-06,
+        "Top1ADE6": 1.857124360959972e-07,
+        "Top1FDE6": 1.7140481691768628e-06
+      }
+    }
+  ],
+  "same_xy_limits": true,
+  "xlim_m": [
+    -16.865703392028806,
+    50.124967384338376
+  ],
+  "ylim_m": [
+    -61.20149398803711,
+    19.187310943603514
+  ],
+  "equal_aspect": true,
+  "compact_equal_aspect_rectangle": true,
+  "separate_header_for_endpoint_text_and_zoom": true,
+  "inset_rule": {
+    "turn_over30deg": true,
+    "hard_overlap_mean_distance_under1m": true,
+    "VP_GT_proximity_candidate": false,
+    "add_inset": true
+  },
+  "inset_bbox_m": [
+    [
+      -10.057725460052495,
+      -25.042097702026368
+    ],
+    [
+      45.68642380905152,
+      17.83801712036133
+    ]
+  ],
+  "vertical_inset_layout": true,
+  "inset_equal_physical_aspect": true,
+  "lane_alpha": 0.22,
+  "lane_linewidth": 0.5,
+  "lanes_do_not_set_axes_limits": true,
+  "endpoint_annotation_layout": "PASS",
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage5a_case_parked_stopped_vehicle.png": "5ae4af7c54efdf967ed12eccbe64c6f6fdb5faa9dc5ef6106942861b11566d6b",
+    "05_figures/stage5a_case_parked_stopped_vehicle.pdf": "3de27654effbae724b740b8b3c8d265305e3e3a8c4b47500a5c72a92c2472335",
+    "05_figures/stage5a_case_parked_stopped_vehicle.svg": "ddb34a90469024efe461b2ce4a40c7c76115b6a8102a015811468442f1c4fa39"
+  },
+  "source_json": "04_evaluation/cases/stage5a_case_parked_stopped_vehicle.json",
+  "source_sha256": "97571f865e44b0a0f10b6d5fe23eabd450c684ff0d528cc173cfff854eef2e2c",
+  "checkpoint_SHA256": {
+    "Stage3B": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+    "Stage5A": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7"
+  },
+  "same_actor_and_GT": true
+}

@@ -1,0 +1,11 @@
+{
+  "stage": "Stage5A",
+  "mode": "read-only reference to frozen Stage3 shards",
+  "source_root": "outputs/stage3_multitype_hivt/02_preprocessed",
+  "source_train_index": "stage3_train_index.csv",
+  "source_val_index": "stage3_val_index.csv",
+  "shard_count": 850,
+  "data_copied": false,
+  "data_reprocessed": false,
+  "test_used": false
+}

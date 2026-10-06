@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "bundle_count": 8,
+  "formats": [
+    "PNG300dpi",
+    "editable PDF",
+    "editable SVG"
+  ],
+  "figure_records": [
+    {
+      "name": "stage5a_main_fde_comparison",
+      "PNG_size": [
+        2160,
+        1020
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "SVG_editable_text_nodes": 34,
+      "PDF_fonts": [
+        "BMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     15  0"
+      ],
+      "PDF_selectable_text": true,
+      "PNG_SHA256": "b2d47edf592515a9f3e15f940c6480d779d95fda40e05fb2238ae7735f704e52",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_motion_group_comparison",
+      "PNG_size": [
+        2160,
+        1020
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "SVG_editable_text_nodes": 45,
+      "PDF_fonts": [
+        "BMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     15  0"
+      ],
+      "PDF_selectable_text": true,
+      "PNG_SHA256": "5f1245298cfadb3db11219d68093a5b1aaa89fc8e2cf665adc12d9a097af2d8e",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_router_distribution",
+      "PNG_size": [
+        2160,
+        870
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "SVG_editable_text_nodes": 49,
+      "PDF_fonts": [
+        "BMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     15  0"
+      ],
+      "PDF_selectable_text": true,
+      "PNG_SHA256": "11ef5150798dbc8fa53e3fb4b3d331b3457c2c5da31cdd20879d60effbee40f3",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_pedestrian_motion_bins",
+      "PNG_size": [
+        2160,
+        1020
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "SVG_editable_text_nodes": 40,
+      "PDF_fonts": [
+        "BMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     15  0"
+      ],
+      "PDF_selectable_text": true,
+      "PNG_SHA256": "a6bfd7cc2ec7ec68576f2b64479cf36746d7cbd46921cb7985b6b995f7de1669",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_case_moving_vehicle",
+      "PNG_size": [
+        2850,
+        985
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "SVG_editable_text_nodes": 49,
+      "PDF_fonts": [
+        "HATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     29  0"
+      ],
+      "PDF_selectable_text": true,
+      "PNG_SHA256": "be8aa20248bde7d450f075eab5c73d61c2afb1146394357870ae185b2cc069a4",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_case_parked_stopped_vehicle",
+      "PNG_size": [
+        2850,
+        2283
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "SVG_editable_text_nodes": 57,
+      "PDF_fonts": [
+        "HATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     29  0"
+      ],
+      "PDF_selectable_text": true,
+      "PNG_SHA256": "5ae4af7c54efdf967ed12eccbe64c6f6fdb5faa9dc5ef6106942861b11566d6b",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_case_moving_pedestrian",
+      "PNG_size": [
+        2850,
+        2283
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "SVG_editable_text_nodes": 49,
+      "PDF_fonts": [
+        "HATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     29  0"
+      ],
+      "PDF_selectable_text": true,
+      "PNG_SHA256": "887531cff9926870bf5cdbb6e038ab9a95930360c50b5f4fd1f9f7f8609be9f0",
+      "status": "PASS"
+    },
+    {
+      "name": "stage5a_case_degradation",
+      "PNG_size": [
+        2850,
+        960
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "SVG_editable_text_nodes": 31,
+      "PDF_fonts": [
+        "HATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     23  0"
+      ],
+      "PDF_selectable_text": true,
+      "PNG_SHA256": "57f90ed31dc5e1215b61b7895d838cef53874a84a6d6fcca517fcfa0762dcda4",
+      "status": "PASS"
+    }
+  ],
+  "PDF_checker": "existing Poppler pdfinfo / pdftotext / pdffonts",
+  "numerical_integrity": "artist arrays exactly match source data; display annotations rounded only",
+  "manual_visual_inspection_still_required": true
+}

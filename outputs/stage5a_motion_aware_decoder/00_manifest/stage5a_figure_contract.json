@@ -1,0 +1,39 @@
+{
+  "backend": "python",
+  "archetype": "quantitative grid plus matched trajectory comparisons",
+  "core_conclusion": "Determine whether the prescribed residual decoder improves frozen Stage3B motion-sensitive prediction; the conclusion follows the locked paired evaluation.",
+  "quantitative_figures": [
+    "stage5a_main_fde_comparison",
+    "stage5a_motion_group_comparison",
+    "stage5a_router_distribution",
+    "stage5a_pedestrian_motion_bins"
+  ],
+  "evidence_chain": {
+    "main": "Overall and major-class minFDE plus paired scene-bootstrap deltas",
+    "motion": "moving/parked vehicle and low/moving pedestrian subgroup gains and risks",
+    "router": "unnamed learned expert probabilities, no assigned static/dynamic semantics",
+    "bins": "all five frozen pedestrian bins, with counts",
+    "cases": "four purposive matched actor comparisons, including degradation; source trajectories unchanged"
+  },
+  "export": {
+    "formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "PNG_dpi": 300,
+    "SVG_text": "editable",
+    "PDF_fonttype": 42,
+    "width_inches_quantitative": 7.2,
+    "font_family": "DejaVu Sans"
+  },
+  "source_data": "full-precision CSV and per-case JSON derived from frozen checkpoints; rounded labels only",
+  "statistics": "one training seed2022; official TRAIN700/VAL150; paired scene-cluster 1000 resamples seed2022; 95% percentile CI for E-B; overlapping actor-windows clustered by scene; secondary CIs descriptive, no multiple-comparison correction",
+  "review_risks": [
+    "Do not confuse FDE with top1 FDE",
+    "Do not imply causality from routing correlations",
+    "Do not use GT bins as model inputs",
+    "Do not interpret purposive improvement cases as population effects",
+    "Keep paired CI around delta rather than absolute unpaired error bars"
+  ]
+}

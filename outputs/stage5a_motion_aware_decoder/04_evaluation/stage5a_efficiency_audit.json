@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "GPU": "NVIDIA GeForce RTX 3080",
+  "torch": "2.5.1+cu124",
+  "CUDA": "12.4",
+  "paired_measurements": 500,
+  "execution_order": "alternating B/E and E/B on identical preloaded GPU batch",
+  "timing": "CUDA events around eval forward; I/O, H2D and external clone excluded; internal clone included equally",
+  "memory": "separate single-GPU-model pass; warm20, reset peak, all226 VAL batches",
+  "models": [
+    {
+      "Model": "Stage3B",
+      "parameters": 646001,
+      "mean_inference_ms": 58.717283126831056,
+      "median_inference_ms": 54.0499210357666,
+      "std_inference_ms": 27.790080886919334,
+      "paired_measurements": 500,
+      "warmup_batches": 20,
+      "peak_CUDA_memory_MiB": 1735.67138671875,
+      "peak_reserved_MiB": 3410.0
+    },
+    {
+      "Model": "Stage5A",
+      "parameters": 650403,
+      "mean_inference_ms": 58.38986619949341,
+      "median_inference_ms": 55.52857780456543,
+      "std_inference_ms": 22.093861150069213,
+      "paired_measurements": 500,
+      "warmup_batches": 20,
+      "peak_CUDA_memory_MiB": 1735.69091796875,
+      "peak_reserved_MiB": 3410.0
+    }
+  ],
+  "isolated_memory": {
+    "Stage3B": {
+      "allocated_bytes": 1819983360,
+      "reserved_bytes": 3575644160,
+      "unique_VAL_batches": 226,
+      "GPU_model_count": 1
+    },
+    "Stage5A": {
+      "allocated_bytes": 1820003840,
+      "reserved_bytes": 3575644160,
+      "unique_VAL_batches": 226,
+      "GPU_model_count": 1
+    }
+  },
+  "additional_params": 4402,
+  "mean_inference_overhead_percent": -0.5576159350398013,
+  "median_inference_overhead_percent": 2.735724198043421,
+  "source_csv_sha256": "fe7ed637c81cd1cc5a9305d33eb8b37f51c8347215877ceeaa4f15ac381869ea"
+}

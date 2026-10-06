@@ -1,6 +1,8 @@
 02_preprocessed/**
+!02_preprocessed/stage5a_data_reference.json
 07_checkpoints/*.pt
 **/*.tmp
 04_evaluation/stage5a_actor_*.csv
 04_evaluation/stage5a_router_actor_records.csv
+04_evaluation/stage5a_val_step_*.json
 00_manifest/stage5a_git_upload_*.json

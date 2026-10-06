@@ -1,0 +1,70 @@
+{
+  "source_csv": "06_tables/stage5a_comparison_all_groups.csv",
+  "source_csv_sha256": "a3d97b48e343764d39c2237130755848876345fda4a4aaf2394047cf2eeb26ed",
+  "bootstrap_json_sha256": "fe42726348fc54bb6a7b01dadd2665b82b646773c4beeb8af33b8602281faee8",
+  "groups": [
+    "vehicle.moving",
+    "vehicle.parked",
+    "Pedestrian <5m",
+    "Pedestrian 5-10m"
+  ],
+  "counts": [
+    10461,
+    25198,
+    4421,
+    7321
+  ],
+  "bar_artist_max_abs_diff": 0.0,
+  "data_values": [
+    [
+      4.791532241041964,
+      4.765633057939996
+    ],
+    [
+      0.14641494433669391,
+      0.14619189134595373
+    ],
+    [
+      0.5354225290440082,
+      0.5604568282940415
+    ],
+    [
+      1.3127378462494015,
+      1.3019256745829881
+    ]
+  ],
+  "paired_delta": [
+    -0.02589918310196819,
+    -0.00022305299074018147,
+    0.025034299250033292,
+    -0.010812171666413264
+  ],
+  "CI95": [
+    [
+      -0.057337744956876706,
+      0.009777267389583646
+    ],
+    [
+      -0.0017343506750745479,
+      0.0009665376073796361
+    ],
+    [
+      0.014009639016743963,
+      0.03773673898898576
+    ],
+    [
+      -0.015368871278890665,
+      -0.0066824981696607085
+    ]
+  ],
+  "bar_annotation_decimals": 3,
+  "status": "PASS",
+  "exports_SHA256": {
+    "05_figures/stage5a_motion_group_comparison.png": "5f1245298cfadb3db11219d68093a5b1aaa89fc8e2cf665adc12d9a097af2d8e",
+    "05_figures/stage5a_motion_group_comparison.pdf": "7a1d565a198a565fb4126c99c94f346a8abc8d65a6b0b27bcdd47385e69cab15",
+    "05_figures/stage5a_motion_group_comparison.svg": "6939fa939830eddb4737aeed3ad04e458b9113ccc8c45b36b1c95aa14a069a90"
+  },
+  "annotation_rounding_only": true,
+  "editable_SVG_text": true,
+  "PDF_fonttype": 42
+}

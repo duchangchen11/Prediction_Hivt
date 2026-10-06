@@ -1,0 +1,10 @@
+Group,Feature,Spearman_rho,Count,Interpretation
+overall,log1p_recent_displacement,0.9279615327961334,54990,"descriptive, overlapping actor-windows; not causal"
+overall,log1p_net_displacement,0.9351446677850201,54990,"descriptive, overlapping actor-windows; not causal"
+overall,log1p_path_length,0.947195502220676,54990,"descriptive, overlapping actor-windows; not causal"
+vehicle,log1p_recent_displacement,0.9638218802540461,42332,"descriptive, overlapping actor-windows; not causal"
+vehicle,log1p_net_displacement,0.9788035167311704,42332,"descriptive, overlapping actor-windows; not causal"
+vehicle,log1p_path_length,0.9955923505629172,42332,"descriptive, overlapping actor-windows; not causal"
+pedestrian,log1p_recent_displacement,0.9912212634610539,12002,"descriptive, overlapping actor-windows; not causal"
+pedestrian,log1p_net_displacement,0.9430033597127657,12002,"descriptive, overlapping actor-windows; not causal"
+pedestrian,log1p_path_length,0.9439265291436149,12002,"descriptive, overlapping actor-windows; not causal"

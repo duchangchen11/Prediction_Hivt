@@ -1,0 +1,342 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "group": "overall",
+      "metric": "minADE6",
+      "difference": 5.740256048269998e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "minFDE6",
+      "difference": 5.182740681064502e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "Top1ADE6",
+      "difference": 3.4504576973404255e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "Top1FDE6",
+      "difference": 4.0899230668856035e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "overall",
+      "metric": "NLL",
+      "difference": 5.923359247539395e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "minADE6",
+      "difference": 7.547937830310048e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "minFDE6",
+      "difference": 9.105024512123805e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "Top1ADE6",
+      "difference": 3.11537240449411e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "Top1FDE6",
+      "difference": 5.912073497427173e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle",
+      "metric": "NLL",
+      "difference": 1.7646243355429192e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "minADE6",
+      "difference": 2.021405265395515e-11,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "minFDE6",
+      "difference": 6.273972896764235e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "Top1ADE6",
+      "difference": 1.3661777265028263e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "Top1FDE6",
+      "difference": 3.166609197080561e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "pedestrian",
+      "metric": "NLL",
+      "difference": 1.8456147291012748e-08,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "minADE6",
+      "difference": 2.189886050274481e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "minFDE6",
+      "difference": 3.831519279628992e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "Top1ADE6",
+      "difference": 1.6174986128270064e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "Top1FDE6",
+      "difference": 1.9269220219442218e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "bicycle",
+      "metric": "NLL",
+      "difference": 4.49920374290258e-08,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "minADE6",
+      "difference": 1.0830265573247289e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "minFDE6",
+      "difference": 2.0480727336291693e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "Top1ADE6",
+      "difference": 6.982467937177717e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "Top1FDE6",
+      "difference": 2.534148180188822e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.moving",
+      "metric": "NLL",
+      "difference": 3.900501255316158e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "minADE6",
+      "difference": 1.5011526466324199e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "minFDE6",
+      "difference": 7.334591489716047e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "Top1ADE6",
+      "difference": 1.8747046137690404e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "Top1FDE6",
+      "difference": 4.290920285754396e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.stopped",
+      "metric": "NLL",
+      "difference": 3.938506187850521e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "minADE6",
+      "difference": 3.9538612661704775e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "minFDE6",
+      "difference": 5.664279018047225e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "Top1ADE6",
+      "difference": 9.428541281053526e-10,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "Top1FDE6",
+      "difference": 3.706179807494436e-11,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "vehicle.parked",
+      "metric": "NLL",
+      "difference": 7.951620695223482e-09,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "minADE6",
+      "difference": 1.7750843572805763e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "minFDE6",
+      "difference": 1.1741037919676955e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "MR6",
+      "difference": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "Top1ADE6",
+      "difference": 1.7826069065307593e-08,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "Top1FDE6",
+      "difference": 7.694250570011718e-09,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "unknown",
+      "metric": "NLL",
+      "difference": 5.848233175509421e-08,
+      "tolerance": 1e-05,
+      "passed": true
+    }
+  ],
+  "fresh_metrics_authoritative": true
+}
