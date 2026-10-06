@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "condition_max_abs_diff": 0.0,
+  "router_max_abs_diff": 0.0,
+  "output_max_abs_diff": {
+    "raw_prediction": 0.0,
+    "mode_logits": 0.0,
+    "mode_prob": 0.0
+  },
+  "mutated": [
+    "future trajectory",
+    "y",
+    "future mask",
+    "future padding",
+    "GT endpoint",
+    "future labels",
+    "future times",
+    "ego future",
+    "target mask"
+  ],
+  "same_history_and_actor_type": true,
+  "function_signature": "(history, history_padding, agent_type)"
+}

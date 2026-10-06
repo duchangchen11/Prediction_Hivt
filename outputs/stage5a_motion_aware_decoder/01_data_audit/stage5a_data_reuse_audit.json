@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "existing_shards_sha256_verified": 850,
+  "train_scenes": 700,
+  "val_scenes": 150,
+  "test_used": false,
+  "data_reprocessing": false,
+  "copied_data": false,
+  "source_root": "outputs/stage3_multitype_hivt/02_preprocessed",
+  "Stage5A_root": "outputs/stage5a_motion_aware_decoder"
+}

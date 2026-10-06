@@ -1,0 +1,50 @@
+seed: 2022
+historical_steps: 5
+future_steps: 12
+num_modes: 6
+embed_dim: 64
+num_heads: 8
+dropout: 0.1
+num_temporal_layers: 4
+num_global_layers: 3
+local_radius: 50.0
+lane_resolution: 2.0
+weight_decay: 0.0001
+batch_size: 16
+protocol: 1
+scheduler: none
+warmup:
+  lr: 0.001
+  steps: 5000
+nll:
+  lr: 0.0001
+  maximum_steps: 16000
+  plateau_patience: 5
+validation_interval_steps: 500
+checkpoint_selection: post-update original NLL official VAL full-horizon overall minFDE6
+  strict improvement
+moving_checkpoint_diagnostic_only: true
+optimizer_state_preserved: true
+data_loader:
+  workers: 0
+  cache_scenes: 2
+  shuffle: shuffle scene order and window order within each scene, epoch seed 2022+epoch
+experiment: Stage5A Motion-Aware Heterogeneous Residual Decoder
+type_embedding: true
+oversampling: false
+class_balanced_loss: false
+test_used: false
+tiny:
+  updates: 1000
+  lr: 0.001
+  phase: fixed_scale
+  check_every: 100
+  hyperparameter_search: false
+maximum_global_steps: 21000
+motion_aware_decoder:
+  experts: 2
+  expert_bottleneck: 16
+  router_input_dim: 6
+  router_hidden_dim: 16
+  residual_scale: 1
+  neutral_initialization: true

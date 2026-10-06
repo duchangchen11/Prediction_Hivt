@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "backend": "CPU single thread, deterministic scatter",
+  "tolerance": 1e-06,
+  "fixed_real_train_batch": [
+    {
+      "scene": "fe4fdd7a28754baeac7074ad78f55a52",
+      "sample": "0759814ae8164fdd96f95e6bec7e81c1"
+    },
+    {
+      "scene": "0cc28fe2c1064fb9a51f1647c28ca564",
+      "sample": "7d59820c242a40609f59a156b2fd43d5"
+    }
+  ],
+  "raw_prediction_max_abs_diff": 0.0,
+  "mode_logits_max_abs_diff": 0.0,
+  "mode_prob_max_abs_diff": 0.0,
+  "shared_parameters_max_abs_diff": 0.0
+}

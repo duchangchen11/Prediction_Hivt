@@ -1,0 +1,1747 @@
+你现在正式执行：
+
+============================================================
+Stage5A：Motion-Aware Heterogeneous Residual Decoder
+运动感知异构残差解码器
+============================================================
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前最新诊断 commit：
+9c0a91a02012565f36f2214d24b8f05baa3066b7
+
+从该 commit 创建：
+
+stage5a/motion-aware-residual-decoder
+
+============================================================
+一、冻结当前科学结论
+============================================================
+
+Stage3B：
+TypeEmbedding = SUPPORTED
+作为本轮正式 backbone baseline。
+
+Stage4A：
+Always-on Type Interaction
+技术 PASS
+科学 NOT SUPPORTED
+
+Stage4F：
+Necessity-Gated Interaction
+技术 PASS
+科学 NOT SUPPORTED
+
+Stage4F-D：
+GateCompensation = MIXED
+
+结论：
+
+停止继续修改 attention-logit relation bias。
+禁止继续 Stage4G/H。
+
+本轮重新从 Stage3B 网络结构出发，
+只修改 Decoder。
+
+============================================================
+二、Stage3B正式参考
+============================================================
+
+Stage3B checkpoint：
+
+outputs/stage3_multitype_hivt/
+07_checkpoints/stage3b_best_overall_minfde.pt
+
+SHA256：
+
+461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547
+
+Stage3B：
+
+Overall minFDE6 = 1.343260448
+Vehicle = 1.4319135
+Pedestrian = 1.04387518
+Bicycle = 1.09990808
+
+vehicle.moving =
+4.791532
+
+============================================================
+三、本轮研究问题
+============================================================
+
+研究问题：
+
+不同类型和不同历史运动状态的交通参与者，
+是否需要不同的轨迹解码映射？
+
+当前 HiVT 使用完全共享的 MLPDecoder：
+
+shared interaction representation
+        ↓
+shared aggr_embed
+        ↓
+shared loc / scale heads
+
+可能无法充分适应：
+
+moving vehicle
+stopped/parked vehicle
+pedestrian
+bicycle
+
+之间明显不同的运动模式。
+
+因此提出：
+
+Motion-Aware Heterogeneous Residual Decoder
+
+核心原则：
+
+1. HiVT interaction backbone 完全保持原结构。
+2. TypeEmbedding 保留。
+3. 不再修改 attention score。
+4. 仅在 decoder hidden representation 上做轻量适配。
+5. 只使用历史可观测运动信息。
+6. 暂时不修改 mode probability pi head。
+7. 不进入 Reliability Head。
+
+============================================================
+四、实际Decoder结构必须基于当前代码
+============================================================
+
+当前：
+
+models/hivt_runtime/decoder.py
+
+MLPDecoder实际计算：
+
+pi =
+self.pi(
+    concat(local_embed, global_embed)
+)
+
+out =
+self.aggr_embed(
+    concat(global_embed, local_embed)
+)
+
+loc =
+self.loc(out)
+
+scale =
+self.scale(out)
+
+本轮禁止：
+
+声称存在 mode query
+声称存在 decoder cross-attention
+声称存在 Transformer decoder
+
+因为当前代码没有这些结构。
+
+============================================================
+五、Stage5A总体结构
+============================================================
+
+Stage3B：
+
+History + Map
+      ↓
+LocalEncoder
+      ↓
+TypeEmbedding
+      ↓
+GlobalInteractor
+      ↓
+Shared MLPDecoder
+      ↓
+K trajectories + logits
+
+
+Stage5A：
+
+History + Map
+      ↓
+LocalEncoder
+      ↓
+TypeEmbedding
+      ↓
+GlobalInteractor
+      ↓
+Shared aggr_embed
+      ↓
+Motion-Aware Residual Experts
+      ↓
+Shared loc / scale
+      ↓
+K trajectories
+
+原 pi head：
+保持原结构
+
+最终仍输出：
+
+K trajectories
++
+K mode logits
+
+============================================================
+六、核心公式
+============================================================
+
+原 decoder：
+
+h_ki =
+Aggr(
+[
+global_ki,
+local_i
+]
+)
+
+Stage5A：
+
+首先计算 actor-level observable condition：
+
+c_i
+
+然后 router：
+
+r_i =
+softmax(
+Router(c_i)
+)
+
+固定：
+
+2 个 residual experts。
+
+每个 expert：
+
+A_e(h)
+
+最终：
+
+Delta h_ki =
+sum_e
+r_i,e * A_e(h_ki)
+
+然后：
+
+h'_ki =
+h_ki + Delta h_ki
+
+使用：
+
+h'_ki
+
+进入：
+
+loc head
+scale head
+
+即：
+
+Yhat_ki =
+Loc(h'_ki)
+
+Scale_ki =
+Scale(h'_ki)
+
+============================================================
+七、为什么只使用2个Expert
+============================================================
+
+固定：
+
+E = 2
+
+不要使用：
+
+vehicle expert
+pedestrian expert
+bicycle expert
+
+这种硬类别专家。
+
+原因：
+
+bicycle样本过少，
+直接三类别独立decoder容易过拟合。
+
+两个expert为：
+
+learned residual experts
+
+不要预先命名：
+
+static expert
+dynamic expert
+
+它们的语义由训练后分析决定。
+
+只有在最终统计明确支持时，
+才能描述某个expert更偏向某种运动状态。
+
+============================================================
+八、Condition输入
+============================================================
+
+使用：
+
+actor type
++
+历史运动状态
+
+只允许历史数据。
+
+ConditionFeature_i：
+
+1.
+type one-hot：
+
+V [1,0,0]
+P [0,1,0]
+B [0,0,1]
+
+3维。
+
+2.
+recent displacement：
+
+最近两个有效历史点距离
+
+log1p(d_recent)
+
+1维。
+
+3.
+history net displacement：
+
+第一个有效历史点
+到t0距离
+
+log1p(d_net)
+
+1维。
+
+4.
+history path length：
+
+有效历史轨迹累计长度
+
+log1p(L_hist)
+
+1维。
+
+总计：
+
+6维。
+
+============================================================
+九、本轮不要加入邻居统计
+============================================================
+
+Stage5A Router只使用：
+
+type
++
+own historical motion
+
+不要加入：
+
+neighbor count
+heterogeneous fraction
+minimum neighbor distance
+TTC
+map semantics
+
+原因：
+
+本轮研究的是：
+
+Motion-Aware Decoder
+
+不是新的 interaction module。
+
+必须控制变量。
+
+============================================================
+十、Router
+============================================================
+
+定义：
+
+Router:
+
+Linear(6,16)
+ReLU
+Linear(16,2)
+Softmax
+
+输出：
+
+r_i ∈ R^2
+
+满足：
+
+r_i1 + r_i2 = 1
+
+Actor-level routing。
+
+同一个 actor 的：
+
+6 modes
+
+共享同一个 router weight。
+
+即：
+
+r_i
+
+broadcast 到所有 K modes。
+
+============================================================
+十一、Residual Expert
+============================================================
+
+每个 Expert：
+
+Linear(64,16)
+ReLU
+Linear(16,64)
+
+共2个。
+
+即：
+
+Expert_1
+Expert_2
+
+禁止：
+
+独立完整 Decoder
+独立 GlobalInteractor
+独立 loc head
+
+保持轻量。
+
+============================================================
+十二、Residual位置
+============================================================
+
+必须放在：
+
+aggr_embed 后
+
+loc / scale 前。
+
+即：
+
+out =
+aggr_embed(...)
+
+adapted_out =
+out
++
+sum(router_weight * expert(out))
+
+loc =
+loc_head(adapted_out)
+
+scale =
+scale_head(adapted_out)
+
+禁止修改：
+
+LocalEncoder
+GlobalInteractor
+multihead_proj
+TypeEmbedding融合位置。
+
+============================================================
+十三、pi head保持不变
+============================================================
+
+Stage5A：
+
+mode logits pi
+
+仍然使用原：
+
+self.pi(
+concat(
+local_embed,
+global_embed
+)
+)
+
+禁止让 residual experts
+直接修改 pi。
+
+原因：
+
+当前第一创新只研究：
+
+trajectory geometry decoding。
+
+后续第二创新：
+
+Future Interaction Reliability Re-ranking
+
+专门解决：
+
+mode ranking。
+
+这样两个创新解耦。
+
+============================================================
+十四、新增参数预计
+============================================================
+
+2个Experts：
+
+每个：
+
+64×16+16
++
+16×64+64
+
+约2128参数。
+
+2个：
+
+4256。
+
+Router：
+
+6×16+16
++
+16×2+2
+
+约146参数。
+
+预计新增：
+
+约4402参数。
+
+实际值必须由代码统计。
+
+Stage3B：
+
+646001 params。
+
+Stage5A预计：
+
+约650403。
+
+实际结果以程序为准。
+
+============================================================
+十五、Neutral Initialization
+============================================================
+
+两个 Expert：
+
+最后一层：
+
+Linear(16,64)
+
+weight = 0
+bias = 0
+
+因此：
+
+A_1(h)=0
+A_2(h)=0
+
+step0：
+
+adapted_out = out
+
+必须保证：
+
+Stage5A step0
+=
+Stage3B step0
+
+Router最后Linear：
+
+weight = 0
+bias = 0
+
+因此初始：
+
+router probabilities =
+[0.5,0.5]
+
+但由于expert residual=0，
+
+router不影响step0输出。
+
+============================================================
+十六、公平初始化
+============================================================
+
+seed=2022。
+
+创建：
+
+canonical Stage3B step0
+
+canonical Stage5A step0
+
+所有shared parameters：
+
+max_abs_diff = 0
+
+包括：
+
+LocalEncoder
+TypeEmbedding
+GlobalInteractor
+aggr_embed
+loc
+scale
+pi
+
+禁止：
+
+加载 trained Stage3B
+进行 fine-tune。
+
+正式实验必须：
+
+from scratch。
+
+============================================================
+十七、Neutral Output Audit
+============================================================
+
+固定真实 TRAIN batch。
+
+eval mode。
+
+Stage3B step0
+vs
+Stage5A step0：
+
+raw_prediction max diff <1e-6
+mode_logits max diff <1e-6
+mode_prob max diff <1e-6
+
+不通过：
+
+STOP。
+
+保存：
+
+00_manifest/
+stage5a_neutral_initialization_audit.json
+
+============================================================
+十八、代码隔离
+============================================================
+
+新建：
+
+outputs/stage5a_motion_aware_decoder/
+
+目录：
+
+00_manifest/
+01_data_audit/
+02_preprocessed/
+03_training/
+04_evaluation/
+05_figures/
+06_tables/
+07_checkpoints/
+08_logs/
+09_reports/
+
+代码建议：
+
+00_manifest/
+stage5a_decoder.py
+stage5a_model.py
+stage5a_common.py
+
+禁止直接修改：
+
+models/hivt_runtime/decoder.py
+
+原runtime只读。
+
+============================================================
+十九、History feature实现
+============================================================
+
+历史只有：
+
+Th=5
+
+需要正确处理padding。
+
+规则：
+
+recent：
+最后有效t0
+与最近一个更早有效点。
+
+net：
+t0
+与最早有效历史点。
+
+path：
+按时间顺序连接连续/最近有效观测，
+跳过padding。
+
+不足2个有效点：
+
+recent=0
+net=0
+path=0
+
+============================================================
+二十、Future Leakage Tests
+============================================================
+
+必须测试：
+
+修改：
+
+future trajectory
+future mask
+GT endpoint
+future labels
+
+不能改变：
+
+condition features
+router probabilities
+
+同一历史输入下：
+
+router必须完全一致。
+
+保存：
+
+stage5a_no_future_leakage_audit.json
+
+============================================================
+二十一、Unit Tests
+============================================================
+
+至少测试：
+
+1.
+condition shape [N,6]
+
+2.
+type one-hot合法
+
+3.
+router shape [N,2]
+
+4.
+router sum=1
+
+5.
+router finite
+
+6.
+expert input/output [K,N,64]
+
+7.
+shared actor routing broadcast to6 modes正确
+
+8.
+step0 expert output=0
+
+9.
+Stage5A step0=Stage3B step0
+
+10.
+future leakage=0
+
+11.
+padding history正确
+
+12.
+no NaN/Inf
+
+全部 PASS 后再训练。
+
+============================================================
+二十二、Gradient Audit
+============================================================
+
+因为 expert final layer zero-init：
+
+第1次更新：
+
+expert final layer gradient >0
+
+expert first layer
+可能首步为0，
+允许。
+
+Router：
+因为expert输出初始为0，
+第一步gradient可能为0，
+允许。
+
+要求：
+
+10 optimizer updates内：
+
+Expert1 final grad >0
+Expert2 final grad >0
+
+Expert1 first grad >0
+Expert2 first grad >0
+
+Router final grad >0
+Router first grad >0
+
+否则：
+
+STOP。
+
+============================================================
+二十三、Tiny Overfit
+============================================================
+
+构建 tiny 数据。
+
+必须覆盖：
+
+Vehicle
+Pedestrian
+Bicycle
+
+以及：
+
+historically moving vehicle
+historically low-motion vehicle
+
+historically moving pedestrian
+historically low-motion pedestrian
+
+Tiny只用于：
+
+代码正确性。
+
+要求：
+
+loss下降
+expert residual非0
+router不再全部0.5
+无NaN/Inf
+
+禁止用tiny选择超参数。
+
+============================================================
+二十四、固定超参数
+============================================================
+
+不要搜索。
+
+固定：
+
+experts = 2
+expert bottleneck = 16
+router hidden =16
+router input dim=6
+
+residual scale =1
+
+不要加额外gate。
+
+不要测试：
+
+expert=3/4
+bottleneck=8/32
+router hidden=8/32
+
+============================================================
+二十五、正式数据协议
+============================================================
+
+继续：
+
+official TRAIN700
+official VAL150
+test unused
+
+Th=5
+Tf=12
+K=6
+
+vehicle
+pedestrian
+bicycle
+
+不重新处理数据。
+
+不增加ego node。
+
+============================================================
+二十六、训练协议
+============================================================
+
+完全复用当前冻结协议。
+
+seed=2022
+
+batch=16
+embed_dim=64
+heads=8
+global layers=3
+dropout=0.1
+local radius=50m
+weight_decay=1e-4
+
+禁止：
+
+oversampling
+class-balanced loss
+extra loss
+router regularization
+expert load balancing loss
+
+第一版不要增加任何额外loss。
+
+============================================================
+二十七、Phase 1
+============================================================
+
+fixed-scale warmup：
+
+5000 optimizer updates
+
+LR：
+
+0.001
+
+每500 steps：
+
+完整 official VAL150
+
+selection：
+
+overall full-horizon minFDE6
+
+============================================================
+二十八、Phase 2
+============================================================
+
+从 Stage5A：
+
+自己的 warmup best
+
+恢复：
+
+model
+optimizer
+RNG
+
+进入：
+
+original learnable Laplace NLL。
+
+LR：
+
+0.0001
+
+最多：
+
+16000 NLL steps
+
+global hard max：
+
+21000
+
+============================================================
+二十九、Early Stop
+============================================================
+
+每500完整VAL。
+
+连续：
+
+5次
+
+overall minFDE
+没有strict improvement：
+
+STOP。
+
+============================================================
+三十、正式checkpoint
+============================================================
+
+保存：
+
+07_checkpoints/
+stage5a_best_overall_minfde.pt
+
+stage5a_last_checkpoint.pt
+
+stage5a_best_checkpoint_manifest.json
+
+============================================================
+三十一、最终fresh VAL
+============================================================
+
+训练结束后必须：
+
+重新加载 best checkpoint
+
+fresh official VAL150。
+
+预期：
+
+3603 supervised windows
+150 scenes
+
+严格检查：
+
+full horizon =54990
+partial future =30037
+total=85027
+
+NaN=0
+Inf=0
+
+============================================================
+三十二、主要比较对象
+============================================================
+
+主要只比较：
+
+B = Stage3B TypeEmbedding
+
+E = Stage5A Motion-Aware Decoder
+
+不要把：
+
+Stage4A
+Stage4F
+
+作为新的正式baseline。
+
+它们可在附录/研究过程表里保留，
+但主表不需要继续让失败模型占据核心位置。
+
+============================================================
+三十三、主指标
+============================================================
+
+Overall：
+
+minADE6
+minFDE6
+MR6
+Top1ADE6
+Top1FDE6
+NLL
+
+Vehicle
+Pedestrian
+Bicycle
+
+同样统计。
+
+============================================================
+三十四、Vehicle运动组
+============================================================
+
+必须：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+以及：
+
+Vehicle >5m
+
+============================================================
+三十五、Pedestrian motion bins
+============================================================
+
+继续冻结：
+
+0–1m
+1–2m
+2–5m
+5–10m
+10–20m
+
+仅用于离线分析。
+
+不得进入模型。
+
+还统计：
+
+Pedestrian <5m
+Pedestrian >5m
+
+============================================================
+三十六、为什么motion bins仍然重要
+============================================================
+
+Stage5A直接声称：
+
+motion-aware。
+
+因此必须回答：
+
+是否真的在不同运动区域产生差异收益。
+
+尤其重点：
+
+moving vehicle
+
+以及：
+
+Pedestrian 0–1
+2–5
+5–10
+
+============================================================
+三十七、严格pairing
+============================================================
+
+Stage3B vs Stage5A：
+
+scene
+sample
+instance
+node
+type
+motion
+future mask
+GT SHA
+
+必须完全相同。
+
+full=54990
+partial=30037
+total=85027
+
+否则 STOP。
+
+============================================================
+三十八、Bootstrap
+============================================================
+
+paired scene-cluster bootstrap
+
+150 VAL scenes
+1000 replicates
+seed=2022
+
+Primary：
+
+Stage5A - Stage3B
+Overall minFDE6
+
+Secondary：
+
+Vehicle FDE
+Pedestrian FDE
+
+vehicle.moving FDE
+Vehicle >5m FDE
+
+Pedestrian <5m
+Pedestrian 5–10m
+Pedestrian >5m
+
+Overall Top1FDE
+Pedestrian Top1FDE
+
+============================================================
+三十九、科学判定
+============================================================
+
+SUPPORTED：
+
+要求：
+
+1.
+Overall：
+
+Delta minFDE <0
+
+且：
+
+95% CI upper <0
+
+2.
+Vehicle和Pedestrian：
+
+不能出现major reliable degradation。
+
+3.
+至少一个重要motion subgroup：
+
+vehicle.moving
+Vehicle >5m
+Pedestrian <5m
+Pedestrian 5–10m
+
+出现可靠改善。
+
+4.
+没有明显router/expert collapse。
+
+满足则：
+
+Motion-Aware Decoder =
+SUPPORTED
+
+--------------------------------------------------
+
+PARTIAL：
+
+Overall CI跨0，
+
+但：
+
+至少两个motion-sensitive groups
+可靠改善，
+
+且：
+
+Vehicle/Pedestrian overall
+无可靠退化。
+
+--------------------------------------------------
+
+NOT SUPPORTED：
+
+Overall可靠退化，
+
+或：
+
+Vehicle/Pedestrian任一主类别
+可靠明显退化，
+
+或：
+
+没有motion-sensitive group
+获得稳定改善。
+
+============================================================
+四十、Router统计
+============================================================
+
+正式best checkpoint上保存：
+
+router probability：
+
+r1
+r2
+
+每个actor。
+
+统计：
+
+Vehicle
+Pedestrian
+Bicycle
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+
+Ped 0–1
+1–2
+2–5
+5–10
+10–20
+
+============================================================
+四十一、Router指标
+============================================================
+
+每组：
+
+mean r1
+mean r2
+
+median
+
+router entropy：
+
+H(r)
+
+dominant expert rate：
+
+argmax expert1
+argmax expert2
+
+============================================================
+四十二、Collapse检查
+============================================================
+
+如果：
+
+>95% actors
+
+都路由到同一个expert：
+
+dominant probability >0.9
+
+记录：
+
+router collapse = YES
+
+另外：
+
+如果两个expert residual输出
+几乎完全一样，
+
+也记录：
+
+expert functional collapse。
+
+============================================================
+四十三、Expert差异
+============================================================
+
+对同一个 hidden h：
+
+计算：
+
+||A1(h)||
+||A2(h)||
+
+以及：
+
+cos(A1(h),A2(h))
+
+统计：
+
+overall
+vehicle.moving
+vehicle.parked
+pedestrian groups
+
+目的是判断：
+
+两个expert是否真正学到不同残差。
+
+禁止直接解释为：
+
+“Expert1=dynamic”
+
+除非分组统计明确支持。
+
+============================================================
+四十四、Router和历史运动关系
+============================================================
+
+计算：
+
+Spearman：
+
+r1
+
+vs：
+
+recent displacement
+net displacement
+path length
+
+按：
+
+Overall
+Vehicle
+Pedestrian
+
+只作描述。
+
+============================================================
+四十五、重要消融
+============================================================
+
+本轮正式训练只跑一个Stage5A模型。
+
+但是最终如果 Stage5A SUPPORTED，
+下一阶段需要考虑一个非常小的消融：
+
+Stage5A-router：
+
+type + motion
+
+vs
+
+type-only router
+
+或
+
+motion-only router
+
+本轮先不要跑。
+
+等“大脑AI”决定。
+
+============================================================
+四十六、效率
+============================================================
+
+比较：
+
+Stage3B
+Stage5A
+
+params
+
+mean inference latency
+median inference latency
+peak CUDA memory
+
+500 paired measurements。
+
+============================================================
+四十七、图1
+============================================================
+
+stage5a_main_fde_comparison.png/pdf/svg
+
+Stage3B vs Stage5A
+
+Group：
+
+Overall
+Vehicle
+Pedestrian
+
+============================================================
+四十八、图2
+============================================================
+
+stage5a_motion_group_comparison.png/pdf/svg
+
+重点：
+
+vehicle.moving
+vehicle.parked
+
+Ped <5m
+Ped 5–10m
+
+============================================================
+四十九、图3
+============================================================
+
+stage5a_router_distribution.png/pdf/svg
+
+显示：
+
+moving vehicle
+parked vehicle
+Ped0–1
+Ped2–5
+Ped5–10
+
+router expert probabilities。
+
+============================================================
+五十、图4
+============================================================
+
+stage5a_pedestrian_motion_bins.png/pdf/svg
+
+Stage3B
+Stage5A
+
+五个bin：
+
+0–1
+1–2
+2–5
+5–10
+10–20
+
+============================================================
+五十一、定性案例
+============================================================
+
+至少4个：
+
+1.
+moving vehicle improvement
+
+2.
+parked/stopped vehicle
+
+3.
+moving pedestrian
+
+4.
+degradation case
+
+如果存在明显有效案例：
+
+同actor：
+
+Stage3B
+Stage5A
+
+相同地图/坐标范围。
+
+风格沿用当前：
+
+history灰圆
+GT黑方块
+Best蓝圆
+Top1橙虚线三角
+
+============================================================
+五十二、报告
+============================================================
+
+输出：
+
+09_reports/
+stage5a_final_report.md
+
+结构：
+
+【Motivation】
+
+为什么不继续attention-logit interaction。
+
+【Current Decoder】
+
+准确说明原 MLPDecoder：
+aggr_embed / loc / scale / pi。
+
+【Method】
+
+condition=
+router=
+experts=
+residual formula=
+
+【No Future Leakage】
+
+【Initialization】
+
+【Training】
+
+【Main Results】
+
+【Vehicle Motion】
+
+【Pedestrian Motion Bins】
+
+【Bootstrap】
+
+【Router Behavior】
+
+【Expert Diversity】
+
+【Efficiency】
+
+【Qualitative Cases】
+
+【Scientific Decision】
+
+Motion-Aware Heterogeneous Decoder =
+SUPPORTED / PARTIAL / NOT SUPPORTED
+
+Stage5A =
+PASS / FAIL
+
+Ready Reliability =
+YES / NO
+
+============================================================
+五十三、进入Reliability条件
+============================================================
+
+只有：
+
+Stage5A技术 PASS
+
+且：
+
+SUPPORTED
+
+或者非常明确的PARTIAL，
+
+且：
+
+Pedestrian / Vehicle
+无可靠主要退化，
+
+才：
+
+Ready Reliability = YES
+
+如果：
+
+NOT SUPPORTED
+
+则：
+
+不要自行进入 Reliability。
+
+回来由“大脑AI”决定：
+
+直接使用Stage3B进入Reliability
+
+还是继续修改第一创新。
+
+============================================================
+五十四、禁止事项
+============================================================
+
+本轮禁止：
+
+attention relation bias
+Stage4A/F代码混入
+Reliability Head
+mode reranking
+future compatibility
+Intent
+TTC
+map semantic extension
+class-balanced loss
+oversampling
+additional random seeds
+hyperparameter search
+Diffusion
+
+只做：
+
+Motion-Aware Residual Decoder。
+
+============================================================
+五十五、Git建议
+============================================================
+
+commits：
+
+feat: add motion-aware residual decoder
+
+test: audit neutral decoder initialization and history-only routing
+
+exp: train Stage5A motion-aware decoder
+
+eval: evaluate motion-sensitive decoder adaptation
+
+docs: finalize Stage5A report
+
+push：
+
+stage5a/motion-aware-residual-decoder
+
+不要 merge main。
+
+============================================================
+五十六、完成后只汇报
+============================================================
+
+Git commit=
+
+Best global step=
+Stop reason=
+
+Stage3B params=
+Stage5A params=
+Additional params=
+
+Overall:
+Stage3B=
+Stage5A=
+Delta=
+CI=
+
+Vehicle:
+Stage3B=
+Stage5A=
+Delta=
+CI=
+
+Pedestrian:
+Stage3B=
+Stage5A=
+Delta=
+CI=
+
+Bicycle:
+Stage3B=
+Stage5A=
+
+vehicle.moving:
+Stage3B=
+Stage5A=
+Delta=
+CI=
+
+Vehicle >5m:
+Stage3B=
+Stage5A=
+Delta=
+CI=
+
+Pedestrian <5m:
+Stage3B=
+Stage5A=
+Delta=
+CI=
+
+Pedestrian 5-10m:
+Stage3B=
+Stage5A=
+Delta=
+CI=
+
+Router:
+
+moving vehicle:
+expert1 mean=
+expert2 mean=
+
+parked vehicle:
+expert1 mean=
+expert2 mean=
+
+Ped0-1:
+expert1 mean=
+expert2 mean=
+
+Ped5-10:
+expert1 mean=
+expert2 mean=
+
+Router collapse=
+YES / NO
+
+Expert functional collapse=
+YES / NO
+
+Inference overhead=
+
+Motion-Aware Decoder =
+SUPPORTED / PARTIAL / NOT SUPPORTED
+
+Stage5A =
+PASS / FAIL
+
+Ready Reliability =
+YES / NO
+
+完成后 STOP。
+不要进入第二创新。

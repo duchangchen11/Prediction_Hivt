@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "updates": 1000,
+  "phase": "fixed_scale",
+  "initial": {
+    "overall": {
+      "count": 29,
+      "ADE": 7.380437641308226,
+      "FDE": 12.778314630019254,
+      "Top1ADE": 7.391249009247484,
+      "Top1FDE": 13.000222806272836,
+      "NLL": 5.836726221544989,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 13.352704481645064,
+      "FDE": 23.848218817602504,
+      "Top1ADE": 13.346833917227658,
+      "Top1FDE": 23.900526669892397,
+      "NLL": 10.134976322000677,
+      "fixed_scale_regression_loss": 9.269909083843231
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 1.748083492120107,
+      "FDE": 2.2033453844487667,
+      "Top1ADE": 1.8003913561503093,
+      "Top1FDE": 2.4965419123570123,
+      "NLL": 2.131233443816503,
+      "fixed_scale_regression_loss": 0.9131478468577067
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 7.695990065733592,
+      "FDE": 13.6334287772576,
+      "Top1ADE": 7.654391984144847,
+      "Top1FDE": 14.023694177468618,
+      "NLL": 5.367586592833201,
+      "fixed_scale_regression_loss": 4.3433244824409485
+    }
+  },
+  "final": {
+    "overall": {
+      "count": 29,
+      "ADE": 0.0974509715391644,
+      "FDE": 0.1319550673381008,
+      "Top1ADE": 0.12699431232337294,
+      "Top1FDE": 0.17814812423854037,
+      "NLL": 0.7474934170986044,
+      "fixed_scale_regression_loss": null
+    },
+    "vehicle": {
+      "count": 11,
+      "ADE": 0.10255011763762344,
+      "FDE": 0.1264874100346457,
+      "Top1ADE": 0.15291822261431,
+      "Top1FDE": 0.20424427633935754,
+      "NLL": 0.7584039948203347,
+      "fixed_scale_regression_loss": 0.07422531365106504
+    },
+    "pedestrian": {
+      "count": 12,
+      "ADE": 0.07191888770709436,
+      "FDE": 0.10914174901942413,
+      "Top1ADE": 0.09714453170696895,
+      "Top1FDE": 0.14949784241616726,
+      "NLL": 0.7154433280229568,
+      "fixed_scale_regression_loss": 0.04544994545479616
+    },
+    "bicycle": {
+      "count": 6,
+      "ADE": 0.139166704689463,
+      "FDE": 0.18760574236512184,
+      "Top1ADE": 0.139166704689463,
+      "Top1FDE": 0.18760574236512184,
+      "NLL": 0.7915908694267273,
+      "fixed_scale_regression_loss": 0.08250216332574685
+    }
+  },
+  "all3_class_loss_decreased": true,
+  "mean_absolute_residual": 0.21238800883293152,
+  "router_max_deviation_from_half": 0.3027958869934082,
+  "router_mean": [
+    0.5003056526184082,
+    0.4996944069862366
+  ],
+  "train_only": true,
+  "model_discarded_before_formal": true,
+  "hyperparameter_search": false,
+  "elapsed_seconds": 121.5456273049931,
+  "NaN": 0,
+  "Inf": 0
+}
