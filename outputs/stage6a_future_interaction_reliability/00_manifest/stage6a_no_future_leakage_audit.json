@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "perturbed": "GT_future",
+      "feature_max_diff": 0.0,
+      "probability_max_diff": 0.0
+    },
+    {
+      "perturbed": "future_mask",
+      "feature_max_diff": 0.0,
+      "probability_max_diff": 0.0
+    },
+    {
+      "perturbed": "target_mask",
+      "feature_max_diff": 0.0,
+      "probability_max_diff": 0.0
+    },
+    {
+      "perturbed": "neighbor_GT_future",
+      "feature_max_diff": 0.0,
+      "probability_max_diff": 0.0
+    },
+    {
+      "perturbed": "future_labels",
+      "feature_max_diff": 0.0,
+      "probability_max_diff": 0.0
+    }
+  ],
+  "nonneutral_head_fixture": true,
+  "neighbor_prediction_and_base_probability_positive_controls": "PASS",
+  "GT_arguments_in_feature_API": false,
+  "neighbor_future": "frozen Stage5A predictions only",
+  "recursive_reranking": false
+}

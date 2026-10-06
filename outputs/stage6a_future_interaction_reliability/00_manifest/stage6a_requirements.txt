@@ -1,0 +1,1877 @@
+你现在正式执行：
+
+============================================================
+Stage6A：Future Interaction Reliability Re-ranking
+未来交互可靠性感知的多模态轨迹重排序
+============================================================
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前 Stage5A 最新 commit：
+
+e5cec8f44d27608eddb7820a8f873b53d0b8ddab
+
+从该 commit 创建：
+
+stage6a/future-interaction-reliability
+
+============================================================
+一、研究目标调整
+============================================================
+
+当前研究目标已经调整：
+
+不是追求每个 subgroup 均统计显著改善，
+也不是冲 SOTA。
+
+目标是：
+
+1. 最终方法总体指标优于 baseline；
+2. 与若干公开模型形成可用对比；
+3. 方法模块有清楚逻辑；
+4. 消融实验完整；
+5. 不发生主要类别严重性能崩溃；
+6. 最终形成可投稿的小论文实验链。
+
+此前：
+
+Stage3B TypeEmbedding：
+保留为稳定 baseline。
+
+Stage5A Motion-Aware Residual Decoder：
+
+技术 PASS。
+
+虽然严格预注册结论为 NOT SUPPORTED，
+但：
+
+Overall minFDE：
+1.343260 -> 1.337996
+
+Vehicle：
+1.431914 -> 1.424436
+
+Moving Vehicle：
+4.791532 -> 4.765633
+
+Pedestrian Top1FDE：
+1.457706 -> 1.424744
+
+因此 Stage5A 作为：
+
+candidate geometry backbone
+
+保留进入 Stage6A。
+
+不得改写此前严格科学结论。
+
+============================================================
+二、为什么做Reliability
+============================================================
+
+当前最明显的问题不是：
+
+“没有生成好轨迹”。
+
+而是：
+
+“已经生成较好候选轨迹，但模式概率排序不可靠”。
+
+例如：
+
+Stage3B moving vehicle：
+
+minFDE约：
+4.79m
+
+Top1FDE约：
+10m以上
+
+说明：
+
+6条候选轨迹中已经存在明显更好的候选，
+但最高预测概率轨迹经常不是最好候选。
+
+因此 Stage6A 只解决：
+
+mode ranking / mode reliability。
+
+============================================================
+三、本轮绝对不修改轨迹几何
+============================================================
+
+冻结 Stage5A predictor。
+
+Stage5A best checkpoint：
+
+outputs/stage5a_motion_aware_decoder/
+07_checkpoints/stage5a_best_overall_minfde.pt
+
+SHA256：
+
+88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7
+
+必须：
+
+model.eval()
+
+predictor所有参数：
+
+requires_grad=False
+
+禁止：
+
+backward到predictor
+fine-tune Stage5A
+修改LocalEncoder
+修改GlobalInteractor
+修改TypeEmbedding
+修改Residual Decoder
+修改K=6预测轨迹
+
+Stage6A只能重新计算：
+
+mode logits / mode probabilities。
+
+============================================================
+四、关键不变量
+============================================================
+
+Stage5A：
+
+6条预测轨迹
+
+与：
+
+Stage5A + Reliability
+
+必须逐点完全相同。
+
+因此理论上：
+
+minADE6
+minFDE6
+MR6
+
+全部必须完全不变。
+
+允许浮点重载误差：
+
+absolute difference < 1e-8
+
+最好 bitwise identical。
+
+如果：
+
+minFDE / minADE / MR
+
+发生变化：
+
+STOP。
+
+============================================================
+五、输出目录
+============================================================
+
+新建：
+
+outputs/stage6a_future_interaction_reliability/
+
+结构：
+
+00_manifest/
+01_cache/
+02_features/
+03_training/
+04_evaluation/
+05_figures/
+06_tables/
+07_checkpoints/
+08_logs/
+09_reports/
+
+旧 Stage3B / Stage5A：
+
+全部只读。
+
+============================================================
+六、本轮设计两个Reliability Head
+============================================================
+
+为了论文消融干净，
+同时训练两个非常小的head。
+
+R0：
+
+Stage5A 原始mode logits
+
+不训练。
+
+--------------------------------------------------
+
+R1：
+
+Reliability Head WITHOUT future interaction
+
+输入：
+
+目标自身信息
++
+预测mode自身信息
+
+Interaction features全部置0。
+
+--------------------------------------------------
+
+R2：
+
+Future Interaction Reliability Head
+
+与R1结构完全相同，
+
+但启用：
+
+predicted future interaction features。
+
+这样可以回答：
+
+“提升只是额外MLP造成的，
+还是未来交互一致性信息真正有用？”
+
+============================================================
+七、最终论文比较链
+============================================================
+
+至少形成：
+
+B：
+Stage3B TypeEmbedding
+
+E：
+Stage5A Motion-Aware Decoder
+
+E+R1：
+Stage5A + Reliability without interaction
+
+E+R2：
+Stage5A + Future Interaction Reliability
+
+============================================================
+八、预测缓存
+============================================================
+
+因为 predictor 完全冻结，
+
+先离线缓存：
+
+TRAIN700
+VAL150
+
+Stage5A prediction。
+
+必须缓存：
+
+scene/window identity
+
+actor instance identity
+
+agent_type
+
+current t0 position
+
+history positions
+
+future validity mask
+
+target mask
+
+raw_prediction [K,N,T,4]
+
+mode_logits [N,K]
+
+mode_prob [N,K]
+
+rotation
+
+以及转换后的：
+
+predicted future position
+[N,K,T,2]
+
+统一转换到：
+
+t0 ego coordinate system。
+
+============================================================
+九、坐标转换
+============================================================
+
+必须复用现有逻辑：
+
+local prediction
+→
+actor rotation inverse
+→
+加 t0 actor current position
+
+等价于现有：
+
+ego_predictions()
+
+禁止：
+
+直接拿不同actor的local-frame trajectory
+计算距离。
+
+未来交互距离必须在同一个：
+
+t0 ego frame
+
+中计算。
+
+============================================================
+十、缓存审计
+============================================================
+
+对随机至少100个actor：
+
+重新forward predictor
+
+与cache比较：
+
+raw prediction
+logits
+probabilities
+ego-frame prediction
+
+max diff <1e-6
+
+身份完全一致。
+
+============================================================
+十一、Reliability输入特征
+============================================================
+
+每个：
+
+target actor i
+mode k
+
+构造：
+
+19维 feature。
+
+============================================================
+十二、A. Target type
+============================================================
+
+type one-hot：
+
+Vehicle
+Pedestrian
+Bicycle
+
+3维。
+
+============================================================
+十三、B. 历史运动
+============================================================
+
+只使用历史：
+
+recent displacement
+
+net displacement
+
+path length
+
+全部：
+
+log1p()
+
+3维。
+
+============================================================
+十四、C. 原始mode置信度
+============================================================
+
+base logit：
+
+z_i^k
+
+1维。
+
+base probability：
+
+p_i^k
+
+1维。
+
+共2维。
+
+============================================================
+十五、D. 预测轨迹自身特征
+============================================================
+
+对mode k：
+
+1.
+predicted endpoint displacement
+
+||Y_k(T)-Y_current||
+
+2.
+predicted trajectory path length
+
+3.
+mean step displacement
+
+4.
+max step displacement
+
+共4维。
+
+到目前：
+
+3 + 3 + 2 + 4
+=
+12维。
+
+============================================================
+十六、E. Future Interaction Features
+============================================================
+
+R2增加7维。
+
+R1对应7维全部置0。
+
+============================================================
+十七、Neighbor定义
+============================================================
+
+对当前actor i：
+
+从当前有效actor中：
+
+排除self。
+
+使用：
+
+t0 current distance <= 50m
+
+再选择：
+
+最多8个最近邻居。
+
+即：
+
+M = 8
+
+固定。
+
+不要搜索：
+
+20m
+30m
+40m
+M=4/12/16。
+
+============================================================
+十八、Neighbor未来也使用预测
+============================================================
+
+对邻居 j：
+
+必须使用：
+
+Stage5A predicted trajectories
+
+以及：
+
+Stage5A base mode probabilities：
+
+p_j^l
+
+禁止使用：
+
+neighbor GT future。
+
+Inference时必须完全可计算。
+
+============================================================
+十九、Future pairwise distance
+============================================================
+
+对于：
+
+target i mode k
+
+neighbor j mode l
+
+计算：
+
+d_ij^{k,l}(t)
+=
+||
+Yhat_i^k(t)
+-
+Yhat_j^l(t)
+||
+
+t=1...12。
+
+然后：
+
+min distance：
+
+m_ij^{k,l}
+=
+min_t d_ij^{k,l}(t)
+
+mean distance：
+
+a_ij^{k,l}
+=
+mean_t d_ij^{k,l}(t)
+
+============================================================
+二十、Neighbor mode expectation
+============================================================
+
+使用邻居 frozen base probability：
+
+p_j^l
+
+计算：
+
+ExpectedMinDist_ij^k
+=
+sum_l
+p_j^l *
+m_ij^{k,l}
+
+ExpectedMeanDist_ij^k
+=
+sum_l
+p_j^l *
+a_ij^{k,l}
+
+禁止：
+
+recursive reranking。
+
+也就是说：
+
+计算 target reliability 时，
+
+neighbor 始终使用：
+
+Stage5A 原始 p_j^l
+
+不是 refined probability。
+
+============================================================
+二十一、Soft future conflict
+============================================================
+
+定义：
+
+C_ij^{k,l}
+=
+mean_t
+exp(
+-d(t)^2 / (2*sigma^2)
+)
+
+固定：
+
+sigma = 2.0 m
+
+不搜索。
+
+然后：
+
+ExpectedConflict_ij^k
+=
+sum_l
+p_j^l *
+C_ij^{k,l}
+
+============================================================
+二十二、7维interaction features
+============================================================
+
+对最多8个邻居聚合：
+
+1.
+minimum ExpectedMinDist
+
+2.
+mean ExpectedMinDist
+
+3.
+minimum ExpectedMeanDist
+
+4.
+maximum ExpectedConflict
+
+5.
+mean ExpectedConflict
+
+另外按neighbor type：
+
+6.
+maximum conflict with Vehicle neighbors
+
+7.
+maximum conflict with Pedestrian neighbors
+
+如果对应类型没有neighbor：
+
+设0。
+
+暂时不单独给 Bicycle conflict feature，
+避免极稀疏类别增加不稳定。
+
+总维度：
+
+12 + 7 =
+19。
+
+============================================================
+二十三、无邻居情况
+============================================================
+
+如果：
+
+50m内无neighbor：
+
+interaction feature：
+
+minimum distance类：
+
+统一归一化后设1
+
+conflict类：
+
+设0。
+
+必须在代码中明确。
+
+============================================================
+二十四、特征归一化
+============================================================
+
+在 TRAIN head-training split 上：
+
+计算每个连续特征：
+
+mean
+std
+
+标准化：
+
+(x-mu)/(std+1e-6)
+
+type one-hot不标准化。
+
+base probability不标准化可接受，
+但为了统一：
+
+记录明确规则。
+
+VAL只能使用：
+
+TRAIN统计量。
+
+禁止VAL参与normalization。
+
+============================================================
+二十五、Reliability Head
+============================================================
+
+R1/R2结构完全一致：
+
+Linear(19,32)
+ReLU
+Linear(32,1)
+
+输出：
+
+Delta z_i^k
+
+最终：
+
+z'_i^k
+=
+z_i^k
++
+Delta z_i^k
+
+然后：
+
+p'_i
+=
+softmax(z'_i)
+
+============================================================
+二十六、Neutral Initialization
+============================================================
+
+最后Linear：
+
+weight=0
+bias=0
+
+所以step0：
+
+Delta z = 0
+
+因此：
+
+z' = z
+
+Stage6A step0：
+
+mode probabilities
+必须与 Stage5A 原始结果一致。
+
+============================================================
+二十七、Head参数量
+============================================================
+
+预计：
+
+19×32+32
++
+32×1+1
+
+=
+
+673 parameters。
+
+R1/R2各自约673参数。
+
+实际值以程序为准。
+
+============================================================
+二十八、Ranking supervision
+============================================================
+
+对于有完整future GT的target actor：
+
+计算每个mode：
+
+FDE_k
+=
+||
+Yhat_i^k(T)
+-
+Y_i^GT(T)
+||
+
+然后构造 soft reliability target：
+
+q_i^k
+=
+softmax(
+-FDE_k / 1.0
+)
+
+这里：
+
+temperature固定为1.0 meter。
+
+禁止搜索temperature。
+
+============================================================
+二十九、为什么用FDE target
+============================================================
+
+Stage6A明确研究：
+
+“哪个mode应该排第一”。
+
+因此第一版直接使用：
+
+endpoint quality
+
+作为mode ranking supervision。
+
+这与最终：
+
+Top1FDE
+
+目标完全对应。
+
+不修改轨迹本身。
+
+============================================================
+三十、训练Loss
+============================================================
+
+只使用：
+
+SoftTargetCrossEntropy
+
+L_rank
+=
+-sum_k
+q_i^k log p'_i^k
+
+不要增加：
+
+trajectory loss
+ADE loss
+interaction loss
+collision loss
+entropy regularization
+margin loss
+
+先保持最小变量。
+
+============================================================
+三十一、Head训练数据划分
+============================================================
+
+不要直接使用 official VAL
+训练/early-stop reliability head。
+
+从 TRAIN700 scene 中固定划分：
+
+HeadTrain：
+630 scenes
+
+HeadDev：
+70 scenes
+
+scene-level split。
+
+seed：
+
+2022
+
+必须：
+
+无scene overlap。
+
+保存：
+
+00_manifest/
+stage6a_head_split.json
+
+============================================================
+三十二、正式VAL用途
+============================================================
+
+official VAL150：
+
+只能用于：
+
+最终一次正式评价。
+
+不能：
+
+early stopping
+hyperparameter tuning
+feature选择
+threshold选择。
+
+============================================================
+三十三、训练样本
+============================================================
+
+Head训练：
+
+优先仅使用：
+
+full-horizon target actors
+
+因为最终主评价也是：
+
+6s full horizon。
+
+不要混入：
+
+partial future
+
+作为ranking label。
+
+Context actors仍然可以参与：
+
+future interaction feature。
+
+============================================================
+三十四、训练协议
+============================================================
+
+分别训练：
+
+R1
+R2
+
+相同：
+
+seed=2022
+
+batch size：
+1024 target actors
+
+AdamW
+
+LR：
+1e-3
+
+weight_decay：
+1e-4
+
+max epochs：
+50
+
+每epoch：
+
+HeadDev评估。
+
+============================================================
+三十五、Early Stop
+============================================================
+
+Primary：
+
+HeadDev Top1FDE
+
+strict improvement。
+
+patience：
+
+5 epochs。
+
+保存：
+
+best R1
+best R2。
+
+不要使用官方VAL挑checkpoint。
+
+============================================================
+三十六、公平初始化
+============================================================
+
+R1和R2：
+
+使用完全相同 seed
+
+以及相同：
+
+initial MLP weights。
+
+检查：
+
+shared parameter max diff=0。
+
+唯一不同：
+
+R1 interaction feature全部0
+
+R2真实interaction feature。
+
+============================================================
+三十七、正式checkpoint
+============================================================
+
+保存：
+
+07_checkpoints/
+
+stage6a_r1_best.pt
+
+stage6a_r2_best.pt
+
+以及：
+
+checkpoint SHA256
+split SHA
+normalization SHA
+training config SHA。
+
+============================================================
+三十八、正式VAL推理
+============================================================
+
+重新加载：
+
+frozen Stage5A checkpoint
+
+R1 best
+
+R2 best
+
+在：
+
+official VAL150
+
+完整推理。
+
+生成：
+
+R0
+R1
+R2
+
+三组ranking结果。
+
+============================================================
+三十九、Geometry Identity Audit
+============================================================
+
+R0 / R1 / R2：
+
+K trajectories必须100%相同。
+
+检查：
+
+raw prediction SHA
+actor identity
+future mask
+GT SHA
+
+要求：
+
+minADE
+minFDE
+MR
+
+R0/R1/R2：
+
+差值 <1e-8。
+
+不通过：
+
+STOP。
+
+============================================================
+四十、主要Ranking指标
+============================================================
+
+必须报告：
+
+1.
+Top1ADE
+
+2.
+Top1FDE
+
+3.
+OracleGap_FDE
+
+定义：
+
+Top1FDE - minFDE6
+
+4.
+Top1HitRate
+
+定义：
+
+argmax refined probability
+
+是否等于：
+
+argmin mode FDE
+
+5.
+BestModeRank
+
+GT best-FDE mode
+在预测概率排序中的rank。
+
+6.
+MRR_best_mode
+
+1 / BestModeRank
+
+============================================================
+四十一、不要混淆Oracle和Inference
+============================================================
+
+minFDE：
+
+使用GT选best mode，
+
+属于oracle evaluation metric。
+
+Top1FDE：
+
+使用预测概率选mode，
+
+属于实际ranking metric。
+
+报告必须明确区分。
+
+============================================================
+四十二、主评价组
+============================================================
+
+Overall
+
+Vehicle
+Pedestrian
+Bicycle
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+
+Vehicle >5m
+
+Pedestrian <5m
+Pedestrian >5m
+Pedestrian 5-10m
+
+============================================================
+四十三、Interaction-sensitive groups
+============================================================
+
+继续复用冻结：
+
+Heterogeneous-20m
+
+Vehicle hetero-20m
+
+Pedestrian hetero-20m
+
+VP-context-20m
+
+禁止重新定义membership。
+
+这些组尤其用于：
+
+R2 vs R1。
+
+============================================================
+四十四、核心比较1
+============================================================
+
+R2
+vs
+R0 Stage5A original ranking
+
+最重要：
+
+Overall Top1FDE
+
+Vehicle Top1FDE
+
+Pedestrian Top1FDE
+
+moving vehicle Top1FDE
+
+OracleGap
+
+Top1HitRate。
+
+============================================================
+四十五、核心比较2
+============================================================
+
+R2
+vs
+R1
+
+这个比较回答：
+
+Future Interaction Features
+是否真的贡献增益。
+
+如果：
+
+R1 ≈ R2
+
+则不能声称：
+
+future interaction reliability
+
+是关键贡献。
+
+只能说明：
+
+generic reliability reranker
+
+有效。
+
+============================================================
+四十六、Bootstrap
+============================================================
+
+official VAL150。
+
+paired scene-cluster bootstrap：
+
+1000 replicates
+seed2022
+
+比较：
+
+R1 - R0
+R2 - R0
+R2 - R1
+
+主要metric：
+
+Top1FDE。
+
+辅助：
+
+Top1ADE
+Top1HitRate
+OracleGap。
+
+============================================================
+四十七、Bootstrap Groups
+============================================================
+
+至少：
+
+Overall
+
+Vehicle
+Pedestrian
+
+vehicle.moving
+
+Vehicle >5m
+
+Pedestrian <5m
+
+Pedestrian >5m
+
+Heterogeneous-20m
+
+VP-context-20m
+
+============================================================
+四十八、论文可用性判断
+============================================================
+
+这次不使用之前过于严格的：
+
+“所有subgroup都必须完美”
+
+作为唯一标准。
+
+定义：
+
+PaperUsableReliability = YES
+
+如果：
+
+1.
+R2 Overall Top1FDE
+低于 Stage5A；
+
+2.
+最好 bootstrap CI upper <0；
+
+如果CI轻微跨0但改善明显，
+保留为 WEAK/PROMISING，
+不要直接淘汰。
+
+3.
+Vehicle/Pedestrian
+不能出现明显大幅Top1退化；
+
+4.
+OracleGap下降；
+
+5.
+Top1HitRate提高；
+
+6.
+Geometry完全不变。
+
+============================================================
+四十九、Future Interaction贡献判断
+============================================================
+
+FutureInteractionContribution =
+SUPPORTED
+
+如果：
+
+R2整体优于R1，
+
+尤其至少在：
+
+Heterogeneous-20m
+或
+VP-context-20m
+
+Top1FDE表现更好，
+
+且方向基本一致。
+
+--------------------------------------------------
+
+如果：
+
+R1和R2相近：
+
+FutureInteractionContribution =
+WEAK
+
+此时最终论文可以考虑：
+
+Reliability-aware Reranking
+
+而不要强行声称：
+
+Future Interaction是主要原因。
+
+--------------------------------------------------
+
+如果：
+
+R1明显优于R2：
+
+FutureInteractionContribution =
+NOT SUPPORTED
+
+最终保留R1。
+
+============================================================
+五十、非常重要：结果优先选择规则
+============================================================
+
+最终论文主模型不强制必须是R2。
+
+如果：
+
+R1结果明显最好，
+
+则最终可以使用：
+
+Stage5A + Reliability Head
+
+作为主方法。
+
+如果：
+
+R2最好，
+
+则使用：
+
+Stage5A + Future Interaction Reliability
+
+作为主方法。
+
+目标：
+
+先得到稳定、可比较、可写论文的最终结果。
+
+禁止为了预设创新名称
+故意选择更差模型。
+
+============================================================
+五十一、Mode排序案例
+============================================================
+
+至少选四类：
+
+1.
+moving vehicle：
+原Top1错误，
+reranking后选到更优mode。
+
+2.
+pedestrian：
+原Top1错误，
+R2修正。
+
+3.
+heterogeneous interaction case：
+R2优于R1。
+
+4.
+failure case：
+reranking仍然选错。
+
+============================================================
+五十二、案例图
+============================================================
+
+同一actor绘制：
+
+GT
+
+6条candidate trajectories
+
+原Stage5A Top1
+
+R1 Top1
+
+R2 Top1
+
+标注：
+
+原mode probabilities
+
+R1 probabilities
+
+R2 probabilities。
+
+不要改变trajectory。
+
+============================================================
+五十三、Reliability probability分析
+============================================================
+
+统计：
+
+Top1 changed rate
+
+即：
+
+reranking以后
+
+argmax mode
+与原argmax不同的比例。
+
+再统计：
+
+changed-and-improved
+
+changed-and-worsened。
+
+定义：
+
+如果新Top1 FDE < oldTop1 FDE：
+
+improved。
+
+============================================================
+五十四、净收益分析
+============================================================
+
+输出：
+
+Number changed
+
+Number improved
+
+Number worsened
+
+Mean improvement when improved
+
+Mean degradation when worsened
+
+Net Top1FDE delta。
+
+这张表很适合论文解释reranking。
+
+============================================================
+五十五、候选轨迹Best Mode Hit
+============================================================
+
+计算：
+
+Base HitRate
+
+R1 HitRate
+
+R2 HitRate。
+
+尤其：
+
+moving vehicle
+
+因为这一组：
+
+oracle gap很大。
+
+============================================================
+五十六、交互Feature审计
+============================================================
+
+对R2统计：
+
+每个interaction feature
+在不同mode中的分布。
+
+可以做：
+
+permutation importance
+
+但不要调用GT重新选择feature。
+
+优先使用：
+
+训练完成后
+MLP第一层权重norm
+
++
+feature permutation on HeadDev
+
+作为描述。
+
+本轮不允许根据importance删feature重训。
+
+============================================================
+五十七、效率
+============================================================
+
+比较：
+
+Stage5A
+
+Stage5A+R1
+
+Stage5A+R2
+
+参数：
+
+Predictor：
+650403
+
+Head约：
+673
+
+记录：
+
+总参数增加比例。
+
+同时测：
+
+ranking overhead
+
+不需要重新统计完整predictor显存时
+可以单独报告：
+
+feature extraction
++
+head scoring
+
+额外耗时。
+
+============================================================
+五十八、主结果表
+============================================================
+
+输出：
+
+06_tables/
+stage6a_main_ranking_results.csv
+
+结构：
+
+Group
+
+Stage3B Top1FDE
+Stage5A Top1FDE
+R1 Top1FDE
+R2 Top1FDE
+
+Stage5A minFDE
+R1 minFDE
+R2 minFDE
+
+OracleGap
+
+HitRate
+
+MRR。
+
+============================================================
+五十九、消融表
+============================================================
+
+输出：
+
+stage6a_reliability_ablation.csv
+
+三组：
+
+R0 Original
+
+R1 Reliability-NoInteraction
+
+R2 FutureInteractionReliability
+
+============================================================
+六十、Bootstrap表
+============================================================
+
+输出：
+
+stage6a_bootstrap_ci.csv
+
+Comparison：
+
+R1-R0
+R2-R0
+R2-R1
+
+Metric：
+
+Top1FDE
+Top1ADE
+HitRate
+OracleGap
+
+============================================================
+六十一、图1
+============================================================
+
+stage6a_top1fde_comparison.png/pdf/svg
+
+Overall
+Vehicle
+Pedestrian
+Moving Vehicle
+
+R0
+R1
+R2
+
+============================================================
+六十二、图2
+============================================================
+
+stage6a_oracle_gap.png/pdf/svg
+
+显示：
+
+minFDE
+Top1FDE
+
+之间gap。
+
+Stage5A
+R1
+R2
+
+============================================================
+六十三、图3
+============================================================
+
+stage6a_hit_rate.png/pdf/svg
+
+Overall
+Vehicle
+Pedestrian
+MovingVehicle
+
+============================================================
+六十四、图4
+============================================================
+
+stage6a_interaction_ablation.png/pdf/svg
+
+重点：
+
+Heterogeneous-20m
+
+VP-context-20m
+
+R0/R1/R2。
+
+============================================================
+六十五、最终报告
+============================================================
+
+输出：
+
+09_reports/
+stage6a_final_report.md
+
+结构：
+
+【Problem】
+
+Candidate quality vs probability ranking gap
+
+【Frozen Predictor】
+
+Stage5A checkpoint
+
+【Reliability Features】
+
+Own mode
+History
+Type
+Future interaction
+
+【No Future Leakage】
+
+明确：
+
+neighbor future使用predicted future，
+不是GT。
+
+【Head Training Split】
+
+630/70 TRAIN scene split。
+
+【Geometry Identity Audit】
+
+minFDE/minADE/MR完全不变。
+
+【Main Ranking Results】
+
+【Oracle Gap】
+
+【Hit Rate】
+
+【R1 vs R2】
+
+【Interaction-sensitive Groups】
+
+【Bootstrap】
+
+【Case Studies】
+
+【Efficiency】
+
+【Scientific Interpretation】
+
+ReliabilityHead =
+SUPPORTED / PROMISING / NOT SUPPORTED
+
+FutureInteractionContribution =
+SUPPORTED / WEAK / NOT SUPPORTED
+
+PaperUsableReliability =
+YES / NO
+
+RecommendedFinalVariant =
+R0 / R1 / R2
+
+============================================================
+六十六、STOP规则
+============================================================
+
+完成 Stage6A 后：
+
+STOP。
+
+禁止：
+
+联合fine-tune
+修改trajectory decoder
+新增第三个reranker
+改变sigma
+改变neighbor radius
+改变M
+额外seed
+进入Diffusion
+修改Stage5A
+
+先把结果上传，
+由“大脑AI”统一判断。
+
+============================================================
+六十七、Git
+============================================================
+
+建议：
+
+feat: add frozen future interaction reliability reranker
+
+test: audit prediction cache and no-future-leakage features
+
+exp: train Stage6A reliability rerankers
+
+eval: compare original and reliability-based mode ranking
+
+docs: finalize Stage6A reliability report
+
+push：
+
+stage6a/future-interaction-reliability
+
+不要 merge main。
+
+============================================================
+六十八、完成后只汇报这些
+============================================================
+
+Git commit=
+
+Frozen Stage5A SHA=
+
+R1 params=
+R2 params=
+
+R1 best epoch=
+R2 best epoch=
+
+Geometry identity audit=
+PASS / FAIL
+
+Overall Top1FDE:
+R0=
+R1=
+R2=
+
+R1-R0 delta / CI=
+R2-R0 delta / CI=
+R2-R1 delta / CI=
+
+Overall minFDE:
+R0=
+R1=
+R2=
+
+OracleGap:
+R0=
+R1=
+R2=
+
+Top1HitRate:
+R0=
+R1=
+R2=
+
+Vehicle Top1FDE:
+R0=
+R1=
+R2=
+
+Pedestrian Top1FDE:
+R0=
+R1=
+R2=
+
+MovingVehicle Top1FDE:
+R0=
+R1=
+R2=
+
+Heterogeneous20 Top1FDE:
+R0=
+R1=
+R2=
+
+VP-context20 Top1FDE:
+R0=
+R1=
+R2=
+
+Top1 changed rate=
+
+Changed-and-improved=
+Changed-and-worsened=
+
+ReliabilityHead =
+SUPPORTED / PROMISING / NOT SUPPORTED
+
+FutureInteractionContribution =
+SUPPORTED / WEAK / NOT SUPPORTED
+
+PaperUsableReliability =
+YES / NO
+
+RecommendedFinalVariant =
+R0 / R1 / R2
+
+完成后 STOP。

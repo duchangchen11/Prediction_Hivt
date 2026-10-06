@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE",
+  "variant": "R2",
+  "best_epoch": 2,
+  "executed_epochs": 7,
+  "stop_reason": "patience_5",
+  "checkpoint_sha256": "e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314",
+  "head_params": 673,
+  "selected_HeadDev_metrics": {
+    "Count": 29934,
+    "Top1FDE": 2.4317317907622598,
+    "Top1ADE": 1.094486903360354,
+    "HitRate": 0.2637803166967328,
+    "rank_loss": 1.5497076404813919
+  },
+  "headdev_step0": {
+    "Count": 29934,
+    "Top1FDE": 2.491074059635929,
+    "Top1ADE": 1.1201240378706077,
+    "HitRate": 0.25940402218213404,
+    "rank_loss": 1.5842034971816765
+  },
+  "elapsed_seconds": 10.496026666995022,
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "normalization_sha256": "be045dc0ad0d1198bcfa8f8c270ab77297984597ee6891516e5f84ccc4e9b2d2",
+  "config_sha256": "fe097f01f021e7cbf6503c877baa2ab01b2cf1b59f4a7a7325063cb250c0f31c",
+  "predictor_sha256": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7",
+  "seed": 2022,
+  "official_VAL_used": false,
+  "full_horizon_labels_only": true,
+  "NaN": 0,
+  "Inf": 0
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "source_csv": "06_tables/stage6a_main_ranking_results.csv",
+  "source_csv_sha256": "394b75b571f2ee1fd6cdcea03355381cd8c61c5601105400f5cd1683028d63e9",
+  "bootstrap_csv": "06_tables/stage6a_bootstrap_ci.csv",
+  "bootstrap_csv_sha256": "8f36d85cb697c066475f209ad484e14730e1576e810ef81b0191594576a814b5",
+  "artist_max_abs_diff": 0.0,
+  "plotted_values": [
+    {
+      "variant": "R0",
+      "minFDE6": 1.3379958890663877,
+      "Top1FDE": 2.6806108569385976,
+      "OracleGap_FDE": 1.3426149680812856
+    },
+    {
+      "variant": "R1",
+      "minFDE6": 1.3379958890663877,
+      "Top1FDE": 2.690553834363758,
+      "OracleGap_FDE": 1.352557945357079
+    },
+    {
+      "variant": "R2",
+      "minFDE6": 1.3379958890663877,
+      "Top1FDE": 2.645562578486331,
+      "OracleGap_FDE": 1.3075666890941136
+    }
+  ],
+  "caption": "n = 54,990 full-horizon actor-windows in 150 VAL scenes.\nminFDE uses GT to choose a candidate; Top1 uses predicted probability.\nSegments show mean gaps, not uncertainty intervals; geometry does not improve.",
+  "exports_SHA256": {
+    "05_figures/stage6a_oracle_gap.png": "10c15df48b63917f153f0139b1ba3fc625cb6100b1934e09bfdb7912256b3a2c",
+    "05_figures/stage6a_oracle_gap.pdf": "34a1326cc8436c8f186bc44499f72251abe7b04cd5e80482f84c5172b6d152db",
+    "05_figures/stage6a_oracle_gap.svg": "3df51c4fd9c76fa364dabb2395514f52aad952498350f7989c5f65c5827805a8"
+  },
+  "backend": "python",
+  "training_seeds": 1,
+  "n_definition": "full-horizon actor-windows; whole scenes are bootstrap clusters",
+  "multiple_comparison_correction": "none; subgroup intervals descriptive"
+}

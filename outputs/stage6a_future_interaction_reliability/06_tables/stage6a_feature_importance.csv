@@ -1,0 +1,20 @@
+Feature,Column,First_layer_weight_L2_norm,Interpretation,HeadDev_permutation_Top1FDE_delta,HeadDev_permutation_rank_loss_delta,HeadDev_top1_changed_rate
+type_vehicle,0,0.952529420862914,descriptive; correlated features; no feature selection or retraining,,,
+type_pedestrian,1,0.9973055677904716,descriptive; correlated features; no feature selection or retraining,,,
+type_bicycle,2,0.6672769775701378,descriptive; correlated features; no feature selection or retraining,,,
+log1p_recent_displacement,3,0.8562777662468061,descriptive; correlated features; no feature selection or retraining,,,
+log1p_net_displacement,4,1.273477246444083,descriptive; correlated features; no feature selection or retraining,,,
+log1p_path_length,5,1.2585026995540367,descriptive; correlated features; no feature selection or retraining,,,
+base_logit,6,1.318870403078404,descriptive; correlated features; no feature selection or retraining,,,
+base_probability,7,1.2474482784583103,descriptive; correlated features; no feature selection or retraining,,,
+predicted_endpoint_displacement,8,1.065588935452883,descriptive; correlated features; no feature selection or retraining,,,
+predicted_path_length,9,0.741836605573612,descriptive; correlated features; no feature selection or retraining,,,
+mean_step_displacement,10,1.153575735756977,descriptive; correlated features; no feature selection or retraining,,,
+max_step_displacement,11,1.084320814143813,descriptive; correlated features; no feature selection or retraining,,,
+minimum_expected_min_distance,12,1.521654777547788,descriptive; correlated features; no feature selection or retraining,0.04451984343770343,0.006312669745235144,0.14575399458408356
+mean_expected_min_distance,13,0.7504950698806969,descriptive; correlated features; no feature selection or retraining,0.003175758234543302,0.000525892262724037,0.02645820751786232
+minimum_expected_mean_distance,14,0.910208522614313,descriptive; correlated features; no feature selection or retraining,0.013882474502567188,0.0019241091467028237,0.11588829010725021
+maximum_expected_conflict,15,0.7831462524335361,descriptive; correlated features; no feature selection or retraining,0.012978207185416757,0.00030685308231737096,0.05545533448457718
+mean_expected_conflict,16,0.8921280296186872,descriptive; correlated features; no feature selection or retraining,0.010873193840461592,5.69554299798547e-05,0.02759404107928276
+maximum_vehicle_conflict,17,1.191507919297321,descriptive; correlated features; no feature selection or retraining,0.05541333820443528,0.002328471206524352,0.07402953505516052
+maximum_pedestrian_conflict,18,0.7881638024938685,descriptive; correlated features; no feature selection or retraining,0.0003220345337200392,0.0001635387775820174,0.06561101227998734

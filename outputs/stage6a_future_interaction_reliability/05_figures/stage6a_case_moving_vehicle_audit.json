@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "variant": "R0",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 33.452369689941406,
+      "metric_difference_m": 2.8074910289888066e-06
+    },
+    {
+      "variant": "R1",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 33.452369689941406,
+      "metric_difference_m": 2.8074910289888066e-06
+    },
+    {
+      "variant": "R2",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 3.654900550842285,
+      "metric_difference_m": 1.1910838537687596e-07
+    }
+  ],
+  "probability_checks": [
+    {
+      "variant": "R0",
+      "probability_artist_max_abs_diff": 0.0
+    },
+    {
+      "variant": "R1",
+      "probability_artist_max_abs_diff": 0.0
+    },
+    {
+      "variant": "R2",
+      "probability_artist_max_abs_diff": 0.0
+    }
+  ],
+  "same_xy_limits": true,
+  "equal_aspect": true,
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage6a_case_moving_vehicle.png": "b7f591d22d7fba7653d5b70d1ea1d9ab1d33f67b025877dee520c89e11e15c81",
+    "05_figures/stage6a_case_moving_vehicle.pdf": "a28891b895988f7be835b24b8d8f4164e32b736cad41ff81e7163824132ff3f8",
+    "05_figures/stage6a_case_moving_vehicle.svg": "995f2c343ea20f3df6a7e71948ee89a57ef32716035d53604da9aaf16ab8fbab"
+  },
+  "xlim_m": [
+    25.331152420043942,
+    131.41134788513185
+  ],
+  "ylim_m": [
+    -17.68558774662018,
+    19.442480666160584
+  ],
+  "no_new_predictor_forward": true,
+  "source_json": "04_evaluation/cases/stage6a_case_moving_vehicle.json",
+  "source_sha256": "17828dced763c0994c48066006a252a1081c252dc10a5d14475a94c26082d85b",
+  "same_actor_and_GT": true
+}

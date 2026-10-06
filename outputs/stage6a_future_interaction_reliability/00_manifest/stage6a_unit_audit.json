@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "feature_dim": 19,
+  "head_params": 673,
+  "initial_head_parameter_max_diff": 0.0,
+  "neutral_logit_max_diff": 0.0,
+  "neutral_probability_max_diff": 0.0,
+  "coordinate_fixture": "PASS",
+  "self_exclusion": "PASS",
+  "radius50_boundary": "PASS",
+  "cap8": "PASS",
+  "padding_and_context_validity": "PASS",
+  "expected_min_distance_not_min_expected_distance": "PASS",
+  "soft_conflict_sigma2": "PASS",
+  "missing_neighbor_normalization": "PASS",
+  "R1_last7_exact_zero": "PASS",
+  "initial_final_weight_gradient": 1.0597691535949707,
+  "no_optimizer_update": true,
+  "NaN": 0,
+  "Inf": 0
+}

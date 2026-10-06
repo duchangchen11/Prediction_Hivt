@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "case_count": 4,
+  "figures": [
+    {
+      "name": "stage6a_case_moving_vehicle",
+      "case_kind": "Moving vehicle: better Top1",
+      "agent_type": "vehicle",
+      "actor_key": [
+        "4efbf4c0b77f467385fc2e19da45c989",
+        "92b0109224704eda8d8ea3b288665377",
+        "51d979a35447456da3b8fb9342340696",
+        "full_horizon"
+      ],
+      "R0_Top1FDE": 33.452369689941406,
+      "R1_Top1FDE": 33.452369689941406,
+      "R2_Top1FDE": 3.654900550842285,
+      "source_json": "04_evaluation/cases/stage6a_case_moving_vehicle.json",
+      "source_sha256": "17828dced763c0994c48066006a252a1081c252dc10a5d14475a94c26082d85b",
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage6a_case_pedestrian",
+      "case_kind": "Pedestrian: best mode recovered",
+      "agent_type": "pedestrian",
+      "actor_key": [
+        "201b7c65a61f4bc1a2333ea90ba9a932",
+        "7b011306ccc34c94a341a54ba2552c52",
+        "7052762c24514576b7cfbf4f6a678753",
+        "full_horizon"
+      ],
+      "R0_Top1FDE": 6.347923278808594,
+      "R1_Top1FDE": 6.347923278808594,
+      "R2_Top1FDE": 0.8722104430198669,
+      "source_json": "04_evaluation/cases/stage6a_case_pedestrian.json",
+      "source_sha256": "0a27751a79be2d86fabe7d7e73cb6eddce9d13e8e7adbe3e30f6118357f9992a",
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage6a_case_heterogeneous",
+      "case_kind": "Heterogeneous context: R2 better than R1",
+      "agent_type": "vehicle",
+      "actor_key": [
+        "6741d407b1b44511853e5ec7aaee2992",
+        "0181321478f94908b4b668b47b492519",
+        "04e61df3380a45a38010b3cdfd551183",
+        "full_horizon"
+      ],
+      "R0_Top1FDE": 35.23003387451172,
+      "R1_Top1FDE": 35.23003387451172,
+      "R2_Top1FDE": 6.920377254486084,
+      "source_json": "04_evaluation/cases/stage6a_case_heterogeneous.json",
+      "source_sha256": "524d2208f341fcd250c75089da5b40058273ba23323d070f740cf057f340c4a0",
+      "metric_audit": "PASS"
+    },
+    {
+      "name": "stage6a_case_failure",
+      "case_kind": "Failure: wrong Top1 after reranking",
+      "agent_type": "vehicle",
+      "actor_key": [
+        "d3b86ca0a17840109e9e049b3dd40037",
+        "94e00276e28e491eb36d45f463dc7200",
+        "3746719df67c423f92e76d1cf3a4ff58",
+        "full_horizon"
+      ],
+      "R0_Top1FDE": 4.78886079788208,
+      "R1_Top1FDE": 4.78886079788208,
+      "R2_Top1FDE": 36.743221282958984,
+      "source_json": "04_evaluation/cases/stage6a_case_failure.json",
+      "source_sha256": "acf2f9de4ba3166b36e23f16a5a86a9c73ca9d02669df3a9960da3aa8bf56b11",
+      "metric_audit": "PASS"
+    }
+  ],
+  "purposive": true,
+  "new_predictor_forwards": 0,
+  "selected_after_completed_official_VAL": true
+}

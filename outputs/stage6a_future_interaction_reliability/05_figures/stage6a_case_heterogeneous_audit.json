@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "variant": "R0",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 35.23003387451172,
+      "metric_difference_m": 4.163407950841247e-06
+    },
+    {
+      "variant": "R1",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 35.23003387451172,
+      "metric_difference_m": 4.163407950841247e-06
+    },
+    {
+      "variant": "R2",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 6.920377254486084,
+      "metric_difference_m": 1.3317862723738472e-07
+    }
+  ],
+  "probability_checks": [
+    {
+      "variant": "R0",
+      "probability_artist_max_abs_diff": 0.0
+    },
+    {
+      "variant": "R1",
+      "probability_artist_max_abs_diff": 0.0
+    },
+    {
+      "variant": "R2",
+      "probability_artist_max_abs_diff": 0.0
+    }
+  ],
+  "same_xy_limits": true,
+  "equal_aspect": true,
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage6a_case_heterogeneous.png": "212b22204238efd43ea3270ebb0732c9a2ba9994e7b1f257d2a11be82e513c10",
+    "05_figures/stage6a_case_heterogeneous.pdf": "fc4a7c4aceff1645ec8eeec682f57eb1e5f0529bd067691b03a1ee27ee434c55",
+    "05_figures/stage6a_case_heterogeneous.svg": "0ba3b99f296173ae55c3b9822b2c71f02b5f09bbc7aa3987080992db034e1beb"
+  },
+  "xlim_m": [
+    -67.02313743591309,
+    31.644292221069335
+  ],
+  "ylim_m": [
+    -16.785505468606946,
+    17.748094911336896
+  ],
+  "no_new_predictor_forward": true,
+  "source_json": "04_evaluation/cases/stage6a_case_heterogeneous.json",
+  "source_sha256": "524d2208f341fcd250c75089da5b40058273ba23323d070f740cf057f340c4a0",
+  "same_actor_and_GT": true
+}

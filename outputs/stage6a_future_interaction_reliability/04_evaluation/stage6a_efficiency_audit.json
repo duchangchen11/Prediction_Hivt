@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "GPU": "NVIDIA GeForce RTX 3080",
+  "torch": "2.5.1+cu124",
+  "paired_measurements": 200,
+  "preloaded_original_VAL_batches": 20,
+  "warmup_pairs": 20,
+  "models": [
+    {
+      "Variant": "R1",
+      "Predictor_params": 650403,
+      "Head_params": 673,
+      "Total_params": 651076,
+      "Parameter_increase_percent": 0.10347430746783148,
+      "Mean_feature_extraction_ms": 25.951223685741425,
+      "Mean_head_scoring_ms": 4.278055045306683,
+      "Mean_ranking_overhead_ms": 30.229278614521025,
+      "Median_ranking_overhead_ms": 31.281152725219727,
+      "Std_ranking_overhead_ms": 5.573161575990555,
+      "Measurements": 200
+    },
+    {
+      "Variant": "R2",
+      "Predictor_params": 650403,
+      "Head_params": 673,
+      "Total_params": 651076,
+      "Parameter_increase_percent": 0.10347430746783148,
+      "Mean_feature_extraction_ms": 42.83963688373566,
+      "Mean_head_scoring_ms": 4.289775034487247,
+      "Mean_ranking_overhead_ms": 47.12941178321839,
+      "Median_ranking_overhead_ms": 48.74847984313965,
+      "Std_ranking_overhead_ms": 9.253215334895204,
+      "Measurements": 200
+    }
+  ],
+  "scope": "additional feature extraction + scoring only; excludes predictor forward, I/O and H2D",
+  "R1_interaction_distances_computed": false,
+  "R2_neighbor_features_computed": true,
+  "official_VAL_metric_evaluation_or_selection": false,
+  "data_copies_excluded_from_timing": true,
+  "predictor_geometry_modified": false,
+  "total_predictor_peak_memory_remeasured": false
+}

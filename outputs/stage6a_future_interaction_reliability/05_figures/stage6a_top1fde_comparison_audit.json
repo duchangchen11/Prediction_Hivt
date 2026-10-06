@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "source_csv": "06_tables/stage6a_main_ranking_results.csv",
+  "source_csv_sha256": "394b75b571f2ee1fd6cdcea03355381cd8c61c5601105400f5cd1683028d63e9",
+  "bootstrap_csv": "06_tables/stage6a_bootstrap_ci.csv",
+  "bootstrap_csv_sha256": "8f36d85cb697c066475f209ad484e14730e1576e810ef81b0191594576a814b5",
+  "artist_max_abs_diff": 0.0,
+  "plotted_values": [
+    {
+      "variant": "R0",
+      "groups": [
+        "overall",
+        "vehicle",
+        "pedestrian",
+        "vehicle.moving"
+      ],
+      "mean": [
+        2.6806108569385976,
+        3.0537862819182666,
+        1.424744148929814,
+        10.624262835502648
+      ]
+    },
+    {
+      "variant": "R1",
+      "groups": [
+        "overall",
+        "vehicle",
+        "pedestrian",
+        "vehicle.moving"
+      ],
+      "mean": [
+        2.690553834363758,
+        3.0663746376340857,
+        1.425687473465898,
+        10.671122867710181
+      ]
+    },
+    {
+      "variant": "R2",
+      "groups": [
+        "overall",
+        "vehicle",
+        "pedestrian",
+        "vehicle.moving"
+      ],
+      "mean": [
+        2.645562578486331,
+        3.01019407464143,
+        1.4182527462976553,
+        10.45004638393896
+      ]
+    },
+    {
+      "comparison": "R1-R0",
+      "groups": [
+        "overall",
+        "vehicle",
+        "pedestrian",
+        "vehicle.moving"
+      ],
+      "delta": [
+        0.009942977425160392,
+        0.01258835571581912,
+        0.0009433245360838872,
+        0.04686003220753242
+      ],
+      "CI95_lower": [
+        0.002108357039779447,
+        0.0024098748661062217,
+        -0.0020679540755142774,
+        0.005726036744669472
+      ],
+      "CI95_upper": [
+        0.018810031681785824,
+        0.023877616902213333,
+        0.0034615623281625658,
+        0.09099852684012116
+      ]
+    },
+    {
+      "comparison": "R2-R0",
+      "groups": [
+        "overall",
+        "vehicle",
+        "pedestrian",
+        "vehicle.moving"
+      ],
+      "delta": [
+        -0.03504827845226692,
+        -0.04359220727683609,
+        -0.006491402632158704,
+        -0.17421645156368962
+      ],
+      "CI95_lower": [
+        -0.05978822451058677,
+        -0.07621595824139778,
+        -0.013061268041286234,
+        -0.2989481269037381
+      ],
+      "CI95_upper": [
+        -0.009493943206477541,
+        -0.009412568175432205,
+        -0.0004505310947609306,
+        -0.03891233897488986
+      ]
+    },
+    {
+      "comparison": "R2-R1",
+      "groups": [
+        "overall",
+        "vehicle",
+        "pedestrian",
+        "vehicle.moving"
+      ],
+      "delta": [
+        -0.04499125587742731,
+        -0.05618056299265521,
+        -0.007434727168242591,
+        -0.22107648377122205
+      ],
+      "CI95_lower": [
+        -0.06911297355956379,
+        -0.08690140142457536,
+        -0.013597321791905122,
+        -0.339190402714667
+      ],
+      "CI95_upper": [
+        -0.02110633478210302,
+        -0.024856849686546688,
+        -0.001415376339975643,
+        -0.10409106799939938
+      ]
+    }
+  ],
+  "caption": "Paired whole-scene percentile 95% CI; 150 VAL scenes, 1,000 resamples, seed 2022.\nNegative differences favor the new variant. One seed; subgroup intervals descriptive.\nR0/R1/R2 share all six trajectories.",
+  "exports_SHA256": {
+    "05_figures/stage6a_top1fde_comparison.png": "54038c1d1f8d65a0c622d3e14abf819ae4029260a57a05b9c2cd064e17d80e49",
+    "05_figures/stage6a_top1fde_comparison.pdf": "2b08651e08d97d5badde3ecd714bda466690eac6e7f894ddb6eb83a8d393c13f",
+    "05_figures/stage6a_top1fde_comparison.svg": "a845eadba18a3509e245286f7c4874e4b661c9e7d2dacfa65fec2446760cd817"
+  },
+  "backend": "python",
+  "training_seeds": 1,
+  "n_definition": "full-horizon actor-windows; whole scenes are bootstrap clusters",
+  "multiple_comparison_correction": "none; subgroup intervals descriptive"
+}

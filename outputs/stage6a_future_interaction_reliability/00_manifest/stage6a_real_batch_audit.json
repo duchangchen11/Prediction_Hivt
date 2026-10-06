@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "repeated_predictor_max_diff": {
+    "raw_prediction": 0.0,
+    "mode_logits": 0.0,
+    "mode_prob": 0.0,
+    "ego_prediction": 0.0
+  },
+  "deterministic_algorithms": true,
+  "frozen_predictor_eval": true,
+  "predictor_gradients_none": true,
+  "neutral_real_logit_max_diff": 0.0,
+  "neutral_real_probability_max_diff": 0.0
+}

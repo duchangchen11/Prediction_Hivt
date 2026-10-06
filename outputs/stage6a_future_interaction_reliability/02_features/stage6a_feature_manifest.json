@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "feature_count": 19,
+  "partitions": {
+    "headtrain": {
+      "actors": 260151,
+      "scenes": 630,
+      "class_counts": {
+        "vehicle": 191026,
+        "pedestrian": 66145,
+        "bicycle": 2980
+      },
+      "path": "02_features/stage6a_headtrain_features.pt",
+      "sha256": "23cf856e775c88a0a16c1ba6cac3f37eab9a055871271be01549048adcfd2e96",
+      "bytes": 193026194
+    },
+    "headdev": {
+      "actors": 29934,
+      "scenes": 70,
+      "class_counts": {
+        "vehicle": 22719,
+        "pedestrian": 7057,
+        "bicycle": 158
+      },
+      "path": "02_features/stage6a_headdev_features.pt",
+      "sha256": "29d85068e8a371eb38004e6de2745166781c6872e987ad1cb8eab2d43b42cda3",
+      "bytes": 22211392
+    }
+  },
+  "normalization_sha256": "be045dc0ad0d1198bcfa8f8c270ab77297984597ee6891516e5f84ccc4e9b2d2",
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "config_sha256": "fe097f01f021e7cbf6503c877baa2ab01b2cf1b59f4a7a7325063cb250c0f31c",
+  "cache_manifest_sha256": "5b0b99fe54e66674820eed28831f5cb390e0eb8f912bfbc4b689daa1a0707fb4",
+  "VAL_used_for_normalization": false,
+  "R1_only_difference": "last7 normalized input columns set exactly0",
+  "predictor_requires_grad": false,
+  "feature_inputs": "history/types/frozen mode logits/probabilities/ego-frame predictions only; GT used solely for FDE labels",
+  "supervised_target_temperature_m": 1.0,
+  "target_formula": "softmax(-full-horizon FDE_by_mode /1m)"
+}

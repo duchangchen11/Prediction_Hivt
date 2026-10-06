@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "variant": "R0",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 6.347923278808594,
+      "metric_difference_m": 1.0718147880339757e-07
+    },
+    {
+      "variant": "R1",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 6.347923278808594,
+      "metric_difference_m": 1.0718147880339757e-07
+    },
+    {
+      "variant": "R2",
+      "all_six_candidates_exact": true,
+      "GT_exact": true,
+      "selected_candidate_exact": true,
+      "future_points_per_trajectory": 12,
+      "Top1FDE_m": 0.8722104430198669,
+      "metric_difference_m": 3.42940098541078e-09
+    }
+  ],
+  "probability_checks": [
+    {
+      "variant": "R0",
+      "probability_artist_max_abs_diff": 0.0
+    },
+    {
+      "variant": "R1",
+      "probability_artist_max_abs_diff": 0.0
+    },
+    {
+      "variant": "R2",
+      "probability_artist_max_abs_diff": 0.0
+    }
+  ],
+  "same_xy_limits": true,
+  "equal_aspect": true,
+  "trajectory_edits": false,
+  "smoothing": false,
+  "interpolation": false,
+  "exports_SHA256": {
+    "05_figures/stage6a_case_pedestrian.png": "6f6006745d2cc9eb9569a7f6a31340f3bd6d70c410db6a019889e52e65465400",
+    "05_figures/stage6a_case_pedestrian.pdf": "c2a2c494a973e7c29ccc754d91c6c7367f33b9c1e64b0cd5eb85942c7166186f",
+    "05_figures/stage6a_case_pedestrian.svg": "c0864c8557fe9c48735fb2804b2f5a547d3ed9070b4b0f09a062a3140c64ea5d"
+  },
+  "xlim_m": [
+    2.0991477966308594,
+    14.826879501342773
+  ],
+  "ylim_m": [
+    6.508489608764648,
+    12.926385879516602
+  ],
+  "no_new_predictor_forward": true,
+  "source_json": "04_evaluation/cases/stage6a_case_pedestrian.json",
+  "source_sha256": "0a27751a79be2d86fabe7d7e73cb6eddce9d13e8e7adbe3e30f6118357f9992a",
+  "same_actor_and_GT": true
+}

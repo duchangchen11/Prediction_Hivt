@@ -1,0 +1,18 @@
+{
+  "status": "REGISTERED_BEFORE_PLOT_CODE",
+  "backend": "python",
+  "backend_source": "saved nature-figure preference and existing Python project workflow",
+  "core_question": "With the same six candidate trajectories, how do R1/R2 change mode ranking, and what does future interaction add beyond the identical generic head?",
+  "archetype": "quantitative grid and matched trajectory cases",
+  "evidence": {
+    "stage6a_top1fde_comparison": "R0/R1/R2 Top1FDE in Overall, Vehicle, Pedestrian and moving vehicle; accompanying paired differences and confidence intervals",
+    "stage6a_oracle_gap": "Shared minFDE versus Top1FDE and OracleGap in the three ranking variants; no geometry benefit implied",
+    "stage6a_hit_rate": "Probability-selected mode versus GT best-FDE mode, grouped hit rates and paired change intervals",
+    "stage6a_interaction_ablation": "Frozen Heterogeneous-20m and VP-context-20m membership, R2-R1 as the controlled interaction contrast",
+    "cases": "Four purposive matched examples with the same six candidates, GT, R0/R1/R2 Top1 choices and exact mode probabilities"
+  },
+  "export": {"width_inches": 7.2, "PNG_dpi": 300, "formats": ["png", "pdf", "svg"], "PDF_fonttype": 42, "SVG_text": "editable"},
+  "statistics": {"point": "full-horizon actor-window mean", "interval": "paired whole-scene percentile bootstrap, 150 scenes, 1000 resamples, seed2022", "training_seeds": 1, "multiplicity": "no correction; subgroup intervals descriptive"},
+  "integrity": {"source": "actual evaluation CSV/JSON only", "trajectory_smoothing": false, "trajectory_interpolation": false, "future_GT_used_in_head_features": false, "future_GT_role": "offline labels/evaluation/case selection only"},
+  "review_risks": ["Oracle metrics must remain exactly shared", "No assumption that R2 wins", "Fixed-head variant choice on final VAL is descriptive", "Cases are purposive and cannot estimate population benefit", "Neighbor interactions are predicted-probability expectations, not observed future collisions", "No improvement significance inferred from unpaired bars"]
+}

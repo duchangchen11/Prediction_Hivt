@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "figure_records": [
+    {
+      "name": "stage6a_top1fde_comparison",
+      "PNG_SHA256": "54038c1d1f8d65a0c622d3e14abf819ae4029260a57a05b9c2cd064e17d80e49",
+      "status": "PASS",
+      "inspected_actual_final_PNG": true,
+      "observations": "All labels and legends legible and inside canvas; separate legends do not cover trajectories; paired intervals and zero references clear; candidate geometry/probabilities unmodified; failure and R1 degradation retained."
+    },
+    {
+      "name": "stage6a_oracle_gap",
+      "PNG_SHA256": "10c15df48b63917f153f0139b1ba3fc625cb6100b1934e09bfdb7912256b3a2c",
+      "status": "PASS",
+      "inspected_actual_final_PNG": true,
+      "observations": "All labels and legends legible and inside canvas; separate legends do not cover trajectories; paired intervals and zero references clear; candidate geometry/probabilities unmodified; failure and R1 degradation retained."
+    },
+    {
+      "name": "stage6a_hit_rate",
+      "PNG_SHA256": "6bd2f104aff0818d16239dfdfcbbbdb912f52a1041d508be1baa4ab355e9f7a1",
+      "status": "PASS",
+      "inspected_actual_final_PNG": true,
+      "observations": "All labels and legends legible and inside canvas; separate legends do not cover trajectories; paired intervals and zero references clear; candidate geometry/probabilities unmodified; failure and R1 degradation retained."
+    },
+    {
+      "name": "stage6a_interaction_ablation",
+      "PNG_SHA256": "0ba4c7e3ba5292b247e24716a1fc9e37601816bdbd1827d52867b07a7529c06d",
+      "status": "PASS",
+      "inspected_actual_final_PNG": true,
+      "observations": "All labels and legends legible and inside canvas; separate legends do not cover trajectories; paired intervals and zero references clear; candidate geometry/probabilities unmodified; failure and R1 degradation retained."
+    },
+    {
+      "name": "stage6a_case_moving_vehicle",
+      "PNG_SHA256": "b7f591d22d7fba7653d5b70d1ea1d9ab1d33f67b025877dee520c89e11e15c81",
+      "status": "PASS",
+      "inspected_actual_final_PNG": true,
+      "observations": "All labels and legends legible and inside canvas; separate legends do not cover trajectories; paired intervals and zero references clear; candidate geometry/probabilities unmodified; failure and R1 degradation retained."
+    },
+    {
+      "name": "stage6a_case_pedestrian",
+      "PNG_SHA256": "6f6006745d2cc9eb9569a7f6a31340f3bd6d70c410db6a019889e52e65465400",
+      "status": "PASS",
+      "inspected_actual_final_PNG": true,
+      "observations": "All labels and legends legible and inside canvas; separate legends do not cover trajectories; paired intervals and zero references clear; candidate geometry/probabilities unmodified; failure and R1 degradation retained."
+    },
+    {
+      "name": "stage6a_case_heterogeneous",
+      "PNG_SHA256": "212b22204238efd43ea3270ebb0732c9a2ba9994e7b1f257d2a11be82e513c10",
+      "status": "PASS",
+      "inspected_actual_final_PNG": true,
+      "observations": "All labels and legends legible and inside canvas; separate legends do not cover trajectories; paired intervals and zero references clear; candidate geometry/probabilities unmodified; failure and R1 degradation retained."
+    },
+    {
+      "name": "stage6a_case_failure",
+      "PNG_SHA256": "281b38979996c5500744f3dadf685c5700c5437b43a521e6c62cd9b64816e221",
+      "status": "PASS",
+      "inspected_actual_final_PNG": true,
+      "observations": "All labels and legends legible and inside canvas; separate legends do not cover trajectories; paired intervals and zero references clear; candidate geometry/probabilities unmodified; failure and R1 degradation retained."
+    }
+  ],
+  "bundle_count": 8,
+  "inspection": "Final PNGs visually inspected after export; PDF/SVG text and fonts separately checked by export QA",
+  "corrections": "Increased quantitative label margins; moved legends outside axes; compacted case axes with separate legend and footer space; added bounding-box and overlap checks."
+}

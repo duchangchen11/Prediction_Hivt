@@ -1,0 +1,9 @@
+01_cache/**
+!01_cache/stage6a_cache.py
+!01_cache/stage6a_cache_manifest.json
+!01_cache/stage6a_cache_audit.json
+02_features/*.pt
+07_checkpoints/*.pt
+04_evaluation/stage6a_actor_*.csv
+**/*.tmp
+00_manifest/stage6a_git_upload_*.json

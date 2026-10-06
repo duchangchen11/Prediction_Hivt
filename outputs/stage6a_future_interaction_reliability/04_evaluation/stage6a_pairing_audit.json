@@ -1,0 +1,233 @@
+{
+  "status": "PASS",
+  "full": 54990,
+  "partial": 30037,
+  "total": 85027,
+  "identity_fields": [
+    "scene_token",
+    "sample_token",
+    "instance_token",
+    "node_in_graph",
+    "horizon",
+    "agent_type",
+    "motion_state",
+    "valid_future_steps",
+    "GT_trajectory_sha256",
+    "future_mask_bits",
+    "agent_type_id"
+  ],
+  "frozen_interaction_membership_sha256": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a",
+  "frozen_GT_ledger_sha256": "aa46c5ff03290de137c243340b9d844a8949026f35219b01aab16d351728c8a5",
+  "historical_Stage5A_numerical_reconciliation_tolerance": 1e-06,
+  "historical_reconciliation": [
+    {
+      "Group": "overall",
+      "Metric": "minADE6",
+      "historical_Stage5A_mean_difference": 6.619669257190708e-10
+    },
+    {
+      "Group": "overall",
+      "Metric": "minFDE6",
+      "historical_Stage5A_mean_difference": 7.808982349644111e-10
+    },
+    {
+      "Group": "overall",
+      "Metric": "MR6",
+      "historical_Stage5A_mean_difference": 0.0
+    },
+    {
+      "Group": "overall",
+      "Metric": "Top1ADE6",
+      "historical_Stage5A_mean_difference": 1.0460907695630794e-09
+    },
+    {
+      "Group": "overall",
+      "Metric": "Top1FDE6",
+      "historical_Stage5A_mean_difference": 3.83595555319971e-09
+    },
+    {
+      "Group": "vehicle",
+      "Metric": "minADE6",
+      "historical_Stage5A_mean_difference": 1.7559237397435368e-09
+    },
+    {
+      "Group": "vehicle",
+      "Metric": "minFDE6",
+      "historical_Stage5A_mean_difference": 2.4220654371021055e-09
+    },
+    {
+      "Group": "vehicle",
+      "Metric": "MR6",
+      "historical_Stage5A_mean_difference": 0.0
+    },
+    {
+      "Group": "vehicle",
+      "Metric": "Top1ADE6",
+      "historical_Stage5A_mean_difference": 1.4921304192228035e-09
+    },
+    {
+      "Group": "vehicle",
+      "Metric": "Top1FDE6",
+      "historical_Stage5A_mean_difference": 2.7955353587572063e-09
+    },
+    {
+      "Group": "pedestrian",
+      "Metric": "minADE6",
+      "historical_Stage5A_mean_difference": 2.957465161657069e-09
+    },
+    {
+      "Group": "pedestrian",
+      "Metric": "minFDE6",
+      "historical_Stage5A_mean_difference": 2.5888586829836413e-09
+    },
+    {
+      "Group": "pedestrian",
+      "Metric": "MR6",
+      "historical_Stage5A_mean_difference": 0.0
+    },
+    {
+      "Group": "pedestrian",
+      "Metric": "Top1ADE6",
+      "historical_Stage5A_mean_difference": 1.8557778647121381e-09
+    },
+    {
+      "Group": "pedestrian",
+      "Metric": "Top1FDE6",
+      "historical_Stage5A_mean_difference": 9.793184263529042e-09
+    },
+    {
+      "Group": "bicycle",
+      "Metric": "minADE6",
+      "historical_Stage5A_mean_difference": 3.7114482598354925e-09
+    },
+    {
+      "Group": "bicycle",
+      "Metric": "minFDE6",
+      "historical_Stage5A_mean_difference": 4.3472249577902744e-08
+    },
+    {
+      "Group": "bicycle",
+      "Metric": "MR6",
+      "historical_Stage5A_mean_difference": 0.0
+    },
+    {
+      "Group": "bicycle",
+      "Metric": "Top1ADE6",
+      "historical_Stage5A_mean_difference": 2.535476018028504e-08
+    },
+    {
+      "Group": "bicycle",
+      "Metric": "Top1FDE6",
+      "historical_Stage5A_mean_difference": 3.8017055947747735e-08
+    },
+    {
+      "Group": "vehicle.moving",
+      "Metric": "minADE6",
+      "historical_Stage5A_mean_difference": 8.154792840997516e-09
+    },
+    {
+      "Group": "vehicle.moving",
+      "Metric": "minFDE6",
+      "historical_Stage5A_mean_difference": 6.400584062760117e-09
+    },
+    {
+      "Group": "vehicle.moving",
+      "Metric": "MR6",
+      "historical_Stage5A_mean_difference": 0.0
+    },
+    {
+      "Group": "vehicle.moving",
+      "Metric": "Top1ADE6",
+      "historical_Stage5A_mean_difference": 1.2115561887071635e-08
+    },
+    {
+      "Group": "vehicle.moving",
+      "Metric": "Top1FDE6",
+      "historical_Stage5A_mean_difference": 2.1952981654749237e-09
+    },
+    {
+      "Group": "vehicle.stopped",
+      "Metric": "minADE6",
+      "historical_Stage5A_mean_difference": 8.922541039346754e-10
+    },
+    {
+      "Group": "vehicle.stopped",
+      "Metric": "minFDE6",
+      "historical_Stage5A_mean_difference": 4.206462511646691e-09
+    },
+    {
+      "Group": "vehicle.stopped",
+      "Metric": "MR6",
+      "historical_Stage5A_mean_difference": 0.0
+    },
+    {
+      "Group": "vehicle.stopped",
+      "Metric": "Top1ADE6",
+      "historical_Stage5A_mean_difference": 5.024634042172238e-10
+    },
+    {
+      "Group": "vehicle.stopped",
+      "Metric": "Top1FDE6",
+      "historical_Stage5A_mean_difference": 6.937783458837998e-09
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "minADE6",
+      "historical_Stage5A_mean_difference": 1.7496948334638773e-10
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "minFDE6",
+      "historical_Stage5A_mean_difference": 7.29087798467809e-09
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "MR6",
+      "historical_Stage5A_mean_difference": 0.0
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "Top1ADE6",
+      "historical_Stage5A_mean_difference": 1.4955936211702436e-09
+    },
+    {
+      "Group": "vehicle.parked",
+      "Metric": "Top1FDE6",
+      "historical_Stage5A_mean_difference": 6.033148536310762e-09
+    },
+    {
+      "Group": "unknown",
+      "Metric": "minADE6",
+      "historical_Stage5A_mean_difference": 1.462670651264375e-09
+    },
+    {
+      "Group": "unknown",
+      "Metric": "minFDE6",
+      "historical_Stage5A_mean_difference": 8.681396268528374e-09
+    },
+    {
+      "Group": "unknown",
+      "Metric": "MR6",
+      "historical_Stage5A_mean_difference": 0.0
+    },
+    {
+      "Group": "unknown",
+      "Metric": "Top1ADE6",
+      "historical_Stage5A_mean_difference": 2.6725662793936067e-08
+    },
+    {
+      "Group": "unknown",
+      "Metric": "Top1FDE6",
+      "historical_Stage5A_mean_difference": 2.6189003410337364e-08
+    }
+  ],
+  "historical_max_mean_differences": {
+    "minADE6": 8.154792840997516e-09,
+    "minFDE6": 4.3472249577902744e-08,
+    "MR6": 0.0,
+    "Top1ADE6": 2.6725662793936067e-08,
+    "Top1FDE6": 3.8017055947747735e-08
+  },
+  "current_R0_R1_R2_geometry_identity_tolerance": 1e-08,
+  "current_geometry_max_difference": 0.0
+}

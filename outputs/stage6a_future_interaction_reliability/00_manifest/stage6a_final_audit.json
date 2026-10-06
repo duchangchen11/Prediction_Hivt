@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "stage": "Stage6A",
+  "base_commit": "e5cec8f44d27608eddb7820a8f873b53d0b8ddab",
+  "branch": "stage6a/future-interaction-reliability",
+  "previous_files_SHA256_unchanged": 1505,
+  "original_scene_shards_SHA256_unchanged": 850,
+  "training_source_SHA256_unchanged": true,
+  "formal_heads": 2,
+  "head_params": {
+    "R1": 673,
+    "R2": 673
+  },
+  "best_epochs": {
+    "R1": 2,
+    "R2": 2
+  },
+  "training_seed": 2022,
+  "official_VAL_ranking_passes": 1,
+  "VAL_windows": 3603,
+  "VAL_scenes": 150,
+  "full": 54990,
+  "partial": 30037,
+  "total": 85027,
+  "geometry": "PASS",
+  "maximum_geometry_metric_difference": 0.0,
+  "cache_replay_unique_instances": 120,
+  "future_leakage": "PASS",
+  "neutral_initialization": "PASS",
+  "predictor_finetuning": false,
+  "quantitative_figures": 4,
+  "cases": 4,
+  "manual_visual_QA": "PASS",
+  "report_sha256": "84ead326a14e9571e6a2ae06e4051e1aeea2dc1d6f1064dcc0d05d822e207c07",
+  "ReliabilityHead": "SUPPORTED",
+  "FutureInteractionContribution": "SUPPORTED",
+  "PaperUsableReliability": "YES",
+  "RecommendedFinalVariant": "R2",
+  "NaN": 0,
+  "Inf": 0,
+  "extra_heads_or_seeds": false,
+  "STOP": true
+}

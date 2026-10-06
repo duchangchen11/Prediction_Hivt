@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "official_VAL_final_ranking_passes": 1,
+  "supervised_windows": 3603,
+  "scenes": 150,
+  "full": 54990,
+  "partial": 30037,
+  "total": 85027,
+  "actor_csv_sha256": "2184908eff7b0788d388f2dfe85d41df13a32efd601d2d18c1c78524bed8cbe2",
+  "NaN": 0,
+  "Inf": 0,
+  "interpretation": {
+    "status": "PASS",
+    "ReliabilityHead": "SUPPORTED",
+    "FutureInteractionContribution": "SUPPORTED",
+    "PaperUsableReliability": "YES",
+    "RecommendedFinalVariant": "R2",
+    "head_evidence": {
+      "R1": "NOT SUPPORTED",
+      "R2": "SUPPORTED"
+    },
+    "head_paper_usable": {
+      "R1": false,
+      "R2": true
+    },
+    "no_severe_major_class_harm": {
+      "R1": true,
+      "R2": true
+    },
+    "severe_harm_guard": "relative Top1FDE increase >=10% and paired CI lower>0",
+    "R2_R1_overall": {
+      "delta": -0.04499125587742731,
+      "CI95": [
+        -0.06911297355956379,
+        -0.02110633478210302
+      ],
+      "Count": 54990,
+      "Scenes": 150
+    },
+    "R2_better_frozen_interaction_groups": [
+      "Heterogeneous-20m",
+      "VP-context-20m"
+    ],
+    "variant_choice": "descriptive comparison among two prespecified fixed HeadDev-selected checkpoints on final VAL",
+    "Stage5A_prior_science": "NOT SUPPORTED; unchanged",
+    "predictor_geometry": "PASS",
+    "official_VAL_checkpoint_selection": false,
+    "additional_heads": false,
+    "joint_finetuning": false,
+    "STOP": true
+  }
+}

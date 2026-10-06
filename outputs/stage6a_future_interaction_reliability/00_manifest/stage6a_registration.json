@@ -1,0 +1,21 @@
+{
+  "status": "REGISTERED_BEFORE_CACHE_AND_HEAD_TRAINING",
+  "base_commit": "e5cec8f44d27608eddb7820a8f873b53d0b8ddab",
+  "config_sha256": "fe097f01f021e7cbf6503c877baa2ab01b2cf1b59f4a7a7325063cb250c0f31c",
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "frozen_predictor_sha256": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7",
+  "frozen_membership_sha256": "4be8dcebb5a5295ab3ff123ab606cf52701d71ab693a1ff9bf7ff1d6b8dd2b7a",
+  "TRAIN_scenes": 700,
+  "VAL_scenes": 150,
+  "TRAIN_windows": 16898,
+  "VAL_windows": 3603,
+  "prior_files_frozen": 1505,
+  "scene_shards_frozen": 850,
+  "official_VAL_final_ranking_only": true,
+  "models": [
+    "R0 frozen original ranking",
+    "R1 without interaction",
+    "R2 with interaction"
+  ],
+  "runtime_determinism_registered_before_cache_and_training": true
+}

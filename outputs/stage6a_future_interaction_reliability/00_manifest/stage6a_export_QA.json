@@ -1,0 +1,161 @@
+{
+  "status": "PASS",
+  "bundle_count": 8,
+  "figure_records": [
+    {
+      "name": "stage6a_top1fde_comparison",
+      "status": "PASS",
+      "PNG_size": [
+        2160,
+        1380
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PNG_SHA256": "54038c1d1f8d65a0c622d3e14abf819ae4029260a57a05b9c2cd064e17d80e49",
+      "SVG_editable_text_nodes": 43,
+      "PDF_selectable_text": true,
+      "PDF_fonts": [
+        "EVICAO+DejaVuSans-Bold               CID TrueType      Identity-H       yes yes yes     21  0",
+        "BMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     28  0"
+      ]
+    },
+    {
+      "name": "stage6a_oracle_gap",
+      "status": "PASS",
+      "PNG_size": [
+        2160,
+        1080
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PNG_SHA256": "10c15df48b63917f153f0139b1ba3fc625cb6100b1934e09bfdb7912256b3a2c",
+      "SVG_editable_text_nodes": 22,
+      "PDF_selectable_text": true,
+      "PDF_fonts": [
+        "BMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     15  0"
+      ]
+    },
+    {
+      "name": "stage6a_hit_rate",
+      "status": "PASS",
+      "PNG_size": [
+        2160,
+        1380
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PNG_SHA256": "6bd2f104aff0818d16239dfdfcbbbdb912f52a1041d508be1baa4ab355e9f7a1",
+      "SVG_editable_text_nodes": 40,
+      "PDF_selectable_text": true,
+      "PDF_fonts": [
+        "EVICAO+DejaVuSans-Bold               CID TrueType      Identity-H       yes yes yes     21  0",
+        "BMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     28  0"
+      ]
+    },
+    {
+      "name": "stage6a_interaction_ablation",
+      "status": "PASS",
+      "PNG_size": [
+        2160,
+        1380
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PNG_SHA256": "0ba4c7e3ba5292b247e24716a1fc9e37601816bdbd1827d52867b07a7529c06d",
+      "SVG_editable_text_nodes": 36,
+      "PDF_selectable_text": true,
+      "PDF_fonts": [
+        "EVICAO+DejaVuSans-Bold               CID TrueType      Identity-H       yes yes yes     20  0",
+        "BMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     27  0"
+      ]
+    },
+    {
+      "name": "stage6a_case_moving_vehicle",
+      "status": "PASS",
+      "PNG_size": [
+        2160,
+        1350
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PNG_SHA256": "b7f591d22d7fba7653d5b70d1ea1d9ab1d33f67b025877dee520c89e11e15c81",
+      "SVG_editable_text_nodes": 95,
+      "PDF_selectable_text": true,
+      "PDF_fonts": [
+        "HATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     24  0"
+      ]
+    },
+    {
+      "name": "stage6a_case_pedestrian",
+      "status": "PASS",
+      "PNG_size": [
+        2160,
+        1433
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PNG_SHA256": "6f6006745d2cc9eb9569a7f6a31340f3bd6d70c410db6a019889e52e65465400",
+      "SVG_editable_text_nodes": 92,
+      "PDF_selectable_text": true,
+      "PDF_fonts": [
+        "HATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     24  0"
+      ]
+    },
+    {
+      "name": "stage6a_case_heterogeneous",
+      "status": "PASS",
+      "PNG_size": [
+        2160,
+        1350
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PNG_SHA256": "212b22204238efd43ea3270ebb0732c9a2ba9994e7b1f257d2a11be82e513c10",
+      "SVG_editable_text_nodes": 92,
+      "PDF_selectable_text": true,
+      "PDF_fonts": [
+        "HATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     24  0"
+      ]
+    },
+    {
+      "name": "stage6a_case_failure",
+      "status": "PASS",
+      "PNG_size": [
+        2160,
+        1350
+      ],
+      "PNG_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "PNG_SHA256": "281b38979996c5500744f3dadf685c5700c5437b43a521e6c62cd9b64816e221",
+      "SVG_editable_text_nodes": 95,
+      "PDF_selectable_text": true,
+      "PDF_fonts": [
+        "HATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     24  0"
+      ]
+    }
+  ],
+  "formats": [
+    "PNG300dpi",
+    "editable PDF",
+    "editable SVG"
+  ],
+  "PDF_checker": "existing Poppler tools",
+  "numerical_integrity": "plot artist coordinates and probabilities match full-precision source; annotation rounding only",
+  "manual_visual_inspection_still_required": true
+}

@@ -1,0 +1,14 @@
+{
+  "status": "LOCKED_BEFORE_FINAL_OFFICIAL_VAL",
+  "predictor_sha256": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7",
+  "R1_checkpoint_sha256": "cea83b35fc98bba988e249351f92b44da3b5bcb8d5ed294a4b1429094006a405",
+  "R2_checkpoint_sha256": "e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314",
+  "normalization_sha256": "be045dc0ad0d1198bcfa8f8c270ab77297984597ee6891516e5f84ccc4e9b2d2",
+  "config_sha256": "fe097f01f021e7cbf6503c877baa2ab01b2cf1b59f4a7a7325063cb250c0f31c",
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "evaluation_code_sha256": "58d3ed801c61fc8d6520234fd77787ee9930e3c851c0180f453b766225a1148c",
+  "official_VAL_passes": 1,
+  "official_VAL_checkpoint_selection": false,
+  "cache_determinism": "torch deterministic algorithms, identical original16-window batches",
+  "ranking_ties": "smallest mode index first; stable descending probability order"
+}

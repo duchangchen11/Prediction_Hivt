@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "source_csv": "06_tables/stage6a_main_ranking_results.csv",
+  "source_csv_sha256": "394b75b571f2ee1fd6cdcea03355381cd8c61c5601105400f5cd1683028d63e9",
+  "bootstrap_csv": "06_tables/stage6a_bootstrap_ci.csv",
+  "bootstrap_csv_sha256": "8f36d85cb697c066475f209ad484e14730e1576e810ef81b0191594576a814b5",
+  "artist_max_abs_diff": 0.0,
+  "plotted_values": [
+    {
+      "variant": "R0",
+      "groups": [
+        "Heterogeneous-20m",
+        "VP-context-20m"
+      ],
+      "mean": [
+        2.5547064659463663,
+        2.5448529174298273
+      ]
+    },
+    {
+      "variant": "R1",
+      "groups": [
+        "Heterogeneous-20m",
+        "VP-context-20m"
+      ],
+      "mean": [
+        2.5638900501038586,
+        2.555403034719714
+      ]
+    },
+    {
+      "variant": "R2",
+      "groups": [
+        "Heterogeneous-20m",
+        "VP-context-20m"
+      ],
+      "mean": [
+        2.530598594918766,
+        2.526395062615184
+      ]
+    },
+    {
+      "comparison": "R1-R0",
+      "groups": [
+        "Heterogeneous-20m",
+        "VP-context-20m"
+      ],
+      "delta": [
+        0.009183584157492371,
+        0.010550117289886701
+      ],
+      "CI95_lower": [
+        -0.0007719521843338425,
+        0.0006063137632561391
+      ],
+      "CI95_upper": [
+        0.020606997261220894,
+        0.021758287905136467
+      ]
+    },
+    {
+      "comparison": "R2-R0",
+      "groups": [
+        "Heterogeneous-20m",
+        "VP-context-20m"
+      ],
+      "delta": [
+        -0.02410787102760012,
+        -0.018457854814643296
+      ],
+      "CI95_lower": [
+        -0.0482560739581537,
+        -0.04091711398045952
+      ],
+      "CI95_upper": [
+        0.00014915122484996008,
+        0.003524089822088336
+      ]
+    },
+    {
+      "comparison": "R2-R1",
+      "groups": [
+        "Heterogeneous-20m",
+        "VP-context-20m"
+      ],
+      "delta": [
+        -0.033291455185092494,
+        -0.029007972104529996
+      ],
+      "CI95_lower": [
+        -0.05554983982171506,
+        -0.05248067266035843
+      ],
+      "CI95_upper": [
+        -0.012425970692749923,
+        -0.008158870315924308
+      ]
+    }
+  ],
+  "caption": "Paired whole-scene percentile 95% CI; 150 VAL scenes, 1,000 resamples, seed 2022.\nNegative differences favor the new variant. One seed; subgroup intervals descriptive.\nR0/R1/R2 share all six trajectories.",
+  "exports_SHA256": {
+    "05_figures/stage6a_interaction_ablation.png": "0ba4c7e3ba5292b247e24716a1fc9e37601816bdbd1827d52867b07a7529c06d",
+    "05_figures/stage6a_interaction_ablation.pdf": "7c65e0d62812f3e07720159a062466bbf76b7aa8ad7e9836867470a2ee0475be",
+    "05_figures/stage6a_interaction_ablation.svg": "a70238f753c4559a177efc297ede4df87e33658b298a1af61350fa442c6ba0ec"
+  },
+  "backend": "python",
+  "training_seeds": 1,
+  "n_definition": "full-horizon actor-windows; whole scenes are bootstrap clusters",
+  "multiple_comparison_correction": "none; subgroup intervals descriptive"
+}
