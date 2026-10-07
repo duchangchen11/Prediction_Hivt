@@ -1,0 +1,73 @@
+{
+  "registered_utc": "2026-10-07T06:41:23.042366+00:00",
+  "training_authorized": true,
+  "Stage7B_authorized": false,
+  "from_scratch": true,
+  "formal_runs": 1,
+  "seed": 2022,
+  "config_sha256": "c5856cd8b6ea1ebef5d39f55b19d08aae8d6565cc30b69bc8365a43275456779",
+  "training_source_sha256": {
+    "00_manifest/stage7a_dataset.py": "a63f53afa52f051d712688d722f98e3c729a605fd2c586bf35736fd809a006d1",
+    "00_manifest/stage7a_model.py": "d97d054fccf86b59d636b5d10c252b08c0a3dcd027396e12a952cf4f80842198",
+    "00_manifest/stage7a_local_encoder.py": "3a116031e9f16a70caaecb3f623d4f7a14723b39532a789188fe7a7e0ea74399",
+    "00_manifest/stage7a_formal_common.py": "c99df8dca97e9eb846cee654601f3da7191e69f1ac7d71c2d3dd47526b2d7099",
+    "00_manifest/stage7a_evaluation_core.py": "ed02a2813a9e6177602fd2cf50474fec2710d2b396b89d140a74908de6f8eee3",
+    "03_training/stage7a_train.py": "dea0aa8c16dce121fd0ea58eefd282c0ffedbf57463f38b47ff2bc01a3119f1d"
+  },
+  "semantic_fields": [
+    "is_connector",
+    "turn_left",
+    "turn_straight",
+    "turn_right",
+    "turn_unknown",
+    "traffic_light_controlled",
+    "stop_sign_controlled",
+    "other_control",
+    "crosswalk_intersects"
+  ],
+  "ordinary_lane_turn_slots": "all zero",
+  "controls": "multi-hot; YIELD merged into other_control",
+  "crosswalk": "whole token centerline intersects polygon",
+  "baseline_checkpoint_sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+  "baseline_checkpoint_used_for_initialization": false,
+  "group_registration_sha256": "e675d057fedc5611cc02f55542c3d0ab4b87d7265d8483f311cd522730783003",
+  "group_sidecar_sha256": "7cc42ebd3348a90df9258aa6756c17ffc27e091824d7545468683cf1178a4653",
+  "frozen_source_sha256": "57053c7d456dec634b2bf8ab6834512e83e39e60d1279a1f4c649e1f290b34c0",
+  "warmup_updates": 5000,
+  "NLL_updates_max": 16000,
+  "global_hard_max": 21000,
+  "validation_interval": 500,
+  "patience": 5,
+  "primary_selection": "original-NLL overall full-horizon minFDE6 strict improvement",
+  "bootstrap": {
+    "unit": "whole official VAL scene",
+    "scenes": 150,
+    "replicates": 1000,
+    "seed": 2022,
+    "pooling": "actor-window sums/counts",
+    "interval": "percentile2.5/97.5",
+    "delta": "Stage7A minus Stage3B"
+  },
+  "difficult_groups": [
+    "vehicle.moving",
+    "Vehicle >5m",
+    "IntersectionVehicle20",
+    "NearTurnConnector20",
+    "NearTrafficControl20",
+    "TurningVehicle_GT"
+  ],
+  "scientific_rules": {
+    "marked_reliable_harm": "Vehicle or Pedestrian minFDE increases >5% relative AND paired CI lower>0",
+    "basically_flat": "overall relative point increase<=1%; for TARGETED_SUPPORTED CI must cross/include0",
+    "SUPPORTED": "overall delta<0 and CI upper<0; no marked reliable harm; >=1 difficult-group point delta<0",
+    "TARGETED_SUPPORTED": "overall point improved or <=1% increase, CI includes0; >=2 difficult-group CI upper<0; no marked reliable harm",
+    "PaperUsableSemantic": "YES iff SUPPORTED or TARGETED_SUPPORTED",
+    "ReadyStage7B": "YES iff PaperUsableSemantic YES; otherwise overall point increase<=1%, overall CI not wholly>0, and BOTH moving and TurningVehicle_GT CI upper<0; no marked reliable harm",
+    "secondary_multiplicity": "exploratory unadjusted subgroup CIs; correlated/overlapping groups, not independent replications"
+  },
+  "semantic_zero": "input nine features set0; learned SemanticMLP bias remains; same checkpoint once, no retraining",
+  "tiny": "six fixed TRAIN graphs,200 fixed-scale updates, no architecture tuning",
+  "test_used": false,
+  "final_source_registration_utc": "2026-10-07T06:44:09.109340+00:00",
+  "pretraining_source_finalization": "metadata labels and complete Python/NumPy RNG checkpoint state; no model/loss/group changes"
+}

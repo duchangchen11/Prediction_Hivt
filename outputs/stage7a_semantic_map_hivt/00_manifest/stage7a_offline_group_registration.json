@@ -1,0 +1,16 @@
+{
+  "registered_utc": "2026-10-07T06:41:23.013784+00:00",
+  "registered_before_training": true,
+  "sidecar_sha256": "7cc42ebd3348a90df9258aa6756c17ffc27e091824d7545468683cf1178a4653",
+  "counts": {
+    "IntersectionVehicle20": 32085,
+    "NearTurnConnector20": 24949,
+    "NearTrafficControl20": 31778,
+    "TurningVehicle_GT": 1663
+  },
+  "distance_rule": "t0 global XY to whole centerline; strict <20m; all regional tokens, not truncated graph segments",
+  "turn_context_rule": "unique nearest left/right connector within20m; second distance minus first >0.01m; ties unassigned",
+  "TurningVehicle_GT": "vehicle full future; endpoint>5m; first/last1s secants>0.5m; abs wrapped angle>20deg; identical Stage7A-0 membership",
+  "model_input": false,
+  "baseline_prediction_errors_used": false
+}

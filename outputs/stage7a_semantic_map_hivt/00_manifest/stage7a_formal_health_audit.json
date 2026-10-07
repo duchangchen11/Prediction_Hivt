@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "first10_gradients": [
+    {
+      "step": 1,
+      "semantic_first": 0.0,
+      "semantic_last": 0.05054751464130971,
+      "TypeEmbedding": 0.04330104655948931,
+      "LocalEncoder": 1428.5515742941343,
+      "GlobalInteractor": 0.528219874984382,
+      "Decoder": 1.207824676128038
+    },
+    {
+      "step": 2,
+      "semantic_first": 0.00016957398876759608,
+      "semantic_last": 0.03831258377608409,
+      "TypeEmbedding": 0.03488693630228411,
+      "LocalEncoder": 6.448846752275395,
+      "GlobalInteractor": 0.5784525510250768,
+      "Decoder": 1.1497302159381044
+    },
+    {
+      "step": 3,
+      "semantic_first": 0.000228263382179268,
+      "semantic_last": 0.025584459330360212,
+      "TypeEmbedding": 0.026200500533709016,
+      "LocalEncoder": 4.368418176853704,
+      "GlobalInteractor": 0.2642044662291849,
+      "Decoder": 1.0417637173518564
+    },
+    {
+      "step": 4,
+      "semantic_first": 6.815505089530984e-05,
+      "semantic_last": 0.021633707845461626,
+      "TypeEmbedding": 0.021178705198699053,
+      "LocalEncoder": 2.9569539545611403,
+      "GlobalInteractor": 0.19874475444039127,
+      "Decoder": 0.8966822531235573
+    },
+    {
+      "step": 5,
+      "semantic_first": 0.00015044831931112135,
+      "semantic_last": 0.016442411702343604,
+      "TypeEmbedding": 0.017067466288237656,
+      "LocalEncoder": 1.2945648585415186,
+      "GlobalInteractor": 0.15628931651610556,
+      "Decoder": 0.7061076020208945
+    },
+    {
+      "step": 6,
+      "semantic_first": 0.00017687632390744342,
+      "semantic_last": 0.012556330437642366,
+      "TypeEmbedding": 0.01407663091494878,
+      "LocalEncoder": 0.5941958553930322,
+      "GlobalInteractor": 0.13089704206337285,
+      "Decoder": 0.6426618168203183
+    },
+    {
+      "step": 7,
+      "semantic_first": 0.00031377400566191214,
+      "semantic_last": 0.01175437388988564,
+      "TypeEmbedding": 0.012651035003762108,
+      "LocalEncoder": 0.4592714593207627,
+      "GlobalInteractor": 0.12103128901088508,
+      "Decoder": 0.644050172783554
+    },
+    {
+      "step": 8,
+      "semantic_first": 0.0002171924841687399,
+      "semantic_last": 0.010061805132015376,
+      "TypeEmbedding": 0.011025643864224539,
+      "LocalEncoder": 0.41185816849621093,
+      "GlobalInteractor": 0.10807382398232333,
+      "Decoder": 0.6590189833823302
+    },
+    {
+      "step": 9,
+      "semantic_first": 0.00024319550409187776,
+      "semantic_last": 0.01168567334389524,
+      "TypeEmbedding": 0.010974533982407468,
+      "LocalEncoder": 0.3747268487221136,
+      "GlobalInteractor": 0.08254489622737063,
+      "Decoder": 0.6490389587486195
+    },
+    {
+      "step": 10,
+      "semantic_first": 6.676781173040471e-05,
+      "semantic_last": 0.015598099106268568,
+      "TypeEmbedding": 0.01205842580078229,
+      "LocalEncoder": 0.37073611895239916,
+      "GlobalInteractor": 0.07940545707975115,
+      "Decoder": 0.6406054561004929
+    }
+  ],
+  "last_linear_nonzero_first_update": true,
+  "first_and_last_linear_nonzero_within10": true,
+  "all_shared_modules_finite_nonzero": true
+}

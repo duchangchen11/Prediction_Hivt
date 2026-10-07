@@ -1,0 +1,90 @@
+{
+  "seed": 2022,
+  "selection": "TRAIN attributes/semantics only",
+  "windows": [
+    {
+      "index": 10964,
+      "scene_token": "a6ebe93557f24cf9bcf613dbff0aab24",
+      "sample_token": "59c86c400024492eaf6cae1120af1e3e",
+      "targets_by_type": {
+        "vehicle": 12,
+        "pedestrian": 33,
+        "bicycle": 1
+      },
+      "moving_targets": 3,
+      "turn_segments": 238,
+      "control_segments": 381,
+      "crosswalk_segments": 377
+    },
+    {
+      "index": 13005,
+      "scene_token": "d83994e61a1b431cacf34931801d0c78",
+      "sample_token": "38daaf6bed0a48f992cd33a5c6d1c834",
+      "targets_by_type": {
+        "vehicle": 1,
+        "pedestrian": 0,
+        "bicycle": 1
+      },
+      "moving_targets": 1,
+      "turn_segments": 0,
+      "control_segments": 21,
+      "crosswalk_segments": 0
+    },
+    {
+      "index": 14377,
+      "scene_token": "75548269eb0a4614a6f84ab8d7713196",
+      "sample_token": "1cf1a2d47b0f437aa437954106596d1a",
+      "targets_by_type": {
+        "vehicle": 15,
+        "pedestrian": 13,
+        "bicycle": 0
+      },
+      "moving_targets": 7,
+      "turn_segments": 329,
+      "control_segments": 796,
+      "crosswalk_segments": 276
+    },
+    {
+      "index": 7640,
+      "scene_token": "97ba0e14805b42f292db7f06b6d1121b",
+      "sample_token": "d82c1b6539e04d9a940c5a7e7f569300",
+      "targets_by_type": {
+        "vehicle": 44,
+        "pedestrian": 4,
+        "bicycle": 0
+      },
+      "moving_targets": 2,
+      "turn_segments": 106,
+      "control_segments": 81,
+      "crosswalk_segments": 67
+    },
+    {
+      "index": 12698,
+      "scene_token": "e1e664292aa144bc8d0d5d6441df084c",
+      "sample_token": "d4c05eff7c004de3a24d55a3aadfb4ba",
+      "targets_by_type": {
+        "vehicle": 21,
+        "pedestrian": 0,
+        "bicycle": 0
+      },
+      "moving_targets": 13,
+      "turn_segments": 211,
+      "control_segments": 987,
+      "crosswalk_segments": 546
+    },
+    {
+      "index": 9105,
+      "scene_token": "58af378ff68b49c99aabf320dca1ee25",
+      "sample_token": "8f87c55db57b4fd9bc23abacc0e94455",
+      "targets_by_type": {
+        "vehicle": 52,
+        "pedestrian": 0,
+        "bicycle": 0
+      },
+      "moving_targets": 1,
+      "turn_segments": 161,
+      "control_segments": 247,
+      "crosswalk_segments": 160
+    }
+  ]
+}

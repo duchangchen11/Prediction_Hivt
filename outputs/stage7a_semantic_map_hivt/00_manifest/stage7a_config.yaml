@@ -1,0 +1,58 @@
+seed: 2022
+historical_steps: 5
+future_steps: 12
+num_modes: 6
+embed_dim: 64
+num_heads: 8
+dropout: 0.1
+num_temporal_layers: 4
+num_global_layers: 3
+local_radius: 50.0
+lane_resolution: 2.0
+weight_decay: 0.0001
+batch_size: 16
+protocol: 1
+scheduler: none
+warmup:
+  lr: 0.001
+  maximum_steps: 5000
+  fixed_updates: 5000
+nll:
+  lr: 0.0001
+  maximum_steps: 16000
+  plateau_patience: 5
+validation_interval_steps: 500
+checkpoint_selection: validation full-horizon overall multi-type minFDE; final checkpoint
+  from post-update original NLL phase
+moving_checkpoint_diagnostic_only: true
+optimizer_state_preserved: true
+data_loader:
+  workers: 0
+  cache_scenes: 2
+  shuffle: shuffle scene order and window order within each scene, epoch seed 2022+epoch
+experiment: Stage7A Semantic Lane Residual
+type_embedding: true
+oversampling: false
+class_balanced_loss: false
+test_used: false
+tiny:
+  fixed_updates: 200
+  windows: 6
+  lr: 0.001
+  selection_split: TRAIN only
+readiness_judgement:
+  maximum_vehicle_overall_FDE_ratio_to_Stage2C: 1.25
+  maximum_vehicle_moving_FDE_ratio_to_Stage2C: 1.25
+  note: practical readiness guard declared before tiny/formal optimization; not a
+    checkpoint selection metric or reason to alter experiments
+semantic_fields:
+- is_connector
+- turn_left
+- turn_straight
+- turn_right
+- turn_unknown
+- traffic_light_controlled
+- stop_sign_controlled
+- other_control
+- crosswalk_intersects
+global_hard_max: 21000

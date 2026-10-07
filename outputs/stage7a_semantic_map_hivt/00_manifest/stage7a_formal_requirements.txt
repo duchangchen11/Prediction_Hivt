@@ -1,0 +1,1513 @@
+你现在正式执行：
+
+============================================================
+Stage7A：Semantic-Enhanced HiVT
+基于静态道路语义增强的多类型交通参与者轨迹预测
+============================================================
+
+项目：
+
+/home/lrj/Prediction_Hivt
+
+当前分支：
+
+stage7a/semantic-map-enhancement
+
+当前Stage7A-0最新commit：
+
+93ab10b337036c0fd9b9e9ffd325da7fb97140b0
+
+Stage7A-0已经完成：
+
+TurnSemantic = AVAILABLE
+TrafficControlSemantic = PARTIAL
+CrosswalkSemantic = AVAILABLE
+SemanticMapStage7A = READY
+
+现在授权：
+
+Stage7A正式训练。
+
+============================================================
+一、本阶段研究问题
+============================================================
+
+只回答：
+
+在保持Stage3B HiVT + TypeEmbedding
+其余结构完全不变的情况下，
+
+向lane segment加入真实的静态道路语义：
+
+connector
+turn direction
+traffic control
+crosswalk
+
+能否提升多类型交通参与者预测，
+
+尤其：
+
+vehicle.moving
+Vehicle >5m
+intersection vehicle
+turning vehicle
+
+的候选轨迹质量？
+
+本阶段主要研究：
+
+minADE6
+minFDE6
+MR6
+
+不是mode reranking。
+
+============================================================
+二、正式baseline
+============================================================
+
+唯一primary baseline：
+
+Stage3B TypeEmbedding
+
+checkpoint：
+
+Stage3B final checkpoint
+SHA256：
+
+461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547
+
+但：
+
+禁止使用训练好的Stage3B权重
+作为Stage7A初始化。
+
+Stage7A必须：
+
+from scratch
+seed=2022
+
+Stage3B checkpoint仅用于：
+
+最终baseline评价和比较。
+
+============================================================
+三、禁止继承的内容
+============================================================
+
+Stage7A禁止加入：
+
+Stage4A relation bias
+Stage4F gate
+Stage5A residual decoder
+Stage6A R1/R2
+Reliability reranking
+dynamic traffic-light state
+VLM
+camera feature
+intent prediction
+class-balanced loss
+oversampling
+
+Stage7A结构必须是：
+
+Stage3B
++
+Semantic Lane Residual
+
+仅此一个变量。
+
+============================================================
+四、重要源码事实
+============================================================
+
+当前：
+
+models/hivt_runtime/local_encoder.py
+
+中的原始ALEncoder本身已经具有：
+
+is_intersection_embed
+turn_direction_embed
+traffic_control_embed
+
+但是当前nuScenes Stage3数据：
+
+is_intersections = 0
+turn_directions = 0
+traffic_controls = 0
+
+全部为零。
+
+本轮：
+
+不要直接把这些旧字段改成真实语义。
+
+原因：
+
+我们需要保证Stage3B原路径完全不变，
+避免一次同时改变原始categorical slots的含义。
+
+继续保持这三个旧字段为0。
+
+另外增加：
+
+lane_semantic
+
+作为独立语义分支。
+
+============================================================
+五、语义向量最终冻结为9维
+============================================================
+
+每个lane segment：
+
+lane_semantic ∈ R^9
+
+顺序严格固定：
+
+0. is_connector
+
+1. turn_left
+
+2. turn_straight
+
+3. turn_right
+
+4. turn_unknown
+
+5. traffic_light_controlled
+
+6. stop_sign_controlled
+
+7. other_control
+
+8. crosswalk_intersects
+
+============================================================
+六、Turn定义
+============================================================
+
+必须完全复用Stage7A-0已经审计通过的定义。
+
+lane：
+
+is_connector = 0
+
+turn_left/right/straight/unknown
+全部为0。
+
+lane_connector：
+
+is_connector = 1
+
+并且四个turn字段严格one-hot。
+
+使用：
+
+|delta_theta| <= 20°：
+straight
+
+delta_theta > 20°：
+left
+
+delta_theta < -20°：
+right
+
+|delta_theta| >=150°：
+unknown
+
+不得修改阈值。
+
+不得根据VAL结果重新定义。
+
+============================================================
+七、Traffic Control定义
+============================================================
+
+复用Stage7A-0真实stop_line association。
+
+traffic_light_controlled：
+
+token中心线与
+TRAFFIC_LIGHT stop-line polygon
+存在审核通过的关联。
+
+stop_sign_controlled：
+
+与STOP_SIGN关联。
+
+other_control：
+
+TURN_STOP
+或
+PED_CROSSING类型stop-line
+或稀疏YIELD
+
+统一并入other_control。
+
+不单独设置YIELD feature。
+
+三个control字段允许同时为1。
+
+因为Stage7A-0已经证明：
+
+mixed controls真实存在。
+
+禁止人为设置优先级后强制one-hot。
+
+============================================================
+八、Crosswalk定义
+============================================================
+
+使用Stage7A-0提前选定的保守定义：
+
+whole lane/connector centerline
+intersects
+ped_crossing polygon
+
+则：
+
+crosswalk_intersects = 1
+
+否则0。
+
+不使用：
+
+2m
+5m
+
+版本。
+
+这些只保留为历史审计。
+
+============================================================
+九、不要使用actor-level 50m binary semantics
+============================================================
+
+Stage7A-0发现：
+
+Moving Vehicle VAL：
+
+NearConnector ≈ 99.05%
+NearTurnConnector ≈ 95.53%
+NearTrafficControl ≈ 97.76%
+
+因此禁止给actor直接增加：
+
+near_connector
+near_control
+near_crosswalk
+
+这种50m二值输入。
+
+覆盖过于饱和。
+
+Semantic必须挂在：
+
+每个lane segment
+
+上。
+
+============================================================
+十、数据实现：禁止重新构造轨迹
+============================================================
+
+直接复用冻结：
+
+Stage3 TRAIN700 / VAL150 scene shards。
+
+不得重新生成：
+
+actor trajectory
+GT
+history mask
+future mask
+lane geometry
+lane_actor_index
+lane_actor_vectors
+actor identities
+
+使用现有：
+
+map_location
+lane_tokens
+
+给每个已有lane segment附加：
+
+lane_semantic [L,9]
+
+保证：
+
+geometry完全不变。
+
+============================================================
+十一、Semantic Cache
+============================================================
+
+优先复用：
+
+outputs/stage7a_semantic_map_hivt/
+02_semantic_cache/
+stage7a_semantic_cache.py
+
+生成的：
+
+(location, lane_token)
+→ semantic metadata
+
+如果local cache文件不存在：
+
+重新运行现有Stage7A-0 cache脚本生成。
+
+禁止重新设计语义。
+
+============================================================
+十二、Sidecar / Dataset Wrapper
+============================================================
+
+建议不要覆盖Stage3 shard。
+
+实现：
+
+Stage7ASemanticDataset
+
+加载原Stage3 graph后：
+
+根据：
+
+graph.map_location
+graph.lane_tokens
+
+构造：
+
+graph.lane_semantic
+
+shape：
+
+[L,9]
+
+dtype：
+
+float32
+
+Stage3 graph本身保持只读。
+
+============================================================
+十三、数据身份审计
+============================================================
+
+随机至少：
+
+100 TRAIN windows
+100 VAL windows
+
+比较Stage3B input与Stage7A：
+
+positions
+x
+y
+edge_index
+padding_mask
+future_mask
+lane_vectors
+lane_positions
+lane_actor_index
+lane_actor_vectors
+rotate_angles
+agent_type
+
+必须：
+
+bitwise identical。
+
+唯一新字段：
+
+lane_semantic。
+
+============================================================
+十四、模型结构
+============================================================
+
+正式结构：
+
+Stage3B HiVT
++
+TypeEmbedding
++
+Semantic Lane Residual
+
+原：
+
+LocalEncoder
+→ TypeEmbedding
+→ GlobalInteractor
+→ MLPDecoder
+
+全部保持。
+
+Semantic只进入：
+
+Actor-Lane ALEncoder
+
+中的lane representation。
+
+============================================================
+十五、Semantic Lane Encoder
+============================================================
+
+新增：
+
+SemanticMLP
+
+结构：
+
+Linear(9,32)
+ReLU
+Linear(32,64)
+
+输入：
+
+s_l ∈ R^9
+
+输出：
+
+e_l^sem ∈ R^64
+
+============================================================
+十六、融合位置
+============================================================
+
+ALEncoder中原lane representation：
+
+h_l^geo =
+lane_embed(
+    lane_vector,
+    lane_actor_vector,
+    原Stage3B categorical base
+)
+
+保持完全不变。
+
+新增：
+
+h_l^sem =
+SemanticMLP(lane_semantic)
+
+然后：
+
+h_l =
+h_l^geo
++
+h_l^sem
+
+后续：
+
+K/V projection
+lane-actor attention
+gate
+FFN
+
+全部保持原实现。
+
+============================================================
+十七、Neutral Initialization
+============================================================
+
+SemanticMLP最后一层：
+
+Linear(32,64)
+
+weight = 0
+bias = 0
+
+因此初始化：
+
+h_l^sem = 0
+
+从而：
+
+Stage7A(step0)
+=
+Stage3B(step0)
+
+必须真实batch验证：
+
+raw_prediction max diff <1e-6
+
+mode_logits max diff <1e-6
+
+mode_prob max diff <1e-6
+
+最好exact zero。
+
+============================================================
+十八、共享参数初始化
+============================================================
+
+必须保证seed2022下：
+
+Stage7A所有Stage3B共享参数
+
+与canonical Stage3B step0
+逐参数完全一致。
+
+推荐实现方式：
+
+先完整构造Stage3B模型，
+
+再在所有原有参数初始化完成以后
+附加SemanticMLP/semantic wrapper。
+
+不要因为新增模块提前消耗RNG，
+导致GlobalInteractor/Decoder初始化发生变化。
+
+输出：
+
+shared_parameter_max_diff
+
+必须：
+
+0。
+
+============================================================
+十九、禁止直接修改runtime源码
+============================================================
+
+尽量不要直接修改：
+
+models/hivt_runtime/local_encoder.py
+
+建议Stage7A隔离实现：
+
+outputs/stage7a_semantic_map_hivt/
+00_manifest/
+
+stage7a_model.py
+stage7a_local_encoder.py
+stage7a_dataset.py
+stage7a_common.py
+
+旧runtime只读。
+
+============================================================
+二十、新增参数量
+============================================================
+
+SemanticMLP理论参数：
+
+9×32 + 32
++
+32×64 +64
+
+=
+
+2432 parameters。
+
+实际用程序统计。
+
+Stage3B：
+
+646001 params
+
+预计Stage7A：
+
+648433 params
+
+增加约：
+
+0.376%
+
+以程序实际结果为准。
+
+============================================================
+二十一、梯度审计
+============================================================
+
+因为最后一层zero init：
+
+第1个update：
+
+最后Linear必须有非零gradient。
+
+前面Linear可能首步为0，
+这是允许的。
+
+要求：
+
+10个update以内：
+
+SemanticMLP第一层和最后一层
+都出现finite nonzero gradient。
+
+同时：
+
+TypeEmbedding
+LocalEncoder
+GlobalInteractor
+Decoder
+
+梯度正常。
+
+============================================================
+二十二、Tiny Overfit
+============================================================
+
+正式训练前：
+
+固定6个TRAIN windows。
+
+必须覆盖：
+
+vehicle
+pedestrian
+bicycle
+
+vehicle.moving
+
+至少一个包含：
+
+left/right connector
+
+traffic control
+
+crosswalk
+
+的window。
+
+运行tiny fixed-scale。
+
+要求：
+
+loss下降
+semantic residual从0变为非0
+无NaN/Inf
+语义分支有梯度
+
+Tiny只做健康检查。
+
+禁止根据tiny调结构/维度。
+
+============================================================
+二十三、正式训练协议
+============================================================
+
+必须与Stage3B一致：
+
+seed = 2022
+
+official TRAIN700
+official VAL150
+
+test unused
+
+Th = 5
+Tf = 12
+K = 6
+
+batch_size = 16
+
+embed_dim = 64
+
+num_heads = 8
+
+global layers = 3
+
+dropout = 0.1
+
+local radius = 50m
+
+weight_decay = 1e-4
+
+natural V/P/B distribution
+
+无oversampling
+
+无class-balanced loss
+
+============================================================
+二十四、Phase 1
+============================================================
+
+Fixed-scale location warm-up：
+
+5000 updates
+
+LR：
+
+0.001
+
+每500 updates：
+
+完整official VAL150。
+
+选择：
+
+overall full-horizon minFDE6。
+
+记录warmup best。
+
+============================================================
+二十五、Phase 2
+============================================================
+
+从Stage7A自己的warmup best恢复：
+
+model
+optimizer
+RNG
+
+不是Stage3B checkpoint。
+
+切换：
+
+original learnable Laplace NLL
+
+LR：
+
+0.0001
+
+最大NLL updates：
+
+16000
+
+global hard max：
+
+21000。
+
+============================================================
+二十六、Early Stop
+============================================================
+
+每500 updates：
+
+完整VAL150。
+
+primary：
+
+overall full-horizon minFDE6
+
+strict improvement。
+
+patience：
+
+5次完整VAL。
+
+保存：
+
+stage7a_best_overall_minfde.pt
+
+stage7a_last.pt
+
+============================================================
+二十七、正式评价
+============================================================
+
+fresh reload best checkpoint。
+
+必须确认：
+
+VAL scenes = 150
+
+supervised windows = 3603
+
+full horizon = 54990
+
+partial = 30037
+
+总监督actor-windows = 85027
+
+NaN = 0
+Inf = 0
+
+============================================================
+二十八、Primary比较
+============================================================
+
+唯一正式primary：
+
+Stage7A
+vs
+Stage3B TypeEmbedding。
+
+不要以：
+
+Stage4A
+Stage4F
+Stage5A
+
+作为Stage7A训练选择依据。
+
+可以在最终表中描述性列出，
+但不能用于checkpoint selection。
+
+============================================================
+二十九、主要指标
+============================================================
+
+必须报告：
+
+minADE6
+minFDE6
+MR6
+Top1ADE6
+Top1FDE6
+NLL
+
+Groups：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+Vehicle >5m
+
+Pedestrian <5m
+Pedestrian >5m
+
+============================================================
+三十、Semantic重点Groups
+============================================================
+
+训练前现在固定以下离线评价组。
+
+A：
+
+IntersectionVehicle20
+
+定义：
+
+t0 vehicle到任意lane_connector
+完整centerline最小距离 <20m。
+
+禁止训练输入使用该标签。
+
+--------------------------------------------------
+
+B：
+
+NearTurnConnector20
+
+t0 vehicle到任意：
+
+left/right connector centerline
+
+最小距离 <20m。
+
+--------------------------------------------------
+
+C：
+
+NearTrafficControl20
+
+t0 vehicle到任意：
+
+traffic-control-associated lane/connector centerline
+
+最小距离 <20m。
+
+--------------------------------------------------
+
+D：
+
+TurningVehicle_GT
+
+完全复用Stage7A-0定义：
+
+future endpoint displacement >5m
+
+第一/最后1秒secant displacement >0.5m
+
+absolute heading change >20°
+
+仅offline evaluation。
+
+绝对禁止作为模型输入。
+
+============================================================
+三十一、TurningVehicle_GT非常重要
+============================================================
+
+Stage7A-0已经发现：
+
+VAL Count = 1663
+
+Stage5A minFDE约：
+
+14.4367m
+
+属于当前非常困难的目标。
+
+Stage7A必须单独报告：
+
+Stage3B minFDE
+Stage7A minFDE
+
+Stage3B Top1FDE
+Stage7A Top1FDE
+
+ADE
+MR
+
+但：
+
+它是offline GT-defined subgroup，
+不能包装成inference标签。
+
+============================================================
+三十二、Turn类型进一步分析
+============================================================
+
+对TurningVehicle_GT或NearTurnConnector20，
+
+按附近最相关turn connector描述性划分：
+
+Left-context
+Right-context
+
+如果无法唯一确定：
+
+不要强行分配。
+
+不要使用VAL结果调整关联规则。
+
+============================================================
+三十三、Bootstrap
+============================================================
+
+paired scene-cluster bootstrap：
+
+150 VAL scenes
+
+1000 replicates
+
+seed2022。
+
+Primary：
+
+Overall minFDE6。
+
+Secondary：
+
+Vehicle minFDE
+
+Pedestrian minFDE
+
+vehicle.moving minFDE
+
+Vehicle >5m minFDE
+
+IntersectionVehicle20 minFDE
+
+NearTurnConnector20 minFDE
+
+NearTrafficControl20 minFDE
+
+TurningVehicle_GT minFDE
+
+Overall Top1FDE。
+
+============================================================
+三十四、科学结论规则
+============================================================
+
+SemanticMap = SUPPORTED
+
+如果：
+
+1.
+Overall ΔminFDE < 0
+
+且：
+
+95% CI upper < 0
+
+2.
+Vehicle/Pedestrian没有明显可靠恶化；
+
+3.
+至少一个困难vehicle subgroup
+方向改善。
+
+--------------------------------------------------
+
+SemanticMap = TARGETED_SUPPORTED
+
+如果：
+
+Overall点估计改善或基本持平，
+但CI跨0，
+
+同时至少两个：
+
+vehicle.moving
+Vehicle >5m
+IntersectionVehicle20
+NearTurnConnector20
+NearTrafficControl20
+TurningVehicle_GT
+
+出现可靠minFDE改善，
+
+且Vehicle/Pedestrian overall
+不存在明显可靠恶化。
+
+--------------------------------------------------
+
+否则：
+
+SemanticMap = NOT_SUPPORTED。
+
+============================================================
+三十五、论文可用规则
+============================================================
+
+PaperUsableSemantic = YES
+
+如果：
+
+SemanticMap为：
+
+SUPPORTED
+
+或：
+
+TARGETED_SUPPORTED。
+
+我们当前目标不是追求所有subgroup完美，
+而是得到：
+
+整体有竞争力
++
+语义相关困难场景有明确收益
+
+的论文结果。
+
+============================================================
+三十六、Semantic Residual分析
+============================================================
+
+最终统计：
+
+semantic residual norm
+
+按：
+
+ordinary lane
+connector
+
+left
+straight
+right
+
+traffic-light
+stop-sign
+other-control
+
+crosswalk
+non-crosswalk
+
+分别报告。
+
+如果residual接近0：
+
+必须如实说明semantic branch未被有效使用。
+
+============================================================
+三十七、Semantic embedding分析
+============================================================
+
+不要用t-SNE作为核心证据。
+
+可以报告：
+
+SemanticMLP输出norm
+
+不同语义组的：
+
+mean
+median
+std
+
+以及简单cosine描述。
+
+不要把embedding距离解释成物理因果。
+
+============================================================
+三十八、语义置零推理消融
+============================================================
+
+如果Stage7A训练完成：
+
+使用同一个Stage7A checkpoint。
+
+做一次：
+
+Semantic-ON
+
+vs
+
+Semantic-ZERO
+
+推理。
+
+Semantic-ZERO：
+
+将lane_semantic全部置0。
+
+注意：
+
+这是推理消融，
+不是重新训练baseline。
+
+作用：
+
+验证训练好的模型
+是否实际依赖semantic branch。
+
+同时正式baseline仍然是：
+
+Stage3B独立训练模型。
+
+============================================================
+三十九、不要做多种semantic组合重训
+============================================================
+
+本轮禁止：
+
+turn-only
+control-only
+crosswalk-only
+different thresholds
+different semantic MLP size
+
+除非Stage7A结果出来后
+由大脑AI另外授权。
+
+只训练：
+
+一个正式Stage7A。
+
+============================================================
+四十、效率
+============================================================
+
+比较：
+
+Stage3B
+Stage7A
+
+记录：
+
+parameters
+
+参数增加百分比
+
+mean/median forward latency
+
+peak CUDA memory。
+
+500 paired measurements即可。
+
+============================================================
+四十一、主要结果文件
+============================================================
+
+输出：
+
+06_tables/
+
+stage7a_main_results.csv
+
+stage7a_vehicle_motion_results.csv
+
+stage7a_semantic_subgroup_results.csv
+
+stage7a_bootstrap_ci.csv
+
+stage7a_semantic_residual_statistics.csv
+
+stage7a_semantic_zero_ablation.csv
+
+============================================================
+四十二、图件
+============================================================
+
+至少生成：
+
+1.
+stage7a_main_fde_comparison
+
+Overall
+Vehicle
+Pedestrian
+MovingVehicle
+
+--------------------------------------------------
+
+2.
+stage7a_vehicle_difficulty_groups
+
+Vehicle >5m
+IntersectionVehicle20
+NearTurnConnector20
+TurningVehicle_GT
+
+--------------------------------------------------
+
+3.
+stage7a_semantic_on_zero
+
+Semantic ON
+Semantic ZERO
+
+--------------------------------------------------
+
+4.
+至少3个预测案例：
+
+turning vehicle improvement
+
+traffic-control context improvement
+
+failure/degradation case
+
+保持：
+
+同actor
+同GT
+同map
+同axis limits。
+
+============================================================
+四十三、最终报告
+============================================================
+
+生成：
+
+09_reports/
+stage7a_final_report.md
+
+结构：
+
+【Problem】
+
+为什么仅lane geometry可能不足。
+
+【Frozen Semantic Definition】
+
+9维语义定义。
+
+【Architecture】
+
+Stage3B + Semantic Lane Residual。
+
+【Neutral Initialization】
+
+step0 exact audit。
+
+【Data Integrity】
+
+旧Stage3 geometry/trajectory完全不变。
+
+【Training】
+
+完整协议。
+
+【Main Results】
+
+Stage3B vs Stage7A。
+
+【Moving Vehicle】
+
+【Intersection / Turning Vehicle】
+
+【Traffic-Control Context】
+
+【Semantic Zero Ablation】
+
+【Bootstrap】
+
+【Semantic Residual Analysis】
+
+【Efficiency】
+
+【Limitations】
+
+静态map；
+无动态红绿灯；
+control为几何关联；
+turn taxonomy为派生标签。
+
+【Scientific Decision】
+
+SemanticMap =
+SUPPORTED /
+TARGETED_SUPPORTED /
+NOT_SUPPORTED
+
+PaperUsableSemantic =
+YES / NO
+
+ReadyStage7B =
+YES / NO
+
+============================================================
+四十四、ReadyStage7B规则
+============================================================
+
+ReadyStage7B = YES
+
+仅当：
+
+PaperUsableSemantic = YES
+
+或者：
+
+Overall基本不退化且
+Turning/Moving Vehicle收益非常明确。
+
+否则：
+
+NO。
+
+Stage7B将来才负责：
+
+Stage7A
++
+Future Interaction Reliability R2。
+
+本轮绝对禁止提前做Stage7B。
+
+============================================================
+四十五、Git
+============================================================
+
+建议提交：
+
+feat: attach audited semantic lane features to frozen Stage3 graphs
+
+feat: add neutral semantic lane residual to Stage3B HiVT
+
+test: verify Stage3B-neutral initialization and semantic gradients
+
+exp: train Stage7A semantic-enhanced HiVT
+
+eval: evaluate semantic map enhancement on official VAL
+
+docs: finalize Stage7A semantic prediction report
+
+push：
+
+stage7a/semantic-map-enhancement
+
+不要merge main。
+
+============================================================
+四十六、完成后只汇报
+============================================================
+
+Git commit=
+
+Stage7A checkpoint SHA=
+
+Stage7A parameters=
+
+Additional parameters=
+
+Neutral step0 audit=
+PASS / FAIL
+
+Data identity audit=
+PASS / FAIL
+
+Best global step=
+
+Training stop reason=
+
+Overall minFDE:
+Stage3B=
+Stage7A=
+Delta=
+CI=
+
+Vehicle minFDE:
+Stage3B=
+Stage7A=
+Delta=
+CI=
+
+Pedestrian minFDE:
+Stage3B=
+Stage7A=
+Delta=
+CI=
+
+Moving Vehicle minFDE:
+Stage3B=
+Stage7A=
+Delta=
+CI=
+
+Vehicle >5m minFDE:
+Stage3B=
+Stage7A=
+Delta=
+CI=
+
+IntersectionVehicle20 minFDE:
+Stage3B=
+Stage7A=
+Delta=
+CI=
+
+NearTurnConnector20 minFDE:
+Stage3B=
+Stage7A=
+Delta=
+CI=
+
+NearTrafficControl20 minFDE:
+Stage3B=
+Stage7A=
+Delta=
+CI=
+
+TurningVehicle_GT:
+Count=
+Stage3B minFDE=
+Stage7A minFDE=
+Delta=
+CI=
+
+Overall Top1FDE:
+Stage3B=
+Stage7A=
+
+Semantic ZERO minFDE=
+Semantic ON minFDE=
+
+Semantic residual norm=
+
+SemanticMap =
+SUPPORTED /
+TARGETED_SUPPORTED /
+NOT_SUPPORTED
+
+PaperUsableSemantic =
+YES / NO
+
+ReadyStage7B =
+YES / NO
+
+完成后STOP。
+
+不要运行Stage7B。
+等待大脑AI审查。

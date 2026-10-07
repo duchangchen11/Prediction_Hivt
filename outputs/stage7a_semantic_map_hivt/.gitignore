@@ -4,3 +4,7 @@
 00_manifest/stage7a_git_upload_*.json
 08_logs/*.log
 **/*.tmp
+07_checkpoints/*.pt
+04_evaluation/stage7a_*actor_errors.csv
+04_evaluation/stage7a_predictions_*.pt
+01_data_audit/stage7a_formal_actor_*.csv
