@@ -49,6 +49,10 @@ def main():
     formal=main[main.horizon=='full_horizon'];motion=motion[motion.horizon=='full_horizon'];sub=sub[sub.horizon=='full_horizon']
     cols=['model','group','count','minADE6','minFDE6','MR6','Top1ADE6','Top1FDE6','NLL']
     ci_cols=['group','metric','count','Stage3B','Stage7A','delta','CI_lower','CI_upper']
+    primary=ci[(ci.group=='overall')&(ci.metric=='minFDE6')].iloc[0]
+    top1=ci[(ci.group=='overall')&(ci.metric=='Top1FDE6')].iloc[0]
+    turn=ci[(ci.group=='TurningVehicle_GT')&(ci.metric=='minFDE6')].iloc[0]
+    ablation_overall=zero[zero.group=='overall'].set_index('model')
     baseline_formal=read_json(ROOT/'04_evaluation/stage7a_baseline_final_metrics.json')['metrics']['full_horizon']
     original=read_json(STAGE3/'07_checkpoints/stage3b_best_checkpoint_manifest.json')['selected_full_horizon_metrics']
     baseline_reproduction=max(abs(baseline_formal[g][k]-original[g][k]) for g in GROUPS for k in METRICS)
@@ -95,6 +99,8 @@ Training source commit: `{s['training_code_git_commit']}`. Stage7A checkpoint SH
 
 All following primary metric tables use full-horizon targets. ADE is evaluated on the best-FDE mode; MR uses endpoint error>2m; Top1 is the highest original model probability; NLL uses the original summed-L2 training winner and mean valid coordinate Laplace density. Partial-future results are also retained in the CSV tables. Lower is better.
 
+The primary Stage7A−Stage3B minFDE6 difference is{primary['delta']:+.6f}m, paired95%CI[{primary['CI_lower']:+.6f},{primary['CI_upper']:+.6f}]. Overall Top1FDE6 difference is{top1['delta']:+.6f}m, CI[{top1['CI_lower']:+.6f},{top1['CI_upper']:+.6f}]. Both intervals are wholly above0, indicating small deterioration for this fixed-seed, validation-selected comparison. No preregistered difficult vehicle subgroup has a reliable minFDE improvement. This outcome does not support a general claim that static semantics are ineffective; it rejects the intended benefit for this particular feature definition and fusion experiment.
+
 {markdown(formal,cols)}
 
 【Moving Vehicle】
@@ -106,6 +112,8 @@ Motion states are the frozen t0 nuScenes attribute labels, not GT-derived infere
 【Intersection / Turning Vehicle】
 
 IntersectionVehicle20 and NearTurnConnector20 use t0 distance<20m to complete regional connector centerlines, independent of cropped graph geometry. TurningVehicle_GT is strictly offline: full-future endpoint displacement>5m, first/last1s secant displacement>0.5m, abs wrapped heading change>20°. Its frozen VAL count is1663. Turn-context labels use the unique nearest left/right connector within20m; distances tied within1cm remain unassigned. Rules were frozen before training and never adjusted using VAL prediction errors.
+
+TurningVehicle_GT minFDE6 changes by{turn['delta']:+.6f}m, CI[{turn['CI_lower']:+.6f},{turn['CI_upper']:+.6f}], which includes0. The extreme illustrative improvement case does not establish an aggregate turning benefit.
 
 {markdown(sub[sub.group.isin(['IntersectionVehicle20','NearTurnConnector20','TurningVehicle_GT','Left-context','Right-context'])],cols)}
 
@@ -120,6 +128,8 @@ NearTrafficControl20 uses t0 distance<20m to a control-associated whole lane/con
 【Semantic Zero Ablation】
 
 One full VAL inference per setting on the identical Stage7A best checkpoint; no retraining. ZERO sets all nine inputs to0 but retains the trained MLP biases, so its residual is not necessarily0 and it is not an independently trained Stage3B baseline. Residual at zero input has norm{residual_audit['all_features_zero_residual_norm']:.6f}.
+
+ON overall minFDE6 is{ablation_overall.loc['Semantic-ON','minFDE6']:.6f}m and ZERO is{ablation_overall.loc['Semantic-ZERO','minFDE6']:.6f}m. This point comparison demonstrates that the trained predictions respond to semantic inputs, while ON still fails to outperform the independently trained Stage3B baseline. No additional ablation checkpoint or feature combination was trained.
 
 {markdown(zero[zero.group.isin(['overall','vehicle','pedestrian','vehicle.moving','TurningVehicle_GT'])],cols)}
 
@@ -139,7 +149,7 @@ One full VAL inference per setting on the identical Stage7A best checkpoint; no 
 
 500 paired forwards, alternating method order, eight identical real VAL batches repeated, batch16, warm-up3pairs/batch, CUDA events with synchronization. Data loading is excluded. Both models remain resident; reported absolute allocated peaks include common co-resident weights and input; incremental forward peak is separately reported. This is one machine/session and excludes preprocessing or cache generation.
 
-{markdown(efficiency)}
+{markdown(efficiency,['model','parameters','parameter_increase_percent','mean_forward_ms','median_forward_ms','peak_CUDA_allocated_MiB','peak_forward_increment_MiB'])}
 
 【Limitations】
 
@@ -158,7 +168,7 @@ The exact preregistered numeric interpretation is: marked reliable harm means>5%
 Completed Stage7A only. STOP; Stage7B awaits separate review and authorization.
 '''
     (ROOT/'09_reports/stage7a_final_report.md').write_text(report)
-    fields={'git_commit':git('rev-parse','HEAD'),'Stage7A_checkpoint_SHA':sha256(BEST),
+    fields={'training_code_git_commit':s['training_code_git_commit'],'Stage7A_checkpoint_SHA':sha256(BEST),
       'Stage7A_parameters':neutral['parameters'],'Additional_parameters':neutral['additional_parameters'],
       'Neutral_step0_audit':'PASS','Data_identity_audit':'PASS','Best_global_step':s['best_global_step'],
       'Training_stop_reason':s['stop_reason'],'paired_metrics':ci[ci.metric=='minFDE6'].to_dict('records'),

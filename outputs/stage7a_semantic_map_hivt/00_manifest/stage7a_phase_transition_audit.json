@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "global_NLL_start": 5000,
+  "own_warmup_best_source_step": 3500,
+  "own_warmup_checkpoint_sha256": "c8682704f5308057f7d69580bb03e5ca7cae34894e915aa408c2d6df415a75a5",
+  "optimizer_state_preserved": true,
+  "model_RNG_restored": true,
+  "NLL_sampler_cursor_reset_like_Stage3B": {
+    "epoch": 0,
+    "next_batch": 0
+  },
+  "only_authorized_phase_LR_change": {
+    "from": 0.001,
+    "to": 0.0001
+  },
+  "baseline_trained_weights_loaded": false,
+  "Protocol1_Stage3B_transition_reused": true
+}

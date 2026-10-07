@@ -1,0 +1,41 @@
+{
+  "selection_rule": "TurningVehicle_GT largest minFDE reduction; NearTrafficControl20 moving vehicle with GT displacement>5m largest reduction excluding first identity; largest degradation among vehicles with GT displacement>5m excluding earlier identities. If no eligible improvement, label honestly; cases are deliberately selected illustrations, not prevalence evidence.",
+  "cases": [
+    {
+      "name": "stage7a_case_turning_vehicle",
+      "outcome": "improvement",
+      "scene_token": "952cb0bcd89b4ca4b904cdcbbf595523",
+      "sample_token": "befff2eb01174292b854a66597c3eb8f",
+      "instance_token": "36c952a23bdb4cc08b4fcda86df4f3fc",
+      "delta": -3.8144733905792236,
+      "minFDE6": [
+        7.599759578704834,
+        3.7852895259857178
+      ]
+    },
+    {
+      "name": "stage7a_case_traffic_control",
+      "outcome": "improvement",
+      "scene_token": "2eb4d7f00e584a548aa0b899638bfb0a",
+      "sample_token": "b006ca82a2654951ae8f42300f66f3c4",
+      "instance_token": "ce359c2b8ea14cbb828521ca78733cad",
+      "delta": -6.640275955200195,
+      "minFDE6": [
+        18.216333389282227,
+        11.576051712036133
+      ]
+    },
+    {
+      "name": "stage7a_case_degradation",
+      "outcome": "degradation",
+      "scene_token": "57dc3221a3d845b5ab17ff0f98ce336f",
+      "sample_token": "bf0a32cc77d74655b66ecdd4b9108cf6",
+      "instance_token": "bd9b720ceffc478b8c78dcaf7edf2aa8",
+      "delta": 10.289586067199707,
+      "minFDE6": [
+        6.809325218200684,
+        17.098913192749023
+      ]
+    }
+  ]
+}

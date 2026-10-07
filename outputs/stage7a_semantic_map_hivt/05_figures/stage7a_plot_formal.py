@@ -22,9 +22,16 @@ FIGURES=ROOT/'05_figures'
 
 def export(fig,name,source):
     fig.canvas.draw();renderer=fig.canvas.get_renderer();bounds=fig.bbox
-    clipped=[]
+    clipped=[];undrawn=set()
+    # Matplotlib marks out-of-view Tick labels visible although Axis.draw excludes them.
+    for ax in fig.axes:
+        for axis,limits in ((ax.xaxis,ax.get_xlim()),(ax.yaxis,ax.get_ylim())):
+            lower,upper=sorted(limits)
+            for tick in [*axis.get_major_ticks(),*axis.get_minor_ticks()]:
+                if tick.get_loc()<lower-1e-12 or tick.get_loc()>upper+1e-12:
+                    undrawn.update((tick.label1,tick.label2))
     for obj in fig.findobj(matplotlib.text.Text):
-        if obj.get_visible() and obj.get_text():
+        if obj not in undrawn and obj.get_visible() and obj.get_text():
             box=obj.get_window_extent(renderer)
             if box.x0<bounds.x0-1 or box.y0<bounds.y0-1 or box.x1>bounds.x1+1 or box.y1>bounds.y1+1:clipped.append(obj.get_text())
     assert not clipped,clipped
@@ -33,7 +40,8 @@ def export(fig,name,source):
         if suffix=='svg':path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines())+'\n')
     atomic_json(FIGURES/(name+'_audit.json'),{'status':'PASS','source':source,'backend':'Python matplotlib',
       'width_mm':fig.get_figwidth()*25.4,'height_mm':fig.get_figheight()*25.4,'PNG_dpi':300,
-      'SVG_editable_text':True,'PDF_fonttype':42,'out_of_canvas_text':clipped})
+      'SVG_editable_text':True,'PDF_fonttype':42,'out_of_canvas_text':clipped,
+      'undrawn_outside_axis_tick_labels_ignored':[o.get_text() for o in undrawn if o.get_text()]})
     plt.close(fig)
 
 def comparison(name,groups,labels):
@@ -43,7 +51,7 @@ def comparison(name,groups,labels):
     fig,axes=plt.subplots(1,2,figsize=(183/25.4,85/25.4),gridspec_kw={'width_ratios':[1.15,1]},layout='constrained')
     y=np.arange(len(groups));a=axes[0];a.barh(y-0.16,ci.Stage3B,height=.29,color=BASE,label='Stage3B')
     a.barh(y+0.16,ci.Stage7A,height=.29,color=BLUE,label='Stage7A');a.set_yticks(y,labels);a.invert_yaxis()
-    a.set_xlabel('minFDE6 (m), lower is better');a.legend(loc='lower right',fontsize=6)
+    a.set_xlabel('minFDE6 (m), lower is better');a.legend(loc='upper right',fontsize=6)
     a.set_title('a  Independent trained models',loc='left',fontweight='bold',fontsize=8)
     a=axes[1];delta=ci.delta.to_numpy();low=ci.CI_lower.to_numpy();high=ci.CI_upper.to_numpy()
     # Draw endpoints directly: percentile intervals need not contain the sample estimate.
@@ -101,13 +109,16 @@ def cases():
             ax.add_collection(LineCollection(lanes[s[:,5:8].any(-1)],color=CONTROL,linewidth=1.,alpha=.75,zorder=1))
             for path in p:ax.plot(*np.vstack([history[-1],path]).T,color=BLUE,alpha=.23,lw=.7)
             ax.plot(*np.vstack([history[-1],p[mode]]).T,color=BLUE,lw=1.6,zorder=5)
+            ax.scatter(*p[mode,-1],s=17,facecolors='white',edgecolors=BLUE,linewidths=.9,zorder=10)
             ax.plot(*np.vstack([history[-1],p[first]]).T,color=BLUE,lw=1.1,ls='--',zorder=6)
             ax.plot(*history.T,color='#333333',lw=1.5,zorder=7);ax.plot(*np.vstack([history[-1],gt]).T,color=GT,lw=1.7,zorder=8)
             ax.scatter(*history[-1],s=15,color='#333333',zorder=9);ax.scatter(*gt[-1],s=16,color=GT,zorder=9)
             ax.set_xlim(low[0],high[0]);ax.set_ylim(low[1],high[1]);ax.set_aspect('equal');ax.set_xlabel('Ego x (m)');ax.set_ylabel('Ego y (m)')
             ax.set_title(title+f'  minFDE6={fd:.2f}m',fontsize=8,loc='left')
         outcome='improvement' if row.delta<0 else ('degradation' if row.delta>0 else 'unchanged')
-        figure.suptitle(label.replace('_',' ').capitalize()+f': {outcome}, Δ={row.delta:+.2f}m\n{g.scene_name}; same actor, frozen map and axes',fontsize=8)
+        case_title={'turning_vehicle':'Turning vehicle (GT subgroup)',
+                    'traffic_control':'Traffic-control context','degradation':'Failure case'}[label]
+        figure.suptitle(case_title+f': {outcome}, Δ={row.delta:+.2f}m\n{g.scene_name}; same actor, frozen map and axes',fontsize=8)
         handles=[Line2D([0],[0],color='#333333',lw=1.5,label='History'),Line2D([0],[0],color=GT,lw=1.5,label='GT'),
           Line2D([0],[0],color=BLUE,lw=1.5,label='Best FDE'),Line2D([0],[0],color=BLUE,ls='--',label='Top1'),
           Line2D([0],[0],color=TURN,label='Turn connector'),Line2D([0],[0],color=CONTROL,label='Control-associated lane')]

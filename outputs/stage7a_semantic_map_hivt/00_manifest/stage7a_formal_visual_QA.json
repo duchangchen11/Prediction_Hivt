@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "figures": [
+    {
+      "name": "stage7a_main_fde_comparison",
+      "PNG_visually_reviewed": true,
+      "no_text_clipping": true,
+      "same_source_values": true,
+      "files": {
+        "png": "a41a01488a36c1148a9524d721e68f1b95006f27763e45dbcb268aa550159b42",
+        "pdf": "6571b6f64e13220c21de48b9416b3c57827e8137f832387135fafe2784da9ce5",
+        "svg": "c11556040cbbf163717281f35b903d06de36450d2e85ed45a7245b02d696a834"
+      }
+    },
+    {
+      "name": "stage7a_vehicle_difficulty_groups",
+      "PNG_visually_reviewed": true,
+      "no_text_clipping": true,
+      "same_source_values": true,
+      "files": {
+        "png": "f6834ff0d20c1db0531a9f8913f826dd0d8250dca13e5d4684b8dfda69b0d4f0",
+        "pdf": "1d2fba9de1c96e68eb5831aaf5bdbf17fc92ad96b86aaed792b18390d0709b75",
+        "svg": "4a4467b6b02d2fad4118d302b1ee4a749d87ef52d63c42179ea92aef8d3b1f88"
+      }
+    },
+    {
+      "name": "stage7a_semantic_on_zero",
+      "PNG_visually_reviewed": true,
+      "no_text_clipping": true,
+      "same_source_values": true,
+      "files": {
+        "png": "98ccc1865a681a3e8d762a65b91954128f3a280756768518556ba59c99a193de",
+        "pdf": "e3928f5e0c22648187ce0297cbaffb0dabd2d429d95b7c960b1ca2821f94b067",
+        "svg": "67d080630a087f10847785e9096c6cd8fc3120d852e562d91113728129a2e695"
+      }
+    },
+    {
+      "name": "stage7a_case_turning_vehicle",
+      "PNG_visually_reviewed": true,
+      "no_text_clipping": true,
+      "same_source_values": true,
+      "files": {
+        "png": "8d9f581dbe3a52c7a84e6d1efeefd1a53afea940112b67c7b0e7aa7acd9fd5a4",
+        "pdf": "e117f0cf5ba989653e3a036576d45d5eafc9b924229efbbf8aa2d2ea148f4ecf",
+        "svg": "132741707ca58b9c01ffaa61507444e47dfeb64de9d1acd9dfde6e7ed6819468"
+      }
+    },
+    {
+      "name": "stage7a_case_traffic_control",
+      "PNG_visually_reviewed": true,
+      "no_text_clipping": true,
+      "same_source_values": true,
+      "files": {
+        "png": "6e96308e0e8839856129e3ea912a0edb6e234ce601c3eb34cf547c4a9319d4cb",
+        "pdf": "5e626e6fb988c719076aa6c3e2f8f01c8509708144d62ee33a1230ce37eff954",
+        "svg": "f2c0f6c61043b933a5587f00ff4613d48d91f27809a00387d8fd7f4cc62947a2"
+      }
+    },
+    {
+      "name": "stage7a_case_degradation",
+      "PNG_visually_reviewed": true,
+      "no_text_clipping": true,
+      "same_source_values": true,
+      "files": {
+        "png": "a22e70ab4c0ae275e64846f5a2947627912d69a0c650e5ec6887d54f8434cdac",
+        "pdf": "2fd43e0494cf5fb5426b16c3ba5b45556d354dd453c5bae4a62d501123689d02",
+        "svg": "18079c2d883fe817789859ca0712a2ca73f0925a3399d541ac12a7c704dd3f11"
+      }
+    }
+  ],
+  "cases": "actual6-mode arrays; same actor/GT/map/limits; selected extremes labelled;endpoint rings shown",
+  "legend_overlap_fixed": true,
+  "PDF_TrueType_embedded_and_text_extractable": true,
+  "source_data_available": true,
+  "backend": "Python"
+}

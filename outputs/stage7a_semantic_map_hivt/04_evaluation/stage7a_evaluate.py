@@ -133,7 +133,7 @@ def main():
         assert measured['metrics']['full_horizon']['overall']['count']==54990
         assert measured['metrics']['partial_future']['overall']['count']==30037
         measured.update(fresh_checkpoint_reload=True,checkpoint_sha256=sha256(BASE_BEST if name=='baseline' else BEST),
-                        semantic_setting=name,NaN=0,Inf=0)
+                        semantic_setting=name,semantic_lane_residual=name!='baseline',NaN=0,Inf=0)
         if name=='on':
             selected=saved['metadata']['full_horizon_metrics']
             for group in GROUPS:

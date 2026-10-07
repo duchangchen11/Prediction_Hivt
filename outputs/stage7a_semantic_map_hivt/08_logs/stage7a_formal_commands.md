@@ -8,6 +8,8 @@ PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outp
 PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage7a_semantic_map_hivt/03_training/stage7a_train.py
 PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage7a_semantic_map_hivt/04_evaluation/stage7a_evaluate.py
 PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage7a_semantic_map_hivt/04_evaluation/stage7a_residual_efficiency.py
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage7a_semantic_map_hivt/05_figures/stage7a_plot_formal.py
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage7a_semantic_map_hivt/09_reports/stage7a_formal_finalize.py
 ```
 
 Training restores its own phase checkpoint after interruption. A completed run is not repeated.

@@ -1,6 +1,6 @@
 """Actual learned semantic residual and 500 paired forward measurements."""
 from pathlib import Path
-import sys,time
+import sys,time,copy
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'00_manifest'))
 from stage7a_formal_common import *
 from stage3b_common import model_new as baseline_new
@@ -55,21 +55,23 @@ def main():
     ds.clear();timings={'Stage3B':[],'Stage7A':[]};peaks={'Stage3B':[],'Stage7A':[]};incremental={'Stage3B':[],'Stage7A':[]}
     for b in batches:
         data=b.cuda()
-        for _ in range(3):baseline(data);model(data)
-        del data
+        base_data=copy.copy(data);del base_data.lane_semantic
+        for _ in range(3):baseline(base_data);model(data)
+        del base_data,data
     torch.cuda.synchronize();torch.cuda.empty_cache()
     for pair in range(500):
         data=batches[pair%len(batches)].cuda();torch.cuda.synchronize()
-        order=[('Stage3B',baseline),('Stage7A',model)]
+        base_data=copy.copy(data);del base_data.lane_semantic
+        order=[('Stage3B',baseline,base_data),('Stage7A',model,data)]
         if pair%2:order.reverse()
-        for name,m in order:
+        for name,m,working in order:
             torch.cuda.reset_peak_memory_stats();initial=torch.cuda.memory_allocated()
             start=torch.cuda.Event(enable_timing=True);end=torch.cuda.Event(enable_timing=True)
-            start.record();out=m(data);end.record();end.synchronize()
+            start.record();out=m(working);end.record();end.synchronize()
             timings[name].append(float(start.elapsed_time(end)))
             peaks[name].append(torch.cuda.max_memory_allocated()/2**20)
             incremental[name].append((torch.cuda.max_memory_allocated()-initial)/2**20);del out
-        del data
+        del order,working,base_data,data
         if (pair+1)%100==0:print('PAIRED_LATENCY',pair+1,flush=True)
     count_base=sum(p.numel() for p in baseline.parameters());rows=[]
     for name,m in [('Stage3B',baseline),('Stage7A',model)]:
@@ -78,7 +80,7 @@ def main():
           'mean_forward_ms':float(np.mean(timings[name])),'median_forward_ms':float(np.median(timings[name])),
           'peak_CUDA_allocated_MiB':float(max(peaks[name])),'peak_forward_increment_MiB':float(max(incremental[name])),
           'device':torch.cuda.get_device_name(),'batch_size':16,'unique_VAL_batches':8,
-          'benchmark':'CUDA events; synchronized; alternating method order; both models resident; data loading excluded; warmed8batches3pairs'})
+          'benchmark':'CUDA events; synchronized; alternating order; both models resident; baseline original fields and Stage7A augmented fields share original tensors; data loading excluded; warmed8batches3pairs'})
     write_csv(efficiency_path,rows)
     write_csv(ROOT/'06_tables/stage7a_efficiency_paired_measurements.csv',[
       {'pair':i+1,'batch':i%8,'Stage3B_ms':timings['Stage3B'][i],'Stage7A_ms':timings['Stage7A'][i]} for i in range(500)])

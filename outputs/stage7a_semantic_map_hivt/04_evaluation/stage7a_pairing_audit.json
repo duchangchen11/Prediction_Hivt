@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "paired_actor_windows": 85027,
+  "full_horizon": 54990,
+  "partial": 30037,
+  "NaN": 0,
+  "Inf": 0,
+  "identity_fields": [
+    "scene_token",
+    "sample_token",
+    "instance_token",
+    "horizon",
+    "node_in_graph",
+    "GT_trajectory_sha256",
+    "future_mask_bits",
+    "agent_type_id",
+    "agent_type",
+    "motion_state",
+    "valid_future_steps"
+  ],
+  "Stage3B_checkpoint_sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+  "Stage7A_checkpoint_sha256": "e30b7dbe7260ef5765e10f95d5eadf58e42f480e79f15b58a3b149a9d271abc1",
+  "baseline_actor_sha256": "cba16b925db791d513d30abc1d0a369eea9360bed2881be8b2e090f320def817",
+  "ON_actor_sha256": "2c64d0903d85d5c70533c5498e0f59df8f06dee130d07498e5f7994fc8d1bdd4",
+  "ZERO_actor_sha256": "be5b87b46b116e04e6e109dbb4e9233c204625a32518633f2e9b710c759233eb"
+}
