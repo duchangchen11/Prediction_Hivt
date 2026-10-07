@@ -1,0 +1,8 @@
+**/__pycache__/
+**/*.tmp
+07_checkpoints/*.pt
+08_logs/*.log
+04_evaluation/*actor*.csv
+04_evaluation/*.npz
+00_manifest/stage7d_git_upload_*.json
+04_evaluation/stage7d_val_step_*.json

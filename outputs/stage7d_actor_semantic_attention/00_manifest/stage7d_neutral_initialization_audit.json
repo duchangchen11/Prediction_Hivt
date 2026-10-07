@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "max_shared_parameter_diff": 0.0,
+  "shared_buffers_bitwise_equal": true,
+  "output_max_differences": {
+    "raw_prediction": 0.0,
+    "mode_logits": 0.0,
+    "mode_prob": 0.0
+  },
+  "baseline_shared_state_sha256": "bbd3245d253200531ccc2734f31fe1cfd4f50efca1f817787c655f2bad37e90a",
+  "parameters": 646745,
+  "baseline_parameters": 646001,
+  "additional_parameters": 744,
+  "increase_percent": 0.11517010035588181,
+  "real_TRAIN_batch_graphs": 6,
+  "trained_checkpoint_loaded": false,
+  "canonical_constructor": "stage3b_common.model_new(audit=False)",
+  "device": "CUDA",
+  "deterministic_algorithms_for_neutral_comparison": true,
+  "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+  "training_keeps_original_Stage3B_kernel_policy": true,
+  "original_attention_score_max_diff": 0.0,
+  "initial_bias_exact_zero": true,
+  "post_constructor_CPU_RNG_identical": true,
+  "edge_z_semantic_rotation_actor_type_exact": true,
+  "nonzero_bias_semantic_perturbation_KV_max_differences": {
+    "lin_k": 0.0,
+    "lin_v": 0.0
+  }
+}

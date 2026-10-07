@@ -1,0 +1,1476 @@
+你现在执行：
+
+============================================================
+Stage7D：
+Actor-Conditioned Semantic Lane Attention Bias
+基于参与者条件的道路语义注意力偏置
+============================================================
+
+项目路径：
+
+/home/lrj/Prediction_Hivt
+
+基础commit：
+
+Stage7C最新：
+
+7df27d2091425c6836a66d6987714b1d9569efb5
+
+新建分支：
+
+stage7d/actor-conditioned-semantic-attention
+
+============================================================
+0. 当前已冻结事实
+============================================================
+
+Stage3B TypeEmbedding：
+
+Overall minFDE6 = 1.343260
+Overall Top1FDE6 = 2.687984
+
+checkpoint SHA256：
+
+461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547
+
+
+Stage7A Semantic Residual：
+
+Overall minFDE6 = 1.350546
+Overall Top1FDE6 = 2.749482
+
+SemanticMap = NOT_SUPPORTED
+PaperUsableSemantic = NO
+ReadyStage7B = NO
+
+
+Stage7C诊断：
+
+FailurePattern = RELEVANCE_MISALLOCATION
+SemanticRoute = CONTINUE
+RecommendSemanticAttentionModel = YES
+
+这些历史结论全部冻结，不允许改写。
+
+============================================================
+1. 本阶段唯一研究问题
+============================================================
+
+Stage7A失败的一个候选解释是：
+
+semantic residual直接改变lane representation，
+同时改变K/V及attention分布，
+导致GT相关lane attention下降。
+
+Stage7D只验证：
+
+如果完全保持geometry-only lane representation，
+只允许semantic信息影响
+actor-lane attention score，
+
+是否能够：
+
+1. 保持或改善Overall预测；
+2. 改善Moving Vehicle；
+3. 改善Turning Vehicle；
+4. 改善GT相关lane注意力分配。
+
+============================================================
+2. 本阶段严格禁止
+============================================================
+
+禁止：
+
+Stage5A residual decoder
+Stage6A R1/R2
+Stage4A relation bias
+Stage4F gate
+
+semantic residual加到lane embedding
+
+semantic修改Value
+semantic修改geometry Key
+
+decoder修改
+GlobalInteractor修改
+
+traffic-light动态状态
+camera/VLM
+intent head
+
+oversampling
+class-balanced loss
+
+多组MLP宽度
+多种semantic feature组合
+超参数搜索
+
+test split
+
+============================================================
+3. 正式baseline
+============================================================
+
+唯一primary baseline：
+
+Stage3B TypeEmbedding。
+
+Stage7D必须：
+
+from scratch
+seed=2022
+
+禁止：
+
+加载Stage3B训练后权重。
+
+Stage3B checkpoint只用于：
+
+最终正式比较。
+
+============================================================
+4. Semantic输入继续冻结
+============================================================
+
+严格复用Stage7A的9维lane semantic：
+
+0 is_connector
+1 turn_left
+2 turn_straight
+3 turn_right
+4 turn_unknown
+5 traffic_light_controlled
+6 stop_sign_controlled
+7 other_control
+8 crosswalk_intersects
+
+禁止重新定义。
+
+禁止修改：
+
+20°转向阈值
+150° unknown阈值
+crosswalk intersects规则
+traffic control association
+
+============================================================
+5. 核心结构原则
+============================================================
+
+原始Stage3B actor-lane attention：
+
+score_ilh =
+Q_ih · K_lh / sqrt(d_head)
+
+alpha_ilh =
+softmax_l(score_ilh)
+
+Stage7D改为：
+
+score_ilh =
+Q_ih · K_lh / sqrt(d_head)
++
+b_ilh_sem
+
+alpha_ilh =
+softmax_l(score_ilh)
+
+除此之外全部不变。
+
+============================================================
+6. 最重要限制：Value保持纯geometry
+============================================================
+
+必须保证：
+
+K_l
+V_l
+
+来自原始Stage3B：
+
+lane geometry
++
+lane_actor relative geometry
++
+原有全0categorical base
+
+Stage7D semantic不得：
+
+加到lane embedding
+加到K
+加到V
+修改gate输入
+修改FFN输入
+
+semantic唯一作用位置：
+
+softmax之前的attention logits。
+
+============================================================
+7. Actor-Conditioned Semantic Bias输入
+============================================================
+
+对每条lane→actor edge：
+
+构造：
+
+z_il = [
+    lane_semantic_l,          # 9
+    relative_x_il / 50,      # 1
+    relative_y_il / 50,      # 1
+    actor_type_onehot_i       # 3
+]
+
+总维数：
+
+14。
+
+relative_x / relative_y：
+
+必须使用和原ALEncoder一致的
+目标actor局部旋转坐标系。
+
+即：
+
+将lane_actor_vector
+用目标actor rotate_mat转换。
+
+不能使用未来信息。
+
+============================================================
+8. Actor type
+============================================================
+
+actor type one-hot：
+
+vehicle = [1,0,0]
+pedestrian = [0,1,0]
+bicycle = [0,0,1]
+
+只使用已有：
+
+data.agent_type。
+
+============================================================
+9. Semantic Bias Network
+============================================================
+
+正式唯一结构：
+
+Linear(14,32)
+ReLU
+Linear(32,8)
+
+因为：
+
+num_heads = 8。
+
+输出：
+
+b_il_sem ∈ R^8
+
+每个attention head独立得到一个bias。
+
+理论新增参数：
+
+14×32 + 32
++
+32×8 + 8
+
+=
+
+744 parameters。
+
+程序重新统计实际值。
+
+Stage3B：
+
+646001 params
+
+预计Stage7D：
+
+646745 params
+
+约：
+
++0.115%
+
+以程序统计为准。
+
+============================================================
+10. Neutral Initialization
+============================================================
+
+Semantic Bias MLP最后一层：
+
+weight = 0
+bias = 0
+
+因此初始：
+
+b_il_sem = 0
+
+从而：
+
+Stage7D(step0)
+
+必须严格等价：
+
+Stage3B(step0)。
+
+============================================================
+11. RNG初始化审计
+============================================================
+
+必须防止新增MLP提前消耗RNG，
+导致Stage3B共享参数初始化不同。
+
+要求：
+
+seed2022下：
+
+Stage3B和Stage7D
+全部共享参数逐参数：
+
+max_abs_diff = 0。
+
+建议：
+
+先完整初始化canonical Stage3B，
+
+再附加SemanticBiasMLP。
+
+============================================================
+12. Step0输出审计
+============================================================
+
+至少使用：
+
+6个真实TRAIN graphs。
+
+model.eval()
+
+要求：
+
+raw_prediction max diff <1e-6
+
+mode_logits max diff <1e-6
+
+mode_prob max diff <1e-6
+
+最好exact zero。
+
+同时比较：
+
+原attention score
+Stage7D attention score
+
+因为bias=0，
+
+要求相同。
+
+NeutralAudit = PASS
+
+否则禁止训练。
+
+============================================================
+13. 原runtime隔离
+============================================================
+
+尽量不要修改：
+
+models/hivt_runtime/local_encoder.py
+
+建议独立实现：
+
+outputs/stage7d_actor_semantic_attention/
+00_manifest/
+
+stage7d_model.py
+stage7d_local_encoder.py
+stage7d_dataset.py
+stage7d_common.py
+
+历史runtime保持只读。
+
+============================================================
+14. 数据
+============================================================
+
+直接复用：
+
+Stage3 official TRAIN700
+Stage3 official VAL150
+
+以及：
+
+Stage7A已验证semantic cache。
+
+禁止重新生成：
+
+history
+future
+GT
+lane geometry
+lane_actor_index
+actor identities
+
+============================================================
+15. 数据完整性
+============================================================
+
+随机：
+
+100 TRAIN windows
+100 VAL windows
+
+比较Stage3B与Stage7D：
+
+x
+positions
+y
+padding_mask
+bos_mask
+edge_index
+lane_vectors
+lane_positions
+lane_actor_index
+lane_actor_vectors
+rotate_angles
+future_mask
+agent_type
+
+全部必须：
+
+bitwise identical。
+
+唯一允许额外存在：
+
+lane_semantic。
+
+============================================================
+16. Gradient Audit
+============================================================
+
+因为最后Linear zero-init：
+
+update 1：
+
+SemanticBias最后层
+必须出现finite nonzero gradient。
+
+第一层update1可能为0，
+允许。
+
+要求10 updates以内：
+
+SemanticBias第一层和最后层：
+
+finite
+nonzero gradient。
+
+同时：
+
+LocalEncoder
+TypeEmbedding
+GlobalInteractor
+Decoder
+
+梯度正常。
+
+============================================================
+17. Attention Bias数值审计
+============================================================
+
+训练前：
+
+bias = 0。
+
+训练过程中每500step记录：
+
+mean |bias|
+
+median |bias|
+
+95 percentile |bias|
+
+max |bias|
+
+按：
+
+Overall edge
+Vehicle-target edge
+Pedestrian-target edge
+Bicycle-target edge
+
+统计。
+
+防止bias爆炸。
+
+============================================================
+18. Tiny Overfit
+============================================================
+
+正式训练前：
+
+使用固定6个TRAIN windows。
+
+必须覆盖：
+
+vehicle
+pedestrian
+bicycle
+vehicle.moving
+turning connector
+traffic control
+crosswalk
+
+运行：
+
+200 fixed-scale updates。
+
+检查：
+
+loss下降
+semantic bias从0变为非0
+attention发生有限变化
+无NaN/Inf
+
+不允许根据tiny结果改结构。
+
+============================================================
+19. 正式训练协议
+============================================================
+
+严格复制Stage3B / Stage7A：
+
+seed = 2022
+
+TRAIN700
+VAL150
+test unused
+
+Th = 5
+Tf = 12
+K = 6
+
+batch = 16
+embed = 64
+heads = 8
+
+temporal layers = 4
+global layers = 3
+
+dropout = 0.1
+
+local radius = 50m
+
+AdamW
+weight_decay = 1e-4
+
+natural V/P/B distribution
+
+============================================================
+20. Phase 1
+============================================================
+
+Fixed-scale location warmup：
+
+5000 updates
+
+LR：
+
+0.001
+
+每500 updates：
+
+完整VAL150。
+
+选择：
+
+Overall full-horizon minFDE6。
+
+保存：
+
+Stage7D warmup best。
+
+============================================================
+21. Phase 2
+============================================================
+
+从：
+
+Stage7D自己的warmup best
+
+恢复：
+
+model
+optimizer
+RNG
+
+然后：
+
+original learnable Laplace NLL
+
+LR：
+
+0.0001
+
+最大NLL：
+
+16000 updates
+
+global hard maximum：
+
+21000。
+
+============================================================
+22. Early Stop
+============================================================
+
+每500 updates：
+
+完整VAL150。
+
+primary：
+
+Overall full-horizon minFDE6
+
+strict improvement。
+
+patience：
+
+5个完整VAL。
+
+保存：
+
+stage7d_best_overall_minfde.pt
+
+stage7d_last.pt
+
+============================================================
+23. 禁止依据subgroup选checkpoint
+============================================================
+
+不得依据：
+
+MovingVehicle
+TurningVehicle
+NearTurn
+Vehicle>5m
+Top1FDE
+
+挑checkpoint。
+
+checkpoint selection唯一依据：
+
+Overall minFDE6。
+
+============================================================
+24. Final Evaluation
+============================================================
+
+fresh reload best checkpoint。
+
+确认：
+
+VAL scenes = 150
+
+supervised windows = 3603
+
+full-horizon targets = 54990
+
+partial targets = 30037
+
+total = 85027
+
+NaN = 0
+Inf = 0。
+
+============================================================
+25. 主结果
+============================================================
+
+比较：
+
+Stage3B
+vs
+Stage7D
+
+报告：
+
+minADE6
+minFDE6
+MR6
+Top1ADE6
+Top1FDE6
+NLL
+
+Groups：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+Vehicle >5m
+
+Pedestrian <5m
+Pedestrian >5m
+
+============================================================
+26. Semantic重点组
+============================================================
+
+完全复用既有定义：
+
+IntersectionVehicle20
+
+NearTurnConnector20
+
+NearTrafficControl20
+
+TurningVehicle_GT
+
+GT-left
+GT-right
+
+禁止改变定义。
+
+============================================================
+27. TurningVehicle_GT
+============================================================
+
+继续使用：
+
+Count = 1663
+
+offline only。
+
+报告：
+
+minADE
+minFDE
+MR
+Top1ADE
+Top1FDE
+
+不得作为训练输入。
+
+============================================================
+28. Attention机制验证
+============================================================
+
+复用Stage7C instrumentation。
+
+正式比较：
+
+Stage3B
+vs
+Stage7D
+
+指标：
+
+GTRelevantAttentionMass2m
+
+GTRelevantAttentionMass4m
+
+GTNearestAttentionRank
+
+AttentionEntropy
+
+Top1LaneGTDistance
+
+Top3MinGTDistance
+
+Top5MinGTDistance
+
+============================================================
+29. Turning Attention
+============================================================
+
+TurningVehicle_GT：
+
+继续报告：
+
+CorrectTurnAttentionMass
+
+OppositeTurnAttentionMass
+
+StraightAttentionMass
+
+TopConnectorTurnMatchRate
+
+分别：
+
+Turning overall
+GT-left
+GT-right。
+
+============================================================
+30. 这次最重要的机制指标
+============================================================
+
+Stage7C发现：
+
+Turning correct-turn mass：
+
+Stage3B：
+0.167866
+
+Stage7A：
+0.136127
+
+TopConnectorMatch：
+
+Stage3B：
+0.445580
+
+Stage7A：
+0.268190
+
+Stage7D需要检查：
+
+是否向Stage3B甚至更好方向恢复。
+
+但是：
+
+这些不能用于checkpoint选择。
+
+============================================================
+31. Bias行为分析
+============================================================
+
+按semantic type统计最终：
+
+mean semantic bias
+
+每head：
+
+left
+straight
+right
+unknown
+
+traffic_light
+stop_sign
+other_control
+crosswalk
+
+ordinary lane
+
+connector。
+
+仅描述。
+
+不能解释为物理因果。
+
+============================================================
+32. Actor Type Bias分析
+============================================================
+
+分别统计：
+
+vehicle-target
+
+pedestrian-target
+
+bicycle-target
+
+对相同semantic lane的：
+
+mean bias。
+
+验证：
+
+Actor-conditioned机制
+确实产生不同条件响应。
+
+============================================================
+33. Attention Delta vs Error
+============================================================
+
+与Stage7C相同：
+
+计算：
+
+DeltaRelevantMass
+vs
+DeltaMinFDE
+
+DeltaRelevantMass
+vs
+DeltaTop1FDE
+
+Turning：
+
+DeltaCorrectTurnMass
+vs
+DeltaMinFDE。
+
+Spearman仅描述性。
+
+============================================================
+34. Bootstrap
+============================================================
+
+paired scene-cluster bootstrap：
+
+150 scenes
+
+1000 replicates
+
+seed2022。
+
+Primary：
+
+Overall minFDE6。
+
+Secondary：
+
+Vehicle minFDE
+Pedestrian minFDE
+vehicle.moving minFDE
+Vehicle >5m minFDE
+
+IntersectionVehicle20 minFDE
+NearTurnConnector20 minFDE
+NearTrafficControl20 minFDE
+TurningVehicle_GT minFDE
+
+Overall Top1FDE
+
+GTRelevantAttentionMass2m
+
+Turning CorrectTurnMass
+
+TopConnectorMatchRate。
+
+============================================================
+35. Stage7D支持判定
+============================================================
+
+Stage7D = SUPPORTED
+
+要求：
+
+Overall：
+
+Delta minFDE
+=
+Stage7D - Stage3B
+
+< 0
+
+且：
+
+95% CI upper < 0
+
+同时：
+
+Vehicle/Pedestrian
+不存在明显可靠退化。
+
+============================================================
+36. Targeted Support
+============================================================
+
+Stage7D = TARGETED_SUPPORTED
+
+允许Overall基本持平：
+
+Overall相对Stage3B
+退化不超过0.5%
+
+且：
+
+Overall minFDE CI包含0，
+
+同时以下困难组至少两个：
+
+vehicle.moving
+Vehicle >5m
+NearTurnConnector20
+TurningVehicle_GT
+
+出现：
+
+可靠minFDE改善
+
+并且：
+
+Vehicle overall
+Pedestrian overall
+
+没有可靠恶化。
+
+============================================================
+37. NOT SUPPORTED
+============================================================
+
+其他情况：
+
+Stage7D = NOT_SUPPORTED。
+
+如果NOT_SUPPORTED：
+
+SemanticRoute = STOP
+
+以后不再训练新的semantic架构。
+
+============================================================
+38. Mechanism Support
+============================================================
+
+单独给：
+
+AttentionMechanism = SUPPORTED / PARTIAL / NOT_SUPPORTED
+
+SUPPORTED要求至少：
+
+Vehicle或MovingVehicle：
+
+GTRelevantMass2m可靠提高
+
+并且：
+
+Turning correct-turn mass
+或
+TopConnectorMatchRate
+
+至少一个可靠提高。
+
+注意：
+
+机制支持不能替代预测性能支持。
+
+============================================================
+39. PaperUsableSemantic
+============================================================
+
+PaperUsableSemantic = YES
+
+仅当：
+
+Stage7D =
+SUPPORTED
+
+或：
+
+TARGETED_SUPPORTED。
+
+否则：
+
+NO。
+
+============================================================
+40. Future Reliability融合
+============================================================
+
+本轮禁止运行R2。
+
+只有：
+
+PaperUsableSemantic = YES
+
+才：
+
+ReadySemanticReranking = YES。
+
+未来另外授权：
+
+Stage7E：
+
+Stage7D predictor
++
+Future Interaction Reliability。
+
+============================================================
+41. 如果Stage7D失败
+============================================================
+
+如果：
+
+Stage7D = NOT_SUPPORTED
+
+则正式记录：
+
+Semantic modeling experiments
+Stage7A + Stage7D
+did not produce reliable forecasting gains
+under the frozen protocol.
+
+然后：
+
+停止semantic路线。
+
+论文主模型回到：
+
+Stage6A R2。
+
+不再训练：
+
+semantic V2/V3
+GNN gate
+semantic cross-attention
+dynamic signal model。
+
+============================================================
+42. 效率
+============================================================
+
+比较：
+
+Stage3B
+Stage7D
+
+记录：
+
+parameters
+
+parameter increase %
+
+mean forward latency
+
+median forward latency
+
+peak CUDA memory。
+
+500 paired forward measurements。
+
+============================================================
+43. 输出目录
+============================================================
+
+创建：
+
+outputs/stage7d_actor_semantic_attention/
+
+00_manifest/
+01_data_audit/
+02_model_audit/
+03_training/
+04_evaluation/
+05_figures/
+06_tables/
+07_checkpoints/
+08_logs/
+09_reports/
+
+============================================================
+44. 表格
+============================================================
+
+至少输出：
+
+06_tables/
+
+stage7d_main_results.csv
+
+stage7d_vehicle_motion_results.csv
+
+stage7d_semantic_subgroup_results.csv
+
+stage7d_attention_relevance.csv
+
+stage7d_turn_attention.csv
+
+stage7d_bias_statistics.csv
+
+stage7d_bootstrap_ci.csv
+
+stage7d_efficiency.csv
+
+============================================================
+45. 图
+============================================================
+
+至少：
+
+stage7d_main_fde_comparison
+
+Stage3B vs Stage7D：
+
+Overall
+Vehicle
+Pedestrian
+MovingVehicle
+
+----------------------------------------
+
+stage7d_difficult_vehicle_groups
+
+Vehicle >5m
+NearTurnConnector20
+TurningVehicle_GT
+
+----------------------------------------
+
+stage7d_attention_relevance
+
+Stage3B
+Stage7A
+Stage7D
+
+GTRelevantMass2m
+
+----------------------------------------
+
+stage7d_turn_attention
+
+Correct
+Opposite
+Straight
+
+----------------------------------------
+
+至少3个case：
+
+turning improvement
+
+moving vehicle improvement
+
+failure/degradation。
+
+============================================================
+46. 重要案例要求
+============================================================
+
+案例只能用于解释。
+
+不能从案例推出总体结论。
+
+保持：
+
+相同actor
+相同GT
+相同lane geometry
+相同axis limits。
+
+显示：
+
+Stage3B attention
+
+Stage7D attention
+
+lane turn semantics
+
+GT trajectory
+
+Stage3B prediction
+
+Stage7D prediction。
+
+============================================================
+47. Final Report
+============================================================
+
+输出：
+
+09_reports/
+stage7d_final_report.md
+
+结构：
+
+【Motivation】
+
+Stage7C发现什么。
+
+【Architecture】
+
+score-only semantic bias。
+
+【Neutral Initialization】
+
+【Data Integrity】
+
+【Training】
+
+【Main Forecasting Results】
+
+【Moving Vehicle】
+
+【Turning Vehicle】
+
+【Attention Relevance】
+
+【Turn Consistency】
+
+【Bias Interpretation】
+
+【Bootstrap】
+
+【Efficiency】
+
+【Limitations】
+
+必须说明：
+
+静态semantic
+无动态灯态
+derived turn labels
+offline GT groups
+one seed
+VAL checkpoint selection
+
+【Scientific Decision】
+
+Stage7D =
+SUPPORTED /
+TARGETED_SUPPORTED /
+NOT_SUPPORTED
+
+AttentionMechanism =
+SUPPORTED /
+PARTIAL /
+NOT_SUPPORTED
+
+PaperUsableSemantic =
+YES / NO
+
+SemanticRoute =
+CONTINUE / STOP
+
+ReadySemanticReranking =
+YES / NO
+
+============================================================
+48. Git
+============================================================
+
+建议提交：
+
+feat: add neutral actor-conditioned semantic attention bias
+
+test: verify exact Stage3B neutral initialization
+
+exp: train Stage7D semantic attention model
+
+eval: evaluate forecasting and GT-relative lane attention
+
+docs: finalize Stage7D semantic attention report
+
+push：
+
+stage7d/actor-conditioned-semantic-attention
+
+禁止merge main。
+
+============================================================
+49. 完成后只汇报
+============================================================
+
+Git commit=
+
+Checkpoint SHA=
+
+Parameters=
+
+Additional parameters=
+
+Neutral audit=
+PASS / FAIL
+
+Data identity audit=
+PASS / FAIL
+
+Best global step=
+
+Stop reason=
+
+Overall minFDE:
+Stage3B=
+Stage7D=
+Delta=
+CI=
+
+Vehicle minFDE:
+Stage3B=
+Stage7D=
+Delta=
+CI=
+
+Pedestrian minFDE:
+Stage3B=
+Stage7D=
+Delta=
+CI=
+
+Moving Vehicle minFDE:
+Stage3B=
+Stage7D=
+Delta=
+CI=
+
+Vehicle >5m:
+Stage3B=
+Stage7D=
+Delta=
+CI=
+
+NearTurnConnector20:
+Stage3B=
+Stage7D=
+Delta=
+CI=
+
+TurningVehicle_GT:
+Stage3B=
+Stage7D=
+Delta=
+CI=
+
+Overall Top1FDE:
+Stage3B=
+Stage7D=
+Delta=
+CI=
+
+GTRelevantMass2m:
+Stage3B=
+Stage7A=
+Stage7D=
+Stage7D-B delta/CI=
+
+Turning CorrectTurnMass:
+Stage3B=
+Stage7A=
+Stage7D=
+Delta/CI=
+
+TopConnectorMatchRate:
+Stage3B=
+Stage7A=
+Stage7D=
+Delta/CI=
+
+Mean |semantic bias|=
+
+Stage7D =
+SUPPORTED /
+TARGETED_SUPPORTED /
+NOT_SUPPORTED
+
+AttentionMechanism =
+SUPPORTED /
+PARTIAL /
+NOT_SUPPORTED
+
+PaperUsableSemantic =
+YES / NO
+
+SemanticRoute =
+CONTINUE / STOP
+
+ReadySemanticReranking =
+YES / NO
+
+完成后STOP。
+
+绝对不要运行Stage7E/R2。
+等待大脑AI审查。

@@ -1,0 +1,71 @@
+{
+  "registered_utc": "2026-10-07T12:52:24.523472+00:00",
+  "training_authorized": true,
+  "Stage7E_authorized": false,
+  "Stage7B_authorized": false,
+  "R2_authorized": false,
+  "from_scratch": true,
+  "formal_runs": 1,
+  "seed": 2022,
+  "config_sha256": "ab62c653bf8a6d93d259d83e711b52fd4a2c87d39a331db6f69c065049992ce3",
+  "training_source_sha256": {
+    "00_manifest/stage7d_dataset.py": "353b1481039538e995128015102fbb81a73a3d85e985068aa49109a9068f73cb",
+    "00_manifest/stage7d_model.py": "703e90496f300c579940343505975264c428eff3c8c55686d84cad65ef06ef56",
+    "00_manifest/stage7d_local_encoder.py": "38c247df41c204c1f7116256c3a5ecd7359d017a713f821b413eda5c5af89e69",
+    "00_manifest/stage7d_common.py": "43cd560eb58b3b9c946677f2fcd0f97a58105da29ca8e60b566fbf6ccad86b02",
+    "00_manifest/stage7d_evaluation_core.py": "e9b73b9fdb487b1e7a1e13017d0c2a243e6367146f5d975dcf15a548f299e8b8",
+    "00_manifest/stage7d_bias_statistics.py": "f872455f552573f597968dfb8cfc8a01eee8f6744da7f65fcd006ba96214a542",
+    "03_training/stage7d_train.py": "48db041f443d8814cb126071725f5412baffa7c6a5c96246391c080910693a94"
+  },
+  "semantic_fields": [
+    "is_connector",
+    "turn_left",
+    "turn_straight",
+    "turn_right",
+    "turn_unknown",
+    "traffic_light_controlled",
+    "stop_sign_controlled",
+    "other_control",
+    "crosswalk_intersects"
+  ],
+  "metadata_source": "Stage7A audited cache, no regeneration",
+  "baseline_checkpoint_sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+  "baseline_checkpoint_used_for_initialization": false,
+  "group_sidecar_sha256": "7cc42ebd3348a90df9258aa6756c17ffc27e091824d7545468683cf1178a4653",
+  "baseline_attention_sidecar_sha256": "42a549e27f24b157983d051dcbc09625d650c829ab81a47224e591e349338df3",
+  "offline_only": [
+    "GT trajectory",
+    "turn direction",
+    "semantic subgroup masks",
+    "errors"
+  ],
+  "warmup_updates": 5000,
+  "NLL_updates_max": 16000,
+  "global_hard_max": 21000,
+  "validation_interval": 500,
+  "patience": 5,
+  "primary_selection": "original-NLL overall full-horizon VAL minFDE6 strict improvement",
+  "bootstrap": {
+    "unit": "whole official VAL scene",
+    "scenes": 150,
+    "replicates": 1000,
+    "seed": 2022,
+    "pooling": "paired actor-window sums/counts",
+    "interval": "percentile2.5/97.5",
+    "delta": "Stage7D minus Stage3B"
+  },
+  "scientific_rules": {
+    "marked_reliable_harm_SUPPORTED": "Vehicle or Pedestrian relative minFDE increase>5% AND paired CI lower>0; same Stage7A guard",
+    "SUPPORTED": "Overall delta<0 and upper<0; no marked reliable Vehicle/Pedestrian harm",
+    "TARGETED_SUPPORTED": "Overall increase<=0.5%, CI includes0; >=2 of Moving,Vehicle>5m,NearTurn,Turning upper<0; neither Vehicle nor Pedestrian lower>0",
+    "AttentionMechanism_SUPPORTED": "Vehicle OR Moving relevant-mass2m lower>0 AND Turning correct-mass OR connector-match lower>0",
+    "AttentionMechanism_PARTIAL": "exactly one of those two reliable-improvement legs; otherwise NOT_SUPPORTED",
+    "PaperUsableSemantic": "YES iff SUPPORTED/TARGETED_SUPPORTED; SemanticRoute and ReadySemanticReranking follow this only",
+    "secondary_multiplicity": "unadjusted exploratory overlapping subgroup CIs, no independent replication claim"
+  },
+  "primary_attention_population": "Overall Vehicle; Moving is prespecified secondary",
+  "nearest_rank_definition": "Stage7C all-current-graph lanes, absent edges weight0, average ties; lowest-index GT argmin",
+  "bias_audit": "every500 updates all retained VAL edges and 8 heads; exact absolute mean/median/p95/max by actor type",
+  "tiny": "fixed6 TRAIN graphs/200 fixed-scale updates; fresh constructor for formal train",
+  "test_used": false
+}
