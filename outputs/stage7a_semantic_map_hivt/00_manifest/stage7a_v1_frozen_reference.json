@@ -1,0 +1,43 @@
+{
+  "status": "FROZEN",
+  "git_commit": "e43347c2c2cd356775f4e0bb59fcf7dbda76f2b5",
+  "git_tag": "paper-v1-stage6a-r2",
+  "annotated_tag_object": "bd70aeb7d61ec624f2559438b9ef5670d8c1e564",
+  "tag_message": "Freeze paper V1: Stage5A + future interaction reliability R2",
+  "files": {
+    "Stage5A_checkpoint": {
+      "path": "outputs/stage5a_motion_aware_decoder/07_checkpoints/stage5a_best_overall_minfde.pt",
+      "sha256": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7"
+    },
+    "R2_checkpoint": {
+      "path": "outputs/stage6a_future_interaction_reliability/07_checkpoints/stage6a_r2_best.pt",
+      "sha256": "e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314"
+    },
+    "Stage6A_config": {
+      "path": "outputs/stage6a_future_interaction_reliability/00_manifest/stage6a_config.json",
+      "sha256": "fe097f01f021e7cbf6503c877baa2ab01b2cf1b59f4a7a7325063cb250c0f31c"
+    },
+    "Stage6A_normalization": {
+      "path": "outputs/stage6a_future_interaction_reliability/02_features/stage6a_normalization.json",
+      "sha256": "be045dc0ad0d1198bcfa8f8c270ab77297984597ee6891516e5f84ccc4e9b2d2"
+    },
+    "Stage6A_report": {
+      "path": "outputs/stage6a_future_interaction_reliability/09_reports/stage6a_final_report.md",
+      "sha256": "84ead326a14e9571e6a2ae06e4051e1aeea2dc1d6f1064dcc0d05d822e207c07"
+    },
+    "Stage6A_actor_results": {
+      "path": "outputs/stage6a_future_interaction_reliability/04_evaluation/stage6a_actor_ranking.csv",
+      "sha256": "2184908eff7b0788d388f2dfe85d41df13a32efd601d2d18c1c78524bed8cbe2"
+    }
+  },
+  "scientific_conclusions": {
+    "ReliabilityHead": "SUPPORTED",
+    "FutureInteractionContribution": "SUPPORTED",
+    "PaperUsableReliability": "YES",
+    "RecommendedFinalVariant": "R2"
+  },
+  "checkpoint_copied": false,
+  "training_authorized": false,
+  "tag_remote_status": "BLOCKED_LOCAL_GIT_AUTHENTICATION",
+  "tag_remote_blocker": "HTTPS no configured credential; existing SSH agent has no identities; GitHub connector exposes branch/object writes but no annotated tag/ref creation."
+}

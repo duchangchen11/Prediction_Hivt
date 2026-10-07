@@ -1,0 +1,4028 @@
+{
+  "status": "RAW_AND_API_READ",
+  "locations": {
+    "boston-seaport": {
+      "source_path": "/home/lrj/datasets/nuscenes-mini/expansion/boston-seaport.json",
+      "sha256": "fc33712481efd763be39ce7edca0ec924d2d1fe20e1c89d52e21bf43d86e6b59",
+      "version": "1.3",
+      "layers": {
+        "lane": {
+          "raw_record_fields": {
+            "from_edge_line_token": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            },
+            "lane_type": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            },
+            "left_lane_divider_segments": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            },
+            "right_lane_divider_segments": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "list"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "list"
+              ]
+            },
+            "from_edge_line_token": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            },
+            "holes": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "list"
+              ]
+            },
+            "lane_type": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            },
+            "left_lane_divider_segment_nodes": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "list"
+              ]
+            },
+            "left_lane_divider_segments": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            },
+            "right_lane_divider_segment_nodes": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "list"
+              ]
+            },
+            "right_lane_divider_segments": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "list"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 1215,
+              "non_null": 1215,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 1215
+        },
+        "lane_connector": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 1631,
+              "non_null": 1631,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 1631,
+              "non_null": 1631,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "polygon_token": {
+              "present": 1631,
+              "non_null": 1631,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 1631,
+              "non_null": 1631,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 1631
+        },
+        "stop_line": {
+          "raw_record_fields": {
+            "ped_crossing_tokens": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "string"
+              ]
+            },
+            "stop_line_type": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_tokens": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "cue": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "list"
+              ]
+            },
+            "exterior_node_tokens": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "list"
+              ]
+            },
+            "ped_crossing_tokens": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "string"
+              ]
+            },
+            "stop_line_type": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_tokens": {
+              "present": 775,
+              "non_null": 775,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "count": 775
+        },
+        "traffic_light": {
+          "raw_record_fields": {
+            "from_road_block_token": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "string"
+              ]
+            },
+            "items": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "string"
+              ]
+            },
+            "pose": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "object"
+              ]
+            },
+            "token": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_type": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "from_road_block_token": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "string"
+              ]
+            },
+            "items": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "list"
+              ]
+            },
+            "pose": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "object"
+              ]
+            },
+            "token": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_type": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 307,
+          "items_fields": {
+            "color": {
+              "present": 987,
+              "non_null": 987,
+              "types": [
+                "string"
+              ]
+            },
+            "rel_pos": {
+              "present": 987,
+              "non_null": 987,
+              "types": [
+                "object"
+              ]
+            },
+            "shape": {
+              "present": 987,
+              "non_null": 987,
+              "types": [
+                "string"
+              ]
+            },
+            "to_road_block_tokens": {
+              "present": 987,
+              "non_null": 987,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "pose_fields": {
+            "rx": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "number"
+              ]
+            },
+            "ry": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "number"
+              ]
+            },
+            "rz": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "number"
+              ]
+            },
+            "tx": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "number"
+              ]
+            },
+            "ty": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "number"
+              ]
+            },
+            "tz": {
+              "present": 307,
+              "non_null": 307,
+              "types": [
+                "number"
+              ]
+            }
+          }
+        },
+        "ped_crossing": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 340,
+              "non_null": 340,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 340,
+              "non_null": 340,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 340,
+              "non_null": 340,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 340,
+              "non_null": 340,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 340,
+              "non_null": 340,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 340,
+              "non_null": 340,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 340,
+              "non_null": 340,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 340,
+              "non_null": 340,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 340
+        },
+        "walkway": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 301,
+              "non_null": 301,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 301,
+              "non_null": 301,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 301,
+              "non_null": 301,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 301,
+              "non_null": 301,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 301,
+              "non_null": 301,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 301,
+              "non_null": 301,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 301
+        },
+        "road_segment": {
+          "raw_record_fields": {
+            "drivable_area_token": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "string"
+              ]
+            },
+            "is_intersection": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "bool"
+              ]
+            },
+            "polygon_token": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "drivable_area_token": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "string"
+              ]
+            },
+            "exterior_node_tokens": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "list"
+              ]
+            },
+            "is_intersection": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "bool"
+              ]
+            },
+            "polygon_token": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 928,
+              "non_null": 928,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 928
+        },
+        "road_block": {
+          "raw_record_fields": {
+            "from_edge_line_token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            },
+            "polygon_token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "list"
+              ]
+            },
+            "from_edge_line_token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            },
+            "holes": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 969,
+              "non_null": 969,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 969
+        },
+        "lane_divider": {
+          "raw_record_fields": {
+            "lane_divider_segments": {
+              "present": 671,
+              "non_null": 671,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 671,
+              "non_null": 671,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 671,
+              "non_null": 671,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "lane_divider_segments": {
+              "present": 671,
+              "non_null": 671,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 671,
+              "non_null": 671,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 671,
+              "non_null": 671,
+              "types": [
+                "list"
+              ]
+            },
+            "token": {
+              "present": 671,
+              "non_null": 671,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 671
+        },
+        "road_divider": {
+          "raw_record_fields": {
+            "line_token": {
+              "present": 377,
+              "non_null": 377,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 377,
+              "non_null": 377,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 377,
+              "non_null": 377,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "line_token": {
+              "present": 377,
+              "non_null": 377,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 377,
+              "non_null": 377,
+              "types": [
+                "list"
+              ]
+            },
+            "road_segment_token": {
+              "present": 377,
+              "non_null": 377,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 377,
+              "non_null": 377,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 377
+        },
+        "carpark_area": {
+          "raw_record_fields": {
+            "orientation": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "number"
+              ]
+            },
+            "polygon_token": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "list"
+              ]
+            },
+            "orientation": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "number"
+              ]
+            },
+            "polygon_token": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 275,
+              "non_null": 275,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 275
+        }
+      },
+      "top_level_fields": [
+        "arcline_path_3",
+        "canvas_edge",
+        "carpark_area",
+        "connectivity",
+        "drivable_area",
+        "lane",
+        "lane_connector",
+        "lane_divider",
+        "line",
+        "node",
+        "ped_crossing",
+        "polygon",
+        "road_block",
+        "road_divider",
+        "road_segment",
+        "stop_line",
+        "traffic_light",
+        "version",
+        "walkway"
+      ],
+      "unavailable_fields": {
+        "lane.turn_type": "NOT AVAILABLE",
+        "lane_connector.turn_type": "NOT AVAILABLE",
+        "stop_line.lane_token": "NOT AVAILABLE",
+        "traffic_light.lane_token": "NOT AVAILABLE",
+        "traffic_light.current_signal_state": "NOT AVAILABLE",
+        "traffic_light.future_signal_state": "NOT AVAILABLE"
+      },
+      "traffic_light_static_pose_quality": {
+        "all_zero_xy_count": 0,
+        "items_color_is_static_lens_descriptor": true,
+        "dynamic_signal_state_available": false
+      },
+      "arcline_path_3": {
+        "key_count": 2846,
+        "raw_record_fields": {
+          "end_pose": {
+            "present": 3819,
+            "non_null": 3819,
+            "types": [
+              "list"
+            ]
+          },
+          "radius": {
+            "present": 3819,
+            "non_null": 3819,
+            "types": [
+              "number"
+            ]
+          },
+          "segment_length": {
+            "present": 3819,
+            "non_null": 3819,
+            "types": [
+              "list"
+            ]
+          },
+          "shape": {
+            "present": 3819,
+            "non_null": 3819,
+            "types": [
+              "string"
+            ]
+          },
+          "start_pose": {
+            "present": 3819,
+            "non_null": 3819,
+            "types": [
+              "list"
+            ]
+          }
+        }
+      },
+      "connectivity": {
+        "key_count": 2846,
+        "raw_record_fields": {
+          "incoming": {
+            "present": 2846,
+            "non_null": 2846,
+            "types": [
+              "list"
+            ]
+          },
+          "outgoing": {
+            "present": 2846,
+            "non_null": 2846,
+            "types": [
+              "list"
+            ]
+          }
+        }
+      }
+    },
+    "singapore-hollandvillage": {
+      "source_path": "/home/lrj/datasets/nuscenes-mini/expansion/singapore-hollandvillage.json",
+      "sha256": "0c9209c277686e367b06ab5bbe2547ba357f7f790365cb4927f44ae0f78266b2",
+      "version": "1.3",
+      "layers": {
+        "lane": {
+          "raw_record_fields": {
+            "from_edge_line_token": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            },
+            "lane_type": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            },
+            "left_lane_divider_segments": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            },
+            "right_lane_divider_segments": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "list"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "list"
+              ]
+            },
+            "from_edge_line_token": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            },
+            "holes": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "list"
+              ]
+            },
+            "lane_type": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            },
+            "left_lane_divider_segment_nodes": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "list"
+              ]
+            },
+            "left_lane_divider_segments": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            },
+            "right_lane_divider_segment_nodes": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "list"
+              ]
+            },
+            "right_lane_divider_segments": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "list"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 601,
+              "non_null": 601,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 601
+        },
+        "lane_connector": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 719,
+              "non_null": 719,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 719,
+              "non_null": 719,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "polygon_token": {
+              "present": 719,
+              "non_null": 719,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 719,
+              "non_null": 719,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 719
+        },
+        "stop_line": {
+          "raw_record_fields": {
+            "ped_crossing_tokens": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 300,
+              "non_null": 182,
+              "types": [
+                "null",
+                "string"
+              ]
+            },
+            "stop_line_type": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_tokens": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "cue": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "list"
+              ]
+            },
+            "exterior_node_tokens": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "list"
+              ]
+            },
+            "ped_crossing_tokens": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 300,
+              "non_null": 182,
+              "types": [
+                "null",
+                "string"
+              ]
+            },
+            "stop_line_type": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_tokens": {
+              "present": 300,
+              "non_null": 300,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "count": 300
+        },
+        "traffic_light": {
+          "raw_record_fields": {
+            "from_road_block_token": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "string"
+              ]
+            },
+            "items": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "string"
+              ]
+            },
+            "pose": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "object"
+              ]
+            },
+            "token": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_type": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "from_road_block_token": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "string"
+              ]
+            },
+            "items": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "list"
+              ]
+            },
+            "pose": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "object"
+              ]
+            },
+            "token": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_type": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 119,
+          "items_fields": {
+            "color": {
+              "present": 375,
+              "non_null": 375,
+              "types": [
+                "string"
+              ]
+            },
+            "rel_pos": {
+              "present": 375,
+              "non_null": 375,
+              "types": [
+                "object"
+              ]
+            },
+            "shape": {
+              "present": 375,
+              "non_null": 375,
+              "types": [
+                "string"
+              ]
+            },
+            "to_road_block_tokens": {
+              "present": 375,
+              "non_null": 375,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "pose_fields": {
+            "rx": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "number"
+              ]
+            },
+            "ry": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "number"
+              ]
+            },
+            "rz": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "number"
+              ]
+            },
+            "tx": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "number"
+              ]
+            },
+            "ty": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "number"
+              ]
+            },
+            "tz": {
+              "present": 119,
+              "non_null": 119,
+              "types": [
+                "number"
+              ]
+            }
+          }
+        },
+        "ped_crossing": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 28,
+              "non_null": 28,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 28,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 28,
+              "non_null": 28,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 28,
+              "non_null": 28,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 28,
+              "non_null": 28,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 28,
+              "non_null": 28,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 28,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 28,
+              "non_null": 28,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 28
+        },
+        "walkway": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 498,
+              "non_null": 498,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 498,
+              "non_null": 498,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 498,
+              "non_null": 498,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 498,
+              "non_null": 498,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 498,
+              "non_null": 498,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 498,
+              "non_null": 498,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 498
+        },
+        "road_segment": {
+          "raw_record_fields": {
+            "drivable_area_token": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "string"
+              ]
+            },
+            "is_intersection": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "bool"
+              ]
+            },
+            "polygon_token": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "drivable_area_token": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "string"
+              ]
+            },
+            "exterior_node_tokens": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "list"
+              ]
+            },
+            "is_intersection": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "bool"
+              ]
+            },
+            "polygon_token": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 167,
+              "non_null": 167,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 167
+        },
+        "road_block": {
+          "raw_record_fields": {
+            "from_edge_line_token": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "string"
+              ]
+            },
+            "polygon_token": {
+              "present": 387,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "road_segment_token": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "string"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "list"
+              ]
+            },
+            "from_edge_line_token": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "string"
+              ]
+            },
+            "holes": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 387,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "road_segment_token": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "string"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 387,
+              "non_null": 387,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 387
+        },
+        "lane_divider": {
+          "raw_record_fields": {
+            "lane_divider_segments": {
+              "present": 220,
+              "non_null": 220,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 220,
+              "non_null": 220,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 220,
+              "non_null": 220,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "lane_divider_segments": {
+              "present": 220,
+              "non_null": 220,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 220,
+              "non_null": 220,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 220,
+              "non_null": 220,
+              "types": [
+                "list"
+              ]
+            },
+            "token": {
+              "present": 220,
+              "non_null": 220,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 220
+        },
+        "road_divider": {
+          "raw_record_fields": {
+            "line_token": {
+              "present": 107,
+              "non_null": 107,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 107,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 107,
+              "non_null": 107,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "line_token": {
+              "present": 107,
+              "non_null": 107,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 107,
+              "non_null": 107,
+              "types": [
+                "list"
+              ]
+            },
+            "road_segment_token": {
+              "present": 107,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 107,
+              "non_null": 107,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 107
+        },
+        "carpark_area": {
+          "raw_record_fields": {},
+          "api_record_fields": {},
+          "count": 0
+        }
+      },
+      "top_level_fields": [
+        "arcline_path_3",
+        "canvas_edge",
+        "carpark_area",
+        "connectivity",
+        "drivable_area",
+        "lane",
+        "lane_connector",
+        "lane_divider",
+        "line",
+        "node",
+        "ped_crossing",
+        "polygon",
+        "road_block",
+        "road_divider",
+        "road_segment",
+        "stop_line",
+        "traffic_light",
+        "version",
+        "walkway"
+      ],
+      "unavailable_fields": {
+        "lane.turn_type": "NOT AVAILABLE",
+        "lane_connector.turn_type": "NOT AVAILABLE",
+        "stop_line.lane_token": "NOT AVAILABLE",
+        "traffic_light.lane_token": "NOT AVAILABLE",
+        "traffic_light.current_signal_state": "NOT AVAILABLE",
+        "traffic_light.future_signal_state": "NOT AVAILABLE"
+      },
+      "traffic_light_static_pose_quality": {
+        "all_zero_xy_count": 119,
+        "items_color_is_static_lens_descriptor": true,
+        "dynamic_signal_state_available": false
+      },
+      "arcline_path_3": {
+        "key_count": 1320,
+        "raw_record_fields": {
+          "end_pose": {
+            "present": 1689,
+            "non_null": 1689,
+            "types": [
+              "list"
+            ]
+          },
+          "radius": {
+            "present": 1689,
+            "non_null": 1689,
+            "types": [
+              "number"
+            ]
+          },
+          "segment_length": {
+            "present": 1689,
+            "non_null": 1689,
+            "types": [
+              "list"
+            ]
+          },
+          "shape": {
+            "present": 1689,
+            "non_null": 1689,
+            "types": [
+              "string"
+            ]
+          },
+          "start_pose": {
+            "present": 1689,
+            "non_null": 1689,
+            "types": [
+              "list"
+            ]
+          }
+        }
+      },
+      "connectivity": {
+        "key_count": 1320,
+        "raw_record_fields": {
+          "incoming": {
+            "present": 1320,
+            "non_null": 1320,
+            "types": [
+              "list"
+            ]
+          },
+          "outgoing": {
+            "present": 1320,
+            "non_null": 1320,
+            "types": [
+              "list"
+            ]
+          }
+        }
+      }
+    },
+    "singapore-onenorth": {
+      "source_path": "/home/lrj/datasets/nuscenes-mini/expansion/singapore-onenorth.json",
+      "sha256": "17939122b940d7faff50fa7ff623ded7f739549a781c32dff1ecd1ac7bebca02",
+      "version": "1.3",
+      "layers": {
+        "lane": {
+          "raw_record_fields": {
+            "from_edge_line_token": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            },
+            "lane_type": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            },
+            "left_lane_divider_segments": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            },
+            "right_lane_divider_segments": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "list"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "list"
+              ]
+            },
+            "from_edge_line_token": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            },
+            "holes": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "list"
+              ]
+            },
+            "lane_type": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            },
+            "left_lane_divider_segment_nodes": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "list"
+              ]
+            },
+            "left_lane_divider_segments": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            },
+            "right_lane_divider_segment_nodes": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "list"
+              ]
+            },
+            "right_lane_divider_segments": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "list"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 936,
+              "non_null": 936,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 936
+        },
+        "lane_connector": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 1066,
+              "non_null": 1066,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 1066,
+              "non_null": 1066,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "polygon_token": {
+              "present": 1066,
+              "non_null": 1066,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 1066,
+              "non_null": 1066,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 1066
+        },
+        "stop_line": {
+          "raw_record_fields": {
+            "ped_crossing_tokens": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "string"
+              ]
+            },
+            "stop_line_type": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_tokens": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "cue": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "list"
+              ]
+            },
+            "exterior_node_tokens": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "list"
+              ]
+            },
+            "ped_crossing_tokens": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "string"
+              ]
+            },
+            "stop_line_type": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_tokens": {
+              "present": 451,
+              "non_null": 451,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "count": 451
+        },
+        "traffic_light": {
+          "raw_record_fields": {
+            "from_road_block_token": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "string"
+              ]
+            },
+            "items": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "string"
+              ]
+            },
+            "pose": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "object"
+              ]
+            },
+            "token": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_type": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "from_road_block_token": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "string"
+              ]
+            },
+            "items": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "list"
+              ]
+            },
+            "pose": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "object"
+              ]
+            },
+            "token": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_type": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 127,
+          "items_fields": {
+            "color": {
+              "present": 443,
+              "non_null": 443,
+              "types": [
+                "string"
+              ]
+            },
+            "rel_pos": {
+              "present": 443,
+              "non_null": 443,
+              "types": [
+                "object"
+              ]
+            },
+            "shape": {
+              "present": 443,
+              "non_null": 443,
+              "types": [
+                "string"
+              ]
+            },
+            "to_road_block_tokens": {
+              "present": 443,
+              "non_null": 443,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "pose_fields": {
+            "rx": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "number"
+              ]
+            },
+            "ry": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "number"
+              ]
+            },
+            "rz": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "number"
+              ]
+            },
+            "tx": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "number"
+              ]
+            },
+            "ty": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "number"
+              ]
+            },
+            "tz": {
+              "present": 127,
+              "non_null": 127,
+              "types": [
+                "number"
+              ]
+            }
+          }
+        },
+        "ped_crossing": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 120,
+              "non_null": 120,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 120,
+              "non_null": 120,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 120,
+              "non_null": 120,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 120,
+              "non_null": 120,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 120,
+              "non_null": 120,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 120,
+              "non_null": 120,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 120,
+              "non_null": 120,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 120,
+              "non_null": 120,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 120
+        },
+        "walkway": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 838,
+              "non_null": 838,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 838,
+              "non_null": 838,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 838,
+              "non_null": 838,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 838,
+              "non_null": 838,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 838,
+              "non_null": 838,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 838,
+              "non_null": 838,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 838
+        },
+        "road_segment": {
+          "raw_record_fields": {
+            "drivable_area_token": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "string"
+              ]
+            },
+            "is_intersection": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "bool"
+              ]
+            },
+            "polygon_token": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "drivable_area_token": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "string"
+              ]
+            },
+            "exterior_node_tokens": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "list"
+              ]
+            },
+            "is_intersection": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "bool"
+              ]
+            },
+            "polygon_token": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 783,
+              "non_null": 783,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 783
+        },
+        "road_block": {
+          "raw_record_fields": {
+            "from_edge_line_token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            },
+            "polygon_token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "list"
+              ]
+            },
+            "from_edge_line_token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            },
+            "holes": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 645,
+              "non_null": 645,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 645
+        },
+        "lane_divider": {
+          "raw_record_fields": {
+            "lane_divider_segments": {
+              "present": 357,
+              "non_null": 357,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 357,
+              "non_null": 357,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 357,
+              "non_null": 357,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "lane_divider_segments": {
+              "present": 357,
+              "non_null": 357,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 357,
+              "non_null": 357,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 357,
+              "non_null": 357,
+              "types": [
+                "list"
+              ]
+            },
+            "token": {
+              "present": 357,
+              "non_null": 357,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 357
+        },
+        "road_divider": {
+          "raw_record_fields": {
+            "line_token": {
+              "present": 152,
+              "non_null": 152,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 152,
+              "non_null": 152,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 152,
+              "non_null": 152,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "line_token": {
+              "present": 152,
+              "non_null": 152,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 152,
+              "non_null": 152,
+              "types": [
+                "list"
+              ]
+            },
+            "road_segment_token": {
+              "present": 152,
+              "non_null": 152,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 152,
+              "non_null": 152,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 152
+        },
+        "carpark_area": {
+          "raw_record_fields": {
+            "orientation": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "number"
+              ]
+            },
+            "polygon_token": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "list"
+              ]
+            },
+            "orientation": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "number"
+              ]
+            },
+            "polygon_token": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 39,
+              "non_null": 39,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 39
+        }
+      },
+      "top_level_fields": [
+        "arcline_path_3",
+        "canvas_edge",
+        "carpark_area",
+        "connectivity",
+        "drivable_area",
+        "lane",
+        "lane_connector",
+        "lane_divider",
+        "line",
+        "node",
+        "ped_crossing",
+        "polygon",
+        "road_block",
+        "road_divider",
+        "road_segment",
+        "stop_line",
+        "traffic_light",
+        "version",
+        "walkway"
+      ],
+      "unavailable_fields": {
+        "lane.turn_type": "NOT AVAILABLE",
+        "lane_connector.turn_type": "NOT AVAILABLE",
+        "stop_line.lane_token": "NOT AVAILABLE",
+        "traffic_light.lane_token": "NOT AVAILABLE",
+        "traffic_light.current_signal_state": "NOT AVAILABLE",
+        "traffic_light.future_signal_state": "NOT AVAILABLE"
+      },
+      "traffic_light_static_pose_quality": {
+        "all_zero_xy_count": 0,
+        "items_color_is_static_lens_descriptor": true,
+        "dynamic_signal_state_available": false
+      },
+      "arcline_path_3": {
+        "key_count": 2002,
+        "raw_record_fields": {
+          "end_pose": {
+            "present": 2595,
+            "non_null": 2595,
+            "types": [
+              "list"
+            ]
+          },
+          "radius": {
+            "present": 2595,
+            "non_null": 2595,
+            "types": [
+              "number"
+            ]
+          },
+          "segment_length": {
+            "present": 2595,
+            "non_null": 2595,
+            "types": [
+              "list"
+            ]
+          },
+          "shape": {
+            "present": 2595,
+            "non_null": 2595,
+            "types": [
+              "string"
+            ]
+          },
+          "start_pose": {
+            "present": 2595,
+            "non_null": 2595,
+            "types": [
+              "list"
+            ]
+          }
+        }
+      },
+      "connectivity": {
+        "key_count": 2002,
+        "raw_record_fields": {
+          "incoming": {
+            "present": 2002,
+            "non_null": 2002,
+            "types": [
+              "list"
+            ]
+          },
+          "outgoing": {
+            "present": 2002,
+            "non_null": 2002,
+            "types": [
+              "list"
+            ]
+          }
+        }
+      }
+    },
+    "singapore-queenstown": {
+      "source_path": "/home/lrj/datasets/nuscenes-mini/expansion/singapore-queenstown.json",
+      "sha256": "c7e75f5a5643c4831aae1c99a0fdcc61e9ba3c01f98d922f0fafa34ea1062927",
+      "version": "1.3",
+      "layers": {
+        "lane": {
+          "raw_record_fields": {
+            "from_edge_line_token": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            },
+            "lane_type": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            },
+            "left_lane_divider_segments": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            },
+            "right_lane_divider_segments": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "list"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "list"
+              ]
+            },
+            "from_edge_line_token": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            },
+            "holes": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "list"
+              ]
+            },
+            "lane_type": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            },
+            "left_lane_divider_segment_nodes": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "list"
+              ]
+            },
+            "left_lane_divider_segments": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            },
+            "right_lane_divider_segment_nodes": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "list"
+              ]
+            },
+            "right_lane_divider_segments": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "list"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 910,
+              "non_null": 910,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 910
+        },
+        "lane_connector": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 1173,
+              "non_null": 1173,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 1173,
+              "non_null": 1173,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "polygon_token": {
+              "present": 1173,
+              "non_null": 1173,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 1173,
+              "non_null": 1173,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 1173
+        },
+        "stop_line": {
+          "raw_record_fields": {
+            "ped_crossing_tokens": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 437,
+              "non_null": 279,
+              "types": [
+                "null",
+                "string"
+              ]
+            },
+            "stop_line_type": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_tokens": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "cue": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "list"
+              ]
+            },
+            "exterior_node_tokens": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "list"
+              ]
+            },
+            "ped_crossing_tokens": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 437,
+              "non_null": 279,
+              "types": [
+                "null",
+                "string"
+              ]
+            },
+            "stop_line_type": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_tokens": {
+              "present": 437,
+              "non_null": 437,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "count": 437
+        },
+        "traffic_light": {
+          "raw_record_fields": {
+            "from_road_block_token": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "string"
+              ]
+            },
+            "items": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "string"
+              ]
+            },
+            "pose": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "object"
+              ]
+            },
+            "token": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_type": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "from_road_block_token": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "string"
+              ]
+            },
+            "items": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "list"
+              ]
+            },
+            "pose": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "object"
+              ]
+            },
+            "token": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "string"
+              ]
+            },
+            "traffic_light_type": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 81,
+          "items_fields": {
+            "color": {
+              "present": 267,
+              "non_null": 267,
+              "types": [
+                "string"
+              ]
+            },
+            "rel_pos": {
+              "present": 267,
+              "non_null": 267,
+              "types": [
+                "object"
+              ]
+            },
+            "shape": {
+              "present": 267,
+              "non_null": 267,
+              "types": [
+                "string"
+              ]
+            },
+            "to_road_block_tokens": {
+              "present": 267,
+              "non_null": 267,
+              "types": [
+                "list"
+              ]
+            }
+          },
+          "pose_fields": {
+            "rx": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "number"
+              ]
+            },
+            "ry": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "number"
+              ]
+            },
+            "rz": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "number"
+              ]
+            },
+            "tx": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "number"
+              ]
+            },
+            "ty": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "number"
+              ]
+            },
+            "tz": {
+              "present": 81,
+              "non_null": 81,
+              "types": [
+                "number"
+              ]
+            }
+          }
+        },
+        "ped_crossing": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 75,
+              "non_null": 75,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 75,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 75,
+              "non_null": 75,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 75,
+              "non_null": 75,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 75,
+              "non_null": 75,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 75,
+              "non_null": 75,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 75,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 75,
+              "non_null": 75,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 75
+        },
+        "walkway": {
+          "raw_record_fields": {
+            "polygon_token": {
+              "present": 457,
+              "non_null": 457,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 457,
+              "non_null": 457,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 457,
+              "non_null": 457,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 457,
+              "non_null": 457,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 457,
+              "non_null": 457,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 457,
+              "non_null": 457,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 457
+        },
+        "road_segment": {
+          "raw_record_fields": {
+            "drivable_area_token": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "string"
+              ]
+            },
+            "is_intersection": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "bool"
+              ]
+            },
+            "polygon_token": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "drivable_area_token": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "string"
+              ]
+            },
+            "exterior_node_tokens": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "list"
+              ]
+            },
+            "is_intersection": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "bool"
+              ]
+            },
+            "polygon_token": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 260,
+              "non_null": 260,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 260
+        },
+        "road_block": {
+          "raw_record_fields": {
+            "from_edge_line_token": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "string"
+              ]
+            },
+            "polygon_token": {
+              "present": 676,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "road_segment_token": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "string"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "list"
+              ]
+            },
+            "from_edge_line_token": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "string"
+              ]
+            },
+            "holes": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "list"
+              ]
+            },
+            "polygon_token": {
+              "present": 676,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "road_segment_token": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "string"
+              ]
+            },
+            "to_edge_line_token": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 676,
+              "non_null": 676,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 676
+        },
+        "lane_divider": {
+          "raw_record_fields": {
+            "lane_divider_segments": {
+              "present": 257,
+              "non_null": 257,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 257,
+              "non_null": 257,
+              "types": [
+                "string"
+              ]
+            },
+            "token": {
+              "present": 257,
+              "non_null": 257,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "lane_divider_segments": {
+              "present": 257,
+              "non_null": 257,
+              "types": [
+                "list"
+              ]
+            },
+            "line_token": {
+              "present": 257,
+              "non_null": 257,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 257,
+              "non_null": 257,
+              "types": [
+                "list"
+              ]
+            },
+            "token": {
+              "present": 257,
+              "non_null": 257,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 257
+        },
+        "road_divider": {
+          "raw_record_fields": {
+            "line_token": {
+              "present": 172,
+              "non_null": 172,
+              "types": [
+                "string"
+              ]
+            },
+            "road_segment_token": {
+              "present": 172,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 172,
+              "non_null": 172,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "line_token": {
+              "present": 172,
+              "non_null": 172,
+              "types": [
+                "string"
+              ]
+            },
+            "node_tokens": {
+              "present": 172,
+              "non_null": 172,
+              "types": [
+                "list"
+              ]
+            },
+            "road_segment_token": {
+              "present": 172,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 172,
+              "non_null": 172,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 172
+        },
+        "carpark_area": {
+          "raw_record_fields": {
+            "orientation": {
+              "present": 40,
+              "non_null": 40,
+              "types": [
+                "number"
+              ]
+            },
+            "polygon_token": {
+              "present": 40,
+              "non_null": 40,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 40,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 40,
+              "non_null": 40,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "api_record_fields": {
+            "exterior_node_tokens": {
+              "present": 40,
+              "non_null": 40,
+              "types": [
+                "list"
+              ]
+            },
+            "holes": {
+              "present": 40,
+              "non_null": 40,
+              "types": [
+                "list"
+              ]
+            },
+            "orientation": {
+              "present": 40,
+              "non_null": 40,
+              "types": [
+                "number"
+              ]
+            },
+            "polygon_token": {
+              "present": 40,
+              "non_null": 40,
+              "types": [
+                "string"
+              ]
+            },
+            "road_block_token": {
+              "present": 40,
+              "non_null": 0,
+              "types": [
+                "null"
+              ]
+            },
+            "token": {
+              "present": 40,
+              "non_null": 40,
+              "types": [
+                "string"
+              ]
+            }
+          },
+          "count": 40
+        }
+      },
+      "top_level_fields": [
+        "arcline_path_3",
+        "canvas_edge",
+        "carpark_area",
+        "connectivity",
+        "drivable_area",
+        "lane",
+        "lane_connector",
+        "lane_divider",
+        "line",
+        "node",
+        "ped_crossing",
+        "polygon",
+        "road_block",
+        "road_divider",
+        "road_segment",
+        "stop_line",
+        "traffic_light",
+        "version",
+        "walkway"
+      ],
+      "unavailable_fields": {
+        "lane.turn_type": "NOT AVAILABLE",
+        "lane_connector.turn_type": "NOT AVAILABLE",
+        "stop_line.lane_token": "NOT AVAILABLE",
+        "traffic_light.lane_token": "NOT AVAILABLE",
+        "traffic_light.current_signal_state": "NOT AVAILABLE",
+        "traffic_light.future_signal_state": "NOT AVAILABLE"
+      },
+      "traffic_light_static_pose_quality": {
+        "all_zero_xy_count": 81,
+        "items_color_is_static_lens_descriptor": true,
+        "dynamic_signal_state_available": false
+      },
+      "arcline_path_3": {
+        "key_count": 2083,
+        "raw_record_fields": {
+          "end_pose": {
+            "present": 2600,
+            "non_null": 2600,
+            "types": [
+              "list"
+            ]
+          },
+          "radius": {
+            "present": 2600,
+            "non_null": 2600,
+            "types": [
+              "number"
+            ]
+          },
+          "segment_length": {
+            "present": 2600,
+            "non_null": 2600,
+            "types": [
+              "list"
+            ]
+          },
+          "shape": {
+            "present": 2600,
+            "non_null": 2600,
+            "types": [
+              "string"
+            ]
+          },
+          "start_pose": {
+            "present": 2600,
+            "non_null": 2600,
+            "types": [
+              "list"
+            ]
+          }
+        }
+      },
+      "connectivity": {
+        "key_count": 2083,
+        "raw_record_fields": {
+          "incoming": {
+            "present": 2083,
+            "non_null": 2083,
+            "types": [
+              "list"
+            ]
+          },
+          "outgoing": {
+            "present": 2083,
+            "non_null": 2083,
+            "types": [
+              "list"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "source_map_api": {
+    "path": "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/nuscenes/map_expansion/map_api.py",
+    "sha256": "0eb406cfa70acb41cde9b9807b639bf72f83e1b5ba6a836157e5c92e2fec6a67"
+  },
+  "thresholds_adopted": false,
+  "source_map_root": "/home/lrj/Prediction_Hivt/outputs/stage2/map_views/cache/bc39172aef2f",
+  "raw_trainval_mount_available": false
+}

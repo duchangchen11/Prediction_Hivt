@@ -1,0 +1,17 @@
+{
+  "removed_features": [
+    {
+      "feature": "dedicated_yield_control",
+      "source_record_count": 3,
+      "associated_tokens": 5,
+      "reason": "only3 actual map records, insufficient independent source support; not retained as a dedicated future feature",
+      "raw_audit_labels_preserved": true
+    }
+  ],
+  "unavailable_features": [
+    "dynamic_signal_state",
+    "direct_authoritative_lane_control_label"
+  ],
+  "excluded_source": "16 dangling ordinary-lane connectivity links; not consumed by candidate geometry features",
+  "no_values_fabricated": true
+}

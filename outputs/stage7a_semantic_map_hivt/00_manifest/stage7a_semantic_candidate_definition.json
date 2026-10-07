@@ -1,0 +1,55 @@
+{
+  "status": "AUDIT_CANDIDATE_ONLY",
+  "training_authorized": false,
+  "key": [
+    "location",
+    "lane_token"
+  ],
+  "is_connector_dimensions": 1,
+  "turn_classes": [
+    "left",
+    "straight",
+    "right",
+    "unknown"
+  ],
+  "turn_threshold_degrees": 20,
+  "turn_method": "analytic centerline entrance/exit tangents; finer/coarse sampling and map visual verification",
+  "u_turn_unknown_absolute_degrees": 150,
+  "u_turn_reason": "Observed U-turn reverses wrapped sign near +/-180; outside left/straight/right V1 taxonomy, explicitly unknown.",
+  "traffic_control_classes": [
+    "none",
+    "traffic_light",
+    "stop_sign",
+    "yield",
+    "other_control",
+    "mixed_control"
+  ],
+  "traffic_control_dimensions": 6,
+  "mixed_control_reason": "Preserve overlapping actual stop-line types; no invented priority rule or forced 5D labels.",
+  "traffic_control_relation": "whole centerline intersects a source stop_line polygon; static map association, not direct authoritative lane-control annotation",
+  "crosswalk_primary_relation": "whole centerline intersects source ped_crossing polygon",
+  "crosswalk_alternatives_audited_m": [
+    2,
+    5
+  ],
+  "token_semantics_broadcast_to_all_2m_segments": true,
+  "actor_primary_relation": "existing Stage3 lane_actor_index (segment start <50m), then any matching token metadata",
+  "signal_state_fields_created": [],
+  "raw_topology_gap_records_excluded_from_topology_features": true,
+  "yield_candidate": "REMOVED_FROM_RECOMMENDED_FEATURES; raw map audit label retained without substitution",
+  "future_group_definitions_frozen": false,
+  "VAL_performance_threshold_selection": false,
+  "exclusive_control_onehot_scope": "audit bookkeeping of actual categories only; not a frozen future model vector",
+  "removed_candidate_features": [
+    "dedicated_yield_control"
+  ],
+  "recommended_future_feature_candidates": [
+    "is_lane_connector",
+    "turn_type",
+    "static_traffic_light_existence",
+    "static_stop_sign_existence",
+    "other_source_stop_line_existence",
+    "near_ped_crossing"
+  ],
+  "future_model_control_encoding_frozen": false
+}

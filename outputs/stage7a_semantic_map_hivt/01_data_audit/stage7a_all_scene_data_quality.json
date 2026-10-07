@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "TRAIN_scenes": 700,
+  "VAL_scenes": 150,
+  "scene_overlap": 0,
+  "shard_SHA_checked": 850,
+  "windows": {
+    "train": 16930,
+    "val": 3619
+  },
+  "empty_supervision_windows": {
+    "train": 32,
+    "val": 16
+  },
+  "no_current_actor_null_graphs": {
+    "train": 22,
+    "val": 12
+  },
+  "all_empty_graph_scenes": [],
+  "all_candidate_windows_audited": true,
+  "placeholder_lane_segments_checked": 15049131,
+  "nonzero_old_placeholders": {
+    "is_intersections": 0,
+    "turn_directions": 0,
+    "traffic_controls": 0
+  },
+  "NaN_or_Inf_count": 0,
+  "unresolved_segment_tokens": 0,
+  "maximum_global_segment_start_difference_m": 1.5249663263847967e-05,
+  "maximum_global_segment_vector_difference_m": 8.423104436187578e-08,
+  "maximum_roundtrip_difference_m": 3.268496584496461e-13,
+  "maximum_edge_vector_difference_m": 0.0,
+  "map_radius_relation_mismatch_windows": 0,
+  "frozen_VAL_GT_identity_matches": 85027,
+  "full_VAL_actor_count": 54990,
+  "TRAIN_full_actor_count": 290085,
+  "actor_results_SHA256": "2184908eff7b0788d388f2dfe85d41df13a32efd601d2d18c1c78524bed8cbe2",
+  "semantic_metadata_SHA256": "fe37501f3b8ee91be7966a63d2c8e8128573d18fc3c7a5ca0f54e2aaabd87cf5",
+  "all_control_references_valid": true,
+  "segment_identity_match": "joint global start XY and vector XY; resolves repeated arc-junction starts without relaxing tolerances",
+  "raw_topology_unresolved_reference_count": 16,
+  "raw_topology_repaired": false,
+  "raw_topology_used_in_candidate_features": false,
+  "old_model_inference_rerun": false,
+  "new_model_trained": false,
+  "test_used": false,
+  "moving_exposure_sufficient": true,
+  "source_mount_note": "Raw trainval mount absent; audit reuses byte-frozen official trainval shards and metadata SQLite, verifies each map segment against actual regional Map Expansion JSON.",
+  "NaN": 0,
+  "Inf": 0,
+  "frozen_actor_metric_finite_rows": 85027,
+  "frozen_moving_and_displacement_group_count_match": true
+}

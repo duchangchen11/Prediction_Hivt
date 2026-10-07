@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "reviewer": "Codex direct visual review; not independent blinded expert annotation",
+  "random_seed": 2022,
+  "reviewed_counts": {
+    "lane": 10,
+    "connector": 10,
+    "traffic_light": 10,
+    "stop_yield": 10,
+    "crosswalk": 10
+  },
+  "sample_source": "actual observed official trainval token/location and saved scene identities",
+  "checked": [
+    "ordinary lane and connector geometry consistent with source layer",
+    "source typed stop-line polygons intersect real centerlines in traffic-light / stop-sign cases",
+    "actual crossing polygons intersect annotated source token centerlines",
+    "mixed controls preserve overlapping source types",
+    "whole associated control/crossing polygons fit final panel bounds",
+    "global frame and travel-direction arrows preserved",
+    "no dynamic traffic-light state inference"
+  ],
+  "false_geometry_associations_in_inspected_cases": 0,
+  "limitations": [
+    "visual review confirms spatial association only, not authoritative lane-control assignment or actor compliance",
+    "random10 stop/yield subset consists of stop-sign-supported cases; raw3 YIELD records audited separately, dedicated feature removed",
+    "token semantics can be farther from actor than the visible segment start"
+  ],
+  "figures": {
+    "lane": {
+      "path": "05_figures/stage7a_samples_lane.png",
+      "sha256": "721900dd05ccd42a3364ed6b84e778b9645c2b66bd33e45e4a6ecbb0c1cb90e1"
+    },
+    "connector": {
+      "path": "05_figures/stage7a_samples_connector.png",
+      "sha256": "8b7d88af192277ed2a5d61a70dd49bf0d9d3adea198d8b28f0b6a34a77caf219"
+    },
+    "traffic_light": {
+      "path": "05_figures/stage7a_samples_traffic_light.png",
+      "sha256": "779c8e3f4b18e5dd90e9f39d48b741318dc1898bc08d2b16782958bd77717bf4"
+    },
+    "stop_yield": {
+      "path": "05_figures/stage7a_samples_stop_yield.png",
+      "sha256": "a94ba3e2ad348a4bdd8852f5babedf9a69d2c7c643b666e7343f2a11dc7bc27c"
+    },
+    "crosswalk": {
+      "path": "05_figures/stage7a_samples_crosswalk.png",
+      "sha256": "b2c83e5cf7fe226c98961e71edfa22af877d3783cb68d0f72632dcd760eb1add"
+    }
+  }
+}

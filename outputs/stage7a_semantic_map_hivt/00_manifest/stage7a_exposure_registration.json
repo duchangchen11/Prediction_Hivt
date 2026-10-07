@@ -1,0 +1,35 @@
+{
+  "status": "BEFORE_SHARD_EXPOSURE_AND_ERROR_ANALYSIS",
+  "splits": {
+    "train": 700,
+    "val": 150
+  },
+  "target": "full_horizon_mask",
+  "map_radius_m": 50,
+  "primary_crosswalk": "token centerline intersects polygon, inherited to all segments",
+  "traffic_control": "any intersected typed source stop_line (includes TURN_STOP/PED_CROSSING, not only regulatory sign/light)",
+  "intersection_candidates_m": [
+    20,
+    30
+  ],
+  "GT_turning_diagnostic": {
+    "endpoint_displacement_gt_m": 5,
+    "first_last_secant_duration_steps": 2,
+    "minimum_each_secant_m": 0.5,
+    "absolute_heading_change_gt_degrees": 20,
+    "future_GT_for_offline_groups_only": true
+  },
+  "sufficient_moving_exposure_candidate": {
+    "minimum_actor_windows_each_semantic": 100,
+    "minimum_scenes_each_semantic": 10,
+    "minimum_instances_each_semantic": 50,
+    "applies_to": [
+      "train",
+      "val"
+    ],
+    "operational_audit_screen_not_significance_or_power_test": true
+  },
+  "error_metrics_read_from_frozen_CSV": true,
+  "no_model_inference": true,
+  "future_training_group_definitions_frozen": false
+}

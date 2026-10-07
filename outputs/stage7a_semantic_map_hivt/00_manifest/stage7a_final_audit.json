@@ -1,0 +1,51 @@
+{
+  "status": "AUDIT_PASS_TAG_REMOTE_BLOCKED",
+  "stage": "Stage7A-0",
+  "branch": "stage7a/semantic-map-enhancement",
+  "base_commit": "e43347c2c2cd356775f4e0bb59fcf7dbda76f2b5",
+  "frozen_tag": "paper-v1-stage6a-r2",
+  "tag_remote_status": "BLOCKED_LOCAL_GIT_AUTHENTICATION",
+  "map_counts": {
+    "lane": 3662,
+    "lane_connector": 4589,
+    "stop_line": 1963,
+    "traffic_light": 634,
+    "ped_crossing": 563,
+    "walkway": 2094
+  },
+  "connector_turn_counts": {
+    "left": 1104,
+    "straight": 2450,
+    "right": 1023,
+    "unknown": 12
+  },
+  "TurnSemantic": "AVAILABLE",
+  "TrafficControlSemantic": "PARTIAL",
+  "CrosswalkSemantic": "AVAILABLE",
+  "SemanticMapStage7A": "READY",
+  "ready_scope": "only audited static geometric candidate cache; excludes dangling raw topology features, dynamic signal states, and a dedicated sparse-YIELD feature",
+  "RawConnectivitySemantic": "PARTIAL",
+  "training_authorized": false,
+  "previous_files_SHA_unchanged": 1608,
+  "previous_shards_SHA_unchanged": 850,
+  "full_target_counts": {
+    "train": 290085,
+    "val": 54990
+  },
+  "VAL_pairing_full_partial": 85027,
+  "map_api_calls_per_observed_segment": 0,
+  "NaN": 0,
+  "Inf": 0,
+  "onehot": "PASS",
+  "coordinate": "PASS",
+  "candidate_references": "PASS",
+  "raw_topology_references": "PARTIAL_16_DANGLING_LINKS_NOT_CONSUMED",
+  "figure_bundles": 12,
+  "visual_QA": "PASS_AGENT_VISUAL_REVIEW",
+  "model_training_runs": 0,
+  "model_inference_runs": 0,
+  "old_results_modified": false,
+  "test_used": false,
+  "report_sha256": "e7c81966e1eb774c2c94cbfd093ff8a9031d2674774c23dd26759d53777e55e5",
+  "STOP": true
+}

@@ -1,0 +1,20 @@
+{
+  "status": "REGISTERED_BEFORE_PLOT_CODE",
+  "backend": "python",
+  "core_question": "Do real connector geometry and topology support static turn semantics and valid semantic exposure audits?",
+  "archetype": "quantitative histogram and map geometry grids",
+  "exports": [
+    "PNG300dpi",
+    "PDF editable",
+    "SVG editable"
+  ],
+  "turn_examples": "at least20 random connectors per left/straight/right; all if fewer; actual centerline and entrance/exit arrows",
+  "statistics": "map record counts and descriptive actor-window exposure; no performance tuning or causal inference",
+  "integrity": "no smoothing, invented maps, dynamic signal states or trained models",
+  "review_risks": [
+    "angle sign in global and ego frames",
+    "geometric control association is derived, not source lane label",
+    "token-level semantics broadcast to all segments may differ from direct object proximity",
+    "official raw trainval mount currently unavailable; use frozen official scene shards and available original expansion JSON"
+  ]
+}

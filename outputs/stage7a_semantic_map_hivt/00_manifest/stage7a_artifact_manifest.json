@@ -1,0 +1,601 @@
+{
+  "stage": "Stage7A-0",
+  "self_hash_excluded": true,
+  "log_and_transient_git_payload_excluded": true,
+  "artifacts": [
+    {
+      "path": ".gitignore",
+      "bytes": 144,
+      "sha256": "ce3313da7c861a4a68a8de740e4bb30169548eccaad4a2f5066a44ab31454d45",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_authorization.md",
+      "bytes": 684,
+      "sha256": "0fd6ea0911ad6d04ea3a661855b6a8a8ffc7691aab476b0cf4110841532db83e",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_commands.md",
+      "bytes": 4958,
+      "sha256": "fc12f98ecd5862dc2600b6d431479a84bb4b6e15b4685c35300fc6457f3e5f86",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_common.py",
+      "bytes": 2109,
+      "sha256": "ccccca1f92d90774c72f0718a7683eb4bb378b5ef50fd5c5f034c2a503f6c66a",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_environment.json",
+      "bytes": 444,
+      "sha256": "342dffd14740223c9fc97deb874bb1722b610ff0580da81b3b056ef8a6b4d65f",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_exposure_registration.json",
+      "bytes": 1108,
+      "sha256": "f3907b857b7a6e4f43db370ea999447b081d89f0b260f81f54e06243a0a8afca",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_figure_audit.json",
+      "bytes": 6327,
+      "sha256": "0e839e2b0355da570c3720c3ee49ccea0617f8d1a75085456b68e95be1b33f55",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_figure_contract.json",
+      "bytes": 1037,
+      "sha256": "95c37221ac96909351a63b1b590bab574b6318dc0e26683e358dfef7168233d2",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_final_audit.json",
+      "bytes": 1616,
+      "sha256": "0af3fe00cf12c00649d56c797ce1b95f837f70712b47c44bae95703cd77a3061",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_frozen_annotated_tag.txt",
+      "bytes": 210,
+      "sha256": "f31a6c3890f4ff8824fb53f88e8578820aa62f407432ccce4d5ad11b1c7e6ea4",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_frozen_previous.json",
+      "bytes": 342453,
+      "sha256": "0dd96f571f10b6f01b6ca41f77bfb43b456148c2017e7e7ea180a0324fb950b8",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_git_payload.py",
+      "bytes": 1781,
+      "sha256": "0d236f44d78be71d872478bcc6dd6b9a4e795b1867b4fcc41e4eb32a5fab524b",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_pipeline_state.json",
+      "bytes": 185,
+      "sha256": "39acddd734e28eba8fc1099c27522373e5c789b43f03e7f6fd871b6ef72aa42b",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_register.py",
+      "bytes": 3482,
+      "sha256": "9624199cc4be0db7ef84d54b02b25f483509f187401352b57a0d808698d5ca5a",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_requirements.txt",
+      "bytes": 19475,
+      "sha256": "0dc45011fc2b28f06f383b1bc917e466e30b77fc36f8128c5a53715ce75023a9",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_semantic_candidate_definition.json",
+      "bytes": 2105,
+      "sha256": "06928e4f558dbf3d24f7b422e506906059619463a859f516ae6b88fe770200c8",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_v1_frozen_reference.json",
+      "bytes": 2083,
+      "sha256": "7ec67e4462a6793291bf02530d814632b8de9f793e13c04b200dec5ff306b771",
+      "Git_eligible": true
+    },
+    {
+      "path": "00_manifest/stage7a_workspace_freeze_audit.json",
+      "bytes": 1679,
+      "sha256": "461a40ca814824add38442074da1700e5ae2f749bd0a0299645d775d934dee3e",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_actor_train_semantic_context.csv",
+      "bytes": 60607600,
+      "sha256": "ac8ffec2c524de8bd7cbaec6d5beef79014e69a0138533cdc8ee5aa212484cba",
+      "Git_eligible": false
+    },
+    {
+      "path": "01_data_audit/stage7a_actor_val_semantic_context.csv",
+      "bytes": 14497315,
+      "sha256": "e3daa142d4fcff5432c962c898deed639e3ecec5a86c6d2a6e67f3f75d222ca7",
+      "Git_eligible": false
+    },
+    {
+      "path": "01_data_audit/stage7a_all_scene_data_quality.json",
+      "bytes": 1963,
+      "sha256": "aacccd3a9c96cfb1e7053be61ae39b9a3ff04010ead90b2caeab248bbb747946",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_existing_map_feature_audit.md",
+      "bytes": 1960,
+      "sha256": "e57bbfeda96893270b27509fd6a12da63443c7c8afef7e11710d00c2a5a678be",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_exposure_audit.py",
+      "bytes": 19941,
+      "sha256": "f3feb01d3adf2d01b4d8cdcfe51c3399e3dee692e1d74c94bd29148be6e0c2e6",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_map_inventory.py",
+      "bytes": 8908,
+      "sha256": "dfa02a5d383a93b4f8673d1b4a4fb587045d387fa49a01b9325c24aa2e9e5e26",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_map_schema_audit.json",
+      "bytes": 98221,
+      "sha256": "ea99ce0855daf9fecd99764cbbf64d786328c71a78efbae9f3adbfce1d47b4a2",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_map_schema_audit.md",
+      "bytes": 11640,
+      "sha256": "f5568048290ddc23d8d7597428d379cfd5be2b003782bd1d8a206ee428af4d9b",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_removed_semantic_candidates.json",
+      "bytes": 573,
+      "sha256": "bc575afdb7936c881785b52568bba7cac3349593714939dacb6727a7739d5bea",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_semantic_manual_review.json",
+      "bytes": 2136,
+      "sha256": "ad07259a70a2e095a4c93e4c92578ee89ef273498783e0e5dcd190fda7978c52",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_semantic_manual_samples.json",
+      "bytes": 186419,
+      "sha256": "afae49f4b57582ffdbc6eadc1773e5d73eeb732b6c6c4b96cbdf9596e6768466",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_source_topology_gaps.json",
+      "bytes": 3279,
+      "sha256": "a260aa84cfcd5572f01e83e66a8d2025a0492f784a1fcc792e09c6fe94b08a7a",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_turn_geometry_audit.json",
+      "bytes": 497,
+      "sha256": "7d262210cb8b822840905fdc9463a5b2dc921b0d1cd39ac13511de78f3f16662",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_turn_geometry_check.py",
+      "bytes": 3954,
+      "sha256": "0098eda6aea22d0ed86924229ed5f4911fb2456d19d5ca28b06d651946ae6705",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_turn_manual_review.json",
+      "bytes": 1665,
+      "sha256": "7047736902c2d86a7c1ffb7ea20f976f16bbb4739c1ce79a1d8cf99f36a789c1",
+      "Git_eligible": true
+    },
+    {
+      "path": "01_data_audit/stage7a_turn_manual_samples.json",
+      "bytes": 63835,
+      "sha256": "2e1b3c8420957d47c041dc0350e9f4557459e2ea488dbc109f1f156973a3c153",
+      "Git_eligible": true
+    },
+    {
+      "path": "02_semantic_cache/stage7a_cache_manifest.json",
+      "bytes": 98083,
+      "sha256": "01223b19d9232c38b9c3eac2e6caac8a61a444978c6647e6bc781aae39e46912",
+      "Git_eligible": false
+    },
+    {
+      "path": "02_semantic_cache/stage7a_centerlines.npz",
+      "bytes": 4351755,
+      "sha256": "53d305b7136e477ba2cc37075610113e326da9ad575d160d5d31654d107acb32",
+      "Git_eligible": false
+    },
+    {
+      "path": "02_semantic_cache/stage7a_geometry_inventory.json",
+      "bytes": 4723310,
+      "sha256": "3542cac70e1e2d67b21e63bf9f2fef2b386502296079c7a68181eaa8ce78a4e6",
+      "Git_eligible": false
+    },
+    {
+      "path": "02_semantic_cache/stage7a_semantic_cache.py",
+      "bytes": 8970,
+      "sha256": "c0aa9be9474a177395fe1e1d86c3ce54aeba72af75b004f535193823ae320f5d",
+      "Git_eligible": true
+    },
+    {
+      "path": "02_semantic_cache/stage7a_semantic_metadata.json",
+      "bytes": 10868077,
+      "sha256": "fe37501f3b8ee91be7966a63d2c8e8128573d18fc3c7a5ca0f54e2aaabd87cf5",
+      "Git_eligible": false
+    },
+    {
+      "path": "03_training/README.md",
+      "bytes": 66,
+      "sha256": "565f7cc47b3657b65c596310b1878dc888d9e3a95e4b2a4cf1a7fd1a46b4ea07",
+      "Git_eligible": true
+    },
+    {
+      "path": "04_evaluation/README.md",
+      "bytes": 89,
+      "sha256": "d503a26a05d674663034296d11a2f7e9c5cc585fb6b7a9b0b908543eefbede2a",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_connector_angle_distribution.pdf",
+      "bytes": 13287,
+      "sha256": "9d1aabf1a0cb702153e6ac9a2602d03b26c5f037bb4cbef89de7c805c62b63f7",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_connector_angle_distribution.png",
+      "bytes": 83708,
+      "sha256": "d372f89f0b2d60fd73de3f990ca18e7e7e23acaf46c00490372941bf841cf0fe",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_connector_angle_distribution.svg",
+      "bytes": 19976,
+      "sha256": "ef7f7641d96b167303654a0eb1eade84af02794c1e26a27e57a6f4bbf710371c",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_plot_audit.py",
+      "bytes": 9231,
+      "sha256": "74a66dba0c0508c2f9305e895059d847033345c7d646ddc93d8222d65e93ab7d",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_connector.pdf",
+      "bytes": 28728,
+      "sha256": "1910e126ea32c591f86bd49a2665049d7d220cff5ea9ed564b00b4dd693b41f9",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_connector.png",
+      "bytes": 357492,
+      "sha256": "8b7d88af192277ed2a5d61a70dd49bf0d9d3adea198d8b28f0b6a34a77caf219",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_connector.svg",
+      "bytes": 75268,
+      "sha256": "7b286b205d4ce2a21df29aa6406679d8eb35c0dd1b8cc2f8d8c31411549a080b",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_crosswalk.pdf",
+      "bytes": 32424,
+      "sha256": "eb602974ba1d6bb562148fbdb656fbaa0e210c91c6eceded8c81826ed3c1464c",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_crosswalk.png",
+      "bytes": 469821,
+      "sha256": "b2c83e5cf7fe226c98961e71edfa22af877d3783cb68d0f72632dcd760eb1add",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_crosswalk.svg",
+      "bytes": 95979,
+      "sha256": "009e71b415559fe231b3b15fa8c62ee7bcb94e19d716dd874d820303a6b6cebe",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_lane.pdf",
+      "bytes": 24544,
+      "sha256": "b5cc9a9a33c6f9850e37cc330248a437a0748ee3d62422b86375f5c532cc7269",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_lane.png",
+      "bytes": 408871,
+      "sha256": "721900dd05ccd42a3364ed6b84e778b9645c2b66bd33e45e4a6ecbb0c1cb90e1",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_lane.svg",
+      "bytes": 59066,
+      "sha256": "d288c2780a87dc3b1afe49393dc0c25de28aa6cbbf712f0cb2d915deb6c6c02c",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_stop_yield.pdf",
+      "bytes": 27572,
+      "sha256": "8d7249c7f6cbb508aae39b8d981b56588f98aaf756655a27345453836ee9c2b5",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_stop_yield.png",
+      "bytes": 414881,
+      "sha256": "a94ba3e2ad348a4bdd8852f5babedf9a69d2c7c643b666e7343f2a11dc7bc27c",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_stop_yield.svg",
+      "bytes": 69516,
+      "sha256": "b158492c2dc3e757aa3174a2739c3243584a12f1e0db59edf4fe09f817b8b3ea",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_traffic_light.pdf",
+      "bytes": 38306,
+      "sha256": "e308b59ba5f8f69853ce15f4a4d820fb67a2dbf8df13ecea482c5c8405b8abc5",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_traffic_light.png",
+      "bytes": 523901,
+      "sha256": "779c8e3f4b18e5dd90e9f39d48b741318dc1898bc08d2b16782958bd77717bf4",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_samples_traffic_light.svg",
+      "bytes": 123086,
+      "sha256": "2d818fd6efde6fa10eb3927a3bb99a93ab6f0294f47b9f23ba4ee7cf13da1d62",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_boundary_cases.pdf",
+      "bytes": 42980,
+      "sha256": "a3ae79f1d376503e8fba82f42bbcb7023937a1970f947e80d673c1b8f00060e8",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_boundary_cases.png",
+      "bytes": 676206,
+      "sha256": "067584d89afbe4bbb873dd13cd38bd4f52d4f294db4e21446c34b19565085769",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_boundary_cases.svg",
+      "bytes": 138509,
+      "sha256": "5d5f00540cce016bd3e8bfdb40d5a20ee0514359d2c77f45f05a141258e7c136",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_left.pdf",
+      "bytes": 51646,
+      "sha256": "6ba713c1eb5541a7c18875667f41fa5bf0e9fc746eae601ca86a2dc54dc89632",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_left.png",
+      "bytes": 573623,
+      "sha256": "b6ec4a56dc7f110d4296260b8d23f42146eb5a0348bf3fb5fc9a3cb88979bafa",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_left.svg",
+      "bytes": 168459,
+      "sha256": "8f311987c8419b7b20d789e06fe5f40f8f73fc25ba67d8782f3149e83d43cdf0",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_right.pdf",
+      "bytes": 57475,
+      "sha256": "528aa9b8ec276f545005301f4c9492dfb6bf17bda9dfc33579e6698fbf66408c",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_right.png",
+      "bytes": 596691,
+      "sha256": "2326c9b8cc89dd52366a2bcf75b45912eed4872067617e47a5ebf8bf39c772f6",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_right.svg",
+      "bytes": 194541,
+      "sha256": "f30e94aa71687dc029a9397c30ffadae3d35b5ae579b188bce31c579edb9fc7b",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_straight.pdf",
+      "bytes": 57869,
+      "sha256": "bc2e77b52a65354638d217bf5319ca0768c7e3bd5531f8752a2f676703ea0c4c",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_straight.png",
+      "bytes": 579063,
+      "sha256": "3c2933ce5676d6f35484165fb3615ffa3180fd6fae3b262abe16b2b9fd027881",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_manual_straight.svg",
+      "bytes": 198558,
+      "sha256": "fc7610d8a19fe688cdd8ef6cc9014ec9225d9031fff624bfe73f392713b85b88",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_semantics_boston.pdf",
+      "bytes": 18322,
+      "sha256": "c69194c4c73a5cea3c62e5f447eedd5df537481ad592fd736e67d9a224da4c65",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_semantics_boston.png",
+      "bytes": 134673,
+      "sha256": "ee19a07faa91f911d204958ce58e8497989e20505b6a2ac2ca791ae6dddfb20b",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_semantics_boston.svg",
+      "bytes": 26825,
+      "sha256": "67037f79d76e7571def7cf6d6af19e11b70d7d569c324fedf1903ca93456a051",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_semantics_singapore.pdf",
+      "bytes": 19809,
+      "sha256": "bc38536347090a3032c80ec81490f0c0a8a7563ce383eeba0adc4e9739034bb5",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_semantics_singapore.png",
+      "bytes": 129357,
+      "sha256": "375a6364fab1ae3e578ca5d827aeaea51b5a505fb8e5f83c05558227ac408315",
+      "Git_eligible": true
+    },
+    {
+      "path": "05_figures/stage7a_turn_semantics_singapore.svg",
+      "bytes": 31333,
+      "sha256": "ba757170fdcf09e74c5ce665ad456a4a1ef54b1d8f28b7928abaa44fcd93ea8e",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_actor_semantic_exposure.csv",
+      "bytes": 2010,
+      "sha256": "277ee21b00559fb3244841ea2a322d1ae7c466dcf61edc003256b2ca300b02b4",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_analytic_angle_histogram.csv",
+      "bytes": 1671,
+      "sha256": "caf9b0fb6a353047e6fe3dbd8a5e1f681e2f789159be745790e0b0c000521d6c",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_connector_angle_histogram.csv",
+      "bytes": 1669,
+      "sha256": "0179ff65c9b9cca0995ba7ee520bdb5fdb0376cd0d1ea7ff72d2f2a142a8c3b6",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_connector_angles.csv",
+      "bytes": 647790,
+      "sha256": "c369870234085191f9f12997c6352b27bb8e112765085bf35755b4f8b3416507",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_connector_tangent_validation.csv",
+      "bytes": 1118719,
+      "sha256": "adb0163b153a3f62901497e9212e0dd5afa627e3ea0bb13d13a5b309c4b84078",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_control_semantic_statistics.csv",
+      "bytes": 900,
+      "sha256": "51d4fcd9d3c65fddc0c2c266c2384037b70b1ef04844f96cd3f1b185eb53221e",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_crosswalk_coverage.csv",
+      "bytes": 2879,
+      "sha256": "a251bdfa3879f9e4d972b0df1e0d6a7cb00763fc66f1416276eeb1f14488b551",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_intersection_turning_group_candidates.csv",
+      "bytes": 879,
+      "sha256": "fd087c003cb608620be34a69493413615569204992c4d95809fc06a0f3a6dfd7",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_map_geometry_quality.csv",
+      "bytes": 784,
+      "sha256": "4477a435aaddd20c0f6ed8bb5cb3fb496b4adf29e2ebb7f2222360921b01f0f4",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_map_layer_statistics.csv",
+      "bytes": 1593,
+      "sha256": "7f679e613bb5cbadef44cd0065565e93f06ab119fe31292d7768363de93ee65e",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_map_source_reference_audit.csv",
+      "bytes": 3565,
+      "sha256": "98249279dd758a90bb0a66b863ba8c7028c4c7e29c6cf7e42f7ca9d18967160d",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_moving_semantic_sample_counts.csv",
+      "bytes": 554,
+      "sha256": "97c5cb299ffd8d12357df466401abbdfad8691d525fff55db0accd8a45736938",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_scene_map_provenance.csv",
+      "bytes": 115090,
+      "sha256": "dce2364086d58739d082d7b345dba052ec0b970a93ea9ae763a8cf89920ce2a3",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_semantic_context_error_audit.csv",
+      "bytes": 1010,
+      "sha256": "b4ba99d85a1f00cf461ea58cb332e45c7db5ac467e02fd34587e7e15a893fdc4",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_stage3_segment_semantic_coverage.csv",
+      "bytes": 5804,
+      "sha256": "1eb37ca82b41b6a475469c263b0b42060f0a08e470deb6da51cdb0f317a0830c",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_stop_line_lane_associations.csv",
+      "bytes": 310511,
+      "sha256": "280b2fa910aa64fd49a4335cdd160c8852d9e7c3f2dbb47d8489460afbfcbe3b",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_stop_line_raw_statistics.csv",
+      "bytes": 2414,
+      "sha256": "c9e5497be766777bef843320cb242c57d23ba71fac0f6cc3fda006a018653562",
+      "Git_eligible": true
+    },
+    {
+      "path": "06_tables/stage7a_turn_semantic_statistics.csv",
+      "bytes": 1852,
+      "sha256": "19089ea1cb96d23357279e375c80f1c18f0d38b28ba2974b4d2112750e9da0ed",
+      "Git_eligible": true
+    },
+    {
+      "path": "07_checkpoints/README.md",
+      "bytes": 113,
+      "sha256": "f90d9526643a026618cf8baeeb6a75f448bf3c4ff321fcf194981b8976196e38",
+      "Git_eligible": true
+    },
+    {
+      "path": "09_reports/stage7a_finalize.py",
+      "bytes": 35507,
+      "sha256": "0e61de58e226efa363afae6a705c356399cdc38675128b5b3495135178341f9f",
+      "Git_eligible": true
+    },
+    {
+      "path": "09_reports/stage7a_semantic_data_audit_report.md",
+      "bytes": 30796,
+      "sha256": "e7c81966e1eb774c2c94cbfd093ff8a9031d2674774c23dd26759d53777e55e5",
+      "Git_eligible": true
+    }
+  ]
+}

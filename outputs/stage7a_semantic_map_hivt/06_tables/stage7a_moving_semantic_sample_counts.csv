@@ -1,0 +1,13 @@
+Split,Semantic,Count,Scenes,Instances,sufficient
+train,NearConnector,45888,662,3780,True
+train,NearTurnConnector,43444,646,3669,True
+train,NearTrafficControl,45905,657,3781,True
+train,NearCrosswalk,38744,557,3353,True
+val,NearConnector,10362,137,845,True
+val,NearTurnConnector,9993,137,825,True
+val,NearTrafficControl,10227,137,842,True
+val,NearCrosswalk,8018,111,708,True
+combined,NearConnector,56250,799,4625,True
+combined,NearTurnConnector,53437,783,4494,True
+combined,NearTrafficControl,56132,794,4623,True
+combined,NearCrosswalk,46762,668,4061,True

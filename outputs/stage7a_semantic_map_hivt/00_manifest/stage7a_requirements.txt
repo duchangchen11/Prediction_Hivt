@@ -1,0 +1,1197 @@
+你现在执行：
+
+============================================================
+Stage7A-0：冻结现有最终模型 + nuScenes道路语义数据审计
+============================================================
+
+项目路径：
+
+/home/lrj/Prediction_Hivt
+
+当前已完成并冻结的最好版本：
+
+Stage6A
+Future Interaction Reliability Re-ranking
+
+最新commit：
+
+e43347c2c2cd356775f4e0bb59fcf7dbda76f2b5
+
+当前最终推荐：
+
+Stage5A + R2 Future Interaction Reliability
+
+当前已确认主要结果：
+
+Overall minFDE6 = 1.337996 m
+Overall Top1FDE6 = 2.645563 m
+
+Vehicle Top1FDE6 = 3.010194 m
+Pedestrian Top1FDE6 = 1.418253 m
+Moving Vehicle Top1FDE6 = 10.450046 m
+
+当前Stage6A科学结论：
+
+ReliabilityHead = SUPPORTED
+FutureInteractionContribution = SUPPORTED
+PaperUsableReliability = YES
+RecommendedFinalVariant = R2
+
+本阶段禁止修改这些历史结论。
+
+============================================================
+一、第一件事：永久冻结当前V1结果
+============================================================
+
+确认当前：
+
+git status
+
+必须干净。
+
+确认HEAD：
+
+e43347c2c2cd356775f4e0bb59fcf7dbda76f2b5
+
+创建annotated tag：
+
+paper-v1-stage6a-r2
+
+tag message：
+
+Freeze paper V1: Stage5A + future interaction reliability R2
+
+然后push：
+
+git push origin paper-v1-stage6a-r2
+
+禁止：
+
+覆盖Stage5A checkpoint
+覆盖Stage6A结果
+删除旧outputs
+修改旧CSV
+修改旧report
+修改旧branch历史
+
+============================================================
+二、冻结关键文件SHA
+============================================================
+
+记录：
+
+Stage5A predictor checkpoint：
+
+outputs/stage5a_motion_aware_decoder/
+07_checkpoints/stage5a_best_overall_minfde.pt
+
+已知SHA256：
+
+88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7
+
+Stage6A R2 checkpoint：
+
+从Stage6A报告/训练记录读取实际SHA。
+
+记录：
+
+Git commit
+Git tag
+Stage5A checkpoint SHA
+R2 checkpoint SHA
+Stage6A config SHA
+Stage6A normalization SHA
+
+保存：
+
+outputs/stage7a_semantic_map_hivt/
+00_manifest/
+stage7a_v1_frozen_reference.json
+
+只保存引用和SHA，
+不要复制大checkpoint。
+
+============================================================
+三、新建Stage7A分支
+============================================================
+
+从：
+
+e43347c2c2cd356775f4e0bb59fcf7dbda76f2b5
+
+创建：
+
+stage7a/semantic-map-enhancement
+
+注意：
+
+Stage7A未来真正训练时，
+backbone原则上从Stage3B结构出发：
+
+HiVT
++
+TypeEmbedding
++
+Semantic Map
+
+不要继承Stage4A relation bias。
+
+不要继承Stage4F gate。
+
+暂时不要决定是否继承Stage5A residual decoder。
+
+本阶段只做数据审计，
+不训练任何新模型。
+
+============================================================
+四、Stage7A目录
+============================================================
+
+创建：
+
+outputs/stage7a_semantic_map_hivt/
+
+00_manifest/
+01_data_audit/
+02_semantic_cache/
+03_training/
+04_evaluation/
+05_figures/
+06_tables/
+07_checkpoints/
+08_logs/
+09_reports/
+
+本阶段：
+
+03_training
+04_evaluation
+07_checkpoints
+
+必须保持为空或只有README占位。
+
+============================================================
+五、本阶段核心问题
+============================================================
+
+不要先假设nuScenes一定具有我们想要的全部语义。
+
+必须用实际trainval数据回答：
+
+1.
+lane和lane_connector
+到底有多少？
+
+2.
+能否稳定区分：
+
+lane
+lane_connector
+
+3.
+lane_connector能否根据几何/拓扑
+稳定推导：
+
+left
+straight
+right
+
+4.
+stop_line数据实际有哪些类型？
+
+5.
+是否存在并能稳定关联：
+
+TRAFFIC_LIGHT
+STOP_SIGN
+YIELD
+TURN_STOP
+PED_CROSSING
+
+6.
+traffic light在地图中能得到什么？
+
+只允许使用：
+
+静态traffic-light-control存在性
+
+禁止虚构：
+
+red
+yellow
+green
+
+动态灯态。
+
+7.
+ped_crossing覆盖率如何？
+
+8.
+这些语义能否映射到：
+
+lane / lane_connector polyline
+
+9.
+最终能否映射到：
+
+actor附近的lane features
+
+============================================================
+六、必须先审计nuScenes原始Map Expansion
+============================================================
+
+对4个nuScenes map location分别审计：
+
+boston-seaport
+
+singapore-hollandvillage
+
+singapore-queenstown
+
+singapore-onenorth
+
+实际名称以本地nuScenes map为准。
+
+输出每个location：
+
+lane count
+lane_connector count
+ped_crossing count
+stop_line count
+traffic_light count
+walkway count
+
+以及其他与本实验相关的实际layer。
+
+禁止根据记忆填写。
+
+必须直接读取本地nuScenes Map API和原始JSON。
+
+============================================================
+七、Map schema审计
+============================================================
+
+输出：
+
+01_data_audit/
+stage7a_map_schema_audit.json
+
+stage7a_map_schema_audit.md
+
+必须记录每类record实际字段。
+
+尤其：
+
+lane
+lane_connector
+stop_line
+traffic_light
+ped_crossing
+
+如果某些字段在当前nuScenes版本不存在：
+
+明确写：
+
+NOT AVAILABLE
+
+不得自动替代。
+
+============================================================
+八、当前代码审计
+============================================================
+
+明确记录当前Stage3 map输入：
+
+preprocessing/extract_lane_polylines.py
+
+当前只提取：
+
+lane
+lane_connector
+
+中心线geometry。
+
+并验证：
+
+Stage3 dataset当前：
+
+is_intersections = 0
+
+turn_directions = 0
+
+traffic_controls = 0
+
+全部为零占位。
+
+输出：
+
+01_data_audit/
+stage7a_existing_map_feature_audit.md
+
+这一步必须引用实际源码行/字段。
+
+============================================================
+九、Semantic Feature V1候选定义
+============================================================
+
+本阶段先定义候选，不训练。
+
+每个lane segment候选语义：
+
+A.
+is_lane_connector
+
+1维
+
+--------------------------------------------------
+
+B.
+turn_type
+
+候选：
+
+left
+straight
+right
+unknown
+
+4维one-hot。
+
+注意：
+
+不要假设nuScenes直接提供turn_type。
+
+优先从：
+
+lane connectivity
++
+lane connector geometry
+
+推导。
+
+--------------------------------------------------
+
+C.
+traffic_control_type
+
+候选：
+
+none
+traffic_light
+stop_sign
+yield
+other_control
+
+5维one-hot。
+
+实际类别根据源数据审计决定。
+
+不要为了凑维数修改真实数据。
+
+--------------------------------------------------
+
+D.
+near_ped_crossing
+
+1维。
+
+定义必须通过真实几何关系构造：
+
+例如lane segment与ped_crossing polygon
+在固定合理距离/相交关系内。
+
+但本阶段先审计不同定义的覆盖，
+不要训练调参。
+
+============================================================
+十、Turn Type推导
+============================================================
+
+这是本阶段重点之一。
+
+针对lane_connector：
+
+获取connector中心线。
+
+取入口方向：
+
+theta_in
+
+出口方向：
+
+theta_out
+
+计算：
+
+delta_theta =
+wrap(theta_out - theta_in)
+
+输出真实分布。
+
+不要立即拍脑袋固定阈值。
+
+先统计：
+
+delta_theta degree histogram
+
+例如：
+
+[-180,-135)
+[-135,-90)
+[-90,-60)
+[-60,-30)
+[-30,-15)
+[-15,15)
+[15,30)
+[30,60)
+[60,90)
+[90,135)
+[135,180]
+
+同时抽样可视化。
+
+============================================================
+十一、Turn Type第一版建议阈值
+============================================================
+
+只有审计后才允许采用。
+
+默认候选：
+
+|delta_theta| <= 20°：
+straight
+
+delta_theta > 20°：
+left
+
+delta_theta < -20°：
+right
+
+但：
+
+不能直接训练。
+
+必须先验证：
+
+坐标方向
+角度符号
+地图可视化。
+
+随机检查至少：
+
+20 left
+20 straight
+20 right
+
+如果样本不足则全部检查。
+
+============================================================
+十二、Turn语义可视化
+============================================================
+
+生成至少：
+
+stage7a_turn_semantics_boston.png
+
+stage7a_turn_semantics_singapore.png
+
+颜色用于区分：
+
+left
+straight
+right
+unknown
+
+图中必须显示：
+
+connector centerline
+入口方向
+出口方向
+
+人工检查：
+
+左转是否真的是left
+右转是否真的是right
+
+防止坐标方向符号弄反。
+
+============================================================
+十三、Traffic Control审计
+============================================================
+
+统计所有stop_line：
+
+stop_line_type实际分布。
+
+例如如果实际存在：
+
+TRAFFIC_LIGHT
+STOP_SIGN
+YIELD
+TURN_STOP
+PED_CROSSING
+
+则统计：
+
+record count
+
+polygon area distribution
+
+关联traffic_light token数量
+
+关联ped_crossing token数量
+
+如果实际字段名不同：
+
+按真实schema处理。
+
+============================================================
+十四、禁止做动态红绿灯状态
+============================================================
+
+本阶段严禁创建：
+
+red
+yellow
+green
+
+current_signal_state
+
+future_signal_state
+
+因为当前静态Map Expansion
+不能直接可靠提供逐帧灯态。
+
+只能使用类似：
+
+is_traffic_light_controlled
+
+或：
+
+traffic_control_type = traffic_light
+
+============================================================
+十五、Ped Crossing审计
+============================================================
+
+统计：
+
+ped_crossing polygons数量
+
+lane/lane_connector附近crossing比例。
+
+分别使用候选空间关系：
+
+A.
+polyline intersects polygon
+
+B.
+polyline segment到polygon <=2m
+
+C.
+<=5m
+
+只做审计。
+
+输出：
+
+不同定义下coverage。
+
+不要在本阶段根据VAL性能选择阈值。
+
+============================================================
+十六、语义到lane segment映射
+============================================================
+
+当前lane extractor输出：
+
+lane_positions
+lane_vectors
+lane_tokens
+
+Stage7A需要验证：
+
+每一个lane segment
+
+能否可靠继承所属lane_token语义。
+
+也就是说：
+
+semantic feature首先在token级定义，
+
+然后：
+
+token semantic
+→
+该token的所有2m segments。
+
+不得按segment重复调用昂贵Map API。
+
+============================================================
+十七、语义cache设计
+============================================================
+
+建立：
+
+(location, lane_token)
+→
+semantic metadata
+
+例如：
+
+{
+  "is_connector": ...,
+  "turn_type": ...,
+  "traffic_control_type": ...,
+  "near_ped_crossing": ...
+}
+
+只建立审计cache。
+
+禁止覆盖原：
+
+LaneExtractor polyline cache。
+
+============================================================
+十八、覆盖率统计
+============================================================
+
+对official TRAIN700 / VAL150
+当前Stage3所有lane segments统计：
+
+semantic coverage。
+
+必须输出：
+
+总体：
+
+lane segments total
+
+connector segment %
+
+left %
+straight %
+right %
+unknown %
+
+traffic_light controlled %
+
+stop_sign controlled %
+
+yield controlled %
+
+ped_crossing nearby %
+
+============================================================
+十九、Actor附近语义统计
+============================================================
+
+重点不是地图里有没有，
+而是预测actor附近有没有。
+
+按当前50m map radius，
+
+对full-horizon targets统计：
+
+至少一个connector nearby
+
+至少一个turn connector nearby
+
+至少一个traffic-control lane nearby
+
+至少一个crosswalk nearby
+
+分别按：
+
+Overall
+
+Vehicle
+
+Pedestrian
+
+Bicycle
+
+统计。
+
+============================================================
+二十、Moving Vehicle重点统计
+============================================================
+
+对：
+
+vehicle.moving
+
+Vehicle >5m
+
+单独统计：
+
+附近connector比例
+
+附近turning connector比例
+
+附近traffic-control lane比例
+
+附近crosswalk比例。
+
+这一步用于判断：
+
+这些语义是否真的覆盖
+当前最困难的moving vehicle样本。
+
+============================================================
+二十一、Intersection / Turning Group定义预审计
+============================================================
+
+未来我们希望评估：
+
+Intersection Vehicle
+
+Turning Vehicle
+
+但本阶段不要直接冻结定义。
+
+先输出候选：
+
+IntersectionVehicle_A：
+t0 actor距任意lane_connector <20m
+
+IntersectionVehicle_B：
+<30m
+
+TurningVehicle_GT诊断候选：
+
+用未来GT heading/displacement
+只做offline evaluation group定义。
+
+注意：
+
+未来GT只能用于评估分组，
+不能作为模型输入。
+
+============================================================
+二十二、Map语义与Moving Vehicle难度关系
+============================================================
+
+使用当前冻结Stage5A/R2结果，
+仅做离线分析。
+
+不训练。
+
+比较当前：
+
+MovingVehicle minFDE
+Top1FDE
+
+在以下组中的差异：
+
+near connector
+vs
+not near connector
+
+near turning connector
+vs
+not
+
+near traffic control
+vs
+not
+
+near crosswalk
+vs
+not
+
+目的：
+
+回答：
+
+moving vehicle高误差
+是否集中在路口/转向/控制区域。
+
+============================================================
+二十三、非常重要：不要把相关性写成因果
+============================================================
+
+如果：
+
+near intersection
+FDE更大
+
+只能写：
+
+intersection-associated cases are harder
+
+不能写：
+
+intersection causes error。
+
+============================================================
+二十四、数据质量检查
+============================================================
+
+必须检查：
+
+NaN = 0
+Inf = 0
+
+semantic one-hot合法
+
+lane token全部可解析
+
+connector angle有限
+
+control token引用合法
+
+crosswalk geometry合法
+
+TRAIN/VAL scene无混淆
+
+坐标转换不变。
+
+============================================================
+二十五、抽样人工检查
+============================================================
+
+至少随机抽：
+
+10个普通lane
+
+10个connector
+
+10个traffic-light-controlled case
+
+10个stop/yield case
+
+10个crosswalk case
+
+每个保存：
+
+scene/location
+token
+semantic metadata
+geometry summary
+
+有条件时生成对应地图图。
+
+============================================================
+二十六、输出表1
+============================================================
+
+06_tables/
+stage7a_map_layer_statistics.csv
+
+字段：
+
+location
+layer
+record_count
+
+============================================================
+二十七、输出表2
+============================================================
+
+stage7a_turn_semantic_statistics.csv
+
+字段：
+
+location
+turn_type
+connector_count
+segment_count
+angle_mean
+angle_std
+angle_min
+angle_max
+
+============================================================
+二十八、输出表3
+============================================================
+
+stage7a_control_semantic_statistics.csv
+
+字段：
+
+location
+control_type
+record_count
+associated_lane_count
+segment_count
+
+============================================================
+二十九、输出表4
+============================================================
+
+stage7a_actor_semantic_exposure.csv
+
+字段：
+
+Group
+Count
+NearConnectorRate
+NearTurnConnectorRate
+NearTrafficControlRate
+NearCrosswalkRate
+
+Group至少：
+
+overall
+vehicle
+pedestrian
+bicycle
+vehicle.moving
+Vehicle >5m
+
+============================================================
+三十、输出表5
+============================================================
+
+stage7a_semantic_context_error_audit.csv
+
+字段：
+
+Context
+Count
+Stage5A_minFDE
+Stage5A_Top1FDE
+R2_Top1FDE
+
+Context：
+
+NearConnector
+NoConnector
+
+NearTurnConnector
+NoTurnConnector
+
+NearTrafficControl
+NoTrafficControl
+
+NearCrosswalk
+NoCrosswalk
+
+============================================================
+三十一、最终Stage7A-0报告
+============================================================
+
+输出：
+
+09_reports/
+stage7a_semantic_data_audit_report.md
+
+结构：
+
+【Frozen V1】
+
+Git tag
+Stage6A commit
+Stage5A checkpoint SHA
+R2 checkpoint SHA
+旧结果确认
+
+【Current Map Input】
+
+说明当前只有lane geometry，
+语义占位全0。
+
+【nuScenes Map Schema】
+
+实际layer和字段。
+
+【Turn Semantics】
+
+推导方法
+angle distribution
+人工检查结果
+
+【Traffic Control】
+
+实际stop_line/control数据覆盖。
+
+【Pedestrian Crossing】
+
+覆盖情况。
+
+【Actor Semantic Exposure】
+
+不同类型参与者附近语义比例。
+
+【Moving Vehicle Exposure】
+
+重点说明moving vehicle是否大量出现在语义区域。
+
+【Current Error vs Semantic Context】
+
+当前冻结模型在不同地图语义场景下误差。
+
+【Feasibility】
+
+最后必须输出：
+
+TurnSemantic =
+AVAILABLE / PARTIAL / NOT_AVAILABLE
+
+TrafficControlSemantic =
+AVAILABLE / PARTIAL / NOT_AVAILABLE
+
+CrosswalkSemantic =
+AVAILABLE / PARTIAL / NOT_AVAILABLE
+
+SemanticMapStage7A =
+READY / NOT_READY
+
+============================================================
+三十二、READY判断
+============================================================
+
+SemanticMapStage7A = READY
+
+要求：
+
+1.
+lane/connector token映射稳定；
+
+2.
+turn type能够稳定推导并人工验证；
+
+3.
+至少一种traffic-control语义
+具有非零且合理覆盖；
+
+4.
+crosswalk语义可稳定计算；
+
+5.
+moving vehicle中存在足够数量
+暴露于这些语义的样本；
+
+6.
+所有坐标/引用/finite audit通过。
+
+不要求每个语义都高覆盖率。
+
+============================================================
+三十三、如果某个语义不可用
+============================================================
+
+例如：
+
+YIELD几乎没有样本
+
+或者：
+
+traffic_light token无法稳定映射lane
+
+不要硬造。
+
+直接删除该候选feature。
+
+未来Stage7A模型只使用：
+
+真实、稳定、覆盖足够的语义。
+
+============================================================
+三十四、本阶段严格禁止
+============================================================
+
+禁止：
+
+训练Stage7A
+修改HiVT
+修改LocalEncoder
+修改GlobalInteractor
+修改decoder
+修改R2
+重新训练Stage6A
+动态红绿灯识别
+camera模型
+VLM
+LLM
+pseudo traffic-light state
+手工priority ground truth
+超参数搜索
+
+============================================================
+三十五、Git提交
+============================================================
+
+建议分步：
+
+chore: freeze Stage6A R2 paper V1 references
+
+feat: audit nuScenes semantic map layers
+
+feat: derive and validate lane connector turn semantics
+
+eval: audit semantic exposure and moving vehicle difficulty
+
+docs: finalize Stage7A semantic data audit
+
+push：
+
+stage7a/semantic-map-enhancement
+
+============================================================
+三十六、完成后只汇报
+============================================================
+
+Git commit=
+
+Frozen tag=
+
+Stage6A frozen commit=
+
+Stage5A SHA=
+
+R2 SHA=
+
+Map locations=
+
+Lane count=
+Lane connector count=
+Stop line count=
+Traffic light count=
+Ped crossing count=
+
+Turn semantic:
+left=
+straight=
+right=
+unknown=
+
+TurnSemantic =
+AVAILABLE / PARTIAL / NOT_AVAILABLE
+
+TrafficControlSemantic =
+AVAILABLE / PARTIAL / NOT_AVAILABLE
+
+CrosswalkSemantic =
+AVAILABLE / PARTIAL / NOT_AVAILABLE
+
+Moving Vehicle:
+NearConnectorRate=
+NearTurnConnectorRate=
+NearTrafficControlRate=
+NearCrosswalkRate=
+
+Vehicle >5m:
+NearConnectorRate=
+NearTurnConnectorRate=
+NearTrafficControlRate=
+NearCrosswalkRate=
+
+Current MovingVehicle FDE:
+NearConnector=
+NoConnector=
+
+NearTurn=
+NoTurn=
+
+NearTrafficControl=
+NoTrafficControl=
+
+SemanticMapStage7A =
+READY / NOT_READY
+
+完成后STOP。
+
+不要训练Stage7A。
+等待“大脑AI”审查。
