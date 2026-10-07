@@ -1,0 +1,42 @@
+{
+  "registered_utc": "2026-10-07T17:54:52.559742+00:00",
+  "stage": "Stage8A-0",
+  "base_commit": "35b7811ce2ec0c7dd3b252995b49724e5971b4be",
+  "branch": "stage8a/future-scene-compatibility-graph",
+  "training_authorized": false,
+  "Stage8A_1_authorized": false,
+  "G1_G2_G3_training_executed": false,
+  "tiny_training_authorized": false,
+  "test_used": false,
+  "seed": 2022,
+  "K": 6,
+  "Tf": 12,
+  "neighbors": 8,
+  "neighbor_radius_m": 50.0,
+  "map_topM": 8,
+  "map_radius_m": 10.0,
+  "map_no_token_policy": "nearest one token across the same full map region; no radius change",
+  "coverage_primary_population": "all current-valid actor modes, including context and partial targets",
+  "coverage_secondary_population": "full-horizon ranking targets; future mask used only outside graph to label audit populations",
+  "map_gate": "NOT_READY if Vehicle fallback>5% in TRAIN or VAL primary coverage, or unreliable coordinate mapping",
+  "feature_dimensions": {
+    "node": 15,
+    "interaction_edge": 17,
+    "map_node": 13,
+    "map_edge": 17
+  },
+  "message_hidden": 64,
+  "message_layers": 1,
+  "head_architecture": [
+    64,
+    32,
+    1
+  ],
+  "future_training_selection": "HeadDev ranking soft cross entropy, never official VAL; deferred for separate authorization",
+  "head_split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "predictor_sha256": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7",
+  "R2_sha256": "e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314",
+  "Stage7A_decision": "NOT_SUPPORTED",
+  "Stage7D_decision": "NOT_SUPPORTED",
+  "historical_decisions_changed": false
+}

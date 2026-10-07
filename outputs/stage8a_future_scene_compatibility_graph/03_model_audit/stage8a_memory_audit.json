@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "device": "NVIDIA GeForce RTX 3080",
+  "rows": [
+    {
+      "Model": "R2",
+      "Parameters": 673,
+      "TargetsPerForward": 128,
+      "InputTensorBytes": 61440,
+      "InputKiBPerTarget": 0.46875,
+      "PeakCUDAAllocatedMiB": 33.15625,
+      "ForwardIncrementalPeakMiB": 1.09375,
+      "TrainingExecuted": false,
+      "Weights": "frozen trained R2"
+    },
+    {
+      "Model": "G1",
+      "Parameters": 24066,
+      "TargetsPerForward": 128,
+      "InputTensorBytes": 3668992,
+      "InputKiBPerTarget": 27.9921875,
+      "PeakCUDAAllocatedMiB": 85.36083984375,
+      "ForwardIncrementalPeakMiB": 49.765625,
+      "TrainingExecuted": false,
+      "Weights": "zero-final-layer untrained prototype"
+    },
+    {
+      "Model": "G2",
+      "Parameters": 20674,
+      "TargetsPerForward": 128,
+      "InputTensorBytes": 3668992,
+      "InputKiBPerTarget": 27.9921875,
+      "PeakCUDAAllocatedMiB": 44.34765625,
+      "ForwardIncrementalPeakMiB": 8.765625,
+      "TrainingExecuted": false,
+      "Weights": "zero-final-layer untrained prototype"
+    },
+    {
+      "Model": "G3",
+      "Parameters": 37315,
+      "TargetsPerForward": 128,
+      "InputTensorBytes": 3668992,
+      "InputKiBPerTarget": 27.9921875,
+      "PeakCUDAAllocatedMiB": 85.4130859375,
+      "ForwardIncrementalPeakMiB": 49.765625,
+      "TrainingExecuted": false,
+      "Weights": "zero-final-layer untrained prototype"
+    }
+  ],
+  "maximum_mode_nodes_per_target": 54,
+  "maximum_mode_mode_edges_per_target": 288,
+  "maximum_mode_map_edges_per_target": 48,
+  "dense_padded_float32_input_bytes_per_target": 28664,
+  "inference_only": true,
+  "autograd_training_activation_memory_measured": false,
+  "no_latency_claim": true,
+  "predictor_latency_not_included": true,
+  "graph_retrieval_construction_not_included": true,
+  "shared_input_candidates_unchanged": true,
+  "new_checkpoint_count": 0,
+  "optimizer_steps": 0
+}

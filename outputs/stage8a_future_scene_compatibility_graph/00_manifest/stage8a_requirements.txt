@@ -1,0 +1,1857 @@
+你现在执行新的研究阶段：
+
+============================================================
+Stage8A：
+Future Scene Compatibility Graph
+未来场景兼容性图推理
+============================================================
+
+项目：
+
+/home/lrj/Prediction_Hivt
+
+当前基础分支：
+
+stage7d/actor-conditioned-semantic-attention
+
+最新已审查 commit：
+
+35b7811ce2ec0c7dd3b252995b49724e5971b4be
+
+新建：
+
+stage8a/future-scene-compatibility-graph
+
+============================================================
+一、研究目标
+============================================================
+
+当前已确认：
+
+1. TypeEmbedding只是基础异构建模组件，不作为核心创新。
+
+2. Stage6A Future Interaction Reliability R2 有稳定收益，
+但“future interaction + reranking”本身已有相关研究，
+不能单独作为强创新。
+
+3. Stage7A semantic residual：
+NOT_SUPPORTED。
+
+4. Stage7D semantic attention：
+NOT_SUPPORTED。
+
+5. 不能继续把场景语义直接塞进历史编码器。
+
+因此新的研究问题改为：
+
+“在多模态候选轨迹已经生成之后，
+如何联合建模候选轨迹之间的未来交互关系，
+以及候选轨迹与道路场景语义之间的兼容关系，
+从而估计每个预测模式的可信度？”
+
+正式工作名称：
+
+Future Scene Compatibility Graph
+简称 FSCG。
+
+============================================================
+二、核心方法概念
+============================================================
+
+对于参与者 i 的第 k 条候选：
+
+Y_hat_i,k
+
+定义：
+
+Actor-Mode Node：
+
+v_i,k
+
+即：
+
+“一个参与者的一条未来候选轨迹”
+就是一个图节点。
+
+然后建立两类关系：
+
+------------------------------------------------------------
+Relation A：
+Mode ↔ Mode Future Interaction
+------------------------------------------------------------
+
+v_i,k
+↔
+v_j,m
+
+表示：
+
+目标参与者第k条轨迹
+与邻居j第m条轨迹
+在未来6秒内的交互关系。
+
+------------------------------------------------------------
+Relation B：
+Mode ↔ Map Semantic Entity
+------------------------------------------------------------
+
+v_i,k
+↔
+map_l
+
+表示：
+
+第k条候选轨迹
+与某条lane / connector / control / crosswalk
+的场景兼容关系。
+
+最终：
+
+Future Mode Graph
++
+Semantic Map Graph
+
+共同产生：
+
+delta_logit_i,k
+
+最终：
+
+new_logit_i,k
+=
+original_logit_i,k
++
+delta_logit_i,k
+
+再进行：
+
+softmax。
+
+============================================================
+三、非常重要：本阶段不改变候选轨迹
+============================================================
+
+冻结candidate predictor。
+
+不得：
+
+修改LocalEncoder
+修改GlobalInteractor
+修改Decoder
+修改Stage5A
+重新训练HiVT
+修改候选轨迹几何
+
+因此：
+
+所有方法：
+
+R0
+R2
+G1
+G2
+G3
+
+必须使用完全相同的：
+
+6条候选轨迹。
+
+理论要求：
+
+minADE6
+minFDE6
+MR6
+
+完全一致。
+
+本阶段只优化：
+
+Top1ADE
+Top1FDE
+Mode ranking
+OracleGap
+BestModeRank
+MRR
+HitRate。
+
+============================================================
+四、冻结Candidate Predictor
+============================================================
+
+使用：
+
+Stage5A frozen predictor
+
+checkpoint：
+
+outputs/stage5a_motion_aware_decoder/
+07_checkpoints/stage5a_best_overall_minfde.pt
+
+SHA256：
+
+88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7
+
+Predictor：
+
+eval()
+requires_grad=False
+
+任何backward不得进入predictor。
+
+禁止重新选择predictor checkpoint。
+
+============================================================
+五、强Baseline
+============================================================
+
+必须同时保留：
+
+R0：
+Stage5A original logits。
+
+R2：
+Stage6A Future Interaction Reliability。
+
+R2 checkpoint：
+
+outputs/stage6a_future_interaction_reliability/
+07_checkpoints/stage6a_r2_best.pt
+
+SHA256：
+
+e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314
+
+注意：
+
+R2是强baseline。
+
+新的FSCG不是只和R0比较。
+
+必须和：
+
+R2
+
+正式比较。
+
+============================================================
+六、Stage8A分两步
+============================================================
+
+先执行：
+
+Stage8A-0：
+Graph Feasibility Audit
+
+通过以后：
+
+Stage8A-1：
+Graph Reranker Training
+
+Stage8A-0失败：
+
+禁止训练。
+
+============================================================
+七、Stage8A-0：身份与缓存审计
+============================================================
+
+复用Stage6A frozen candidate cache。
+
+确认：
+
+TRAIN700
+VAL150
+
+candidate：
+
+K=6
+Tf=12
+
+坐标：
+
+t0 ego frame。
+
+逐actor检查：
+
+candidate tensor
+original logits
+original probabilities
+actor type
+history
+mask
+scene/sample/instance identity
+
+与Stage6A完全一致。
+
+随机至少：
+
+100 TRAIN windows
+100 VAL windows。
+
+要求：
+
+candidate maxdiff = 0
+logit maxdiff = 0
+prob maxdiff = 0
+
+============================================================
+八、Actor-Mode Node
+============================================================
+
+每一个：
+
+v_i,k
+
+是一个node。
+
+Node feature禁止使用GT。
+
+建议固定：
+
+NodeFeature_i,k =
+
+[
+actor_type onehot,          # 3
+
+original_logit,             # 1
+original_probability,       # 1
+
+history_recent_disp,        # 1
+history_net_disp,           # 1
+history_path_length,        # 1
+
+candidate_endpoint_x,       # 1
+candidate_endpoint_y,       # 1
+
+candidate_net_disp,         # 1
+candidate_path_length,      # 1
+
+candidate_mean_speed,       # 1
+
+candidate_heading_sin,      # 1
+candidate_heading_cos       # 1
+]
+
+总维数以代码实际统计为准。
+
+所有量只来自：
+
+历史
+candidate prediction
+原始probability。
+
+禁止GT。
+
+============================================================
+九、局部Future Graph
+============================================================
+
+不要构造全scene完全图。
+
+对于每一个target actor：
+
+选：
+
+最多8个邻居actor。
+
+邻居定义必须和Stage6A保持一致：
+
+current-valid
+self excluded
+current distance <=50m
+按当前距离取最近8个。
+
+然后local graph包含：
+
+target：
+6个mode nodes
+
+每个neighbor：
+6个mode nodes。
+
+最大：
+
+6 + 8×6
+=
+54个mode nodes。
+
+============================================================
+十、Mode-Mode Edge
+============================================================
+
+target：
+
+v_i,k
+
+neighbor：
+
+v_j,m
+
+建立有向未来关系：
+
+e_ik,jm。
+
+每条edge至少计算：
+
+1. future minimum distance
+2. time index of minimum distance / Tf
+3. future mean distance
+4. endpoint distance
+5. initial future distance
+6. relative endpoint heading sin
+7. relative endpoint heading cos
+8. minimum relative displacement
+9. approach / closing tendency
+10. neighbor original probability
+11. target original probability
+
+并加入：
+
+target actor type onehot
+neighbor actor type onehot
+
+或者：
+
+type-pair embedding。
+
+禁止使用：
+
+GT trajectory
+future GT intention。
+
+============================================================
+十一、禁止简单复制R2
+============================================================
+
+Stage6A R2是：
+
+手工aggregate feature
+→ MLP
+→ score。
+
+Stage8A必须不同：
+
+每个：
+
+mode-mode relation
+
+先独立形成message，
+
+再通过：
+
+learned graph aggregation
+
+聚合。
+
+不能先把所有neighbor压成：
+
+min / mean / max
+
+再送MLP。
+
+否则仍然只是R2扩展。
+
+============================================================
+十二、Mode-Mode Graph Encoder
+============================================================
+
+正式只使用一个结构：
+
+EdgeEncoder_int：
+
+MLP(
+mode_i feature,
+mode_j feature,
+edge feature
+)
+
+→ 64。
+
+Attention：
+
+a_ij
+=
+MLP_attention(
+h_i,
+h_j,
+e_ij
+)
+
+→ scalar。
+
+对neighbor mode做softmax：
+
+alpha_ij。
+
+然后：
+
+m_int_i
+=
+sum_j
+alpha_ij
+*
+EdgeEncoder_int(...)
+
+只使用：
+
+1层 future interaction message passing。
+
+禁止：
+
+2/3/4层搜索。
+
+============================================================
+十三、Map Semantic Graph
+============================================================
+
+场景语义不得再注入HiVT Encoder。
+
+只针对：
+
+已经生成的candidate trajectory
+
+建立：
+
+candidate ↔ map
+
+兼容关系。
+
+即：
+
+“这条未来轨迹是否符合当前道路场景？”
+
+============================================================
+十四、复用冻结语义定义
+============================================================
+
+严格复用Stage7A审核后的9维semantic：
+
+0 is_connector
+1 turn_left
+2 turn_straight
+3 turn_right
+4 turn_unknown
+5 traffic_light_controlled
+6 stop_sign_controlled
+7 other_control
+8 crosswalk_intersects
+
+禁止修改定义。
+
+不加入：
+
+dynamic red/yellow/green
+VLM
+camera semantics
+priority label
+invented right-of-way。
+
+============================================================
+十五、Map Candidate Retrieval Audit
+============================================================
+
+优先使用：
+
+现有nuScenes map metadata
++
+Stage7A semantic cache。
+
+对于每一条predicted candidate：
+
+寻找其未来polyline附近的：
+
+lane
+lane_connector
+
+语义实体。
+
+这里先做覆盖审计。
+
+方案：
+
+对于candidate 12个未来点，
+
+找到附近map tokens，
+
+基于：
+
+candidate polyline
+到
+完整lane/connector centerline
+
+的最小距离排序。
+
+取：
+
+Top M = 8
+
+distinct map tokens。
+
+不要按segment重复计同一个token。
+
+============================================================
+十六、Map Retrieval距离
+============================================================
+
+初始固定：
+
+search radius = 10m
+
+Top M = 8。
+
+这是正式预设。
+
+禁止：
+
+根据VAL结果调整为：
+
+5m
+15m
+20m
+
+或者M=4/16。
+
+如果某candidate：
+
+10m内没有map token，
+
+取全区域最近：
+
+1个token
+
+并记录fallback。
+
+============================================================
+十七、Map Coverage Gate
+============================================================
+
+Stage8A-0必须输出：
+
+Overall candidate count
+
+至少1个map token coverage
+
+>=4 tokens coverage
+
+fallback rate
+
+按：
+
+Vehicle
+Pedestrian
+Bicycle
+MovingVehicle
+
+统计。
+
+如果：
+
+Vehicle candidate fallback rate >5%
+
+或者：
+
+坐标转换/地图匹配不可信，
+
+STOP。
+
+不得训练。
+
+============================================================
+十八、Map Node Feature
+============================================================
+
+每个map token：
+
+MapFeature_l：
+
+[
+9D semantic,
+
+local lane direction sin,
+local lane direction cos,
+
+is_lane,
+is_connector
+]
+
+具体重复字段可以整理，
+
+但9D frozen semantic不能改。
+
+几何方向：
+
+使用candidate最近点对应centerline tangent。
+
+============================================================
+十九、Mode-Map Edge Feature
+============================================================
+
+对于candidate k
+与map token l：
+
+计算：
+
+1. candidate-to-centerline minimum distance
+2. mean candidate-to-centerline distance
+3. endpoint-to-centerline distance
+4. candidate heading vs lane heading sin difference
+5. candidate heading vs lane heading cos difference
+6. fraction future points within2m
+7. fraction future points within4m
+8. normalized closest timestep
+
+再拼：
+
+map semantic。
+
+禁止GT。
+
+============================================================
+二十、Map Graph Encoder
+============================================================
+
+EdgeEncoder_map：
+
+MLP(
+mode feature,
+map feature,
+mode-map edge feature
+)
+
+→64。
+
+Attention：
+
+beta_il
+
+在Top8 map nodes间softmax。
+
+得到：
+
+m_map_i
+=
+sum_l
+beta_il
+*
+EdgeEncoder_map(...)
+
+============================================================
+二十一、Joint Node Update
+============================================================
+
+对target mode：
+
+h_i^0
+=
+MLP_node(NodeFeature)
+
+得到64D。
+
+然后：
+
+h_i
+=
+LayerNorm(
+h_i^0
++
+m_int_i
++
+m_map_i
+)
+
+禁止复杂Transformer stack。
+
+禁止多层GNN。
+
+============================================================
+二十二、最终Reliability Head
+============================================================
+
+delta_logit_i,k：
+
+MLP：
+
+64 → 32 → 1。
+
+最后一层：
+
+weight=0
+bias=0。
+
+初始：
+
+delta_logit = 0。
+
+因此：
+
+训练前：
+
+G1/G2/G3
+
+均应等价R0。
+
+============================================================
+二十三、实验变体
+============================================================
+
+必须训练四个/比较五个：
+
+--------------------------------
+R0：
+Frozen Stage5A original logits
+--------------------------------
+
+不训练。
+
+--------------------------------
+R2：
+Frozen Stage6A hand-crafted
+future interaction reliability
+--------------------------------
+
+不重新训练。
+
+--------------------------------
+G1：
+Mode-Mode Graph only
+--------------------------------
+
+m_int有效
+
+m_map=0。
+
+--------------------------------
+G2：
+Mode-Map Semantic Graph only
+--------------------------------
+
+m_int=0
+
+m_map有效。
+
+--------------------------------
+G3：
+Joint Future Scene Compatibility Graph
+--------------------------------
+
+m_int有效
+m_map有效。
+
+============================================================
+二十四、为什么需要G1/G2/G3
+============================================================
+
+必须回答：
+
+G1：
+
+learned future graph
+是否优于原始R0。
+
+G2：
+
+scene semantic compatibility
+是否独立提供信息。
+
+G3：
+
+future interaction
++
+scene semantic
+
+是否互补。
+
+否则论文没有完整ablation。
+
+============================================================
+二十五、共享初始化
+============================================================
+
+G1/G2/G3：
+
+node encoder中共有参数
+
+以及final scoring head
+
+尽可能共享相同seed2022初始化。
+
+各自特有branch：
+
+独立初始化。
+
+要求记录：
+
+initialization manifest。
+
+============================================================
+二十六、训练数据协议
+============================================================
+
+严格复用Stage6A：
+
+TRAIN700。
+
+HeadTrain：
+
+630 scenes。
+
+HeadDev：
+
+70 scenes。
+
+seed：
+
+2022。
+
+official VAL150：
+
+不得用于head training
+不得用于early stopping
+不得用于hyperparameter选择。
+
+============================================================
+二十七、监督目标
+============================================================
+
+复用Stage6A ranking target：
+
+对于每个full-horizon target：
+
+计算每条candidate真实：
+
+FDE_k。
+
+训练soft target：
+
+q_k
+=
+softmax(
+-FDE_k / 1.0m
+)
+
+Loss：
+
+soft cross entropy：
+
+L
+=
+-sum_k
+q_k log p'_k。
+
+============================================================
+二十八、注意监督边界
+============================================================
+
+GT只允许用于：
+
+TRAIN ranking target
+
+HeadDev ranking target
+
+以及最终evaluation。
+
+GT不得用于：
+
+graph node feature
+edge feature
+map retrieval
+neighbor selection
+inference。
+
+============================================================
+二十九、训练配置
+============================================================
+
+batch单位：
+
+target actor。
+
+如果现有Stage6A batch方式更高效：
+
+可以复用。
+
+Optimizer：
+
+AdamW
+
+LR：
+
+1e-3
+
+weight_decay：
+
+1e-4。
+
+max epoch：
+
+50。
+
+patience：
+
+5。
+
+checkpoint选择：
+
+HeadDev ranking loss。
+
+禁止根据official VAL选择。
+
+============================================================
+三十、模型规模
+============================================================
+
+控制新增参数：
+
+建议：
+
+<100k。
+
+优先：
+
+<50k。
+
+如果实现后：
+
+>150k
+
+暂停并汇报，
+
+不要直接训练。
+
+我们不需要大模型。
+
+============================================================
+三十一、Tiny Overfit
+============================================================
+
+正式训练前：
+
+固定：
+
+128 target actors。
+
+训练：
+
+300 updates。
+
+要求：
+
+loss明显下降
+delta_logits变为非零
+graph gradients finite
+无NaN/Inf。
+
+同时：
+
+predictor gradient count=0。
+
+============================================================
+三十二、Candidate Identity Audit
+============================================================
+
+必须证明：
+
+R0
+R2
+G1
+G2
+G3
+
+候选轨迹：
+
+bitwise identical。
+
+Overall：
+
+minADE6
+minFDE6
+MR6
+
+应完全相同，
+
+数值容差：
+
+<1e-7优先，
+
+至少<1e-6。
+
+若candidate geometry变化：
+
+FAIL。
+
+============================================================
+三十三、正式评价指标
+============================================================
+
+Primary：
+
+Top1FDE6。
+
+Secondary：
+
+Top1ADE6
+
+OracleGap：
+
+Top1FDE - minFDE
+
+HitRate
+
+BestModeRank
+
+MRR。
+
+同时报告：
+
+minADE6
+minFDE6
+MR6
+
+作为identity verification。
+
+============================================================
+三十四、正式Groups
+============================================================
+
+Overall
+
+Vehicle
+Pedestrian
+Bicycle
+
+vehicle.moving
+
+Vehicle >5m
+
+Pedestrian <5m
+Pedestrian >5m
+
+以及semantic groups：
+
+IntersectionVehicle20
+
+NearTurnConnector20
+
+NearTrafficControl20
+
+TurningVehicle_GT
+
+GT-left
+GT-right。
+
+全部复用旧定义。
+
+============================================================
+三十五、Semantic Compatibility诊断
+============================================================
+
+针对每个mode：
+
+额外保存：
+
+MapAttentionTop1 token
+
+Top1 map semantic
+
+mean candidate-lane distance
+
+Top1 candidate-lane distance
+
+heading compatibility
+
+turn semantic of top map relation。
+
+这些只用于解释。
+
+============================================================
+三十六、不要把GT turn作为输入
+============================================================
+
+TurningVehicle_GT
+GT-left
+GT-right
+
+全部：
+
+evaluation-only。
+
+绝对禁止：
+
+作为graph feature。
+
+============================================================
+三十七、Bootstrap
+============================================================
+
+official VAL150。
+
+paired whole-scene cluster bootstrap：
+
+1000 replicates
+
+seed2022。
+
+Primary comparisons：
+
+G3 vs R2
+
+G3 vs R0。
+
+Secondary：
+
+G1 vs R0
+
+G2 vs R0
+
+G3 vs G1
+
+G3 vs G2。
+
+指标：
+
+Top1FDE
+Top1ADE
+HitRate。
+
+重点group：
+
+Overall
+Vehicle
+Pedestrian
+MovingVehicle
+Vehicle>5
+TurningVehicle_GT
+NearTurnConnector20
+NearTrafficControl20。
+
+============================================================
+三十八、最重要的比较
+============================================================
+
+这次不是：
+
+“G3有没有超过R0？”
+
+而是：
+
+“G3有没有超过已经成功的R2？”
+
+当前R2 frozen：
+
+Overall Top1FDE：
+
+2.645563。
+
+因此：
+
+G3最终必须与：
+
+2.645563
+
+正式paired比较。
+
+============================================================
+三十九、Agent Graph支持判定
+============================================================
+
+AgentGraph = SUPPORTED
+
+如果：
+
+G1 vs R0
+
+Overall Top1FDE：
+
+delta <0
+
+且：
+
+95% CI upper <0。
+
+否则：
+
+NOT_SUPPORTED。
+
+============================================================
+四十、Semantic Graph支持判定
+============================================================
+
+SemanticGraph = SUPPORTED
+
+满足以下其一：
+
+A：
+
+G2 vs R0
+Overall Top1FDE可靠改善
+
+或：
+
+B：
+
+Overall基本持平：
+
+relative degradation <=0.5%
+
+且CI包含0，
+
+同时至少两个semantic重点组：
+
+NearTurnConnector20
+NearTrafficControl20
+TurningVehicle_GT
+
+Top1FDE可靠改善，
+
+并且Vehicle/Pedestrian overall
+没有可靠恶化。
+
+否则：
+
+NOT_SUPPORTED。
+
+============================================================
+四十一、Joint FSCG主判定
+============================================================
+
+FSCG = SUPPORTED
+
+要求：
+
+G3 vs R2：
+
+Overall Top1FDE
+
+delta<0
+
+且：
+
+95% CI upper<0。
+
+同时：
+
+Vehicle
+Pedestrian
+
+不存在明显可靠恶化。
+
+============================================================
+四十二、Targeted FSCG
+============================================================
+
+允许：
+
+FSCG = TARGETED_SUPPORTED
+
+如果：
+
+G3 vs R2 Overall：
+
+点估计改善
+
+但CI跨0，
+
+同时：
+
+至少两个：
+
+MovingVehicle
+Vehicle>5
+TurningVehicle_GT
+NearTurnConnector20
+NearTrafficControl20
+
+相对R2可靠改善，
+
+且：
+
+Vehicle/Pedestrian overall
+没有可靠恶化。
+
+============================================================
+四十三、Complementarity
+============================================================
+
+JointComplementarity = YES
+
+要求：
+
+G3在Overall Top1FDE：
+
+优于：
+
+G1
+和
+G2
+
+至少：
+
+G3 vs其中一个
+95%CI upper<0，
+
+另一个：
+
+不能可靠变差。
+
+并且：
+
+G1或G2本身至少一个SUPPORTED。
+
+============================================================
+四十四、论文可用判定
+============================================================
+
+PaperUsableFSCG = YES
+
+仅当：
+
+FSCG =
+SUPPORTED
+
+或：
+
+TARGETED_SUPPORTED。
+
+如果：
+
+G3不优于R2，
+
+而只是优于R0，
+
+不能自动认为创新成功。
+
+============================================================
+四十五、Stage6A R2的角色
+============================================================
+
+如果G3成功：
+
+Stage6A R2降级为：
+
+hand-crafted future-interaction baseline。
+
+论文最终主方法：
+
+Future Scene Compatibility Graph。
+
+如果G3失败：
+
+回到Stage6A R2作为实验结果，
+
+但不要继续无休止增加graph结构。
+
+============================================================
+四十六、禁止调参
+============================================================
+
+本轮禁止：
+
+GNN layer sweep
+
+hidden：
+32/64/128 sweep
+
+neighbor：
+4/8/16 sweep
+
+map：
+4/8/16 sweep
+
+radius：
+5/10/20 sweep
+
+temperature sweep
+
+loss sweep。
+
+固定：
+
+hidden=64
+
+neighbors=8
+
+map topM=8
+
+map radius=10m
+
+temperature=1m。
+
+只有技术错误才能修改。
+
+============================================================
+四十七、输出目录
+============================================================
+
+创建：
+
+outputs/stage8a_future_scene_compatibility_graph/
+
+00_manifest/
+
+01_cache_audit/
+
+02_graph_cache/
+
+03_model_audit/
+
+04_training/
+
+05_evaluation/
+
+06_tables/
+
+07_checkpoints/
+
+08_figures/
+
+09_reports/
+
+============================================================
+四十八、主要表
+============================================================
+
+至少输出：
+
+06_tables/
+
+stage8a_main_results.csv
+
+stage8a_variant_comparison.csv
+
+stage8a_vehicle_motion_results.csv
+
+stage8a_semantic_group_results.csv
+
+stage8a_bootstrap_ci.csv
+
+stage8a_map_coverage.csv
+
+stage8a_graph_statistics.csv
+
+stage8a_efficiency.csv
+
+============================================================
+四十九、Graph statistics
+============================================================
+
+统计：
+
+平均mode nodes / target
+
+平均mode-mode edges
+
+平均map nodes / mode
+
+平均mode-map edges
+
+neighbor actor distribution
+
+map fallback rate
+
+不同actor type graph规模。
+
+============================================================
+五十、案例图
+============================================================
+
+至少：
+
+Case1：
+
+R2选错，
+G3选对，
+未来交互起主要作用。
+
+Case2：
+
+R2选错，
+G3选对，
+map semantic compatibility起主要作用。
+
+Case3：
+
+G1正确，
+G2错误，
+G3正确。
+
+Case4：
+
+G3 failure。
+
+图中显示：
+
+GT
+
+6 candidate trajectories
+
+original probability
+
+R2 probability
+
+G1/G2/G3 probability
+
+neighbor predicted trajectories
+
+relevant map semantic entities。
+
+案例只能解释，
+
+不能证明aggregate效果。
+
+============================================================
+五十一、效率
+============================================================
+
+记录：
+
+parameters
+
+graph construction time
+
+reranking forward latency
+
+peak CUDA memory。
+
+和：
+
+Stage6A R2
+
+比较。
+
+注意：
+
+predictor forward latency单独报告，
+
+不要把offline cache generation
+伪装成实时模型latency。
+
+============================================================
+五十二、论文定位
+============================================================
+
+如果成功，
+
+禁止写：
+
+“首次使用future interaction”
+
+禁止写：
+
+“首次使用scene semantics”。
+
+建议方法描述：
+
+“构建以多模态候选轨迹为节点的未来场景兼容性图，
+通过候选轨迹间未来交互关系以及候选轨迹与道路语义实体间的兼容关系，
+联合估计预测模式可信度。”
+
+============================================================
+五十三、可能创新点
+============================================================
+
+只有实验成功以后，
+再考虑写成：
+
+创新点1：
+
+Mode-level Future Interaction Graph
+
+即：
+
+在候选轨迹层面显式建模
+多主体多模态未来关系。
+
+创新点2：
+
+Mode-to-Map Semantic Compatibility
+
+即：
+
+在预测未来层面而非历史编码层面，
+建模候选轨迹与道路场景语义的兼容性。
+
+创新点3不能提前声明。
+
+============================================================
+五十四、Stage8A最终报告
+============================================================
+
+输出：
+
+09_reports/
+stage8a_final_report.md
+
+结构：
+
+【Research Question】
+
+【Frozen Candidate Predictor】
+
+【Graph Definition】
+
+【Actor-Mode Nodes】
+
+【Mode-Mode Future Relations】
+
+【Mode-Map Semantic Relations】
+
+【No-Future-Leakage Audit】
+
+【Graph Coverage】
+
+【Neutral Initialization】
+
+【Training Protocol】
+
+【Candidate Geometry Identity】
+
+【Main Results】
+
+【Comparison with Stage6A R2】
+
+【Agent Graph Ablation】
+
+【Semantic Graph Ablation】
+
+【Joint Complementarity】
+
+【Vehicle / Pedestrian / Bicycle】
+
+【Moving / Turning Vehicle】
+
+【Semantic Context Groups】
+
+【Bootstrap】
+
+【Cases】
+
+【Efficiency】
+
+【Limitations】
+
+【Scientific Decision】
+
+最终给：
+
+AgentGraph =
+SUPPORTED /
+NOT_SUPPORTED
+
+SemanticGraph =
+SUPPORTED /
+NOT_SUPPORTED
+
+FSCG =
+SUPPORTED /
+TARGETED_SUPPORTED /
+NOT_SUPPORTED
+
+JointComplementarity =
+YES / NO
+
+PaperUsableFSCG =
+YES / NO
+
+RecommendedPaperModel =
+R2 /
+G3
+
+============================================================
+五十五、Git
+============================================================
+
+建议commit：
+
+audit: verify frozen Stage5A candidates for Stage8A
+
+feat: build local actor-mode future interaction graph
+
+feat: add candidate-to-map semantic compatibility graph
+
+feat: implement future scene compatibility graph reranker
+
+exp: train Stage8A graph ablations
+
+eval: compare FSCG against frozen Stage6A R2
+
+docs: finalize Stage8A future scene compatibility report
+
+push：
+
+stage8a/future-scene-compatibility-graph
+
+不要merge main。
+
+============================================================
+五十六、第一阶段先只执行Stage8A-0
+============================================================
+
+非常重要：
+
+现在不要直接开始正式训练。
+
+先完成：
+
+Stage8A-0：
+
+1. candidate identity
+2. map coordinate correctness
+3. map token retrieval
+4. map semantic attachment
+5. graph construction
+6. GT leakage audit
+7. graph size / memory audit
+
+完成后先STOP。
+
+把以下结果汇报给大脑AI：
+
+Git commit=
+
+Candidate identity=
+PASS / FAIL
+
+TRAIN candidate count=
+
+VAL candidate count=
+
+Vehicle map coverage=
+
+Pedestrian map coverage=
+
+Bicycle map coverage=
+
+MovingVehicle map coverage=
+
+Map fallback rate=
+
+Mean map tokens/mode=
+
+Mean neighbor actors/target=
+
+Mean mode-mode edges/target=
+
+Mean mode-map edges/target=
+
+Coordinate audit=
+PASS / FAIL
+
+Semantic attachment=
+PASS / FAIL
+
+GT leakage audit=
+PASS / FAIL
+
+Estimated graph memory=
+
+Estimated parameters=
+
+Stage8A-0 =
+READY / NOT_READY
+
+STOP。
+
+不要训练G1/G2/G3。
+
+等待大脑AI审查后，
+再授权Stage8A-1正式训练。

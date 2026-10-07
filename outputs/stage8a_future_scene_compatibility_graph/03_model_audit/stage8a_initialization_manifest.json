@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "variants": [
+    {
+      "Variant": "G1",
+      "Parameters": 24066,
+      "SharedState": {
+        "node_encoder.0.weight": "256a5af522415c1327796e5f111e6ec1762615ad6ff86d218c7a4cffe7b77964",
+        "node_encoder.0.bias": "39e8c6469a6289ef2c339cc1eeab622a9be512a30d34ee63afc371f05322b50e",
+        "node_encoder.2.weight": "ba7af158b9d3ae92e1416c442c25b8da9f07f60156153f47115f81f2f09b4edc",
+        "node_encoder.2.bias": "0f7d581c14cc19d530e630176061ba9bc7ba84a682700f75410b4c39d88e5648",
+        "norm.weight": "ec645e8da80d49565ef3d689a9936dfa1e84d0a182742b8edfdd9031d7776218",
+        "norm.bias": "0dcdc9cf5d12d186e3d613b045fe94bdf7be73624bc60760cd91b4df3fc071c0",
+        "head.0.weight": "f1f93d9fd636f1f23b4de6107d98332ab20a6bf02c5a61677cfc09fffb7ffdc3",
+        "head.0.bias": "470bb47412b4bc35146977c4bb215f7d70e85f4f7147362b96ae8cf7079a1d81",
+        "head.2.weight": "ee1820ba67589c37759831ea593c5c51275263e1d1c8d2d5cb75a3e58a7f5790",
+        "head.2.bias": "3c5a97652e6a18746916c939095e5ce4a3467c36a100cfe9dc2dee0730fa693f"
+      },
+      "Seed": 2022,
+      "InteractionSeed": 2123,
+      "MapSeed": 2124
+    },
+    {
+      "Variant": "G2",
+      "Parameters": 20674,
+      "SharedState": {
+        "node_encoder.0.weight": "256a5af522415c1327796e5f111e6ec1762615ad6ff86d218c7a4cffe7b77964",
+        "node_encoder.0.bias": "39e8c6469a6289ef2c339cc1eeab622a9be512a30d34ee63afc371f05322b50e",
+        "node_encoder.2.weight": "ba7af158b9d3ae92e1416c442c25b8da9f07f60156153f47115f81f2f09b4edc",
+        "node_encoder.2.bias": "0f7d581c14cc19d530e630176061ba9bc7ba84a682700f75410b4c39d88e5648",
+        "norm.weight": "ec645e8da80d49565ef3d689a9936dfa1e84d0a182742b8edfdd9031d7776218",
+        "norm.bias": "0dcdc9cf5d12d186e3d613b045fe94bdf7be73624bc60760cd91b4df3fc071c0",
+        "head.0.weight": "f1f93d9fd636f1f23b4de6107d98332ab20a6bf02c5a61677cfc09fffb7ffdc3",
+        "head.0.bias": "470bb47412b4bc35146977c4bb215f7d70e85f4f7147362b96ae8cf7079a1d81",
+        "head.2.weight": "ee1820ba67589c37759831ea593c5c51275263e1d1c8d2d5cb75a3e58a7f5790",
+        "head.2.bias": "3c5a97652e6a18746916c939095e5ce4a3467c36a100cfe9dc2dee0730fa693f"
+      },
+      "Seed": 2022,
+      "InteractionSeed": 2123,
+      "MapSeed": 2124
+    },
+    {
+      "Variant": "G3",
+      "Parameters": 37315,
+      "SharedState": {
+        "node_encoder.0.weight": "256a5af522415c1327796e5f111e6ec1762615ad6ff86d218c7a4cffe7b77964",
+        "node_encoder.0.bias": "39e8c6469a6289ef2c339cc1eeab622a9be512a30d34ee63afc371f05322b50e",
+        "node_encoder.2.weight": "ba7af158b9d3ae92e1416c442c25b8da9f07f60156153f47115f81f2f09b4edc",
+        "node_encoder.2.bias": "0f7d581c14cc19d530e630176061ba9bc7ba84a682700f75410b4c39d88e5648",
+        "norm.weight": "ec645e8da80d49565ef3d689a9936dfa1e84d0a182742b8edfdd9031d7776218",
+        "norm.bias": "0dcdc9cf5d12d186e3d613b045fe94bdf7be73624bc60760cd91b4df3fc071c0",
+        "head.0.weight": "f1f93d9fd636f1f23b4de6107d98332ab20a6bf02c5a61677cfc09fffb7ffdc3",
+        "head.0.bias": "470bb47412b4bc35146977c4bb215f7d70e85f4f7147362b96ae8cf7079a1d81",
+        "head.2.weight": "ee1820ba67589c37759831ea593c5c51275263e1d1c8d2d5cb75a3e58a7f5790",
+        "head.2.bias": "3c5a97652e6a18746916c939095e5ce4a3467c36a100cfe9dc2dee0730fa693f"
+      },
+      "Seed": 2022,
+      "InteractionSeed": 2123,
+      "MapSeed": 2124
+    }
+  ],
+  "shared_node_norm_head_bitwise_equal": true,
+  "final_layer_weight_bias_exact_zero": true,
+  "training_executed": false,
+  "architecture": "one message-passing layer; hidden64; branch messages/learned attention; score head64-32-1",
+  "predictor_loaded_into_graph": false,
+  "G1_G2_G3_candidates_are_references_to_same_R0_tensor": true
+}

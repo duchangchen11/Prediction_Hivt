@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "observable_fields": [
+    "history",
+    "history_padding",
+    "actor_type",
+    "predicted",
+    "original_logits",
+    "original_probability",
+    "scene_token",
+    "sample_token",
+    "instance_tokens",
+    "map_location",
+    "origin",
+    "yaw"
+  ],
+  "GT_mask_target_mask_access_raises": true,
+  "poisoned_GT_and_inverted_future_masks_leave_all_graph_arrays_bitwise_identical": true,
+  "windows": 16,
+  "GT_used_for_neighbor_selection": false,
+  "GT_used_for_map_retrieval": false,
+  "ranking_labels_not_built_in_Stage0": true,
+  "full_target_mask_used_only_for_coverage_population_counts": true,
+  "graph_predictor_backward_executed": false,
+  "predictor_gradient_count": 0
+}

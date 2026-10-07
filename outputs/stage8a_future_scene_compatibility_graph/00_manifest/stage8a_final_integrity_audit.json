@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "historical_files_verified": 2247,
+  "scene_shards_verified": 850,
+  "unrelated_untracked_preserved": 5,
+  "source_candidate_cache_batches": 1283,
+  "all_candidate_cache_SHA_verified": true,
+  "all_graph_cache_SHA_verified": true,
+  "new_checkpoint_count": 0,
+  "optimizer_steps": 0,
+  "graph_inputs_contain_GT": false,
+  "official_VAL_training_used": false,
+  "head_split_reused": true,
+  "graph_cache_manifest_sha256": "56c2003c8085d038170e64896d61e9686dbc8dbfab454c5f53a0e7b1a6c4a521",
+  "source_SHA256": {
+    "03_model_audit/stage8a_memory_audit.py": "165d478916d72049e5ce180abf50a6a36772fa1d1ec09f1c6a6c8e798d9368fa",
+    "03_model_audit/stage8a_graph_audit.py": "b596e3a2fbf9f8270232ed768e0a6c3927d84c6cc0d63e4f535d672dabf2a8c7",
+    "00_manifest/stage8a_graph.py": "5740dfa697e52d4c83a44056250c186305d9dcd04a816c2a6c8dec3e1d62c085",
+    "00_manifest/stage8a_common.py": "ed5289f745626c144631592ae2ebc15b2355bbd0b56ed4d2ab48e08addf87171",
+    "00_manifest/stage8a_map.py": "9c1292a1d3fae8c3a023f60bdeddc7c0b9844f7f77df5061fe4fc4f855ed466b",
+    "00_manifest/stage8a_register.py": "ae01a407c3b2701017ce64e592f8fbea39585e27615112b2f79e1cd741d06b58",
+    "00_manifest/stage8a_model.py": "ae7fe3a0bd89b636b6ea6265210912827adea33eb0d28604abca7e55fda38eca",
+    "01_cache_audit/stage8a_identity_audit.py": "f8b7a912dd5eab8366705ca42ae9399aab257099d84315d965a1c16c53fac8e3",
+    "09_reports/stage8a_finalize_stage0.py": "2b690e8a32d389afcf4ee7334769403d85f93a4069ed23ca2496eff495423f78",
+    "02_graph_cache/stage8a_build_graph_cache.py": "1f979a1eddee9d58ffeb62d39e996de99baec61887bc0f9b108851b662104db4",
+    "00_manifest/stage8a_git_publish.py": "8c926a9ad2cce46fb4d9079830aca129949da5bfae2b93c2780313006ce341a1"
+  },
+  "merged_main": false,
+  "publication_helper_added_after_experiment_checks": true
+}

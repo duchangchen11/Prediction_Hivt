@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "windows": 200,
+  "coordinate_frame": "t0 ego x-forward/y-left meters",
+  "origin_yaw_source": "same original scene shard, current LIDAR_TOP ego pose",
+  "maxima": {
+    "roundtrip_max_m": 2.8421709430404007e-13,
+    "map_start_max_m": 8.007587454257712e-06,
+    "map_vector_max_m": 5.960446003427933e-08,
+    "distance_frame_max_m": 1.3642420526593924e-12
+  },
+  "source_map_segments_checked": 144914,
+  "global_local_full_region_distance_agrees": true,
+  "brute_force_retrieval_candidates": 400,
+  "centerline_resolution_source": "unaltered Stage7A 2m discretized complete centerline archive",
+  "duplicate_vertices": "source unchanged; segment match uses both endpoints",
+  "future_GT_used_for_frame": false
+}

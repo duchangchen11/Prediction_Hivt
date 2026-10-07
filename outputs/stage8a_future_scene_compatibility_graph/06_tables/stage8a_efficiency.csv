@@ -1,0 +1,5 @@
+Model,Parameters,TargetsPerForward,InputTensorBytes,InputKiBPerTarget,PeakCUDAAllocatedMiB,ForwardIncrementalPeakMiB,TrainingExecuted,Weights
+R2,673,128,61440,0.46875,33.15625,1.09375,False,frozen trained R2
+G1,24066,128,3668992,27.9921875,85.36083984375,49.765625,False,zero-final-layer untrained prototype
+G2,20674,128,3668992,27.9921875,44.34765625,8.765625,False,zero-final-layer untrained prototype
+G3,37315,128,3668992,27.9921875,85.4130859375,49.765625,False,zero-final-layer untrained prototype

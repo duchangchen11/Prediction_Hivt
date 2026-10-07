@@ -1,0 +1,89 @@
+{
+  "Stage8A_0": "NOT_READY",
+  "failures": [
+    "train Vehicle fallback=25.170734% exceeds fixed5%",
+    "val Vehicle fallback=26.539193% exceeds fixed5%"
+  ],
+  "candidate_identity": "PASS",
+  "coordinate_audit": "PASS",
+  "semantic_attachment": "PASS",
+  "GT_leakage_audit": "PASS",
+  "memory_audit": "PASS",
+  "G1_G2_G3_training_executed": false,
+  "tiny_training_executed": false,
+  "Stage8A_1_started": false,
+  "test_used": false,
+  "map_radius_m": 10.0,
+  "map_topM": 8,
+  "neighbors_max": 8,
+  "neighbor_radius_m": 50.0,
+  "thresholds_changed": false,
+  "counts": {
+    "train": {
+      "current_valid_actors": 459612,
+      "current_valid_candidates": 2757672,
+      "full_target_actors": 290085,
+      "full_target_candidates": 1740510,
+      "windows": 16898,
+      "scenes": 700
+    },
+    "val": {
+      "current_valid_actors": 91092,
+      "current_valid_candidates": 546552,
+      "full_target_actors": 54990,
+      "full_target_candidates": 329940,
+      "windows": 3603,
+      "scenes": 150
+    }
+  },
+  "combined_map_coverage": [
+    {
+      "Group": "Overall",
+      "Candidates": 3304224,
+      "CoverageWithin10m": 0.7749483691178322,
+      "AtLeast4TokensWithin10m": 0.46405842945272474,
+      "FallbackRate": 0.22505163088216779,
+      "MeanMapTokensPerMode": 3.923567227887698
+    },
+    {
+      "Group": "Vehicle",
+      "Candidates": 2423658,
+      "CoverageWithin10m": 0.7460124324471522,
+      "AtLeast4TokensWithin10m": 0.44501328157685616,
+      "FallbackRate": 0.2539875675528478,
+      "MeanMapTokensPerMode": 3.8474533123072643
+    },
+    {
+      "Group": "Pedestrian",
+      "Candidates": 836550,
+      "CoverageWithin10m": 0.853668041360349,
+      "AtLeast4TokensWithin10m": 0.5165489211643057,
+      "FallbackRate": 0.14633195863965096,
+      "MeanMapTokensPerMode": 4.131958639650947
+    },
+    {
+      "Group": "Bicycle",
+      "Candidates": 44016,
+      "CoverageWithin10m": 0.8721374045801527,
+      "AtLeast4TokensWithin10m": 0.5151308615049073,
+      "FallbackRate": 0.12786259541984732,
+      "MeanMapTokensPerMode": 4.154034896401309
+    },
+    {
+      "Group": "MovingVehicle",
+      "Candidates": 548928,
+      "CoverageWithin10m": 0.9797241168240644,
+      "AtLeast4TokensWithin10m": 0.8975421184563367,
+      "FallbackRate": 0.020275883175935643,
+      "MeanMapTokensPerMode": 6.940686210213362
+    }
+  ],
+  "mean_neighbor_actors_per_target": 7.484498024347018,
+  "mean_mode_mode_edges_per_target": 269.4419288764927,
+  "mean_mode_map_edges_per_target": 23.541403367326186,
+  "estimated_G3_parameters": 37315,
+  "graph_cache_bytes": 101065981,
+  "estimated_padded_raw_bytes_per_target": 28664,
+  "G3_prototype_batch128_peak_CUDA_MiB": 85.4130859375,
+  "STOP": true
+}

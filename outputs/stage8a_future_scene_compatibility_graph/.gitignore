@@ -1,0 +1,8 @@
+**/__pycache__/
+**/*.tmp
+02_graph_cache/*.npz
+02_graph_cache/*.pt
+02_graph_cache/stage8a_map_token_dictionary.json
+07_checkpoints/*.pt
+**/*.log
+00_manifest/stage8a_git_upload_*.json
