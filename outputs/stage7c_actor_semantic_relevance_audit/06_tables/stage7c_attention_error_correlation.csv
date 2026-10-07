@@ -1,0 +1,71 @@
+Group,X,Y,SpearmanR,p_value,Count,interpretation
+Overall,DeltaRelevantMass,DeltaMinFDE,-0.005315613082929294,0.2125849601578892,54990,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall,DeltaRelevantMass,DeltaTop1FDE,-0.018653505195292693,1.2170099069782313e-05,54990,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall,DeltaGTNearestAttentionRank,DeltaMinFDE,0.0018715502617143518,0.6607572233999278,54990,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.0038240211289672626,0.3698716493748879,54990,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall,DeltaCorrectTurnMass,DeltaMinFDE,-0.006138051864371761,0.8024920224624766,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall,DeltaCorrectTurnMass,DeltaTop1FDE,-0.0051893830307060355,0.8325245908669023,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall Vehicle,DeltaRelevantMass,DeltaMinFDE,-0.00030710596690036317,0.9496196706148458,42332,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall Vehicle,DeltaRelevantMass,DeltaTop1FDE,-0.003174389308321219,0.5136887417710068,42332,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall Vehicle,DeltaGTNearestAttentionRank,DeltaMinFDE,0.012506705791632345,0.010074925698727777,42332,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall Vehicle,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.018819227860323678,0.00010784141599791222,42332,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall Vehicle,DeltaCorrectTurnMass,DeltaMinFDE,-0.006138051864371761,0.8024920224624766,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+Overall Vehicle,DeltaCorrectTurnMass,DeltaTop1FDE,-0.0051893830307060355,0.8325245908669023,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+vehicle.moving,DeltaRelevantMass,DeltaMinFDE,-0.038535249859740675,8.069007353752905e-05,10461,descriptive; correlated windows; not causal; no multiplicity adjustment
+vehicle.moving,DeltaRelevantMass,DeltaTop1FDE,0.006479228945839062,0.5075758688855889,10461,descriptive; correlated windows; not causal; no multiplicity adjustment
+vehicle.moving,DeltaGTNearestAttentionRank,DeltaMinFDE,0.008915791521833671,0.36186997719679004,10461,descriptive; correlated windows; not causal; no multiplicity adjustment
+vehicle.moving,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.06907559661171501,1.520691497943496e-12,10461,descriptive; correlated windows; not causal; no multiplicity adjustment
+vehicle.moving,DeltaCorrectTurnMass,DeltaMinFDE,-0.007592560312811422,0.7640073241576333,1566,descriptive; correlated windows; not causal; no multiplicity adjustment
+vehicle.moving,DeltaCorrectTurnMass,DeltaTop1FDE,0.0040892507754352984,0.8715466509653231,1566,descriptive; correlated windows; not causal; no multiplicity adjustment
+Vehicle >5m,DeltaRelevantMass,DeltaMinFDE,-0.0429700967692989,2.2048567334556405e-05,9744,descriptive; correlated windows; not causal; no multiplicity adjustment
+Vehicle >5m,DeltaRelevantMass,DeltaTop1FDE,0.001983830072577878,0.8447649008013572,9744,descriptive; correlated windows; not causal; no multiplicity adjustment
+Vehicle >5m,DeltaGTNearestAttentionRank,DeltaMinFDE,0.01409803078721868,0.16406439993511396,9744,descriptive; correlated windows; not causal; no multiplicity adjustment
+Vehicle >5m,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.044532547702775024,1.0950432871840286e-05,9744,descriptive; correlated windows; not causal; no multiplicity adjustment
+Vehicle >5m,DeltaCorrectTurnMass,DeltaMinFDE,-0.006138051864371761,0.8024920224624766,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+Vehicle >5m,DeltaCorrectTurnMass,DeltaTop1FDE,-0.0051893830307060355,0.8325245908669023,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurningVehicle_GT,DeltaRelevantMass,DeltaMinFDE,-0.04990051661462243,0.04188354181030811,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurningVehicle_GT,DeltaRelevantMass,DeltaTop1FDE,-0.0323450822865601,0.1873757112225841,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurningVehicle_GT,DeltaGTNearestAttentionRank,DeltaMinFDE,-0.014981164350101352,0.5415271792569849,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurningVehicle_GT,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.04535740902917394,0.0644244066840762,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurningVehicle_GT,DeltaCorrectTurnMass,DeltaMinFDE,-0.006138051864371761,0.8024920224624766,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurningVehicle_GT,DeltaCorrectTurnMass,DeltaTop1FDE,-0.0051893830307060355,0.8325245908669023,1663,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-left,DeltaRelevantMass,DeltaMinFDE,-0.10102366861226442,0.003553535797366239,831,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-left,DeltaRelevantMass,DeltaTop1FDE,-0.06647518231505194,0.05542630100451451,831,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-left,DeltaGTNearestAttentionRank,DeltaMinFDE,-0.011441615847943922,0.7418967688822475,831,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-left,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.02325192078495367,0.5032618367204935,831,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-left,DeltaCorrectTurnMass,DeltaMinFDE,0.007224656011239954,0.8352641897341639,831,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-left,DeltaCorrectTurnMass,DeltaTop1FDE,-0.03578054531263343,0.3029041117774404,831,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-right,DeltaRelevantMass,DeltaMinFDE,-0.0451073798169688,0.193669089955283,832,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-right,DeltaRelevantMass,DeltaTop1FDE,0.05004624866626693,0.14922112347614375,832,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-right,DeltaGTNearestAttentionRank,DeltaMinFDE,-0.019793771378971287,0.568584685613226,832,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-right,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.07649491826818833,0.027358313557700475,832,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-right,DeltaCorrectTurnMass,DeltaMinFDE,-0.02577317733703403,0.45783427053354975,832,descriptive; correlated windows; not causal; no multiplicity adjustment
+GT-right,DeltaCorrectTurnMass,DeltaTop1FDE,0.05315889857881289,0.12549401386736206,832,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=0,DeltaRelevantMass,DeltaMinFDE,0.003180295116442747,0.7475324246276343,10247,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=0,DeltaRelevantMass,DeltaTop1FDE,-0.02020546495558703,0.040824572355218657,10247,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=0,DeltaGTNearestAttentionRank,DeltaMinFDE,0.0006417515523696599,0.9482098568362769,10247,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=0,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.016422593662681364,0.09644725901879511,10247,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=0,DeltaCorrectTurnMass,DeltaMinFDE,-0.07421232537650757,0.5129627220284187,80,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=0,DeltaCorrectTurnMass,DeltaTop1FDE,-0.037796678938084166,0.7392383625414733,80,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=1,DeltaRelevantMass,DeltaMinFDE,-0.03381360661894114,0.003523615578896378,7445,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=1,DeltaRelevantMass,DeltaTop1FDE,-0.044463780424430194,0.00012414911369836162,7445,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=1,DeltaGTNearestAttentionRank,DeltaMinFDE,0.022985930580690782,0.04733878311969561,7445,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=1,DeltaGTNearestAttentionRank,DeltaTop1FDE,0.009426838944910244,0.41606283737561545,7445,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=1,DeltaCorrectTurnMass,DeltaMinFDE,-0.03990895853525428,0.6470717434312807,134,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=1,DeltaCorrectTurnMass,DeltaTop1FDE,-0.16323512333891535,0.05949184091549762,134,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=2,DeltaRelevantMass,DeltaMinFDE,0.005387159328605573,0.6146675435799,8735,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=2,DeltaRelevantMass,DeltaTop1FDE,-0.02546808373844272,0.017297438672695918,8735,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=2,DeltaGTNearestAttentionRank,DeltaMinFDE,0.008161521763369631,0.44564869304185817,8735,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=2,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.021943128428286756,0.04028788917911846,8735,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=2,DeltaCorrectTurnMass,DeltaMinFDE,0.010749853658267116,0.8558629580614111,288,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20=2,DeltaCorrectTurnMass,DeltaTop1FDE,0.05142287115635567,0.3845981966627189,288,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20>=3,DeltaRelevantMass,DeltaMinFDE,-0.004332888897483095,0.5847896240182877,15905,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20>=3,DeltaRelevantMass,DeltaTop1FDE,0.024437634072843457,0.0020549681856294032,15905,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20>=3,DeltaGTNearestAttentionRank,DeltaMinFDE,0.017773371180028613,0.024994349331348843,15905,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20>=3,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.03968228927243937,5.55406424970653e-07,15905,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20>=3,DeltaCorrectTurnMass,DeltaMinFDE,-0.0019959702866148214,0.945836260909668,1161,descriptive; correlated windows; not causal; no multiplicity adjustment
+TurnOptionCount20>=3,DeltaCorrectTurnMass,DeltaTop1FDE,-0.008025664348308575,0.7847210780663634,1161,descriptive; correlated windows; not causal; no multiplicity adjustment
+Pedestrian,DeltaRelevantMass,DeltaMinFDE,-0.02167145661781427,0.017586141343850937,12002,descriptive; correlated windows; not causal; no multiplicity adjustment
+Pedestrian,DeltaRelevantMass,DeltaTop1FDE,-0.07565432621431313,1.0478051913069273e-16,12002,descriptive; correlated windows; not causal; no multiplicity adjustment
+Pedestrian,DeltaGTNearestAttentionRank,DeltaMinFDE,-0.01960971773972687,0.03169003014433096,12002,descriptive; correlated windows; not causal; no multiplicity adjustment
+Pedestrian,DeltaGTNearestAttentionRank,DeltaTop1FDE,0.0419660831853449,4.243520812010693e-06,12002,descriptive; correlated windows; not causal; no multiplicity adjustment

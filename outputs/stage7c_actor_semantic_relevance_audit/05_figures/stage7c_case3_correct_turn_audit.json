@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "07_cases/stage7c_case3_correct_turn_source.json",
+  "same_axes": true,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7c_case3_correct_turn.png",
+      "bytes": 255194,
+      "sha256": "5249954710fe6c42734446de99b34e607e6d7e01599e289e9fe329897e7fffdf"
+    },
+    {
+      "path": "05_figures/stage7c_case3_correct_turn.pdf",
+      "bytes": 66230,
+      "sha256": "bcb43787d3c70daab241cf66d2d75b7d96b02cae23aa2d060c6082003530453a"
+    },
+    {
+      "path": "05_figures/stage7c_case3_correct_turn.svg",
+      "bytes": 596665,
+      "sha256": "659a2786fc8c6732a4b4ad869bfc3634946378ed78b5b2dd4de6f938e4fcd285"
+    }
+  ]
+}

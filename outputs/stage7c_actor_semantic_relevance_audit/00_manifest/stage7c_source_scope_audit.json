@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "source_sha256": {
+    "00_manifest/stage7c_git_publish.py": "6173f7bba5f2ff433757fb1600bb787359b995c586ec9c7dcc639a4f8464afaf",
+    "00_manifest/stage7c_common.py": "29c27722856d571618dc7f5bffca581007c1f909da190a932571392a768b5bac",
+    "04_perturbation/stage7c_perturb.py": "50b3155cfa355ce50549dd8f4f3972e89314aab4989af6a67159c85a8bc6b617",
+    "04_perturbation/stage7c_perturb_tables.py": "f1e479d047bff90be6bbf8a7ee8a9ccba5ef6dd02ee8441e5cc7a994ab6e605f",
+    "01_attention_capture/stage7c_capture.py": "b9a04eddf84720b346021f3efe4872d7b881abc4783b0762e00c4dcd1c489178",
+    "01_attention_capture/stage7c_integrity.py": "ab6b6ed1eb5f3816c381103a3fd7b65a466ce2fb44e3091c23f607e372cd0076",
+    "01_attention_capture/stage7c_hooks.py": "f1940c42ffa39440fb260a8be8d96b70a9c97bcf040e37bb6217cfd41b9ffb64",
+    "01_attention_capture/stage7c_read_edges.py": "1ee5c81e87eaa430dffcb4205aad08b7f4554c6ae0d3e75e2d0b22a529add979",
+    "05_figures/stage7c_cases.py": "d4c31846af5e0de1c30fdd27760a30cd4523db5b4168936cebadc303ed85b9de",
+    "09_reports/stage7c_finalize.py": "da751acbce94a68718e39ace3ab139f6ab3ccbe1c000d66de2ec954ae587cd4e",
+    "02_relevance_analysis/stage7c_geometry.py": "514c93ced9325b134a6d589d6936d7c94c211ddd143e05a289ead17c102ef735",
+    "02_relevance_analysis/stage7c_association_uncertainty.py": "a41aefec71557837f1e1c3fd75e86aa06248f34c46273b62f10b5bdd6e56a50b",
+    "02_relevance_analysis/stage7c_analyze.py": "1cb7260036c9cbbb70b974b70ee0cd1523eaad6d8a3574bcf89201768df17bf9"
+  },
+  "optimizer_step_backward_training_checkpoint_save_calls": [],
+  "no_new_pt_files": true,
+  "future_attention_proposal_is_text_only": true
+}

@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "case": "case1_relevance_shift",
+      "title": "Degradation with reduced GT-relevant attention",
+      "scene_token": "5a0dd8908a3a459b83ec5eb6ac7d0f82",
+      "sample_token": "125a63c9e5b14ebfb5839143c88e3a44",
+      "instance_token": "b8953f43a8ba405cb16e7bf838f14df4",
+      "candidate_count": 374,
+      "DeltaMinFDE": 5.016751289367676,
+      "DeltaRelevantMass": -0.0758823302572475,
+      "DeltaCorrectTurnMass": null,
+      "DeltaOppositeTurnMass": null
+    },
+    {
+      "case": "case2_opposite_turn",
+      "title": "Turning vehicle: increased opposite-turn attention",
+      "scene_token": "201b7c65a61f4bc1a2333ea90ba9a932",
+      "sample_token": "291e7331922541cea98122b607d24831",
+      "instance_token": "b6a3a4e1e15a4216aebe223e69471a23",
+      "candidate_count": 16,
+      "DeltaMinFDE": 3.3776135444641104,
+      "DeltaRelevantMass": -0.074380987673288,
+      "DeltaCorrectTurnMass": 0.0302724032535469,
+      "DeltaOppositeTurnMass": 0.045390793892462304
+    },
+    {
+      "case": "case3_correct_turn",
+      "title": "Turning vehicle: improvement with increased correct-turn attention",
+      "scene_token": "3f90afe9f7dc49399347ae1626502aed",
+      "sample_token": "a9172ca19f2b473c92a90cc702d199ba",
+      "instance_token": "97acfaf4ecf74e5280ca3df845afce84",
+      "candidate_count": 11,
+      "DeltaMinFDE": -2.33943462371826,
+      "DeltaRelevantMass": 0.0850251209328901,
+      "DeltaCorrectTurnMass": 0.00842927760205,
+      "DeltaOppositeTurnMass": -0.10310427564721601
+    },
+    {
+      "case": "case4_reasonable_attention",
+      "title": "GT-relevant attention with prediction degradation",
+      "scene_token": "6a24a80e2ea3493c81f5fdb9fe78c28a",
+      "sample_token": "2483f870bba9443aa33cda63424b0e37",
+      "instance_token": "fe25b42ff73240feb381ba81db2295f5",
+      "candidate_count": 59,
+      "DeltaMinFDE": 2.539440095424652,
+      "DeltaRelevantMass": 0.081531427941794,
+      "DeltaCorrectTurnMass": null,
+      "DeltaOppositeTurnMass": null
+    }
+  ],
+  "count": 4,
+  "distinct_identities": true,
+  "training": false
+}

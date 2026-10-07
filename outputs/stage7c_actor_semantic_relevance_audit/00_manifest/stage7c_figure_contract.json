@@ -1,0 +1,27 @@
+{
+  "backend": "Python matplotlib",
+  "purpose": "Four measured attention/error case illustrations; exploratory diagnostics, not population mechanism proof",
+  "archetype": "quantitative grid with matched map panels",
+  "panels": "two predictors in columns; semantic-colored geometry in upper row, common-scale attention in lower row; frozen GT and both best trajectories",
+  "formats": [
+    "PNG300dpi",
+    "editable PDF TrueType42",
+    "SVG editable text"
+  ],
+  "source": "paired actor attention CSV, frozen VAL graph geometry, frozen checkpoints, measured attention archives",
+  "same_axes": true,
+  "case_rules": {
+    "Case1": "vehicle>5m; error delta>1m; relevant mass delta<-0.05, otherwise sign-consistent negative shift; largest error degradation first",
+    "Case2": "TurningVehicle_GT; opposite mass increased; error delta>1m; largest error degradation first",
+    "Case3": "TurningVehicle_GT; correct mass increased; error delta<-1m; largest improvement first",
+    "Case4": "vehicle>5m; error delta>1m; Stage7A relevant mass>=0.5; relevant mass not decreased; top1 attended lane GT distance<=2m; largest degradation first"
+  },
+  "selection": "illustrative extreme within fixed criteria; distinct actor identities; not representative frequencies",
+  "review_risks": [
+    "GT-defined future groups and relevance are strictly offline",
+    "attention is not a causal explanation",
+    "checkpoint weights differ between independently trained predictors",
+    "50m incoming mask can omit future-nearest lane",
+    "all figure data measured, no schematic fake trajectories"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "07_cases/stage7c_case1_relevance_shift_source.json",
+  "same_axes": true,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7c_case1_relevance_shift.png",
+      "bytes": 263614,
+      "sha256": "9a9394dc8553dac21d5b08c44f356224bf6ef46c3f40946bf3eec040708dad50"
+    },
+    {
+      "path": "05_figures/stage7c_case1_relevance_shift.pdf",
+      "bytes": 61471,
+      "sha256": "0fceeaa77f891435296b43bfc7451354c4cd3e354a4821201c3296f5e19adc75"
+    },
+    {
+      "path": "05_figures/stage7c_case1_relevance_shift.svg",
+      "bytes": 731173,
+      "sha256": "66688c98b6095cbea5a42690a626b32370a50e788fec352c595e5066633c0a5d"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+01_attention_capture/*.npz
+01_attention_capture/*.csv
+02_relevance_analysis/*actor*.csv
+03_representation_analysis/*.npz
+04_perturbation/*actor*.csv
+08_logs/*.log
+00_manifest/stage7c_git_upload_*.json
+**/__pycache__/
+**/*.tmp

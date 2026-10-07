@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "models": [
+    "Stage3B",
+    "Stage7A-ON",
+    "Stage7A-ZERO",
+    "Stage7A-SHUFFLE",
+    "Stage7A-CENTERED"
+  ],
+  "paired_full_actor_windows": 54990,
+  "GT_ID_mask_type_node_identity": true,
+  "NaN": 0,
+  "Inf": 0,
+  "ON_ZERO_reused": true,
+  "historical_Stage7A_metrics_unchanged": true,
+  "training": false
+}

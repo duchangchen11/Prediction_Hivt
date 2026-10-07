@@ -1,0 +1,21 @@
+Model,Group,Count,minFDE,Top1FDE,status
+Stage3B,Overall,54990,1.3432604611189578,2.687983833298456,frozen independent baseline
+Stage3B,Vehicle,42332,1.4319135199692588,3.050323455170056,frozen independent baseline
+Stage3B,MovingVehicle,10461,4.791532281727812,10.734858538399848,frozen independent baseline
+Stage3B,TurningVehicle_GT,1663,14.452464647900248,18.57199698315639,frozen independent baseline
+Stage7A-ON,Overall,54990,1.3505458137541295,2.74948207715014,frozen same-checkpoint input ablation
+Stage7A-ON,Vehicle,42332,1.4401946606378042,3.1358677981186953,frozen same-checkpoint input ablation
+Stage7A-ON,MovingVehicle,10461,4.793598847468378,11.025390154410186,frozen same-checkpoint input ablation
+Stage7A-ON,TurningVehicle_GT,1663,14.44234077846581,19.098374887180846,frozen same-checkpoint input ablation
+Stage7A-ZERO,Overall,54990,1.3589283382660693,2.7275822051850285,frozen same-checkpoint input ablation
+Stage7A-ZERO,Vehicle,42332,1.450921543698525,3.1071030644809414,frozen same-checkpoint input ablation
+Stage7A-ZERO,MovingVehicle,10461,4.833782112501432,10.903239177865231,frozen same-checkpoint input ablation
+Stage7A-ZERO,TurningVehicle_GT,1663,14.457738985041502,18.54795737633559,frozen same-checkpoint input ablation
+Stage7A-SHUFFLE,Overall,54990,1.3523155889465566,2.750506833503174,"OOD diagnostic, not baseline"
+Stage7A-SHUFFLE,Vehicle,42332,1.4424533494984169,3.1377777682322274,"OOD diagnostic, not baseline"
+Stage7A-SHUFFLE,MovingVehicle,10461,4.801724685424528,11.020772261552986,"OOD diagnostic, not baseline"
+Stage7A-SHUFFLE,TurningVehicle_GT,1663,14.447483095395873,19.041903693921153,"OOD diagnostic, not baseline"
+Stage7A-CENTERED,Overall,54990,1.3508206408670742,2.7503688705334155,"OOD diagnostic, not baseline"
+Stage7A-CENTERED,Vehicle,42332,1.4403738687404866,3.13758307965485,"OOD diagnostic, not baseline"
+Stage7A-CENTERED,MovingVehicle,10461,4.796055516629173,11.035420636599198,"OOD diagnostic, not baseline"
+Stage7A-CENTERED,TurningVehicle_GT,1663,14.443619246591808,19.189434779242298,"OOD diagnostic, not baseline"

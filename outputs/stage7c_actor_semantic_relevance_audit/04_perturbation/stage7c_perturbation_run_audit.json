@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "forward_runs": 2,
+  "reused_frozen_runs": [
+    "Stage3B",
+    "Stage7A-ON",
+    "Stage7A-ZERO"
+  ],
+  "completed": {
+    "SHUFFLE": {
+      "count": 54990,
+      "minADE6": 0.6737440537891901,
+      "minFDE6": 1.3523155889465566,
+      "MR6": 0.16481178396072013,
+      "Top1ADE6": 1.2339643111690752,
+      "Top1FDE6": 2.7505068335031746,
+      "NLL": -0.5716778534837327,
+      "independent_minADE6": 0.6350985104916999
+    },
+    "CENTERED": {
+      "count": 54990,
+      "minADE6": 0.6727074780754325,
+      "minFDE6": 1.3508206408670742,
+      "MR6": 0.16490270958356065,
+      "Top1ADE6": 1.2363168193129968,
+      "Top1FDE6": 2.7503688705334155,
+      "NLL": -0.5716710483985333,
+      "independent_minADE6": 0.6342184814052256
+    }
+  },
+  "VAL_scenes": 150,
+  "supervised_windows": 3603,
+  "full_targets": 54990,
+  "training_updates": 0,
+  "new_checkpoints": 0,
+  "test_used": false,
+  "Stage7B_executed": false
+}

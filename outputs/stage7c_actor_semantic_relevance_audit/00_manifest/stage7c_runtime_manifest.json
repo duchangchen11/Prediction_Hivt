@@ -1,0 +1,16 @@
+{
+  "Python": "3.10.21",
+  "PyTorch": "2.5.1+cu124",
+  "CUDA": "12.4",
+  "numpy": "1.26.4",
+  "scipy": "1.14.1",
+  "shapely": "2.0.7",
+  "matplotlib": "3.9.2",
+  "GPU": "NVIDIA GeForce RTX 3080",
+  "environment": "existing ped_intent",
+  "batch_size": 16,
+  "no_new_environment": true,
+  "no_dependency_install": true,
+  "training_updates": 0,
+  "new_checkpoints": 0
+}

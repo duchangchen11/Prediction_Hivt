@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "frozen_inputs_SHA_checked": {
+    "files": 1835,
+    "scene_shards": 850
+  },
+  "edge_archives_SHA_checked": 226,
+  "captured_edges": 26807585,
+  "full_horizon_targets": 54990,
+  "VAL_scenes": 150,
+  "TurningVehicle_GT_count": 1663,
+  "integrity_random_batches_per_model": 100,
+  "capture_output_maxdiff": 0.0,
+  "required_tables": [
+    "stage7c_attention_relevance.csv",
+    "stage7c_turn_attention.csv",
+    "stage7c_turn_ambiguity.csv",
+    "stage7c_residual_decomposition.csv",
+    "stage7c_attention_error_correlation.csv",
+    "stage7c_perturbation_results.csv"
+  ],
+  "case_count": 4,
+  "training_updates": 0,
+  "new_checkpoints": 0,
+  "new_attention_model_implemented": false,
+  "Stage7B_executed": false,
+  "test_used": false,
+  "historical_Stage7A_decision_unchanged": true,
+  "main_merged": false,
+  "FailurePattern": "RELEVANCE_MISALLOCATION",
+  "STOP": true,
+  "visual_QA": "PASS",
+  "source_scope_audit": "PASS"
+}

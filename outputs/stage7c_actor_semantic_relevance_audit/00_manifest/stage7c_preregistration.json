@@ -1,0 +1,29 @@
+{
+  "registered_utc": "2026-10-07T10:34:27.150492+00:00",
+  "training_authorized": false,
+  "test_used": false,
+  "Stage7B_authorized": false,
+  "seed": 2022,
+  "VAL_scenes": 150,
+  "full_targets": 54990,
+  "TurningVehicle_GT_count": 1663,
+  "capture_integrity_batches": 100,
+  "distance": "minimum Euclidean distance between future12-point polyline and existing current graph lane segment; segment endpoints preserved",
+  "nearest_ties": "GT distance exact ties choose smallest local lane index; attention rank uses average ties over all graph lanes with zero weight assigned to missing edges. Report tied-nearest count and best-ranked co-nearest sensitivity at distance tolerance1e-8m. TopK mean-alpha ties sorted local lane index.",
+  "nearest_scope": "PRIMARY: all existing current-graph lane segments, including those outside unchanged incoming50m edge mask. Their attention weight is zero. Auxiliary metrics condition on incoming edges to distinguish route coverage from attention selection.",
+  "attention_denominator": "mean across actors having at least one retained edge; zero-edge actors separately counted and excluded from rank/entropy; no fabricated ranks",
+  "turn_options": "unique left/straight/right turn types from distinct connector tokens with full centerline distance<20m, all regional map tokens",
+  "turn_match": "highest mean-alpha connector; tie by lane index; NO_CONNECTOR included as nonmatch in primary turning-group rate; conditional connector-present rate secondary",
+  "SHUFFLE": "independent within-graph permutation using SeedSequence([2022, first32bits of SHA256(scene_token+sample_token)]); independent of batching/access order; exact geometry/actor fields preserved",
+  "CENTERED": "evaluation-only semantic_mlp output hook subtracts frozen r(0); no checkpoint/state changes",
+  "bootstrap": {
+    "unit": "whole scene",
+    "scenes": 150,
+    "replicates": 1000,
+    "seed": 2022,
+    "interval": "percentile2.5/97.5",
+    "pooling": "paired actor sums/counts, metric-specific finite mask"
+  },
+  "decisions": "Use user A/B/C/D evidence rules; require consistent group bootstrap direction plus attention-error association for A; improved/stable relevance with material K/V residual and OOD changes for B; large constant alone insufficient for C unless specific component limited and ON\u2248SHUFFLE. Conflicting or weak signals yield D. Associations and OOD perturbations cannot establish mechanism causality. No thresholds selected from results.",
+  "primary_attention_population": "Overall Vehicle full-horizon targets; also report Overall54990, moving, >5m, TurningVehicle_GT and Pedestrian secondary"
+}

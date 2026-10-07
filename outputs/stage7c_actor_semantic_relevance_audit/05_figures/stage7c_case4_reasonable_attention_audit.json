@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "07_cases/stage7c_case4_reasonable_attention_source.json",
+  "same_axes": true,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7c_case4_reasonable_attention.png",
+      "bytes": 320774,
+      "sha256": "6778967036d10200a31f3874304b3e3d7721e139499d01c00b07e2fa9b075ad2"
+    },
+    {
+      "path": "05_figures/stage7c_case4_reasonable_attention.pdf",
+      "bytes": 63791,
+      "sha256": "5417b8ccd8713889295fdbbcf5f5d208eb32c3728de9cbc2a19d8f169db97dd4"
+    },
+    {
+      "path": "05_figures/stage7c_case4_reasonable_attention.svg",
+      "bytes": 603948,
+      "sha256": "d8973108a99c33cc09d997e2759ef6c010921c808861d8277ae62d218f5d9c51"
+    }
+  ]
+}

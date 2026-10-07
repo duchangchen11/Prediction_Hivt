@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "07_cases/stage7c_case2_opposite_turn_source.json",
+  "same_axes": true,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7c_case2_opposite_turn.png",
+      "bytes": 489826,
+      "sha256": "8d4f351eea063332e3151cae5631bf2e4d630a53320ec353ba521d6d01d41796"
+    },
+    {
+      "path": "05_figures/stage7c_case2_opposite_turn.pdf",
+      "bytes": 72804,
+      "sha256": "627846ae03ddf6fdccf0de597f2b33e644085c7cb54f7296baa527289959c12e"
+    },
+    {
+      "path": "05_figures/stage7c_case2_opposite_turn.svg",
+      "bytes": 879095,
+      "sha256": "575d8dec70a31feb25e1c0e4b5afe3259f3e9fc44491ba923611f70e34d8d662"
+    }
+  ]
+}

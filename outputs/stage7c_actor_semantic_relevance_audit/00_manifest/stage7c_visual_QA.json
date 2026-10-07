@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "all_four_PNGs_reviewed_after_final_export": true,
+  "cases": [
+    {
+      "case": "case1_relevance_shift",
+      "PNG_manually_reviewed": true,
+      "GT_and_both_best_endpoints_visible": true,
+      "same_axes_and_color_scale": true,
+      "turn_colors_preserved_control_crosswalk_multihot_markers": true,
+      "PDF_embedded_TrueType_and_selectable_text": true,
+      "SVG_editable_text": true,
+      "source_sha256": "1493c759b42c79111b7f2ecafce2cd1cd7cea105d6a0a54256364943a13f12c5"
+    },
+    {
+      "case": "case2_opposite_turn",
+      "PNG_manually_reviewed": true,
+      "GT_and_both_best_endpoints_visible": true,
+      "same_axes_and_color_scale": true,
+      "turn_colors_preserved_control_crosswalk_multihot_markers": true,
+      "PDF_embedded_TrueType_and_selectable_text": true,
+      "SVG_editable_text": true,
+      "source_sha256": "0e31e1590615cec669ae7a0eae2b85133d03c1eea56a59982ba0afc430214fa2"
+    },
+    {
+      "case": "case3_correct_turn",
+      "PNG_manually_reviewed": true,
+      "GT_and_both_best_endpoints_visible": true,
+      "same_axes_and_color_scale": true,
+      "turn_colors_preserved_control_crosswalk_multihot_markers": true,
+      "PDF_embedded_TrueType_and_selectable_text": true,
+      "SVG_editable_text": true,
+      "source_sha256": "81bb5f2c5804e2dc1d14506e3d8851614373384ddadb69eedbd2b956e11ba7c7"
+    },
+    {
+      "case": "case4_reasonable_attention",
+      "PNG_manually_reviewed": true,
+      "GT_and_both_best_endpoints_visible": true,
+      "same_axes_and_color_scale": true,
+      "turn_colors_preserved_control_crosswalk_multihot_markers": true,
+      "PDF_embedded_TrueType_and_selectable_text": true,
+      "SVG_editable_text": true,
+      "source_sha256": "a79134c9a2ead7c6fad85489e14c647727f3366e7266ac6945ce7eac33894689"
+    }
+  ],
+  "statistics": "illustrative prespecified extreme cases, no case-level population inference"
+}

@@ -1,0 +1,23 @@
+{
+  "FailurePattern": "RELEVANCE_MISALLOCATION",
+  "SemanticRoute": "CONTINUE",
+  "RecommendSemanticAttentionModel": "YES",
+  "interpretation_scope": "localized exploratory support for H1; weak associations; not a cause of all Stage7A degradation",
+  "A_supporting_groups": [
+    "vehicle.moving",
+    "GT-left"
+  ],
+  "A_support": "Moving/GT-left paired scene CIs show lower relevant mass and small negative relevant-mass/error association. Turning correct mass and top-connector match also decline.",
+  "A_counterevidence": "Primary all-Vehicle rho≈0; turning minFDE slightly improves; GT-right geometric relevance and turning nearest rank improve; opposite-turn mass falls; ambiguity error delta is not monotonic.",
+  "B_not_established": "Overall Vehicle and Moving relevance do deteriorate; CENTERED is essentially unchanged and not a rescue. Cross-checkpoint V differences also reflect independently trained shared weights.",
+  "C_not_established": "ON≈SHUFFLE suggests weak spatial correspondence benefit, but semantic-specific norm1.8195 and mean ratio0.7747 are substantial. Large r0 alone does not demonstrate generic adapter dominance.",
+  "D_not_selected": "Localized direction-consistent moving and GT-left association survives scene resampling; evidence sufficient for a limited score-only diagnostic proposal, not a performance claim.",
+  "future_proposal": "semantic_l, relative_lane_actor_position, actor_type_i affect attention score only; geometry-only lane V unchanged",
+  "proposal_implemented": false,
+  "training_updates": 0,
+  "new_checkpoints": 0,
+  "Stage7B_executed": false,
+  "historical_Stage7A_decision_unchanged": true,
+  "test_used": false,
+  "STOP": true
+}
