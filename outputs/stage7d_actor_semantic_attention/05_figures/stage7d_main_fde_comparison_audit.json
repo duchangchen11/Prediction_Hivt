@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "06_tables/stage7d_bootstrap_ci.csv;1000 paired150-scene replicates; one training seed each; secondary CIs unadjusted",
+  "same_axes": null,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7d_main_fde_comparison.png",
+      "bytes": 92127,
+      "sha256": "f09608faf0db7c1bc3835c919b8d8731202d9a30b54dbe05db11f4c17fa2ca43"
+    },
+    {
+      "path": "05_figures/stage7d_main_fde_comparison.pdf",
+      "bytes": 21201,
+      "sha256": "dfe5951260acd62503f890cbcabbe93c4e11fcf3600fec75432dacc4e53b4e1c"
+    },
+    {
+      "path": "05_figures/stage7d_main_fde_comparison.svg",
+      "bytes": 18299,
+      "sha256": "720859332b4051ffa8c32f165c70d2e69a49c3b4010ae66248be675736f4691c"
+    }
+  ]
+}

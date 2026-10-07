@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "06_tables/stage7d_bootstrap_ci.csv;1000 paired150-scene replicates; one training seed each; secondary CIs unadjusted",
+  "same_axes": null,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7d_difficult_vehicle_groups.png",
+      "bytes": 87668,
+      "sha256": "2dd2a722de62c261ec7a981abec45f996279d3ef64e714feb4c965c40f3e3c09"
+    },
+    {
+      "path": "05_figures/stage7d_difficult_vehicle_groups.pdf",
+      "bytes": 21354,
+      "sha256": "0e160d45ba1fd354c22c5d1b7c3b78c66325cab4c2fbe073b8d9a9cd42c00e05"
+    },
+    {
+      "path": "05_figures/stage7d_difficult_vehicle_groups.svg",
+      "bytes": 18624,
+      "sha256": "87dbcce40579b90863682ce17c27698ecd9b56c9c204a4eec7bfcbc0bee9842b"
+    }
+  ]
+}

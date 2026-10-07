@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "06_tables/stage7d_attention_relevance.csv; point estimates; exact group counts in source; Stage7A historical frozen reference",
+  "same_axes": null,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7d_attention_relevance.png",
+      "bytes": 73729,
+      "sha256": "2592f267a25fa0b3154cb7236d8a92404cf50fecb50b07e1f68a533280c699f3"
+    },
+    {
+      "path": "05_figures/stage7d_attention_relevance.pdf",
+      "bytes": 13121,
+      "sha256": "7e7ab06ade2fe7bbde0febed4689caa53fc09bdd3d642091d7ba38d4089cff3f"
+    },
+    {
+      "path": "05_figures/stage7d_attention_relevance.svg",
+      "bytes": 10311,
+      "sha256": "aa9eaeaa332674894402ecdcf3646770b7b3a932ff792880fae30b5651abdd7c"
+    }
+  ]
+}

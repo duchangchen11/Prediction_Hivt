@@ -1,0 +1,36 @@
+Group,X,Y,SpearmanR,p_value,Count,Interpretation
+Overall,DeltaRelevantMass,DeltaMinFDE,-0.0429007477862579,7.920285191852672e-24,54990,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Overall,DeltaRelevantMass,DeltaTop1FDE,-0.019872551553396303,3.155080824260189e-06,54990,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Overall,DeltaGTNearestAttentionRank,DeltaMinFDE,0.02068855092162971,1.2230702987725839e-06,54990,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Overall,DeltaGTNearestAttentionRank,DeltaTop1FDE,0.012793776590296624,0.0026981269066889053,54990,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Vehicle,DeltaRelevantMass,DeltaMinFDE,-0.027817315315919567,1.0387367182439854e-08,42332,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Vehicle,DeltaRelevantMass,DeltaTop1FDE,-0.0020347521219201484,0.6754843196740896,42332,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Vehicle,DeltaGTNearestAttentionRank,DeltaMinFDE,0.008125353050737362,0.09457389875102654,42332,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Vehicle,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.005959674322401264,0.22013761140933089,42332,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Pedestrian,DeltaRelevantMass,DeltaMinFDE,-0.03170268075507003,0.0005134199653638767,12002,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Pedestrian,DeltaRelevantMass,DeltaTop1FDE,-0.06617200644808957,3.9699118827327537e-13,12002,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Pedestrian,DeltaGTNearestAttentionRank,DeltaMinFDE,0.018850738397736374,0.038910191624639726,12002,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Pedestrian,DeltaGTNearestAttentionRank,DeltaTop1FDE,0.04222192012198082,3.7073820786977403e-06,12002,descriptive association; clustered observations; p-value does not replace scene bootstrap
+vehicle.moving,DeltaRelevantMass,DeltaMinFDE,0.001403413870260821,0.8858773631560934,10461,descriptive association; clustered observations; p-value does not replace scene bootstrap
+vehicle.moving,DeltaRelevantMass,DeltaTop1FDE,-0.04850028797631268,6.945185289620972e-07,10461,descriptive association; clustered observations; p-value does not replace scene bootstrap
+vehicle.moving,DeltaGTNearestAttentionRank,DeltaMinFDE,0.028978464239985218,0.0030351291507747526,10461,descriptive association; clustered observations; p-value does not replace scene bootstrap
+vehicle.moving,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.027435537743877553,0.005011820062902646,10461,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Vehicle >5m,DeltaRelevantMass,DeltaMinFDE,9.441466832190306e-05,0.9925649110851285,9744,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Vehicle >5m,DeltaRelevantMass,DeltaTop1FDE,-0.04248800021193686,2.7236741158551993e-05,9744,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Vehicle >5m,DeltaGTNearestAttentionRank,DeltaMinFDE,0.021101358004167313,0.037258915424042305,9744,descriptive association; clustered observations; p-value does not replace scene bootstrap
+Vehicle >5m,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.02309648442016541,0.022613330258566704,9744,descriptive association; clustered observations; p-value does not replace scene bootstrap
+TurningVehicle_GT,DeltaRelevantMass,DeltaMinFDE,-0.081922505745824,0.0008260916861125744,1663,descriptive association; clustered observations; p-value does not replace scene bootstrap
+TurningVehicle_GT,DeltaRelevantMass,DeltaTop1FDE,-0.04161823339486966,0.08976356551485537,1663,descriptive association; clustered observations; p-value does not replace scene bootstrap
+TurningVehicle_GT,DeltaGTNearestAttentionRank,DeltaMinFDE,0.0722793528085299,0.00318611945445215,1663,descriptive association; clustered observations; p-value does not replace scene bootstrap
+TurningVehicle_GT,DeltaGTNearestAttentionRank,DeltaTop1FDE,0.02193693216338571,0.37131078343989043,1663,descriptive association; clustered observations; p-value does not replace scene bootstrap
+TurningVehicle_GT,DeltaCorrectTurnMass,DeltaMinFDE,-0.10475393377310444,1.865378780037384e-05,1663,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-left,DeltaRelevantMass,DeltaMinFDE,-0.09331594771724647,0.00710565003001849,831,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-left,DeltaRelevantMass,DeltaTop1FDE,-0.03829595028491265,0.2701562343888265,831,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-left,DeltaGTNearestAttentionRank,DeltaMinFDE,0.05146515544477536,0.1382501419171595,831,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-left,DeltaGTNearestAttentionRank,DeltaTop1FDE,0.029310035728043804,0.3987633247327569,831,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-left,DeltaCorrectTurnMass,DeltaMinFDE,0.000703766796505507,0.9838383579671345,831,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-right,DeltaRelevantMass,DeltaMinFDE,0.019907785827393682,0.5663591009988483,832,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-right,DeltaRelevantMass,DeltaTop1FDE,0.007541043584919005,0.8280579254611047,832,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-right,DeltaGTNearestAttentionRank,DeltaMinFDE,-0.019238293680842986,0.57948698449187,832,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-right,DeltaGTNearestAttentionRank,DeltaTop1FDE,-0.03374999384276986,0.33089532224575524,832,descriptive association; clustered observations; p-value does not replace scene bootstrap
+GT-right,DeltaCorrectTurnMass,DeltaMinFDE,-0.09587686187755187,0.00564478482140015,832,descriptive association; clustered observations; p-value does not replace scene bootstrap

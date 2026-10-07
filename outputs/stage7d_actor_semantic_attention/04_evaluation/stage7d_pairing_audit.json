@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "total": 85027,
+  "full": 54990,
+  "partial": 30037,
+  "NaN": 0,
+  "Inf": 0,
+  "identity_fields": [
+    "scene_token",
+    "sample_token",
+    "instance_token",
+    "horizon",
+    "node_in_graph",
+    "GT_trajectory_sha256",
+    "future_mask_bits",
+    "agent_type_id",
+    "agent_type",
+    "motion_state",
+    "valid_future_steps"
+  ],
+  "GT_sidecar_frozen": true,
+  "Stage7C_turn_signs_reused": true,
+  "Stage3B_checkpoint_sha256": "461dd9fc8ccc4a03bb72e6a92f3e328e34e1fefb6ebf890ff87eedffaa718547",
+  "Stage7D_checkpoint_sha256": "26b18d98a009e15ae0b560825fa854b9cb9987554d04959ddbc26383a82e6123"
+}

@@ -1,0 +1,28 @@
+{
+  "backend": "Python matplotlib; saved preference",
+  "core_question": "Do frozen-protocol forecasting gains and GT-relative attention changes support the score-only semantic model? Each is tested independently.",
+  "archetype": "quantitative comparison grid; paired same-actor map/attention case panels",
+  "evidence_chain": {
+    "stage7d_main_fde_comparison": "Overall primary forecasting comparison; Vehicle, Pedestrian and Moving secondary; paired scene confidence intervals",
+    "stage7d_difficult_vehicle_groups": "Prespecified Vehicle>5m, NearTurnConnector20, TurningVehicle_GT; unadjusted overlapping secondary intervals",
+    "stage7d_attention_relevance": "Frozen Stage3B, Stage7A and selected Stage7D actor-pooled relevance mass; explicit groups and denominators",
+    "stage7d_turn_attention": "Correct, opposite and straight connector mass; same 1663 GT-defined turning actors",
+    "three_cases": "Illustrations only, not prevalence or causal evidence; matched map, actor, GT and axes"
+  },
+  "case_selection": [
+    "TurningVehicle_GT with DeltaMinFDE<0, most negative delta; deterministic identity tie-break",
+    "vehicle.moving with DeltaMinFDE<0, most negative delta among unused identities",
+    "Vehicle>5m with DeltaMinFDE>0, most positive delta among unused identities"
+  ],
+  "width_mm": 183,
+  "quantitative_height_mm": 85,
+  "case_height_mm": 178,
+  "formats": ["PNG 300dpi", "PDF embedded TrueType", "SVG editable text"],
+  "n_definition": "full-horizon actor-window targets; scene-cluster unit is official VAL scene",
+  "uncertainty": "1000 paired whole-scene bootstrap replicates over150 scenes, seed2022, pooled sums/counts, percentile95CI",
+  "seeds": 1,
+  "VAL_checkpoint_selection": "Overall full-horizon minFDE only; no held-out test claims",
+  "statistical_risks": "correlated overlapping secondary groups; no multiplicity correction; one training seed; illustrative case selection",
+  "export_QA": "within-canvas text check, inspect final PNGs, verify PDF fonts/text and SVG text nodes",
+  "journal_status": "experiment report artifacts, not an assertion of final submission compliance"
+}

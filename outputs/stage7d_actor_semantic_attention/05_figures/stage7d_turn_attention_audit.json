@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "06_tables/stage7d_turn_attention.csv; point estimates; GT direction offline only; one training seed",
+  "same_axes": null,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7d_turn_attention.png",
+      "bytes": 70903,
+      "sha256": "a30b20bf1f6c7fe65f68cea128d84eb8169881568d134995bfbd6c0fb05c61b5"
+    },
+    {
+      "path": "05_figures/stage7d_turn_attention.pdf",
+      "bytes": 12836,
+      "sha256": "9611a02c186361b6dc9c712143606950e61f56e794723ee8b804ef47b0c9cd2c"
+    },
+    {
+      "path": "05_figures/stage7d_turn_attention.svg",
+      "bytes": 10882,
+      "sha256": "8565742c766c12b32c32548e5fd5bfdd19496d11480fe5232a4835fa96c19246"
+    }
+  ]
+}

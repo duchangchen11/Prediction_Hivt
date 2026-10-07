@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "05_figures/stage7d_case_degradation_source.json",
+  "same_axes": true,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7d_case_degradation.png",
+      "bytes": 388350,
+      "sha256": "505e24f861bb71945267908854261f57ae4072bd49d6aea8f82ca1fe270263e6"
+    },
+    {
+      "path": "05_figures/stage7d_case_degradation.pdf",
+      "bytes": 64502,
+      "sha256": "ed708302ae3fc6f839166f246da844c62f49f3d785455fc92c5705a48d7277d3"
+    },
+    {
+      "path": "05_figures/stage7d_case_degradation.svg",
+      "bytes": 629343,
+      "sha256": "7afa9e727152b7e907176be955977ee27f5119c4e32b96b7d8fa68683a557759"
+    }
+  ]
+}

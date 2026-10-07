@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "case": "case_turning_improvement",
+      "title": "Turning vehicle improvement",
+      "scene_token": "e7ef871f77f44331aefdebc24ec034b7",
+      "sample_token": "2f5de0aeca704127925cf8490ff5a21d",
+      "instance_token": "5dc88cb5574141fb8781eda219ffdd50",
+      "candidate_count": 887,
+      "DeltaMinFDE": -2.5582048892974854,
+      "DeltaRelevantMass": 0.0,
+      "DeltaCorrectTurnMass": 0.0,
+      "DeltaOppositeTurnMass": 0.0
+    },
+    {
+      "case": "case_moving_improvement",
+      "title": "Moving vehicle improvement",
+      "scene_token": "d01e7279da2649ef896dc42f6b9ee7ab",
+      "sample_token": "10103847ab7d4b1db6c1c046c9e38097",
+      "instance_token": "307059ee04af43b58cf7b9d540bd85ae",
+      "candidate_count": 5319,
+      "DeltaMinFDE": -12.765020370483397,
+      "DeltaRelevantMass": -0.127237603261015,
+      "DeltaCorrectTurnMass": null,
+      "DeltaOppositeTurnMass": null
+    },
+    {
+      "case": "case_degradation",
+      "title": "Failure / degradation",
+      "scene_token": "6a24a80e2ea3493c81f5fdb9fe78c28a",
+      "sample_token": "b7e99fb76ffa4e339880fa0a233e8f27",
+      "instance_token": "5859747aae214c83999a764fb30494ec",
+      "candidate_count": 4724,
+      "DeltaMinFDE": 15.73544788360596,
+      "DeltaRelevantMass": 0.1676521574894672,
+      "DeltaCorrectTurnMass": null,
+      "DeltaOppositeTurnMass": null
+    }
+  ],
+  "count": 3,
+  "distinct_identities": true,
+  "training": false
+}

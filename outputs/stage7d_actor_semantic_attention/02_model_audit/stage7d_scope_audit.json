@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "methods_equivalent_after_removing_only_authorized_score_change": [
+    "LocalEncoder.__init__",
+    "LocalEncoder.forward",
+    "ALEncoder.__init__",
+    "ALEncoder.forward",
+    "ALEncoder.message",
+    "ALEncoder.update",
+    "ALEncoder._mha_block",
+    "ALEncoder._ff_block"
+  ],
+  "removed_changes": "semantic inputs and one score addition; 14→32→8 zero-last MLP constructor",
+  "original_KV_embedding_gate_FFN_equations_identical": true,
+  "semantic_vector_AST_identical_to_Stage7A": true,
+  "runtime_source_sha256": "4c5332a6a48e9dda8ca6fb13505712b11f55441ed42a787142f7956ebb5f4da6",
+  "Stage7E_executed": false,
+  "R2_executed": false
+}

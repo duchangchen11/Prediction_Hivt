@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "05_figures/stage7d_case_turning_improvement_source.json",
+  "same_axes": true,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7d_case_turning_improvement.png",
+      "bytes": 251592,
+      "sha256": "c2345e7adcc7aa8146e24567f34059d805ece644890d91273f06d8fb78aa2ec7"
+    },
+    {
+      "path": "05_figures/stage7d_case_turning_improvement.pdf",
+      "bytes": 34772,
+      "sha256": "84144deb977f6485e70865df406038f261c6d8d48cbbe4cabe90e7e74bd0178d"
+    },
+    {
+      "path": "05_figures/stage7d_case_turning_improvement.svg",
+      "bytes": 300374,
+      "sha256": "e3da04925485c8b591fe0222e689dc29524d40f7d0d7186890de454adde1c274"
+    }
+  ]
+}

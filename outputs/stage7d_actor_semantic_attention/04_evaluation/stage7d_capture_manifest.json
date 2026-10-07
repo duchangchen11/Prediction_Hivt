@@ -1,0 +1,2294 @@
+{
+  "status": "PASS",
+  "VAL_scenes": 150,
+  "windows": 3603,
+  "full_targets": 54990,
+  "TurningVehicle_GT": 1663,
+  "edges": 26807585,
+  "alpha_sum_max_error": 5.34095046145211e-06,
+  "model_state_unchanged": true,
+  "geometry_checks": {
+    "interior_crossing": true,
+    "degenerate_lane": true,
+    "stationary_GT": true,
+    "point_segment_interior": true
+  },
+  "baseline_attention_frozen_sha256": "42a549e27f24b157983d051dcbc09625d650c829ab81a47224e591e349338df3",
+  "relevance_definition_reused": "Stage7C true GT polyline to segment distance; all-graph nearest; average ties",
+  "archives": [
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0000.npz",
+      "sha256": "1df97ba4ba1ea6fa63e34596bf2e249efc9653e402ba448e2351ede1221a0e0a",
+      "bytes": 2415295,
+      "edges": 80589,
+      "first_dataset_index": 0,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0000.npz",
+      "reference_sha256": "53e32e97c59c93ac68148f7d1c533797f14b682a11102036413372c2a11a19f0",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0001.npz",
+      "sha256": "ec7ac6268fa1b4df48a26ad791f14308af16045d4ea151d1f971c0baa2cf8b1f",
+      "bytes": 1509359,
+      "edges": 50039,
+      "first_dataset_index": 16,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0001.npz",
+      "reference_sha256": "56314c9a00c71e955ebb041c92d48d193f307611602907ddd96f037eae06b60b",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0002.npz",
+      "sha256": "508c09768ca051fc1bad0d2fa4b277a0c6285e9195ba25b8525a15f73dc3e04d",
+      "bytes": 219874,
+      "edges": 7251,
+      "first_dataset_index": 32,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0002.npz",
+      "reference_sha256": "bfbe66c459f661c500dc46ff6f4321b104a785155ed9d85d930678bb09fb84ca",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0003.npz",
+      "sha256": "57018364bd0925acf7450f433baa388ea584c5331aa15d66198547ece371437f",
+      "bytes": 530870,
+      "edges": 17412,
+      "first_dataset_index": 48,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0003.npz",
+      "reference_sha256": "f088725e2d235a4d5e7e7034c3fabc1d4fd7ffd2eab26430794516ee3ed2efe7",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0004.npz",
+      "sha256": "28c09cf4dceb3cc835a446b47a1cb0c5d6ee8e3fd2367158d8b6a610ffe09fbf",
+      "bytes": 488012,
+      "edges": 16038,
+      "first_dataset_index": 64,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0004.npz",
+      "reference_sha256": "da59811d58649a079d37d60b10e5315aece360f6cebaddb03f81889ace27f7b0",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0005.npz",
+      "sha256": "96b2e7944f0a526ae7a6f615594f9b62a294036f368f661faa00879fc251f646",
+      "bytes": 356914,
+      "edges": 11522,
+      "first_dataset_index": 80,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0005.npz",
+      "reference_sha256": "4823156e512f1df3bcb55d2c58a106c1b394915c0bfc3d389b97b55008c5027f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0006.npz",
+      "sha256": "47fae7052aa9f46e64d8259768dc8a2a9bab5c46492c329be7e7e4931b4d39b8",
+      "bytes": 567499,
+      "edges": 18442,
+      "first_dataset_index": 96,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0006.npz",
+      "reference_sha256": "3252e0fd60ad126b397dada2dbe42bf960ee4cde38f90d27a1123793228aa7d3",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0007.npz",
+      "sha256": "976a6e4a439aae5c25499349d657665a066837a7b4e787820a055e8789af290e",
+      "bytes": 2021504,
+      "edges": 67398,
+      "first_dataset_index": 112,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0007.npz",
+      "reference_sha256": "6f4f58878ecf39f0ccac6fdbf5b0c2707b268cbd05fbf69176e2488d47ca390a",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0008.npz",
+      "sha256": "7d98dfe51a3629096981103733a32d35546a12be2fd9ec80e773fefda59d33aa",
+      "bytes": 3296733,
+      "edges": 110647,
+      "first_dataset_index": 128,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0008.npz",
+      "reference_sha256": "9435d1cdb73a3b942bbe1228e4bf0fef8952f5b533d7e586b120f3b9d9595991",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0009.npz",
+      "sha256": "315fca6f2040c221db4dd54a6687293209728703309220417aa3a59afb84c745",
+      "bytes": 5460004,
+      "edges": 182251,
+      "first_dataset_index": 144,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0009.npz",
+      "reference_sha256": "4191f3605745216c535572e61e096c634100279e0710224d78e52c7bd91d54e9",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0010.npz",
+      "sha256": "571d7341a4e6f5cbfadccd053b38d2d22fe2a69c3940500e9e13a52cfe76b209",
+      "bytes": 12599847,
+      "edges": 418706,
+      "first_dataset_index": 160,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0010.npz",
+      "reference_sha256": "4d22947c62f87ae294d5d785d7fc4cf3adccf71b8ceb32584dd0b773d77e4349",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0011.npz",
+      "sha256": "13c57c99f571395688dd44c0b7ca87e8e3098e833e7ae17ebaa265500e9cec6e",
+      "bytes": 11592745,
+      "edges": 385261,
+      "first_dataset_index": 176,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0011.npz",
+      "reference_sha256": "7675010f2ec5944726e210737b86350ab78031a5047116a0ef5002d70e2c693f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0012.npz",
+      "sha256": "a2ed656233dc77f518eb89218c2a8f0686a9fe4aac89b91680f059dab75ceb06",
+      "bytes": 1566397,
+      "edges": 51708,
+      "first_dataset_index": 192,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0012.npz",
+      "reference_sha256": "11234f53db1a92cf5130d5dc591a2d11474560e434abd5e4ec044ff2074d0394",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0013.npz",
+      "sha256": "9d51f9c32fbf504bebcdd7151d600dcd57f5ffd3412b1d26df7ada79346dff0e",
+      "bytes": 2411624,
+      "edges": 79102,
+      "first_dataset_index": 208,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0013.npz",
+      "reference_sha256": "72c3b5e4544576f90731ee52f5bb6ac468aa73d984718fa226977b8f12578268",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0014.npz",
+      "sha256": "9f1021eb0be627b933a4977aa52c38c7afc0877df1e8ccc02ed23c2200e35459",
+      "bytes": 1834141,
+      "edges": 59779,
+      "first_dataset_index": 224,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0014.npz",
+      "reference_sha256": "6c0855db0d56c26e1ea72b1765c89dd0a0e25da5c56a96dcd047e3e32b95cedf",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0015.npz",
+      "sha256": "2760e351eb6a440b96ebbf781e2df1c8f936cdbaa31b702f7a4c5af4a61b03a1",
+      "bytes": 744555,
+      "edges": 24402,
+      "first_dataset_index": 240,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0015.npz",
+      "reference_sha256": "7886bc9fdd469c4cb7b353b116c22cb6cff76fe88ee9d57754746e1bdd8e1c3d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0016.npz",
+      "sha256": "6f7ccdae46008156c161bf786f09c51b71599f1c2e65c915de896abfb4e82548",
+      "bytes": 1594953,
+      "edges": 52388,
+      "first_dataset_index": 256,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0016.npz",
+      "reference_sha256": "4bd7d0d189859df105bc17b998bd0da59f9a94f893b7709b5accfae3626f0681",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0017.npz",
+      "sha256": "808f67be4e5c931684ddf71080b379aec6b1a2443990b7c1590b339a544ae404",
+      "bytes": 1465498,
+      "edges": 48050,
+      "first_dataset_index": 272,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0017.npz",
+      "reference_sha256": "3bc6b8e7c9b9cefd7edbd6b28b125d09a9287eedf2fb0adabaa9972b9bd43be7",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0018.npz",
+      "sha256": "7c1d120666877a969d361df99ed07068e334d4c1d7209d1c595721a855bcb656",
+      "bytes": 1037771,
+      "edges": 35024,
+      "first_dataset_index": 288,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0018.npz",
+      "reference_sha256": "cc8aa0b4f886d9d96e5842b9fc0750b97c78269735b1d1c9f1ee72befa49531d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0019.npz",
+      "sha256": "4a48555dcefac446064499368b3f088292a2dc5bc0b2cb94b884530e22d249fb",
+      "bytes": 4729286,
+      "edges": 155804,
+      "first_dataset_index": 304,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0019.npz",
+      "reference_sha256": "ac2b7543239519c9dbacd985de416241f89041f1d3c2f83bbdcc8c085994120c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0020.npz",
+      "sha256": "0c1f6a6dee5b89d9f6266f44aeb1b259524a421cbc62e848a1a46e941e8ed6cc",
+      "bytes": 7851384,
+      "edges": 258372,
+      "first_dataset_index": 320,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0020.npz",
+      "reference_sha256": "0a420fb44c8c2030f07da3556497e749a676847b64b5fc2213fb21c59d0ed479",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0021.npz",
+      "sha256": "e843234b324fa4dceed6a9c2fb7a3118d5bd8ac23f46ddae9f4379599976cb51",
+      "bytes": 1889617,
+      "edges": 61672,
+      "first_dataset_index": 336,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0021.npz",
+      "reference_sha256": "6de2a210a147f8095c108af17625721b40b2b35d3c2e6e43e78832f5585e4fa7",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0022.npz",
+      "sha256": "9ef8ea111c8f03f8a71042fd13010d6e8ac1ffa617abeb64d21013ab44f076de",
+      "bytes": 4906594,
+      "edges": 161342,
+      "first_dataset_index": 352,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0022.npz",
+      "reference_sha256": "58633a79a4ef9000cbc28aeb64fa812db3a88ba73811c5c7c69f1c03b14d73de",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0023.npz",
+      "sha256": "b71d5e7302577d926a3c097b03da680022ea911a056b863096964d18cfdeb3d2",
+      "bytes": 6871411,
+      "edges": 226427,
+      "first_dataset_index": 368,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0023.npz",
+      "reference_sha256": "98657e80b2197dcb2639f2425b6115f1ac65d6c7b8643da4238feab41f015798",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0024.npz",
+      "sha256": "6fef2cd0ad126ffd05447f3fc1daa7568c2efea084f41da30c36fd24cd772ddb",
+      "bytes": 7250349,
+      "edges": 239082,
+      "first_dataset_index": 384,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0024.npz",
+      "reference_sha256": "df6e0c4f038748e5687a1d1785566ae0140d9b2bda8d80d50a5f73dd72beb74e",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0025.npz",
+      "sha256": "9774402932162fd0d6586df6ef06ab2eff7c4ef416b53bf1a98322e9ade284a0",
+      "bytes": 4754376,
+      "edges": 155685,
+      "first_dataset_index": 400,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0025.npz",
+      "reference_sha256": "ee1e8c7a5559d94e2ce0c87cf5693acce8ad62963a4de830f3841251f2fba59f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0026.npz",
+      "sha256": "bc0f791fefd8e101fcccdb240cf7920fa85ca6443191f983d8cf10c91617d60f",
+      "bytes": 4756661,
+      "edges": 156314,
+      "first_dataset_index": 416,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0026.npz",
+      "reference_sha256": "e7451dcfd8873157cc1e117c16e8b8de17c855490d52efc654907f0869874dc8",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0027.npz",
+      "sha256": "1bd81eacb2e7872409075b5385b0dbb32dd6490f1529b71f88325e0a0fcb69bd",
+      "bytes": 2859693,
+      "edges": 94630,
+      "first_dataset_index": 432,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0027.npz",
+      "reference_sha256": "af65aebccc6dab0f4c03c365da46a7c50ebdc4485a9aa0c8825195d883aa17e3",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0028.npz",
+      "sha256": "9d709f70201353c5cd83984505c0a089af369657afa2b51b7920137b37bf359c",
+      "bytes": 2403679,
+      "edges": 79843,
+      "first_dataset_index": 448,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0028.npz",
+      "reference_sha256": "ee2c5a62d4568b3b96e57464300060bd5531e4e5fe2feb91f952f109459e7681",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0029.npz",
+      "sha256": "51da40f240278081422c6c800eeb7bf381951eb4dd449b13ce98031f365a5d52",
+      "bytes": 3026369,
+      "edges": 100116,
+      "first_dataset_index": 464,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0029.npz",
+      "reference_sha256": "72b01e88631d0b5a77054e2c372d57134237259478581a74f8b1c1b9a3cb53ad",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0030.npz",
+      "sha256": "324cff9fd0f008014143a348f35e71b5c825257e623b3ded18062898e1535fe3",
+      "bytes": 3354201,
+      "edges": 110081,
+      "first_dataset_index": 480,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0030.npz",
+      "reference_sha256": "02e1eed49a9fb7c6c0de19805a4b226f7c9001034bbc33347f68d00448d7451c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0031.npz",
+      "sha256": "587186e7f8dfdf65c2f9bbd54f5c478369aca56f7f1f37b9b621fe721322406a",
+      "bytes": 3653548,
+      "edges": 120408,
+      "first_dataset_index": 496,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0031.npz",
+      "reference_sha256": "6539e7fdc641dd3c5781641fdc0039e76e0205a7da7116a3e6cbaa8a6c3f1043",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0032.npz",
+      "sha256": "9fa4e6b30944782fd6fbf2401d255de37dd88ea4401515b4a11497bcc77f895b",
+      "bytes": 6044184,
+      "edges": 200250,
+      "first_dataset_index": 512,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0032.npz",
+      "reference_sha256": "e84eab46e6f2408cab78fcc02b04de63efbc2c8f370ba1a8c69a61e7ca648e24",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0033.npz",
+      "sha256": "9b9970019ef82faaa094ada82a343f5565ba6767b8365345acc5b9d801204941",
+      "bytes": 4564286,
+      "edges": 151394,
+      "first_dataset_index": 528,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0033.npz",
+      "reference_sha256": "baa8bb39b80a6b8734948ca69da426bd0494e21a02b62139011a47fc9e575574",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0034.npz",
+      "sha256": "0ede94a41353c61eeaeb3278a2ab7f8d002ad9d3bc1e83b32ba190238fb01244",
+      "bytes": 5048820,
+      "edges": 167464,
+      "first_dataset_index": 544,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0034.npz",
+      "reference_sha256": "67ee0a3375cca506d9b2c1c3d7d874a6a0a68eefe33da93d6eb791f652234d26",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0035.npz",
+      "sha256": "6b8b5d504b398c05edded87feab9cd529d5034444cd45fc334d928535c61d3ec",
+      "bytes": 7387407,
+      "edges": 243934,
+      "first_dataset_index": 560,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0035.npz",
+      "reference_sha256": "d8a7c7fd7151031dee6ad458e0a625e8901a71a14b9a6b6f56d379c3bd95625b",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0036.npz",
+      "sha256": "df9cb6e82608096d0d1a219208518c94134c08f73cd4d33e2b10d9d29ba8d591",
+      "bytes": 8229415,
+      "edges": 270963,
+      "first_dataset_index": 576,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0036.npz",
+      "reference_sha256": "aa418c0a941980e49fcaf9bcd64f20d6f0e87a00ffe7162cda88956191176f29",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0037.npz",
+      "sha256": "a8397d602eb4189e1538a8a697bb5d972533ec97165018927a4212df5b4e142d",
+      "bytes": 12458705,
+      "edges": 412691,
+      "first_dataset_index": 592,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0037.npz",
+      "reference_sha256": "8b123bd6d52c6aab2198a13388d63992397ba83653c7573771205239c1862932",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0038.npz",
+      "sha256": "86c0e9237e7b3f194d9aa3be2e7b941fa01c89560dc70eb487ef50c142f7689d",
+      "bytes": 8793390,
+      "edges": 292956,
+      "first_dataset_index": 608,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0038.npz",
+      "reference_sha256": "0959b24d7082c1caa599bf1924b1e3cd5ac2b40998bf54407efbbf6198cc50e2",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0039.npz",
+      "sha256": "03f1c08379eef8ac95cff23c2ea08101689dda49dd1732305f1da39d808c3078",
+      "bytes": 3922338,
+      "edges": 130156,
+      "first_dataset_index": 624,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0039.npz",
+      "reference_sha256": "c57b5945c472b66b37fbedec22026e0d78784729e76135a4b3b5743686863521",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0040.npz",
+      "sha256": "25e36d4abd509955635e33a627a4f764c17e072de97b37c0588391bea9427a22",
+      "bytes": 4669116,
+      "edges": 154790,
+      "first_dataset_index": 640,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0040.npz",
+      "reference_sha256": "9157511f6faa73ae1bbae4202246a59db041e4f312523528b017cdea5688bd88",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0041.npz",
+      "sha256": "36d880b268ac92735510b5f635c9ac012f521be13aa6dc16060b199bf174b75f",
+      "bytes": 4005172,
+      "edges": 132556,
+      "first_dataset_index": 656,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0041.npz",
+      "reference_sha256": "b81b5a59ad6cdcf6fc0f7889516d12e9c873de5a6040abf5365c1ebc5fe272c4",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0042.npz",
+      "sha256": "1ef8b8087fe1be4b17d3f436a516e46fa4528424683eb680cafcf3e509e04da2",
+      "bytes": 4677192,
+      "edges": 155135,
+      "first_dataset_index": 672,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0042.npz",
+      "reference_sha256": "45792f7d6c85a0faf671e85b81dcb3f5e39e1eaab767628d97b1b9de190a6908",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0043.npz",
+      "sha256": "109982ed015582017c040419193e9865ebe3cb596ec2bd8bf558f02ee1d2bf88",
+      "bytes": 3021099,
+      "edges": 99751,
+      "first_dataset_index": 688,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0043.npz",
+      "reference_sha256": "d09084502e0fda8d3f6add9612c1f27c269889ed0ded0d704b4b429980b3eba8",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0044.npz",
+      "sha256": "5a436629857b9e0f8ff97f705e4c976c5bf2325b4848d9bc2b732fbd4effb0ea",
+      "bytes": 3013205,
+      "edges": 99062,
+      "first_dataset_index": 704,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0044.npz",
+      "reference_sha256": "1ca7342cc322d37467026dff052191c62840677b1698c42382218004bc7d96ad",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0045.npz",
+      "sha256": "45776d10fd56c7bae37da2448cc6dfcc5a61ebfae1b5c4f00d48e5ba9ad38dec",
+      "bytes": 2340338,
+      "edges": 76877,
+      "first_dataset_index": 720,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0045.npz",
+      "reference_sha256": "1df8c27116c0f298fa4f9926089a9207ad27b9af4de90151a0833653fb4b4e64",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0046.npz",
+      "sha256": "6ff387401a232a6f6c998ba1d7694c728ee316bcd787be70731054a66b972fd2",
+      "bytes": 2581207,
+      "edges": 84933,
+      "first_dataset_index": 736,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0046.npz",
+      "reference_sha256": "4d0ee536dadb1f957d6e3c8504521f3e5223ed76847bdf21af396783c55b35c3",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0047.npz",
+      "sha256": "0697b6ce4bff41203a39fcca806e27dcd8fd2e2d7ae45bddc77439a285b5131a",
+      "bytes": 2065454,
+      "edges": 68562,
+      "first_dataset_index": 752,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0047.npz",
+      "reference_sha256": "c6bcc6f9a60763712014fded2441522fff33e35027dd512eb9ea40a67d462300",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0048.npz",
+      "sha256": "51f2bbc7f904f8b26356e415e143c79e971fabd9ae6b5012c5c59bc7d4f9cab9",
+      "bytes": 3034889,
+      "edges": 100443,
+      "first_dataset_index": 768,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0048.npz",
+      "reference_sha256": "2d221c8755533630b0fd06739e898ce542111419478f3e7cda9384619f5562c1",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0049.npz",
+      "sha256": "56c1dcecbdcff4f156e61c2bbeec78b7706c3c755700eaf84f199c7906b1dbcd",
+      "bytes": 4095134,
+      "edges": 135517,
+      "first_dataset_index": 784,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0049.npz",
+      "reference_sha256": "10ec8a6425f5d70cf8f376f03ea1938021ad458bd9c9c13e0befb1563100745a",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0050.npz",
+      "sha256": "5e56fb6c7e195bf5a27a9685999cc4e55f7c4ef92b16c22f8af902d7038f568b",
+      "bytes": 4122275,
+      "edges": 135917,
+      "first_dataset_index": 800,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0050.npz",
+      "reference_sha256": "59bdf83502abf6539eb079091780a04331c3341edc098f3e674af25b4b9a44de",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0051.npz",
+      "sha256": "8cfc23495003a2178e622f7aa4868892e8c124773d0752927f32338fc3ee1f9e",
+      "bytes": 3894852,
+      "edges": 128544,
+      "first_dataset_index": 816,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0051.npz",
+      "reference_sha256": "d98901633694d393f73b692b88517e11297a5ecb5fdee3a491ca617ca9c991af",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0052.npz",
+      "sha256": "c87f0e83dafcb2294baa48387086dfedb0612b3f579910ff66fc40612e4d8d1e",
+      "bytes": 562674,
+      "edges": 18498,
+      "first_dataset_index": 832,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0052.npz",
+      "reference_sha256": "30991fdac9b76ffa27ec4ae89960a648b8ec5b972869963092563cc213c4ec7b",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0053.npz",
+      "sha256": "292354458e11a494c35ed5b61490a80232a2e49ad9ec8c4504a4aa36e05d94d7",
+      "bytes": 642277,
+      "edges": 21096,
+      "first_dataset_index": 848,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0053.npz",
+      "reference_sha256": "ae751bc27be6073c78cf77cce876da7090fe9dcd6988d8c0473931bf1d7c3988",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0054.npz",
+      "sha256": "1b14b0ee95ce8010232d72cf19c4f190d7bbc158f1b1d3e5b96ac9a9b060ec8f",
+      "bytes": 826874,
+      "edges": 27270,
+      "first_dataset_index": 864,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0054.npz",
+      "reference_sha256": "53acc510803116b587ad7331bac20a3ab5e9f872bb786743f26ad959cfc0aa53",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0055.npz",
+      "sha256": "2bbf00e971720b11d2d4863955bf2351584b5cb98581c1ebffbdc150663461ca",
+      "bytes": 994638,
+      "edges": 32688,
+      "first_dataset_index": 880,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0055.npz",
+      "reference_sha256": "c7593642bec5501cc6b9e229a5710a9d8d44d6c3a6f0b1d0c54d0631ea330f70",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0056.npz",
+      "sha256": "a9095321738f866a12e45de68adc4457c070df41e2ae2f4bfc0eb204d180da3d",
+      "bytes": 3751344,
+      "edges": 124162,
+      "first_dataset_index": 896,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0056.npz",
+      "reference_sha256": "fc595463860ad6baaaa52d1ab25d593c51b6868188b1816194d94a23e748f28d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0057.npz",
+      "sha256": "6f1f883f0e053342bae4fad994d240b51784985631e871ee13b300ae67360b03",
+      "bytes": 5621823,
+      "edges": 187076,
+      "first_dataset_index": 912,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0057.npz",
+      "reference_sha256": "a4f2d935cff09abb605f1e9f973ab7471fed7fd6dbb945ca0c43175b7965760b",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0058.npz",
+      "sha256": "00e3e5174b9c9336f6367d68b18d534551ceca744270312eb6dccc7d616abb2a",
+      "bytes": 7027746,
+      "edges": 233217,
+      "first_dataset_index": 928,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0058.npz",
+      "reference_sha256": "f0a928e5ce3493805448f9544ddee0d390b3d1f5a20223268d1130bbffedfc83",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0059.npz",
+      "sha256": "effbf2e837eb928556f82eea2b08e9c2c05850a95624b92984b245a639c97706",
+      "bytes": 18135491,
+      "edges": 603965,
+      "first_dataset_index": 944,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0059.npz",
+      "reference_sha256": "b6977408fe91a284b3a00af51b0024a211018d1da8f308b8a6630a4d3ccdf9f3",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0060.npz",
+      "sha256": "10ef7662c4d700f417428e8c7273bc5be1303d50f101a1863a90934d2cba4661",
+      "bytes": 13027270,
+      "edges": 433064,
+      "first_dataset_index": 960,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0060.npz",
+      "reference_sha256": "cbddb0b573fd4ab9f324b30d5d540a90584608e43a9aea5c0abbe6975a40ce98",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0061.npz",
+      "sha256": "6c3fde44838c08fb77c6c6b8d8d8a76a151acd5f9c48ee572f9f47a1f11a708d",
+      "bytes": 5008932,
+      "edges": 166659,
+      "first_dataset_index": 976,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0061.npz",
+      "reference_sha256": "220740398448bcd067612fe68dba1bf4bdafe8fbd33dd475c943c013f07a1919",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0062.npz",
+      "sha256": "b5ce16ad0f1228b98827e9df54ac672a4fc945ae076032d4673c0dc0da585b2c",
+      "bytes": 3232996,
+      "edges": 107419,
+      "first_dataset_index": 992,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0062.npz",
+      "reference_sha256": "a36bd17ae7be56ef17ae08a53b2b096ffc9d7be0c467ed495cfebd042cef3ca2",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0063.npz",
+      "sha256": "b8732f8f304d52626854a98de574b0154669def3bcb835fe8418499d4c19f47e",
+      "bytes": 2865744,
+      "edges": 95170,
+      "first_dataset_index": 1008,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0063.npz",
+      "reference_sha256": "ca975c9b1473e19842b277f9225e28f1c935f8cc842a32121f019f0cf4680351",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0064.npz",
+      "sha256": "88e8d42af30f9d32cad36a2f384575e274ac252c32492e705cb010c8469df3a5",
+      "bytes": 1786712,
+      "edges": 59687,
+      "first_dataset_index": 1024,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0064.npz",
+      "reference_sha256": "401423a42d34cfa7194ea292e571766c5831aaf7f20c590456d3c3b70a87f175",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0065.npz",
+      "sha256": "f364a35ec6a87c575a2a10945945a762b594b93d1a1fe660a104dcfa8d24a683",
+      "bytes": 2053353,
+      "edges": 67663,
+      "first_dataset_index": 1040,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0065.npz",
+      "reference_sha256": "d60bf8280cf8cd25a871b50f9f5fb31acbc7774385e0717b7dc466d9284e97f6",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0066.npz",
+      "sha256": "a0c4b16e147534349f5fd861219749c55a9144ef5a5a1927541d9d4f3735578d",
+      "bytes": 3295637,
+      "edges": 108084,
+      "first_dataset_index": 1056,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0066.npz",
+      "reference_sha256": "b78dcda92a825ef7ee9ca1bdbf36cbb01a3807da559e68be7b92c7b0768dbe76",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0067.npz",
+      "sha256": "e330bc331c472c918f833913e5058929f625eeb8290fadf1b941628cdd7284e0",
+      "bytes": 5857539,
+      "edges": 192671,
+      "first_dataset_index": 1072,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0067.npz",
+      "reference_sha256": "400f9d8e77d7b72805f1875d2636b98e168761a33fefb4b865738f11eadee0ba",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0068.npz",
+      "sha256": "be684d4c21f5a2b32bdb6c3ba1c158119f8398dc8b81b5a372c48c7ea4bbb778",
+      "bytes": 5829038,
+      "edges": 193418,
+      "first_dataset_index": 1088,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0068.npz",
+      "reference_sha256": "ea4c7a6f1547ae14b447dcda9760c17c6c2ad81fd67ec2dc845825dc03693117",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0069.npz",
+      "sha256": "5a8f35f84e477f928b6a6e41666aa498affbb79b618a28a38917171d1a937e46",
+      "bytes": 5875662,
+      "edges": 193745,
+      "first_dataset_index": 1104,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0069.npz",
+      "reference_sha256": "b0cf12d562e1c80aeec880ca9ce8a35f0619741e5297232b3b876bf54430d38f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0070.npz",
+      "sha256": "c88c0e83049d79452f03f9dd14e329f2ca86a4bd24ffc953659bb94429f11d84",
+      "bytes": 6636066,
+      "edges": 218217,
+      "first_dataset_index": 1120,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0070.npz",
+      "reference_sha256": "eb8bcfa4f951412eb8b96e1a01790dd4186aaf7fb3eb53d60c202ade62e0e7be",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0071.npz",
+      "sha256": "0703d3503f13ac58d2a0385f901de01a0c0984e5b7be4c6c07cc2c9b47f66e8b",
+      "bytes": 9159772,
+      "edges": 303279,
+      "first_dataset_index": 1136,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0071.npz",
+      "reference_sha256": "c0d90295d8a0ee98c9ac0baa4305a8669467b284f27425360784f5db6a17c1dc",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0072.npz",
+      "sha256": "33d894059beecc3eae4c0cd293dc9ef36b0c6978beec80a71a7900b965a8b708",
+      "bytes": 3477826,
+      "edges": 115002,
+      "first_dataset_index": 1152,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0072.npz",
+      "reference_sha256": "6fb5b0314947e8cbb39c796973717820985d1398359f0ac7e6c77e0520d4f08c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0073.npz",
+      "sha256": "bf49df1ebe440180960fcf0972b802f9d6151567cb682ac4ffc9df21024c8645",
+      "bytes": 2114903,
+      "edges": 69548,
+      "first_dataset_index": 1168,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0073.npz",
+      "reference_sha256": "2527067d6c77f43e776cf31481b0afadfedd566803434c6cfb1c486ec3220e0a",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0074.npz",
+      "sha256": "93f9cc370f64b344bbd58a70871ab4131e4224832c20f8f5c79fb6c793f1b58f",
+      "bytes": 7184322,
+      "edges": 238065,
+      "first_dataset_index": 1184,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0074.npz",
+      "reference_sha256": "82380061335691d62c52960a446767aa9cd10353fcf1fba58d4bc86431e1a0b6",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0075.npz",
+      "sha256": "ca853d741edb23384c1ae890889c3cad7d528faedf21dd2fadb8dcda11c7ff85",
+      "bytes": 5133659,
+      "edges": 170458,
+      "first_dataset_index": 1200,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0075.npz",
+      "reference_sha256": "5e37c7f16293c5bedbc5f6667957996fbe7ea2c996778681624981fd2dec6b6b",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0076.npz",
+      "sha256": "65c518fc1b629531ca0529cd9dbb2689c06e9e1e9e78db7b4fd711b0f9e33c42",
+      "bytes": 5619669,
+      "edges": 186012,
+      "first_dataset_index": 1216,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0076.npz",
+      "reference_sha256": "5df7bd2f8d45992f49f26ff20e2f4716ab6e9fb406dfec0257905176f36ba818",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0077.npz",
+      "sha256": "396afb43838dff3b9179df6abf02ca4b980c659a8ccc502a47095cb41872c0b5",
+      "bytes": 6849470,
+      "edges": 225399,
+      "first_dataset_index": 1232,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0077.npz",
+      "reference_sha256": "401bf3b0231a438e53b098c9df8cbb9476ee9c23088a07c67974fcbd6d7a3232",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0078.npz",
+      "sha256": "64fc627a398ae3d9d553472f380f9f8f4b2f9186747b0b1e6565ceacdc50113b",
+      "bytes": 5251235,
+      "edges": 172735,
+      "first_dataset_index": 1248,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0078.npz",
+      "reference_sha256": "3259af664dc89cc27ae5731173e5ab221153c7b685c89a5b679616b1a17f1650",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0079.npz",
+      "sha256": "17445670fe0bf5cc30110cf00adec2b0e6da7d9e6942903c132ceb6083ebc6c2",
+      "bytes": 4914275,
+      "edges": 161944,
+      "first_dataset_index": 1264,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0079.npz",
+      "reference_sha256": "a1e531042401f22b18dc3983bb42de5e24d8649735a42d82d92ea19ae505e958",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0080.npz",
+      "sha256": "28e77aaa2100b651ab2dea667ea4feef4675ded5995df887767184f3a7f10f38",
+      "bytes": 4381082,
+      "edges": 143781,
+      "first_dataset_index": 1280,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0080.npz",
+      "reference_sha256": "5394b90001ef6a7570f04e70259502933dd0486b23fdb7cc3e1ba6df950a078d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0081.npz",
+      "sha256": "be7d48318021563f897eec931d019cd46de1bb8b6f7ef0c90f21e5fab77de0d1",
+      "bytes": 4854761,
+      "edges": 159781,
+      "first_dataset_index": 1296,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0081.npz",
+      "reference_sha256": "bdb25d8a247134f611f1b608fb3127d2ccb583a262a258ab5f76a387ab88cfcd",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0082.npz",
+      "sha256": "899e56a142ae922e8cac55f440af49ce4dfb9ad55e66b92a45d3cee82801b93b",
+      "bytes": 3581599,
+      "edges": 118227,
+      "first_dataset_index": 1312,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0082.npz",
+      "reference_sha256": "a561c38c2ecc1be5be8bb0e7db75e29bce10b4fd9d7160b120378f5c6262f896",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0083.npz",
+      "sha256": "ebacdf49c9d2d3f64e2b738ef53c01c89bebf7d734e5e0619bd67032d3935f14",
+      "bytes": 3789213,
+      "edges": 124371,
+      "first_dataset_index": 1328,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0083.npz",
+      "reference_sha256": "e295388dfcbaca6a37b15242c181d227d1a296ce48f90114a76b2d76a1273e96",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0084.npz",
+      "sha256": "1fd77169c78e3d72b18c0d4da88f19908dfc52e2dd8c772be558e084297dd0db",
+      "bytes": 5534293,
+      "edges": 182338,
+      "first_dataset_index": 1344,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0084.npz",
+      "reference_sha256": "5279f3317eeefdb0ac2c477fcf81f4ec3eeb700f563d4a32a90f885092139717",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0085.npz",
+      "sha256": "6458fb42c5c34423bb71926f447440ed2d398723546cbe47991d8b63a760a09c",
+      "bytes": 8631108,
+      "edges": 283732,
+      "first_dataset_index": 1360,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0085.npz",
+      "reference_sha256": "2b67b12f933aa6474e157a4d6e6bc0bfa7c6b1b9b84202501b944fe48e64dd12",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0086.npz",
+      "sha256": "045cc7942294e151bb1052d7f6e5441679534a7496ae72eb37f9ce79147edae0",
+      "bytes": 6583334,
+      "edges": 217209,
+      "first_dataset_index": 1376,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0086.npz",
+      "reference_sha256": "8d761ea0479436dec59817da10e082fe68f609cf55b0c0077ee84e8e678a633f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0087.npz",
+      "sha256": "f99a78036b39af6e56be49bbd95b7c0a1660b62335b25318c5c15425d94163b5",
+      "bytes": 5977740,
+      "edges": 197610,
+      "first_dataset_index": 1392,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0087.npz",
+      "reference_sha256": "37e6f4347cfb815d022a8c12d90c2e6dd4d0268a61710ae0308ccd0d1ae02c64",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0088.npz",
+      "sha256": "0491f4ce13495d535be9801c0c86b63360a1ab25bdb79ff622988e5da2488268",
+      "bytes": 7869993,
+      "edges": 260041,
+      "first_dataset_index": 1408,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0088.npz",
+      "reference_sha256": "405775cbc98b7b301df4c45afa7dc23b9f19ae0b23326d700a0a50ebb9ef4266",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0089.npz",
+      "sha256": "67ee3f20fae4a65774fa44c4759d7206b988026de55585c86484ddd5577b10de",
+      "bytes": 6205430,
+      "edges": 204746,
+      "first_dataset_index": 1424,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0089.npz",
+      "reference_sha256": "4b404017624a53eb3aa1c0262ad55a6d4a25c27993f5b8cb31b063764566fb58",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0090.npz",
+      "sha256": "2c343b7175598369b31898213e9c02881e3f35795adc5aff9def35cce00e89d8",
+      "bytes": 2442502,
+      "edges": 80397,
+      "first_dataset_index": 1440,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0090.npz",
+      "reference_sha256": "1285fc19994c776a6be14d84ebc3a9ecea2136b4b02996e255cab35e7e6d4f42",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0091.npz",
+      "sha256": "c6d74d7f9e091a10db16500ac713f0fa4f463d38cf5de39d5c5c9283de41a537",
+      "bytes": 1618687,
+      "edges": 53197,
+      "first_dataset_index": 1456,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0091.npz",
+      "reference_sha256": "91163512a2621e48cf82b9fe51b6bd493da8016e3ccf05af1d1041b692d236cd",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0092.npz",
+      "sha256": "80460a2aba2843ce189b572b3135ce9e939b3bc4db2c8ab02adcb582e445634f",
+      "bytes": 5446731,
+      "edges": 179891,
+      "first_dataset_index": 1472,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0092.npz",
+      "reference_sha256": "6fa3967392307355a3908c14fbb493ad7862a89e879d33649391518dee6fac73",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0093.npz",
+      "sha256": "d145b846cf250216f923e4e3880bc5bd9bdc42196c198a576210a5c793c873fd",
+      "bytes": 7099819,
+      "edges": 234657,
+      "first_dataset_index": 1488,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0093.npz",
+      "reference_sha256": "dab8fc8b39e6705e6ed1fdd007a4955c4a950f55a77031182119e03c66c5f119",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0094.npz",
+      "sha256": "59e6a380274f1a6ae4b039526668fcbde785b877cb221da9eb5fdd8f1956447c",
+      "bytes": 3749770,
+      "edges": 124155,
+      "first_dataset_index": 1504,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0094.npz",
+      "reference_sha256": "454f51d4e4ea4351432b5dee32511424b10b94a155c4e22c435c3f164656a0e9",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0095.npz",
+      "sha256": "3e4cd4152516bdfe3bdb35aaecccc251b8e2e14e2058ed49c4faf5ff38b10511",
+      "bytes": 5394324,
+      "edges": 178265,
+      "first_dataset_index": 1520,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0095.npz",
+      "reference_sha256": "ca75e4e9dd804b074a4285b14b07b1e6a1a6d3be766479c89726fa9e67ce34df",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0096.npz",
+      "sha256": "3bc93893c4dcc40d72b3bc6ed08b81ce35aa47d3b71ad584ca6f75583f0639fe",
+      "bytes": 5907253,
+      "edges": 193623,
+      "first_dataset_index": 1536,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0096.npz",
+      "reference_sha256": "da0beb29ccb335843daa65d851e246bfc84b61c764029b54c41848286d49c0dc",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0097.npz",
+      "sha256": "88ab43dbfd7f32148f8eca82b7de021515dbcc2a87d9da46e599376b5d11f9fe",
+      "bytes": 8235196,
+      "edges": 269902,
+      "first_dataset_index": 1552,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0097.npz",
+      "reference_sha256": "4a556d686c6aedfc692d63933c13bcd83f38051fcc1a006119fe97eb2bb53024",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0098.npz",
+      "sha256": "749757d630fb0b4c5f3882204ba24431452a8773f2bc7c053c12b7b7587d3ef3",
+      "bytes": 6372807,
+      "edges": 209990,
+      "first_dataset_index": 1568,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0098.npz",
+      "reference_sha256": "0e475ee7133d7c34d3aed6aef40711a28c08a5cb02a5e3b09a17b6b2b47ba729",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0099.npz",
+      "sha256": "8f0d7752e581306d70b459cc440ad46d2abb0b0ed00ccbebd96e90fc058f1bc1",
+      "bytes": 3072076,
+      "edges": 100732,
+      "first_dataset_index": 1584,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0099.npz",
+      "reference_sha256": "c41c9c6afa262d013bcab48fb2cdaf9033237e4a6a4f555397f70ca2b27c99d6",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0100.npz",
+      "sha256": "e14ae0449a7d6437f777f3872bc08a5169e23f1939b6bbd00e76029d51a58c56",
+      "bytes": 5859928,
+      "edges": 192547,
+      "first_dataset_index": 1600,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0100.npz",
+      "reference_sha256": "9c3fb6d2a1497f52829c295990b2ee978d54106b14679d7f3c05f9c431e6a8d7",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0101.npz",
+      "sha256": "d36e6a3acd4db691bd2ac82318e756b3e4dd6a8ff867e172b2040e7634c14b0e",
+      "bytes": 5814258,
+      "edges": 191432,
+      "first_dataset_index": 1616,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0101.npz",
+      "reference_sha256": "4a848f3bcc6a5748a1ed3bedb3b9984917babebe5892366b1747962a8c679c7a",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0102.npz",
+      "sha256": "82687f8e2e17db9cf7effaef896fa43cde526acd6b506b5965ff27b64bcd2b16",
+      "bytes": 6408943,
+      "edges": 211051,
+      "first_dataset_index": 1632,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0102.npz",
+      "reference_sha256": "7abd6803cc9119e152e99980092fbf2920e76be7ef9e812ac69e21fb434ffdff",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0103.npz",
+      "sha256": "fcacae00c046311010f9c5edb8c0c3eb36e200d7843eebfbadddc0cf7a4db8f8",
+      "bytes": 4343535,
+      "edges": 142905,
+      "first_dataset_index": 1648,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0103.npz",
+      "reference_sha256": "7d74bbf540aea7bbe63e90481ec391806cf447396a5278733126cb578179f218",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0104.npz",
+      "sha256": "daf8c75340f7eb26a4e0edcddb359865494e811b3779cba89a5acdfdb55840a6",
+      "bytes": 3036178,
+      "edges": 99425,
+      "first_dataset_index": 1664,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0104.npz",
+      "reference_sha256": "41127c39aeb997034a589626e000b7eb02d84bcff7faef88eaa18314c3ad58e5",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0105.npz",
+      "sha256": "2eab9c1f0cc0aa3febfafbb7077040d29695d91e23a0142e419336ff4343cda4",
+      "bytes": 3942740,
+      "edges": 129406,
+      "first_dataset_index": 1680,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0105.npz",
+      "reference_sha256": "62716e663474862e7b64128289bd77d6d503b58e9466750f3e6a81ae76b5ace1",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0106.npz",
+      "sha256": "2d83594d8aaec963431e6060df897d3104968181973356cef4569775c41cfcfb",
+      "bytes": 2026364,
+      "edges": 66498,
+      "first_dataset_index": 1696,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0106.npz",
+      "reference_sha256": "7b18bd97ef7726030c7fc37a8c5d49c453cfc0b99bf627a819a552e93c75ee72",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0107.npz",
+      "sha256": "7e04fb36931164ad9ad4eb89ab28ef29518df03ee0b7a94aac0fd362b88dcd63",
+      "bytes": 1660505,
+      "edges": 54438,
+      "first_dataset_index": 1712,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0107.npz",
+      "reference_sha256": "ba1f698b105a09d8805e8c0647616b0d25bab06904046e0ce2235ac2499d5e90",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0108.npz",
+      "sha256": "0193ecda0fc88c47f47f9973777a2dae59e5fab8cb0b4fcaf8f382eb86b40bf7",
+      "bytes": 1289575,
+      "edges": 42284,
+      "first_dataset_index": 1728,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0108.npz",
+      "reference_sha256": "dd80bf38b423446904e0ff4c9e121c497a48a5a0b08ed62ca070cd9e07d091e0",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0109.npz",
+      "sha256": "dc14772a835518aa6235a33156166d80b3b9a647a66810941cffd2ded4aadffe",
+      "bytes": 3904712,
+      "edges": 128692,
+      "first_dataset_index": 1744,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0109.npz",
+      "reference_sha256": "9ed273c4fae119dd7f1f7e11b5135c975eddea542a22724a61c6f87f75c39c75",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0110.npz",
+      "sha256": "4ffcc9f5103d5655daeb90c98fd9f426eac13e43a301eae859826704021a6cbe",
+      "bytes": 2603006,
+      "edges": 85551,
+      "first_dataset_index": 1760,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0110.npz",
+      "reference_sha256": "db52e3c6dd670f546e01f2099bd36ff8bea2f765e571e850ae82261c270f4733",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0111.npz",
+      "sha256": "ccc05e24ae3174ca7e67bc088d5fab4dc2e29ce3a0426fe7ddd88cf1179cf7a7",
+      "bytes": 1437662,
+      "edges": 46615,
+      "first_dataset_index": 1776,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0111.npz",
+      "reference_sha256": "b39b90c547092176e445059947e5b74e6ba9f3bca25d304c537b4f9727e9284d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0112.npz",
+      "sha256": "d22da4ce7d66d89351a58dae8eb8495709e95f7f4c66f8e1022a34a7ba55745e",
+      "bytes": 425587,
+      "edges": 13851,
+      "first_dataset_index": 1792,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0112.npz",
+      "reference_sha256": "21e3ec8510c3790dab59b1f1245fef9700fa776c472a1678f14e0918db980ec4",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0113.npz",
+      "sha256": "0b7c0e1cc58ffa03cfe94a93a68fdb54f09dc6893d0e4e574aa0b40301901b4f",
+      "bytes": 597593,
+      "edges": 19622,
+      "first_dataset_index": 1808,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0113.npz",
+      "reference_sha256": "74228b3c1a79257fffefe80132383825ffb73547eeb611a5c53de83ed589bc68",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0114.npz",
+      "sha256": "55ddc1b40f7aba64f68545c2d3cd4a95c786107d8b2af16b78a04eaad10d8fc2",
+      "bytes": 1159256,
+      "edges": 37858,
+      "first_dataset_index": 1824,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0114.npz",
+      "reference_sha256": "033c373b648ca955801f4d1e553540322afbaff90b99b331123c189e7ad3ea16",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0115.npz",
+      "sha256": "83f9deeeee36d48c89c3d560580d7f1cbd2a9331851b68a033a3861007254fc7",
+      "bytes": 4671257,
+      "edges": 155558,
+      "first_dataset_index": 1840,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0115.npz",
+      "reference_sha256": "cb5f2241ce427e8a9f3e9d5f2bd6b6cd5d5e0fe08bc0fe4e0d2fb8eefb074ec9",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0116.npz",
+      "sha256": "88c0f5c2d23db3e56c95e3c8de2853064ff2fd248b4dcc2096aca55ab17e1ef6",
+      "bytes": 4631650,
+      "edges": 153349,
+      "first_dataset_index": 1856,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0116.npz",
+      "reference_sha256": "be243dc34ae94bb8edf58a5f9491d620166a49483fb20e9ede9436c69588f6b5",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0117.npz",
+      "sha256": "ce7d1f21b8cf6c908c652085641610f53711ea10a891f59c81fe2005fe8d362e",
+      "bytes": 4130146,
+      "edges": 136026,
+      "first_dataset_index": 1872,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0117.npz",
+      "reference_sha256": "8ed1dbb0f72c18ea65aed401042e0e253d83317c08c6f40b9c6a9014bbfa73fa",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0118.npz",
+      "sha256": "22b2d3d69078273655aeb94e864e889d7e9177479a27e573b2ee790bb05a8f05",
+      "bytes": 1451727,
+      "edges": 48083,
+      "first_dataset_index": 1888,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0118.npz",
+      "reference_sha256": "88d01bc788eea043fc2e93de782f9460d2daa8bc21a0c841cb113ec10b29ed5e",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0119.npz",
+      "sha256": "4636311fc0d07395b48bd3b4e56062091cb021fca0b786fd6a2aa39328325239",
+      "bytes": 3362309,
+      "edges": 111309,
+      "first_dataset_index": 1904,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0119.npz",
+      "reference_sha256": "d32ffc6bff2371940f2e2f69767df5cb1e7717f4ef3bbcf7508dcf74598fc21a",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0120.npz",
+      "sha256": "25b718ae1cd485851a3baa9781ec0a48d514505f814453e883a27b860406152a",
+      "bytes": 5640100,
+      "edges": 186149,
+      "first_dataset_index": 1920,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0120.npz",
+      "reference_sha256": "f4fd64785f36bb5d5f95b94d2e0c5da4b0b92570f054fc64d8ab6e5a132f6c5c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0121.npz",
+      "sha256": "9aca6893b3d04e77730a7c6d7edde44bbdca17720c97d4f6fe0012540340d09d",
+      "bytes": 6701689,
+      "edges": 220145,
+      "first_dataset_index": 1936,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0121.npz",
+      "reference_sha256": "e0269d0f4e2f8d0cdbde97723e3ad4c4048be14173508d7dd7df24507ea1a9ce",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0122.npz",
+      "sha256": "2292934caace71e9962e23adda63203291403e55b5b4a0f2a237b1043d38aa0d",
+      "bytes": 2958352,
+      "edges": 96651,
+      "first_dataset_index": 1952,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0122.npz",
+      "reference_sha256": "3235bae1947cda11c67315dcdd002fdc0e5f3c6090dc70f44f892ea2ffcf8c9e",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0123.npz",
+      "sha256": "2e3cd19c1bae11ec78e10a4555f2fef12e1247f64ea2705b5f9bb418c8584d3a",
+      "bytes": 1467939,
+      "edges": 48260,
+      "first_dataset_index": 1968,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0123.npz",
+      "reference_sha256": "630318e09ca28e5bbc1626197fb46e41515b51f34042042cec5aa7ad4e1b3a21",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0124.npz",
+      "sha256": "9bdecdad7789bca38d08a5157f4f899bd54f150d80221decaa8f50603c49a588",
+      "bytes": 2415679,
+      "edges": 79429,
+      "first_dataset_index": 1984,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0124.npz",
+      "reference_sha256": "6fee794268a4e18f7bf28c47aea80e1097242c226bc3a655273d44d63c4fb2af",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0125.npz",
+      "sha256": "983b2a52d01fc9d781cc29d3784665e68ccd5285fe2492b0a16976cbe341ca68",
+      "bytes": 2263198,
+      "edges": 74225,
+      "first_dataset_index": 2000,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0125.npz",
+      "reference_sha256": "0788ebbfb48be2424935861cb627a4ded09a77e1a8e92ff69aab9dbead7a9b73",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0126.npz",
+      "sha256": "7e98695ec6a2d1880eed2cc1f06b1ea9a90b48aa27a2884b5b7ea60fd8e9f6ee",
+      "bytes": 1840339,
+      "edges": 60139,
+      "first_dataset_index": 2016,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0126.npz",
+      "reference_sha256": "bf9e23d1ffdf09ce3f729e1f29f06cb388084a30c3c14e73bcec4581de16e01c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0127.npz",
+      "sha256": "ba4e5ce73a1cbb5d88efcf21a424f9bf8d8381eeb5149bbbfe145603e4df5206",
+      "bytes": 1548406,
+      "edges": 50707,
+      "first_dataset_index": 2032,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0127.npz",
+      "reference_sha256": "96c744ada70803841ab4bb615e92ed5b67b018d26f22a5a0d5aac90fccb1cfa9",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0128.npz",
+      "sha256": "02067f4f8bb3069ba6f7c3b65aab657a555aa8cb8e4ddffdff3b8a85bb3b33b1",
+      "bytes": 1378807,
+      "edges": 45192,
+      "first_dataset_index": 2048,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0128.npz",
+      "reference_sha256": "5a4f57648c3f2fdbcfeffa953a69d8de74b3d8c92f7cf2ba73c2f791d8b535cc",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0129.npz",
+      "sha256": "1404dba6cd9b27b9e96c33aa09739b524bd64f9da51d59484a8a0cf237a4150b",
+      "bytes": 1882184,
+      "edges": 62476,
+      "first_dataset_index": 2064,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0129.npz",
+      "reference_sha256": "f58063e93425a5869fa4bd3ea830be2da1c5d2298185cf4eaae01ace21d70cc3",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0130.npz",
+      "sha256": "02988a199530189d016608ac74280e501d5772ea5a705b23578f67411cb03615",
+      "bytes": 4919074,
+      "edges": 161161,
+      "first_dataset_index": 2080,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0130.npz",
+      "reference_sha256": "463d4b76f5912abc441acfcd2658ec2c34a1746bdab27f4102a8108e1dd0a83f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0131.npz",
+      "sha256": "b4cb1d32eb517e0742887f1ac4ec52238082039e7a4b86d76c932ef576080891",
+      "bytes": 7335253,
+      "edges": 240186,
+      "first_dataset_index": 2096,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0131.npz",
+      "reference_sha256": "0ecae24405407044290a30748beb45ac2c9f42063e49ccaed68497afe64cac6b",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0132.npz",
+      "sha256": "dca3ec00f72e57f7b2a66397fb70dd088337a07fb5232d27c22b5d7f292b787e",
+      "bytes": 7126179,
+      "edges": 233104,
+      "first_dataset_index": 2112,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0132.npz",
+      "reference_sha256": "72d14b6b856416a9221a9f7777b79ff42df527e1cc388712bb5ad2e97e798693",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0133.npz",
+      "sha256": "d86b74f19742ca3cd1c08784cd516f56f644e364cc2b57deae5b77aaf37c75c2",
+      "bytes": 6206218,
+      "edges": 202965,
+      "first_dataset_index": 2128,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0133.npz",
+      "reference_sha256": "3cff9481c4baa4e607b7d7335322846ed929d848855fd93f4d43d2167b499503",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0134.npz",
+      "sha256": "fec3d74a3307b3c257cac513115a5edd502876eddac7ef870da7ac5afb7b09bc",
+      "bytes": 5759568,
+      "edges": 188280,
+      "first_dataset_index": 2144,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0134.npz",
+      "reference_sha256": "a39e916b45d96ebf4dd0ba11e18347dee208814668eea9bbacb1c828c1b8ac00",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0135.npz",
+      "sha256": "e0c9a67173c2fd391f2f8ab41a45a10565ad1a772c7f2ce0004d2d0a3660a9de",
+      "bytes": 5621624,
+      "edges": 185586,
+      "first_dataset_index": 2160,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0135.npz",
+      "reference_sha256": "4838e82cbc047cb4a6e2b30257f30d6bc60799fddc609fcdbd0f260824b95659",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0136.npz",
+      "sha256": "60b2fe899ac99ae8c0873773423aab91c776d704433a4d6d411e01a657699ee0",
+      "bytes": 7352640,
+      "edges": 241600,
+      "first_dataset_index": 2176,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0136.npz",
+      "reference_sha256": "e4e8deff23b3f1b00d123fc6b57c80c82bc9ccaac3f2eeb5daba7fb292ef73f8",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0137.npz",
+      "sha256": "bfbd230af8df6d8e99205e395c65980a026700b73dcd215d2d24a8ed6a4a264c",
+      "bytes": 8054234,
+      "edges": 264264,
+      "first_dataset_index": 2192,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0137.npz",
+      "reference_sha256": "eb708f6d7db1c259c29cd707ed95427bb1fe4b6f4892d390e5963e3a4ac94211",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0138.npz",
+      "sha256": "88a5e0637c7537f8bac173cb81900e3d27839978b83a8fb3c15890bd880d04c2",
+      "bytes": 12921671,
+      "edges": 424614,
+      "first_dataset_index": 2208,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0138.npz",
+      "reference_sha256": "ee5a782c7ac2715d57cf2a6a86ad4dd93b05ea80d5adeacf9cd865beb14aa9fc",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0139.npz",
+      "sha256": "8af093adc0935cd823bb4f5d15959901940a5932ad58f0fbdbd9eadd8caaebac",
+      "bytes": 14087798,
+      "edges": 465783,
+      "first_dataset_index": 2224,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0139.npz",
+      "reference_sha256": "88e69f3859295efa5d760bb23d3b637db7854285ef87e2d036b30f32e2e9ac0d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0140.npz",
+      "sha256": "d6ddf7bc492d5aa20552badb5ec7f29c2a228dff2d041bd923869fd0cf0f1973",
+      "bytes": 8841756,
+      "edges": 291727,
+      "first_dataset_index": 2240,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0140.npz",
+      "reference_sha256": "085e6fcf50c05be1fee45ae6102f97ebe059c8c807e369b9888573936f58d8a9",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0141.npz",
+      "sha256": "afc161b007208320910eecef4d05601c97d016f466d37848ade693f11d02b9fe",
+      "bytes": 4261633,
+      "edges": 140184,
+      "first_dataset_index": 2256,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0141.npz",
+      "reference_sha256": "5de5b73cc8002329e9167f37857551d1d96caa127b27e0a882db0528e3c64905",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0142.npz",
+      "sha256": "a6f0dde4f240def50d08d5998252277f5b957a472f29f5b7b00f5aad6871c0ac",
+      "bytes": 1666545,
+      "edges": 54427,
+      "first_dataset_index": 2272,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0142.npz",
+      "reference_sha256": "86f1d03a83ac35ffc16fc1ce5486417cccfe761c8ca3844ea7579bc0a707a84c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0143.npz",
+      "sha256": "6fe30ed3c35e5e7ff9a78a35766e1aa66c5f1c07528d5d9aff10b631efa9b133",
+      "bytes": 1333757,
+      "edges": 43385,
+      "first_dataset_index": 2288,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0143.npz",
+      "reference_sha256": "92628d7e791d5f1b2a47c991b4e7ef8082cbfb1971a16534fcec6bc0f7496582",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0144.npz",
+      "sha256": "449022d5ad7a1d2f78b5bd1b6a0a11346b4ce4ce04cfb3501912f9eb62df5dee",
+      "bytes": 2423399,
+      "edges": 79222,
+      "first_dataset_index": 2304,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0144.npz",
+      "reference_sha256": "2fd5e712c422352256480ae66cedbda65a34a046c8f228fda6e1bb15c3e5376d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0145.npz",
+      "sha256": "61eec2a4c4bd1d227c81e4e64684d53bd23f2bd4d6977103e2b917c58ee6e235",
+      "bytes": 2489988,
+      "edges": 81699,
+      "first_dataset_index": 2320,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0145.npz",
+      "reference_sha256": "15f0308d7c27d56055c6b5fc4de22c77129662aab77c70bf5c1dd50b49ae1137",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0146.npz",
+      "sha256": "58f5653a26c065b5f3999ad935deec7d8a71bb80aea1ced348831044a97e9f4b",
+      "bytes": 1746336,
+      "edges": 57141,
+      "first_dataset_index": 2336,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0146.npz",
+      "reference_sha256": "7edd8623b9e4191eb0f80c0d361a52df146a6053e5e2370d7d298d95aafd452f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0147.npz",
+      "sha256": "d62964dc10b61248839eb3f902c2a30426c99dbdf0664f566cde17f7a12e5ffd",
+      "bytes": 1757076,
+      "edges": 57864,
+      "first_dataset_index": 2352,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0147.npz",
+      "reference_sha256": "6d3c7efbc2652a28c70b3d5440001db8b473c6da5b728b64c33965b4d7e8c376",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0148.npz",
+      "sha256": "746706cc3703768c80c836edab067716c1445420fcb8b28f046c6d486190a720",
+      "bytes": 1418303,
+      "edges": 46436,
+      "first_dataset_index": 2368,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0148.npz",
+      "reference_sha256": "64424d0224f07f9905dad954b041ec7a034b4e314797f67b79d59fff0715f2e1",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0149.npz",
+      "sha256": "9d212f548f1877388f0644b28cefdf1d04245862bf327c76791a9ac781a89488",
+      "bytes": 1888600,
+      "edges": 61861,
+      "first_dataset_index": 2384,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0149.npz",
+      "reference_sha256": "ce1b877d1cffa2edc2078faaafcdd851cbcfd7e39e69d696999173ba36cfd3d6",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0150.npz",
+      "sha256": "0aead9054ce1cace876087a5f883bcc208da9a7c8f8fc50442cd2273f3738373",
+      "bytes": 5499476,
+      "edges": 181706,
+      "first_dataset_index": 2400,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0150.npz",
+      "reference_sha256": "d464f20bf3db75fcc03291856b9f7fcb902cef114fedbc38ab2f7bcc8f9ececa",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0151.npz",
+      "sha256": "27a58c33550415991154f21f3dd29e767fdc81bd961aacde8545e24230179111",
+      "bytes": 4006488,
+      "edges": 131678,
+      "first_dataset_index": 2416,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0151.npz",
+      "reference_sha256": "a4ddfcda53a9dd701e37151de71c881abf352904d93385deb404c37079d28ddf",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0152.npz",
+      "sha256": "eb17a26805da2bebcf7fe29cc4657bd7ab1aaae43afdf3e0f67cebdd1af258ce",
+      "bytes": 3300888,
+      "edges": 108108,
+      "first_dataset_index": 2432,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0152.npz",
+      "reference_sha256": "ad849955cd3bf8e8d3291689a23ebf4fc2245aad31490d1b89258f09f4091b40",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0153.npz",
+      "sha256": "0340cb50721d827014f3041c8b549ed14eb919f65a3de0b4216ea3f8aa5a9f72",
+      "bytes": 3123863,
+      "edges": 103137,
+      "first_dataset_index": 2448,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0153.npz",
+      "reference_sha256": "61cc0fa1e605091fa21247511aa4c1f8f29d656f9ea023c4ff729fbb99b56c9c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0154.npz",
+      "sha256": "5cc57a7e8ad235e4869fdd2a3e10ca9be87525323ed5c282b945e993936e3cae",
+      "bytes": 5164644,
+      "edges": 170450,
+      "first_dataset_index": 2464,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0154.npz",
+      "reference_sha256": "1d724173dc75cf5f761ff5b17b215ed65c0fa3453f8c5d4c41fcb1d6e2f53be6",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0155.npz",
+      "sha256": "50405ea9cd9834bac18d9826ac1cba0efa30a295d7ce5b93dd07c81cc7f26379",
+      "bytes": 3001808,
+      "edges": 98091,
+      "first_dataset_index": 2480,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0155.npz",
+      "reference_sha256": "411ef62a4a36744f76497bb180c671292ada6705abbe2fad12136a43452b54eb",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0156.npz",
+      "sha256": "4158284a4c35336005401543da15636a7742b751ad34a95348037a04d738304f",
+      "bytes": 1850531,
+      "edges": 60280,
+      "first_dataset_index": 2496,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0156.npz",
+      "reference_sha256": "7fe87bfb846e3b16eafafd3ec04e7dbb96b0660c3dae48dec24168e5bdefddc7",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0157.npz",
+      "sha256": "f26475bd96fad4ac777448588ca9c7a90fc048838978be97c970a7aa0e2c1349",
+      "bytes": 3130178,
+      "edges": 102859,
+      "first_dataset_index": 2512,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0157.npz",
+      "reference_sha256": "7cfaee45cb09a3b3dae1ab6fec9741e013af162ba7b2e0e7d19c014f7b4d9f40",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0158.npz",
+      "sha256": "9ee0f28b4156a65507180c2044b38d334af831c9ddbfef8d1b638803527af700",
+      "bytes": 2932293,
+      "edges": 96796,
+      "first_dataset_index": 2528,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0158.npz",
+      "reference_sha256": "68c7a1b42fe8cd6b10cede4e1e101a38ffed2cc0b1de99c6e02eba8ff8c41bc3",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0159.npz",
+      "sha256": "9b2db39c9d78c5eade6f6ced99d0787912a4dab3aa8af63bd091788420fe7c9b",
+      "bytes": 5199358,
+      "edges": 170570,
+      "first_dataset_index": 2544,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0159.npz",
+      "reference_sha256": "35459c10900a65d9ab65e6ceaba953636a2f5a53e61c0091f1eaa884cea9d44d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0160.npz",
+      "sha256": "98adc9905eb495adf048cd437ba50eeeff4aa41d7baebb68b767f4a0dc81b91a",
+      "bytes": 7751145,
+      "edges": 254838,
+      "first_dataset_index": 2560,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0160.npz",
+      "reference_sha256": "955f5f218a418fcf2191cdc1433e42dfa962f572f4d3a31d19384a5ebd72a05e",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0161.npz",
+      "sha256": "6bd01e221a1e5fea244e17a663d8d924b683122bab77d54f5934502a86ea48bf",
+      "bytes": 5026654,
+      "edges": 165240,
+      "first_dataset_index": 2576,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0161.npz",
+      "reference_sha256": "33eac5f03fcd71b0108512ec1f6d95274f113c9918bf6385a007a3b36207b836",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0162.npz",
+      "sha256": "50a38297ae17e799bbadfca8364431a50951789a0a2293afaad27cec77c83610",
+      "bytes": 2203979,
+      "edges": 72807,
+      "first_dataset_index": 2592,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0162.npz",
+      "reference_sha256": "7f5a6d394a76a3e38b9f22e81983ed52650382ce9071580611904b41688b4ac8",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0163.npz",
+      "sha256": "5308e13894d859707cee51ac52f1652a46e42c483f94057208449d14dd021d9c",
+      "bytes": 1685308,
+      "edges": 55584,
+      "first_dataset_index": 2608,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0163.npz",
+      "reference_sha256": "42964f06c1009ac98628503a928183236447d481f7d82d814544f2e776e1c2c2",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0164.npz",
+      "sha256": "9a86fe828515df6238c6090e2d64dbc7be9289fd2df32a3ba8402902515a66fc",
+      "bytes": 1595743,
+      "edges": 53004,
+      "first_dataset_index": 2624,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0164.npz",
+      "reference_sha256": "012b92691eddef2839808c7ea9cf0a1ff4a8a9b4263844bb59ee457f699efc66",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0165.npz",
+      "sha256": "39c19f3086da4ed7bad2233fce1e1b2035b192f92a6ab59650cf6ed093138bef",
+      "bytes": 3001525,
+      "edges": 98377,
+      "first_dataset_index": 2640,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0165.npz",
+      "reference_sha256": "93257cef6ddeed1fb24f13207985f4b4c77c820baaf28b8646edf512c1a93215",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0166.npz",
+      "sha256": "f7e77dbe4ce72f05f4d9a4b60a72fcff6d6198369deb523799ef3c378e8e89d3",
+      "bytes": 2744487,
+      "edges": 90065,
+      "first_dataset_index": 2656,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0166.npz",
+      "reference_sha256": "7304b0182e3ff6f94bdcecaf196536f3f4b60985bc5b0f31b6beb535d605e351",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0167.npz",
+      "sha256": "45152080abf4c3580185bb9ec782a4515a25cc5dc067cd0502533e5dcaa12036",
+      "bytes": 2852667,
+      "edges": 93863,
+      "first_dataset_index": 2672,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0167.npz",
+      "reference_sha256": "2188cab0bf48e67a8f2998b827863907a3f2b2d2ea312c01b30b8ef57b922dd5",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0168.npz",
+      "sha256": "3d613ed5283b4229de11ad5f8a15909a9392eea86925cf6c9902847f839f9514",
+      "bytes": 4718819,
+      "edges": 157015,
+      "first_dataset_index": 2688,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0168.npz",
+      "reference_sha256": "f4bee2e8720b5d99cc2741249ca78f0e55f10774e6020c1e8d3f470a6e27beb7",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0169.npz",
+      "sha256": "34f57ddea977ddb51ce7993382de52f8bcaa72ee5cb4dcfda531cda5efe7e2d3",
+      "bytes": 5427247,
+      "edges": 180651,
+      "first_dataset_index": 2704,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0169.npz",
+      "reference_sha256": "1de9dc5e03e3c9f6f2e55df28130f45bd0ad7c915e4251661d8d36a8f1c6afd1",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0170.npz",
+      "sha256": "81382ef04ddd02b5456164a196d9e3d36aae5040523771d9633dfcd2c2e68c2d",
+      "bytes": 1822584,
+      "edges": 60430,
+      "first_dataset_index": 2720,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0170.npz",
+      "reference_sha256": "47318d580b5033162d0dc6b9d76fa70f64b9432da4aa91fc328a6b1278d4b802",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0171.npz",
+      "sha256": "b98084af2413fe09dddacd6dda7abe22eca734d28427167f5a47474c367e9a0f",
+      "bytes": 1316518,
+      "edges": 43811,
+      "first_dataset_index": 2736,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0171.npz",
+      "reference_sha256": "955f520c8cb7e7a8b2ca3b0d1e13ed904436f9aa2ca3738806a81827c66dcc0c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0172.npz",
+      "sha256": "5e16859fce6c562a5b304b728a6d8b18fa0f977f7f860329090215a7dc4f4b7b",
+      "bytes": 256991,
+      "edges": 8359,
+      "first_dataset_index": 2752,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0172.npz",
+      "reference_sha256": "4263ad81c6fbf73865f06c7677bd763ee9b5792fc7c1c50ced1b3983d9ee1293",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0173.npz",
+      "sha256": "644240cf52ff81d5118f59847e740447bcde6d0754cbb76f7f37752a031cffb1",
+      "bytes": 393995,
+      "edges": 12835,
+      "first_dataset_index": 2768,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0173.npz",
+      "reference_sha256": "2179021dbd77ef181d1e215d146bbd1b608032331d54744c71172c41da9c8029",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0174.npz",
+      "sha256": "0dfe62d1fb2353586676521e98ffa5c07cf7d1b0d6094e5b7f3a64d6648f334a",
+      "bytes": 1543931,
+      "edges": 50496,
+      "first_dataset_index": 2784,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0174.npz",
+      "reference_sha256": "3883c003eaac6fa0958a3a874cfbab7e5b4369ca2501cc64dd301d2fefaeaa32",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0175.npz",
+      "sha256": "393443ada1204fd892c74202f043c507ad36169b11f90d177d7ee4b109f458d9",
+      "bytes": 1578978,
+      "edges": 51490,
+      "first_dataset_index": 2800,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0175.npz",
+      "reference_sha256": "eda860c14cbce83600caaa09edaf81be30247d7f2a0d7bb78ba324ca4c6db33d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0176.npz",
+      "sha256": "77bba4896512fa40f6a65e12f8a38eb8144b47b3c0c1eee5bf1cee03955c59e7",
+      "bytes": 1373041,
+      "edges": 44988,
+      "first_dataset_index": 2816,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0176.npz",
+      "reference_sha256": "001b838f02590b539215af3f87eb2efaa0f2e744296b9a4822a0becd6f3a4941",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0177.npz",
+      "sha256": "f00005d23c5713959650510abe5e0ef6f020e2ac76e04036b7132289474dd8cc",
+      "bytes": 1273560,
+      "edges": 41717,
+      "first_dataset_index": 2832,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0177.npz",
+      "reference_sha256": "b0252befc00b42f8279b1c51688ba8e111c315132593a5881ca5e62fe3a01025",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0178.npz",
+      "sha256": "b5b5e86fb2b5a44ba0a3ca265329492339f466292d1e4f80ac7e31e727a044a9",
+      "bytes": 1061116,
+      "edges": 34588,
+      "first_dataset_index": 2848,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0178.npz",
+      "reference_sha256": "2de54ff85eda034f87aee384ef0fc212545c7d3204772136326cfb4221e8822a",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0179.npz",
+      "sha256": "979be999177740d95c3babc76e02a0cc005ca71c00b1dd0c1e9faaca51b27626",
+      "bytes": 596540,
+      "edges": 19707,
+      "first_dataset_index": 2864,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0179.npz",
+      "reference_sha256": "c29938163c4f2c2e4afbb92d3916275e7652e5b0c5b49df9d3b7ad69570d355d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0180.npz",
+      "sha256": "1ed5ea9d27f778ebdbb5dfd8b315dd9968ac35b17b0d77ad02988f725436746f",
+      "bytes": 921636,
+      "edges": 30174,
+      "first_dataset_index": 2880,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0180.npz",
+      "reference_sha256": "769a125d2cdbe9793a615ccce62ce1a2b60a8c2809127889e84c8b610e99ce14",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0181.npz",
+      "sha256": "0e44cdc4652875e664dd09ba68b9c8c39a7fece873031d7dffd3bd7cc63f1c61",
+      "bytes": 1014450,
+      "edges": 33270,
+      "first_dataset_index": 2896,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0181.npz",
+      "reference_sha256": "735636bb89b10291c48cdc05f3ff569e4e2115870588b575013a7a08325977eb",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0182.npz",
+      "sha256": "59042c0f27c242096acfb001d1fcef9e0cb65bb98d5ee18f5386315a85229414",
+      "bytes": 1161698,
+      "edges": 38011,
+      "first_dataset_index": 2912,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0182.npz",
+      "reference_sha256": "ce828b3c31087d35c469a0ad72614e9ea914b9ebeb47dc86420c97259803460e",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0183.npz",
+      "sha256": "f76ac64d523938db0fc46b306c8d7b2b0f397282bbce5dec74db508ed7bd2f35",
+      "bytes": 1294508,
+      "edges": 42274,
+      "first_dataset_index": 2928,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0183.npz",
+      "reference_sha256": "623c95e1baf94176ba1bc55463ada3a59d382135e0e73c8cb9edcbfbc8ac842f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0184.npz",
+      "sha256": "117c5acdd33dfef8afc520b2ff2c8b5b96a3dac5954fab157258f780e3b4d69d",
+      "bytes": 1205043,
+      "edges": 39473,
+      "first_dataset_index": 2944,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0184.npz",
+      "reference_sha256": "2d2b63d3cc3e419480d6912bb7ab34068c8f8ee2ebd58a1ac17bf513319df521",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0185.npz",
+      "sha256": "15268d9ccb5c58661bdf7a63ae6bfc2f96e3a896a7c9d7f3729a092bc7276ae1",
+      "bytes": 5455186,
+      "edges": 181570,
+      "first_dataset_index": 2960,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0185.npz",
+      "reference_sha256": "69cecbb25cb47a584d46649c3112cfd2c33ab9b8aee0435242f995fe20450546",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0186.npz",
+      "sha256": "0ffb3e4cc22df1b8208d46c4de1d976c54e0bc8d08e400eb47b7ed2961e4d9c2",
+      "bytes": 2428406,
+      "edges": 80519,
+      "first_dataset_index": 2976,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0186.npz",
+      "reference_sha256": "a9884b865c81ef00b2ea1572bc629a9f24e5b9ce3bad3b99968c88c4b0d3b487",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0187.npz",
+      "sha256": "ac8988f3284dea45804c43114d9f6c88d77e979aaf62cce140668caf65b11783",
+      "bytes": 729706,
+      "edges": 23753,
+      "first_dataset_index": 2992,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0187.npz",
+      "reference_sha256": "2d5674c93005aa625b218b3c387e3072369264fccd4b60e6d7b71f52067469e0",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0188.npz",
+      "sha256": "1c36f9c70a2300adfbb61842124248dea9243a38d28a8c9d203e79cb57ddb359",
+      "bytes": 1281522,
+      "edges": 42167,
+      "first_dataset_index": 3008,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0188.npz",
+      "reference_sha256": "c96ce276ae2b9e212b700e6077746f939c18978697ff71d56c47c1e3fe033fbf",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0189.npz",
+      "sha256": "71429dc69b6b7f11234f9a31afe379eb9e5abaecfebc791f07a1a1e64415fe24",
+      "bytes": 2696939,
+      "edges": 89296,
+      "first_dataset_index": 3024,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0189.npz",
+      "reference_sha256": "4147630a2d9b58f9ab81f6dcffa44dd0275b8496029bb8397b1b59463905e4bf",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0190.npz",
+      "sha256": "59d55e91b3353f3fff173b68d9418a1844b88a1fd20f608187d9189ab77df2d3",
+      "bytes": 3892734,
+      "edges": 128908,
+      "first_dataset_index": 3040,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0190.npz",
+      "reference_sha256": "7be649cc97e76f34557c5a1154a72bb101577e1d1fc0a0ee5aebe28b2d648d0c",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0191.npz",
+      "sha256": "b0dad38bdf6dce322805111fac85b64a4e09366a670fcc0ee53b335ac81af63d",
+      "bytes": 1483888,
+      "edges": 48530,
+      "first_dataset_index": 3056,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0191.npz",
+      "reference_sha256": "ed118cd6425e077b5f899d1ca329a14274ab0298211570779f7a8ee57285f489",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0192.npz",
+      "sha256": "3fc9945c1f63f97ae1b3a68ba8aa4e464e6c93a0d7d60ac43953a2f15b919dce",
+      "bytes": 1712618,
+      "edges": 55383,
+      "first_dataset_index": 3072,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0192.npz",
+      "reference_sha256": "b4357097ff4f0c1d53f0020d7befb313bec56c3916a00d1aa3135f88f02419b9",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0193.npz",
+      "sha256": "d905437d069c64de62d1ebb37c763f5d1dc14305277474a152d71ceb3cf6e52c",
+      "bytes": 3422785,
+      "edges": 112108,
+      "first_dataset_index": 3088,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0193.npz",
+      "reference_sha256": "049783e29fea5f194d3fdb70525675ec566780e68d6ec55153d0ca6fd1d7f116",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0194.npz",
+      "sha256": "e512e077495f3e008c0e3f0c9c58ea7a87deb06456e1537adc4894603044810e",
+      "bytes": 3228306,
+      "edges": 106847,
+      "first_dataset_index": 3104,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0194.npz",
+      "reference_sha256": "45a1277d5daabdd79b3698fde9c9a9c952947df80607e753df38669c97afadac",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0195.npz",
+      "sha256": "21aec54cc82dc839e241330b640dc4b744a5145b7e5676624d4a6633977323a7",
+      "bytes": 3168404,
+      "edges": 104717,
+      "first_dataset_index": 3120,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0195.npz",
+      "reference_sha256": "5fddc730077ca0effbf9d8ae4858ccbe981d61a23c2076343fc03bc2e4e30b4e",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0196.npz",
+      "sha256": "87e95576ed827c5f4f915df4bb1a4ff05f3b4f13a566e0382717139976f29451",
+      "bytes": 2507383,
+      "edges": 82656,
+      "first_dataset_index": 3136,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0196.npz",
+      "reference_sha256": "44afb086e375f90a7da3ec3f5aec9ab8b19f302dfda35f6f99d9fb3d916f8574",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0197.npz",
+      "sha256": "5fb93b543c3500f5ce8cf369622ba2804c10de63432b8071fcf59e9d52fc16ac",
+      "bytes": 2729037,
+      "edges": 90280,
+      "first_dataset_index": 3152,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0197.npz",
+      "reference_sha256": "276613a442b79d6eeaa8fedc9fde3263b1d4c49923e2fdf5f2d7fdb855683a6f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0198.npz",
+      "sha256": "2519d4ed0da5187a5d3b76203e81844985d44df9155ae7d53367165c2316c4fa",
+      "bytes": 2572126,
+      "edges": 85304,
+      "first_dataset_index": 3168,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0198.npz",
+      "reference_sha256": "a179161455f6cf4fdb1dfc654c1d8cc87ca19e3fa7b203922987dc99794e36dd",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0199.npz",
+      "sha256": "2897ef0de6767f31741e553577ab72fddc99ae06c0953e3321914da4b9f59dca",
+      "bytes": 2551578,
+      "edges": 85127,
+      "first_dataset_index": 3184,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0199.npz",
+      "reference_sha256": "ae2cc2da1024653dce06fe227644c5ca78a2e89eca0960f926ff057d3c4d47de",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0200.npz",
+      "sha256": "55dae5be0ffdcc29b1f726b5538899a466a9e12f3d1b9ceacfdb90dbb0257a9f",
+      "bytes": 4611301,
+      "edges": 153536,
+      "first_dataset_index": 3200,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0200.npz",
+      "reference_sha256": "175a6b7699f63fc026dfafca7fa15c11b0034592e19a923b0bff2437e7afe67e",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0201.npz",
+      "sha256": "d70c5046c4e24f5f1d7071aed2cbb3be651338acf8467a621b0565416e79bf30",
+      "bytes": 2682525,
+      "edges": 88756,
+      "first_dataset_index": 3216,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0201.npz",
+      "reference_sha256": "48c60189de7f93b974567d925d1abf1d442f8457a2da99984faa0eab1fc68df2",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0202.npz",
+      "sha256": "0417fc156729e7b479b70da9d95fdeef2e3f4c4d5444546cec2fdc79753a3bd2",
+      "bytes": 1872208,
+      "edges": 61620,
+      "first_dataset_index": 3232,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0202.npz",
+      "reference_sha256": "232fae955f33593c7721dea710c7519eb79b70a99f4aafdeea3018a30ff8a612",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0203.npz",
+      "sha256": "a7533f5a091867048be3df7d74c68011f47751764b7f63c8a143575d7510924c",
+      "bytes": 547642,
+      "edges": 17873,
+      "first_dataset_index": 3248,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0203.npz",
+      "reference_sha256": "1dcf12fa3838f322556f82b0d8bf093b68d05a79b80835d683a0e3e59caeac76",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0204.npz",
+      "sha256": "fdd2ca1395b12ac6173b889555f460e06ab5fe9af2b943ca8346096932d786a7",
+      "bytes": 197632,
+      "edges": 6392,
+      "first_dataset_index": 3264,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0204.npz",
+      "reference_sha256": "b2de8b9e7d03b4ae1313567779abd266540d127a300c07125429660ba002552f",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0205.npz",
+      "sha256": "f67330cc415314dc425491f352cb0abb7c7aa93f4722e89f18f2cae10b3b5f6c",
+      "bytes": 124423,
+      "edges": 3966,
+      "first_dataset_index": 3280,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0205.npz",
+      "reference_sha256": "a10ede62f1bb8c2808e1e3c18a22ea5244189ab34f666f31280d8525dcf539bf",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0206.npz",
+      "sha256": "2fae4d0695275ea62f0f4e9eb85f90ba24e2012d8cfdb8796580f99b82ded021",
+      "bytes": 160689,
+      "edges": 5100,
+      "first_dataset_index": 3296,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0206.npz",
+      "reference_sha256": "00e849b5a53d7c6d4cbfe88dcb5910418c585832655fef7197cf6b4d62ed9561",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0207.npz",
+      "sha256": "0ddf31f3af70564a55308a71769e9feba5ba6eb8ef768e553b2b13edaa07db31",
+      "bytes": 268550,
+      "edges": 8601,
+      "first_dataset_index": 3312,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0207.npz",
+      "reference_sha256": "0e94203f20f03a86479e61a8ef7e6260a5f0080ecc6960965c352cb5568b6f2d",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0208.npz",
+      "sha256": "067dded263dba0046338df54ccba671d92017e4f92f3a973a88169ee659f9ce7",
+      "bytes": 329866,
+      "edges": 10603,
+      "first_dataset_index": 3328,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0208.npz",
+      "reference_sha256": "79e140552b070fac766e6ec98162ab16e710392efedf26bb8648b6d078bee91a",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0209.npz",
+      "sha256": "5f82c52f73de9f414956ca49eb9e086aac76e4f5b1b8de13b40530bce02b6b06",
+      "bytes": 261717,
+      "edges": 8271,
+      "first_dataset_index": 3344,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0209.npz",
+      "reference_sha256": "39c274c30dfd0e4f65aac196d06bbcfcd3e50f3f54c8349ab132797f6e036f22",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0210.npz",
+      "sha256": "650b71a1dce1fae4b63df678966b4423793df68c681256f80c6061942738ac13",
+      "bytes": 464924,
+      "edges": 15040,
+      "first_dataset_index": 3360,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0210.npz",
+      "reference_sha256": "1a9c213f5f458fb24054b70e78ecf3977c81d67903ced0c8002ce6d0702a40f9",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0211.npz",
+      "sha256": "a9a3b857fe20c5b6dfea4cab11e2c28bf041611c83c74ba05f8038ddd7d1fcb9",
+      "bytes": 540139,
+      "edges": 17531,
+      "first_dataset_index": 3376,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0211.npz",
+      "reference_sha256": "126b9bae8fcf5ee3bca84ec56fedd4c3207582c39fa9f266cafc66a8967d4ce8",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0212.npz",
+      "sha256": "b969f8cec64f9d0d8e139a15c25d1e59484fc2522622a5439f726fc9dce4b8b6",
+      "bytes": 173514,
+      "edges": 5522,
+      "first_dataset_index": 3392,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0212.npz",
+      "reference_sha256": "d12455ea5b0aa033147f5e6e6d6d378fbfd94cf40de59c2337f599b3b8f04866",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0213.npz",
+      "sha256": "7426184d76e9d89066879f5c1eca92171cb76a649c503ae2d59102d956c6dfe4",
+      "bytes": 1047688,
+      "edges": 34108,
+      "first_dataset_index": 3408,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0213.npz",
+      "reference_sha256": "9de902fa2a254ebf0b0ff1495695fa9df93ee0da247fd37385bddb3906600c34",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0214.npz",
+      "sha256": "f079365d811cc8cd9d947caf9e08fe612e703d95f0bd6d9eb86a22b3e79e017f",
+      "bytes": 408689,
+      "edges": 13212,
+      "first_dataset_index": 3424,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0214.npz",
+      "reference_sha256": "e6bbc441c8a59d5b0186441fe15b2592b47a1c10b834432be9681a328a0828eb",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0215.npz",
+      "sha256": "576f0fe8e3b5be9177a551c96d237ef707d5e38c5b24620a0dc6f0aff781912e",
+      "bytes": 870207,
+      "edges": 28160,
+      "first_dataset_index": 3440,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0215.npz",
+      "reference_sha256": "0ef20ab46ac479d2d4cb48fec0341c1c0eed46df002a382927068d1b7dbff6ac",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0216.npz",
+      "sha256": "4a7726ebdffa4e4832afeca8cdd2923508f9c82d05934bd3bae8b7d2faab2377",
+      "bytes": 768846,
+      "edges": 24792,
+      "first_dataset_index": 3456,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0216.npz",
+      "reference_sha256": "9ffdedab6340854f225f32b813c3ede667fb1b233b2413e7c2004a88b7afc2b9",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0217.npz",
+      "sha256": "862e87c32813831a2f111224413a7a028b3842ab30a43e9ce19883dbe8d6631b",
+      "bytes": 1363338,
+      "edges": 44798,
+      "first_dataset_index": 3472,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0217.npz",
+      "reference_sha256": "88ccbf37efc44017c7729b99f0f09c93c9c0287a6e969a9bb2938539cd4f91aa",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0218.npz",
+      "sha256": "594f74525bd1bf2560bb76523d93e42cd2db63323f1ea12963cbe303e1b154cf",
+      "bytes": 1989556,
+      "edges": 65556,
+      "first_dataset_index": 3488,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0218.npz",
+      "reference_sha256": "1703083eaa8c8c23296ef90dd7d2d9341b582566ae29700fc993bb8e70b13470",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0219.npz",
+      "sha256": "2ad9667bf0bf02f33b308d3ae4876d98a6f2495e18e05df3f3609fff49d88d99",
+      "bytes": 1098376,
+      "edges": 36154,
+      "first_dataset_index": 3504,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0219.npz",
+      "reference_sha256": "311425b96c4c17e660135b4b503b9dc8463b33933186833b14f1dbbad3e92aa0",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0220.npz",
+      "sha256": "4b4e4cf95b406dc8bc8e25b845f87f4f1d8ab23e2cf21cf50ef8fee6cd1eb527",
+      "bytes": 458384,
+      "edges": 14909,
+      "first_dataset_index": 3520,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0220.npz",
+      "reference_sha256": "41064c6e3c0af24b69d3ee1d08aff92cb5745f80625328e11f404359bc101d30",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0221.npz",
+      "sha256": "620ba211712d495e3e7a07f8af37838b0ea4e78edec6764a54d2535453189f14",
+      "bytes": 564725,
+      "edges": 18292,
+      "first_dataset_index": 3536,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0221.npz",
+      "reference_sha256": "e852bc4d674a36217c4a435a42f50b027c5a40ea4aa514179af8625da2a645fe",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0222.npz",
+      "sha256": "8a74768db4708ca33b93e442db7975240228bb4c063723381584d73583814cfc",
+      "bytes": 446814,
+      "edges": 14364,
+      "first_dataset_index": 3552,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0222.npz",
+      "reference_sha256": "a4c1c6908c6ac5b49861a6c0b1d13a286e3a5b2881f4427539665ad86c6d10ea",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0223.npz",
+      "sha256": "566c7df1d478f41cd9d586e4c3663f4f1729cf95da4f74209af5585951518a5b",
+      "bytes": 1361335,
+      "edges": 44383,
+      "first_dataset_index": 3568,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0223.npz",
+      "reference_sha256": "12f3b58a357c98880329b14064b6de2e4f2583da1d75d576810cbf9ddd731174",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0224.npz",
+      "sha256": "c18d0cf661db04aa86e8c932bb53215c8978664cd3b3c1d55a33d897950cfc93",
+      "bytes": 3029761,
+      "edges": 99460,
+      "first_dataset_index": 3584,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0224.npz",
+      "reference_sha256": "5a22d53f44b2b76f4b986d23726890371d1fb87ca6f5cb49ef39fbffa4bead92",
+      "edge_indices_bitwise_identical": true
+    },
+    {
+      "path": "04_evaluation/stage7d_edges_batch_0225.npz",
+      "sha256": "f53c152a4bcb98f9312ac138a2f8137765ed6ff0cd8b94dc54aa55e3d019e811",
+      "bytes": 633411,
+      "edges": 20781,
+      "first_dataset_index": 3600,
+      "identity_semantic_geometry_reference": "outputs/stage7c_actor_semantic_relevance_audit/01_attention_capture/stage7c_edges_batch_0225.npz",
+      "reference_sha256": "47a43eebb64816cdb7de3fffb6919eac3782115547496c7a35056d36e5173c18",
+      "edge_indices_bitwise_identical": true
+    }
+  ],
+  "storage": "lossless Stage7D alpha[8] and identical edge indices join frozen Stage7C scene/sample/actor/lane/semantic metadata",
+  "forward_reproduction": {
+    "minFDE": {
+      "max_actor_difference": 4.38690185546875e-05,
+      "mean_difference": -3.1835377365632985e-09
+    },
+    "Top1FDE": {
+      "max_actor_difference": 0.0001430511474609375,
+      "mean_difference": -9.947719931475633e-09
+    }
+  },
+  "GT_in_model_input": false,
+  "training": false,
+  "test_used": false
+}

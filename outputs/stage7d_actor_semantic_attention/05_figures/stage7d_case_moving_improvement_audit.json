@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "backend": "Python matplotlib",
+  "source": "05_figures/stage7d_case_moving_improvement_source.json",
+  "same_axes": true,
+  "all_text_within_canvas": true,
+  "PNG_dpi": 300,
+  "SVG_text_editable": true,
+  "PDF_fonttype": 42,
+  "artifacts": [
+    {
+      "path": "05_figures/stage7d_case_moving_improvement.png",
+      "bytes": 546924,
+      "sha256": "78ead0b7a394223fb0a991cbd70f48f6e2c26aa16809fe6f9e834d69dd4193ef"
+    },
+    {
+      "path": "05_figures/stage7d_case_moving_improvement.pdf",
+      "bytes": 99770,
+      "sha256": "bcc803610e35e10f45b1bc56237c1ea25c16eaa20b618afc0ea3d97f7f0ef167"
+    },
+    {
+      "path": "05_figures/stage7d_case_moving_improvement.svg",
+      "bytes": 775492,
+      "sha256": "1d25f3b50625fcff346f3102cbc96ac9a756d667674d8307051835513ee51b2a"
+    }
+  ]
+}

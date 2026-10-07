@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "historical_files_verified": 2144,
+  "scene_shards_verified": 850,
+  "unrelated_untracked_preserved": 5,
+  "training_sources_match_preregistration": true,
+  "parameters": 646745,
+  "additional_parameters": 744,
+  "best_checkpoint_sha256": "26b18d98a009e15ae0b560825fa854b9cb9987554d04959ddbc26383a82e6123",
+  "bias_audits_at_every500_steps": true,
+  "formal_runs": 1,
+  "seed": 2022,
+  "test_used": false,
+  "Stage7E_executed": false,
+  "Stage7B_executed": false,
+  "R2_executed": false,
+  "merged_main": false,
+  "exports": [
+    {
+      "name": "stage7d_attention_relevance",
+      "PDF_text_characters": 205,
+      "PDF_font_listing": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nBMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     15  0\n",
+      "SVG_text_nodes": 14,
+      "bundle_sha256": {
+        "pdf": "7e7ab06ade2fe7bbde0febed4689caa53fc09bdd3d642091d7ba38d4089cff3f",
+        "svg": "aa9eaeaa332674894402ecdcf3646770b7b3a932ff792880fae30b5651abdd7c",
+        "png": "2592f267a25fa0b3154cb7236d8a92404cf50fecb50b07e1f68a533280c699f3"
+      }
+    },
+    {
+      "name": "stage7d_case_degradation",
+      "PDF_text_characters": 643,
+      "PDF_font_listing": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nHATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     16  0\n",
+      "SVG_text_nodes": 85,
+      "bundle_sha256": {
+        "pdf": "ed708302ae3fc6f839166f246da844c62f49f3d785455fc92c5705a48d7277d3",
+        "svg": "7afa9e727152b7e907176be955977ee27f5119c4e32b96b7d8fa68683a557759",
+        "png": "505e24f861bb71945267908854261f57ae4072bd49d6aea8f82ca1fe270263e6"
+      }
+    },
+    {
+      "name": "stage7d_case_moving_improvement",
+      "PDF_text_characters": 668,
+      "PDF_font_listing": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nHATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     16  0\n",
+      "SVG_text_nodes": 84,
+      "bundle_sha256": {
+        "pdf": "bcc803610e35e10f45b1bc56237c1ea25c16eaa20b618afc0ea3d97f7f0ef167",
+        "svg": "1d25f3b50625fcff346f3102cbc96ac9a756d667674d8307051835513ee51b2a",
+        "png": "78ead0b7a394223fb0a991cbd70f48f6e2c26aa16809fe6f9e834d69dd4193ef"
+      }
+    },
+    {
+      "name": "stage7d_case_turning_improvement",
+      "PDF_text_characters": 642,
+      "PDF_font_listing": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nHATIFL+LiberationSans                CID TrueType      Identity-H       yes yes yes     16  0\n",
+      "SVG_text_nodes": 81,
+      "bundle_sha256": {
+        "pdf": "84144deb977f6485e70865df406038f261c6d8d48cbbe4cabe90e7e74bd0178d",
+        "svg": "e3da04925485c8b591fe0222e689dc29524d40f7d0d7186890de454adde1c274",
+        "png": "c2345e7adcc7aa8146e24567f34059d805ece644890d91273f06d8fb78aa2ec7"
+      }
+    },
+    {
+      "name": "stage7d_difficult_vehicle_groups",
+      "PDF_text_characters": 302,
+      "PDF_font_listing": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nEVICAO+DejaVuSans-Bold               CID TrueType      Identity-H       yes yes yes     15  0\nBMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     22  0\n",
+      "SVG_text_nodes": 26,
+      "bundle_sha256": {
+        "pdf": "0e160d45ba1fd354c22c5d1b7c3b78c66325cab4c2fbe073b8d9a9cd42c00e05",
+        "svg": "87dbcce40579b90863682ce17c27698ecd9b56c9c204a4eec7bfcbc0bee9842b",
+        "png": "2dd2a722de62c261ec7a981abec45f996279d3ef64e714feb4c965c40f3e3c09"
+      }
+    },
+    {
+      "name": "stage7d_main_fde_comparison",
+      "PDF_text_characters": 285,
+      "PDF_font_listing": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nEVICAO+DejaVuSans-Bold               CID TrueType      Identity-H       yes yes yes     15  0\nBMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     22  0\n",
+      "SVG_text_nodes": 25,
+      "bundle_sha256": {
+        "pdf": "dfe5951260acd62503f890cbcabbe93c4e11fcf3600fec75432dacc4e53b4e1c",
+        "svg": "720859332b4051ffa8c32f165c70d2e69a49c3b4010ae66248be675736f4691c",
+        "png": "f09608faf0db7c1bc3835c919b8d8731202d9a30b54dbe05db11f4c17fa2ca43"
+      }
+    },
+    {
+      "name": "stage7d_turn_attention",
+      "PDF_text_characters": 187,
+      "PDF_font_listing": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nBMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     15  0\n",
+      "SVG_text_nodes": 15,
+      "bundle_sha256": {
+        "pdf": "9611a02c186361b6dc9c712143606950e61f56e794723ee8b804ef47b0c9cd2c",
+        "svg": "8565742c766c12b32c32548e5fd5bfdd19496d11480fe5232a4835fa96c19246",
+        "png": "a30b20bf1f6c7fe65f68cea128d84eb8169881568d134995bfbd6c0fb05c61b5"
+      }
+    }
+  ],
+  "visual_QA": "final PNG bundles inspected separately before publication"
+}

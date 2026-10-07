@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "VAL_batches": 100,
+  "seed": 2022,
+  "max_differences": {
+    "raw_prediction": 0.0,
+    "mode_logits": 0.0,
+    "mode_prob": 0.0
+  },
+  "checkpoint_sha256": "26b18d98a009e15ae0b560825fa854b9cb9987554d04959ddbc26383a82e6123",
+  "post_softmax": true,
+  "eval_dropout_disabled": true,
+  "model_state_unchanged": true,
+  "baseline_integrity_reused": "stage7c_actor_semantic_relevance_audit/00_manifest/stage7c_attention_capture_integrity.json",
+  "kernel_policy": "controlled deterministic CUDA, CUBLAS :4096:8",
+  "training": false,
+  "test_used": false
+}
