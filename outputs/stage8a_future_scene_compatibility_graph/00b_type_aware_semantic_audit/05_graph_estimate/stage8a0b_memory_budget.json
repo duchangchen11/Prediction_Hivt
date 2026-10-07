@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "kind": "conservative inference-only planning estimate, not benchmark",
+  "historical_measured_peak_MiB": 85.4130859375,
+  "resource_budget_floats_per_map_node": 64,
+  "resource_budget_floats_per_map_edge": 64,
+  "resource_budget_is_formal_feature_schema": false,
+  "input_without_map_bytes_per_target": 22664,
+  "dense_input_bytes_per_target": 47480,
+  "batch128_dense_input_bytes": 6077440,
+  "estimated_peak_CUDA_MiB": 365.4521484375,
+  "formula": "4*(historical_peak - historical_batch_input) + expanded_dense_batch_input + 32 MiB",
+  "GPU_total_bytes": 10366025728,
+  "future_training_activations": "unmeasured",
+  "formal_G2_G3_implemented": false
+}

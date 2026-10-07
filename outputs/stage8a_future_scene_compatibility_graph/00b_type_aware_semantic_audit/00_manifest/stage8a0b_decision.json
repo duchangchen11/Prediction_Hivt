@@ -1,0 +1,148 @@
+{
+  "LaneOnlyFailureCause": "MIXED",
+  "TypeAwareSemanticCoverage": "FAIL",
+  "SemanticContextQuality": "STRONG",
+  "Stage8A_0B": "NOT_READY",
+  "historical_Stage8A_0": "NOT_READY",
+  "coverage_gates": [
+    {
+      "Split": "train",
+      "Group": "MovingVehicle",
+      "Metric": "RouteCenterlineCoverage",
+      "Value": 0.9869929123481853,
+      "Threshold": 0.95,
+      "PASS": true
+    },
+    {
+      "Split": "train",
+      "Group": "Vehicle",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.886942384617184,
+      "Threshold": 0.95,
+      "PASS": false
+    },
+    {
+      "Split": "train",
+      "Group": "StoppedVehicle",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.9770165902052251,
+      "Threshold": 0.95,
+      "PASS": true
+    },
+    {
+      "Split": "train",
+      "Group": "ParkedVehicle",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.8319007912623497,
+      "Threshold": 0.95,
+      "PASS": false
+    },
+    {
+      "Split": "train",
+      "Group": "Pedestrian",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.9020085972150124,
+      "Threshold": 0.95,
+      "PASS": false
+    },
+    {
+      "Split": "train",
+      "Group": "Bicycle",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.9252708731676227,
+      "Threshold": 0.95,
+      "PASS": false
+    },
+    {
+      "Split": "train",
+      "Group": "Vehicle",
+      "Metric": "GenericOnlyRate",
+      "Value": 0.08693536690916746,
+      "Threshold": 0.3,
+      "PASS": true
+    },
+    {
+      "Split": "train",
+      "Group": "Pedestrian",
+      "Metric": "GenericOnlyRate",
+      "Value": 0.004467091063085708,
+      "Threshold": 0.5,
+      "PASS": true
+    },
+    {
+      "Split": "val",
+      "Group": "MovingVehicle",
+      "Metric": "RouteCenterlineCoverage",
+      "Value": 0.9900742440174617,
+      "Threshold": 0.95,
+      "PASS": true
+    },
+    {
+      "Split": "val",
+      "Group": "Vehicle",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.8465227251252008,
+      "Threshold": 0.95,
+      "PASS": false
+    },
+    {
+      "Split": "val",
+      "Group": "StoppedVehicle",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.9715425373578616,
+      "Threshold": 0.95,
+      "PASS": true
+    },
+    {
+      "Split": "val",
+      "Group": "ParkedVehicle",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.7561182104399821,
+      "Threshold": 0.95,
+      "PASS": false
+    },
+    {
+      "Split": "val",
+      "Group": "Pedestrian",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.9099316780536577,
+      "Threshold": 0.95,
+      "PASS": false
+    },
+    {
+      "Split": "val",
+      "Group": "Bicycle",
+      "Metric": "TypeAwareAnyCoverage",
+      "Value": 0.8808434959349594,
+      "Threshold": 0.95,
+      "PASS": false
+    },
+    {
+      "Split": "val",
+      "Group": "Vehicle",
+      "Metric": "GenericOnlyRate",
+      "Value": 0.04849759047529056,
+      "Threshold": 0.3,
+      "PASS": true
+    },
+    {
+      "Split": "val",
+      "Group": "Pedestrian",
+      "Metric": "GenericOnlyRate",
+      "Value": 0.009192912292395711,
+      "Threshold": 0.5,
+      "PASS": true
+    }
+  ],
+  "graph_memory_feasible": true,
+  "inference_memory_budget_MiB": 365.4521484375,
+  "GPU_total_bytes": 10366025728,
+  "memory_estimate_measured": false,
+  "training_memory_feasibility": "not measured or authorized; model design required before any training claim",
+  "low_motion_evidence": true,
+  "map_coverage_limitation_evidence": true,
+  "predicted_low_motion_bin_support": true,
+  "no_training": true,
+  "STOP": true,
+  "training_authorized": false
+}

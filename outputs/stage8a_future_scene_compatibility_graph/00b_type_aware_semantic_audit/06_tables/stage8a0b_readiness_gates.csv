@@ -1,0 +1,17 @@
+Split,Group,Metric,Value,Threshold,PASS
+train,MovingVehicle,RouteCenterlineCoverage,0.9869929123481853,0.95,True
+train,Vehicle,TypeAwareAnyCoverage,0.886942384617184,0.95,False
+train,StoppedVehicle,TypeAwareAnyCoverage,0.9770165902052251,0.95,True
+train,ParkedVehicle,TypeAwareAnyCoverage,0.8319007912623497,0.95,False
+train,Pedestrian,TypeAwareAnyCoverage,0.9020085972150124,0.95,False
+train,Bicycle,TypeAwareAnyCoverage,0.9252708731676227,0.95,False
+train,Vehicle,GenericOnlyRate,0.08693536690916746,0.3,True
+train,Pedestrian,GenericOnlyRate,0.004467091063085708,0.5,True
+val,MovingVehicle,RouteCenterlineCoverage,0.9900742440174617,0.95,True
+val,Vehicle,TypeAwareAnyCoverage,0.8465227251252008,0.95,False
+val,StoppedVehicle,TypeAwareAnyCoverage,0.9715425373578616,0.95,True
+val,ParkedVehicle,TypeAwareAnyCoverage,0.7561182104399821,0.95,False
+val,Pedestrian,TypeAwareAnyCoverage,0.9099316780536577,0.95,False
+val,Bicycle,TypeAwareAnyCoverage,0.8808434959349594,0.95,False
+val,Vehicle,GenericOnlyRate,0.04849759047529056,0.3,True
+val,Pedestrian,GenericOnlyRate,0.009192912292395711,0.5,True

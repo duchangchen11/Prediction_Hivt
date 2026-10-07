@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "regions": [
+    "boston-seaport",
+    "singapore-hollandvillage",
+    "singapore-onenorth",
+    "singapore-queenstown"
+  ],
+  "map_sources": {
+    "boston-seaport.json": "fc33712481efd763be39ce7edca0ec924d2d1fe20e1c89d52e21bf43d86e6b59",
+    "singapore-hollandvillage.json": "0c9209c277686e367b06ab5bbe2547ba357f7f790365cb4927f44ae0f78266b2",
+    "singapore-onenorth.json": "17939122b940d7faff50fa7ff623ded7f739549a781c32dff1ecd1ac7bebca02",
+    "singapore-queenstown.json": "c7e75f5a5643c4831aae1c99a0fdcc61e9ba3c01f98d922f0fafa34ea1062927"
+  },
+  "layers": [
+    "lane",
+    "lane_connector",
+    "drivable_area",
+    "carpark_area",
+    "ped_crossing",
+    "walkway",
+    "stop_line"
+  ],
+  "geometry_policy": "Exact unmodified valid polygon components; exclude invalid components, retaining and disclosing usable components of multipart records.",
+  "entities": 13872,
+  "invalid_components": 1,
+  "invalid_references": 0,
+  "partial_entities": 0,
+  "semantic_attachment": "PASS",
+  "frozen_9d_source_sha256": "fe37501f3b8ee91be7966a63d2c8e8128573d18fc3c7a5ca0f54e2aaabd87cf5",
+  "centerlines_sha256": "53d305b7136e477ba2cc37075610113e326da9ad575d160d5d31654d107acb32",
+  "software": {
+    "shapely": "2.0.7",
+    "GEOS": "3.11.4"
+  },
+  "repairs": false,
+  "raw_layer_polygon_geometry_audit": "PASS",
+  "retrieval_geometry_note": "lane/lane_connector use frozen full LineString centerlines; actual API layer polygons are audited separately",
+  "raw_polygon_geometry_table_sha256": "9a34e59dafea255014b99977c01b913f0495853e1a3da6b00e06c62189d7a4ce"
+}

@@ -1,0 +1,22 @@
+{
+  "candidate_identity": "PASS",
+  "candidate_identity_evidence": "Historical exact predictor replay on 100 TRAIN +100 VAL windows; all 1283 source hashes reverified; candidates aliased without modification; lane retrieval reproduced bitwise.",
+  "historical_replay_sha256": "55b27ac01e7057f5e7c6aa497234b118ffc983a2a27f0af6daa8202c02ccef9a",
+  "coordinate": "PASS",
+  "GT_leakage": "PASS",
+  "semantic_attachment": "PASS",
+  "windows": 200,
+  "candidate_roundtrip_max_m": 2.8421709430404007e-13,
+  "polygon_roundtrip_max_m": 9.094947017729282e-13,
+  "geometry_distance_max_m": 9.094947017729282e-13,
+  "boundary_distance_max_m": 9.094947017729282e-13,
+  "polygons_checked": 1196,
+  "poison_GT": "NaN",
+  "poison_future_and_target_masks": "inverted",
+  "forbidden_access_guard": true,
+  "all_arrays_bitwise_unchanged": true,
+  "optimizer_steps": 0,
+  "backward_calls": 0,
+  "training_executed": false,
+  "test_used": false
+}

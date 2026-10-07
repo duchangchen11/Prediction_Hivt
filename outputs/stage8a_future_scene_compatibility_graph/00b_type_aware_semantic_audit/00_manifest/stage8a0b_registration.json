@@ -1,0 +1,32 @@
+{
+  "status": "REGISTERED",
+  "branch": "stage8a0b/type-aware-semantic-entity-audit",
+  "base": "232a0ad7cf73674a8c651eb34301356f62cd6f1a",
+  "populations": [
+    "current_valid",
+    "full_horizon_ranking_targets"
+  ],
+  "splits": [
+    "train",
+    "val"
+  ],
+  "lane_radius_m": 10,
+  "polygon_boundary_threshold_m": 2,
+  "topM": 8,
+  "seed": 2022,
+  "coordinate_windows": 200,
+  "gate_scope": "each split full-horizon ranking candidates separately",
+  "generic_denominator": "all candidates",
+  "recovery_denominator": "lane-fallback candidates",
+  "training": false,
+  "test": false,
+  "new_checkpoint": false,
+  "historical_stage8a0": "NOT_READY",
+  "future_node_schema_proposal": {
+    "type_onehot": 6,
+    "lane_semantic": 9,
+    "nonlane_semantic": "all zero",
+    "geometry": "relative geometry and polygon/centerline attributes; dimensions not implemented"
+  },
+  "forbidden": "no optimizer/backward/forward new G2 or G3, no predictor/R2 changes"
+}

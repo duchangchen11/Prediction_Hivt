@@ -1,0 +1,1397 @@
+你现在执行：
+
+============================================================
+Stage8A-0B
+Actor-Type-Aware Semantic Entity Coverage Audit
+参与者类型条件的场景语义实体覆盖审计
+============================================================
+
+项目：
+
+/home/lrj/Prediction_Hivt
+
+基础分支：
+
+stage8a/future-scene-compatibility-graph
+
+基础commit：
+
+232a0ad7cf73674a8c651eb34301356f62cd6f1a
+
+新建分支：
+
+stage8a0b/type-aware-semantic-entity-audit
+
+============================================================
+0. 重要约束
+============================================================
+
+Stage8A-0历史结论保持：
+
+Stage8A_0 = NOT_READY
+
+原因：
+
+train Vehicle lane-only fallback ≈25.17%
+val Vehicle lane-only fallback ≈26.54%
+
+不得修改该结论。
+
+本阶段是新的诊断阶段：
+
+Stage8A-0B。
+
+禁止：
+
+训练G1
+训练G2
+训练G3
+optimizer step
+tiny overfit
+新ranking checkpoint
+修改Stage5A predictor
+修改Stage6A R2
+使用test split
+
+本阶段只允许：
+
+map schema audit
+coverage analysis
+geometry retrieval audit
+graph size estimation
+future leakage audit
+
+============================================================
+1. 本阶段研究问题
+============================================================
+
+当前Stage8A map entity实际上只有：
+
+lane
+lane_connector
+
+并把：
+
+turn
+traffic control
+crosswalk
+
+作为lane semantic attribute。
+
+这可能导致：
+
+moving vehicle覆盖很好，
+
+但：
+
+parked/stopped vehicle
+pedestrian
+其他非车道中心线行为
+
+出现较高fallback。
+
+本阶段回答：
+
+Q1：
+Vehicle lane-only fallback主要来自哪些运动状态？
+
+Q2：
+加入actor-type-aware semantic entities后，
+是否能获得稳定的场景语义覆盖？
+
+Q3：
+新的semantic entity定义是否比简单扩大lane search radius更合理？
+
+============================================================
+2. 不允许做的事情
+============================================================
+
+禁止简单：
+
+10m → 20m
+
+禁止：
+
+TopM 8 → 16
+
+禁止：
+
+为了coverage调整阈值
+
+禁止：
+
+根据VAL结果挑最佳radius
+
+禁止：
+
+生成新的semantic label
+
+禁止：
+
+用future GT决定map entity
+
+所有retrieval必须只依赖：
+
+predicted candidate
+actor type
+当前actor状态
+HD map
+
+============================================================
+3. 输出目录
+============================================================
+
+创建：
+
+outputs/stage8a_future_scene_compatibility_graph/
+00b_type_aware_semantic_audit/
+
+00_manifest/
+01_schema_audit/
+02_fallback_diagnosis/
+03_entity_retrieval/
+04_coverage/
+05_graph_estimate/
+06_tables/
+07_figures/
+08_logs/
+09_reports/
+
+============================================================
+4. Step A：现有lane-only fallback拆解
+============================================================
+
+首先完全复用Stage8A-0：
+
+lane/lane_connector
+10m
+Top8
+nearest-one fallback规则。
+
+但本阶段coverage统计必须在fallback之前计算。
+
+对Vehicle按t0 taxonomy拆成：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+unknown
+
+分别统计：
+
+TRAIN
+VAL
+
+以及：
+
+current_valid
+full_horizon_ranking_targets
+
+输出：
+
+Actors
+Candidates
+AtLeast1LaneWithin10m
+LaneFallbackRate
+AtLeast4LaneTokens
+MeanLaneTokensPerMode
+
+============================================================
+5. Candidate运动量拆解
+============================================================
+
+仅使用predicted candidate本身。
+
+按：
+
+candidate net displacement
+
+划分：
+
+0–1m
+1–5m
+>5m
+
+统计：
+
+lane-only fallback rate。
+
+目的：
+
+判断fallback是否与：
+
+低运动/停车候选
+
+高度相关。
+
+这不是正式模型分组，
+只做工程诊断。
+
+============================================================
+6. Actor-level fallback
+============================================================
+
+除了candidate-level，
+
+还要统计actor-level：
+
+6个mode全部有lane context
+
+至少1个mode fallback
+
+全部6个mode fallback
+
+分别报告。
+
+这样判断：
+
+25% candidate fallback
+
+到底是：
+
+少数actor的全部mode失败
+
+还是：
+
+大量actor中部分mode偏离lane。
+
+============================================================
+7. Step B：nuScenes Map Layer Schema Audit
+============================================================
+
+对四个map region：
+
+Boston
+Singapore Holland Village
+Singapore One North
+Singapore Queenstown
+
+实际读取本地map API / map JSON。
+
+检查并统计以下layer是否存在：
+
+lane
+lane_connector
+drivable_area
+carpark_area
+ped_crossing
+walkway
+stop_line
+
+如果实际schema名称不同：
+
+记录真实名称。
+
+禁止假定layer存在。
+
+每层输出：
+
+record count
+geometry type
+valid geometry count
+empty geometry count
+NaN
+Inf
+invalid reference count
+
+============================================================
+8. Polygon Geometry Audit
+============================================================
+
+对：
+
+drivable_area
+carpark_area
+ped_crossing
+walkway
+stop_line
+
+如果存在：
+
+验证polygon：
+
+finite
+closed/usable
+global coordinates valid
+
+并验证：
+
+global → t0 ego local
+→ global
+
+roundtrip。
+
+要求：
+
+max roundtrip error <1e-5m优先。
+
+============================================================
+9. 不重新定义Stage7A语义
+============================================================
+
+原9D lane semantic保持冻结：
+
+is_connector
+turn_left
+turn_straight
+turn_right
+turn_unknown
+traffic_light_controlled
+stop_sign_controlled
+other_control
+crosswalk_intersects
+
+这些仍然属于：
+
+lane / lane_connector entity attribute。
+
+本阶段新增的是：
+
+新的map entity type。
+
+不是重新定义9D semantic。
+
+============================================================
+10. 新的Semantic Entity Taxonomy
+============================================================
+
+定义map entity类型：
+
+E0 lane
+
+E1 lane_connector
+
+E2 drivable_area
+
+E3 carpark_area
+
+E4 ped_crossing
+
+E5 walkway
+
+暂时不要把traffic_light硬件位置
+作为独立entity。
+
+traffic control继续通过：
+
+lane-associated semantic
+
+表达。
+
+stop_line：
+
+本阶段做coverage audit，
+
+但先不授权进入正式graph。
+
+============================================================
+11. 为什么暂不直接加入stop_line
+============================================================
+
+Stage7A已确认：
+
+traffic control association
+
+来自stop-line geometry。
+
+本阶段避免：
+
+lane semantic control
++
+standalone stop_line
+
+重复表达同一关系。
+
+先统计，
+不进入type-aware primary entity set。
+
+============================================================
+12. 中心线Entity Retrieval
+============================================================
+
+对于：
+
+lane
+lane_connector
+
+继续严格使用：
+
+candidate future polyline
+到
+complete centerline
+
+minimum distance <=10m。
+
+保持：
+
+10m
+
+不调整。
+
+去重：
+
+distinct map token。
+
+============================================================
+13. Polygon Entity Retrieval
+============================================================
+
+对于：
+
+drivable_area
+carpark_area
+ped_crossing
+walkway
+
+定义：
+
+candidate 12点future polyline
+
+若满足：
+
+A.
+任意future point位于polygon内部
+
+或：
+
+B.
+candidate polyline与polygon发生几何相交
+
+或：
+
+C.
+candidate polyline到polygon边界
+minimum distance <=2m
+
+则认为：
+
+entity matched。
+
+2m为本阶段预注册固定值。
+
+禁止根据结果修改。
+
+============================================================
+14. Polygon距离
+============================================================
+
+必须计算真正：
+
+polyline ↔ polygon
+
+几何距离。
+
+禁止仅比较：
+
+polygon centroid
+
+或：
+
+candidate endpoint。
+
+============================================================
+15. Vehicle type-aware retrieval
+============================================================
+
+对于：
+
+vehicle.moving
+
+primary relevant entities：
+
+lane
+lane_connector
+
+secondary：
+
+drivable_area
+carpark_area
+
+定义：
+
+VehicleMovingContextCovered =
+
+存在：
+
+lane / lane_connector within10m
+
+或者：
+
+candidate匹配drivable_area/carpark_area。
+
+但单独保留：
+
+RouteCenterlineCovered
+
+指标。
+
+============================================================
+16. Stopped Vehicle
+============================================================
+
+对于：
+
+vehicle.stopped
+
+relevant entities：
+
+lane
+lane_connector
+drivable_area
+carpark_area
+
+不要求一定靠近中心线。
+
+============================================================
+17. Parked Vehicle
+============================================================
+
+对于：
+
+vehicle.parked
+
+relevant entities：
+
+carpark_area
+drivable_area
+lane
+lane_connector
+
+重点统计：
+
+Parked candidate没有lane，
+但有carpark/drivable context的比例。
+
+============================================================
+18. Unknown Vehicle
+============================================================
+
+relevant entities：
+
+lane
+lane_connector
+drivable_area
+carpark_area。
+
+单独报告。
+
+============================================================
+19. Pedestrian retrieval
+============================================================
+
+Pedestrian relevant entities：
+
+walkway
+ped_crossing
+drivable_area
+
+lane / lane_connector只作为：
+
+secondary road context，
+
+不要作为Pedestrian primary semantic coverage。
+
+定义：
+
+PedestrianSemanticCovered =
+
+匹配：
+
+walkway
+或
+ped_crossing
+或
+drivable_area。
+
+另外统计：
+
+walkway-only
+crosswalk-only
+drivable-only
+multiple。
+
+============================================================
+20. Bicycle retrieval
+============================================================
+
+Bicycle relevant entities：
+
+lane
+lane_connector
+drivable_area
+
+carpark_area仅描述，
+不作为primary。
+
+============================================================
+21. 类型不能决定GT
+============================================================
+
+actor type和t0 motion attribute：
+
+允许使用。
+
+禁止：
+
+future displacement GT
+TurningVehicle_GT
+GT-left
+GT-right
+
+参与retrieval。
+
+Candidate predicted displacement可以用于诊断，
+不能改变retrieval规则。
+
+============================================================
+22. 不使用nearest fallback做coverage
+============================================================
+
+Stage8A-0为了graph nonempty使用：
+
+nearest-one fallback。
+
+Stage8A-0B的正式coverage：
+
+必须：
+
+fallback之前统计。
+
+不得因为：
+
+“最后总能找到一个nearest entity”
+
+就写100% coverage。
+
+============================================================
+23. Type-Aware Coverage定义
+============================================================
+
+输出至少：
+
+RouteCenterlineCoverage
+
+AreaContextCoverage
+
+CrosswalkCoverage
+
+WalkwayCoverage
+
+CarparkCoverage
+
+TypeAwareAnyCoverage
+
+TypeAwareFallbackRate
+
+MeanRelevantEntitiesPerMode。
+
+============================================================
+24. Moving Vehicle正式工程Gate
+============================================================
+
+full-horizon ranking candidates：
+
+MovingVehicle：
+
+RouteCenterlineCoverage
+>=95%
+
+否则：
+
+NOT_READY。
+
+这里仍然要求route geometry。
+
+============================================================
+25. Stopped/Parked Vehicle工程Gate
+============================================================
+
+full-horizon：
+
+StoppedVehicle：
+
+TypeAwareAnyCoverage >=95%
+
+ParkedVehicle：
+
+TypeAwareAnyCoverage >=95%
+
+其中：
+
+Any =
+lane/connector/drivable/carpark。
+
+============================================================
+26. Vehicle Overall工程Gate
+============================================================
+
+所有full-horizon Vehicle：
+
+TypeAwareAnyCoverage >=95%。
+
+注意：
+
+这是新的type-aware gate，
+
+不是修改旧lane-only 5% gate。
+
+旧Stage8A-0仍然FAIL。
+
+============================================================
+27. Pedestrian工程Gate
+============================================================
+
+full-horizon Pedestrian：
+
+TypeAwareAnyCoverage >=95%
+
+其中：
+
+Any =
+walkway
+ped_crossing
+drivable_area。
+
+同时必须单独报告：
+
+SemanticSpecificCoverage =
+
+walkway OR ped_crossing。
+
+不要求SemanticSpecific达到95%，
+
+但必须明确真实比例。
+
+============================================================
+28. Bicycle工程Gate
+============================================================
+
+full-horizon Bicycle：
+
+TypeAwareAnyCoverage >=95%
+
+其中：
+
+lane
+connector
+drivable_area。
+
+============================================================
+29. Generic Drivable Dominance Audit
+============================================================
+
+非常重要。
+
+如果：
+
+TypeAwareAnyCoverage很高，
+
+但绝大多数candidate只有：
+
+drivable_area
+
+没有任何：
+
+lane
+connector
+carpark
+walkway
+crosswalk
+
+则不能简单宣布语义覆盖成功。
+
+统计：
+
+GenericOnlyRate
+
+定义：
+
+只有drivable_area matched，
+没有其他semantic entity。
+
+分别：
+
+Vehicle
+Pedestrian
+Bicycle。
+
+============================================================
+30. Readiness额外限制
+============================================================
+
+如果：
+
+Vehicle GenericOnlyRate >30%
+
+或者：
+
+Pedestrian GenericOnlyRate >50%
+
+需要标记：
+
+SEMANTIC_CONTEXT_WEAK
+
+即使coverage >=95%，
+
+也不能直接训练。
+
+============================================================
+31. Entity数量审计
+============================================================
+
+对每个candidate：
+
+统计：
+
+#lane
+#connector
+#drivable
+#carpark
+#crosswalk
+#walkway
+
+以及：
+
+total distinct entities。
+
+输出：
+
+mean
+median
+p95
+max。
+
+============================================================
+32. Top8容量模拟
+============================================================
+
+本阶段不改正式TopM=8。
+
+但需要模拟：
+
+如果未来只允许最多8个semantic entities，
+
+有多少candidate：
+
+entity_count >8。
+
+统计：
+
+OverflowRate。
+
+============================================================
+33. 如果超过8个
+============================================================
+
+不要自动改M。
+
+只报告：
+
+OverflowRate。
+
+并分别记录：
+
+哪类entity占主要数量。
+
+等待审查。
+
+============================================================
+34. Entity排序
+============================================================
+
+为了Top8模拟，
+
+使用纯几何排序：
+
+minimum candidate-to-entity distance。
+
+禁止根据：
+
+GT
+prediction error
+semantic类别优先级
+
+排序。
+
+如果距离tie：
+
+按：
+
+entity type id
+token
+
+稳定排序。
+
+============================================================
+35. Graph规模估计
+============================================================
+
+在type-aware retrieval下，
+
+估算：
+
+MeanMapEntitiesPerMode
+
+MeanModeMapEdgesPerTarget
+
+p95 edges
+
+max edges
+
+batch128 input bytes
+
+estimated peak CUDA。
+
+不训练网络。
+
+============================================================
+36. Map Node新特征预案
+============================================================
+
+本阶段只记录schema，
+
+不要实现正式G2/G3。
+
+未来可能统一MapNode：
+
+entity type onehot
+
+9D lane semantic
+（非lane entity全0）
+
+relative geometry
+
+polygon/centerline attributes。
+
+但Stage8A-0B禁止训练。
+
+============================================================
+37. No Future Leakage
+============================================================
+
+延续Stage8A-0：
+
+构造ObservableWindow。
+
+poison：
+
+GT
+
+future masks
+
+target masks。
+
+要求：
+
+所有：
+
+entity retrieval
+entity token ids
+distances
+coverage
+type-aware graph selectors
+
+bitwise unchanged。
+
+============================================================
+38. 坐标一致性
+============================================================
+
+随机：
+
+至少200 windows。
+
+检查：
+
+candidate local
+→ global
+
+map polygon global
+
+global → local
+
+距离一致性。
+
+要求：
+
+global/local geometry distance
+
+max discrepancy <1e-5m优先。
+
+============================================================
+39. 重点诊断
+============================================================
+
+必须回答：
+
+当前Vehicle lane-only fallback
+
+究竟多少来自：
+
+moving
+stopped
+parked
+unknown。
+
+以及：
+
+新增：
+
+drivable_area
+carpark_area
+
+以后，
+
+其中多少fallback被真实场景区域覆盖。
+
+============================================================
+40. 一个关键表
+============================================================
+
+输出：
+
+stage8a0b_vehicle_fallback_decomposition.csv
+
+字段：
+
+Split
+Population
+MotionState
+Actors
+Candidates
+LaneOnlyFallbackRate
+TypeAwareFallbackRate
+RecoveredByDrivableRate
+RecoveredByCarparkRate
+StillUncoveredRate
+
+============================================================
+41. Pedestrian表
+============================================================
+
+stage8a0b_pedestrian_semantic_coverage.csv
+
+字段：
+
+Split
+Population
+Candidates
+WalkwayCoverage
+CrosswalkCoverage
+DrivableCoverage
+SemanticSpecificCoverage
+TypeAwareAnyCoverage
+GenericOnlyRate
+
+============================================================
+42. Bicycle表
+============================================================
+
+stage8a0b_bicycle_semantic_coverage.csv
+
+字段：
+
+LaneCoverage
+ConnectorCoverage
+DrivableCoverage
+TypeAwareAnyCoverage
+GenericOnlyRate
+
+============================================================
+43. Map layer表
+============================================================
+
+stage8a0b_map_schema.csv
+
+字段：
+
+MapRegion
+Layer
+Records
+ValidGeometry
+InvalidGeometry
+GeometryType
+NaN
+Inf
+
+============================================================
+44. Entity statistics表
+============================================================
+
+stage8a0b_entity_statistics.csv
+
+字段：
+
+ActorGroup
+EntityType
+MatchedCandidates
+Coverage
+MeanCount
+MedianCount
+P95Count
+MaxCount
+
+============================================================
+45. Graph estimate表
+============================================================
+
+stage8a0b_graph_estimate.csv
+
+字段：
+
+Group
+Targets
+MeanMapEntitiesPerMode
+P95MapEntitiesPerMode
+OverflowRateTop8
+MeanModeMapEdges
+P95ModeMapEdges
+EstimatedBytesPerTarget
+
+============================================================
+46. 报告
+============================================================
+
+输出：
+
+09_reports/
+stage8a0b_type_aware_semantic_entity_audit.md
+
+结构：
+
+【Why Stage8A-0 Failed】
+
+【Lane-only Fallback Decomposition】
+
+【Map Schema】
+
+【Polygon Geometry Integrity】
+
+【Vehicle Type-Aware Context】
+
+【Moving Vehicle】
+
+【Stopped Vehicle】
+
+【Parked Vehicle】
+
+【Pedestrian Semantic Context】
+
+【Bicycle Semantic Context】
+
+【Generic Drivable Dominance】
+
+【Top8 Capacity】
+
+【Graph Size】
+
+【No-Future-Leakage】
+
+【Coordinate Integrity】
+
+【Scientific Decision】
+
+============================================================
+47. 最终判定
+============================================================
+
+给出：
+
+LaneOnlyFailureCause =
+
+LOW_MOTION_OFF_CENTERLINE /
+MAP_LAYER_LIMITATION /
+MIXED /
+UNRESOLVED
+
+------------------------------------------------------------
+
+TypeAwareSemanticCoverage =
+
+PASS /
+FAIL
+
+------------------------------------------------------------
+
+SemanticContextQuality =
+
+STRONG /
+WEAK
+
+------------------------------------------------------------
+
+Stage8A_0B =
+
+READY /
+NOT_READY
+
+============================================================
+48. READY规则
+============================================================
+
+READY必须同时满足：
+
+Candidate identity = PASS
+
+Coordinate = PASS
+
+GT leakage = PASS
+
+Semantic attachment = PASS
+
+Moving RouteCenterlineCoverage >=95%
+
+Vehicle TypeAwareAnyCoverage >=95%
+
+Stopped TypeAwareAnyCoverage >=95%
+
+Parked TypeAwareAnyCoverage >=95%
+
+Pedestrian TypeAwareAnyCoverage >=95%
+
+Bicycle TypeAwareAnyCoverage >=95%
+
+Vehicle GenericOnlyRate <=30%
+
+Pedestrian GenericOnlyRate <=50%
+
+Graph memory feasible。
+
+============================================================
+49. 如果某层不存在
+============================================================
+
+例如：
+
+carpark_area
+walkway
+
+若当前nuScenes map API实际不存在或geometry不可用：
+
+禁止伪造。
+
+直接：
+
+记录MISSING
+
+并重新计算真实可用entity coverage。
+
+最终可能：
+
+NOT_READY。
+
+============================================================
+50. 禁止因为失败继续扩entity
+============================================================
+
+本轮只允许：
+
+lane
+lane_connector
+drivable_area
+carpark_area
+ped_crossing
+walkway
+
+禁止看到结果后继续临时加：
+
+road_segment
+road_block
+stop_line
+traffic_light geometry
+更多layer
+
+来刷coverage。
+
+============================================================
+51. Git
+============================================================
+
+建议commit：
+
+audit: decompose Stage8A lane-only fallback by vehicle state
+
+audit: validate nuScenes polygon semantic map layers
+
+audit: measure actor-type-aware semantic entity coverage
+
+audit: estimate type-aware mode-map graph size
+
+docs: finalize Stage8A-0B semantic entity readiness
+
+push：
+
+stage8a0b/type-aware-semantic-entity-audit
+
+不要merge main。
+
+============================================================
+52. 完成后只汇报
+============================================================
+
+Git commit=
+
+Map schema audit=
+PASS / FAIL
+
+Available layers=
+
+Lane-only fallback:
+
+MovingVehicle=
+StoppedVehicle=
+ParkedVehicle=
+UnknownVehicle=
+
+Type-aware coverage:
+
+Vehicle=
+MovingVehicle=
+StoppedVehicle=
+ParkedVehicle=
+Pedestrian=
+Bicycle=
+
+Recovered lane-fallback Vehicle by:
+
+DrivableArea=
+CarparkArea=
+
+Pedestrian:
+
+WalkwayCoverage=
+CrosswalkCoverage=
+SemanticSpecificCoverage=
+GenericOnlyRate=
+
+Vehicle GenericOnlyRate=
+
+Bicycle GenericOnlyRate=
+
+Top8 overflow rate=
+
+Mean semantic entities/mode=
+
+Mean mode-map edges/target=
+
+Coordinate audit=
+PASS / FAIL
+
+GT leakage audit=
+PASS / FAIL
+
+LaneOnlyFailureCause=
+
+TypeAwareSemanticCoverage=
+PASS / FAIL
+
+SemanticContextQuality=
+STRONG / WEAK
+
+Stage8A_0B=
+READY / NOT_READY
+
+完成后STOP。
+
+不要训练G1/G2/G3。
+等待大脑AI审查。

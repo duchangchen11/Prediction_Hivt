@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "regions": 4,
+  "bruteforce_candidates": 12,
+  "all_components_evaluated_without_STRtree": true,
+  "inside_far_from_boundary": "PASS",
+  "intersection_with_both_endpoints_outside": "PASS",
+  "exact2m_boundary_inclusion": "PASS",
+  "greater_than2m_exclusion": "PASS",
+  "complete_lane_segment_interior": "PASS",
+  "distinct_entity_dedup_and_geometric_top8": "PASS",
+  "threshold_sweep": false
+}
