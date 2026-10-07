@@ -23,22 +23,28 @@ def main():
             if (i+1)%1000==0:print('RESIDUAL_INPUTS',i+1,flush=True)
         ds.clear();p=np.array(list(patterns),dtype=np.float32);counts=np.array(list(patterns.values()))
         values=encoder(torch.from_numpy(p).cuda()).cpu().numpy();norms=np.linalg.norm(values,axis=1)
+        zero_value=encoder(torch.zeros((1,9),device='cuda')).cpu().numpy()[0]
+        feature_delta_norms=np.linalg.norm(values-zero_value,axis=1)
         predicates={'ordinary_lane':p[:,0]==0,'connector':p[:,0]==1,'left':p[:,1]==1,'straight':p[:,2]==1,
           'right':p[:,3]==1,'unknown_connector':p[:,4]==1,'traffic_light':p[:,5]==1,'stop_sign':p[:,6]==1,
           'other_control':p[:,7]==1,'crosswalk':p[:,8]==1,'non_crosswalk':p[:,8]==0,'all':np.ones(len(p),bool)}
         rows=[]
         for group,mask in predicates.items():
             n=counts[mask].sum();v=norms[mask];w=counts[mask];mean=np.average(v,weights=w)
-            order=np.argsort(v);cumulative=np.cumsum(w[order]);middle=(n-1)/2
-            median=float(v[order[np.searchsorted(cumulative,middle+1)]])
-            if n%2==0:median=(median+float(v[order[np.searchsorted(cumulative,n/2+1)]]))/2
+            order=np.argsort(v);cumulative=np.cumsum(w[order])
+            rank_low=(int(n)+1)//2;rank_high=(int(n)+2)//2
+            median=float((v[order[np.searchsorted(cumulative,rank_low)]]+
+                          v[order[np.searchsorted(cumulative,rank_high)]])/2)
             rows.append({'group':group,'VAL_segment_occurrences':int(n),'unique_semantic_patterns':int(mask.sum()),
               'mean_norm':float(mean),'median_norm':median,'std_norm':float(np.sqrt(np.average((v-mean)**2,weights=w))),
-              'min_norm':float(v.min()),'max_norm':float(v.max()),'weighting':'stored VAL lane segment/window occurrences'})
+              'min_norm':float(v.min()),'max_norm':float(v.max()),
+              'mean_norm_difference_from_zero_input':float(np.average(feature_delta_norms[mask],weights=w)),
+              'weighting':'stored VAL lane segment/window occurrences'})
         write_csv(stats_path,rows)
         atomic_json(ROOT/'04_evaluation/stage7a_semantic_residual_audit.json',{'checkpoint_sha256':sha256(BEST),
           'all_features_zero_residual_norm':float(encoder(torch.zeros((1,9),device='cuda')).norm()),
           'semantic_last_weight_norm':float(encoder[2].weight.norm()),'semantic_last_bias_norm':float(encoder[2].bias.norm()),
+          'feature_conditioned_mean_difference_from_zero_input':float(np.average(feature_delta_norms,weights=counts)),
           'near_zero_threshold':1e-6,'effectively_unused':float(np.average(norms,weights=counts))<1e-6,
           'meaning':'feature-conditioned learned representation norm, not physical effect or causal influence'})
     efficiency_path=ROOT/'06_tables/stage7a_efficiency.csv'

@@ -1,0 +1,15 @@
+{
+  "backend": "python",
+  "core_conclusion": "Compare independently trained Stage3B and Stage7A candidate geometry on frozen official VAL, with paired scene uncertainty and a same-checkpoint semantic-input ablation.",
+  "archetype": "quantitative grid plus matched prediction cases",
+  "main_evidence": "Overall primary minFDE and vehicle/pedestrian/moving comparisons; paired CI on Stage7A minus Stage3B.",
+  "difficulty_evidence": "Prespecified vehicle displacement, intersection, nearby turn and offline GT-turning subgroups; secondary exploratory unadjusted intervals.",
+  "ablation_evidence": "Semantic ON and ZERO input with one identical trained checkpoint; does not equal a retrained geometry baseline and retains learned MLP bias.",
+  "case_selection": "TurningVehicle_GT largest minFDE reduction; NearTrafficControl20 moving vehicle with GT displacement>5m largest reduction excluding first identity; largest degradation among vehicles with GT displacement>5m excluding earlier identities. If no eligible improvement, label honestly; cases are deliberately selected illustrations, not prevalence evidence.",
+  "case_integrity": "Exact same actor/history/GT/map/axes; all six candidates shown; best-FDE path solid and Top1 path dashed; actual raw predicted arrays saved to source JSON.",
+  "dimensions": "183mm width; quantitative about85mm high; cases about105mm high",
+  "exports": ["editable SVG", "TrueType PDF", "300dpi PNG"],
+  "source_data": "06_tables plus per-case numerical source JSON",
+  "statistics": "150 scene clusters,1000 paired percentile bootstrap replicates,seed2022; one training seed per method, no inference to seed variability",
+  "review_risks": ["overlapping exploratory subgroups", "GT-defined turn group is offline only", "selected examples are not aggregate evidence", "static semantic controls do not encode signal state", "learned residual norms are not causal effects"]
+}
