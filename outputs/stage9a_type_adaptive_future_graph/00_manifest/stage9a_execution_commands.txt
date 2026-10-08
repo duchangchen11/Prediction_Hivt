@@ -1,0 +1,19 @@
+Working directory: /home/lrj/Prediction_Hivt
+Environment: existing ped_intent; no install or upgrade
+
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage9a_type_adaptive_future_graph/01_training/00_code/stage9a_prepare.py
+
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage9a_type_adaptive_future_graph/01_training/00_code/stage9a_audit.py
+
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage9a_type_adaptive_future_graph/01_training/00_code/stage9a_train.py --tiny-only
+
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage9a_type_adaptive_future_graph/05_diagnostics/stage9a_macro_gradient_audit.py
+
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage9a_type_adaptive_future_graph/01_training/00_code/stage9a_train.py
+
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage9a_type_adaptive_future_graph/03_evaluation/stage9a_post_freeze.py
+
+Post-freeze pipeline only runs after T1/T2/T3 SHA256 manifest is frozen.
+Full logs and large generated outputs remain local under this stage root.
+Official VAL role: development-reuse evidence.
+Stage9B is not executed.

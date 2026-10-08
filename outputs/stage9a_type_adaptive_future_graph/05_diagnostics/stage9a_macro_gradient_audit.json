@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "Variant": "T3",
+  "batch_targets": 1024,
+  "type_counts": [
+    754,
+    264,
+    6
+  ],
+  "half_macro_gradient_norm": 0.003393640508875251,
+  "finite_nonzero": true,
+  "weights": ".5/(present_type_count * effective_batch_type_count)",
+  "optimizer_updates": 0,
+  "exact_T3_first_formal_batch": true,
+  "ids_sha256": "71688a1f73418658a0b053e6439d9ac9fbd946bc5068e21d332ce2a09cf1d4ee",
+  "HeadTrain_only": true,
+  "official_VAL_used": false
+}

@@ -1,0 +1,37 @@
+{
+  "status": "FROZEN_ALL_COMPLETE",
+  "training_prohibited": true,
+  "checkpoints": [
+    {
+      "Variant": "T1",
+      "Path": "outputs/stage9a_type_adaptive_future_graph/02_checkpoints/T1_best.pt",
+      "SHA256": "426d108c2f295043196283a4700e934a867853d79effc15d9d4ebbfa5f4788a6",
+      "SelectedEpoch": 8,
+      "HeadDevSelectionScore": 1.5842588028955333,
+      "Params": 24066
+    },
+    {
+      "Variant": "T2",
+      "Path": "outputs/stage9a_type_adaptive_future_graph/02_checkpoints/T2_best.pt",
+      "SHA256": "7e2e06add3dd9b7a7db89663d6182a28b287534630e085389637678f7b0d9e4a",
+      "SelectedEpoch": 12,
+      "HeadDevSelectionScore": 1.5787256505316067,
+      "Params": 27515
+    },
+    {
+      "Variant": "T3",
+      "Path": "outputs/stage9a_type_adaptive_future_graph/02_checkpoints/T3_best.pt",
+      "SHA256": "f305e5c0f687c916e3c66018e9a2e5af0cde5aee67a9bbc142d13ffdf149342f",
+      "SelectedEpoch": 2,
+      "HeadDevSelectionScore": 1.5860052326310807,
+      "Params": 27515
+    }
+  ],
+  "registration_sha256": "64f24021de19ba5d7690bd55b717f42fa3da1ada8ddf234c2738cd62896a7f40",
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "official_VAL_used": false,
+  "frozen_predictor_R2_state_sha256": [
+    "0a49aacd90d08951bc7750a473dc83996f9629c1041d39ac03d69bb5ea321437",
+    "ca6f70dc163b13e5e297da673b5809ed90b9af4de83e8a04113435357a8309d1"
+  ]
+}

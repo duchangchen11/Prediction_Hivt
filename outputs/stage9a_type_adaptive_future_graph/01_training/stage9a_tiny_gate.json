@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "Variant": "T1",
+      "status": "PASS",
+      "InitialLoss": 1.5131219625473022,
+      "FinalLoss": 1.2953288555145264,
+      "EntropyFloor": 1.294783592224121,
+      "InitialExcessLoss": 0.21833837032318115,
+      "FinalExcessLoss": 0.0005452632904052734,
+      "ExcessLossReduction": 0.9975026684975336,
+      "Updates": 300,
+      "DeltaAbsMax": 7.207132339477539,
+      "macro_half_gradient_norm": null,
+      "tiny_weights_reused": false,
+      "graph_gradient_norm": 0.0063688321970403194,
+      "graph_gradient_finite_nonzero": true,
+      "predictor_gradient_count": 0,
+      "R2_gradient_count": 0,
+      "candidate_requires_grad": false
+    },
+    {
+      "Variant": "T2",
+      "status": "PASS",
+      "InitialLoss": 1.5131219625473022,
+      "FinalLoss": 1.295444369316101,
+      "EntropyFloor": 1.294783592224121,
+      "InitialExcessLoss": 0.21833837032318115,
+      "FinalExcessLoss": 0.0006607770919799805,
+      "ExcessLossReduction": 0.9969736098561058,
+      "Updates": 300,
+      "DeltaAbsMax": 14.480806350708008,
+      "macro_half_gradient_norm": null,
+      "tiny_weights_reused": false,
+      "graph_gradient_norm": 0.06244615465402603,
+      "graph_gradient_finite_nonzero": true,
+      "predictor_gradient_count": 0,
+      "R2_gradient_count": 0,
+      "candidate_requires_grad": false
+    },
+    {
+      "Variant": "T3",
+      "status": "PASS",
+      "InitialLoss": 1.516789436340332,
+      "FinalLoss": 1.3404486179351807,
+      "EntropyFloor": 1.3396885395050049,
+      "InitialExcessLoss": 0.17710089683532715,
+      "FinalExcessLoss": 0.0007600784301757812,
+      "ExcessLossReduction": 0.9957082180623709,
+      "Updates": 300,
+      "DeltaAbsMax": 18.970659255981445,
+      "macro_half_gradient_norm": 0.013445012271404266,
+      "tiny_weights_reused": false,
+      "graph_gradient_norm": 0.014867011457681656,
+      "graph_gradient_finite_nonzero": true,
+      "predictor_gradient_count": 0,
+      "R2_gradient_count": 0,
+      "candidate_requires_grad": false
+    }
+  ],
+  "formal_training_allowed": true
+}

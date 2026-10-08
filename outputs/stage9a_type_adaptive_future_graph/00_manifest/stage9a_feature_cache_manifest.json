@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "targets": 290085,
+  "HeadTrain": 260151,
+  "HeadDev": 29934,
+  "official_VAL_loaded": false,
+  "semantic_features_opened": false,
+  "R2_gradient_count": 0,
+  "R2_state_unchanged": true,
+  "R2_features_manifest_sha256": "315e9d1589865823ff00f33f3140a5cacc06962bfa77024303dddecf6ad45c6c",
+  "Stage8_future_cache_manifest_sha256": "00c725d2d924da5f0359ce20af4fc9e1e6b4e67d17cf681bba10d2506640f42c",
+  "files": {
+    "r2_logits.npy": "26ffe44bdb55bf4e83cf49d3745a2cc5856c0eb5f872876a873415b482a766f9",
+    "current_context.npy": "024b28f5ddd296f521e7d62c49c2f4022a114677766404185708713e5f4fac20"
+  },
+  "join": "exact scene/sample/instance identities; FDE and original logits bitwise checked"
+}
