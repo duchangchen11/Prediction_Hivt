@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "targets": 54990,
+  "scenes": 150,
+  "shared_prediction_tensor": true,
+  "fresh_all_windows_SHA_equals_frozen_cache": true,
+  "candidate_bitwise_identity": true,
+  "candidate_maxdiff": 0.0,
+  "minADE6_maxdiff": 0.0,
+  "minFDE6_maxdiff": 0.0,
+  "MR6_maxdiff": 0.0,
+  "attention_capture_maxdiff": 0.0,
+  "predictor_gradient_count": 0,
+  "predictor_state_unchanged": true,
+  "evaluated_nonempty_windows": 3567
+}

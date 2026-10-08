@@ -1,0 +1,63 @@
+{
+  "case": "case4",
+  "description": "G3 misses FDE-best mode and worsens versus R2",
+  "scene_token": "26a6b03c8e2f4e6692f174a7074e54ff",
+  "sample_token": "cd6b4f5eb88a4f7590c29d744dbd6cd0",
+  "instance_token": "53f87887816247b1916135b8a7876345",
+  "dataset_index": 1207,
+  "node_in_graph": 11,
+  "GT_best_mode": 3,
+  "selected_top1": {
+    "R0": 3,
+    "R2": 3,
+    "G1": 0,
+    "G2": 3,
+    "G3": 2
+  },
+  "FDE": {
+    "R0": 11.762901306152344,
+    "R2": 11.762901306152344,
+    "G1": 38.73735809326172,
+    "G2": 11.762901306152344,
+    "G3": 46.65402221679688
+  },
+  "G3_selected_mode_map_entities": [
+    {
+      "entity_token": "66b2d0c2-de9d-4dd0-94ac-1f0cbcfb6073",
+      "entity_type": "lane",
+      "attention": 0.637809157371521
+    },
+    {
+      "entity_token": "1b39ed98-79d4-49c2-98ae-991f2f9745d7",
+      "entity_type": "drivable_area",
+      "attention": 0.15312378108501434
+    },
+    {
+      "entity_token": "283955d0-b0f6-4a89-a01d-540899b9efcc",
+      "entity_type": "lane_connector",
+      "attention": 0.09439016133546829
+    },
+    {
+      "entity_token": "f877aa1a-5644-4511-8951-bf9bafaa2834",
+      "entity_type": "lane_connector",
+      "attention": 0.04875575751066208
+    },
+    {
+      "entity_token": "1176874f-0f27-41d1-95f9-c20aa0b799e9",
+      "entity_type": "lane",
+      "attention": 0.028140053153038025
+    },
+    {
+      "entity_token": "d3c6d592-3c04-454a-b502-1309035d7026",
+      "entity_type": "lane_connector",
+      "attention": 0.019252382218837738
+    },
+    {
+      "entity_token": "195eeeb3-648a-4540-bf4c-13784cbecc60",
+      "entity_type": "lane",
+      "attention": 0.018528727814555168
+    }
+  ],
+  "aggregate_decision_precedes_selection": true,
+  "semantic_causal_attribution": false
+}

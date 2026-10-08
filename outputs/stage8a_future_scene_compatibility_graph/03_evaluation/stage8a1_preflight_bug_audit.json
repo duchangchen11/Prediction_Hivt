@@ -1,0 +1,15 @@
+{
+  "status": "FIXED_BEFORE_FIRST_PERSISTED_VAL_BATCH",
+  "bug": "map_node[a,:,:6] sliced slots; corrected to map_node[a,...,:6] slicing entity onehot columns",
+  "fixed_TRAIN_targets": 32,
+  "shape": [
+    32,
+    6,
+    8
+  ],
+  "model_candidate_predictions_changed": false,
+  "checkpoints_reselected": false,
+  "failed_preflight_scene_windows": 16,
+  "persisted_VAL_batches_before_fix": 0,
+  "failed_registration_sha256": "1557eefd3ee694c2b14c5cf9f4667dd03a5272227dd6259a3ed3163c5de4d94b"
+}

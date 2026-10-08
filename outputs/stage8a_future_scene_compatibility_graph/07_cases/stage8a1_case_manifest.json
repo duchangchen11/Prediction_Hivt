@@ -1,0 +1,265 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "case1",
+      "description": "R2 misses FDE-best mode; G1 selects it",
+      "scene_token": "3363f396bb43405fbdd17d65dc123d4e",
+      "sample_token": "b6aa15f59b434b0da1790cad8532cf70",
+      "instance_token": "ef6faa401cd44ffb99f7f4c1513124c0",
+      "dataset_index": 1414,
+      "node_in_graph": 33,
+      "GT_best_mode": 3,
+      "selected_top1": {
+        "R0": 0,
+        "R2": 2,
+        "G1": 3,
+        "G2": 3,
+        "G3": 1
+      },
+      "FDE": {
+        "R0": 36.08766174316406,
+        "R2": 41.840850830078125,
+        "G1": 2.529291868209839,
+        "G2": 2.529291868209839,
+        "G3": 14.587488174438477
+      },
+      "G3_selected_mode_map_entities": [
+        {
+          "entity_token": "d43e15ef-769f-4a6f-a631-3f22b31b15fd",
+          "entity_type": "lane_connector",
+          "attention": 0.303696870803833
+        },
+        {
+          "entity_token": "57795579-dbed-4431-a0ee-5d8bf15e520b",
+          "entity_type": "lane_connector",
+          "attention": 0.19460630416870117
+        },
+        {
+          "entity_token": "86e82f4b-b362-43d1-9564-ae8d5292a5d9",
+          "entity_type": "lane",
+          "attention": 0.15387575328350067
+        },
+        {
+          "entity_token": "cd45a1a7-e06d-49c4-b3bd-966fa435ae7c",
+          "entity_type": "lane",
+          "attention": 0.11042902618646622
+        },
+        {
+          "entity_token": "32e1e37c-f036-4f8e-a7f0-d6d75cd7bc65",
+          "entity_type": "lane",
+          "attention": 0.09575154632329941
+        },
+        {
+          "entity_token": "9d53c076-881e-477a-b821-d72915420745",
+          "entity_type": "lane_connector",
+          "attention": 0.07912975549697876
+        },
+        {
+          "entity_token": "1b39ed98-79d4-49c2-98ae-991f2f9745d7",
+          "entity_type": "drivable_area",
+          "attention": 0.06251069158315659
+        }
+      ],
+      "aggregate_decision_precedes_selection": true,
+      "semantic_causal_attribution": false
+    },
+    {
+      "case": "case2",
+      "description": "R2 misses; semantic branch selects FDE-best mode",
+      "scene_token": "d3b86ca0a17840109e9e049b3dd40037",
+      "sample_token": "40b07c35da0c440ab96e9d934f096276",
+      "instance_token": "3746719df67c423f92e76d1cf3a4ff58",
+      "dataset_index": 2434,
+      "node_in_graph": 1,
+      "GT_best_mode": 0,
+      "selected_top1": {
+        "R0": 4,
+        "R2": 3,
+        "G1": 4,
+        "G2": 4,
+        "G3": 0
+      },
+      "FDE": {
+        "R0": 12.080862045288086,
+        "R2": 41.725494384765625,
+        "G1": 12.080862045288086,
+        "G2": 12.080862045288086,
+        "G3": 4.208702564239502
+      },
+      "G3_selected_mode_map_entities": [
+        {
+          "entity_token": "1b39ed98-79d4-49c2-98ae-991f2f9745d7",
+          "entity_type": "drivable_area",
+          "attention": 0.3815537393093109
+        },
+        {
+          "entity_token": "47e6eaa4-6666-481c-ab29-a4147ebf92da",
+          "entity_type": "lane",
+          "attention": 0.26835203170776367
+        },
+        {
+          "entity_token": "d75159b4-ebe6-4fa6-8853-779d1e1ea30b",
+          "entity_type": "lane",
+          "attention": 0.1470407396554947
+        },
+        {
+          "entity_token": "821a63ca-23f8-4c68-b5d7-f944ab6db407",
+          "entity_type": "lane_connector",
+          "attention": 0.09159638732671738
+        },
+        {
+          "entity_token": "adbed9c9-5ae6-4da3-81dc-a5fa3d843da9",
+          "entity_type": "carpark_area",
+          "attention": 0.05714486539363861
+        },
+        {
+          "entity_token": "9144ec1d-4409-4ce5-99ca-2776a349d47f",
+          "entity_type": "lane_connector",
+          "attention": 0.02593963034451008
+        },
+        {
+          "entity_token": "dc18c231-2f7e-46a7-8bab-8493158ed882",
+          "entity_type": "lane_connector",
+          "attention": 0.02046000398695469
+        },
+        {
+          "entity_token": "67276eb4-9f37-4ed0-9ddf-ff4dd0e73305",
+          "entity_type": "lane",
+          "attention": 0.007912587374448776
+        }
+      ],
+      "aggregate_decision_precedes_selection": true,
+      "semantic_causal_attribution": false
+    },
+    {
+      "case": "case3",
+      "description": "G1 misses FDE-best mode; G3 selects it",
+      "scene_token": "7e8ff24069ff4023ac699669b2c920de",
+      "sample_token": "582240fdf8ba49cc8186a3002d17c11b",
+      "instance_token": "630561ee60414a69a568430709fa088c",
+      "dataset_index": 2527,
+      "node_in_graph": 7,
+      "GT_best_mode": 3,
+      "selected_top1": {
+        "R0": 4,
+        "R2": 4,
+        "G1": 2,
+        "G2": 2,
+        "G3": 3
+      },
+      "FDE": {
+        "R0": 28.40798759460449,
+        "R2": 28.40798759460449,
+        "G1": 41.5444450378418,
+        "G2": 41.5444450378418,
+        "G3": 4.048228740692139
+      },
+      "G3_selected_mode_map_entities": [
+        {
+          "entity_token": "7186f825-c0eb-4ab6-8350-638ef8c9439b",
+          "entity_type": "lane",
+          "attention": 0.3847038447856903
+        },
+        {
+          "entity_token": "537f26b9-9849-4c0d-9f85-0379bbb1f984",
+          "entity_type": "lane_connector",
+          "attention": 0.2060626894235611
+        },
+        {
+          "entity_token": "8e2df45d-3d14-4c43-b7bd-0b92c3e91928",
+          "entity_type": "lane",
+          "attention": 0.1368250846862793
+        },
+        {
+          "entity_token": "a89902be-1638-4793-84c8-2e982db64648",
+          "entity_type": "lane",
+          "attention": 0.10248728096485138
+        },
+        {
+          "entity_token": "693f0a4b-3428-4746-b916-6a9521150cb6",
+          "entity_type": "lane_connector",
+          "attention": 0.08058082312345505
+        },
+        {
+          "entity_token": "1b39ed98-79d4-49c2-98ae-991f2f9745d7",
+          "entity_type": "drivable_area",
+          "attention": 0.059709638357162476
+        },
+        {
+          "entity_token": "42aa9b90-0e38-4109-9a5a-c162b2cc8a37",
+          "entity_type": "lane_connector",
+          "attention": 0.029630599543452263
+        }
+      ],
+      "aggregate_decision_precedes_selection": true,
+      "semantic_causal_attribution": false
+    },
+    {
+      "case": "case4",
+      "description": "G3 misses FDE-best mode and worsens versus R2",
+      "scene_token": "26a6b03c8e2f4e6692f174a7074e54ff",
+      "sample_token": "cd6b4f5eb88a4f7590c29d744dbd6cd0",
+      "instance_token": "53f87887816247b1916135b8a7876345",
+      "dataset_index": 1207,
+      "node_in_graph": 11,
+      "GT_best_mode": 3,
+      "selected_top1": {
+        "R0": 3,
+        "R2": 3,
+        "G1": 0,
+        "G2": 3,
+        "G3": 2
+      },
+      "FDE": {
+        "R0": 11.762901306152344,
+        "R2": 11.762901306152344,
+        "G1": 38.73735809326172,
+        "G2": 11.762901306152344,
+        "G3": 46.65402221679688
+      },
+      "G3_selected_mode_map_entities": [
+        {
+          "entity_token": "66b2d0c2-de9d-4dd0-94ac-1f0cbcfb6073",
+          "entity_type": "lane",
+          "attention": 0.637809157371521
+        },
+        {
+          "entity_token": "1b39ed98-79d4-49c2-98ae-991f2f9745d7",
+          "entity_type": "drivable_area",
+          "attention": 0.15312378108501434
+        },
+        {
+          "entity_token": "283955d0-b0f6-4a89-a01d-540899b9efcc",
+          "entity_type": "lane_connector",
+          "attention": 0.09439016133546829
+        },
+        {
+          "entity_token": "f877aa1a-5644-4511-8951-bf9bafaa2834",
+          "entity_type": "lane_connector",
+          "attention": 0.04875575751066208
+        },
+        {
+          "entity_token": "1176874f-0f27-41d1-95f9-c20aa0b799e9",
+          "entity_type": "lane",
+          "attention": 0.028140053153038025
+        },
+        {
+          "entity_token": "d3c6d592-3c04-454a-b502-1309035d7026",
+          "entity_type": "lane_connector",
+          "attention": 0.019252382218837738
+        },
+        {
+          "entity_token": "195eeeb3-648a-4540-bf4c-13784cbecc60",
+          "entity_type": "lane",
+          "attention": 0.018528727814555168
+        }
+      ],
+      "aggregate_decision_precedes_selection": true,
+      "semantic_causal_attribution": false
+    }
+  ],
+  "selection": "largest requested-category FDE effect, lexical identities break ties, distinct actor instances",
+  "axis_shared_between_geometry_panels": true,
+  "case2_interpretation": "semantic map context co-occurs with corrected ranking; attention cannot establish why"
+}

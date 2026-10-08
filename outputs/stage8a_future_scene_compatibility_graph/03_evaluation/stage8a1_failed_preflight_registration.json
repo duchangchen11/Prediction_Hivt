@@ -1,0 +1,18 @@
+{
+  "status": "LOCKED_BEFORE_SINGLE_OFFICIAL_PASS",
+  "checkpoint_manifest_sha256": "d20e7fcc438a674aebea9afbec6be9b545b823b171de9a957e34d618855e99de",
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "sidecar_sha256": "7cc42ebd3348a90df9258aa6756c17ffc27e091824d7545468683cf1178a4653",
+  "evaluation_source_sha256": "cb15f3d40cd6275addd935a455a3bf26361c145c93b23b3b007029e952f958c0",
+  "models": [
+    "R0",
+    "R2",
+    "G1",
+    "G2",
+    "G3"
+  ],
+  "checkpoint_selection_from_VAL": false,
+  "fresh_predictor": true,
+  "shared_geometry": true,
+  "test_used": false
+}

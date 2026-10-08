@@ -1,0 +1,68 @@
+{
+  "case": "case2",
+  "description": "R2 misses; semantic branch selects FDE-best mode",
+  "scene_token": "d3b86ca0a17840109e9e049b3dd40037",
+  "sample_token": "40b07c35da0c440ab96e9d934f096276",
+  "instance_token": "3746719df67c423f92e76d1cf3a4ff58",
+  "dataset_index": 2434,
+  "node_in_graph": 1,
+  "GT_best_mode": 0,
+  "selected_top1": {
+    "R0": 4,
+    "R2": 3,
+    "G1": 4,
+    "G2": 4,
+    "G3": 0
+  },
+  "FDE": {
+    "R0": 12.080862045288086,
+    "R2": 41.725494384765625,
+    "G1": 12.080862045288086,
+    "G2": 12.080862045288086,
+    "G3": 4.208702564239502
+  },
+  "G3_selected_mode_map_entities": [
+    {
+      "entity_token": "1b39ed98-79d4-49c2-98ae-991f2f9745d7",
+      "entity_type": "drivable_area",
+      "attention": 0.3815537393093109
+    },
+    {
+      "entity_token": "47e6eaa4-6666-481c-ab29-a4147ebf92da",
+      "entity_type": "lane",
+      "attention": 0.26835203170776367
+    },
+    {
+      "entity_token": "d75159b4-ebe6-4fa6-8853-779d1e1ea30b",
+      "entity_type": "lane",
+      "attention": 0.1470407396554947
+    },
+    {
+      "entity_token": "821a63ca-23f8-4c68-b5d7-f944ab6db407",
+      "entity_type": "lane_connector",
+      "attention": 0.09159638732671738
+    },
+    {
+      "entity_token": "adbed9c9-5ae6-4da3-81dc-a5fa3d843da9",
+      "entity_type": "carpark_area",
+      "attention": 0.05714486539363861
+    },
+    {
+      "entity_token": "9144ec1d-4409-4ce5-99ca-2776a349d47f",
+      "entity_type": "lane_connector",
+      "attention": 0.02593963034451008
+    },
+    {
+      "entity_token": "dc18c231-2f7e-46a7-8bab-8493158ed882",
+      "entity_type": "lane_connector",
+      "attention": 0.02046000398695469
+    },
+    {
+      "entity_token": "67276eb4-9f37-4ed0-9ddf-ff4dd0e73305",
+      "entity_type": "lane",
+      "attention": 0.007912587374448776
+    }
+  ],
+  "aggregate_decision_precedes_selection": true,
+  "semantic_causal_attribution": false
+}

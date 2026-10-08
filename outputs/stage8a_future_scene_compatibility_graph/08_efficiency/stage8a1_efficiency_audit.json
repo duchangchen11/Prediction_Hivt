@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "device": "NVIDIA GeForce RTX 3080",
+  "heads_batch128_warmup100_measured500": true,
+  "cache_not_online_latency": true,
+  "graph_measurements": 10,
+  "end_to_end_claim": false,
+  "B_cpu_threads": 1,
+  "C_actual_scene_windows": 16,
+  "C_actual_full_targets": 124
+}

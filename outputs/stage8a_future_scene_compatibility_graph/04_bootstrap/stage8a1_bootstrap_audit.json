@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scenes": 150,
+  "replicates": 1000,
+  "seed": 2022,
+  "shared_indices_sha256": "9e8e8619c7b0dedb1adfc875474a8600b2af204c593cb1b920233bcae55a2e46",
+  "pairs": [
+    [
+      "G3",
+      "R2"
+    ],
+    [
+      "G1",
+      "R0"
+    ],
+    [
+      "G1",
+      "R2"
+    ],
+    [
+      "G2",
+      "R0"
+    ],
+    [
+      "G3",
+      "G1"
+    ],
+    [
+      "G3",
+      "G2"
+    ]
+  ],
+  "delta": "new-baseline",
+  "actor_weighted_within_resampled_whole_scenes": true,
+  "subgroup_intervals": "unadjusted, overlapping descriptive secondary groups"
+}

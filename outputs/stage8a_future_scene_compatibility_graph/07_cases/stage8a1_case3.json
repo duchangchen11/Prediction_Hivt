@@ -1,0 +1,63 @@
+{
+  "case": "case3",
+  "description": "G1 misses FDE-best mode; G3 selects it",
+  "scene_token": "7e8ff24069ff4023ac699669b2c920de",
+  "sample_token": "582240fdf8ba49cc8186a3002d17c11b",
+  "instance_token": "630561ee60414a69a568430709fa088c",
+  "dataset_index": 2527,
+  "node_in_graph": 7,
+  "GT_best_mode": 3,
+  "selected_top1": {
+    "R0": 4,
+    "R2": 4,
+    "G1": 2,
+    "G2": 2,
+    "G3": 3
+  },
+  "FDE": {
+    "R0": 28.40798759460449,
+    "R2": 28.40798759460449,
+    "G1": 41.5444450378418,
+    "G2": 41.5444450378418,
+    "G3": 4.048228740692139
+  },
+  "G3_selected_mode_map_entities": [
+    {
+      "entity_token": "7186f825-c0eb-4ab6-8350-638ef8c9439b",
+      "entity_type": "lane",
+      "attention": 0.3847038447856903
+    },
+    {
+      "entity_token": "537f26b9-9849-4c0d-9f85-0379bbb1f984",
+      "entity_type": "lane_connector",
+      "attention": 0.2060626894235611
+    },
+    {
+      "entity_token": "8e2df45d-3d14-4c43-b7bd-0b92c3e91928",
+      "entity_type": "lane",
+      "attention": 0.1368250846862793
+    },
+    {
+      "entity_token": "a89902be-1638-4793-84c8-2e982db64648",
+      "entity_type": "lane",
+      "attention": 0.10248728096485138
+    },
+    {
+      "entity_token": "693f0a4b-3428-4746-b916-6a9521150cb6",
+      "entity_type": "lane_connector",
+      "attention": 0.08058082312345505
+    },
+    {
+      "entity_token": "1b39ed98-79d4-49c2-98ae-991f2f9745d7",
+      "entity_type": "drivable_area",
+      "attention": 0.059709638357162476
+    },
+    {
+      "entity_token": "42aa9b90-0e38-4109-9a5a-c162b2cc8a37",
+      "entity_type": "lane_connector",
+      "attention": 0.029630599543452263
+    }
+  ],
+  "aggregate_decision_precedes_selection": true,
+  "semantic_causal_attribution": false
+}

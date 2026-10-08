@@ -1,0 +1,63 @@
+{
+  "case": "case1",
+  "description": "R2 misses FDE-best mode; G1 selects it",
+  "scene_token": "3363f396bb43405fbdd17d65dc123d4e",
+  "sample_token": "b6aa15f59b434b0da1790cad8532cf70",
+  "instance_token": "ef6faa401cd44ffb99f7f4c1513124c0",
+  "dataset_index": 1414,
+  "node_in_graph": 33,
+  "GT_best_mode": 3,
+  "selected_top1": {
+    "R0": 0,
+    "R2": 2,
+    "G1": 3,
+    "G2": 3,
+    "G3": 1
+  },
+  "FDE": {
+    "R0": 36.08766174316406,
+    "R2": 41.840850830078125,
+    "G1": 2.529291868209839,
+    "G2": 2.529291868209839,
+    "G3": 14.587488174438477
+  },
+  "G3_selected_mode_map_entities": [
+    {
+      "entity_token": "d43e15ef-769f-4a6f-a631-3f22b31b15fd",
+      "entity_type": "lane_connector",
+      "attention": 0.303696870803833
+    },
+    {
+      "entity_token": "57795579-dbed-4431-a0ee-5d8bf15e520b",
+      "entity_type": "lane_connector",
+      "attention": 0.19460630416870117
+    },
+    {
+      "entity_token": "86e82f4b-b362-43d1-9564-ae8d5292a5d9",
+      "entity_type": "lane",
+      "attention": 0.15387575328350067
+    },
+    {
+      "entity_token": "cd45a1a7-e06d-49c4-b3bd-966fa435ae7c",
+      "entity_type": "lane",
+      "attention": 0.11042902618646622
+    },
+    {
+      "entity_token": "32e1e37c-f036-4f8e-a7f0-d6d75cd7bc65",
+      "entity_type": "lane",
+      "attention": 0.09575154632329941
+    },
+    {
+      "entity_token": "9d53c076-881e-477a-b821-d72915420745",
+      "entity_type": "lane_connector",
+      "attention": 0.07912975549697876
+    },
+    {
+      "entity_token": "1b39ed98-79d4-49c2-98ae-991f2f9745d7",
+      "entity_type": "drivable_area",
+      "attention": 0.06251069158315659
+    }
+  ],
+  "aggregate_decision_precedes_selection": true,
+  "semantic_causal_attribution": false
+}
