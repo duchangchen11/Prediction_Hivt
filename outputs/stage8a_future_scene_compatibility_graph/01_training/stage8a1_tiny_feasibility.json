@@ -1,0 +1,13 @@
+{
+  "status": "AUDITED",
+  "target_count": 128,
+  "soft_target_entropy_lower_bound": 1.294783592224121,
+  "initial_ranking_loss": 1.5637176036834717,
+  "required_final_loss_strictly_below": 1.2509740829467775,
+  "maximum_mathematically_possible_relative_reduction": 0.17198374618655776,
+  "twenty_percent_gate_feasible": false,
+  "proof": "SoftCE(q,p)=H(q)+KL(q||p)>=H(q); common zero-residual initialization fixes initial loss for all variants",
+  "sampling": "unchanged original uniform HeadTrain fixed128 seed2022; no failure-driven resampling",
+  "temperature_m": 1.0,
+  "new_audit_source_sha256": "d6bf611a86138ef0118fda08e8a4ac1cdd54d39f60e7b1f638a71ba5c105010b"
+}

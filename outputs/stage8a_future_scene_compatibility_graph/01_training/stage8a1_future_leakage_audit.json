@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "TRAIN_windows": 16,
+  "GT_nan_and_future_target_masks_inverted": true,
+  "observable_graphs_bitwise_identical": true,
+  "frozen_0C_additional_audit": "200 source windows, including100TRAIN/100VAL; Stage8A-1 current audit never opensVAL",
+  "labels_joined_only_after_observable_graph": true
+}

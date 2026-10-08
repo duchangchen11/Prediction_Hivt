@@ -1,0 +1,12 @@
+{
+  "status": "FAIL",
+  "initial_loss": 1.5637176036834717,
+  "final_loss": 1.2960175275802612,
+  "relative_decrease": 0.17119464248059868,
+  "delta_abs_max": 8.625741004943848,
+  "updates": 300,
+  "precision": "FP32",
+  "predictor_gradient_count": 0,
+  "candidate_requires_grad": false,
+  "full_training_initialization": "reset to frozen init; tiny weights discarded"
+}

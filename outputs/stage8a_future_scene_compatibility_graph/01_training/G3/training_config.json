@@ -1,0 +1,17 @@
+{
+  "status": "FORMAL_TRAINING_NOT_STARTED_TINY_GATE_FAILED",
+  "variant": "G3",
+  "seed": 2022,
+  "tiny_FP32_updates": 300,
+  "planned_optimizer": "AdamW",
+  "planned_lr": 0.001,
+  "planned_weight_decay": 0.0001,
+  "planned_max_epochs": 50,
+  "planned_patience": 5,
+  "planned_microbatch": 128,
+  "planned_accumulation": 8,
+  "planned_effective_batch": 1024,
+  "planned_checkpoint_selection": "minimum HeadDev ranking loss",
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "initial_state_sha256": "3d14bd1da01064a0b917823ff2d104b9c86e64f1751c247ef7d0c52d42724d13"
+}

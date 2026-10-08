@@ -1,0 +1,50 @@
+{
+  "status": "STOP_BEFORE_FORMAL_TRAINING",
+  "tiny": {
+    "G1": {
+      "status": "FAIL",
+      "initial_loss": 1.5637176036834717,
+      "final_loss": 1.2960175275802612,
+      "relative_decrease": 0.17119464248059868,
+      "delta_abs_max": 8.625741004943848,
+      "updates": 300,
+      "precision": "FP32",
+      "predictor_gradient_count": 0,
+      "candidate_requires_grad": false,
+      "full_training_initialization": "reset to frozen init; tiny weights discarded"
+    },
+    "G2": {
+      "status": "FAIL",
+      "initial_loss": 1.5637176036834717,
+      "final_loss": 1.2958605289459229,
+      "relative_decrease": 0.17129504336754175,
+      "delta_abs_max": 9.636185646057129,
+      "updates": 300,
+      "precision": "FP32",
+      "predictor_gradient_count": 0,
+      "candidate_requires_grad": false,
+      "full_training_initialization": "no full training; tiny weights discarded",
+      "source_sha256": "d6bf611a86138ef0118fda08e8a4ac1cdd54d39f60e7b1f638a71ba5c105010b"
+    },
+    "G3": {
+      "status": "FAIL",
+      "initial_loss": 1.5637176036834717,
+      "final_loss": 1.2952133417129517,
+      "relative_decrease": 0.17170892067598076,
+      "delta_abs_max": 8.017611503601074,
+      "updates": 300,
+      "precision": "FP32",
+      "predictor_gradient_count": 0,
+      "candidate_requires_grad": false,
+      "full_training_initialization": "no full training; tiny weights discarded",
+      "source_sha256": "d6bf611a86138ef0118fda08e8a4ac1cdd54d39f60e7b1f638a71ba5c105010b"
+    }
+  },
+  "reason": "at least one required tiny gate failed; fixed128 target soft-label entropy also makes20% decrease infeasible",
+  "full_training_updates": 0,
+  "formal_checkpoints_created": 0,
+  "official_VAL_evaluated": false,
+  "test_used": false,
+  "predictor_gradient_count": 0,
+  "waiting_for_user_brain_AI_review": true
+}

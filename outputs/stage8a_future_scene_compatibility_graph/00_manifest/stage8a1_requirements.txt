@@ -1,0 +1,2153 @@
+你现在正式执行：
+
+============================================================
+Stage8A-1
+Future Scene Compatibility Graph
+Formal Training and Evaluation
+未来场景兼容性图正式训练与评估
+============================================================
+
+项目：
+
+/home/lrj/Prediction_Hivt
+
+基础分支：
+
+stage8a0c/sparse-type-aware-graph-spec
+
+基础commit：
+
+df28e8638a1901422d7cded42430a32ea580f02c
+
+新建分支：
+
+stage8a1/fscg-training-eval
+
+============================================================
+1. 本阶段目标
+============================================================
+
+正式训练和评估：
+
+G1：
+Mode-Mode Future Interaction Graph
+
+G2：
+Sparse Mode-Map Semantic Compatibility Graph
+
+G3：
+Joint Future Scene Compatibility Graph
+
+并与：
+
+R0：
+Stage5A original ranking
+
+R2：
+Stage6A hand-crafted future interaction reliability
+
+进行严格比较。
+
+本阶段不再：
+
+修改graph specification
+修改semantic selector
+修改quota
+修改radius
+修改feature
+修改hidden dim
+修改neighbor number
+修改temperature
+重新训练Stage5A predictor。
+
+============================================================
+2. 冻结Stage8A-0C图规范
+============================================================
+
+必须读取：
+
+outputs/stage8a_future_scene_compatibility_graph/
+00c_sparse_type_aware_graph_spec/
+00_manifest/stage8a0c_frozen_graph_spec.json
+
+GraphSpecFrozen必须：
+
+YES。
+
+正式训练代码必须严格遵守该manifest。
+
+禁止修改：
+
+lane radius = 10m
+polygon threshold = 2m
+
+Vehicle quota：
+3 lane
+3 connector
+1 drivable
+1 carpark
+
+Pedestrian：
+3 walkway
+2 crossing
+1 drivable
+
+Bicycle：
+3 lane
+3 connector
+1 drivable
+
+neighbor：
+<=50m
+max8 actors
+
+K=6
+
+hidden=64
+
+ranking temperature=1m。
+
+============================================================
+3. 冻结Candidate Predictor
+============================================================
+
+使用：
+
+outputs/stage5a_motion_aware_decoder/
+07_checkpoints/stage5a_best_overall_minfde.pt
+
+SHA256：
+
+88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7
+
+Predictor必须：
+
+eval()
+
+requires_grad=False。
+
+禁止重新训练。
+
+禁止重新选checkpoint。
+
+禁止backward进入predictor。
+
+============================================================
+4. 强基线R2
+============================================================
+
+冻结：
+
+outputs/stage6a_future_interaction_reliability/
+07_checkpoints/stage6a_r2_best.pt
+
+SHA256：
+
+e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314
+
+历史official VAL：
+
+Overall Top1FDE：
+
+2.645563 m。
+
+这只是历史参考。
+
+本阶段最终必须：
+
+在同一evaluation pipeline中
+重新加载R0和R2
+
+与G1/G2/G3统一评估。
+
+禁止直接抄历史CSV作为正式比较结果。
+
+============================================================
+5. 数据协议
+============================================================
+
+保持：
+
+nuScenes TRAIN700
+VAL150
+
+Th=5
+Tf=12
+K=6
+
+约2Hz。
+
+训练ranking head：
+
+HeadTrain：
+
+630 scenes
+
+HeadDev：
+
+70 scenes
+
+沿用Stage6A：
+
+seed2022 split。
+
+official VAL150：
+
+禁止：
+
+training
+early stopping
+checkpoint selection
+architecture choice。
+
+official test：
+
+禁止使用。
+
+============================================================
+6. 训练对象
+============================================================
+
+仅训练：
+
+G1
+G2
+G3 graph reranker。
+
+候选轨迹：
+
+完全冻结。
+
+因此正式理论要求：
+
+R0
+R2
+G1
+G2
+G3
+
+candidate geometry完全一致。
+
+============================================================
+7. G1结构
+============================================================
+
+G1：
+
+NodeEncoder：
+
+15 →64 →64
+
+Mode-Mode edge：
+
+17D。
+
+Interaction message：
+
+[hi,hj,eij]
+→ MLP
+→64。
+
+Interaction attention：
+
+learned scalar。
+
+每个target mode：
+
+对neighbor-mode messages softmax aggregation。
+
+得到：
+
+m_int。
+
+G1：
+
+h =
+LayerNorm(
+h_node + m_int
+)
+
+无map branch。
+
+最后：
+
+64→32→1
+
+得到：
+
+delta_logit。
+
+============================================================
+8. G2结构
+============================================================
+
+G2：
+
+NodeEncoder相同。
+
+使用：
+
+18D MapNode
+11D Mode-Map Edge。
+
+Map message：
+
+→64。
+
+Map attention：
+
+仅对真实semantic map edges
+进行softmax。
+
+若：
+
+E_map = empty
+
+则：
+
+m_map = exact zero64。
+
+G2：
+
+h =
+LayerNorm(
+h_node + m_map
+)
+
+无interaction graph。
+
+最后：
+
+64→32→1。
+
+============================================================
+9. G3结构
+============================================================
+
+G3：
+
+同时启用：
+
+m_int
+m_map。
+
+最终：
+
+h =
+LayerNorm(
+h_node
++
+m_int
++
+m_map
+)
+
+然后：
+
+64→32→1。
+
+禁止：
+
+额外cross-attention
+额外Transformer
+第二层GNN
+residual stack
+joint fine-tuning predictor。
+
+============================================================
+10. 参数审计
+============================================================
+
+预期：
+
+G1：
+
+24066 params
+
+G2：
+
+20546 params
+
+G3：
+
+37187 params。
+
+正式代码实例化以后重新统计。
+
+若与0C差异：
+
+>0
+
+先STOP检查原因。
+
+除非只是明确代码bug修复。
+
+============================================================
+11. 初始化
+============================================================
+
+固定：
+
+common seed = 2022
+
+interaction branch seed = 2123
+
+map branch seed = 2124。
+
+G1/G2/G3：
+
+共有模块必须：
+
+bitwise same initialization。
+
+Final：
+
+64→32→1
+
+最后Linear：
+
+weight=0
+bias=0。
+
+因此训练前：
+
+new_logits == original_logits。
+
+============================================================
+12. Feature normalization
+============================================================
+
+正式加入：
+
+HeadTrain-only normalization。
+
+连续特征：
+
+只允许使用HeadTrain统计：
+
+mean
+std。
+
+禁止：
+
+HeadDev
+official VAL
+
+参与normalization。
+
+------------------------------------------------------------
+
+以下类型：
+
+one-hot
+binary flags
+valid flags
+
+保持原值，
+
+不z-score。
+
+------------------------------------------------------------
+
+所有continuous features：
+
+按对应feature column：
+
+z=(x-mu)/(sigma+1e-6)。
+
+输出：
+
+normalization manifest。
+
+============================================================
+13. Normalization audit
+============================================================
+
+检查：
+
+HeadTrain normalization：
+
+mean约0
+std约1。
+
+禁止NaN/Inf。
+
+HeadDev/VAL：
+
+只使用HeadTrain统计。
+
+输出：
+
+feature_normalization.json。
+
+============================================================
+14. Ranking监督
+============================================================
+
+只对：
+
+full-horizon target actor
+
+构造ranking label。
+
+对于第k个candidate：
+
+FDE_k。
+
+soft target：
+
+q_k =
+softmax(
+-FDE_k / 1.0m
+)
+
+模型输出：
+
+new_logit_k
+=
+original_logit_k
++
+delta_logit_k。
+
+概率：
+
+p'_k
+=
+softmax(new_logit)。
+
+Loss：
+
+soft cross entropy：
+
+L =
+-sum_k q_k log p'_k。
+
+============================================================
+15. GT使用边界
+============================================================
+
+GT只允许用于：
+
+HeadTrain ranking target
+
+HeadDev ranking target
+
+最终evaluation metrics。
+
+禁止用于：
+
+node feature
+neighbor selection
+map retrieval
+edge feature
+map attention
+mode graph construction。
+
+============================================================
+16. 训练配置
+============================================================
+
+Optimizer：
+
+AdamW
+
+lr：
+
+1e-3
+
+weight_decay：
+
+1e-4。
+
+max_epoch：
+
+50。
+
+early stopping patience：
+
+5。
+
+Checkpoint selection：
+
+HeadDev ranking loss最小。
+
+禁止根据：
+
+HeadDev Top1FDE
+
+或：
+
+official VAL
+
+选择checkpoint。
+
+============================================================
+17. Batch协议
+============================================================
+
+目标：
+
+effective batch size = 1024 target actors。
+
+默认：
+
+microbatch=128
+
+gradient accumulation=8。
+
+如果RTX3080训练OOM：
+
+允许：
+
+microbatch=64
+accumulation=16。
+
+若仍OOM：
+
+microbatch=32
+accumulation=32。
+
+这仅属于工程调整。
+
+必须保持：
+
+effective batch=1024。
+
+禁止因为速度原因改变effective batch。
+
+============================================================
+18. AMP
+============================================================
+
+优先：
+
+torch.cuda.amp / autocast
+
+允许使用。
+
+但首先做：
+
+FP32 tiny audit
+
+确认数值正确。
+
+正式训练可使用AMP。
+
+如果AMP出现：
+
+NaN
+Inf
+明显数值不稳定
+
+退回FP32，
+
+记录原因。
+
+这不算模型调参。
+
+============================================================
+19. Gradient audit
+============================================================
+
+每个variant正式训练前检查：
+
+predictor gradient count = 0
+
+candidate tensor requires_grad = False
+
+graph model gradients：
+
+finite
+
+nonzero。
+
+记录：
+
+gradient norm。
+
+============================================================
+20. Tiny Overfit
+============================================================
+
+每个variant：
+
+G1
+G2
+G3
+
+正式训练前必须分别做tiny overfit。
+
+固定：
+
+128 full-horizon HeadTrain targets。
+
+训练：
+
+300 optimizer updates。
+
+要求：
+
+ranking loss明显下降。
+
+final delta_logits：
+
+非零。
+
+无：
+
+NaN
+Inf。
+
+predictor gradient=0。
+
+============================================================
+21. Tiny判定
+============================================================
+
+TinyOverfit：
+
+PASS
+
+要求：
+
+final loss < initial loss ×0.8
+
+或者：
+
+明显稳定下降且最终至少下降20%。
+
+若失败：
+
+停止该variant，
+
+不要直接全量训练。
+
+============================================================
+22. Neutral identity audit
+============================================================
+
+训练前：
+
+至少1024真实targets。
+
+G1/G2/G3：
+
+logit maxdiff vs R0
+
+<1e-7优先
+
+至少：
+
+<1e-6。
+
+candidate：
+
+maxdiff=0。
+
+============================================================
+23. 正式训练顺序
+============================================================
+
+严格：
+
+G1
+
+然后：
+
+G2
+
+然后：
+
+G3。
+
+但是：
+
+G2/G3不得根据G1结果修改任何设置。
+
+即使G1效果差：
+
+也必须按冻结协议完成G2/G3。
+
+============================================================
+24. 每个variant独立训练
+============================================================
+
+G1/G2/G3：
+
+均从各自冻结初始化开始。
+
+禁止：
+
+G3加载G1权重
+
+禁止：
+
+G3加载G2权重
+
+禁止：
+
+joint warm-start。
+
+保证：
+
+结构比较干净。
+
+============================================================
+25. Checkpoint目录
+============================================================
+
+创建：
+
+outputs/stage8a_future_scene_compatibility_graph/
+01_training/
+
+G1/
+G2/
+G3/
+
+每个保存：
+
+best_dev_loss.pt
+
+last.pt
+
+training_curve.csv
+
+training_config.json
+
+normalization_manifest.json
+
+gradient_audit.json。
+
+============================================================
+26. HeadDev记录
+============================================================
+
+每epoch记录：
+
+Train loss
+
+HeadDev loss
+
+HeadDev Top1ADE
+
+HeadDev Top1FDE
+
+HeadDev OracleGap
+
+但：
+
+checkpoint选择只允许：
+
+HeadDev loss。
+
+============================================================
+27. 正式训练完成后冻结
+============================================================
+
+三个checkpoint全部训练结束后：
+
+计算SHA256。
+
+然后创建：
+
+stage8a1_checkpoint_manifest.json。
+
+一旦写入：
+
+禁止再训练或覆盖。
+
+============================================================
+28. official VAL一次性评估
+============================================================
+
+只有：
+
+G1
+G2
+G3
+
+全部checkpoint冻结以后，
+
+才能统一跑：
+
+official VAL150。
+
+同一次pipeline中评估：
+
+R0
+R2
+G1
+G2
+G3。
+
+============================================================
+29. Candidate identity
+============================================================
+
+official VAL评估必须验证：
+
+R0
+R2
+G1
+G2
+G3
+
+candidate tensors：
+
+bitwise identical。
+
+因此：
+
+minADE6
+minFDE6
+MR6
+
+应完全一致。
+
+容差：
+
+<1e-7优先
+
+至少：
+
+<1e-6。
+
+若不一致：
+
+整个evaluation FAIL。
+
+============================================================
+30. Primary metrics
+============================================================
+
+Primary：
+
+Top1FDE6。
+
+Secondary：
+
+Top1ADE6
+
+OracleGap：
+
+Top1FDE-minFDE
+
+HitRate
+
+BestModeRank
+
+MRR。
+
+Identity：
+
+minADE6
+minFDE6
+MR6。
+
+============================================================
+31. Main comparison table
+============================================================
+
+必须输出：
+
+R0
+R2
+G1
+G2
+G3。
+
+至少包含：
+
+minADE
+minFDE
+MR
+Top1ADE
+Top1FDE
+OracleGap
+HitRate
+BestModeRank
+MRR
+Params。
+
+============================================================
+32. Groups
+============================================================
+
+正式报告：
+
+Overall
+
+Vehicle
+Pedestrian
+Bicycle
+
+MovingVehicle
+
+StoppedVehicle
+
+ParkedVehicle
+
+Vehicle>5m
+
+Pedestrian<5m
+
+Pedestrian>5m。
+
+============================================================
+33. Semantic groups
+============================================================
+
+复用历史定义：
+
+IntersectionVehicle20
+
+NearTurnConnector20
+
+NearTrafficControl20
+
+TurningVehicle_GT
+
+GT-left
+
+GT-right。
+
+注意：
+
+GT groups只用于evaluation。
+
+禁止输入模型。
+
+============================================================
+34. Map-availability groups
+============================================================
+
+新增加：
+
+MapNonEmpty
+
+ZeroMap
+
+RouteCenterlineAvailable
+
+PedSemanticSpecificAvailable
+
+这些分组只用于：
+
+解释semantic graph什么时候有效。
+
+不作为训练筛选条件。
+
+============================================================
+35. G1核心问题
+============================================================
+
+评估：
+
+G1 vs R0。
+
+用于回答：
+
+learned Mode-Mode Future Interaction Graph
+
+是否改善ranking。
+
+同时额外比较：
+
+G1 vs R2。
+
+用于回答：
+
+learned future graph
+
+是否超过现有hand-crafted R2。
+
+============================================================
+36. G2核心问题
+============================================================
+
+G2 vs R0。
+
+回答：
+
+Mode-Map Semantic Compatibility
+
+是否独立提供ranking信息。
+
+重点看：
+
+NearTurnConnector20
+NearTrafficControl20
+TurningVehicle_GT
+
+以及：
+
+Pedestrian。
+
+============================================================
+37. G3核心问题
+============================================================
+
+最重要：
+
+G3 vs R2。
+
+回答：
+
+Future Interaction Graph
++
+Semantic Compatibility Graph
+
+是否超过当前最强baseline。
+
+============================================================
+38. Complementarity
+============================================================
+
+同时比较：
+
+G3 vs G1
+
+G3 vs G2。
+
+用于判断：
+
+interaction
+和
+semantic
+
+是否互补。
+
+============================================================
+39. Bootstrap
+============================================================
+
+使用：
+
+official VAL150
+
+paired whole-scene cluster bootstrap。
+
+replicates：
+
+1000。
+
+seed：
+
+2022。
+
+同一scene resampling indices
+
+必须用于所有model pair。
+
+============================================================
+40. Bootstrap comparisons
+============================================================
+
+Primary：
+
+G3 vs R2。
+
+Secondary：
+
+G1 vs R0
+
+G1 vs R2
+
+G2 vs R0
+
+G3 vs G1
+
+G3 vs G2。
+
+============================================================
+41. Bootstrap metrics
+============================================================
+
+至少：
+
+Top1FDE
+
+Top1ADE
+
+HitRate。
+
+输出：
+
+delta
+
+95% CI lower
+
+95% CI upper。
+
+定义：
+
+delta =
+new - baseline。
+
+所以：
+
+negative Top1FDE delta
+
+表示改善。
+
+============================================================
+42. Bootstrap groups
+============================================================
+
+至少对：
+
+Overall
+
+Vehicle
+
+Pedestrian
+
+MovingVehicle
+
+Vehicle>5m
+
+NearTurnConnector20
+
+NearTrafficControl20
+
+TurningVehicle_GT
+
+做Top1FDE paired bootstrap。
+
+============================================================
+43. G1正式科学判定
+============================================================
+
+AgentGraph = SUPPORTED
+
+要求：
+
+G1 vs R0
+
+Overall Top1FDE：
+
+delta <0
+
+且：
+
+95% CI upper <0。
+
+否则：
+
+NOT_SUPPORTED。
+
+============================================================
+44. G1是否超过R2
+============================================================
+
+单独输出：
+
+LearnedGraphAdvantageOverR2 =
+
+YES / NO。
+
+YES要求：
+
+G1 vs R2
+
+Overall Top1FDE：
+
+delta<0
+
+且CI upper<0。
+
+这不是AgentGraph最低支持条件，
+
+但会影响论文创新强度。
+
+============================================================
+45. G2正式判定
+============================================================
+
+SemanticGraph = SUPPORTED
+
+满足：
+
+A：
+
+G2 vs R0
+
+Overall Top1FDE：
+
+delta<0
+且CI upper<0
+
+------------------------------------------------------------
+
+或者：
+
+B：
+
+Overall Top1FDE变化：
+
+relative degradation <=0.5%
+
+且CI包含0，
+
+同时至少两个semantic-sensitive group：
+
+NearTurnConnector20
+NearTrafficControl20
+TurningVehicle_GT
+
+Top1FDE：
+
+可靠改善，
+
+并且：
+
+Vehicle overall
+Pedestrian overall
+
+没有可靠恶化。
+
+否则：
+
+NOT_SUPPORTED。
+
+============================================================
+46. Semantic Contribution判定
+============================================================
+
+另外定义：
+
+SemanticContributionToJoint =
+SUPPORTED / NOT_SUPPORTED。
+
+SUPPORTED要求：
+
+G3 vs G1
+
+满足以下其一：
+
+A：
+
+Overall Top1FDE：
+
+delta<0
+CI upper<0
+
+------------------------------------------------------------
+
+或：
+
+B：
+
+Overall基本持平：
+
+relative degradation<=0.5%
+
+CI包含0，
+
+同时至少两个semantic-sensitive group
+
+相对G1可靠改善，
+
+且Vehicle/Pedestrian overall
+无可靠恶化。
+
+============================================================
+47. FSCG主判定
+============================================================
+
+FSCG = SUPPORTED
+
+要求：
+
+G3 vs R2
+
+Overall Top1FDE：
+
+delta<0
+
+且：
+
+95% CI upper<0。
+
+同时：
+
+Vehicle整体
+
+Pedestrian整体
+
+不能出现：
+
+可靠恶化。
+
+============================================================
+48. FSCG Targeted判定
+============================================================
+
+如果：
+
+G3 vs R2
+
+Overall：
+
+point estimate改善
+
+但CI跨0，
+
+允许：
+
+FSCG = TARGETED_SUPPORTED
+
+仅当：
+
+至少两个重点group：
+
+MovingVehicle
+Vehicle>5m
+NearTurnConnector20
+NearTrafficControl20
+TurningVehicle_GT
+
+相对R2：
+
+Top1FDE可靠改善，
+
+且：
+
+Vehicle overall
+Pedestrian overall
+
+无可靠恶化。
+
+============================================================
+49. 否则
+============================================================
+
+如果：
+
+G3不优于R2
+
+并且不满足TARGETED条件：
+
+FSCG = NOT_SUPPORTED。
+
+禁止因为：
+
+G3 > R0
+
+就宣布创新成功。
+
+============================================================
+50. Joint Complementarity
+============================================================
+
+JointComplementarity = YES
+
+要求：
+
+G3相对：
+
+G1
+G2
+
+Overall Top1FDE：
+
+至少一个比较：
+
+CI upper<0，
+
+另一个：
+
+不能可靠变差。
+
+并且：
+
+SemanticContributionToJoint
+不能是NOT_SUPPORTED。
+
+============================================================
+51. PaperUsableFSCG
+============================================================
+
+PaperUsableFSCG = YES
+
+仅当：
+
+FSCG = SUPPORTED
+
+或：
+
+FSCG = TARGETED_SUPPORTED。
+
+否则：
+
+NO。
+
+============================================================
+52. 模式选择变化
+============================================================
+
+统计：
+
+R2→G3：
+
+Top1 mode changed count
+
+changed rate
+
+changed-and-improved
+
+changed-and-worsened
+
+unchanged
+
+mean gain when improved
+
+mean harm when worsened
+
+net Top1FDE change。
+
+============================================================
+53. G1/G2/G3 selection overlap
+============================================================
+
+计算：
+
+G1 vs G2
+
+G1 vs G3
+
+G2 vs G3
+
+Top1 mode agreement rate。
+
+用于解释：
+
+interaction和semantic
+
+是否做出不同判断。
+
+============================================================
+54. Semantic branch行为诊断
+============================================================
+
+对于G2/G3保存：
+
+map attention top entities。
+
+统计：
+
+按actor type：
+
+lane
+connector
+drivable
+carpark
+crosswalk
+walkway
+
+attention mass。
+
+这只能：
+
+描述模型行为。
+
+禁止因attention大就声称因果重要。
+
+============================================================
+55. Interaction branch行为诊断
+============================================================
+
+G1/G3：
+
+统计：
+
+attention主要落在：
+
+Vehicle→Vehicle
+Vehicle→Pedestrian
+Vehicle→Bicycle
+Pedestrian→Vehicle
+...
+
+以及：
+
+future min-distance bins。
+
+只做描述。
+
+============================================================
+56. ZeroMap诊断
+============================================================
+
+比较：
+
+G2/G3在：
+
+MapNonEmpty
+
+ZeroMap
+
+两个group上的表现。
+
+如果：
+
+ZeroMap中G3仍有改善，
+
+只能归因于：
+
+interaction branch / shared node scorer
+
+不能写：
+
+semantic graph有效。
+
+============================================================
+57. Cases
+============================================================
+
+只在aggregate评估完成以后选case。
+
+至少：
+
+Case1：
+R2错误，G1正确。
+
+Case2：
+R2错误，G2/G3因为道路语义选对。
+
+Case3：
+G1错误，G3正确。
+
+Case4：
+G3失败。
+
+============================================================
+58. Case图
+============================================================
+
+显示：
+
+GT
+
+6 candidates
+
+R0 probabilities
+
+R2 probabilities
+
+G1
+G2
+G3 probabilities
+
+Top1 selection
+
+neighbor predicted modes
+
+selected semantic map entities。
+
+禁止用case作为主要证据。
+
+============================================================
+59. 效率
+============================================================
+
+正式测：
+
+R2
+
+G1
+G2
+G3
+
+在：
+
+batch128
+
+RTX3080。
+
+至少：
+
+100 warmup
+
+500 measured forwards
+
+记录：
+
+mean latency
+median
+p95
+peak CUDA memory
+params。
+
+============================================================
+60. 延迟边界
+============================================================
+
+分别报告：
+
+A：
+
+reranker forward
+
+B：
+
+graph feature construction / retrieval
+
+C：
+
+frozen predictor forward
+
+禁止把：
+
+offline cache
+
+伪装成完整在线latency。
+
+============================================================
+61. 输出目录
+============================================================
+
+继续使用：
+
+outputs/stage8a_future_scene_compatibility_graph/
+
+新增：
+
+01_training/
+02_checkpoints/
+03_evaluation/
+04_bootstrap/
+05_diagnostics/
+06_tables/
+07_cases/
+08_efficiency/
+09_reports/
+
+不要覆盖：
+
+00b
+00c
+
+历史审计文件。
+
+============================================================
+62. 核心表
+============================================================
+
+至少输出：
+
+06_tables/stage8a1_main_results.csv
+
+06_tables/stage8a1_group_results.csv
+
+06_tables/stage8a1_semantic_group_results.csv
+
+06_tables/stage8a1_map_availability_results.csv
+
+06_tables/stage8a1_bootstrap_ci.csv
+
+06_tables/stage8a1_mode_change_analysis.csv
+
+06_tables/stage8a1_attention_diagnostics.csv
+
+06_tables/stage8a1_efficiency.csv
+
+06_tables/stage8a1_checkpoint_manifest.csv
+
+============================================================
+63. 训练曲线
+============================================================
+
+分别保存：
+
+G1_training_curve.csv
+G2_training_curve.csv
+G3_training_curve.csv
+
+内容：
+
+epoch
+train_loss
+dev_loss
+dev_Top1ADE
+dev_Top1FDE
+best_flag
+patience_count。
+
+============================================================
+64. 最终报告
+============================================================
+
+输出：
+
+09_reports/
+stage8a1_final_report.md
+
+结构必须为：
+
+【Research Question】
+
+【Frozen Inputs】
+
+【Graph Specification】
+
+【Training Protocol】
+
+【Normalization】
+
+【Tiny Overfit】
+
+【Checkpoint Selection】
+
+【Candidate Identity】
+
+【Main Results】
+
+【R0】
+
+【R2】
+
+【G1 Future Interaction Graph】
+
+【G2 Semantic Compatibility Graph】
+
+【G3 Joint FSCG】
+
+【G1 vs R2】
+
+【G3 vs R2】
+
+【Vehicle】
+
+【Pedestrian】
+
+【Bicycle】
+
+【Moving Vehicle】
+
+【Semantic-sensitive Groups】
+
+【Map Availability】
+
+【Bootstrap】
+
+【Mode Change Analysis】
+
+【Interaction Diagnostics】
+
+【Semantic Diagnostics】
+
+【Cases】
+
+【Efficiency】
+
+【Limitations】
+
+【Scientific Decision】
+
+============================================================
+65. 最终Scientific Decision
+============================================================
+
+必须明确输出：
+
+AgentGraph =
+SUPPORTED /
+NOT_SUPPORTED
+
+LearnedGraphAdvantageOverR2 =
+YES / NO
+
+SemanticGraph =
+SUPPORTED /
+NOT_SUPPORTED
+
+SemanticContributionToJoint =
+SUPPORTED /
+NOT_SUPPORTED
+
+FSCG =
+SUPPORTED /
+TARGETED_SUPPORTED /
+NOT_SUPPORTED
+
+JointComplementarity =
+YES / NO
+
+PaperUsableFSCG =
+YES / NO
+
+RecommendedFinalModel =
+R2 /
+G1 /
+G2 /
+G3
+
+============================================================
+66. 论文创新判断
+============================================================
+
+不要自动把G1/G2写成创新点。
+
+只有结果完成以后：
+
+如果：
+
+AgentGraph SUPPORTED
++
+SemanticContributionToJoint SUPPORTED
++
+FSCG SUPPORTED/TARGETED_SUPPORTED
+
+才重新讨论：
+
+Innovation 1：
+Mode-level Future Interaction Graph
+
+Innovation 2：
+Mode-to-Map Semantic Compatibility
+
+Joint：
+Future Scene Compatibility Graph。
+
+============================================================
+67. 如果G3失败
+============================================================
+
+若：
+
+G3不能超过R2，
+
+不要：
+
+调radius
+调quota
+加层
+换hidden
+改temperature
+改loss
+改seed
+重训predictor。
+
+首先STOP。
+
+把失败模式交给大脑AI分析。
+
+============================================================
+68. 如果G2失败但G3成功
+============================================================
+
+不要简单说：
+
+SemanticGraph成功。
+
+应区分：
+
+G2独立语义效果
+
+和：
+
+G3中semantic contribution。
+
+可能出现：
+
+SemanticGraph = NOT_SUPPORTED
+
+但：
+
+SemanticContributionToJoint = SUPPORTED。
+
+这是允许的科学结果。
+
+============================================================
+69. 如果G1不如R2但G3优于R2
+============================================================
+
+同样允许。
+
+此时：
+
+不要把G1单独包装成强创新。
+
+论文主创新应偏向：
+
+joint future-scene compatibility reasoning。
+
+============================================================
+70. Git
+============================================================
+
+建议commit：
+
+train: validate Stage8A graph reranker tiny overfit
+
+train: fit G1 future interaction graph reranker
+
+train: fit G2 semantic compatibility graph reranker
+
+train: fit G3 joint future scene compatibility graph
+
+eval: compare FSCG with frozen R0 and R2
+
+eval: run paired scene bootstrap for Stage8A
+
+docs: finalize Stage8A-1 scientific decision
+
+push：
+
+stage8a1/fscg-training-eval
+
+禁止merge main。
+
+============================================================
+71. 执行顺序
+============================================================
+
+你可以连续完成：
+
+1.
+训练代码实现
+
+2.
+normalization audit
+
+3.
+tiny overfit
+
+4.
+G1 full training
+
+5.
+G2 full training
+
+6.
+G3 full training
+
+7.
+freeze checkpoints
+
+8.
+official VAL统一evaluation
+
+9.
+bootstrap
+
+10.
+diagnostics
+
+11.
+final report
+
+本阶段不需要中途等待大脑AI，
+
+除非出现：
+
+candidate identity失败
+
+future leakage
+
+predictor gradient不为0
+
+参数数目变化
+
+NaN/Inf
+
+OOM无法通过规定的gradient accumulation解决
+
+或明确代码bug。
+
+============================================================
+72. 最后汇报
+============================================================
+
+完成全部Stage8A-1后，只汇报：
+
+Git commit=
+
+G1 checkpoint SHA=
+
+G2 checkpoint SHA=
+
+G3 checkpoint SHA=
+
+Tiny:
+G1=
+PASS / FAIL
+G2=
+PASS / FAIL
+G3=
+PASS / FAIL
+
+CandidateIdentity=
+PASS / FAIL
+
+R0 Overall Top1FDE=
+
+R2 Overall Top1FDE=
+
+G1 Overall Top1FDE=
+
+G2 Overall Top1FDE=
+
+G3 Overall Top1FDE=
+
+G1 vs R0 delta/95CI=
+
+G1 vs R2 delta/95CI=
+
+G2 vs R0 delta/95CI=
+
+G3 vs R2 delta/95CI=
+
+G3 vs G1 delta/95CI=
+
+G3 vs G2 delta/95CI=
+
+Vehicle:
+R2=
+G3=
+
+Pedestrian:
+R2=
+G3=
+
+MovingVehicle:
+R2=
+G3=
+
+Vehicle>5:
+R2=
+G3=
+
+NearTurnConnector20:
+R2=
+G3=
+
+NearTrafficControl20:
+R2=
+G3=
+
+TurningVehicle_GT:
+R2=
+G3=
+
+AgentGraph=
+
+LearnedGraphAdvantageOverR2=
+
+SemanticGraph=
+
+SemanticContributionToJoint=
+
+FSCG=
+
+JointComplementarity=
+
+PaperUsableFSCG=
+
+RecommendedFinalModel=
+
+STOP。
+
+等待大脑AI最终审查。
