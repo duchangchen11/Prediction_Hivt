@@ -1,0 +1,15 @@
+{
+  "status": "THREE_ORIGINAL_SOURCES_VERIFIED",
+  "workflow": "nature-academic-search multi-source-search; no callable academic MCP tools in this session; OpenAlex fallback attempted, then primary-source web verification",
+  "failures": [
+    {"provider": "OpenAlex", "queries": ["Strictly Proper Scoring Rules Prediction and Estimation", "CoverNet Multimodal Behavior Prediction Using Trajectory Sets", "Minimum Risk Training for Neural Machine Translation"], "status": "HTTP429", "results_not_used": true},
+    {"provider": "CVF", "resource": "CoverNet landing page / PDF", "status": "403 / internal fetch error", "fallback": "author arXiv v2 HTML and PDF"}
+  ],
+  "references": [
+    {"objective": "A Original SoftCE", "authors": "Tilmann Gneiting; Adrian E. Raftery", "title": "Strictly Proper Scoring Rules, Prediction, and Estimation", "year": 2007, "venue": "Journal of the American Statistical Association", "volume": "102", "issue": "477", "pages": "359-378", "doi": "10.1198/016214506000001437", "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf", "verified_anchor": "Section3 Example3, PDF page5: logarithmic score and KL divergence; first page journal metadata", "support": "proper logarithmic scoring and entropy/KL decomposition", "does_not_support": "the FDE Gibbs target is a calibrated future distribution; temperature1m is optimal; finite CE decrease guarantees Top1FDE decrease"},
+    {"objective": "B Hard Best-Mode CE", "authors": "Tung Phan-Minh; Elena Corina Grigore; Freddy A. Boulton; Oscar Beijbom; Eric M. Wolff", "title": "CoverNet: Multimodal Behavior Prediction Using Trajectory Sets", "year": 2020, "venue": "CVPR", "arxiv": "1911.10298v2", "url": "https://arxiv.org/html/1911.10298", "publication_url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Phan-Minh_CoverNet_Multimodal_Behavior_Prediction_Using_Trajectory_Sets_CVPR_2020_paper.html", "verified_anchor": "Section4.3 paragraph loss functions; arXiv author metadata and v2 date", "support": "cross-entropy classification with a nearest candidate trajectory label", "does_not_support": "CoverNet uses FDE-best labels (it uses minimum average pointwise distance); hard FDE labels outperform SoftCE for this model"},
+    {"objective": "C Error-Aware Ranking", "authors": "Shiqi Shen; Yong Cheng; Zhongjun He; Wei He; Hua Wu; Maosong Sun; Yang Liu", "title": "Minimum Risk Training for Neural Machine Translation", "year": 2016, "venue": "ACL (Volume1: Long Papers)", "pages": "1683-1692", "doi": "10.18653/v1/P16-1159", "url": "https://aclanthology.org/P16-1159/", "pdf": "https://aclanthology.org/P16-1159.pdf", "verified_anchor": "Section3 equations7-8, PDF page2: posterior expected loss; ACL landing-page authors and metadata", "support": "minimum-risk training using a probability-weighted task cost", "does_not_support": "this is a trajectory-specific performance result; minimizing expected risk guarantees lower argmax Top1FDE"}
+  ],
+  "citation_metrics_requested": false,
+  "new_training": false
+}

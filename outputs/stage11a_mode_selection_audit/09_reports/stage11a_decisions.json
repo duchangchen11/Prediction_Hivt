@@ -1,0 +1,87 @@
+{
+  "LossRankingMismatch": "CONFIRMED",
+  "CostlyModeSwitchProblem": "CONFIRMED",
+  "PedestrianMotionBias": "CONFIRMED",
+  "SoftTargetAmbiguity": "NOT_CONFIRMED",
+  "CandidateGeometryBottleneck": "PARTIAL",
+  "RecommendedNextObjective": "ErrorAwareRanking",
+  "ReadyForControlledLossExperiment": "YES",
+  "LossRankingMismatchWitnesses": [
+    {
+      "Model": "DualExpert",
+      "Group": "Vehicle",
+      "DeltaSoftCE": -0.020723895378080576,
+      "DeltaRegret": 0.009102670502609073,
+      "MismatchRate": 0.09393019058937453
+    },
+    {
+      "Model": "G1",
+      "Group": "Pedestrian",
+      "DeltaSoftCE": -0.005419853491402726,
+      "DeltaRegret": 0.06581303559468393,
+      "MismatchRate": 0.127107836191016
+    },
+    {
+      "Model": "G3",
+      "Group": "Pedestrian",
+      "DeltaSoftCE": -0.026501101636339286,
+      "DeltaRegret": 0.03165756101901727,
+      "MismatchRate": 0.13915261442539323
+    },
+    {
+      "Model": "DualExpert",
+      "Group": "Pedestrian",
+      "DeltaSoftCE": -0.011279622370247058,
+      "DeltaRegret": 0.07098733132323662,
+      "MismatchRate": 0.12965849511123706
+    }
+  ],
+  "CostlyModeSwitchWitnesses": [
+    {
+      "Partition": "HeadDev",
+      "Group": "Vehicle",
+      "Count": 22719,
+      "Comparison": "R2->DualExpert",
+      "changed_count": 14489,
+      "improved_count": 8974,
+      "worsened_count": 5515,
+      "zero_cost_changed_count": 0,
+      "mean_gain": 1.255952950102617,
+      "mean_harm": 2.0811831995230574,
+      "median_gain": 0.06420988874742761,
+      "median_harm": 0.12490576505661011,
+      "p90_harm": 7.490970516204836,
+      "p95_harm": 12.273429512977605,
+      "p99_harm": 19.288408079147338,
+      "total_FDE_gain": 11270.921774220886,
+      "total_FDE_harm": 11477.725345369661,
+      "net_delta_FDE": 0.009102670502609073,
+      "total_net_delta_FDE": 206.80357114877552,
+      "mode_change_rate": 0.6377481403230776,
+      "top10_harm_count": 552,
+      "top10_harm_share": 0.6228903304673336,
+      "top5_harm_count": 276,
+      "top5_harm_share": 0.3927615448436697,
+      "top1_harm_count": 56,
+      "top1_harm_share": 0.10941124441818327
+    }
+  ],
+  "PedestrianMotionEvidence": {
+    "PedCount": 7057,
+    "GTGreater5mCount": 4804,
+    "GTGreater5mMeanDelta": 0.11940096843996233,
+    "GTAtMost5mMeanDelta": -0.03224352207611994,
+    "PedMeanDelta": 0.07098733132323662,
+    "GTGreater5mGrossHarmShare": 0.8462596234621182,
+    "ObservedSpeedAtLeast1mpsCount": 4351,
+    "ObservedSpeedAtLeast1mpsMeanDelta": 0.07139684133924298,
+    "ObservedSpeedBelow1mpsMeanDelta": 0.07032887674834981,
+    "HistoryInsufficientCount": 0
+  },
+  "HeadDevPedestrianDiffuseTargetRate": 0.265977044069718,
+  "PedestrianR2OracleFraction": 0.7023520613282231,
+  "engineering_audits": "PASS",
+  "qualification": "registered descriptive decisions, repeatedly selected HeadDev; no causal or independent confirmation",
+  "training_authorized_or_executed": false,
+  "optimizer_updates": 0
+}
