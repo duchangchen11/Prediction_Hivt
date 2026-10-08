@@ -1,0 +1,35 @@
+{
+  "architecture": [
+    19,
+    32,
+    1
+  ],
+  "parameters": 673,
+  "loss": "original Stage6 ranking_loss softmax(-FDE/1m)",
+  "seed": 2022,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "head_batch": 1024,
+  "evaluation_batch": 4096,
+  "max_epochs": 50,
+  "patience": 5,
+  "order": "torch.randperm with CPU Generator seed2022+epoch",
+  "remainder": "original last partial batch optimizer step, no carry",
+  "selection": "InnerDev Overall Top1FDE strict improvement",
+  "changes_only": "data partition and normalization; historical R2 checkpoint never loaded",
+  "Fold": 1,
+  "Model": "R2",
+  "protocol_sha256": "18256cd7908b33ee4b7d7891f806c83e556814660eae3cbe1361464447145c50",
+  "split_sha256": "577c52648c875a73a1f00b30625aecb85b83c3e98fd2ffb8f1c80db55cb5cc3b",
+  "normalization_sha256": "e371f3405fab3896165a4315d188ae172ef3e841587b9ab1df3717872ddeb1b7",
+  "training_indices_sha256": "ec6c324a6b8e6c1d88877892bab82b9463a03e759dd2a077d51b1f162ea79a7b",
+  "InnerDev_indices_sha256": "b544a4ea1f392f39fc5bc7381e238d69ddbcd7687e9a37f08a58f27fe90a76a6",
+  "new_sources_sha256": {
+    "00_manifest/stage11b_common.py": "23c02791ffd9f3236d6c90499e87117db0a5900c0508a98f799ded0de6caf9be",
+    "00_manifest/stage11b_register.py": "8eaa296bec53bed56d73994db494cbb62da14e42bb6fae56eb291d6bc6b86787",
+    "01_preflight/stage11b_prepare.py": "cf05fdabe0b01d54bf960397a5e972d2e8daf1a7078dbc52cd5fa36fb1eb6d1a",
+    "01_preflight/stage11b_tiny.py": "cf9e5d699baa8a22505aefa832b14dea98f9b21093a51183b3c40e8c3ab2ae16",
+    "03_training/stage11b_train.py": "fd66077b9f7dbdc05d650da7d2568e12ac830d0266ff962e677cbecf2e7d9957"
+  }
+}

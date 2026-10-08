@@ -1,0 +1,17 @@
+{
+  "Stage": "Stage11B",
+  "BeforeAnyOuterTestEvaluation": true,
+  "Corrections": [
+    {
+      "Component": "OOF MRR stable mode rank only",
+      "Finding": "PyTorch 2.5.1 Tensor.argsort with stable=True rejects positional dimension",
+      "Correction": "Use p.argsort(dim=-1, descending=True, stable=True)",
+      "Check": "Synthetic tied probabilities retained ascending mode index",
+      "CheckStatus": "PASS",
+      "TrainingCodeChanged": false,
+      "TrainingHyperparametersChanged": false,
+      "ModelRetrainingNeeded": false,
+      "PerformanceResultsUsedToChooseCorrection": false
+    }
+  ]
+}
