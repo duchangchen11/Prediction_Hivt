@@ -1,0 +1,54 @@
+{
+  "Status": "PASS",
+  "results": [
+    {
+      "Variant": "A",
+      "Status": "PASS",
+      "Updates": 300,
+      "InitialLoss": 1.5760904550552368,
+      "FinalLoss": 1.206010341644287,
+      "EntropyFloor": 1.2048940658569336,
+      "Reduction": 0.9969927622686082,
+      "Threshold": 0.9,
+      "PredictorGradientCount": 0,
+      "FinalGradientNorm": 0.07684232294559479,
+      "InitialStateSHA256": "e3c7296a6d67da33b3ff877d655147f4d683c36062178532896cc568763223be",
+      "FullTrainingUsesTinyWeights": false,
+      "Seconds": 6.3350216550024925
+    },
+    {
+      "Variant": "B",
+      "Status": "PASS",
+      "Updates": 300,
+      "InitialLoss": 1.5648642778396606,
+      "FinalLoss": 0.0013690157793462276,
+      "EntropyFloor": 0.0,
+      "Reduction": 0.9991251536642933,
+      "Threshold": 0.8,
+      "PredictorGradientCount": 0,
+      "FinalGradientNorm": 0.020143045112490654,
+      "InitialStateSHA256": "e3c7296a6d67da33b3ff877d655147f4d683c36062178532896cc568763223be",
+      "FullTrainingUsesTinyWeights": false,
+      "Seconds": 6.649761403001321
+    },
+    {
+      "Variant": "C",
+      "Status": "PASS",
+      "Updates": 300,
+      "InitialLoss": 0.41203296184539795,
+      "FinalLoss": 0.033827703446149826,
+      "EntropyFloor": 0.0,
+      "Reduction": 0.917900492002767,
+      "Threshold": 0.8,
+      "PredictorGradientCount": 0,
+      "FinalGradientNorm": 0.013418872840702534,
+      "InitialStateSHA256": "e3c7296a6d67da33b3ff877d655147f4d683c36062178532896cc568763223be",
+      "FullTrainingUsesTinyWeights": false,
+      "Seconds": 6.31231074599782
+    }
+  ],
+  "LossImplementation": "PASS",
+  "CandidateIdentity": "PASS",
+  "GTLabelsDetached": true,
+  "FormalCVPermitted": true
+}
