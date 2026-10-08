@@ -50,7 +50,7 @@ def main():
             for j,name in enumerate(MODELS):
                 z,p=zz[name],pp[name];assert torch.isfinite(z).all() and torch.isfinite(p).all()
                 assert torch.allclose(p.sum(-1),torch.ones(len(ix),device='cuda'),atol=1e-6,rtol=0.)
-                top=p.argmax(-1);order=p.argsort(-1,descending=True,stable=True);rank=(order==best[:,None]).long().argmax(-1)+1
+                top=p.argmax(-1);order=p.argsort(dim=-1,descending=True,stable=True);rank=(order==best[:,None]).long().argmax(-1)+1
                 sortedp=p.sort(-1,descending=True).values
                 v=torch.stack((fd[ii,top].double(),ad[ii,top].double(),fd[ii,top].double()-oracle.double(),(top==best).double(),
                     1./rank.double(),objective(z,fd,'A').double(),(p*costs).sum(-1).double(),
