@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scenes": 70,
+  "replicates": 1000,
+  "seed": 2022,
+  "paired_whole_scene": true,
+  "actor_weighted": true,
+  "groups": [
+    "Overall",
+    "Vehicle",
+    "Pedestrian",
+    "Bicycle",
+    "MovingVehicle",
+    "StoppedVehicle",
+    "ParkedVehicle",
+    "Vehicle>5m",
+    "Pedestrian<5m",
+    "Pedestrian>5m"
+  ],
+  "metrics": [
+    "Top1FDE",
+    "Top1ADE",
+    "HitRate"
+  ],
+  "shared_resampling_sha256": "7ad2fb587164dd5aaf5e85a935662acd5155065d621468332784e17f324ea9ef",
+  "bootstrap_rows": 30,
+  "checkpoint_selected_HeadDev": true,
+  "independent_confirmation": false,
+  "official_VAL_opened": false
+}

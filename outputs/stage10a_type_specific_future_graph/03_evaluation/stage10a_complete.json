@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "split": "HeadDev70",
+  "targets": 29934,
+  "scenes": 70,
+  "models": [
+    "R0",
+    "R2",
+    "G1",
+    "DualExpert"
+  ],
+  "successful_unified_HeadDev_passes": 1,
+  "official_VAL_opened": false,
+  "test_opened": false,
+  "actor_csv_sha256": "561d166752c3ba24a9c514784beed7e7278b7a5bc776dc550c6bb2397dbbeb36",
+  "checkpoint_manifest_sha256": "e79b2e04aeace967b1aab513a82f868a97af0728ec51e9d925a7c2ea860ecad0",
+  "evidence_role": "HeadDev feasibility screening, checkpoint-selected; not independent confirmation"
+}

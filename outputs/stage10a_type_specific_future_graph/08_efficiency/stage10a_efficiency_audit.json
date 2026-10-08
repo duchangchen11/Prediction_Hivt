@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "device": "NVIDIA GeForce RTX 3080",
+  "precision": "FP32",
+  "partition": "HeadTrain only",
+  "sampling_seed": 2022,
+  "counts": [
+    64,
+    48,
+    16
+  ],
+  "measured": 200,
+  "parameters_each": 24066,
+  "independent_expert_total_parameters": 48132,
+  "frozen_R2_parameters": 673,
+  "combined_reranker_parameters": 48805,
+  "models_unchanged": true,
+  "end_to_end_latency_claim": false,
+  "official_VAL_opened": false,
+  "test_opened": false
+}

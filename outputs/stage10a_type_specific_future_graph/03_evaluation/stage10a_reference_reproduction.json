@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "expert_selected_metric_checks": [
+    {
+      "Expert": "vehicle",
+      "Metric": "SoftCE",
+      "FrozenSelectedValue": 1.4797993697876362,
+      "UnifiedValue": 1.4797993696190725,
+      "AbsDiff": 1.6856360751660304e-10
+    },
+    {
+      "Expert": "vehicle",
+      "Metric": "Top1ADE",
+      "FrozenSelectedValue": 1.243465704586703,
+      "UnifiedValue": 1.243465704586703,
+      "AbsDiff": 0.0
+    },
+    {
+      "Expert": "vehicle",
+      "Metric": "Top1FDE",
+      "FrozenSelectedValue": 2.7488933700966736,
+      "UnifiedValue": 2.7488933700966736,
+      "AbsDiff": 0.0
+    },
+    {
+      "Expert": "pedestrian",
+      "Metric": "SoftCE",
+      "FrozenSelectedValue": 1.6921395118722704,
+      "UnifiedValue": 1.6921395110023145,
+      "AbsDiff": 8.699558851077427e-10
+    },
+    {
+      "Expert": "pedestrian",
+      "Metric": "Top1ADE",
+      "FrozenSelectedValue": 0.7107193237278794,
+      "UnifiedValue": 0.7107193237278794,
+      "AbsDiff": 0.0
+    },
+    {
+      "Expert": "pedestrian",
+      "Metric": "Top1FDE",
+      "FrozenSelectedValue": 1.497762410910098,
+      "UnifiedValue": 1.497762410910098,
+      "AbsDiff": 0.0
+    }
+  ],
+  "G1_HeadDevSoftCE": 1.5311777747626405,
+  "historical_G1_HeadDevSoftCE": 1.5311777750364308,
+  "G1_absdiff": 2.7379032374597045e-10,
+  "R2_frozen_sha256": "e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314",
+  "predictor_frozen_sha256": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7"
+}

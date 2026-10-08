@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "targets": 29934,
+  "scenes": 70,
+  "models": [
+    "R0",
+    "R2",
+    "G1",
+    "DualExpert"
+  ],
+  "fresh_prediction_cache_identity": "bitwise",
+  "candidate_maxdiff": 0.0,
+  "minADE6_maxdiff": 0.0,
+  "minADEOracle6_maxdiff": 0.0,
+  "minFDE6_maxdiff": 0.0,
+  "MR6_maxdiff": 0.0,
+  "Bicycle_targets": 158,
+  "Bicycle_logits_bitwise_R2": true,
+  "Bicycle_probability_bitwise_R2": true,
+  "Bicycle_candidates_bitwise_R2": true,
+  "predictor_gradient_count": 0,
+  "R2_gradient_count": 0,
+  "candidate_requires_grad": false,
+  "predictor_R2_states_unchanged": true,
+  "official_VAL_opened": false,
+  "test_opened": false
+}
