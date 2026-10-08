@@ -13,6 +13,7 @@ from stage6a_features import observable_features,normalize as normalize_r2
 import numpy as np
 import pandas as pd
 import torch
+from functools import lru_cache
 read_json=old.read_json;atomic_json=old.atomic_json;sha256=old.sha256
 atomic_torch=old.atomic_torch;state_sha=old.state_sha;seed=old.seed;tensor_sha=old.tensor_sha
 BASE='5617f9463b3f5baa4d941f52c157c25a341fd5e1';CACHE=ROOT/'01_preflight/cache'
@@ -38,8 +39,11 @@ def verify(history=False):
         for p,h in {**frozen['historical_files'],**frozen['preserved_untracked_files']}.items():assert sha256(PROJECT/p)==h,p
     if REG.exists():assert sha256(PROTOCOL)==read_json(REG)['protocol_sha256']
     return frozen
+@lru_cache(None)
 def frame():return pd.read_csv(CACHE/'identities.csv',dtype={'future_mask_bits':str})
+@lru_cache(None)
 def split(fold):return read_json(ROOT/f'02_splits/stage11b_fold{fold}_split.json')
+@lru_cache(None)
 def indices(fold,part):
     f=frame();s=split(fold);assert part in ('InnerTrain','InnerDev','OuterTest')
     return np.flatnonzero(f.scene_token.isin(s[part]).to_numpy())

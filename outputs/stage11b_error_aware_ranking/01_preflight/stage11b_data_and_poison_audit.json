@@ -1,0 +1,25 @@
+{
+  "Status": "PASS",
+  "HeadTrainScenes": 630,
+  "HeadTrainActors": 260151,
+  "HeadDevActorsUsed": 0,
+  "RawWindows": 15091,
+  "HeadDevWindowsSkipped": 1703,
+  "CVIsolation": "PASS",
+  "OuterSceneUnion": 630,
+  "OuterSceneMultiplicity": 1,
+  "GTpoisonWindows": 100,
+  "BikeNeighborOccurrencesInPoisonSample": 166,
+  "CandidateIdentity": "PASS",
+  "CandidateMaxDiff": 0,
+  "GraphSourceSHA256": "16b086e006e51b1cd67544c42b42ce869daccdad6e0d4636b4a04115f0947f9b",
+  "raw_R2_recomputed_without_old_normalization": true,
+  "R2ProtocolReproducible": true,
+  "R2HistoricalCheckpointLoaded": false,
+  "PredictorSHA256": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7",
+  "cache_files": {
+    "r2_raw.npy": "24f6df35badd8ba0981627d3f7993fcadfdb4e09d23e800485f2e082bc114248",
+    "r2_flags.npy": "74d34d31045aac62853b5e54e7b2258078027a7f33c97f1aff8d1856d153a716",
+    "identities.csv": "aeefe82ee059e21187afd1be4348c1588034f91aca67a465abcf3b8ff5cfb1f1"
+  }
+}
