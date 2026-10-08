@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "TRAIN_windows": 16,
+  "TRAIN_targets_checked": 124,
+  "GT_nan_future_target_mask_poison": true,
+  "semantic_nan_ignored": true,
+  "observable_inputs_bitwise_identical": true,
+  "graph_gate_cache_identity": true,
+  "fresh_R2_logit_cache_maxdiff": 9.5367431640625e-07,
+  "effective_batch_macro_loss_equivalence": true,
+  "effective_batch_macro_gradient_maxdiff": 0.0,
+  "HeadTrain630_HeadDev70_exact": true,
+  "official_VAL_opened": false
+}
