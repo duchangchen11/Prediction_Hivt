@@ -1,0 +1,27 @@
+{
+  "status": "COMPLETE",
+  "historical_files_unchanged": 2188,
+  "candidate_identity": "PASS",
+  "tiny_all_PASS": true,
+  "formal_checkpoints_frozen": true,
+  "training_sources_unchanged": true,
+  "Stage9_semantic_inputs": false,
+  "predictor_R2_gradients": 0,
+  "Official_VAL_role": "development-reuse evidence",
+  "Stage9B_executed": false,
+  "test_used": false,
+  "scientific_decision": {
+    "ResidualGraph": "NOT_SUPPORTED",
+    "TypeAdaptation": "WEAK_SUPPORTED",
+    "BalancedTraining": "NOT_SUPPORTED",
+    "TAFIG": "NOT_SUPPORTED",
+    "TAFIG_STRONG": "NO",
+    "VehicleBenefitRetained": "NO",
+    "PedestrianNegativeTransferResolved": "NO",
+    "PaperUsableTAFIG": "NO",
+    "RecommendedFinalModel": "R2",
+    "ReadyStage9BConfirmatoryCV": "NO"
+  },
+  "final_report_sha256": "10d1dcbf068eea719dc0ce3308e71b88707987c1a560f508e8551cb822729332",
+  "STOP": true
+}
