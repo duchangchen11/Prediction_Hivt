@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "targets": 290085,
+  "HeadTrain": 260151,
+  "HeadDev": 29934,
+  "counts": [
+    {
+      "Partition": "HeadTrain",
+      "ActorType": "Vehicle",
+      "Count": 191026
+    },
+    {
+      "Partition": "HeadTrain",
+      "ActorType": "Pedestrian",
+      "Count": 66145
+    },
+    {
+      "Partition": "HeadTrain",
+      "ActorType": "Bicycle",
+      "Count": 2980
+    },
+    {
+      "Partition": "HeadDev",
+      "ActorType": "Vehicle",
+      "Count": 22719
+    },
+    {
+      "Partition": "HeadDev",
+      "ActorType": "Pedestrian",
+      "Count": 7057
+    },
+    {
+      "Partition": "HeadDev",
+      "ActorType": "Bicycle",
+      "Count": 158
+    }
+  ],
+  "official_VAL_loaded": false,
+  "semantic_arrays_opened": false,
+  "join": "exact scene/sample/instance/node/window/full-horizon identity; FDE/ADE/original logits bitwise equal",
+  "source_future_manifest_sha256": "00c725d2d924da5f0359ce20af4fc9e1e6b4e67d17cf681bba10d2506640f42c",
+  "R2_feature_manifest_sha256": "315e9d1589865823ff00f33f3140a5cacc06962bfa77024303dddecf6ad45c6c",
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "files": {
+    "r2_features.npy": "60c702b67555abc1949d2916e726d575221fa9aba15a14ba7013c6b80193206f",
+    "identities.csv": "0ef274dce6fd2fe51101c583e21ab3eed70dbb79198d94878d47a12a78e8f937"
+  }
+}

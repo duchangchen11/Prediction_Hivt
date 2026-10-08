@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "formal_training_allowed": true,
+  "audits": [
+    {
+      "Expert": "vehicle",
+      "status": "PASS",
+      "InitialLoss": 1.5246703624725342,
+      "FinalLoss": 1.1697704792022705,
+      "EntropyFloor": 1.1686244010925293,
+      "InitialExcessLoss": 0.3560459613800049,
+      "FinalExcessLoss": 0.001146078109741211,
+      "ExcessLossReduction": 0.9967810950437435,
+      "Updates": 300,
+      "fixed_same_type_HeadTrain_targets": 128,
+      "seed": 2022,
+      "tiny_weights_reused": false,
+      "graph_gradient_norm": 0.17057374119758606,
+      "module_gradient_norms": {
+        "node_encoder": 0.11347027122974396,
+        "interaction_encoder": 0.12620219588279724,
+        "interaction_attention": 0.005373906809836626,
+        "norm": 0.0049546267837285995,
+        "head": 0.01547512412071228
+      },
+      "gradients_finite_nonzero": true,
+      "predictor_gradient_count": 0,
+      "R2_gradient_count": 0,
+      "candidate_requires_grad": false
+    },
+    {
+      "Expert": "pedestrian",
+      "status": "PASS",
+      "InitialLoss": 1.704147219657898,
+      "FinalLoss": 1.5073165893554688,
+      "EntropyFloor": 1.5067651271820068,
+      "InitialExcessLoss": 0.1973820924758911,
+      "FinalExcessLoss": 0.0005514621734619141,
+      "ExcessLossReduction": 0.9972061185158969,
+      "Updates": 300,
+      "fixed_same_type_HeadTrain_targets": 128,
+      "seed": 2123,
+      "tiny_weights_reused": false,
+      "graph_gradient_norm": 0.1263561248779297,
+      "module_gradient_norms": {
+        "node_encoder": 0.07830385863780975,
+        "interaction_encoder": 0.09815022349357605,
+        "interaction_attention": 0.007941839285194874,
+        "norm": 0.001927230041474104,
+        "head": 0.011581121012568474
+      },
+      "gradients_finite_nonzero": true,
+      "predictor_gradient_count": 0,
+      "R2_gradient_count": 0,
+      "candidate_requires_grad": false
+    }
+  ]
+}

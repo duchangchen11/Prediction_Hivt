@@ -1,0 +1,10 @@
+{
+  "classification": "CACHE_LABEL_PRESENTATION_MISMATCH",
+  "phase": "before registration, tiny, training or evaluation",
+  "observation": "Stage6 cache uses lowercase labels; Stage10 display labels uppercase initial",
+  "correction": "verify lowercase source plus exact actor_type_id; normalize presentation labels on new metadata join only",
+  "frozen_data_modified": false,
+  "protocol_or_model_changed": false,
+  "optimizer_updates": 0,
+  "official_VAL_loaded": false
+}

@@ -1,0 +1,32 @@
+{
+  "status": "REGISTERED_BEFORE_TINY_AND_FORMAL",
+  "base_commit": "b4dd350e3f9488e284943e0eed9c93fd87adb8d8",
+  "protocol_sha256": "db65dce4ae1f80a2b15745aea889522ec61df57c7460e66635e7b76397823c3c",
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "cache_manifest_sha256": "95c40aa1b7f0c8e718863ad0df19d567fa82ec6bf2cbec6bbb59c5f93b33b4a0",
+  "training_sources": {
+    "stage10a_audit.py": "d6337043b7928a9099ebdf271a20a69871949c841380eaf56617419c30872691",
+    "stage10a_common.py": "337b518b0b60d7a2f6889a5ce14135c241f910fd453ead986a5f4a9bd3dcd912",
+    "stage10a_model.py": "24b0c61385ec3756005c8aba5c3940ee8f3feaa0e7e53cc8e8af641d9ac319b4",
+    "stage10a_prepare.py": "b1b7613353a1aa5ec837081e87b3491a5f0439f7c906872b1b6ed5c3d648d102",
+    "stage10a_train.py": "e2fd97c340312e689baa0578f5ae42dca1e16cc9b1097da4138a1246f7e3408f"
+  },
+  "initial_state_sha256": {
+    "vehicle": "e3c7296a6d67da33b3ff877d655147f4d683c36062178532896cc568763223be",
+    "pedestrian": "9e95698f0e3660263e7c4fa86255fda72c8a2696bb26f96138fd369d82b3a3ae"
+  },
+  "seeds": {
+    "vehicle": 2022,
+    "pedestrian": 2123
+  },
+  "parameters_each": 24066,
+  "parameters_total": 48132,
+  "independent_parameters": true,
+  "init_matches_untrained_G1": true,
+  "last_score_zero_initialized": true,
+  "pretrained_graph_weights_loaded": false,
+  "checkpoint_selection": "minimum own-type entire HeadDev SoftCE",
+  "official_VAL_opened": false,
+  "test_opened": false
+}

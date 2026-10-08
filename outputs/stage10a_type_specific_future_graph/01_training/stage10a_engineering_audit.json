@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "HeadTrain630_HeadDev70_exact": true,
+  "full_horizon_targets": 290085,
+  "identity_FDE_ADE_original_logits_bitwise": true,
+  "TRAIN_windows_rebuilt": 16,
+  "TRAIN_targets_rebuilt": 124,
+  "GT_nan_future_target_mask_poison_ignored": true,
+  "semantic_nan_ignored": true,
+  "unchanged_G1_forward_bitwise": true,
+  "R2_rebuild_maxdiff": 0.0,
+  "independent_parameters": true,
+  "each_parameters": 24066,
+  "total_trainable_parameters": 48132,
+  "neighbor_type_counts": [
+    [
+      1332907,
+      258810,
+      15692
+    ],
+    [
+      221513,
+      335649,
+      11041
+    ],
+    [
+      12246,
+      9944,
+      1563
+    ]
+  ],
+  "Bicycle_neutral_logits_probabilities_bitwise_targets": 3138,
+  "Bicycle_actual_candidate_identity_targets": 128,
+  "Bicycle_candidate_probe_identity_targets": 3138,
+  "Bicycle_requires_grad": false,
+  "predictor_R2_gradients": 0,
+  "predictor_R2_states_unchanged": true,
+  "neutral_experts": [
+    {
+      "Expert": "vehicle",
+      "Targets": 1024,
+      "Partition": "HeadTrain",
+      "LogitMaxDiff": 0.0,
+      "ProbabilityMaxDiff": 0.0,
+      "Status": "PASS"
+    },
+    {
+      "Expert": "pedestrian",
+      "Targets": 1024,
+      "Partition": "HeadTrain",
+      "LogitMaxDiff": 0.0,
+      "ProbabilityMaxDiff": 0.0,
+      "Status": "PASS"
+    }
+  ],
+  "official_VAL_opened": false,
+  "test_opened": false
+}
