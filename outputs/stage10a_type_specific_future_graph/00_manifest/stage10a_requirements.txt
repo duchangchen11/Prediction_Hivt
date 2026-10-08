@@ -1,0 +1,1182 @@
+你现在执行：
+
+============================================================
+Stage10A
+Type-Specific Future Interaction Reranking
+异构交通参与者类型专属未来交互重排序可行性实验
+============================================================
+
+项目路径：
+/home/lrj/Prediction_Hivt
+
+基础分支：
+stage9a/type-adaptive-future-interaction
+
+基础commit：
+b4dd350e3f9488e284943e0eed9c93fd87adb8d8
+
+新建分支：
+stage10a/type-specific-future-interaction
+
+============================================================
+一、任务定位
+============================================================
+
+Stage10A只做低成本可行性验证。
+
+目标：
+
+1. Vehicle轨迹预测改善
+2. Pedestrian轨迹预测改善或至少保持
+3. Bicycle继续正常预测，避免显著退化
+4. Overall保持竞争力
+
+本阶段先在HeadTrain/HeadDev上完成实验。
+
+禁止直接进入official VAL。
+
+禁止使用official VAL选择模型。
+
+============================================================
+二、明确研究任务
+============================================================
+
+保持nuScenes现有scene-level多参与者预测协议。
+
+输入：
+
+所有当前纳入协议的交通参与者历史轨迹
+及其场景交互关系。
+
+参与者：
+
+Vehicle
+Pedestrian
+Bicycle。
+
+输出：
+
+每个参与者K=6条未来候选轨迹
+及每条候选轨迹对应的概率。
+
+Th=5
+Tf=12
+K=6。
+
+不得只预测Vehicle/Pedestrian。
+
+Bicycle必须完整保留在：
+
+模型输入
+参与者交互图
+最终预测输出
+评价结果
+
+中。
+
+不得删除Bicycle样本。
+
+============================================================
+三、历史实验结论
+============================================================
+
+保留：
+
+Stage8：
+
+AgentGraph=SUPPORTED
+
+SemanticGraph=NOT_SUPPORTED
+
+FSCG=NOT_SUPPORTED。
+
+Stage9：
+
+TAFIG=NOT_SUPPORTED
+
+PedestrianNegativeTransferResolved=NO
+
+VehicleBenefitRetained=NO。
+
+禁止改写。
+
+本阶段不继续：
+
+Semantic Graph
+
+Type-Adaptive Gate
+
+MacroTypeLoss
+
+Stage9 Low-Rank Adapter。
+
+============================================================
+四、模型总体结构
+============================================================
+
+Stage5A Frozen Predictor
+        |
+        v
+  6 Future Candidates
+        |
+        v
+ Future Mode-Mode Graph
+        |
+   +----+----+----------+
+   |         |          |
+Vehicle   Pedestrian  Bicycle
+Expert    Expert      Frozen R2
+   |         |          |
+   +----+----+----------+
+        |
+        v
+All-Actor Predictions
+
+============================================================
+五、冻结基础预测器
+============================================================
+
+Stage5A checkpoint：
+
+outputs/stage5a_motion_aware_decoder/
+07_checkpoints/
+stage5a_best_overall_minfde.pt
+
+SHA256：
+
+88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7
+
+必须：
+
+eval()
+
+requires_grad=False。
+
+不重新训练候选轨迹预测器。
+
+============================================================
+六、冻结R2
+============================================================
+
+R2 checkpoint：
+
+outputs/stage6a_future_interaction_reliability/
+07_checkpoints/
+stage6a_r2_best.pt
+
+SHA256：
+
+e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314
+
+R2作为：
+
+Vehicle reference
+
+Pedestrian reference
+
+Bicycle最终输出模型。
+
+R2完全冻结。
+
+============================================================
+七、复用Stage8 G1结构
+============================================================
+
+Vehicle和Pedestrian都使用：
+
+Stage8 G1 Mode-Mode Future Interaction Graph。
+
+保持：
+
+Actor-Mode Node 15D
+
+Mode-Mode Edge 17D
+
+Hidden 64
+
+1层message passing
+
+neighbor radius 50m
+
+nearest 8 actors
+
+每个neighbor K=6 modes。
+
+保留：
+
+所有类别参与者作为neighbor。
+
+例如：
+
+预测Pedestrian时，
+
+其邻居可以是：
+
+Vehicle
+Pedestrian
+Bicycle。
+
+禁止将graph改成：
+
+只允许同类型邻居。
+
+============================================================
+八、两个独立Expert
+============================================================
+
+建立：
+
+E_V：
+Vehicle Future Interaction Expert
+
+E_P：
+Pedestrian Future Interaction Expert。
+
+二者使用相同网络结构，
+
+但：
+
+参数完全独立
+
+optimizer完全独立
+
+训练目标完全独立。
+
+E_V只在Vehicle target上计算训练loss。
+
+E_P只在Pedestrian target上计算训练loss。
+
+注意：
+
+训练target按类型分离，
+
+不代表graph neighbor也按类型分离。
+
+============================================================
+九、避免Stage9的共享负迁移
+============================================================
+
+禁止：
+
+Shared graph backbone + Type Adapter
+
+Shared graph backbone + Gate
+
+Shared graph backbone + Macro Loss。
+
+E_V和E_P各自拥有独立的：
+
+NodeEncoder
+
+InteractionMessage
+
+InteractionAttention
+
+RankingHead。
+
+不共享可训练参数。
+
+============================================================
+十、最终Logit定义
+============================================================
+
+对于Vehicle：
+
+logits =
+original_stage5a_logits
++
+E_V_graph_residual。
+
+对于Pedestrian：
+
+logits =
+original_stage5a_logits
++
+E_P_graph_residual。
+
+对于Bicycle：
+
+logits =
+frozen_R2_logits。
+
+注意：
+
+Vehicle/Pedestrian采用Stage8 G1风格的
+original-logit residual。
+
+不采用Stage9失败的：
+
+R2 + learned graph residual。
+
+Bicycle保持冻结R2。
+
+============================================================
+十一、Bicycle的意义
+============================================================
+
+Bicycle不是被忽略。
+
+它仍然：
+
+1. 有完整历史轨迹输入
+2. 获得6条未来候选轨迹
+3. 参与其他actor的交互建模
+4. 输出6个候选概率
+5. 纳入Overall指标
+
+只是暂不对Bicycle学习新的排序修正。
+
+这样可以避免Stage8/9里：
+
+Bicycle大幅恶化。
+
+============================================================
+十二、参数规模
+============================================================
+
+复用Stage8 G1网络。
+
+预期每个Expert：
+
+24066 parameters。
+
+两个Expert合计：
+
+48132 parameters。
+
+必须审计准确参数量。
+
+若每个Expert参数量
+与冻结G1不一致：
+
+STOP检查。
+
+============================================================
+十三、初始化
+============================================================
+
+E_V：
+
+使用独立固定seed。
+
+E_P：
+
+使用独立固定seed。
+
+建议：
+
+Vehicle seed=2022
+
+Pedestrian seed=2123。
+
+两个模型从头训练。
+
+不加载Stage8 G1/G3训练权重。
+
+不加载Stage9 T1/T2/T3训练权重。
+
+最后score layer：
+
+weight=0
+bias=0。
+
+训练前：
+
+E_V/E_P logits
+
+必须等于Stage5A原始logits。
+
+============================================================
+十四、训练数据
+============================================================
+
+使用冻结：
+
+HeadTrain630 scenes
+
+HeadDev70 scenes。
+
+复用Stage6A原scene split。
+
+HeadTrain：
+
+Vehicle targets只用于E_V训练。
+
+Pedestrian targets只用于E_P训练。
+
+Bicycle targets不参与Expert训练loss，
+
+但仍参与graph context。
+
+============================================================
+十五、训练数据审计
+============================================================
+
+输出：
+
+Vehicle Train targets
+
+Vehicle Dev targets
+
+Pedestrian Train targets
+
+Pedestrian Dev targets
+
+Bicycle Train targets
+
+Bicycle Dev targets。
+
+要求：
+
+所有target identity与冻结协议一致。
+
+不允许因为分专家而改变：
+
+scene split
+
+candidate geometry
+
+future masks
+
+时间窗口。
+
+============================================================
+十六、Feature Normalization
+============================================================
+
+直接复用Stage8 G1训练使用的：
+
+HeadTrain-only normalization。
+
+保持feature column定义不变。
+
+禁止使用：
+
+HeadDev
+
+official VAL
+
+重新计算mean/std。
+
+============================================================
+十七、训练Loss
+============================================================
+
+使用原Stage8 G1：
+
+q_k =
+softmax(-FDE_k/1m)。
+
+Loss：
+
+Soft Cross Entropy。
+
+Vehicle Expert：
+
+仅对Vehicle target计算loss。
+
+Pedestrian Expert：
+
+仅对Pedestrian target计算loss。
+
+禁止加入：
+
+type-balanced macro loss
+
+uncertainty regularizer
+
+extra gate loss
+
+semantic loss。
+
+============================================================
+十八、训练配置
+============================================================
+
+Optimizer：
+
+AdamW
+
+learning rate：
+
+1e-3
+
+weight_decay：
+
+1e-4
+
+precision：
+
+FP32
+
+max_epoch：
+
+50
+
+early stopping patience：
+
+5。
+
+effective batch：
+
+目标1024。
+
+不足1024的epoch余数按既有
+carry规则处理。
+
+不得直接丢弃有效actor target。
+
+============================================================
+十九、Tiny Overfit
+============================================================
+
+分别执行：
+
+Vehicle Expert tiny
+
+Pedestrian Expert tiny。
+
+各使用：
+
+对应类型固定128 HeadTrain targets。
+
+300 optimizer updates。
+
+使用数学正确的：
+
+ExcessLossReduction。
+
+要求：
+
+>=90%。
+
+同时：
+
+predictor gradient=0
+
+R2 gradient=0
+
+candidate requires_grad=False
+
+graph gradients finite/nonzero
+
+无NaN/Inf。
+
+若失败：
+
+STOP。
+
+============================================================
+二十、Neutral Audit
+============================================================
+
+至少：
+
+1024 Vehicle targets
+
+1024 Pedestrian targets。
+
+初始化时：
+
+Expert logits
+=
+Stage5A logits。
+
+要求：
+
+maxdiff<1e-6。
+
+Bicycle：
+
+Stage10输出
+=
+Frozen R2输出。
+
+要求：
+
+logits bitwise identical
+
+probability bitwise identical
+
+candidate bitwise identical。
+
+============================================================
+二十一、正式训练
+============================================================
+
+训练：
+
+E_V
+
+和：
+
+E_P。
+
+两个模型独立训练。
+
+不能互相加载checkpoint。
+
+允许连续完成。
+
+============================================================
+二十二、Checkpoint Selection
+============================================================
+
+必须在训练前冻结：
+
+E_V：
+
+根据Vehicle HeadDev SoftCE最低选择。
+
+E_P：
+
+根据Pedestrian HeadDev SoftCE最低选择。
+
+禁止使用：
+
+Overall official VAL
+
+Vehicle official VAL
+
+Pedestrian official VAL。
+
+每epoch同时记录：
+
+Train loss
+Dev loss
+Dev Top1ADE
+Dev Top1FDE
+
+但checkpoint只按对应类型Dev SoftCE。
+
+============================================================
+二十三、冻结Checkpoint
+============================================================
+
+训练结束后保存：
+
+VehicleExpert_best.pt
+
+PedestrianExpert_best.pt。
+
+记录：
+
+SHA256
+
+selected epoch
+
+HeadDev SoftCE
+
+parameters。
+
+禁止后续覆盖checkpoint。
+
+============================================================
+二十四、HeadDev统一评价
+============================================================
+
+本阶段仅统一评价：
+
+HeadDev70。
+
+模型：
+
+R0
+
+R2
+
+Stage8 G1 reference
+
+Stage10 Dual-Expert。
+
+其中：
+
+Stage10：
+
+Vehicle→E_V
+
+Pedestrian→E_P
+
+Bicycle→R2。
+
+============================================================
+二十五、评价指标
+============================================================
+
+Primary：
+
+Top1FDE。
+
+Secondary：
+
+Top1ADE
+
+OracleGap
+
+HitRate
+
+MRR。
+
+同时验证：
+
+minADE
+
+minFDE
+
+MR
+
+完全一致。
+
+============================================================
+二十六、必须报告的类别
+============================================================
+
+Overall
+
+Vehicle
+
+Pedestrian
+
+Bicycle
+
+MovingVehicle
+
+StoppedVehicle
+
+ParkedVehicle
+
+Vehicle>5m
+
+Pedestrian<5m
+
+Pedestrian>5m。
+
+不能只报告Vehicle改善样本。
+
+============================================================
+二十七、HeadDev Bootstrap
+============================================================
+
+使用：
+
+70 HeadDev scenes。
+
+paired whole-scene cluster bootstrap。
+
+1000 replicates。
+
+seed2022。
+
+比较：
+
+Dual-Expert vs R2。
+
+至少：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+
+的Top1FDE。
+
+注意：
+
+HeadDev用于训练中的checkpoint选择，
+
+因此本阶段CI只用于可行性筛查，
+
+不能当作独立的最终统计确证。
+
+============================================================
+二十八、Stage10A成功标准
+============================================================
+
+定义：
+
+delta =
+Stage10A - R2。
+
+Top1FDE负值代表改善。
+
+------------------------------------------------------------
+
+Vehicle：
+
+目标：
+
+delta <= -0.03m。
+
+------------------------------------------------------------
+
+Pedestrian：
+
+目标：
+
+delta <= 0m。
+
+------------------------------------------------------------
+
+Bicycle：
+
+要求：
+
+delta = 0m。
+
+------------------------------------------------------------
+
+Overall：
+
+目标：
+
+delta < 0m。
+
+============================================================
+二十九、Stage10A Decision
+============================================================
+
+若：
+
+Vehicle delta <= -0.03m
+
+且：
+
+Pedestrian delta <= 0m
+
+且：
+
+Bicycle完全等于R2
+
+且：
+
+Overall delta<0m
+
+并通过全部工程审计，
+
+则：
+
+Stage10A = GO。
+
+------------------------------------------------------------
+
+若：
+
+Vehicle delta<0
+
+Pedestrian delta<=+0.01m
+
+Bicycle完全等于R2
+
+Overall delta<0
+
+则：
+
+Stage10A = CONDITIONAL_GO。
+
+说明：
+
+车辆改善，
+行人基本保持，
+但仍需寻找行人独立改善证据。
+
+------------------------------------------------------------
+
+否则：
+
+Stage10A = STOP。
+
+============================================================
+三十、禁止根据HeadDev修改模型
+============================================================
+
+如果行人模型效果不好：
+
+不得立刻：
+
+调hidden
+
+增加层数
+
+改loss
+
+换seed
+
+改neighbor radius
+
+改history length
+
+增加social gate。
+
+先STOP。
+
+把结果交给大脑AI分析。
+
+============================================================
+三十一、重要的科研限制
+============================================================
+
+Stage10假设受到之前official VAL结果启发。
+
+所以：
+
+Stage10A不能使用official VAL选模型。
+
+本阶段只报告：
+
+HeadDev feasibility evidence。
+
+即使Stage10A=GO，
+
+也不能声称：
+
+独立测试证明了模型有效。
+
+此外：
+
+R2与Stage5A已有历史训练和
+checkpoint选择过程。
+
+不能把现有HeadDev筛查结果
+视为整个预测流水线完全独立的验证。
+
+============================================================
+三十二、若Stage10A通过
+============================================================
+
+本阶段先STOP。
+
+等待大脑AI审查。
+
+下一阶段再设计：
+
+Stage10B正式确认实验。
+
+优先解决：
+
+独立验证
+
+多seed
+
+类别稳定性
+
+论文基线可比性。
+
+禁止自动使用official VAL继续调参。
+
+============================================================
+三十三、输出目录
+============================================================
+
+创建：
+
+outputs/stage10a_type_specific_future_graph/
+
+00_manifest/
+
+01_training/
+vehicle/
+pedestrian/
+
+02_checkpoints/
+
+03_evaluation/
+
+04_bootstrap/
+
+05_diagnostics/
+
+06_tables/
+
+07_cases/
+
+08_efficiency/
+
+09_reports/。
+
+============================================================
+三十四、主要表格
+============================================================
+
+输出：
+
+stage10a_main_results.csv
+
+stage10a_type_results.csv
+
+stage10a_motion_results.csv
+
+stage10a_training_summary.csv
+
+stage10a_checkpoint_manifest.csv
+
+stage10a_bootstrap_ci.csv
+
+stage10a_candidate_identity.csv。
+
+============================================================
+三十五、最终报告
+============================================================
+
+输出：
+
+09_reports/
+stage10a_feasibility_report.md
+
+包括：
+
+【Research Question】
+
+【Frozen Predictor】
+
+【Type-Specific Architecture】
+
+【Vehicle Expert】
+
+【Pedestrian Expert】
+
+【Bicycle Frozen R2】
+
+【Training Split】
+
+【No Future Leakage】
+
+【Tiny Overfit】
+
+【Independent Training】
+
+【Checkpoint Selection】
+
+【HeadDev Results】
+
+【Vehicle Results】
+
+【Pedestrian Results】
+
+【Bicycle Results】
+
+【Overall Results】
+
+【Bootstrap】
+
+【Candidate Identity】
+
+【Negative Transfer Analysis】
+
+【Limitations】
+
+【Scientific Decision】。
+
+============================================================
+三十六、最终Scientific Decision
+============================================================
+
+输出：
+
+VehicleExpert =
+PROMISING / NOT_PROMISING
+
+PedestrianExpert =
+PROMISING / NOT_PROMISING
+
+BicyclePreserved =
+YES / NO
+
+OverallImproved =
+YES / NO
+
+NegativeTransferMitigated =
+YES / PARTIAL / NO
+
+Stage10A =
+GO / CONDITIONAL_GO / STOP
+
+ReadyStage10B =
+YES / NO。
+
+============================================================
+三十七、Git
+============================================================
+
+建议提交：
+
+feat: implement independent vehicle and pedestrian graph experts
+
+audit: preserve bicycle predictions with frozen R2
+
+train: fit Stage10A vehicle and pedestrian experts
+
+eval: assess Stage10A on HeadDev only
+
+docs: finalize Stage10A feasibility decision
+
+push：
+
+stage10a/type-specific-future-interaction
+
+禁止merge main。
+
+============================================================
+三十八、完成后汇报
+============================================================
+
+Git commit=
+
+Vehicle checkpoint SHA=
+
+Pedestrian checkpoint SHA=
+
+Vehicle Tiny=
+PASS / FAIL
+
+Pedestrian Tiny=
+PASS / FAIL
+
+CandidateIdentity=
+PASS / FAIL
+
+BicyclePreserved=
+YES / NO
+
+HeadDev results:
+
+R2 Overall Top1FDE=
+Stage10A Overall Top1FDE=
+
+R2 Vehicle=
+Stage10A Vehicle=
+Vehicle delta/CI=
+
+R2 Pedestrian=
+Stage10A Pedestrian=
+Pedestrian delta/CI=
+
+R2 Bicycle=
+Stage10A Bicycle=
+
+MovingVehicle:
+R2=
+Stage10A=
+
+Vehicle>5m:
+R2=
+Stage10A=
+
+VehicleExpert=
+
+PedestrianExpert=
+
+OverallImproved=
+
+NegativeTransferMitigated=
+
+Stage10A=
+GO / CONDITIONAL_GO / STOP
+
+ReadyStage10B=
+YES / NO
+
+完成后STOP。
+
+等待大脑AI审查。
+
+不得自动运行official VAL。

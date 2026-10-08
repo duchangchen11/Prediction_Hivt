@@ -1,0 +1,93 @@
+{
+  "status": "FROZEN_BEFORE_TINY_FORMAL_AND_HEADDEV_EVALUATION",
+  "base_commit": "b4dd350e3f9488e284943e0eed9c93fd87adb8d8",
+  "branch": "stage10a/type-specific-future-interaction",
+  "evidence_role": "HeadDev feasibility evidence only; not independent confirmation",
+  "official_VAL_permitted": false,
+  "test_permitted": false,
+  "Stage10B_execution_permitted": false,
+  "architecture": {
+    "expert": "unchanged Stage8 G1; two independently instantiated full networks",
+    "node_dim": 15, "edge_dim": 17, "hidden": 64, "message_layers": 1,
+    "neighbor_radius_m": 50, "nearest_actor_cap": 8, "K": 6, "Th": 5, "Tf": 12,
+    "neighbor_types": ["Vehicle", "Pedestrian", "Bicycle"],
+    "parameters_each": 24066, "trainable_parameters_total": 48132,
+    "shared_trainable_parameters": false,
+    "vehicle_pedestrian_anchor": "original Stage5A logits",
+    "bicycle_route": "frozen R2",
+    "semantic": false, "gate": false, "type_adapter": false, "macro_loss": false
+  },
+  "initialization": {
+    "vehicle_seed": 2022, "pedestrian_seed": 2123,
+    "last_score_weight_bias_zero": true, "pretrained_graph_weights_loaded": false
+  },
+  "normalization": {
+    "source": "outputs/stage8a_future_scene_compatibility_graph/01_training/feature_normalization.json",
+    "sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+    "fit_partition": "HeadTrain630 only", "refit": false
+  },
+  "split": {
+    "source": "outputs/stage6a_future_interaction_reliability/00_manifest/stage6a_head_split.json",
+    "sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+    "HeadTrain_scenes": 630, "HeadDev_scenes": 70
+  },
+  "training": {
+    "optimizer": "AdamW", "learning_rate": 0.001, "weight_decay": 0.0001,
+    "precision": "FP32", "effective_batch": 1024, "microbatch": 128, "accumulation": 8,
+    "max_epoch": 50, "patience": 5,
+    "objective": "mean SoftCE over respective target type; q=softmax(-FDE_k/1m)",
+    "shuffle_seed": "respective expert seed + epoch",
+    "carry": "prepend epoch remainder to next epoch; final remainder preserved in last checkpoint; no shortened optimizer batches or discarded targets",
+    "checkpoint_selection": "minimum respective-type entire HeadDev SoftCE; strict improvement and earliest ties",
+    "sequential_order": ["vehicle", "pedestrian"]
+  },
+  "tiny": {
+    "same_type_HeadTrain_targets": 128, "target_choice_seed": "respective expert seed",
+    "optimizer_updates": 300,
+    "ExcessLossReduction": "1-(finalCE-mean H(q))/(initialCE-mean H(q))",
+    "threshold": 0.9, "failed_tiny": "STOP; no tuning or formal training", "reuse_tiny_weights": false
+  },
+  "neutral": {
+    "vehicle_targets": 1024, "pedestrian_targets": 1024, "partition": "HeadTrain",
+    "logits_probability_maxdiff_lt": 0.000001,
+    "bicycle": "all HeadTrain/HeadDev logits and probabilities bitwise R2; actual candidates checked before training and throughout final HeadDev"
+  },
+  "evaluation": {
+    "split": "HeadDev70 only", "models": ["R0", "R2", "G1", "DualExpert"],
+    "groups": ["Overall", "Vehicle", "Pedestrian", "Bicycle", "MovingVehicle", "StoppedVehicle", "ParkedVehicle", "Vehicle>5m", "Pedestrian<5m", "Pedestrian>5m"],
+    "primary": "Top1FDE", "secondary": ["Top1ADE", "OracleGap", "HitRate", "MRR"],
+    "geometry_metrics": ["minADE6", "minFDE6", "MR6"],
+    "minADE6_convention": "ADE of minFDE-selected mode, unchanged historical protocol; independent min-ADE additionally reported as minADEOracle6",
+    "oracle_for_hit_rank": "lowest-index min-FDE candidate; stable descending probability ties",
+    "GT_subgroups": "strict >5m / <5m endpoint displacement; evaluation only",
+    "official_VAL_loaded": false
+  },
+  "bootstrap": {
+    "scenes": 70, "method": "paired whole-scene cluster bootstrap; actor-weighted within sampled scenes",
+    "replicates": 1000, "seed": 2022, "pairs": [["DualExpert", "R2"]],
+    "metrics": ["Top1FDE", "Top1ADE", "HitRate"], "groups": "all 10 required groups; same scene resamples",
+    "CI": "percentile 2.5/97.5; feasibility screening only because HeadDev selects checkpoints"
+  },
+  "decision": {
+    "delta": "DualExpert minus R2 Top1FDE",
+    "GO": "Vehicle<=-0.03m AND Pedestrian<=0m AND Bicycle bitwise identical AND Overall<0m AND all engineering audits PASS",
+    "CONDITIONAL_GO": "if not GO: Vehicle<0m AND Pedestrian<=+0.01m AND Bicycle bitwise identical AND Overall<0m AND all engineering audits PASS",
+    "STOP": "otherwise; no model changes or additional seed search",
+    "VehicleExpert_PROMISING": "Vehicle delta<=-0.03m AND engineering PASS",
+    "PedestrianExpert_PROMISING": "Pedestrian delta<=0m AND engineering PASS",
+    "NegativeTransferMitigated_YES": "Vehicle delta<0m AND Pedestrian delta<=0m AND Bicycle exact AND engineering PASS",
+    "NegativeTransferMitigated_PARTIAL": "if not YES: Vehicle delta<0m AND Pedestrian delta<=+0.01m AND Bicycle exact AND engineering PASS",
+    "ReadyStage10B": "YES iff GO or CONDITIONAL_GO; recommendation only, stop for review in all cases"
+  },
+  "historical_conclusions": {
+    "Stage8": {"AgentGraph": "SUPPORTED", "SemanticGraph": "NOT_SUPPORTED", "FSCG": "NOT_SUPPORTED"},
+    "Stage9": {"TAFIG": "NOT_SUPPORTED", "PedestrianNegativeTransferResolved": "NO", "VehicleBenefitRetained": "NO"}
+  },
+  "limitations": [
+    "Hypothesis motivated by historical official VAL results",
+    "HeadDev selects expert checkpoints; bootstrap CI is not independent confirmation",
+    "Stage5A and R2 have historical training and checkpoint selection; not independent end-to-end validation",
+    "One predeclared seed per expert; Bicycle remains fully present but its small HeadDev count limits interpretation",
+    "No official VAL, no test, no automatic Stage10B"
+  ]
+}
