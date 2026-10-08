@@ -19,8 +19,10 @@ Execution order from `/home/lrj/Prediction_Hivt`:
    initialization, controls, coverage, saved selection and isolation before OOF.
 6. `05_oof_evaluation/stage11b_evaluate.py`: score only each model's OuterTest.
 7. `06_bootstrap/stage11b_analyze.py`: registered paired scene bootstrap and costs.
-8. `09_reports/stage11b_final_audit.py`: recompute OOF metrics and verify identity.
-9. `09_reports/stage11b_report.py`: final report and PNG/SVG/PDF figures.
+8. `09_reports/stage11b_softce_numeric_audit.py`: replay secondary SoftCE at FP32
+   and independent FP64 precision, retaining magnitude-aware numerical tolerance.
+9. `09_reports/stage11b_final_audit.py`: recompute OOF metrics and verify identity.
+10. `09_reports/stage11b_report.py`: final report and PNG/SVG/PDF figures.
 
 Run scripts with `PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python`.
 Registration, preparation and

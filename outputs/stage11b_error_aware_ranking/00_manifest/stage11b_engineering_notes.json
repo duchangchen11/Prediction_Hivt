@@ -1,8 +1,8 @@
 {
   "Stage": "Stage11B",
-  "BeforeAnyOuterTestEvaluation": true,
   "Corrections": [
     {
+      "BeforeAnyOuterTestEvaluation": true,
       "Component": "OOF MRR stable mode rank only",
       "Finding": "PyTorch 2.5.1 Tensor.argsort with stable=True rejects positional dimension",
       "Correction": "Use p.argsort(dim=-1, descending=True, stable=True)",
@@ -12,6 +12,19 @@
       "TrainingHyperparametersChanged": false,
       "ModelRetrainingNeeded": false,
       "PerformanceResultsUsedToChooseCorrection": false
+    },
+    {
+      "BeforeAnyOuterTestEvaluation": false,
+      "Component": "Independent secondary SoftCE numeric comparison only",
+      "Finding": "Absolute-only 2e-5 FP32-vs-FP64 tolerance failed on 492 C rows with large logits; max absolute difference 4.905258194298767e-5, max relative difference with unit floor 3.3719615266658565e-7",
+      "Correction": "Retain atol=2e-5 and add rtol=2e-6 (about 16 FP32 epsilon); CPU FP32 and independent FP64 formulas replayed across every OOF actor",
+      "Proof": "09_reports/stage11b_softce_numeric_audit.json",
+      "TrainingCodeChanged": false,
+      "TrainingHyperparametersChanged": false,
+      "StoredMetricsChanged": false,
+      "CheckpointsChanged": false,
+      "PrimaryMetricCandidateBicycleBitwiseChecksRelaxed": false,
+      "ScientificDecisionRulesChanged": false
     }
   ]
 }

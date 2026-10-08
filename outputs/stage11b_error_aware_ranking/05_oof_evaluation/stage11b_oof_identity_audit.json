@@ -1,0 +1,48 @@
+{
+  "Status": "PASS",
+  "Folds": 3,
+  "OOFScenes": 630,
+  "OOFActors": 260151,
+  "EachSceneExactlyOneFold": true,
+  "InnerDevInOOF": false,
+  "OuterTestSeenByCorrespondingRankingTraining": false,
+  "CheckpointsFrozenBeforeOOF": true,
+  "CandidateIdentity": "PASS",
+  "CandidateCoordinateMaxDiff": 0,
+  "GeometryAllModelsBitwiseEqual": true,
+  "BicyclePreserved": "YES",
+  "BicycleActors": 2980,
+  "BicycleLogitProbabilityModeMaxDiff": 0,
+  "ModelStatesUnchanged": true,
+  "official_VAL_or_test_used": false,
+  "fields": [
+    "Top1FDE",
+    "Top1ADE",
+    "OracleGap",
+    "HitRate",
+    "MRR",
+    "SoftCE",
+    "ExpectedRegret",
+    "NormalizedExpectedRegret",
+    "PredictionEntropy",
+    "Top1Probability",
+    "Top1Top2Margin",
+    "OracleModeProbability",
+    "minADEOracle6",
+    "minFDE6",
+    "MR6"
+  ],
+  "models": [
+    "R0",
+    "R2",
+    "A",
+    "B",
+    "C"
+  ],
+  "cache_files": {
+    "stage11b_oof_predictions_actor_records.csv": "2d47f44db4377021811f491218951fc7501024c97a49f3ca3bc439e935f0fbb9",
+    "stage11b_oof_predictions_probabilities.npy": "088d8ce53e961a991cce1198f9523c09cbbad16ed6ab31c4de159d62a54d657d",
+    "stage11b_oof_predictions_logits.npy": "cbb50b92c7abc88c9e3c579e201fcd22957ff8bc2ed5234aacb8109861de8f2a",
+    "stage11b_oof_metrics.npy": "4a3dc069e69f060987ff0917162aaf343d9bdd9775da5a59509b6a40c0b95c9c"
+  }
+}

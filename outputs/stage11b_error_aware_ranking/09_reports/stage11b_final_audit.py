@@ -86,6 +86,9 @@ def oof_audit():
     for fold in (1,2,3):assert np.array_equal(np.flatnonzero(f.Fold==fold),indices(fold,'OuterTest'))
     z=np.load(src/'stage11b_oof_predictions_logits.npy',mmap_mode='r');p=np.load(src/'stage11b_oof_predictions_probabilities.npy',mmap_mode='r')
     val=np.load(src/'stage11b_oof_metrics.npy',mmap_mode='r');fd=np.load(S8/'01_training/cache/fde.npy',mmap_mode='r');ad=np.load(S8/'01_training/cache/ade.npy',mmap_mode='r')
+    numeric=read_json(ROOT/'09_reports/stage11b_softce_numeric_audit.json')
+    assert numeric['Status']=='PASS' and not numeric['StoredMetricsOrCheckpointsChanged']
+    assert numeric['AbsoluteTolerance']==2e-5 and numeric['RelativeTolerance']==2e-6
     for name,h in audit['cache_files'].items():assert sha256(src/name)==h
     for start in range(0,len(f),4096):
         ix=np.arange(start,min(start+4096,len(f)));source=f.source_index.to_numpy()[ix];v=val[ix];pp=p[ix];zz=z[ix]
@@ -107,7 +110,8 @@ def oof_audit():
             assert np.array_equal(v[:,j,14],errors.min(-1)>2)
             logp=zz[:,j].astype(np.float64)-zz[:,j].max(-1,keepdims=True).astype(np.float64)
             logp-=np.log(np.exp(logp).sum(-1,keepdims=True))
-            assert np.allclose(v[:,j,5],-(qq*logp).sum(-1),atol=2e-5,rtol=0.)
+            # FP32 rounding scales with SoftCE magnitude; 2e-6 is about 16 eps.
+            assert np.allclose(v[:,j,5],-(qq*logp).sum(-1),atol=2e-5,rtol=2e-6)
             assert np.allclose(v[:,j,6],(pp[:,j]*c).sum(-1),atol=2e-5,rtol=1e-7)
             assert np.allclose(v[:,j,7],(pp[:,j]*c/scale[:,None]).sum(-1),atol=2e-6,rtol=0.)
             assert np.allclose(v[:,j,8],-(pp[:,j].astype(np.float64)*np.log(np.maximum(pp[:,j],1e-30))).sum(-1),atol=2e-6,rtol=0.)

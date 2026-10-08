@@ -1,0 +1,51 @@
+{
+  "Status": "PASS",
+  "Scope": "Secondary SoftCE numerical replay only; primary metrics remain bitwise",
+  "StoredComputation": "CUDA FP32 softmax/log_softmax and reduction",
+  "IndependentComputation": "CPU float64 stable softmax/logsumexp",
+  "AbsoluteTolerance": 2e-05,
+  "RelativeTolerance": 2e-06,
+  "StoredMetricsOrCheckpointsChanged": false,
+  "Rows": [
+    {
+      "Model": "R0",
+      "MaxAbsoluteFP64Difference": 1.1936297807935148e-06,
+      "MaxRelativeFP64DifferenceWithUnitFloor": 3.0410154132244105e-07,
+      "CountExceedingOriginalAbsoluteTolerance": 0,
+      "MaxCPUFP32ReplayDifference": 1.430511474609375e-06,
+      "FP32RelativeTolerancePASS": true
+    },
+    {
+      "Model": "R2",
+      "MaxAbsoluteFP64Difference": 1.5000428508216146e-06,
+      "MaxRelativeFP64DifferenceWithUnitFloor": 3.292087809655661e-07,
+      "CountExceedingOriginalAbsoluteTolerance": 0,
+      "MaxCPUFP32ReplayDifference": 1.9073486328125e-06,
+      "FP32RelativeTolerancePASS": true
+    },
+    {
+      "Model": "A",
+      "MaxAbsoluteFP64Difference": 1.4676768014254549e-06,
+      "MaxRelativeFP64DifferenceWithUnitFloor": 3.2643073969941837e-07,
+      "CountExceedingOriginalAbsoluteTolerance": 0,
+      "MaxCPUFP32ReplayDifference": 1.430511474609375e-06,
+      "FP32RelativeTolerancePASS": true
+    },
+    {
+      "Model": "B",
+      "MaxAbsoluteFP64Difference": 1.4343237086933414e-06,
+      "MaxRelativeFP64DifferenceWithUnitFloor": 3.031839860125e-07,
+      "CountExceedingOriginalAbsoluteTolerance": 0,
+      "MaxCPUFP32ReplayDifference": 1.430511474609375e-06,
+      "FP32RelativeTolerancePASS": true
+    },
+    {
+      "Model": "C",
+      "MaxAbsoluteFP64Difference": 4.905258194298767e-05,
+      "MaxRelativeFP64DifferenceWithUnitFloor": 3.3719615266658565e-07,
+      "CountExceedingOriginalAbsoluteTolerance": 492,
+      "MaxCPUFP32ReplayDifference": 6.103515625e-05,
+      "FP32RelativeTolerancePASS": true
+    }
+  ]
+}
