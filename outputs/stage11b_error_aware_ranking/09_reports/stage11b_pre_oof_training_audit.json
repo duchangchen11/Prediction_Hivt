@@ -1,0 +1,18 @@
+{
+  "Status": "PASS",
+  "CVIsolation": "PASS",
+  "LossImplementation": "PASS",
+  "FoldSpecificR2Trained": true,
+  "FoldCheckpoints": 12,
+  "SameABCInitializationWithinFold": true,
+  "IndependentInitializationAcrossFolds": true,
+  "SameABCOrderOnCommonEpochs": true,
+  "SameControlledConfiguration": true,
+  "NoTrainingSourceChanged": true,
+  "CheckpointSelectionVerified": true,
+  "ZeroHeadInitialLogitsEqualStage5A": true,
+  "AllDistinctActorsUsedIncludingBicycle": true,
+  "NormalizationFitOnlyInnerTrain": true,
+  "GTpoisonWindows": 100,
+  "HistoricalFilesAndCheckpointsUnchanged": true
+}
