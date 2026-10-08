@@ -1,0 +1,135 @@
+{
+  "status": "FROZEN_BEFORE_STAGE9_TRAINING_AND_VAL",
+  "Official_VAL_role": "development-reuse evidence",
+  "notice": "Official VAL is no longer an untouched confirmation set for the Stage9 hypothesis.",
+  "test_used": false,
+  "Stage9B_authorized": false,
+  "variants": [
+    "T0=frozen R2",
+    "T1=R2+shared residual; micro loss; gate1",
+    "T2=R2+type adapter+gate; micro loss",
+    "T3=R2+type adapter+gate; half micro+half macro"
+  ],
+  "training": {
+    "seed": 2022,
+    "adapter_seed": 2224,
+    "gate_seed": 2225,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "effective_batch": 1024,
+    "microbatch": 128,
+    "accumulation": 8,
+    "max_epoch": 50,
+    "patience": 5,
+    "precision": "FP32",
+    "sequence": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "selection": "strict minimum DevSelectionScore=.5 OverallDevSoftCE+.5 MacroTypeDevSoftCE; all variants",
+    "epoch_remainder": "carry across epoch boundaries; no short optimizer batch; no resampling"
+  },
+  "gate_input": [
+    "Vehicle",
+    "Pedestrian",
+    "Bicycle",
+    "Stage8-normalized history_recent_disp",
+    "Stage8-normalized history_net_disp",
+    "Stage8-normalized history_path_length",
+    "selected neighbor count/8",
+    "nearest current selected-neighbor distance/50; no neighbor=1"
+  ],
+  "graph": "unchanged Stage8 G1 15D/17D; nearest<=50m current-valid self-excluded max8; K6; one message layer; raw47 value, hidden145 attention; LayerNorm shared representation then type adapter",
+  "normalization": "reuse Stage8 HeadTrain statistics columns0:3-14 and1:0-10; gate history uses0:5-7; count/distance not z-scored; no semantic tensors",
+  "tiny": {
+    "targets": 128,
+    "seed": 2022,
+    "updates": 300,
+    "threshold": 0.9,
+    "entropy": "same objective weighting as each variant; T3 H=.5 micro entropy+.5 present-type macro entropy"
+  },
+  "neighbor_count_groups": {
+    "Neighbor0": [
+      0,
+      0
+    ],
+    "Neighbor1-2": [
+      1,
+      2
+    ],
+    "Neighbor3-5": [
+      3,
+      5
+    ],
+    "Neighbor6-8": [
+      6,
+      8
+    ]
+  },
+  "nearest_distance_groups": {
+    "0-5m": "[0,5)",
+    "5-10m": "[5,10)",
+    "10-20m": "[10,20)",
+    "20-50m": "[20,50]"
+  },
+  "Neighbor0_distance_group": "excluded from distance bins; retained in Neighbor0 and Overall",
+  "bootstrap": {
+    "unit": "paired whole scene",
+    "replicates": 1000,
+    "seed": 2022,
+    "shared_indices": true,
+    "pairs": [
+      [
+        "T3",
+        "R2"
+      ],
+      [
+        "T1",
+        "R2"
+      ],
+      [
+        "T2",
+        "R2"
+      ],
+      [
+        "T3",
+        "T1"
+      ],
+      [
+        "T3",
+        "T2"
+      ],
+      [
+        "T3",
+        "G1"
+      ],
+      [
+        "T3",
+        "G3"
+      ],
+      [
+        "T2",
+        "T1"
+      ]
+    ]
+  },
+  "decisions": {
+    "reliable_improvement": "delta<0 and CI_upper<0",
+    "reliable_harm": "CI_lower>0",
+    "ResidualGraph": "T1-R2 Overall reliable improvement",
+    "TypeAdaptation": "T2-T1 Ped reliable improvement plus no reliable Overall/Vehicle harm; negative Ped point with CI containing0 => WEAK_SUPPORTED under same no-harm conditions",
+    "BalancedTraining": "T3-T2 Ped point delta<=0 and no reliable Overall/Vehicle harm",
+    "TAFIG": "T3-R2 Overall reliable improvement; no reliable Vehicle/Ped/Bicycle harm; Ped point delta<=+.01m",
+    "TAFIG_STRONG": "inherits TAFIG; reliable Vehicle improvement and Ped point<=0; STRONG_PLUS if Ped CI_upper<0",
+    "VehicleBenefitRetained": "(R2Vehicle-T3Vehicle)/(R2Vehicle-G1Vehicle)>=.70; denominator<=0 => undefined/NO",
+    "PedestrianNegativeTransferResolved": "T3-R2 Ped point delta<=+.01m and no reliable harm",
+    "PedestrianRecoveryRatio": "1-(T3Ped-R2Ped)/(G1Ped-R2Ped); descriptive target>=.8; denominator<=0=>undefined",
+    "PaperUsableTAFIG": "TAFIG SUPPORTED and VehicleBenefitRetained YES and PedestrianNegativeTransferResolved YES; provisional development evidence only",
+    "RecommendedFinalModel": "T3 if PaperUsableTAFIG YES else frozen previously recommended R2; no VAL-based retraining/selection",
+    "ReadyStage9BConfirmatoryCV": "YES iff TAFIG SUPPORTED; recommendation only, no execution"
+  },
+  "case_selection": "after aggregate; requested categories; lexical identities for ties; four distinct actor instances; high gate is top quartile of evaluated T3 Vehicle gates, descriptive only; high interaction=Neighbor6-8; if category unavailable document without substitute claims",
+  "semantic_boundary": "no semantic inputs or semantic module in T1/T2/T3; G3 is a frozen Stage8 reference evaluated separately on identical candidates only"
+}

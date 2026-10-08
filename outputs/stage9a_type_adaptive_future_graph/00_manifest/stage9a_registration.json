@@ -1,0 +1,31 @@
+{
+  "status": "REGISTERED_BEFORE_TINY_FORMAL_AND_VAL",
+  "base_commit": "31aa16dff59f393d6e2e3337e5861755ab069aec",
+  "protocol_sha256": "6eff5078dc97f3123f26f9eee8bded0593263db0d6e4f63d0c38fb0558897c6c",
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "cache_manifest_sha256": "e0fa2444a1f3f5e0e7f5614f5dca9ac7355626dc03aa182f37ae8564e81e841c",
+  "training_sources": {
+    "stage9a_audit.py": "c10216e4b11c3620582103403a935b0aa7530c551d1e1c90e5e1e01b4e8d9267",
+    "stage9a_common.py": "1f8b6c830431868a868987f9f35b311db23c42c0658534723285997f2e0c9b71",
+    "stage9a_model.py": "6e41f0e6b5901805a42ba9368a85e86988e9d31918b25eeb84265005d7f48733",
+    "stage9a_prepare.py": "b4b490e4ad21cf56d319e2590e2504463db9ac42112aebf99144944e6956cde1",
+    "stage9a_train.py": "d85f4c0f8e3341bf1b595bf97f011193cb7cbd1c4d08b434bfbf69bb01c15e0b"
+  },
+  "initial_state_sha256": {
+    "T1": "e3c7296a6d67da33b3ff877d655147f4d683c36062178532896cc568763223be",
+    "T2": "b51e696f962a996aaa1f34082541005d51f392219e60e167c21fdb8adf11f6b6",
+    "T3": "b51e696f962a996aaa1f34082541005d51f392219e60e167c21fdb8adf11f6b6"
+  },
+  "parameters": {
+    "T1": 24066,
+    "T2": 27515,
+    "T3": 27515
+  },
+  "shared_G1_initialization_bitwise_identical": true,
+  "type_adapter_up_zero_initialized": true,
+  "final_score_zero_initialized": true,
+  "Official_VAL_role": "development-reuse evidence",
+  "semantic_in_Stage9": false,
+  "test_used": false
+}

@@ -1,0 +1,1921 @@
+你现在执行新的研究阶段：
+
+============================================================
+Stage9A
+Type-Adaptive Future Interaction Reliability Graph
+类型自适应未来交互可靠性图
+简称：TA-FIG
+============================================================
+
+项目：
+
+/home/lrj/Prediction_Hivt
+
+基础分支：
+
+stage8a1/fscg-training-eval
+
+基础commit：
+
+31aa16dff59f393d6e2e3337e5861755ab069aec
+
+新建：
+
+stage9a/type-adaptive-future-interaction
+
+============================================================
+一、研究背景
+============================================================
+
+Stage8A-1最终结果已经确认：
+
+R0 Overall Top1FDE：
+2.680611
+
+R2：
+2.645563
+
+G1 Future Interaction Graph：
+2.575000
+
+G3：
+2.539384
+
+其中：
+
+G1 vs R2：
+delta = -0.070563m
+95% CI [-0.135691,-0.005609]
+
+说明：
+
+Learned Mode-Mode Future Interaction Graph
+比hand-crafted R2可靠改善Overall ranking。
+
+但是存在明显异构类别冲突。
+
+Vehicle：
+
+R2：
+3.010194
+
+G1：
+2.894383
+
+G3：
+2.850387
+
+G3-R2：
+-0.159807m
+CI[-0.260294,-0.066049]
+
+MovingVehicle：
+
+R2：
+10.450046
+
+G3：
+9.863471
+
+delta：
+-0.586575m
+CI[-0.942300,-0.248232]
+
+说明future graph对Vehicle尤其高运动Vehicle有效。
+
+但是：
+
+Pedestrian：
+
+R2：
+1.418253
+
+G1：
+1.496182
+
+G3：
+1.477582
+
+G3-R2：
+
++0.059329m
+
+CI：
+[+0.033116,+0.088196]
+
+属于可靠恶化。
+
+Bicycle也存在恶化。
+
+因此新的研究问题为：
+
+“能否根据目标参与者的类型、历史运动状态和当前交互上下文，
+自适应控制future interaction graph对模式置信度的修正强度，
+在保留Vehicle收益的同时避免Pedestrian/Bicycle负迁移？”
+
+============================================================
+二、停止Semantic路线
+============================================================
+
+Stage9禁止使用：
+
+Stage7A semantic residual
+Stage7D semantic attention
+Stage8 G2 semantic graph
+Stage8 G3 semantic branch
+
+禁止：
+
+lane semantic
+crosswalk semantic
+walkway semantic
+carpark semantic
+
+进入Stage9。
+
+Stage9只研究：
+
+Future Interaction。
+
+Stage8正式历史结论保持：
+
+SemanticGraph = NOT_SUPPORTED
+
+SemanticContributionToJoint = NOT_SUPPORTED
+
+FSCG = NOT_SUPPORTED。
+
+不得改写。
+
+============================================================
+三、Stage9方法核心
+============================================================
+
+Stage9不再：
+
+R0 + graph correction。
+
+改为：
+
+R2作为base reliability。
+
+对于actor i的mode k：
+
+原始R2 logit：
+
+l_R2(i,k)
+
+Future Graph产生：
+
+delta_graph(i,k)
+
+类型自适应gate：
+
+g_i in [0,1]
+
+最终：
+
+l_new(i,k)
+=
+l_R2(i,k)
++
+g_i * delta_graph(i,k)
+
+因此：
+
+当graph可靠：
+
+g_i较大
+
+当graph不可靠：
+
+g_i接近0
+
+模型自动退回：
+
+R2。
+
+禁止人工规定：
+
+Vehicle → graph
+Pedestrian → R2
+
+所有gate必须从HeadTrain学习。
+
+============================================================
+四、Stage9名称
+============================================================
+
+工作名称：
+
+Type-Adaptive Future Interaction Graph
+
+TA-FIG。
+
+论文名称暂不冻结。
+
+不得现在声明：
+
+创新成功。
+
+============================================================
+五、冻结Candidate Predictor
+============================================================
+
+继续使用Stage5A：
+
+outputs/stage5a_motion_aware_decoder/
+07_checkpoints/
+stage5a_best_overall_minfde.pt
+
+SHA：
+
+88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7
+
+完全冻结：
+
+eval()
+requires_grad=False。
+
+============================================================
+六、冻结R2
+============================================================
+
+使用：
+
+outputs/stage6a_future_interaction_reliability/
+07_checkpoints/stage6a_r2_best.pt
+
+SHA：
+
+e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314
+
+R2：
+
+完全冻结。
+
+Stage9训练：
+
+不得更新R2参数。
+
+Stage9 final logits：
+
+R2 logits
++
+new residual。
+
+============================================================
+七、复用G1 Future Graph定义
+============================================================
+
+只复用Stage8 G1：
+
+Actor-Mode Node：
+15D
+
+Mode-Mode Edge：
+17D
+
+邻居：
+
+current-valid
+self excluded
+<=50m
+nearest max8 actors
+
+K=6。
+
+禁止修改：
+
+edge feature
+neighbor radius
+neighbor number
+Tf
+K。
+
+============================================================
+八、Future Graph Encoder
+============================================================
+
+保持Stage8 G1核心：
+
+NodeEncoder：
+
+15 →64 →64
+
+InteractionMessage：
+
+47 →64 →64
+
+InteractionAttention：
+
+145 →64 →1
+
+每个target mode：
+
+m_int(i,k)
+=
+sum_jm
+alpha(i,k,j,m)
+message(i,k,j,m)
+
+仍然只使用：
+
+1层message passing。
+
+============================================================
+九、关键变化1：Type Adapter
+============================================================
+
+在shared future graph representation后加入：
+
+Target-Type Low-Rank Adapter。
+
+对于：
+
+Vehicle
+Pedestrian
+Bicycle
+
+各自一个小adapter：
+
+64 → 8 → 64。
+
+定义：
+
+A_t(h)
+=
+W_up_t(
+ReLU(
+W_down_t(h)
+)
+)
+
+然后：
+
+h_type
+=
+h
++
+A_type(h)。
+
+禁止：
+
+完全独立三个GNN。
+
+只允许：
+
+shared graph backbone
++
+small type adapter。
+
+目的：
+
+减少不同actor类型之间的ranking负迁移。
+
+============================================================
+十、Adapter初始化
+============================================================
+
+所有type adapter：
+
+W_up最后层：
+
+zero-init。
+
+因此初始化：
+
+A_t(h)=0。
+
+保证：
+
+刚开始不会因为adapter改变shared表示。
+
+============================================================
+十一、关键变化2：Reliability Gate
+============================================================
+
+建立actor-level gate：
+
+g_i。
+
+同一个actor的6个mode：
+
+使用同一个gate。
+
+Gate输入只允许：
+
+1 Vehicle onehot
+2 Pedestrian onehot
+3 Bicycle onehot
+
+4 history_recent_disp
+5 history_net_disp
+6 history_path_length
+
+7 normalized_current_neighbor_count
+
+8 normalized_nearest_current_neighbor_distance
+
+共：
+
+8D。
+
+============================================================
+十二、Gate网络
+============================================================
+
+Gate：
+
+8 →16 →1
+
+ReLU
+
+Sigmoid。
+
+得到：
+
+g_i。
+
+范围：
+
+0~1。
+
+禁止使用：
+
+GT
+future GT
+prediction error
+best mode
+future FDE。
+
+============================================================
+十三、Neighbor context定义
+============================================================
+
+neighbor_count：
+
+与Future Graph相同：
+
+current-valid
+<=50m
+max8。
+
+归一化：
+
+count/8。
+
+nearest distance：
+
+若有neighbor：
+
+d_min/50
+
+clip到：
+
+[0,1]。
+
+若无neighbor：
+
+1.0。
+
+============================================================
+十四、Graph Residual Score
+============================================================
+
+Type-adapted representation：
+
+h_type(i,k)
+
+进入：
+
+64→32→1
+
+得到：
+
+delta_graph(i,k)。
+
+最后Linear：
+
+weight=0
+bias=0。
+
+因此Stage9初始化：
+
+delta_graph = 0。
+
+无论gate是多少：
+
+最终：
+
+l_new = l_R2。
+
+必须做neutral audit。
+
+============================================================
+十五、Final Formula
+============================================================
+
+正式冻结：
+
+l_TA(i,k)
+
+=
+
+l_R2(i,k)
+
++
+
+g_i
+*
+delta_graph(i,k)。
+
+禁止加入额外：
+
+temperature calibration
+semantic score
+manual type prior
+R0 logits residual。
+
+============================================================
+十六、为什么以R2为base
+============================================================
+
+Stage8已经发现：
+
+统一graph对某些类别会产生负迁移。
+
+所以Stage9研究的不是：
+
+“重新替代R2”。
+
+而是：
+
+“只有在future graph能够提供可靠附加信息时，
+才对R2进行残差修正”。
+
+============================================================
+十七、训练Loss
+============================================================
+
+仍然使用：
+
+q_k =
+softmax(-FDE_k / 1m)
+
+SoftCE ranking loss。
+
+但是新增：
+
+type-balanced objective。
+
+============================================================
+十八、Type-balanced Loss
+============================================================
+
+每个batch分别计算：
+
+L_vehicle
+L_pedestrian
+L_bicycle
+
+以及：
+
+L_micro
+=
+所有target普通mean。
+
+L_macro
+=
+当前batch中存在类型的type loss平均。
+
+最终：
+
+L =
+0.5 * L_micro
++
+0.5 * L_macro。
+
+固定：
+
+0.5 / 0.5。
+
+禁止调：
+
+0.2
+0.8
+0.7
+0.3
+
+等。
+
+============================================================
+十九、为什么使用Macro项
+============================================================
+
+目的：
+
+避免Vehicle数量占优势时：
+
+overall loss下降
+
+但Pedestrian ranking系统性恶化。
+
+这是训练平衡机制，
+
+不是重新采样。
+
+禁止：
+
+oversampling
+undersampling
+人工复制Bicycle。
+
+============================================================
+二十、正式Variants
+============================================================
+
+训练三个variant。
+
+--------------------------------
+T0：
+R2
+--------------------------------
+
+冻结baseline。
+
+--------------------------------
+T1：
+R2 + Shared Future Graph Residual
+--------------------------------
+
+使用：
+
+future graph
+
+但：
+
+无type adapter
+gate固定为1
+
+训练：
+
+普通micro SoftCE。
+
+作用：
+
+验证仅把G1改成R2-residual形式的效果。
+
+--------------------------------
+T2：
+R2 + Type-Adaptive Gate/Adapter
+--------------------------------
+
+加入：
+
+type adapter
+learned gate
+
+但：
+
+仍用普通micro SoftCE。
+
+作用：
+
+隔离type-adaptive architecture贡献。
+
+--------------------------------
+T3：
+TA-FIG Final
+--------------------------------
+
+完整：
+
+R2 base
++
+shared future graph
++
+type adapter
++
+reliability gate
++
+0.5 micro +0.5 macro loss。
+
+============================================================
+二十一、禁止Variant搜索
+============================================================
+
+只允许：
+
+T0
+T1
+T2
+T3。
+
+禁止新增：
+
+T4
+T5
+
+来追结果。
+
+============================================================
+二十二、参数规模
+============================================================
+
+预计新增参数应：
+
+<40k。
+
+如果：
+
+>60k
+
+STOP检查。
+
+禁止做大规模MoE。
+
+============================================================
+二十三、数据协议
+============================================================
+
+保持：
+
+TRAIN700
+VAL150
+
+HeadTrain：
+630 scenes
+
+HeadDev：
+70 scenes
+
+seed2022。
+
+Tf=12
+K=6。
+
+============================================================
+二十四、非常重要：official VAL状态
+============================================================
+
+Stage9设计受到Stage8 official VAL结果启发。
+
+因此报告必须明确：
+
+Official VAL is no longer an untouched confirmation set
+for the Stage9 hypothesis.
+
+禁止写：
+
+“完全独立test-like validation”。
+
+但是：
+
+Stage9仍允许使用official VAL
+进行统一secondary evaluation，
+
+前提是：
+
+任何Stage9模型选择
+不得依据official VAL。
+
+============================================================
+二十五、Stage9 checkpoint选择
+============================================================
+
+只使用：
+
+HeadDev。
+
+不得使用official VAL。
+
+============================================================
+二十六、HeadDev checkpoint criterion
+============================================================
+
+Stage8只看overall dev loss，
+可能偏向Vehicle。
+
+Stage9冻结新的checkpoint metric：
+
+DevSelectionScore
+
+=
+
+0.5 * OverallDevSoftCE
+
++
+0.5 * MacroTypeDevSoftCE。
+
+其中：
+
+MacroTypeDevSoftCE
+
+=
+mean(
+VehicleDevLoss,
+PedestrianDevLoss,
+BicycleDevLoss
+)
+
+仅存在有效target的类型参与。
+
+固定。
+
+禁止根据结果修改。
+
+============================================================
+二十七、同时记录HeadDev metrics
+============================================================
+
+每epoch记录：
+
+Overall loss
+
+Vehicle loss
+Pedestrian loss
+Bicycle loss
+
+Macro loss
+
+DevSelectionScore
+
+Overall Top1FDE
+
+Vehicle Top1FDE
+Pedestrian Top1FDE
+Bicycle Top1FDE。
+
+但checkpoint：
+
+只按：
+
+DevSelectionScore minimum。
+
+============================================================
+二十八、训练配置
+============================================================
+
+AdamW
+
+lr=1e-3
+
+weight_decay=1e-4
+
+effective batch=1024
+
+max_epoch=50
+
+patience=5。
+
+Stage8已经出现AMP兼容问题，
+
+本阶段直接：
+
+FP32。
+
+不要再次浪费时间尝试AMP。
+
+============================================================
+二十九、Normalization
+============================================================
+
+复用Stage8 HeadTrain-only normalization。
+
+Gate的新输入：
+
+history motion：
+
+使用同样HeadTrain统计。
+
+neighbor count：
+
+不z-score，
+已经/8。
+
+nearest distance：
+
+不z-score，
+已经/50。
+
+禁止用HeadDev/VAL统计。
+
+============================================================
+三十、Tiny Overfit Gate
+============================================================
+
+使用已经修正的数学定义：
+
+ExcessLoss =
+L-H(q)。
+
+ExcessLossReduction：
+
+>=90%。
+
+固定128 HeadTrain targets
+seed2022
+300 updates。
+
+T1
+T2
+T3
+
+分别tiny。
+
+要求：
+
+gradient finite/nonzero
+
+predictor grad=0
+
+R2 grad=0
+
+candidate requires_grad=False。
+
+============================================================
+三十一、Neutral Audit
+============================================================
+
+训练前：
+
+T1/T2/T3
+
+必须：
+
+new_logits == R2 logits。
+
+至少：
+
+1024 HeadTrain targets。
+
+要求：
+
+logit maxdiff<1e-6
+
+prob maxdiff<1e-6
+
+candidate maxdiff=0。
+
+============================================================
+三十二、Gate Audit
+============================================================
+
+训练前：
+
+gate finite
+
+0<=g<=1。
+
+训练以后保存：
+
+按：
+
+Vehicle
+Pedestrian
+Bicycle
+
+gate mean
+median
+p10
+p90。
+
+再按：
+
+MovingVehicle
+StoppedVehicle
+ParkedVehicle
+
+描述。
+
+============================================================
+三十三、Gate不能作为人工规则
+============================================================
+
+禁止：
+
+看到结果后强制：
+
+Ped gate=0
+
+Vehicle gate=1。
+
+所有gate只能来自训练好的网络。
+
+============================================================
+三十四、Formal Training顺序
+============================================================
+
+T1
+→
+T2
+→
+T3。
+
+每个从独立冻结初始化开始。
+
+禁止：
+
+T2加载T1 checkpoint
+
+T3加载T2 checkpoint。
+
+============================================================
+三十五、冻结Checkpoint
+============================================================
+
+分别生成：
+
+T1_best.pt
+T2_best.pt
+T3_best.pt
+
+记录：
+
+SHA256
+selected epoch
+HeadDevSelectionScore。
+
+三个checkpoint全部freeze后：
+
+才能跑official VAL。
+
+============================================================
+三十六、Official VAL统一Evaluation
+============================================================
+
+统一重新评价：
+
+R0
+R2
+G1
+G3（Stage8 reference）
+T1
+T2
+T3。
+
+重点正式比较：
+
+T3 vs R2
+
+T3 vs G1
+
+T3 vs G3
+
+T3 vs T1
+
+T3 vs T2。
+
+============================================================
+三十七、Candidate Identity
+============================================================
+
+全部模型：
+
+使用完全相同6条candidate。
+
+因此：
+
+minADE
+minFDE
+MR
+
+完全一致。
+
+maxdiff：
+
+<1e-6。
+
+否则：
+
+evaluation FAIL。
+
+============================================================
+三十八、Primary metric
+============================================================
+
+Primary：
+
+Top1FDE。
+
+Secondary：
+
+Top1ADE
+OracleGap
+HitRate
+BestModeRank
+MRR。
+
+============================================================
+三十九、Primary Groups
+============================================================
+
+Overall
+
+Vehicle
+
+Pedestrian
+
+Bicycle
+
+MovingVehicle
+
+StoppedVehicle
+
+ParkedVehicle
+
+Vehicle>5m
+
+Pedestrian<5m
+
+Pedestrian>5m。
+
+============================================================
+四十、不要再把Semantic Groups作为核心
+============================================================
+
+NearTurnConnector
+NearTrafficControl
+
+可以保留历史报告，
+
+但Stage9不建模semantic。
+
+因此不作为Stage9支持条件。
+
+============================================================
+四十一、Interaction-sensitive Groups
+============================================================
+
+新增正式interaction groups。
+
+按target当前邻居数：
+
+Neighbor0
+Neighbor1-2
+Neighbor3-5
+Neighbor6-8。
+
+按最近当前邻居距离：
+
+0-5m
+5-10m
+10-20m
+20-50m。
+
+这些定义必须：
+
+evaluation前冻结。
+
+============================================================
+四十二、Bootstrap
+============================================================
+
+official VAL150：
+
+paired whole-scene cluster bootstrap
+
+1000 replicates
+seed2022。
+
+Primary：
+
+T3 vs R2。
+
+Secondary：
+
+T1 vs R2
+T2 vs R2
+T3 vs T1
+T3 vs T2
+T3 vs G1。
+
+============================================================
+四十三、Bootstrap groups
+============================================================
+
+至少：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+MovingVehicle
+Vehicle>5m
+Pedestrian<5m
+Pedestrian>5m。
+
+============================================================
+四十四、T1判定
+============================================================
+
+ResidualGraph = SUPPORTED
+
+如果：
+
+T1 vs R2
+
+Overall Top1FDE：
+
+delta<0
+CI upper<0。
+
+============================================================
+四十五、TypeAdaptation判定
+============================================================
+
+TypeAdaptation = SUPPORTED
+
+要求：
+
+T2 vs T1：
+
+Pedestrian Top1FDE：
+
+delta<0
+
+且：
+
+Overall不能可靠恶化。
+
+同时：
+
+Vehicle不能可靠恶化。
+
+若Ped只点估计改善但CI跨0：
+
+TypeAdaptation =
+WEAK_SUPPORTED。
+
+============================================================
+四十六、BalancedTraining判定
+============================================================
+
+BalancedTraining = SUPPORTED
+
+要求：
+
+T3相对T2：
+
+Pedestrian：
+
+Top1FDE改善或保持，
+
+且：
+
+Overall/Vehicle不可靠恶化。
+
+============================================================
+四十七、TA-FIG主成功条件
+============================================================
+
+TAFIG = SUPPORTED
+
+必须：
+
+1.
+T3 vs R2 Overall Top1FDE：
+
+delta<0
+
+95%CI upper<0。
+
+2.
+Vehicle：
+
+不能可靠恶化。
+
+3.
+Pedestrian：
+
+不能出现可靠恶化。
+
+并且：
+
+Pedestrian point delta：
+
+<= +0.01m。
+
+4.
+Bicycle：
+
+不能出现可靠恶化：
+
+95% CI lower不能>0。
+
+============================================================
+四十八、强成功条件
+============================================================
+
+TAFIG_STRONG = YES
+
+如果：
+
+T3 vs R2：
+
+Overall可靠改善
+
+Vehicle可靠改善
+
+Pedestrian：
+
+point estimate <= R2
+
+且无可靠恶化。
+
+如果Pedestrian也可靠改善：
+
+记录为：
+
+STRONG_PLUS。
+
+============================================================
+四十九、相对Stage8 G1
+============================================================
+
+这是最关键的机制问题之一。
+
+比较：
+
+T3 vs G1。
+
+我们希望看到：
+
+Vehicle收益大体保留，
+
+同时：
+
+Pedestrian明显恢复。
+
+报告：
+
+VehicleRetentionRatio：
+
+(T3-R2 improvement)
+/
+(G1-R2 improvement)
+
+注意符号转换为绝对improvement后计算。
+
+============================================================
+五十、Vehicle收益保留Gate
+============================================================
+
+要求：
+
+VehicleRetentionRatio >= 0.70。
+
+即：
+
+至少保留G1相对R2
+70%的Vehicle Top1FDE收益。
+
+否则：
+
+即使Ped修好了，
+
+TA-FIG也不够成功。
+
+============================================================
+五十一、Pedestrian Recovery
+============================================================
+
+定义：
+
+G1PedDegradation：
+
+G1 - R2。
+
+T3PedDegradation：
+
+T3 - R2。
+
+RecoveryRatio：
+
+1 -
+T3PedDegradation
+/
+G1PedDegradation。
+
+若T3<=R2：
+
+RecoveryRatio >=1。
+
+目标：
+
+RecoveryRatio >=0.8。
+
+作为描述性工程目标。
+
+不作为唯一统计结论。
+
+============================================================
+五十二、Gate解释
+============================================================
+
+如果成功：
+
+可以描述：
+
+Vehicle平均gate较高
+
+Pedestrian平均gate较低
+
+等。
+
+但禁止写：
+
+“gate证明Vehicle更依赖交互”
+
+除非有专门因果消融。
+
+只写：
+
+“模型学习到不同类型的残差使用强度”。
+
+============================================================
+五十三、Type Adapter Ablation
+============================================================
+
+T1 vs T2
+
+已经承担：
+
+type adapter + gate
+
+的整体消融。
+
+不再拆：
+
+adapter-only
+gate-only
+
+避免实验无限增长。
+
+============================================================
+五十四、Training imbalance诊断
+============================================================
+
+记录每个epoch：
+
+Vehicle/Ped/Bicycle
+
+loss贡献
+
+sample count。
+
+T3额外保存：
+
+micro loss
+
+macro loss。
+
+确认：
+
+macro项实际非零参与梯度。
+
+============================================================
+五十五、Mode Change Analysis
+============================================================
+
+T3 vs R2：
+
+changed rate
+
+improved count
+
+worsened count
+
+mean gain
+
+mean harm
+
+net delta。
+
+并按：
+
+Vehicle
+Pedestrian
+Bicycle
+
+分开。
+
+============================================================
+五十六、Cases
+============================================================
+
+只在aggregate完成后选择：
+
+Case1：
+R2错，T3正确的MovingVehicle。
+
+Case2：
+G1把Pedestrian改坏，
+T3保持/恢复R2正确mode。
+
+Case3：
+高交互Vehicle，
+gate高且T3优于R2。
+
+Case4：
+T3失败案例。
+
+============================================================
+五十七、效率
+============================================================
+
+记录：
+
+Params
+
+reranker CUDA forward latency
+
+gate latency
+
+peak memory。
+
+和：
+
+R2
+G1
+
+比较。
+
+不需要再测semantic retrieval。
+
+Stage9没有map graph。
+
+============================================================
+五十八、非常重要：论文证据等级
+============================================================
+
+因为Stage9假设受官方VAL启发，
+
+最终报告必须写：
+
+Official VAL result =
+development-reuse evidence。
+
+如果Stage9成功：
+
+下一阶段必须做：
+
+Stage9B
+TRAIN700 scene-level frozen cross-validation
+
+作为额外确认。
+
+不能直接跳到论文定稿。
+
+============================================================
+五十九、Stage9B暂时不要执行
+============================================================
+
+现在只执行：
+
+Stage9A。
+
+若：
+
+TAFIG SUPPORTED
+
+再由大脑AI设计：
+
+Stage9B confirmatory CV。
+
+若Stage9A失败：
+
+STOP。
+
+============================================================
+六十、输出目录
+============================================================
+
+创建：
+
+outputs/stage9a_type_adaptive_future_graph/
+
+00_manifest/
+
+01_training/
+T1/
+T2/
+T3/
+
+02_checkpoints/
+
+03_evaluation/
+
+04_bootstrap/
+
+05_diagnostics/
+
+06_tables/
+
+07_cases/
+
+08_efficiency/
+
+09_reports/
+
+============================================================
+六十一、主要表
+============================================================
+
+至少输出：
+
+stage9a_main_results.csv
+
+stage9a_type_results.csv
+
+stage9a_motion_results.csv
+
+stage9a_interaction_context_results.csv
+
+stage9a_bootstrap_ci.csv
+
+stage9a_gate_statistics.csv
+
+stage9a_mode_change.csv
+
+stage9a_training_summary.csv
+
+stage9a_efficiency.csv
+
+stage9a_checkpoint_manifest.csv
+
+============================================================
+六十二、Final Report
+============================================================
+
+输出：
+
+09_reports/
+stage9a_final_report.md
+
+结构：
+
+【Research Question】
+
+【Why Stage8 G1 Failed on Heterogeneous Types】
+
+【Frozen R2 Base】
+
+【TA-FIG Architecture】
+
+【Type Adapter】
+
+【Reliability Gate】
+
+【Balanced Objective】
+
+【No Leakage】
+
+【Tiny Overfit】
+
+【Formal Training】
+
+【Checkpoint Selection】
+
+【Candidate Identity】
+
+【Main Results】
+
+【R2】
+
+【T1 Shared Residual Graph】
+
+【T2 Type-Adaptive Graph】
+
+【T3 TA-FIG】
+
+【Vehicle】
+
+【Pedestrian】
+
+【Bicycle】
+
+【Moving Vehicle】
+
+【Interaction Context】
+
+【Bootstrap】
+
+【Vehicle Benefit Retention】
+
+【Pedestrian Recovery】
+
+【Gate Diagnostics】
+
+【Mode Change】
+
+【Cases】
+
+【Efficiency】
+
+【Limitations】
+
+【Scientific Decision】
+
+============================================================
+六十三、最终Scientific Decision
+============================================================
+
+必须输出：
+
+ResidualGraph =
+SUPPORTED /
+NOT_SUPPORTED
+
+TypeAdaptation =
+SUPPORTED /
+WEAK_SUPPORTED /
+NOT_SUPPORTED
+
+BalancedTraining =
+SUPPORTED /
+NOT_SUPPORTED
+
+TAFIG =
+SUPPORTED /
+NOT_SUPPORTED
+
+TAFIG_STRONG =
+YES / NO
+
+VehicleBenefitRetained =
+YES / NO
+
+PedestrianNegativeTransferResolved =
+YES / NO
+
+PaperUsableTAFIG =
+YES / NO
+
+RecommendedFinalModel =
+R2 /
+G1 /
+T1 /
+T2 /
+T3
+
+ReadyStage9BConfirmatoryCV =
+YES / NO
+
+============================================================
+六十四、PaperUsable规则
+============================================================
+
+PaperUsableTAFIG = YES
+
+仅当：
+
+TAFIG = SUPPORTED
+
+且：
+
+VehicleBenefitRetained = YES
+
+且：
+
+PedestrianNegativeTransferResolved = YES。
+
+============================================================
+六十五、禁止事项
+============================================================
+
+结果不好以后禁止：
+
+把Ped gate手工设0
+
+把Vehicle gate手工设1
+
+换seed
+
+改loss比例
+
+改adapter rank
+
+调gate hidden
+
+换neighbor radius
+
+换neighbor count
+
+修改R2
+
+加入semantic graph
+
+重新训练Stage5A。
+
+如果失败：
+
+STOP。
+
+============================================================
+六十六、Git
+============================================================
+
+建议：
+
+feat: implement R2-anchored type-adaptive future graph
+
+audit: verify neutral R2 residual initialization
+
+train: fit Stage9A shared and type-adaptive variants
+
+eval: assess heterogeneous ranking transfer in Stage9A
+
+docs: finalize Stage9A scientific decision
+
+push：
+
+stage9a/type-adaptive-future-interaction
+
+禁止merge main。
+
+============================================================
+六十七、完成后只汇报
+============================================================
+
+Git commit=
+
+Tiny:
+T1=
+T2=
+T3=
+
+T1 checkpoint SHA=
+T2 checkpoint SHA=
+T3 checkpoint SHA=
+
+R2 Overall Top1FDE=
+G1 Overall Top1FDE=
+
+T1 Overall Top1FDE=
+T2 Overall Top1FDE=
+T3 Overall Top1FDE=
+
+T3 vs R2 Overall delta/CI=
+
+Vehicle:
+R2=
+G1=
+T3=
+T3-R2 CI=
+
+Pedestrian:
+R2=
+G1=
+T3=
+T3-R2 CI=
+
+Bicycle:
+R2=
+G1=
+T3=
+T3-R2 CI=
+
+MovingVehicle:
+R2=
+G1=
+T3=
+
+Vehicle>5:
+R2=
+G1=
+T3=
+
+Mean gate:
+Vehicle=
+Pedestrian=
+Bicycle=
+
+VehicleRetentionRatio=
+
+PedestrianRecoveryRatio=
+
+ResidualGraph=
+
+TypeAdaptation=
+
+BalancedTraining=
+
+TAFIG=
+
+TAFIG_STRONG=
+
+VehicleBenefitRetained=
+
+PedestrianNegativeTransferResolved=
+
+PaperUsableTAFIG=
+
+RecommendedFinalModel=
+
+ReadyStage9BConfirmatoryCV=
+
+STOP。
+
+等待大脑AI审查。
