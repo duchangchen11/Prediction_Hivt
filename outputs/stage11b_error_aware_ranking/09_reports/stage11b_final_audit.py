@@ -19,6 +19,12 @@ def training_audit():
         assert list(map(len,parts))==[378,42,210] and len(set.union(*parts))==630
         assert not any(parts[i]&parts[j] for i in range(3) for j in range(i));allouter.extend(s['OuterTest'])
         norm=read_json(ROOT/f'02_splits/stage11b_fold{fold}_normalization.json');train=indices(fold,'InnerTrain')
+        initial_model=fresh(fold,'cpu').eval()
+        assert torch.equal(initial_model.head[-1].weight,torch.zeros_like(initial_model.head[-1].weight))
+        assert torch.equal(initial_model.head[-1].bias,torch.zeros_like(initial_model.head[-1].bias))
+        with torch.no_grad():
+            args,_,_=Store(fold).batch(train[:16],device='cpu',part='InnerTrain');out=initial_model(*args)
+            assert torch.equal(out['delta_logits'],torch.zeros_like(out['delta_logits'])) and torch.equal(out['mode_logits'],args[6])
         assert norm['fit_partition']=='InnerTrain' and set(norm['fit_scenes'])==parts[0] and norm['fit_actors']==len(train)
         assert norm['fit_indices_sha256']==hashlib.sha256(train.tobytes()).hexdigest() and not norm['OuterTest_or_InnerDev_or_HeadDev_used']
         baseline=read_json(ROOT/f'03_training/fold{fold}/R2/stage11b_summary.json');configs=[];orders=[];initial=[]
@@ -68,7 +74,7 @@ def training_audit():
     return {'Status':'PASS','CVIsolation':'PASS','LossImplementation':'PASS','FoldSpecificR2Trained':True,
         'FoldCheckpoints':12,'SameABCInitializationWithinFold':True,'IndependentInitializationAcrossFolds':True,
         'SameABCOrderOnCommonEpochs':True,'SameControlledConfiguration':True,'NoTrainingSourceChanged':True,
-        'CheckpointSelectionVerified':True,'AllDistinctActorsUsedIncludingBicycle':True,
+        'CheckpointSelectionVerified':True,'ZeroHeadInitialLogitsEqualStage5A':True,'AllDistinctActorsUsedIncludingBicycle':True,
         'NormalizationFitOnlyInnerTrain':True,'GTpoisonWindows':100,'HistoricalFilesAndCheckpointsUnchanged':True}
 
 def oof_audit():
@@ -87,7 +93,7 @@ def oof_audit():
         assert np.allclose(pp.sum(-1),1,atol=1e-6,rtol=0.)
         errors=fd[source];ades=ad[source];best=errors.argmin(-1);ii=np.arange(len(ix));top=pp.argmax(-1)
         c=(errors-errors.min(-1,keepdims=True)).astype(np.float64);scale=np.maximum(1,c.mean(-1))
-        qq=np.exp(-errors.astype(np.float64));qq/=qq.sum(-1,keepdims=True)
+        qq=np.exp(-errors.astype(np.float64)+errors.min(-1,keepdims=True).astype(np.float64));qq/=qq.sum(-1,keepdims=True)
         for j in range(5):
             assert np.array_equal(v[:,j,0],errors[ii,top[:,j]].astype(np.float64))
             assert np.array_equal(v[:,j,1],ades[ii,top[:,j]].astype(np.float64))
