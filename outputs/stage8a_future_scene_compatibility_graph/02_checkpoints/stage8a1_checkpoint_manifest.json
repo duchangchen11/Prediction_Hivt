@@ -1,0 +1,42 @@
+{
+  "status": "FROZEN_ALL_COMPLETE",
+  "training_prohibited_after_this_file": true,
+  "checkpoints": [
+    {
+      "Variant": "G1",
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/G1/formal/best_dev_loss.pt",
+      "SHA256": "718311dfc9f7634a8e78efe2aece9c2126b20ce87c7d34cb68b7f832c5642b0e",
+      "BestEpoch": 6,
+      "HeadDevLoss": 1.5311777750364308,
+      "Params": 24066,
+      "Selection": "minimum HeadDev ranking loss",
+      "TrainingRegistrationSHA": "a33af307157558348af6732c8432d12b527e465815caf0030b6650c702820dfb"
+    },
+    {
+      "Variant": "G2",
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/G2/formal/best_dev_loss.pt",
+      "SHA256": "63416baee8e971bd4ce2a1e710f1e2bab31f5b918b777a186ec8c03c759db172",
+      "BestEpoch": 3,
+      "HeadDevLoss": 1.5221924442339176,
+      "Params": 20546,
+      "Selection": "minimum HeadDev ranking loss",
+      "TrainingRegistrationSHA": "9c538e4909147a52da616c07598af7606e0d4b02bfd5ffe425fe7b3bbaf44ce5"
+    },
+    {
+      "Variant": "G3",
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/G3/formal/best_dev_loss.pt",
+      "SHA256": "7493726583b4e0b93d631644f9e59583422acf3f28a4feb9292069eba4fc5a0c",
+      "BestEpoch": 2,
+      "HeadDevLoss": 1.5170639279037326,
+      "Params": 37187,
+      "Selection": "minimum HeadDev ranking loss",
+      "TrainingRegistrationSHA": "9c538e4909147a52da616c07598af7606e0d4b02bfd5ffe425fe7b3bbaf44ce5"
+    }
+  ],
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "registration_sha256": "9c538e4909147a52da616c07598af7606e0d4b02bfd5ffe425fe7b3bbaf44ce5",
+  "G1_training_registration_sha256": "a33af307157558348af6732c8432d12b527e465815caf0030b6650c702820dfb",
+  "graph_spec_sha256": "24492dafa2ac50493ba865dac1511e2e6035b904880fee7f35c6c06e0c6077f7",
+  "frozen_predictor_state_sha256": "0a49aacd90d08951bc7750a473dc83996f9629c1041d39ac03d69bb5ea321437",
+  "official_VAL_used": false
+}

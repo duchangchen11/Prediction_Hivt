@@ -1,0 +1,30 @@
+{
+  "status": "COMPLETE",
+  "variant": "G1",
+  "best_epoch": 6,
+  "executed_epochs": 11,
+  "selected": {
+    "dev_loss": 1.5311777750364308,
+    "dev_Top1ADE": 1.0934993528101913,
+    "dev_Top1FDE": 2.409881173072329,
+    "dev_OracleGap": 1.0510447900574285
+  },
+  "checkpoint_sha256": "718311dfc9f7634a8e78efe2aece9c2126b20ce87c7d34cb68b7f832c5642b0e",
+  "elapsed_seconds": 1002.4654874989646,
+  "checkpoint_selection": "HeadDev ranking loss only",
+  "official_VAL_used": false,
+  "predictor_gradient_count": 0,
+  "candidate_requires_grad": false,
+  "microbatch": 128,
+  "accumulation": 8,
+  "effective_batch": 1024,
+  "AMP": false,
+  "fallbacks": [
+    {
+      "epoch": 0,
+      "reason": "frozen forward AMP compatibility failure; use FP32",
+      "error": "value cannot be converted to type at::Half without overflow"
+    }
+  ],
+  "final_carry_discarded_without_optimizer_step": 605
+}

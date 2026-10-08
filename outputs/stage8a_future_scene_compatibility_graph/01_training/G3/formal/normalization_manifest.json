@@ -1,0 +1,340 @@
+{
+  "status": "PASS",
+  "fit_scenes": 630,
+  "fit_partition": "HeadTrain only",
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "statistics": {
+    "0": {
+      "3": {
+        "count": 13395834,
+        "mean": 0.7253571747727557,
+        "std": 0.8733239997221233,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999988549509056,
+        "constant": false
+      },
+      "4": {
+        "count": 13395834,
+        "mean": 0.16666666668770824,
+        "std": 0.07617426537814946,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999868723791767,
+        "constant": false
+      },
+      "5": {
+        "count": 13395834,
+        "mean": 0.5410648600554979,
+        "std": 1.2021371000924965,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999991681488176,
+        "constant": false
+      },
+      "6": {
+        "count": 13395834,
+        "mean": 2.001636613477915,
+        "std": 4.531972980803555,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999997793455999,
+        "constant": false
+      },
+      "7": {
+        "count": 13395834,
+        "mean": 2.0338428831108897,
+        "std": 4.527425141829026,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999997791239505,
+        "constant": false
+      },
+      "8": {
+        "count": 13395834,
+        "mean": 10.690500365425153,
+        "std": 32.262613208761174,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999999690043717,
+        "constant": false
+      },
+      "9": {
+        "count": 13395834,
+        "mean": 1.4859988085862503,
+        "std": 19.934740000365704,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999999498363183,
+        "constant": false
+      },
+      "10": {
+        "count": 13395834,
+        "mean": 8.094613153335215,
+        "std": 13.673990230298632,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999999268684627,
+        "constant": false
+      },
+      "11": {
+        "count": 13395834,
+        "mean": 8.165621439864347,
+        "std": 13.660608346633428,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999999267968234,
+        "constant": false
+      },
+      "12": {
+        "count": 13395834,
+        "mean": 1.3609369066118515,
+        "std": 2.276768057657364,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999995607811004,
+        "constant": false
+      },
+      "13": {
+        "count": 13395834,
+        "mean": -0.004852901058107015,
+        "std": 0.617465690008527,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999983804794392,
+        "constant": false
+      },
+      "14": {
+        "count": 13395834,
+        "mean": 0.1982725170091522,
+        "std": 0.7611836689895093,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999986862583539,
+        "constant": false
+      }
+    },
+    "1": {
+      "0": {
+        "count": 71009568,
+        "mean": 14.39656387184052,
+        "std": 10.415844340589912,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999999039924301,
+        "constant": false
+      },
+      "1": {
+        "count": 71009568,
+        "mean": 0.41339344430089886,
+        "std": 0.3869511290844027,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999974157010006,
+        "constant": false
+      },
+      "2": {
+        "count": 71009568,
+        "mean": 18.320276402643454,
+        "std": 12.918828285002242,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999999225936053,
+        "constant": false
+      },
+      "3": {
+        "count": 71009568,
+        "mean": 21.776978509855105,
+        "std": 18.187280207831122,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999999450165207,
+        "constant": false
+      },
+      "4": {
+        "count": 71009568,
+        "mean": 16.076155537250592,
+        "std": 10.609126336861994,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999999057415405,
+        "constant": false
+      },
+      "5": {
+        "count": 71009568,
+        "mean": -0.0005618345909196925,
+        "std": 0.6544269317767644,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999984719478624,
+        "constant": false
+      },
+      "6": {
+        "count": 71009568,
+        "mean": 0.10556198613961654,
+        "std": 0.7487200689980887,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999986643891278,
+        "constant": false
+      },
+      "7": {
+        "count": 71009568,
+        "mean": 0.711897989424081,
+        "std": 1.2601054129915041,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999992064162283,
+        "constant": false
+      },
+      "8": {
+        "count": 71009568,
+        "mean": -0.9501371621092407,
+        "std": 2.4156914831328393,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999995860400249,
+        "constant": false
+      },
+      "9": {
+        "count": 71009568,
+        "mean": 0.16666666668899996,
+        "std": 0.07618720980133863,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999868746095675,
+        "constant": false
+      },
+      "10": {
+        "count": 71009568,
+        "mean": 0.16666666667863764,
+        "std": 0.07629303156552923,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999868928148181,
+        "constant": false
+      }
+    },
+    "3": {
+      "15": {
+        "count": 3677666,
+        "mean": 0.00739535062479642,
+        "std": 0.4975027339853402,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999979899648351,
+        "constant": false
+      },
+      "16": {
+        "count": 3677666,
+        "mean": 0.11038852280205157,
+        "std": 0.8603782380352022,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999988377218373,
+        "constant": false
+      }
+    },
+    "4": {
+      "0": {
+        "count": 5670021,
+        "mean": 0.2724684010132054,
+        "std": 0.3139744404206193,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999968150375117,
+        "constant": false
+      },
+      "1": {
+        "count": 5670021,
+        "mean": 0.4980753752339707,
+        "std": 0.5364164787531911,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999981357803583,
+        "constant": false
+      },
+      "2": {
+        "count": 5670021,
+        "mean": 0.5845737831312194,
+        "std": 0.8320753172440597,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999987981871623,
+        "constant": false
+      },
+      "3": {
+        "count": 5670021,
+        "mean": 0.414985484533538,
+        "std": 0.3742642456529911,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999973280981561,
+        "constant": false
+      },
+      "4": {
+        "count": 5670021,
+        "mean": 0.4122541318341556,
+        "std": 0.4512975483032871,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999977841719108,
+        "constant": false
+      },
+      "5": {
+        "count": 5670021,
+        "mean": 0.5509102906703155,
+        "std": 0.448026083216377,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999977679920758,
+        "constant": false
+      },
+      "6": {
+        "count": 3677666,
+        "mean": 0.00478280925017199,
+        "std": 0.6071261644714743,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999983528986042,
+        "constant": false
+      },
+      "7": {
+        "count": 3677666,
+        "mean": 0.17151293250864622,
+        "std": 0.7758596903944954,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.999998711108821,
+        "constant": false
+      },
+      "9": {
+        "count": 1992355,
+        "mean": 0.7395666184893723,
+        "std": 0.3903634770958207,
+        "normalized_mean": 0.0,
+        "normalized_std": 0.9999974382914977,
+        "constant": false
+      }
+    }
+  },
+  "continuous_columns": {
+    "0": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "1": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "3": [
+      15,
+      16
+    ],
+    "4": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9
+    ]
+  },
+  "epsilon": 1e-06,
+  "std_ddof": 0,
+  "population": "valid packed full-target contexts; neighbor nodes counted per target occurrence; each valid mode edge counted once per target",
+  "conditional_validity": "node valid target/neighbor; interaction real neighbor; tangent/heading lane-only; polygon-inside polygon-only; all padding stays zero",
+  "unchanged": "type/semantic one-hot, binary flags, valid flags, original output logits; nonlane semantic9/heading/tangent remain0",
+  "HeadDev_used": false,
+  "VAL_used": false,
+  "finite": true
+}

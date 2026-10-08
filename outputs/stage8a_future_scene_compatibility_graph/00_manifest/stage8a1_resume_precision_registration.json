@@ -1,0 +1,81 @@
+{
+  "status": "AMENDED_PROTOCOL_BEFORE_FORMAL_TRAINING",
+  "base_commit": "df28e8638a1901422d7cded42430a32ea580f02c",
+  "graph_spec_sha256": "24492dafa2ac50493ba865dac1511e2e6035b904880fee7f35c6c06e0c6077f7",
+  "split_sha256": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+  "seeds": {
+    "common": 2022,
+    "interaction": 2123,
+    "map": 2124
+  },
+  "params": {
+    "G1": 24066,
+    "G2": 20546,
+    "G3": 37187
+  },
+  "initial_state_sha256": {
+    "G1": "e3c7296a6d67da33b3ff877d655147f4d683c36062178532896cc568763223be",
+    "G2": "02ebf3a2316388953085e94aa5052b29c010315f82b0b7a67f0d707d1c8563a8",
+    "G3": "3d14bd1da01064a0b917823ff2d104b9c86e64f1751c247ef7d0c52d42724d13"
+  },
+  "initialization_shared_bitwise": true,
+  "architecture_fidelity": "0C raw15+raw15+17 interaction value input47; hidden64+hidden64+17 attention input145; required exact parameter counts preserved",
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "max_epochs": 50,
+  "patience": 5,
+  "selection": "minimum HeadDev ranking loss; strict improvement",
+  "microbatch": 128,
+  "accumulation": 8,
+  "effective_batch": 1024,
+  "epoch_remainder": "continuous no-replacement shuffled epoch stream; carry final remainder forward; dev at epoch boundary; no smaller optimizer step; final incomplete gradient discarded",
+  "tiny": {
+    "count": 128,
+    "optimizer_updates": 300,
+    "FP32": true,
+    "pass": "ExcessLossReduction>=0.90 and frozen numerical/gradient requirements"
+  },
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "feature_manifest_sha256": "00c725d2d924da5f0359ce20af4fc9e1e6b4e67d17cf681bba10d2506640f42c",
+  "training_sequence": [
+    "G1",
+    "G2",
+    "G3"
+  ],
+  "temperature_m": 1.0,
+  "checkpoint_freeze_before_VAL": true,
+  "test_used": false,
+  "map_groups": "actor-level fixed over all6 modes: MapNonEmpty=any real map edge; ZeroMap=no real map edge in anymode; RouteCenterlineAvailable=Vehicle/Bicycle any lane/connector; PedSemanticSpecificAvailable=Pedestrian any crossing/walkway",
+  "interaction_distance_bins_m": [
+    0,
+    2,
+    5,
+    10,
+    20,
+    50,
+    "inf"
+  ],
+  "bootstrap": {
+    "seed": 2022,
+    "replicates": 1000,
+    "unit": "whole scene",
+    "shared_resampling": true,
+    "percentiles": [
+      2.5,
+      97.5
+    ]
+  },
+  "decisions": "Exact user Stage8A-1 rules sections43-51; negative FDE delta improves; reliable harm means CI_lower>0; overlapping subgroups descriptive/unadjusted",
+  "recommended_model": "G3 if PaperUsableFSCG YES; otherwise G1 if G1-R2 Overall CI_upper<0 and no reliable Vehicle/Pedestrian harm; otherwise R2",
+  "new_sources_sha256": {
+    "stage8a1_common.py": "06b27705869b0e775998064a3f9035bc59ee83e3eafde369ce8840452d777645",
+    "stage8a1_resume_train_fp32.py": "8299a83f6ebed7ebf734ac3d4e6411893f6f9b9470fecea2648540c7098a082e"
+  },
+  "amendment_sha256": "da95b54e8a85ccdc121a524ed0d8d6a8c093a5cf9f435f62955826c1777dccef",
+  "historical_registration_sha256": "c70315b8575f48dd11dcbd2ed6f80d6e72a16e8b114cfd8906491b801444a02e",
+  "formal_output_subdirectory": "01_training/G{1,2,3}/formal/",
+  "engineering_patch": "AMP forward dtype compatibility: frozen map softmax yields Float/Half error; permit FP32 fallback, preserve completed G1; no G2 optimizer update preceded patch",
+  "previous_registration_sha256": "a33af307157558348af6732c8432d12b527e465815caf0030b6650c702820dfb",
+  "G1_checkpoint_preserved_sha256": "718311dfc9f7634a8e78efe2aece9c2126b20ce87c7d34cb68b7f832c5642b0e"
+}

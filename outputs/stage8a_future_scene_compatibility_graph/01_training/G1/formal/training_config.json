@@ -1,0 +1,26 @@
+{
+  "variant": "G1",
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "seed": 2022,
+  "max_epoch": 50,
+  "patience": 5,
+  "selection": "minimum HeadDev ranking loss",
+  "microbatch": 128,
+  "accumulation": 8,
+  "effective_batch": 1024,
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "initial_state_sha256": "e3c7296a6d67da33b3ff877d655147f4d683c36062178532896cc568763223be",
+  "AMP": true,
+  "architecture_source_sha256": "16b086e006e51b1cd67544c42b42ce869daccdad6e0d4636b4a04115f0947f9b",
+  "registration_sha256": "a33af307157558348af6732c8432d12b527e465815caf0030b6650c702820dfb",
+  "AMP_training": false,
+  "precision_probe_fallbacks": [
+    {
+      "epoch": 0,
+      "reason": "frozen forward AMP compatibility failure; use FP32",
+      "error": "value cannot be converted to type at::Half without overflow"
+    }
+  ]
+}
