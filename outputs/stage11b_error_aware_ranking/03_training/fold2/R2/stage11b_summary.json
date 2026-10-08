@@ -1,0 +1,52 @@
+{
+  "Status": "COMPLETE",
+  "Fold": 2,
+  "Model": "R2",
+  "SelectedEpoch": 2,
+  "ExecutedEpochs": 7,
+  "CheckpointScore": 2.2948874221344386,
+  "checkpoint_sha256": "8fc4b8534942026e05e4acfb9129a557bd44f90ec73e9e50039e4e465032d3d2",
+  "normalization_sha256": "e10bdad4e70ad875d0b3be424f8a72117a00f45782b60d1ae94a416e0ee0cf7d",
+  "split_sha256": "2d94467fe62114f18451b23b4cac5a7568e07a482fa7383fb753d75aaba2cfc1",
+  "config_sha256": "65da9688bb5feb5faa9179684563f0391a5007af03c65394a8476257198f22f0",
+  "initial_state_sha256": "ff772d2ea5915888ed05d6230a807c57a688d55668675e5525bd81947d992be0",
+  "DevMetrics": {
+    "Overall": {
+      "Count": 19084,
+      "Top1FDE": 2.2948874221344386,
+      "Top1ADE": 1.0334085293724298,
+      "HitRate": 0.2718507650387759,
+      "SoftCE": 1.5310930697592118
+    },
+    "Vehicle": {
+      "Count": 14245,
+      "Top1FDE": 2.6522991467029358,
+      "Top1ADE": 1.18220606541569,
+      "HitRate": 0.24113724113724114,
+      "SoftCE": 1.48874375490441
+    },
+    "Pedestrian": {
+      "Count": 4537,
+      "Top1FDE": 1.2751546739776363,
+      "Top1ADE": 0.6095461205617111,
+      "HitRate": 0.3519947101608993,
+      "SoftCE": 1.6679213866016689
+    },
+    "Bicycle": {
+      "Count": 302,
+      "Top1FDE": 0.7558061701780654,
+      "Top1ADE": 0.3825570321472251,
+      "HitRate": 0.5165562913907285,
+      "SoftCE": 1.4730663035089606
+    }
+  },
+  "Seconds": 7.643278449999343,
+  "MeanEpochSeconds": 1.0846843020013435,
+  "PeakGPUMemoryBytes": 169574912,
+  "Params": 673,
+  "R2OriginalProtocolPreserved": true,
+  "HistoricalR2Loaded": false,
+  "AllDistinctTrainingActorsUsed": 157356,
+  "OuterTestUsed": false,
+  "PredictorGradientCount": 0
+}

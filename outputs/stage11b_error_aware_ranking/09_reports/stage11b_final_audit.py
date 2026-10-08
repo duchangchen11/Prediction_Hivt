@@ -6,6 +6,7 @@ from stage11b_common import *
 
 def training_audit():
     verify(history=True);f=frame();assert len(f)==260151 and f.actor_id.is_unique and f.source_index.is_unique
+    assert f.HeadTrain.eq(1).all() and set(f.horizon)=={'full_horizon'} and f.future_mask_bits.eq('111111111111').all()
     pre=read_json(ROOT/'01_preflight/stage11b_data_and_poison_audit.json');assert pre['Status']=='PASS' and pre['GTpoisonWindows']==100
     for name,h in pre['cache_files'].items():assert sha256(CACHE/name)==h
     assert pre['GraphSourceSHA256']==sha256(S8/'00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py')

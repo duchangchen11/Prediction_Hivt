@@ -1,0 +1,52 @@
+{
+  "Status": "FROZEN",
+  "Fold": 2,
+  "Checkpoints": [
+    {
+      "Fold": 2,
+      "Model": "R2",
+      "Path": "outputs/stage11b_error_aware_ranking/04_checkpoints/fold2/R2_best.pt",
+      "SHA256": "8fc4b8534942026e05e4acfb9129a557bd44f90ec73e9e50039e4e465032d3d2",
+      "SelectedEpoch": 2,
+      "CheckpointScore": 2.2948874221344386,
+      "NormalizationSHA256": "e10bdad4e70ad875d0b3be424f8a72117a00f45782b60d1ae94a416e0ee0cf7d",
+      "SplitSHA256": "2d94467fe62114f18451b23b4cac5a7568e07a482fa7383fb753d75aaba2cfc1",
+      "TrainingConfigSHA256": "65da9688bb5feb5faa9179684563f0391a5007af03c65394a8476257198f22f0"
+    },
+    {
+      "Fold": 2,
+      "Model": "A",
+      "Path": "outputs/stage11b_error_aware_ranking/04_checkpoints/fold2/A_best.pt",
+      "SHA256": "24d0e6d0c30861d141a1eb57ac7a07cbde7ba433f14be3d82d6ba3d6ad8c9101",
+      "SelectedEpoch": 4,
+      "CheckpointScore": 1.0204868231896498,
+      "NormalizationSHA256": "e10bdad4e70ad875d0b3be424f8a72117a00f45782b60d1ae94a416e0ee0cf7d",
+      "SplitSHA256": "2d94467fe62114f18451b23b4cac5a7568e07a482fa7383fb753d75aaba2cfc1",
+      "TrainingConfigSHA256": "7e5ad66a49cd3511813f48753fa000304b0f3b7f1f07dbb2723c81ca6d45af66"
+    },
+    {
+      "Fold": 2,
+      "Model": "B",
+      "Path": "outputs/stage11b_error_aware_ranking/04_checkpoints/fold2/B_best.pt",
+      "SHA256": "915b7159c3b15ae267d0dfb7c54ecdebed0c13a7ef15859eee4e88286815dda3",
+      "SelectedEpoch": 1,
+      "CheckpointScore": 1.011320425080703,
+      "NormalizationSHA256": "e10bdad4e70ad875d0b3be424f8a72117a00f45782b60d1ae94a416e0ee0cf7d",
+      "SplitSHA256": "2d94467fe62114f18451b23b4cac5a7568e07a482fa7383fb753d75aaba2cfc1",
+      "TrainingConfigSHA256": "d3ad5306c5e80fef671184cf769f79bd7825d1412a15da521e81ab8546ea40bd"
+    },
+    {
+      "Fold": 2,
+      "Model": "C",
+      "Path": "outputs/stage11b_error_aware_ranking/04_checkpoints/fold2/C_best.pt",
+      "SHA256": "13d177b8381c5ad75ee8d5d20bbe5fc56f861dd4184976749cae110468551247",
+      "SelectedEpoch": 17,
+      "CheckpointScore": 0.9603433778074624,
+      "NormalizationSHA256": "e10bdad4e70ad875d0b3be424f8a72117a00f45782b60d1ae94a416e0ee0cf7d",
+      "SplitSHA256": "2d94467fe62114f18451b23b4cac5a7568e07a482fa7383fb753d75aaba2cfc1",
+      "TrainingConfigSHA256": "c90658db49d1f539be7961f2ec5d6214d3671636dfe9b545c4221bf8e5767b6d"
+    }
+  ],
+  "OuterTestEvaluationPermitted": true,
+  "FurtherTrainingPermitted": false
+}
