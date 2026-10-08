@@ -1,0 +1,101 @@
+{
+  "protocol_revision": "Stage8A-1 tiny gate amendment only",
+  "registered_utc": "2026-10-08T05:08:39.009865+00:00",
+  "historical_commit": "2a79b0d687192002537073147d93658bf4c6423e",
+  "historical_first_attempt": "STOP_TINY_GATE_FAILURE",
+  "failure_source": "INFEASIBLE_TINY_CRITERION",
+  "classification": "PROTOCOL_BUG",
+  "old_gate": "FinalLoss < 0.8 * InitialLoss",
+  "proof": "L(q,p)=H(q)+KL(q||p)>=H(q); old required loss below target entropy",
+  "H": 1.294783592224121,
+  "old_required_final_loss_below": 1.2509740829467775,
+  "new_formula": "ExcessLoss=L-H(q); ExcessLossReduction=1-(FinalLoss-H)/(InitialLoss-H)",
+  "threshold": 0.9,
+  "results": [
+    {
+      "Variant": "G1",
+      "HistoricalStatus": "FAIL",
+      "HistoricalFailureSource": "INFEASIBLE_TINY_CRITERION",
+      "H": 1.294783592224121,
+      "InitialLoss": 1.5637176036834717,
+      "FinalLoss": 1.2960175275802612,
+      "InitialExcessLoss": 0.2689340114593506,
+      "FinalExcessLoss": 0.0012339353561401367,
+      "ExcessLossReduction": 0.9954117541717975,
+      "Threshold": 0.9,
+      "AmendedStatus": "PASS",
+      "conditions": {
+        "ExcessLossReduction_ge_0_90": true,
+        "delta_finite_and_nonzero": true,
+        "graph_gradients_finite_nonzero": true,
+        "predictor_gradient_count_zero": true,
+        "candidate_requires_grad_false": true,
+        "no_NaN_Inf": true
+      }
+    },
+    {
+      "Variant": "G2",
+      "HistoricalStatus": "FAIL",
+      "HistoricalFailureSource": "INFEASIBLE_TINY_CRITERION",
+      "H": 1.294783592224121,
+      "InitialLoss": 1.5637176036834717,
+      "FinalLoss": 1.2958605289459229,
+      "InitialExcessLoss": 0.2689340114593506,
+      "FinalExcessLoss": 0.0010769367218017578,
+      "ExcessLossReduction": 0.9959955354253713,
+      "Threshold": 0.9,
+      "AmendedStatus": "PASS",
+      "conditions": {
+        "ExcessLossReduction_ge_0_90": true,
+        "delta_finite_and_nonzero": true,
+        "graph_gradients_finite_nonzero": true,
+        "predictor_gradient_count_zero": true,
+        "candidate_requires_grad_false": true,
+        "no_NaN_Inf": true
+      }
+    },
+    {
+      "Variant": "G3",
+      "HistoricalStatus": "FAIL",
+      "HistoricalFailureSource": "INFEASIBLE_TINY_CRITERION",
+      "H": 1.294783592224121,
+      "InitialLoss": 1.5637176036834717,
+      "FinalLoss": 1.2952133417129517,
+      "InitialExcessLoss": 0.2689340114593506,
+      "FinalExcessLoss": 0.0004297494888305664,
+      "ExcessLossReduction": 0.9984020262573017,
+      "Threshold": 0.9,
+      "AmendedStatus": "PASS",
+      "conditions": {
+        "ExcessLossReduction_ge_0_90": true,
+        "delta_finite_and_nonzero": true,
+        "graph_gradients_finite_nonzero": true,
+        "predictor_gradient_count_zero": true,
+        "candidate_requires_grad_false": true,
+        "no_NaN_Inf": true
+      }
+    }
+  ],
+  "TinyGateAmended": "YES",
+  "TinyGate": "PASS",
+  "ReadyFormalTraining": "YES",
+  "amendment_before_formal_training": true,
+  "amendment_before_first_official_VAL": true,
+  "tiny_repeated": false,
+  "additional_tiny_updates": 0,
+  "sample_seed_updates_optimizer_LR_unchanged": true,
+  "graph_and_formal_training_protocol_unchanged": true,
+  "historical_evidence_sha256": {
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/G1/stage8a1_tiny_audit.json": "9919294838de0f1ad251991b3a6eb6bbb833ab0d8c265546a9ea9aa4875db03c",
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/G1/gradient_audit.json": "e29a61b179110e6ee2774ae40a5d54333c2b99fae8100f301cc2770753b9d75f",
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/G2/stage8a1_tiny_audit.json": "b91ddfcdf39bc79949d2c3fddf42c550632e4d2907ccc14475d494bff919fa48",
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/G2/gradient_audit.json": "65bfae8d04059263572d4e869e7cd83ae2c872d052ef1e3b357f73203ee1fc15",
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/G3/stage8a1_tiny_audit.json": "e8c56e50effe38bd96b9a45f9f6f7aaaa0390dd298aff373ad7d864485f0806c",
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/G3/gradient_audit.json": "5114d1d096e5b5401cbce612f7db0a0378921d92c285b15aa5cbbb75bbb1fb92",
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/stage8a1_tiny_targets.json": "df602b00191f7ce698efb4608e85918a39f24a7b25ab879d08c99eb0d84e4190",
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/stage8a1_tiny_feasibility.json": "921367eb3add943058847fe75aca02f9bc2fe14613d506a78861ac85e07c57ae",
+    "outputs/stage8a_future_scene_compatibility_graph/01_training/stage8a1_stop_gate.json": "9c24d961aecda57cd87a5f5b1137fc78b53e8fff0759fe93cdbd724d30a46b3d"
+  },
+  "historical_registration_sha256": "c70315b8575f48dd11dcbd2ed6f80d6e72a16e8b114cfd8906491b801444a02e",
+  "new_audit_source_sha256": "589171b2e6a7d3aee559b65c8037747db3e30ba2db7cf34d8cccacc64c6adb39"
+}

@@ -1,0 +1,496 @@
+执行 Stage8A-1 Protocol Correction + Formal Training Resume。
+
+项目：
+/home/lrj/Prediction_Hivt
+
+当前分支：
+stage8a1/fscg-training-eval
+
+当前commit：
+2a79b0d687192002537073147d93658bf4c6423e
+
+============================================================
+1. 本次不是模型调参
+============================================================
+
+当前STOP原因不是模型失败，而是tiny gate数学不可实现。
+
+原tiny要求：
+
+FinalLoss < 0.8 * InitialLoss
+
+但SoftCE：
+
+L(q,p)=H(q)+KL(q||p)
+
+当前固定128 targets：
+
+H(q)=1.294783592224121
+InitialLoss=1.5637176036834717
+
+原要求：
+
+FinalLoss < 1.2509740829467775
+
+低于理论下界：
+
+1.294783592224121
+
+因此原20% total-loss gate无数学可行性。
+
+这属于：
+
+PROTOCOL_BUG
+
+不是：
+
+MODEL_FAILURE。
+
+============================================================
+2. 保存历史结论
+============================================================
+
+不得修改commit
+2a79b0d...
+
+中的历史记录。
+
+保持：
+
+historical Stage8A-1 first attempt =
+STOP_TINY_GATE_FAILURE
+
+并明确注明：
+
+failure source =
+INFEASIBLE_TINY_CRITERION
+
+不得改写为原实验PASS。
+
+============================================================
+3. 创建协议修正文档
+============================================================
+
+创建：
+
+outputs/stage8a_future_scene_compatibility_graph/
+00_manifest/
+stage8a1_tiny_gate_amendment.md
+
+和：
+
+stage8a1_tiny_gate_amendment.json
+
+记录：
+
+原门槛
+数学不可行证明
+修正公式
+修正阈值
+修正发生在正式训练和official VAL之前
+
+============================================================
+4. 新tiny gate
+============================================================
+
+定义：
+
+ExcessLoss = L - H(q)
+
+ExcessLossReduction =
+
+1 -
+(FinalLoss-H)
+/
+(InitialLoss-H)
+
+新的工程tiny gate：
+
+ExcessLossReduction >= 0.90
+
+同时必须：
+
+delta_logits finite and nonzero
+
+graph gradients finite and nonzero
+
+predictor gradient count = 0
+
+candidate requires_grad = False
+
+no NaN/Inf。
+
+============================================================
+5. 不重跑tiny
+============================================================
+
+使用已经完成的同一：
+
+fixed128
+seed2022
+300 FP32 optimizer updates
+
+结果重新计算。
+
+禁止：
+
+换sample
+换seed
+增加updates
+改optimizer
+改LR。
+
+============================================================
+6. 重新判定现有tiny
+============================================================
+
+已知：
+
+H =
+1.294783592224121
+
+G1：
+Initial =
+1.5637176036834717
+Final =
+1.2960175275802612
+
+G2：
+Initial =
+1.5637176036834717
+Final =
+1.2958605289459229
+
+G3：
+Initial =
+1.5637176036834717
+Final =
+1.2952133417129517
+
+重新输出：
+
+InitialExcessLoss
+FinalExcessLoss
+ExcessLossReduction
+PASS/FAIL。
+
+预计：
+
+G1 ≈99.54%
+G2 ≈99.60%
+G3 ≈99.84%。
+
+不得硬编码预计结果，
+必须代码重新计算。
+
+============================================================
+7. 若三者全部PASS
+============================================================
+
+正式解除：
+
+STOP_BEFORE_FORMAL_TRAINING
+
+写：
+
+TinyGateAmended = YES
+TinyGate = PASS
+ReadyFormalTraining = YES
+
+然后继续原Stage8A-1计划。
+
+============================================================
+8. 若任何一个FAIL
+============================================================
+
+STOP。
+
+不得调模型。
+
+============================================================
+9. 正式训练规则完全保持
+============================================================
+
+不得修改：
+
+GraphSpecFrozen
+
+radius
+quota
+features
+neighbor number
+hidden dim
+temperature
+loss
+seed
+optimizer
+LR
+weight decay
+HeadTrain/HeadDev split。
+
+仍然：
+
+HeadTrain630
+HeadDev70
+
+official VAL禁止参与：
+
+training
+early stopping
+checkpoint selection。
+
+============================================================
+10. 正式训练
+============================================================
+
+依次：
+
+G1
+G2
+G3
+
+每个从原冻结初始化重新开始。
+
+tiny weights不得复用。
+
+AdamW：
+
+lr=1e-3
+weight_decay=1e-4
+
+effective batch=1024
+
+max_epoch=50
+
+patience=5
+
+checkpoint：
+
+仅根据HeadDev ranking loss最小选择。
+
+============================================================
+11. 正式训练完成后
+============================================================
+
+冻结：
+
+G1 best checkpoint
+G2 best checkpoint
+G3 best checkpoint
+
+记录SHA256。
+
+三个checkpoint全部冻结后，
+才允许第一次统一official VAL150评估。
+
+============================================================
+12. Official VAL
+============================================================
+
+统一评估：
+
+R0
+R2
+G1
+G2
+G3
+
+必须重新跑同一evaluation pipeline。
+
+禁止直接复制历史R2表。
+
+============================================================
+13. Primary comparison
+============================================================
+
+最重要：
+
+G3 vs R2
+
+Overall Top1FDE
+
+paired whole-scene bootstrap
+1000
+seed2022。
+
+同时：
+
+G1 vs R0
+G1 vs R2
+G2 vs R0
+G3 vs G1
+G3 vs G2。
+
+============================================================
+14. Candidate identity
+============================================================
+
+要求：
+
+R0/R2/G1/G2/G3
+
+candidate geometry bitwise identical。
+
+minADE6
+minFDE6
+MR6
+
+必须一致。
+
+============================================================
+15. 后续所有评价
+============================================================
+
+严格继续此前Stage8A-1完整计划：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+MovingVehicle
+StoppedVehicle
+ParkedVehicle
+Vehicle>5
+Pedestrian<5
+Pedestrian>5
+
+以及：
+
+NearTurnConnector20
+NearTrafficControl20
+TurningVehicle_GT
+GT-left
+GT-right
+
+MapNonEmpty
+ZeroMap
+
+bootstrap
+mode-change
+attention diagnostic
+efficiency
+cases。
+
+============================================================
+16. 最终Scientific Decision
+============================================================
+
+仍然按照原冻结判据：
+
+AgentGraph =
+SUPPORTED / NOT_SUPPORTED
+
+LearnedGraphAdvantageOverR2 =
+YES / NO
+
+SemanticGraph =
+SUPPORTED / NOT_SUPPORTED
+
+SemanticContributionToJoint =
+SUPPORTED / NOT_SUPPORTED
+
+FSCG =
+SUPPORTED /
+TARGETED_SUPPORTED /
+NOT_SUPPORTED
+
+JointComplementarity =
+YES / NO
+
+PaperUsableFSCG =
+YES / NO
+
+RecommendedFinalModel =
+R2 / G1 / G2 / G3
+
+============================================================
+17. 禁止事项
+============================================================
+
+即使正式结果不好，也禁止：
+
+调radius
+调quota
+改hidden
+加GNN layer
+改loss
+改temperature
+换seed
+重采样
+重新训练predictor。
+
+如果G3失败：
+
+按原计划STOP，
+交给大脑AI分析。
+
+============================================================
+18. Git
+============================================================
+
+先commit协议修正：
+
+fix: replace infeasible Stage8A tiny loss gate with excess-loss criterion
+
+然后正式训练/评估：
+
+train: resume Stage8A G1 G2 G3 after tiny gate correction
+
+eval: compare FSCG against frozen R2
+
+docs: finalize Stage8A-1 scientific decision
+
+push：
+
+stage8a1/fscg-training-eval
+
+============================================================
+19. 最终汇报
+============================================================
+
+Tiny amendment：
+
+G1 ExcessLossReduction=
+G2 ExcessLossReduction=
+G3 ExcessLossReduction=
+
+TinyGate=
+PASS / FAIL
+
+然后继续汇报：
+
+G1 checkpoint SHA=
+G2 checkpoint SHA=
+G3 checkpoint SHA=
+
+R0 Overall Top1FDE=
+R2 Overall Top1FDE=
+G1 Overall Top1FDE=
+G2 Overall Top1FDE=
+G3 Overall Top1FDE=
+
+G1 vs R0 delta/95CI=
+G1 vs R2 delta/95CI=
+G2 vs R0 delta/95CI=
+G3 vs R2 delta/95CI=
+G3 vs G1 delta/95CI=
+G3 vs G2 delta/95CI=
+
+Vehicle R2/G3=
+Pedestrian R2/G3=
+MovingVehicle R2/G3=
+Vehicle>5 R2/G3=
+NearTurnConnector20 R2/G3=
+NearTrafficControl20 R2/G3=
+TurningVehicle_GT R2/G3=
+
+AgentGraph=
+LearnedGraphAdvantageOverR2=
+SemanticGraph=
+SemanticContributionToJoint=
+FSCG=
+JointComplementarity=
+PaperUsableFSCG=
+RecommendedFinalModel=
+
+完成后STOP。
