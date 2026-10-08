@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "required_csvs": [
+    "stage10a_main_results.csv",
+    "stage10a_type_results.csv",
+    "stage10a_motion_results.csv",
+    "stage10a_training_summary.csv",
+    "stage10a_checkpoint_manifest.csv",
+    "stage10a_bootstrap_ci.csv",
+    "stage10a_candidate_identity.csv"
+  ],
+  "groups": 10,
+  "models": 4,
+  "full_horizon_targets": 29934,
+  "scenes": 70,
+  "Bicycle_targets": 158,
+  "candidate_metrics_exact": true,
+  "Bicycle_all_actor_metrics_exact_R2": true,
+  "source_prediction_bitwise_replay": true,
+  "bootstrap_rows": 30,
+  "bootstrap_1000_seed2022": true,
+  "report_21_sections": true,
+  "historical_2280_files_unchanged": true,
+  "checkpoint_frozen": true,
+  "official_VAL_executed": false,
+  "test_executed": false,
+  "Stage10B_executed": false,
+  "STOP": true
+}

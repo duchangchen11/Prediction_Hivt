@@ -1,0 +1,19 @@
+Project: /home/lrj/Prediction_Hivt
+Base: b4dd350e3f9488e284943e0eed9c93fd87adb8d8
+Branch: stage10a/type-specific-future-interaction
+Environment: /home/lrj/anaconda3/envs/ped_intent/bin/python
+No environment creation, dependency upgrade, data download or official VAL/test execution.
+
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage10a_type_specific_future_graph/01_training/00_code/stage10a_prepare.py
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage10a_type_specific_future_graph/01_training/00_code/stage10a_audit.py
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage10a_type_specific_future_graph/01_training/00_code/stage10a_train.py --tiny-only
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage10a_type_specific_future_graph/01_training/00_code/stage10a_train.py
+
+Only after both expert checkpoints are frozen:
+PYTHONDONTWRITEBYTECODE=1 /home/lrj/anaconda3/envs/ped_intent/bin/python -u outputs/stage10a_type_specific_future_graph/03_evaluation/stage10a_post_freeze.py
+
+The preparation-stage display-label preflight is documented separately. Tiny gates are run once; subsequent formal invocation validates and preserves the saved PASS tiny records, then resets formal models to registered initial states.
+After the checkpoint manifest is created, all training/overwriting is prohibited.
+HeadDev70 is checkpoint-selected feasibility evidence, not independent confirmation.
+Commit code, documentation and small tables to the new branch and push; do not upload raw data, candidates, caches, checkpoints or full actor output CSV; do not merge main.
+Final action: STOP, wait for 大脑AI review. No automatic official VAL or Stage10B.

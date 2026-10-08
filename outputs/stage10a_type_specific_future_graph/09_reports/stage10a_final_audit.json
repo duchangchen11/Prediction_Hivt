@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE",
+  "engineering_status": "PASS",
+  "STOP": true,
+  "official_VAL_executed": false,
+  "test_executed": false,
+  "Stage10B_executed": false,
+  "historical_tracked_files_unchanged": 2280,
+  "historical_dependencies_unchanged": true,
+  "registration_protocol_training_sources_unchanged": true,
+  "frozen_checkpoints_unchanged": true,
+  "checkpoint_manifest_sha256": "e79b2e04aeace967b1aab513a82f868a97af0728ec51e9d925a7c2ea860ecad0",
+  "actor_csv_sha256": "561d166752c3ba24a9c514784beed7e7278b7a5bc776dc550c6bb2397dbbeb36",
+  "report_sha256": "a853315168b03b593c946895ae0f1f18950fa08901bbc26f914cb9bcf891364e",
+  "required_sections": 21,
+  "scientific_decision": {
+    "VehicleExpert": "NOT_PROMISING",
+    "PedestrianExpert": "NOT_PROMISING",
+    "BicyclePreserved": "YES",
+    "OverallImproved": "NO",
+    "NegativeTransferMitigated": "NO",
+    "Stage10A": "STOP",
+    "ReadyStage10B": "NO"
+  },
+  "HeadDev_targets": 29934,
+  "HeadDev_scenes": 70,
+  "Bicycle_targets": 158,
+  "bootstrap_rows": 30,
+  "HeadDev_feasibility_only": true,
+  "independent_final_statistical_confirmation": false
+}

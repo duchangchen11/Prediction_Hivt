@@ -1,0 +1,1 @@
+Stage10A uses complete HeadDev70 feasibility tables and fixed decision rules. No selected-case evaluation or case-based checkpoint/hyperparameter selection is performed. The required phase ends after the two expert checkpoints, HeadDev evaluation, scene bootstrap and report. This directory is reserved within the separate Stage10A root.
