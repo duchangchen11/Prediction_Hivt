@@ -1,0 +1,20 @@
+{
+  "Status": "PASS",
+  "checks": 57,
+  "HeadTrain": 260151,
+  "HeadDev": 29934,
+  "scene_split": "630/70 from official TRAIN700 only",
+  "optimizer_updates": 0,
+  "new_checkpoints": 0,
+  "frozen_parameter_backward_calls": 0,
+  "official_VAL_test_used": false,
+  "history_files_preserved": 2348,
+  "preserved_untracked_files": 5,
+  "probability_sum_maxdiff": 1.5529803931713104e-07,
+  "independent_SoftCE_maxdiff": 1.4102765719670174e-06,
+  "analytical_gradient_energy_maxdiff": 4.641513364767036e-07,
+  "TRAIN_raw_prediction_windows_checked": 16898,
+  "cases": 30,
+  "case_instances": 30,
+  "protocol_sha256": "a6eb6886095c5139f8af7be8896cabf328392a98f044f2c2f24f46b015302f59"
+}

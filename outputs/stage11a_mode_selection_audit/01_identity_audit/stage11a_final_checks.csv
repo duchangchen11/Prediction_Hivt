@@ -1,0 +1,58 @@
+Audit,Status,Evidence
+stage11a_code_label_audit.csv,PASS,8 checks
+stage11a_historical_reproduction.csv,PASS,54 checks
+Probability_normalization,PASS,1.5529803931713104e-07
+All_actor_independent_SoftCE_formula,PASS,1.4102765719670174e-06
+All_actor_analytical_gradient_energy,PASS,4.641513364767036e-07
+G1_actor_order,PASS,29934
+G1_regret_delta_identity,PASS,common oracle cancels
+G1_Vehicle_switch_count,PASS,per-actor/aggregate
+G1_Vehicle_switch_mean,PASS,per-actor/aggregate
+G1_Vehicle_gain_harm,PASS,gross harm - gross gain = net
+G1_Pedestrian_switch_count,PASS,per-actor/aggregate
+G1_Pedestrian_switch_mean,PASS,per-actor/aggregate
+G1_Pedestrian_gain_harm,PASS,gross harm - gross gain = net
+G1_Bicycle_switch_count,PASS,per-actor/aggregate
+G1_Bicycle_switch_mean,PASS,per-actor/aggregate
+G1_Bicycle_gain_harm,PASS,gross harm - gross gain = net
+G3_actor_order,PASS,29934
+G3_regret_delta_identity,PASS,common oracle cancels
+G3_Vehicle_switch_count,PASS,per-actor/aggregate
+G3_Vehicle_switch_mean,PASS,per-actor/aggregate
+G3_Vehicle_gain_harm,PASS,gross harm - gross gain = net
+G3_Pedestrian_switch_count,PASS,per-actor/aggregate
+G3_Pedestrian_switch_mean,PASS,per-actor/aggregate
+G3_Pedestrian_gain_harm,PASS,gross harm - gross gain = net
+G3_Bicycle_switch_count,PASS,per-actor/aggregate
+G3_Bicycle_switch_mean,PASS,per-actor/aggregate
+G3_Bicycle_gain_harm,PASS,gross harm - gross gain = net
+DualExpert_actor_order,PASS,29934
+DualExpert_regret_delta_identity,PASS,common oracle cancels
+DualExpert_Vehicle_switch_count,PASS,per-actor/aggregate
+DualExpert_Vehicle_switch_mean,PASS,per-actor/aggregate
+DualExpert_Vehicle_gain_harm,PASS,gross harm - gross gain = net
+DualExpert_Pedestrian_switch_count,PASS,per-actor/aggregate
+DualExpert_Pedestrian_switch_mean,PASS,per-actor/aggregate
+DualExpert_Pedestrian_gain_harm,PASS,gross harm - gross gain = net
+DualExpert_Bicycle_switch_count,PASS,per-actor/aggregate
+DualExpert_Bicycle_switch_mean,PASS,per-actor/aggregate
+DualExpert_Bicycle_gain_harm,PASS,gross harm - gross gain = net
+R0_type_shares,PASS,disjoint type contributions
+R2_type_shares,PASS,disjoint type contributions
+G1_type_shares,PASS,disjoint type contributions
+G3_type_shares,PASS,disjoint type contributions
+T2_type_shares,PASS,disjoint type contributions
+T3_type_shares,PASS,disjoint type contributions
+VehicleExpert_type_shares,PASS,disjoint type contributions
+PedestrianExpert_type_shares,PASS,disjoint type contributions
+DualExpert_type_shares,PASS,disjoint type contributions
+Vehicle_state_count_accounting,PASS,unclassified states retained
+Fixed_case_counts,PASS,"10 pedestrian harm,10 vehicle harm,10 success"
+Case_endpoint_pairs,PASS,all15 unique endpoint pairs per case
+Case_scores_identity,PASS,582 mode score records
+All_TRAIN_raw_and_ego_prediction_SHA,PASS,16898 windows in1057 TRAIN records
+Local_cache_manifest_SHA,PASS,all saved inference/prepared cache hashes
+Protocol_unchanged,PASS,registered before statistics
+Three_original_sources,PASS,primary-source anchors and limitations recorded
+No_new_checkpoint,PASS,all Stage11A artifacts
+All_historical_files_preserved,PASS,2348 tracked history and5 untracked files

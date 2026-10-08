@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "targets": 290085,
+  "HeadTrain": 260151,
+  "HeadDev": 29934,
+  "models": [
+    "R0",
+    "R2",
+    "G1",
+    "G3",
+    "T2",
+    "T3",
+    "VehicleExpert",
+    "PedestrianExpert",
+    "DualExpert"
+  ],
+  "HeadDev_existing_outputs_reused": [
+    "R0",
+    "R2",
+    "G1",
+    "DualExpert",
+    "VehicleExpert via Vehicle route",
+    "PedestrianExpert via Pedestrian route"
+  ],
+  "missing_scores_frozen_forward": [
+    "G3",
+    "T2",
+    "T3",
+    "HeadTrain G1/DualExpert/R2"
+  ],
+  "R2_Historical512_vs_common128_logit_maxdiff": 9.5367431640625e-07,
+  "expert_scope": "own target type only",
+  "model_states_unchanged": true,
+  "models_eval": true,
+  "model_parameter_gradients": 0,
+  "optimizer_updates": 0,
+  "new_checkpoints": 0,
+  "candidate_maxdiff": 0.0,
+  "official_VAL_opened": false,
+  "test_opened": false,
+  "historical_reproduction_checks": 54,
+  "files": {
+    "model_logits.npy": "527f9b5d7f6b9a7a73a96e6dcd6298bf5e27367310ed46e156ef14f7ec4f5d61",
+    "model_probabilities.npy": "970e25addba2a73cb440e2579584a5f2ae53835ab535160c12f5dcea935b4729",
+    "actor_metrics.npy": "b2e1810cce53da1bbb3218eeda3733b35226ff88a606c768f2c7f7c63c90ad20"
+  }
+}

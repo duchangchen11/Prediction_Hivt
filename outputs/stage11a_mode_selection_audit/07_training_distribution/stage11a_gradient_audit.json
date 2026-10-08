@@ -1,0 +1,8 @@
+{
+  "Status": "PASS",
+  "isolated_logit_autograd_maxdiff": 1.1796119636642288e-16,
+  "cached_gradient_energy_maxdiff": 3.666594778906074e-07,
+  "frozen_parameter_backward_calls": 0,
+  "optimizer_updates": 0,
+  "gradient_scope": "dSoftCE/doutput_logit only; no shared-parameter dominance claim"
+}

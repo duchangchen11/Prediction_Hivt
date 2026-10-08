@@ -1,0 +1,9 @@
+Audit,Status,Evidence
+SoftCE_target_FDE_temperature1m,PASS,unchanged Stage6/8/9/10 functions independently agree with explicit formula
+FDE_last_valid_timestep,PASS,all290085 targets full-horizon; final valid index11; FDE and ADE bitwise cache match
+Top1_argmax_probability,PASS,"frozen model probability argmax, checked during inference"
+BestMode_argmin_FDE,PASS,"argmin fixed per-actor FDE, lowest-index ties"
+Candidate_geometry_identity,PASS,one common290085x6x12x2 tensor; HeadDev bitwise Stage10 fresh-predictor replay
+GT_masks_offline_only,PASS,unchanged observable allowlist and GT/mask poison; Stage8 G3 cached selection is observation-only; frozen source hashes
+Frozen_history_checkpoints,PASS,2348 historical files and5 preserved untracked files unchanged
+Official_VAL_test_not_used,PASS,only TRAIN700 records; inherited runtime VAL/test path guard; no optimizer or model writes

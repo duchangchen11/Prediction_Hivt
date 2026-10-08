@@ -1,0 +1,130 @@
+{
+  "status": "REGISTERED_BEFORE_STAGE11_STATISTICS",
+  "registered_utc": "2026-10-08T14:30:53.612973+00:00",
+  "base_commit": "f6d80e233bd1fffcc0734d02a5aa6b55e9b21cca",
+  "branch": "stage11a/mode-selection-loss-audit",
+  "scope": "diagnostics only; frozen HeadTrain630/HeadDev70; no official VAL/test",
+  "optimizer_updates": 0,
+  "new_checkpoints_allowed": false,
+  "training_or_loss_or_model_changes_allowed": false,
+  "models": [
+    "R0",
+    "R2",
+    "G1",
+    "G3",
+    "T2",
+    "T3",
+    "VehicleExpert",
+    "PedestrianExpert",
+    "DualExpert"
+  ],
+  "expert_applicability": {
+    "VehicleExpert": "Vehicle targets only",
+    "PedestrianExpert": "Pedestrian targets only"
+  },
+  "temperature_m": 1.0,
+  "full_horizon_only": true,
+  "K": 6,
+  "Th": 5,
+  "Tf": 12,
+  "sample_interval_s": 0.5,
+  "top1": "argmax probability; lowest index in ties",
+  "best_mode": "argmin FDE; lowest index in ties",
+  "FDE": "last valid predicted time; all evaluated full-horizon masks have last valid index11",
+  "GT_groups_edges_m": [
+    0,
+    1,
+    3,
+    5,
+    8
+  ],
+  "GT_groups_labels": [
+    "0-1m",
+    "1-3m",
+    "3-5m",
+    "5-8m",
+    "8m+"
+  ],
+  "bin_boundaries": "left inclusive/right exclusive; final bin includes boundary8",
+  "history_recent_speed_definition": "last two valid historical observations distance / actual index gap *0.5s; insufficient history separate",
+  "history_recent_speed_edges_mps": [
+    0,
+    0.2,
+    0.5,
+    1,
+    2
+  ],
+  "history_recent_speed_labels": [
+    "0-0.2mps",
+    "0.2-0.5mps",
+    "0.5-1mps",
+    "1-2mps",
+    "2mps+"
+  ],
+  "history_net_path_edges_m": [
+    0,
+    0.5,
+    1.5,
+    2.5,
+    4
+  ],
+  "history_net_path_labels": [
+    "0-0.5m",
+    "0.5-1.5m",
+    "1.5-2.5m",
+    "2.5-4m",
+    "4m+"
+  ],
+  "history_missing": "fewer than2 valid observations => InsufficientHistory, never interpreted as static",
+  "duplicate_endpoint_threshold_m": 0.25,
+  "duplicate_trajectory_RMS_threshold_m": 0.25,
+  "exact_duplicate": "bitwise identical full predicted XY trajectory",
+  "endpoint_spread": "RMS radius around six-endpoint centroid; also report maximum pairwise distance as diameter",
+  "pairwise": "all15 unique unordered pairs, no self-distance",
+  "geometry_interpretation": {
+    "good_candidate_FDE_m": 1.0,
+    "wrong_selection_regret_m": 0.5,
+    "candidate_bottleneck_primary": "R2 Pedestrian oracleFDE sum / R2 Pedestrian Top1FDE sum; <=0.2 NO, >=0.8 YES, otherwise PARTIAL; descriptive decomposition only"
+  },
+  "delta_sign_tolerances": {
+    "SoftCE": 1e-07,
+    "FDE_Regret_m": 1e-06
+  },
+  "switch_comparisons": [
+    "G1",
+    "G3",
+    "DualExpert"
+  ],
+  "switch_summary": "changed only; improvement/harm identified by delta_FDE; net mean uses all actors; report zero-cost switches separately",
+  "tail_analysis": "top10%,top5%,top1% of positive switch harms; ceil counts; thresholds fixed before analysis",
+  "gradient_statistics": "exact analytical per-actor dSoftCE/dlogit=p-q; L1,L2,squared L2 and micro mean-loss contribution at effective1024; validated with isolated-logit autograd, no parameter backward or optimizer; parameter-gradient domination stays unresolved",
+  "static_lowerror_screen": "historical recent_speed<0.2m/s with valid2+history; minFDE<=1m; screen only, never training filter",
+  "cases": {
+    "Pedestrian_harm": 10,
+    "Vehicle_harm": 10,
+    "success": 10,
+    "pool": "all3 registered R2 switch comparisons on HeadDev; sort delta descending harms / ascending successes, lexical identity+model ties; unique instances across all30; no parameter selection",
+    "scores": "R2,G1,DualExpert logits and probabilities always; addG3 when selected switch comparator isG3",
+    "axes": "same XY axis for GT and all6 candidates; endpoint distance heatmap and exact pair table"
+  },
+  "decisions": {
+    "LossRankingMismatch": "CONFIRMED if at least1 HeadDev Vehicle/Pedestrian registered comparison has lower aggregate SoftCE but higher Regret and at least1% actors show CE-down/regret-up (registered tolerances); otherwise NOT_CONFIRMED",
+    "CostlyModeSwitchProblem": "CONFIRMED if any HeadDev type/comparison has net positive delta and either harm count<=gain count or highest10% harms contribute>=50% gross harm; otherwise NOT_CONFIRMED",
+    "PedestrianMotionBias": "CONFIRMED if DualExpert-vsR2 Pedestrian>5m delta greater than <=5m, allPed delta>0, >5m accounts>=50% gross harm, and historical speed>=1m/s delta greater than <1m/s; otherwise NOT_CONFIRMED",
+    "SoftTargetAmbiguity": "CONFIRMED if >=50% Pedestrian targets have normalized target entropy>=0.9 AND q_best-q_second<=0.05; this confirms numerical diffuseness only, no causal claim; otherwise NOT_CONFIRMED",
+    "CandidateGeometryBottleneck": "fixed R2 Pedestrian oracle fraction definition above",
+    "RecommendedNextObjective": "ErrorAwareRanking if all audits PASS and LossRankingMismatch and CostlyModeSwitchProblem confirmed; HardCE if audits PASS and mismatch confirmed but costly-switch criterion not met; None otherwise; recommendation only",
+    "ReadyForControlledLossExperiment": "YES iff audits PASS and recommended objective notNone; never executes Stage11B"
+  },
+  "evidence_roles": {
+    "CONFIRMED": "direct measured identities, numerical properties or observed checkpoint-selected split associations; no causal interpretation",
+    "STRONGLY_SUGGESTED": "consistent descriptive mechanism evidence with alternatives retained",
+    "UNRESOLVED": "causal attribution, parameter-gradient domination or whether another objective improves generalization"
+  },
+  "limitations": [
+    "HeadDev has repeatedly been used for checkpoint selection and hypothesis development; not independent confirmation",
+    "the diagnostic thresholds are operational screening definitions, not validated scientific cutoffs",
+    "single frozen checkpoints; overlapping actor windows and motion groups; no causal claims",
+    "no temperature sweep, no loss training, no Stage11B"
+  ]
+}

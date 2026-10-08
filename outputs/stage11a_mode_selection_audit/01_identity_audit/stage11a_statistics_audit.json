@@ -1,0 +1,35 @@
+{
+  "Status": "PASS",
+  "Rows": 290085,
+  "HeadDev": 29934,
+  "Cases": 30,
+  "UniqueCaseInstances": 30,
+  "all_model_top1_identity": true,
+  "switch_gain_harm_net_identity": true,
+  "isolated_logit_gradient_validated": true,
+  "frozen_checkpoint_updates": 0,
+  "protocol_sha256": "a6eb6886095c5139f8af7be8896cabf328392a98f044f2c2f24f46b015302f59",
+  "geometry_per_actor_schema": [
+    "MinEndpointPairDistance",
+    "MeanEndpointPairDistance",
+    "EndpointSpreadRMS",
+    "EndpointDiameter",
+    "NearDuplicateEndpointRate",
+    "NearDuplicateTrajectoryRate",
+    "ExactDuplicateTrajectoryRate",
+    "MinTrajectoryPairRMS"
+  ],
+  "soft_label_per_actor_schema": [
+    "best_FDE",
+    "second_best_FDE",
+    "worst_FDE",
+    "best_second_gap",
+    "worst_best_gap",
+    "max_q",
+    "entropy_q",
+    "normalized_entropy",
+    "q_best",
+    "q_second",
+    "q_margin"
+  ]
+}

@@ -1,0 +1,488 @@
+执行：
+
+Stage11A
+Mode Selection Regret and Loss Alignment Audit
+多模态轨迹模式选择与损失对齐诊断
+
+项目：
+/home/lrj/Prediction_Hivt
+
+基础分支：
+stage10a/type-specific-future-interaction
+
+基础commit：
+f6d80e233bd1fffcc0734d02a5aa6b55e9b21cca
+
+新分支：
+stage11a/mode-selection-loss-audit
+
+==================================================
+一、总体要求
+==================================================
+
+本阶段只做诊断。
+
+禁止：
+重新训练模型
+修改模型结构
+修改loss
+修改checkpoint
+使用official VAL或test
+修改历史实验结果。
+
+使用冻结模型：
+
+R0
+R2
+Stage8 G1
+Stage8 G3
+Stage9 T2/T3
+Stage10 VehicleExpert
+Stage10 PedestrianExpert
+Stage10 DualExpert。
+
+优先复用已保存的HeadTrain/HeadDev
+candidate、logits、FDE、ADE和actor identity。
+
+缺少必要逐actor缓存时，
+允许在冻结checkpoint下重新推理生成，
+但不得进行梯度更新。
+
+==================================================
+二、首先验证代码与标签
+==================================================
+
+逐项审计：
+
+1. SoftCE target是否为：
+   softmax(-FDE/1m)
+
+2. FDE是否严格使用Tf最后一个有效预测时刻
+
+3. Top1是否严格取：
+   argmax probability
+
+4. BestMode是否严格取：
+   argmin FDE
+
+5. 不同模型candidate geometry是否完全一致
+
+6. GT、future mask、target mask是否只用于
+   训练标签与离线评价
+
+7. R0/R2/G1/G3历史指标能否重现。
+
+所有审计输出PASS/FAIL。
+
+==================================================
+三、模式切换代价诊断
+==================================================
+
+在HeadDev70计算：
+
+R2→G1
+R2→G3
+R2→Stage10 DualExpert。
+
+对每个actor记录：
+
+actor_id
+scene_id
+actor_type
+
+R2_top_mode
+new_top_mode
+best_FDE_mode
+
+R2_top_FDE
+new_top_FDE
+oracle_FDE
+
+delta_FDE
+
+mode_changed
+
+switch_improved
+switch_worsened。
+
+统计：
+
+Vehicle
+Pedestrian
+Bicycle
+
+分别的：
+
+changed_count
+improved_count
+worsened_count
+
+mean_gain
+mean_harm
+
+median_gain
+median_harm
+
+p90_harm
+p95_harm
+p99_harm
+
+total_FDE_gain
+total_FDE_harm
+
+net_delta_FDE。
+
+重点判断：
+
+到底是错误切换次数太多，
+
+还是少数高代价错误切换
+抵消了大量小幅改善。
+
+==================================================
+四、行人专项诊断
+==================================================
+
+按GT未来位移分组：
+
+0-1m
+1-3m
+3-5m
+5-8m
+8m以上。
+
+GT位移只用于离线诊断，
+禁止成为推理特征。
+
+同时根据仅由历史观测得到的：
+
+recent speed
+net displacement
+history path length
+
+构造相应可观测运动分组。
+
+分别分析：
+
+R2
+G1
+Stage10 PedestrianExpert。
+
+输出：
+
+Top1FDE
+OracleFDE
+OracleGap
+mode_change_rate
+switch_harm
+SoftCE。
+
+重点找出：
+
+高运动幅度行人是否承担主要损失。
+
+==================================================
+五、Soft Label质量诊断
+==================================================
+
+针对每个actor的6个FDE：
+
+计算：
+
+best_FDE
+second_best_FDE
+worst_FDE
+
+best_second_gap
+
+worst_best_gap。
+
+对：
+
+q=softmax(-FDE/1m)
+
+计算：
+
+max_q
+entropy_q
+normalized_entropy
+
+以及：
+
+q_best
+q_second
+
+两者的margin。
+
+按：
+
+Vehicle
+Pedestrian
+Bicycle
+
+和不同运动分组统计。
+
+判断：
+
+固定1m temperature
+是否导致Pedestrian soft target过于模糊。
+
+注意：
+
+这里仅分析temperature，
+禁止搜索最优temperature。
+
+==================================================
+六、SoftCE与Top1FDE关系
+==================================================
+
+对每个模型、每个actor计算：
+
+SoftCE_i
+
+Top1FDE_i
+
+Regret_i =
+Top1FDE_i - minFDE_i。
+
+分析：
+
+SoftCE下降但Regret上升的actor比例。
+
+同时比较：
+
+R2 vs G1
+R2 vs Stage10
+
+的：
+
+delta_SoftCE
+delta_Regret。
+
+按actor type和运动幅度报告。
+
+注意：
+
+SoftCE与FDE单位不同，
+不得直接相减当作一个指标。
+
+==================================================
+七、候选轨迹质量
+==================================================
+
+逐actor计算：
+
+minADEOracle
+minFDE
+Top1ADE
+Top1FDE
+
+6个candidate endpoint的：
+
+pairwise distance
+
+minimum pairwise distance
+
+mean pairwise distance
+
+endpoint spread。
+
+统计：
+
+重复或高度相似candidate比例。
+
+候选近似重复阈值需要在统计前登记。
+
+分析：
+
+Vehicle
+Pedestrian
+Bicycle
+
+及各运动分组。
+
+特别判断：
+
+Pedestrian预测差
+究竟是：
+
+A. 有好候选，但排序选错
+
+还是：
+
+B. 候选本身质量不足。
+
+==================================================
+八、训练分布诊断
+==================================================
+
+在HeadTrain中统计：
+
+Vehicle
+Pedestrian
+Bicycle
+
+样本数量与loss分布。
+
+Vehicle额外区分：
+
+moving
+stopped
+parked。
+
+Pedestrian根据历史运动量分组。
+
+检查：
+
+是否存在大量静态、低误差样本
+主导micro SoftCE训练。
+
+不要凭类别样本数量直接认定失衡，
+需要结合loss贡献和梯度统计。
+
+==================================================
+九、困难样本分析
+==================================================
+
+在HeadDev中固定选择：
+
+10个Pedestrian错误切换样本
+
+10个Vehicle错误切换样本
+
+10个成功切换样本。
+
+按照delta_FDE排序，
+但禁止用这些case选择模型参数。
+
+绘制：
+
+GT
+
+6 candidates
+
+R2 scores
+
+G1 scores
+
+Stage10 scores
+
+选中模式
+oracle模式。
+
+报告候选模式之间的终点差异。
+
+==================================================
+十、文献启发与下一步候选方案
+==================================================
+
+仅提出三个候选训练目标：
+
+A. 原SoftCE
+
+B. Hard Best-Mode CE：
+   -log p_argminFDE
+
+C. Error-Aware Ranking：
+   sum_k p_k * (FDE_k - minFDE)
+
+必须分别写明：
+
+对应文献
+理论依据
+与Top1FDE的关系
+潜在风险。
+
+本阶段禁止训练B和C。
+
+尤其不要直接宣布：
+
+HardCE或Error-Aware Ranking必然更好。
+
+==================================================
+十一、输出
+==================================================
+
+创建：
+
+outputs/stage11a_mode_selection_audit/
+
+包含：
+
+01_identity_audit/
+
+02_switch_regret/
+
+03_pedestrian_analysis/
+
+04_soft_label_analysis/
+
+05_loss_alignment/
+
+06_candidate_geometry/
+
+07_training_distribution/
+
+08_cases/
+
+09_reports/。
+
+最终：
+
+09_reports/
+stage11a_root_cause_report.md
+
+必须区分：
+
+CONFIRMED
+STRONGLY_SUGGESTED
+UNRESOLVED。
+
+==================================================
+十二、最终决策
+==================================================
+
+输出：
+
+LossRankingMismatch =
+CONFIRMED / NOT_CONFIRMED
+
+CostlyModeSwitchProblem =
+CONFIRMED / NOT_CONFIRMED
+
+PedestrianMotionBias =
+CONFIRMED / NOT_CONFIRMED
+
+SoftTargetAmbiguity =
+CONFIRMED / NOT_CONFIRMED
+
+CandidateGeometryBottleneck =
+YES / PARTIAL / NO
+
+RecommendedNextObjective =
+HardCE /
+ErrorAwareRanking /
+None
+
+ReadyForControlledLossExperiment =
+YES / NO。
+
+==================================================
+十三、Git
+==================================================
+
+提交：
+
+audit: analyze mode selection regret and loss alignment
+
+docs: finalize Stage11A root cause report
+
+push：
+
+stage11a/mode-selection-loss-audit
+
+完成后STOP。
+
+等待大脑AI审查。
+
+禁止自动开始Stage11B训练。

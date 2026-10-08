@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "targets": 290085,
+  "HeadTrain": 260151,
+  "HeadDev": 29934,
+  "scenes": 700,
+  "TRAIN_windows": 16898,
+  "source_records": 1057,
+  "last_valid_index": 11,
+  "FDE_maxdiff": 0.0,
+  "ADE_maxdiff": 0.0,
+  "poison_checked_targets": 124,
+  "HeadDev_bitwise_Stage10_replay": true,
+  "official_VAL_opened": false,
+  "test_opened": false,
+  "files": {
+    "candidates.npy": "fac8fb05888372de965bdc11b6bef1d0f211d095e38c509ddcad4a1a9d909049",
+    "GT.npy": "7020aae3b245ed6ae684a71a2806dbe8f644be1f0e09bd1525f891ffe2cac35b",
+    "observed_motion.npy": "546fc8fa6f351ece406b27f599960ef62af4b49973a0fdc229f63105ea051d60"
+  }
+}

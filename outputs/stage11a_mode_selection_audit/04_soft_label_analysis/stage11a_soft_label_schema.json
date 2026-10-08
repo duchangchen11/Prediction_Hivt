@@ -1,0 +1,18 @@
+{
+  "columns": [
+    "best_FDE",
+    "second_best_FDE",
+    "worst_FDE",
+    "best_second_gap",
+    "worst_best_gap",
+    "max_q",
+    "entropy_q",
+    "normalized_entropy",
+    "q_best",
+    "q_second",
+    "q_margin"
+  ],
+  "temperature_m": 1,
+  "sweeps": 0,
+  "primary_decision_split": "HeadDev"
+}
