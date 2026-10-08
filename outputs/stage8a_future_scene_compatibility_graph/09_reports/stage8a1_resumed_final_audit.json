@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETE",
+  "historical_files_unchanged": 2118,
+  "HistoricalAttempt": "STOP_TINY_GATE_FAILURE",
+  "HistoricalFailureSource": "INFEASIBLE_TINY_CRITERION",
+  "TinyGateAmended": "YES",
+  "TinyGate": "PASS",
+  "tiny_repeated": false,
+  "new_tiny_updates": 0,
+  "successful_official_VAL_passes": 1,
+  "failed_preflight_scene_windows": 16,
+  "VAL_full_targets": 54990,
+  "VAL_scenes": 150,
+  "candidate_identity": "PASS",
+  "frozen_checkpoints_sha256": {
+    "G1": "718311dfc9f7634a8e78efe2aece9c2126b20ce87c7d34cb68b7f832c5642b0e",
+    "G2": "63416baee8e971bd4ce2a1e710f1e2bab31f5b918b777a186ec8c03c759db172",
+    "G3": "7493726583b4e0b93d631644f9e59583422acf3f28a4feb9292069eba4fc5a0c"
+  },
+  "predictor_gradient_count": 0,
+  "history_graph_selector_training_hyperparameters_unchanged": true,
+  "formal_training_sources_unchanged": true,
+  "scientific_decision": {
+    "AgentGraph": "SUPPORTED",
+    "LearnedGraphAdvantageOverR2": "YES",
+    "SemanticGraph": "NOT_SUPPORTED",
+    "SemanticContributionToJoint": "NOT_SUPPORTED",
+    "FSCG": "NOT_SUPPORTED",
+    "JointComplementarity": "NO",
+    "PaperUsableFSCG": "NO",
+    "RecommendedFinalModel": "R2"
+  },
+  "final_report_sha256": "fdacb31b505d83c01213c7109b9383145d793dbfa58f75026f3cd91bfd54b627",
+  "STOP": true
+}
