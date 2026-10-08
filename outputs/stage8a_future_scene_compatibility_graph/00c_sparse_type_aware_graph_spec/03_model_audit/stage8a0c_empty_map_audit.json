@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "synthetic_candidate_returns_no_entities": true,
+  "zero_length_edge_tensor_exact_zero64": true,
+  "padded_empty_rows_exact_zero64": true,
+  "nonzero_encoder_bias_cannot_affect_empty_map": true,
+  "softmax_called_on_empty_rows": false,
+  "mixed_empty_nonempty_rows_finite": true,
+  "LayerNorm_hnode_plus_mint_plus_zero": "PASS",
+  "NULL_node": false,
+  "nearest_fallback": false,
+  "empty_samples_deleted": false
+}

@@ -1,0 +1,309 @@
+{
+  "stage": "Stage8A-0C",
+  "source_commit": "dbb743ab79d3d0309419cd051624ff99c7a6a0ee",
+  "branch": "stage8a0c/sparse-type-aware-graph-spec",
+  "GraphSpecFrozen": "YES",
+  "entity_taxonomy": [
+    {
+      "id": 0,
+      "name": "lane"
+    },
+    {
+      "id": 1,
+      "name": "lane_connector"
+    },
+    {
+      "id": 2,
+      "name": "drivable_area"
+    },
+    {
+      "id": 3,
+      "name": "carpark_area"
+    },
+    {
+      "id": 4,
+      "name": "ped_crossing"
+    },
+    {
+      "id": 5,
+      "name": "walkway"
+    }
+  ],
+  "actor_entity_mapping": {
+    "Vehicle": [
+      "lane",
+      "lane_connector",
+      "drivable_area",
+      "carpark_area"
+    ],
+    "Pedestrian": [
+      "drivable_area",
+      "ped_crossing",
+      "walkway"
+    ],
+    "Bicycle": [
+      "lane",
+      "lane_connector",
+      "drivable_area"
+    ]
+  },
+  "quota": {
+    "Vehicle": {
+      "lane": 3,
+      "lane_connector": 3,
+      "drivable_area": 1,
+      "carpark_area": 1
+    },
+    "Pedestrian": {
+      "drivable_area": 1,
+      "ped_crossing": 2,
+      "walkway": 3
+    },
+    "Bicycle": {
+      "lane": 3,
+      "lane_connector": 3,
+      "drivable_area": 1
+    }
+  },
+  "max_entities_per_mode": {
+    "Vehicle": 8,
+    "Pedestrian": 6,
+    "Bicycle": 7
+  },
+  "max_mode_map_edges_per_target": {
+    "Vehicle": 48,
+    "Pedestrian": 36,
+    "Bicycle": 42
+  },
+  "lane_radius_m": 10,
+  "polygon_threshold_m": 2,
+  "polyline_points": 12,
+  "future_horizon_seconds": 6,
+  "polygon_match": "Any predicted point inside OR polyline intersects OR filled geometry distance<=2m; valid source components unchanged.",
+  "sorting": "within each entity type: minimum filled/complete-centerline geometric distance, lexical token; concatenate fixed type IDs0..5",
+  "selector_inputs": [
+    "observed actor type",
+    "predicted12point global candidate",
+    "HDmap location"
+  ],
+  "motion_state_changes_selector": false,
+  "SelectorUsesPredictionError": "NO",
+  "no_nearest_fallback": true,
+  "no_NULL_token": true,
+  "node_feature_names": [
+    "type_vehicle",
+    "type_pedestrian",
+    "type_bicycle",
+    "original_logit",
+    "original_probability",
+    "history_recent_displacement",
+    "history_net_displacement",
+    "history_path_length",
+    "endpoint_x",
+    "endpoint_y",
+    "candidate_net_displacement",
+    "candidate_path_length",
+    "candidate_mean_speed",
+    "endpoint_heading_sin",
+    "endpoint_heading_cos"
+  ],
+  "interaction_feature_names": [
+    "future_minimum_distance",
+    "closest_timestep_over_Tf",
+    "future_mean_distance",
+    "endpoint_distance",
+    "initial_future_distance",
+    "relative_endpoint_heading_sin",
+    "relative_endpoint_heading_cos",
+    "minimum_relative_step_displacement",
+    "closing_distance_over_6s",
+    "neighbor_original_probability",
+    "target_original_probability",
+    "target_vehicle",
+    "target_pedestrian",
+    "target_bicycle",
+    "neighbor_vehicle",
+    "neighbor_pedestrian",
+    "neighbor_bicycle"
+  ],
+  "map_node_feature_names": [
+    "entity_lane",
+    "entity_lane_connector",
+    "entity_drivable_area",
+    "entity_carpark_area",
+    "entity_ped_crossing",
+    "entity_walkway",
+    "is_connector",
+    "turn_left",
+    "turn_straight",
+    "turn_right",
+    "turn_unknown",
+    "traffic_light_controlled",
+    "stop_sign_controlled",
+    "other_control",
+    "crosswalk_intersects",
+    "local_tangent_sin",
+    "local_tangent_cos",
+    "tangent_valid"
+  ],
+  "map_edge_feature_names": [
+    "minimum_distance_over10",
+    "mean_future_point_distance_over10",
+    "endpoint_distance_over10",
+    "closest_timestep_over_Tf",
+    "fraction_future_points_within2m",
+    "fraction_future_points_within4m",
+    "heading_difference_sin",
+    "heading_difference_cos",
+    "heading_valid",
+    "fraction_future_points_inside_polygon",
+    "polyline_intersects_polygon"
+  ],
+  "feature_dimensions": {
+    "node": 15,
+    "interaction": 17,
+    "map_node": 18,
+    "map_edge": 11
+  },
+  "feature_dtype": "float32",
+  "selector_distance_dtype": "float64",
+  "nonlane_9d_semantic": "exact zero",
+  "lane_semantics": "exact Stage7A vector; connector/control/crosswalk/20degree-turn definitions unchanged",
+  "heading": "last1s candidate secant [-1]-[-3]; atan2(0,0)=0; lane nearest directed-centerline tangent transformed into t0 ego frame",
+  "tangent_and_heading_valid": "lane/connector=1; polygon=0 and sin/cos=0",
+  "polygon_inside_fraction": "strict containment in any original valid polygon component; OR over components; no union/repair",
+  "polygon_intersection": "polyline intersects any original valid polygon component, including boundaries",
+  "closest_time": "candidate-side GEOS shortest_line point; first arc-length occurrence; fractional segment index+1 divided by12; stationary=1/12",
+  "map_feature_distance_scaling": "first3 geometric distances divided by10; within2m/4m fractions use true unscaled point distances",
+  "neighbor_rule": {
+    "radius_m": 50,
+    "max_actors": 8,
+    "current_valid_only": true,
+    "self_excluded": true,
+    "tie": "original actor node index",
+    "modes_per_actor": 6,
+    "max_mode_mode_edges": 288,
+    "individual_directed_target_neighbor_mode_relations": true
+  },
+  "empty_map_rule": "if no real map edges, exact zero64D; only nonempty rows enter map softmax; no learned padding/NULL entity",
+  "zero_map_samples": "retain all targets without dropping, resampling or oversampling",
+  "architecture": {
+    "hidden": 64,
+    "node_encoder": [
+      15,
+      64,
+      64
+    ],
+    "interaction_message": [
+      47,
+      64,
+      64
+    ],
+    "interaction_attention": [
+      145,
+      64,
+      1
+    ],
+    "map_message": [
+      44,
+      64,
+      64
+    ],
+    "map_attention": [
+      93,
+      64,
+      1
+    ],
+    "interaction_layers": 1,
+    "map_aggregation_layers": 1,
+    "joint": "LayerNorm(h_node+m_int+m_map)",
+    "score_head": [
+      64,
+      32,
+      1
+    ],
+    "score_head_last_weight_bias": "exact zero initialization",
+    "variants": [
+      {
+        "Variant": "G1",
+        "Parameters": 24066,
+        "InputDims": "Node15; Interaction17; MapNode18; MapEdge11",
+        "HiddenDim": 64,
+        "MaxMapEdges": 0,
+        "MaxInteractionEdges": 288,
+        "NeutralOutputMaxDiff": 0.0,
+        "EstimatedMemoryMiB": 117.33740234375
+      },
+      {
+        "Variant": "G2",
+        "Parameters": 20546,
+        "InputDims": "Node15; Interaction17; MapNode18; MapEdge11",
+        "HiddenDim": 64,
+        "MaxMapEdges": 48,
+        "MaxInteractionEdges": 0,
+        "NeutralOutputMaxDiff": 0.0,
+        "EstimatedMemoryMiB": 73.6484375
+      },
+      {
+        "Variant": "G3",
+        "Parameters": 37187,
+        "InputDims": "Node15; Interaction17; MapNode18; MapEdge11",
+        "HiddenDim": 64,
+        "MaxMapEdges": 48,
+        "MaxInteractionEdges": 288,
+        "NeutralOutputMaxDiff": 0.0,
+        "EstimatedMemoryMiB": 117.38916015625
+      }
+    ]
+  },
+  "ranking_temperature_m": 1,
+  "initialization_seeds": {
+    "common": 2022,
+    "interaction": 2123,
+    "map": 2124
+  },
+  "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+  "all_readiness_thresholds": {
+    "MovingRoute": 0.95,
+    "VehicleNonempty": 0.8,
+    "ParkedNonempty": 0.7,
+    "PedestrianNonempty": 0.85,
+    "PedestrianSpecific": 0.7,
+    "BicycleNonempty": 0.8
+  },
+  "readiness_population": "full-horizon ranking candidates separately in TRAIN and VAL; masks offline only",
+  "parameter_limit_exclusive": 150000,
+  "preferred_parameter_limit_exclusive": 50000,
+  "inference_memory_limit_bytes": 1073741824,
+  "engineering_gate_not_prediction_metric": true,
+  "source_SHA256": {
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py": "c8a6ad5cddcad70256704af2cc3ebc886dbe969b4c2ce710abd5e34fa2f3797b",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_selector.py": "f80863b3fcfa2995c60d516aa2a1226029ad2a7bd650b3d4caf23ef261ad59ee",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_build.py": "8c3914325cd0711055bfa22845ae03494e295b351e0ac313a53bc84189f094a8",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py": "16b086e006e51b1cd67544c42b42ce869daccdad6e0d4636b4a04115f0947f9b",
+    "outputs/stage8a_future_scene_compatibility_graph/00_manifest/stage8a_graph.py": "5740dfa697e52d4c83a44056250c186305d9dcd04a816c2a6c8dec3e1d62c085",
+    "outputs/stage8a_future_scene_compatibility_graph/00_manifest/stage8a_model.py": "ae7fe3a0bd89b636b6ea6265210912827adea33eb0d28604abca7e55fda38eca",
+    "preprocessing/coordinates.py": "dc110f79c4449f878c23f4316ba8c734938c93f8d7c1c529774f5199cc9a2b82",
+    "outputs/stage7a_semantic_map_hivt/00_manifest/stage7a_dataset.py": "a63f53afa52f051d712688d722f98e3c729a605fd2c586bf35736fd809a006d1",
+    "outputs/stage7a_semantic_map_hivt/02_semantic_cache/stage7a_centerlines.npz": "53d305b7136e477ba2cc37075610113e326da9ad575d160d5d31654d107acb32",
+    "outputs/stage7a_semantic_map_hivt/02_semantic_cache/stage7a_semantic_metadata.json": "fe37501f3b8ee91be7966a63d2c8e8128573d18fc3c7a5ca0f54e2aaabd87cf5",
+    "outputs/stage5a_motion_aware_decoder/07_checkpoints/stage5a_best_overall_minfde.pt": "88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7",
+    "outputs/stage6a_future_interaction_reliability/07_checkpoints/stage6a_r2_best.pt": "e3de457d635cd30c629ce316d73a87e419a3ded8abbe0e1f2601f1071527e314",
+    "outputs/stage6a_future_interaction_reliability/01_cache/stage6a_cache_manifest.json": "5b0b99fe54e66674820eed28831f5cb390e0eb8f912bfbc4b689daa1a0707fb4",
+    "outputs/stage8a_future_scene_compatibility_graph/02_graph_cache/stage8a_graph_cache_manifest.json": "56c2003c8085d038170e64896d61e9686dbc8dbfab454c5f53a0e7b1a6c4a521",
+    "outputs/stage8a_future_scene_compatibility_graph/00b_type_aware_semantic_audit/03_entity_retrieval/stage8a0b_retrieval_manifest.json": "385367ef2b3b49e48b3e71d0975762b6316d587d20ca9af01ca387212ef1dfe1",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/02_graph_cache/stage8a0c_selector_manifest.json": "c364a766f3ba41410d5d370d87ddaacd79e74b2354d9bf47d6e37dfe11f14da3",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_frozen_inputs.json": "a9afd6946332263d1ab73614dfa72abd43e38c85a0bcdbfa609077cafa4e5185",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_requirements.txt": "b148aaad8308a632b9332969c7d84aa922d60411bbb62e4fda570dd58d88eae3",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_execution_plan.md": "68b35046332a0a6b2f9dd9da4a3462cc6a9a7acff2f1cd3a7d94a35d1416fd81",
+    "outputs/stage2/map_views/cache/bc39172aef2f/maps/expansion/boston-seaport.json": "fc33712481efd763be39ce7edca0ec924d2d1fe20e1c89d52e21bf43d86e6b59",
+    "outputs/stage2/map_views/cache/bc39172aef2f/maps/expansion/singapore-hollandvillage.json": "0c9209c277686e367b06ab5bbe2547ba357f7f790365cb4927f44ae0f78266b2",
+    "outputs/stage2/map_views/cache/bc39172aef2f/maps/expansion/singapore-onenorth.json": "17939122b940d7faff50fa7ff623ded7f739549a781c32dff1ecd1ac7bebca02",
+    "outputs/stage2/map_views/cache/bc39172aef2f/maps/expansion/singapore-queenstown.json": "c7e75f5a5643c4831aae1c99a0fdcc61e9ba3c01f98d922f0fafa34ea1062927"
+  },
+  "training_authorized": false,
+  "test_used": false,
+  "historical_stage8a0": "NOT_READY",
+  "historical_stage8a0b": "NOT_READY",
+  "future_stage8a1_modification_rule": "No radius/quota/features/neighbors/hidden/temperature changes unless a concrete code bug is found."
+}

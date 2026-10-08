@@ -1,0 +1,1788 @@
+你现在执行：
+
+============================================================
+Stage8A-0C
+Sparse Type-Aware Semantic Graph Specification
+稀疏参与者类型条件场景语义图最终规范审计
+============================================================
+
+项目：
+
+/home/lrj/Prediction_Hivt
+
+基础分支：
+
+stage8a0b/type-aware-semantic-entity-audit
+
+基础commit：
+
+dbb743ab79d3d0309419cd051624ff99c7a6a0ee
+
+新建分支：
+
+stage8a0c/sparse-type-aware-graph-spec
+
+============================================================
+0. 阶段定位
+============================================================
+
+这是Stage8A正式训练前的最后一次无训练审计。
+
+本阶段目的不是：
+
+提高coverage数字
+修改预测模型
+寻找最优radius
+寻找最优TopK
+调网络结构
+
+而是：
+
+冻结最终Sparse Mode-to-Map Graph定义。
+
+本阶段完成后：
+
+若READY：
+
+下一阶段直接进入Stage8A-1：
+
+G1 / G2 / G3正式训练。
+
+若NOT_READY：
+
+暂停Stage8A路线并汇报。
+
+禁止继续无限追加Stage8A-0D / 0E式审计，
+除非存在明确代码错误。
+
+============================================================
+1. 历史结论全部保持
+============================================================
+
+Stage8A-0：
+
+Stage8A_0 = NOT_READY
+
+原因：
+
+lane-only Vehicle fallback过高。
+
+------------------------------------------------------------
+
+Stage8A-0B：
+
+LaneOnlyFailureCause = MIXED
+
+TypeAwareSemanticCoverage = FAIL
+
+SemanticContextQuality = STRONG
+
+Stage8A_0B = NOT_READY
+
+这些结论全部保持。
+
+不得回写PASS。
+
+============================================================
+2. 0B已经确认的事实
+============================================================
+
+VAL full-horizon：
+
+MovingVehicle RouteCenterlineCoverage：
+
+99.0074%
+
+StoppedVehicle TypeAwareAnyCoverage：
+
+97.1543%
+
+ParkedVehicle TypeAwareAnyCoverage：
+
+75.6118%
+
+Vehicle overall：
+
+84.6523%
+
+Pedestrian：
+
+90.9932%
+
+Bicycle：
+
+88.0843%
+
+Vehicle GenericOnlyRate：
+
+4.8498%
+
+Pedestrian GenericOnlyRate：
+
+0.9193%
+
+因此：
+
+主要问题不是：
+
+坐标错误
+semantic metadata错误
+GT leakage
+
+而是：
+
+场景语义本身具有稀疏性，
+特别是parked vehicle。
+
+============================================================
+3. 新设计原则
+============================================================
+
+正式Stage8A地图分支改为：
+
+Sparse Semantic Compatibility Graph。
+
+不要求：
+
+每个candidate mode都必须存在map edge。
+
+允许：
+
+E_map(i,k) = empty。
+
+若：
+
+E_map(i,k) = empty
+
+则：
+
+m_map(i,k) = zero vector。
+
+不能：
+
+nearest-one fallback
+
+不能：
+
+强行连接远处entity
+
+不能：
+
+learned NULL semantic token。
+
+============================================================
+4. 为什么不要NULL token
+============================================================
+
+没有可靠map context时：
+
+直接：
+
+m_map = 0。
+
+禁止加入：
+
+NULL_MAP_NODE
+
+因为NULL node会引入：
+
+可学习generic map representation，
+
+导致后续难以区分：
+
+真实map semantic作用
+
+与：
+
+generic branch bias。
+
+============================================================
+5. 保持原始Geometry规则
+============================================================
+
+Lane / lane_connector：
+
+candidate future polyline
+
+到：
+
+complete centerline
+
+minimum distance <=10m。
+
+10m保持冻结。
+
+禁止修改。
+
+------------------------------------------------------------
+
+Polygon entities：
+
+drivable_area
+carpark_area
+ped_crossing
+walkway
+
+匹配条件继续冻结：
+
+A.
+任一candidate future point在polygon内
+
+或
+
+B.
+candidate polyline intersects polygon
+
+或
+
+C.
+candidate polyline-to-polygon distance <=2m
+
+2m保持冻结。
+
+============================================================
+6. 正式Semantic Entity集合
+============================================================
+
+只允许：
+
+E0 lane
+E1 lane_connector
+E2 drivable_area
+E3 carpark_area
+E4 ped_crossing
+E5 walkway
+
+禁止：
+
+standalone stop_line
+
+traffic_light hardware point
+
+priority
+
+right-of-way
+
+dynamic signal
+
+camera/VLM。
+
+Traffic control继续存在于：
+
+lane/connector frozen 9D semantic。
+
+============================================================
+7. Actor-Type-Aware Primary Entities
+============================================================
+
+Vehicle：
+
+lane
+lane_connector
+drivable_area
+carpark_area
+
+------------------------------------------------------------
+
+Pedestrian：
+
+walkway
+ped_crossing
+drivable_area
+
+------------------------------------------------------------
+
+Bicycle：
+
+lane
+lane_connector
+drivable_area
+
+注意：
+
+正式G2/G3中只连接
+对应actor type授权的primary entities。
+
+其他entity：
+
+不进入该actor的map graph。
+
+============================================================
+8. 不再使用运动状态改变entity定义
+============================================================
+
+虽然0B发现：
+
+moving/stopped/parked
+
+coverage差异明显，
+
+但正式图选择规则：
+
+只依赖：
+
+actor type
+
+不依赖：
+
+vehicle.moving
+vehicle.stopped
+vehicle.parked
+
+决定entity类型。
+
+原因：
+
+避免引入额外人工规则。
+
+t0 motion attribute后续可以：
+
+作为node feature
+
+但不能改变map selector。
+
+============================================================
+9. 全局Top8废除
+============================================================
+
+Stage8A-0原规则：
+
+所有entity按距离混合排序
+→ Top8
+
+正式废除。
+
+原因：
+
+MovingVehicle相关实体平均约12.6个，
+
+Global Top8容易：
+
+connector占满容量
+
+导致其他semantic type被挤掉。
+
+============================================================
+10. 新的固定Quota规则
+============================================================
+
+正式冻结：
+
+--------------------------------------------
+Vehicle：
+--------------------------------------------
+
+lane：
+
+最多3个
+
+lane_connector：
+
+最多3个
+
+drivable_area：
+
+最多1个
+
+carpark_area：
+
+最多1个
+
+最大总数：
+
+8。
+
+--------------------------------------------
+Pedestrian：
+--------------------------------------------
+
+walkway：
+
+最多3个
+
+ped_crossing：
+
+最多2个
+
+drivable_area：
+
+最多1个
+
+最大总数：
+
+6。
+
+--------------------------------------------
+Bicycle：
+--------------------------------------------
+
+lane：
+
+最多3个
+
+lane_connector：
+
+最多3个
+
+drivable_area：
+
+最多1个
+
+最大总数：
+
+7。
+
+============================================================
+11. Quota规则禁止调参
+============================================================
+
+以上：
+
+3/3/1/1
+3/2/1
+3/3/1
+
+本阶段冻结。
+
+禁止查看结果后改成：
+
+4
+5
+8
+16
+
+禁止后续根据VAL调quota。
+
+============================================================
+12. 每类内部排序
+============================================================
+
+在每个entity type内部：
+
+按：
+
+candidate-to-entity minimum geometric distance
+
+升序。
+
+Tie：
+
+entity token lexical order。
+
+禁止使用：
+
+GT
+prediction error
+semantic label importance
+learned score。
+
+============================================================
+13. Lane / Connector距离
+============================================================
+
+真正：
+
+future candidate polyline
+
+到：
+
+complete centerline
+
+minimum geometry distance。
+
+禁止：
+
+start point distance。
+
+============================================================
+14. Polygon距离
+============================================================
+
+使用：
+
+filled polygon geometry distance。
+
+若：
+
+candidate进入polygon
+
+则：
+
+distance=0。
+
+对于多个distance=0：
+
+按token稳定排序。
+
+============================================================
+15. Map Node Feature最终规范
+============================================================
+
+本阶段冻结未来G2/G3的MapNode schema。
+
+MapNode_l：
+
+A. Entity type one-hot：
+
+6D
+
+[lane,
+ connector,
+ drivable,
+ carpark,
+ crossing,
+ walkway]
+
+B. Frozen lane semantic：
+
+9D
+
+[
+is_connector,
+turn_left,
+turn_straight,
+turn_right,
+turn_unknown,
+traffic_light_controlled,
+stop_sign_controlled,
+other_control,
+crosswalk_intersects
+]
+
+对于非：
+
+lane / connector
+
+9D全部为0。
+
+C. local tangent：
+
+sin(theta)
+cos(theta)
+tangent_valid
+
+3D。
+
+对于：
+
+lane / connector：
+
+tangent_valid=1。
+
+对于polygon：
+
+tangent_valid=0
+sin=0
+cos=0。
+
+总：
+
+18D。
+
+不得增加polygon面积等新特征。
+
+============================================================
+16. Mode-Map Edge Feature最终规范
+============================================================
+
+冻结为：
+
+1 minimum_distance / 10
+
+2 mean_future_point_distance / 10
+
+3 endpoint_distance / 10
+
+4 closest_timestep / Tf
+
+5 fraction_future_points_within_2m
+
+6 fraction_future_points_within_4m
+
+7 heading_difference_sin
+
+8 heading_difference_cos
+
+9 heading_valid
+
+10 fraction_future_points_inside_polygon
+
+11 polyline_intersects_polygon
+
+总：
+
+11D。
+
+============================================================
+17. Heading定义
+============================================================
+
+对于：
+
+lane
+lane_connector：
+
+candidate endpoint heading
+
+vs
+
+nearest centerline tangent。
+
+heading_valid=1。
+
+对于：
+
+polygon entity：
+
+heading_sin=0
+heading_cos=0
+heading_valid=0。
+
+禁止给polygon制造伪heading。
+
+============================================================
+18. Polygon inside fraction
+============================================================
+
+对于polygon：
+
+fraction_future_points_inside_polygon
+
+正常计算。
+
+对于：
+
+lane
+connector：
+
+设为0。
+
+============================================================
+19. Polyline intersection feature
+============================================================
+
+polygon：
+
+candidate future polyline
+是否与polygon相交。
+
+0/1。
+
+lane / connector：
+
+设为0。
+
+============================================================
+20. Candidate Node保持Stage8A-0定义
+============================================================
+
+Actor-Mode Node：
+
+继续使用冻结15D定义：
+
+actor type onehot
+original_logit
+original_probability
+
+history_recent_disp
+history_net_disp
+history_path_length
+
+candidate_endpoint_x
+candidate_endpoint_y
+
+candidate_net_disp
+candidate_path_length
+candidate_mean_speed
+
+candidate_heading_sin
+candidate_heading_cos
+
+不修改。
+
+============================================================
+21. Mode-Mode Future Graph保持不变
+============================================================
+
+Stage8A-0 Mode-Mode：
+
+邻居：
+
+<=50m
+最多8 actor
+
+每个actor K=6。
+
+每个：
+
+target mode
+→
+neighbor mode
+
+保留独立relation。
+
+最大：
+
+288 interaction edges / target。
+
+17D interaction edge定义保持不变。
+
+禁止本阶段修改。
+
+============================================================
+22. SparseMap selector实现
+============================================================
+
+创建纯deterministic selector：
+
+select_sparse_semantic_entities(
+    actor_type,
+    predicted_candidate,
+    map_location
+)
+
+返回：
+
+entity_ids
+entity_types
+geometry_distances
+
+允许返回：
+
+empty list。
+
+============================================================
+23. Empty Map Unit Test
+============================================================
+
+必须构造真实或合成：
+
+0 map entity
+
+candidate。
+
+要求：
+
+MapAggregator(empty)
+
+输出：
+
+exact zero 64D。
+
+无：
+
+NaN
+Inf
+exception。
+
+并确保：
+
+后续：
+
+h =
+LayerNorm(
+h_node
++
+m_int
++
+0
+)
+
+正常。
+
+============================================================
+24. Map softmax empty handling
+============================================================
+
+禁止：
+
+对空tensor直接softmax。
+
+必须：
+
+if edge_count == 0:
+
+    map_message = zeros_like(node_hidden)
+
+否则：
+
+正常attention。
+
+============================================================
+25. Quota保留率审计
+============================================================
+
+比较：
+
+Uncapped relevant entities
+
+与：
+
+Quota selector。
+
+计算：
+
+EntityRetentionRate
+
+=
+
+selected relevant entities
+/
+uncapped relevant entities。
+
+按：
+
+Vehicle
+Pedestrian
+Bicycle
+
+以及每种entity type统计。
+
+============================================================
+26. Presence Preservation
+============================================================
+
+比单纯retention更重要。
+
+例如：
+
+一个candidate有crosswalk entity，
+
+判断quota后是否仍至少保留一个crosswalk。
+
+输出：
+
+PresencePreservation：
+
+lane
+connector
+drivable
+carpark
+crosswalk
+walkway。
+
+因为quota按type独立：
+
+理论上只要该type存在，
+就应该保留至少1个。
+
+要求：
+
+PresencePreservation = 100%
+
+对于所有授权type。
+
+否则selector FAIL。
+
+============================================================
+27. Semantic Type Diversity
+============================================================
+
+每candidate统计：
+
+uncapped distinct entity types
+
+selected distinct entity types。
+
+要求：
+
+只要某type有匹配实体，
+
+quota selector不能因为其他type
+把该type全部挤掉。
+
+这正是替代Global Top8的目的。
+
+============================================================
+28. 与旧Global Top8比较
+============================================================
+
+只做结构比较，
+
+禁止预测性能比较。
+
+输出：
+
+GlobalTop8：
+
+Mean distinct semantic types/mode
+
+Quota：
+
+Mean distinct semantic types/mode
+
+以及：
+
+MovingVehicle
+Pedestrian
+Bicycle。
+
+期望：
+
+Quota selector：
+
+至少不降低type-presence preservation。
+
+但不设置预测结论。
+
+============================================================
+29. Sparse Context Coverage
+============================================================
+
+正式重新报告：
+
+MapNonEmptyRate
+
+而不是：
+
+“fallback rate”。
+
+MapNonEmptyRate：
+
+selected map edges >0。
+
+分别：
+
+Vehicle
+Pedestrian
+Bicycle
+
+MovingVehicle
+StoppedVehicle
+ParkedVehicle
+UnknownVehicle。
+
+============================================================
+30. 0C工程Readiness Gate
+============================================================
+
+不再要求：
+
+所有group >=95%。
+
+新的工程gate在任何G1/G2/G3训练前冻结：
+
+A：
+
+MovingVehicle：
+
+RouteCenterlineCoverage >=95%
+
+------------------------------------------------------------
+
+B：
+
+Vehicle overall：
+
+MapNonEmptyRate >=80%
+
+------------------------------------------------------------
+
+C：
+
+ParkedVehicle：
+
+MapNonEmptyRate >=70%
+
+------------------------------------------------------------
+
+D：
+
+Pedestrian：
+
+MapNonEmptyRate >=85%
+
+且：
+
+SemanticSpecificCoverage：
+
+walkway OR crossing
+
+>=70%
+
+------------------------------------------------------------
+
+E：
+
+Bicycle：
+
+MapNonEmptyRate >=80%
+
+============================================================
+31. 为什么这些是工程Gate
+============================================================
+
+报告必须明确：
+
+这些阈值仅用于判断：
+
+semantic graph是否具有足够输入支持。
+
+不是：
+
+accuracy threshold
+
+不是：
+
+显著性结论
+
+不是：
+
+论文性能指标。
+
+并且：
+
+在G1/G2/G3训练之前冻结。
+
+============================================================
+32. Zero-Map Rate
+============================================================
+
+明确报告：
+
+ZeroMapRate
+=
+1 - MapNonEmptyRate。
+
+尤其：
+
+ParkedVehicle。
+
+后续正式训练不得：
+
+删除zero-map样本。
+
+必须保留自然数据分布。
+
+============================================================
+33. 不允许过滤无map样本
+============================================================
+
+训练G2/G3时：
+
+zero-map target仍然进入训练。
+
+只是：
+
+m_map=0。
+
+禁止：
+
+drop sample
+
+resample
+
+oversample
+
+因为这样会改变正式评价分布。
+
+============================================================
+34. Quota后的Graph Size
+============================================================
+
+统计：
+
+Mean selected map entities/mode
+
+Median
+
+P95
+
+Max
+
+Mean mode-map edges/target
+
+P95
+
+Max。
+
+理论最大：
+
+Vehicle：
+
+6 modes ×8
+=
+48 edges
+
+Ped：
+
+6×6
+=
+36
+
+Bicycle：
+
+6×7
+=
+42。
+
+代码必须验证。
+
+============================================================
+35. Memory Estimate
+============================================================
+
+基于最终quota graph重新估算：
+
+batch128：
+
+input bytes
+
+expected inference memory。
+
+如果：
+
+estimated inference peak >1GiB
+
+STOP。
+
+否则：
+
+MemoryFeasible=YES。
+
+注意：
+
+正式训练显存仍要在Stage8A-1 tiny中实测。
+
+============================================================
+36. Parameter Spec冻结
+============================================================
+
+继续沿用Stage8A-0 prototype：
+
+NodeEncoder：
+
+15 →64
+
+Interaction EdgeEncoder：
+
+concat features →64
+
+Map Node/Edge Encoder：
+
+最终根据：
+
+18D MapNode
+11D MapEdge
+
+实现。
+
+一层interaction message passing。
+
+一层map aggregation。
+
+Joint：
+
+LayerNorm(
+h_node
++
+m_int
++
+m_map
+)
+
+Final：
+
+64→32→1
+
+last layer zero-init。
+
+============================================================
+37. 参数规模重新计算
+============================================================
+
+只做静态实例化。
+
+禁止训练。
+
+要求：
+
+G3 parameters：
+
+prefer <50k
+
+mandatory <150k。
+
+如果：
+
+>150k
+
+NOT_READY。
+
+============================================================
+38. 不训练正式模型
+============================================================
+
+允许：
+
+构造model
+
+随机forward
+
+empty-edge forward
+
+neutral-output audit。
+
+禁止：
+
+optimizer
+loss backward
+tiny overfit
+checkpoint training。
+
+============================================================
+39. Neutral Output Audit
+============================================================
+
+Final score last layer：
+
+weight=0
+bias=0。
+
+对至少：
+
+128真实target actors。
+
+要求：
+
+new_logits
+=
+original_logits
+
+maxdiff <1e-7优先
+
+至少：
+
+<1e-6。
+
+概率：
+
+maxdiff <1e-6。
+
+============================================================
+40. Candidate Identity
+============================================================
+
+再次确认：
+
+任何：
+
+Map selector
+quota
+sparse edge
+
+均不修改：
+
+predicted trajectories
+
+original logits
+
+original probabilities。
+
+Candidate maxdiff：
+
+0。
+
+============================================================
+41. No Future Leakage
+============================================================
+
+继续poison：
+
+GT
+future masks
+target masks。
+
+至少：
+
+100 TRAIN
+100 VAL windows。
+
+要求：
+
+selected entity IDs
+
+selected entity types
+
+distances
+
+map node features
+
+map edge features
+
+interaction graph
+
+全部：
+
+bitwise identical。
+
+============================================================
+42. Coordinate Audit
+============================================================
+
+复用0B规则。
+
+至少：
+
+200 windows。
+
+要求：
+
+global/local geometry distance discrepancy
+
+<1e-5m。
+
+============================================================
+43. Semantic Attachment Audit
+============================================================
+
+对于：
+
+lane / connector：
+
+9D semantic必须与Stage7A frozen cache
+bitwise一致。
+
+对于：
+
+polygon entities：
+
+9D semantic必须：
+
+exact zero。
+
+Entity type onehot：
+
+exact one-hot。
+
+============================================================
+44. Selector Determinism
+============================================================
+
+重复执行：
+
+至少3次。
+
+不同：
+
+worker count
+
+process ordering
+
+batch ordering。
+
+要求：
+
+selected entity token order
+
+完全一致。
+
+============================================================
+45. Selector不可看VAL误差
+============================================================
+
+代码检查：
+
+selector模块不得import：
+
+GT error
+FDE
+ADE
+ranking label
+best mode
+
+相关evaluation文件。
+
+报告：
+
+SelectorUsesPredictionError = NO。
+
+============================================================
+46. 主要表1
+============================================================
+
+输出：
+
+stage8a0c_sparse_coverage.csv
+
+字段：
+
+Split
+Group
+Candidates
+MapNonEmptyRate
+ZeroMapRate
+MeanEntitiesPerMode
+MedianEntities
+P95Entities
+MaxEntities
+
+============================================================
+47. 主要表2
+============================================================
+
+stage8a0c_entity_retention.csv
+
+字段：
+
+Split
+ActorGroup
+EntityType
+UncappedEntities
+SelectedEntities
+RetentionRate
+CandidatesWithType
+CandidatesPreservedType
+PresencePreservationRate
+
+============================================================
+48. 主要表3
+============================================================
+
+stage8a0c_selector_comparison.csv
+
+比较：
+
+GlobalTop8
+vs
+TypeAwareQuota
+
+字段：
+
+Group
+MeanSelectedEntities
+MeanDistinctEntityTypes
+LanePresence
+ConnectorPresence
+DrivablePresence
+CarparkPresence
+CrosswalkPresence
+WalkwayPresence
+
+============================================================
+49. 主要表4
+============================================================
+
+stage8a0c_graph_statistics.csv
+
+字段：
+
+Group
+Targets
+MeanModeMapEdges
+P95ModeMapEdges
+MaxModeMapEdges
+MeanModeModeEdges
+P95ModeModeEdges
+ZeroMapTargetRate
+
+============================================================
+50. 主要表5
+============================================================
+
+stage8a0c_model_spec.csv
+
+字段：
+
+Variant
+Parameters
+InputDims
+HiddenDim
+MaxMapEdges
+MaxInteractionEdges
+NeutralOutputMaxDiff
+EstimatedMemoryMiB
+
+Variants：
+
+G1
+G2
+G3。
+
+============================================================
+51. Manifest
+============================================================
+
+创建：
+
+00_manifest/
+stage8a0c_frozen_graph_spec.json
+
+必须包含：
+
+entity taxonomy
+
+actor→entity mapping
+
+lane radius
+
+polygon threshold
+
+quota
+
+node feature names
+
+interaction feature names
+
+map node feature names
+
+map edge feature names
+
+neighbor rule
+
+empty-map rule
+
+all readiness thresholds
+
+source commit
+
+all relevant SHA256。
+
+============================================================
+52. 正式规则冻结
+============================================================
+
+一旦0C完成并push：
+
+如果READY：
+
+后续Stage8A-1不得修改：
+
+10m
+
+2m
+
+3/3/1/1 quota
+
+3/2/1 quota
+
+3/3/1 quota
+
+map features
+
+interaction features
+
+neighbor=8
+
+50m
+
+hidden64
+
+ranking temperature1m
+
+除非发现明确代码bug。
+
+============================================================
+53. 0C Scientific Decision
+============================================================
+
+输出：
+
+SparseMapSelector =
+PASS / FAIL
+
+SemanticPresencePreservation =
+PASS / FAIL
+
+SparseCoverage =
+PASS / FAIL
+
+CandidateIdentity =
+PASS / FAIL
+
+Coordinate =
+PASS / FAIL
+
+NoFutureLeakage =
+PASS / FAIL
+
+SelectorDeterminism =
+PASS / FAIL
+
+MemoryFeasible =
+YES / NO
+
+GraphSpecFrozen =
+YES / NO
+
+Stage8A_0C =
+READY / NOT_READY
+
+============================================================
+54. READY要求
+============================================================
+
+必须全部满足：
+
+SparseMapSelector PASS
+
+SemanticPresencePreservation PASS
+
+CandidateIdentity PASS
+
+Coordinate PASS
+
+NoFutureLeakage PASS
+
+SelectorDeterminism PASS
+
+MemoryFeasible YES
+
+G3 params <150k
+
+以及：
+
+Moving RouteCenterlineCoverage >=95%
+
+Vehicle MapNonEmptyRate >=80%
+
+Parked MapNonEmptyRate >=70%
+
+Pedestrian MapNonEmptyRate >=85%
+
+Pedestrian SemanticSpecificCoverage >=70%
+
+Bicycle MapNonEmptyRate >=80%。
+
+============================================================
+55. 如果READY
+============================================================
+
+报告：
+
+ReadyStage8A1 = YES
+
+但是：
+
+STOP。
+
+不得自动训练。
+
+等待大脑AI下一条指令。
+
+============================================================
+56. 如果NOT_READY
+============================================================
+
+报告具体哪个gate失败。
+
+禁止：
+
+改radius
+
+改quota
+
+增加entity
+
+增加fallback
+
+然后重新刷PASS。
+
+直接：
+
+ReadyStage8A1 = NO
+
+STOP。
+
+============================================================
+57. Git
+============================================================
+
+建议commit：
+
+feat: define deterministic sparse type-aware semantic selector
+
+audit: validate empty-map aggregation and semantic preservation
+
+audit: freeze Stage8A sparse graph specification
+
+docs: finalize Stage8A-0C readiness decision
+
+push：
+
+stage8a0c/sparse-type-aware-graph-spec
+
+禁止merge main。
+
+============================================================
+58. 完成后只汇报
+============================================================
+
+Git commit=
+
+SparseMapSelector=
+PASS / FAIL
+
+CandidateIdentity=
+PASS / FAIL
+
+Coordinate=
+PASS / FAIL
+
+NoFutureLeakage=
+PASS / FAIL
+
+SelectorDeterminism=
+PASS / FAIL
+
+PresencePreservation=
+PASS / FAIL
+
+Moving RouteCenterlineCoverage=
+
+Vehicle MapNonEmptyRate=
+
+Parked MapNonEmptyRate=
+
+Pedestrian MapNonEmptyRate=
+
+Pedestrian SemanticSpecificCoverage=
+
+Bicycle MapNonEmptyRate=
+
+Vehicle ZeroMapRate=
+
+Pedestrian ZeroMapRate=
+
+Bicycle ZeroMapRate=
+
+Mean entities/mode:
+
+Vehicle=
+Pedestrian=
+Bicycle=
+
+GlobalTop8 mean semantic types=
+
+Quota mean semantic types=
+
+Mean mode-map edges/target=
+
+P95 mode-map edges=
+
+G1 params=
+
+G2 params=
+
+G3 params=
+
+Neutral logit maxdiff=
+
+Estimated inference memory=
+
+MemoryFeasible=
+YES / NO
+
+GraphSpecFrozen=
+YES / NO
+
+Stage8A_0C=
+READY / NOT_READY
+
+ReadyStage8A1=
+YES / NO
+
+完成后STOP。
+
+绝对不要训练G1/G2/G3。
+等待大脑AI审查。

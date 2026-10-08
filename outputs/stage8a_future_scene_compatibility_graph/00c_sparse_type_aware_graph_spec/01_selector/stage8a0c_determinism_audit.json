@@ -1,0 +1,46 @@
+{
+  "SelectorDeterminism": "PASS",
+  "runs": [
+    {
+      "Run": 1,
+      "Workers": 1,
+      "ChunkWindows": 1,
+      "WindowOrdering": "ascending",
+      "CandidateOrdering": "ascending",
+      "Windows": 200,
+      "Candidates": 31896,
+      "SelectorSHA256": "ac498ede3fe0747495c5dc489477fd1cf21d221f00ab36e7d374cb6f7bb36775",
+      "BitwiseIdentical": "PASS"
+    },
+    {
+      "Run": 2,
+      "Workers": 2,
+      "ChunkWindows": 4,
+      "WindowOrdering": "reverse",
+      "CandidateOrdering": "reverse",
+      "Windows": 200,
+      "Candidates": 31896,
+      "SelectorSHA256": "ac498ede3fe0747495c5dc489477fd1cf21d221f00ab36e7d374cb6f7bb36775",
+      "BitwiseIdentical": "PASS"
+    },
+    {
+      "Run": 3,
+      "Workers": 3,
+      "ChunkWindows": 7,
+      "WindowOrdering": "seed2022_shuffle",
+      "CandidateOrdering": "seed2022_shuffle",
+      "Windows": 200,
+      "Candidates": 31896,
+      "SelectorSHA256": "ac498ede3fe0747495c5dc489477fd1cf21d221f00ab36e7d374cb6f7bb36775",
+      "BitwiseIdentical": "PASS"
+    }
+  ],
+  "checks": "every selected ID/type/distance, count, mask and comparison selector bitwise equal after restoring row order",
+  "selected_tokens_order_equal": true,
+  "worker_counts": [
+    1,
+    2,
+    3
+  ],
+  "sample_seed": 2022
+}

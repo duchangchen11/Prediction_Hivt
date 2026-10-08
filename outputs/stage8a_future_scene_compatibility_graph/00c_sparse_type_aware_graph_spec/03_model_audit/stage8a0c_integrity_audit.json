@@ -1,0 +1,135 @@
+{
+  "CandidateIdentity": "PASS",
+  "Coordinate": "PASS",
+  "NoFutureLeakage": "PASS",
+  "SemanticAttachment": "PASS",
+  "SelectorUsesPredictionError": "NO",
+  "windows": 200,
+  "train_windows": 100,
+  "val_windows": 100,
+  "candidate_maxdiff": 0,
+  "original_logit_maxdiff": 0,
+  "original_probability_maxdiff": 0,
+  "geometry_distance_max_m": 6.821210263296962e-13,
+  "candidate_roundtrip_max_m": 2.8421709430404007e-13,
+  "polygon_roundtrip_max_m": 9.094947017729282e-13,
+  "semantic_edges_checked": 106398,
+  "neutral_real_unique_targets": 128,
+  "poisoned_GT": "NaN",
+  "poisoned_masks": "inverted",
+  "forbidden_access_guard": true,
+  "all_node_map_interaction_features_bitwise_unchanged": true,
+  "unchanged_Stage8A0_neighbor_rule": true,
+  "source_import_audit": [
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_selector.py",
+      "module": "pathlib"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_selector.py",
+      "module": "sys"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_selector.py",
+      "module": "stage8a0c_common"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_selector.py",
+      "module": "numpy"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_selector.py",
+      "module": "shapely"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_selector.py",
+      "module": "shapely.strtree"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_selector.py",
+      "module": "nuscenes.map_expansion.map_api"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_build.py",
+      "module": "pathlib"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_build.py",
+      "module": "sys"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_build.py",
+      "module": "stage8a0c_common"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_build.py",
+      "module": "numpy"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/01_selector/stage8a0c_build.py",
+      "module": "torch"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "pathlib"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "sys"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "json"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "csv"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "hashlib"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "subprocess"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "numpy"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "torch"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "stage8a_graph"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/00_manifest/stage8a0c_common.py",
+      "module": "preprocessing.coordinates"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00_manifest/stage8a_graph.py",
+      "module": "dataclasses"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00_manifest/stage8a_graph.py",
+      "module": "numpy"
+    },
+    {
+      "source": "outputs/stage8a_future_scene_compatibility_graph/00_manifest/stage8a_graph.py",
+      "module": "torch"
+    },
+    {
+      "source": "preprocessing/coordinates.py",
+      "module": "numpy"
+    },
+    {
+      "source": "preprocessing/coordinates.py",
+      "module": "pyquaternion"
+    }
+  ],
+  "training_executed": false,
+  "test_used": false
+}

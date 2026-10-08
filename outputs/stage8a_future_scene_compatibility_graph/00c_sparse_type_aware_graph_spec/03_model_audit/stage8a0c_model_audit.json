@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "variants": [
+    {
+      "Variant": "G1",
+      "Parameters": 24066,
+      "InputDims": "Node15; Interaction17; MapNode18; MapEdge11",
+      "HiddenDim": 64,
+      "MaxMapEdges": 0,
+      "MaxInteractionEdges": 288,
+      "NeutralOutputMaxDiff": 0.0,
+      "EstimatedMemoryMiB": 117.33740234375
+    },
+    {
+      "Variant": "G2",
+      "Parameters": 20546,
+      "InputDims": "Node15; Interaction17; MapNode18; MapEdge11",
+      "HiddenDim": 64,
+      "MaxMapEdges": 48,
+      "MaxInteractionEdges": 0,
+      "NeutralOutputMaxDiff": 0.0,
+      "EstimatedMemoryMiB": 73.6484375
+    },
+    {
+      "Variant": "G3",
+      "Parameters": 37187,
+      "InputDims": "Node15; Interaction17; MapNode18; MapEdge11",
+      "HiddenDim": 64,
+      "MaxMapEdges": 48,
+      "MaxInteractionEdges": 288,
+      "NeutralOutputMaxDiff": 0.0,
+      "EstimatedMemoryMiB": 117.38916015625
+    }
+  ],
+  "shared_node_norm_head_bitwise_equal": true,
+  "G1_bitwise_identical_to_Stage8A0_static_prototype": true,
+  "NeutralLogitMaxDiff": 0.0,
+  "NeutralProbabilityMaxDiff": 4.470348358154297e-08,
+  "final_head_exact_zero": true,
+  "real_unique_actors": 128,
+  "optimizer_steps": 0,
+  "backward_calls": 0,
+  "new_checkpoints": 0,
+  "training_executed": false,
+  "parameters_require_grad_during_audit": false
+}

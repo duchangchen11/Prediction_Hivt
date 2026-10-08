@@ -1,0 +1,39 @@
+{
+  "MemoryFeasible": "YES",
+  "rows": [
+    {
+      "Variant": "G1",
+      "MeasuredForwardPeakMiB": 85.33740234375,
+      "ResidentBeforeForwardMiB": 35.57177734375,
+      "InputBytesBatch128": 3644416,
+      "EstimatedInferencePeakMiB": 117.33740234375,
+      "MarginMiB": 32.0,
+      "TrainingMemoryMeasured": false
+    },
+    {
+      "Variant": "G2",
+      "MeasuredForwardPeakMiB": 41.6484375,
+      "ResidentBeforeForwardMiB": 35.55810546875,
+      "InputBytesBatch128": 3644416,
+      "EstimatedInferencePeakMiB": 73.6484375,
+      "MarginMiB": 32.0,
+      "TrainingMemoryMeasured": false
+    },
+    {
+      "Variant": "G3",
+      "MeasuredForwardPeakMiB": 85.38916015625,
+      "ResidentBeforeForwardMiB": 35.62353515625,
+      "InputBytesBatch128": 3644416,
+      "EstimatedInferencePeakMiB": 117.38916015625,
+      "MarginMiB": 32.0,
+      "TrainingMemoryMeasured": false
+    }
+  ],
+  "EstimatedInferenceMiB": 117.38916015625,
+  "limit_MiB": 1024,
+  "dimension_exact_input_bytes_per_target": 28472,
+  "batch128_input_bytes": 3644416,
+  "method": "allowed static no-grad forward peak plus fixed32MiB planning margin; historical fallback if CUDA unavailable",
+  "training_memory": "unmeasured; requires Stage8A-1 tiny audit under separate authorization",
+  "includes_predictor": false
+}

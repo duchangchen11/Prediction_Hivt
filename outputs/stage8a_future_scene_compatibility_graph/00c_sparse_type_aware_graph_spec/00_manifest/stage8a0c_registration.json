@@ -1,0 +1,60 @@
+{
+  "source_commit": "dbb743ab79d3d0309419cd051624ff99c7a6a0ee",
+  "branch": "stage8a0c/sparse-type-aware-graph-spec",
+  "entity_types": [
+    "lane",
+    "lane_connector",
+    "drivable_area",
+    "carpark_area",
+    "ped_crossing",
+    "walkway"
+  ],
+  "quotas": [
+    [
+      3,
+      3,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      2,
+      3
+    ],
+    [
+      3,
+      3,
+      1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "lane_radius_m": 10,
+  "polygon_threshold_m": 2,
+  "gate_scope": "each TRAIN/VAL full-horizon population separately",
+  "coverage_gates": {
+    "MovingRoute": 0.95,
+    "VehicleNonempty": 0.8,
+    "ParkedNonempty": 0.7,
+    "PedestrianNonempty": 0.85,
+    "PedestrianSpecific": 0.7,
+    "BicycleNonempty": 0.8
+  },
+  "hidden_dim": 64,
+  "ranking_temperature_m": 1,
+  "memory_limit_bytes": 1073741824,
+  "parameter_limit_exclusive": 150000,
+  "no_fallback": true,
+  "no_NULL_token": true,
+  "zero_map_samples_retained": true,
+  "training": false,
+  "test_used": false,
+  "historical_stage8a0": "NOT_READY",
+  "historical_stage8a0b": "NOT_READY"
+}
