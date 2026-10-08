@@ -1,0 +1,32 @@
+{
+  "case": "case3",
+  "description": "High interaction and high gate Vehicle: T3 improves R2",
+  "scene_token": "dce6f3f2bf6b4859abcf3268581969d3",
+  "sample_token": "d903747f29c74016a3a702959cf43429",
+  "instance_token": "99cdc386f04749548f91ff0bc50da6b2",
+  "dataset_index": 2468,
+  "node_in_graph": 18,
+  "best_mode": 2,
+  "T3_gate": 0.9051963090896606,
+  "neighbor_count": 8,
+  "top1_modes": {
+    "R0": 3,
+    "R2": 3,
+    "G1": 0,
+    "G3": 3,
+    "T1": 3,
+    "T2": 3,
+    "T3": 0
+  },
+  "Top1FDE": {
+    "R0": 50.81661224365234,
+    "R2": 50.81661224365234,
+    "G1": 13.891037940979004,
+    "G3": 50.81661224365234,
+    "T1": 50.81661224365234,
+    "T2": 50.81661224365234,
+    "T3": 13.891037940979004
+  },
+  "aggregate_precedes_selection": true,
+  "causal_attribution": false
+}

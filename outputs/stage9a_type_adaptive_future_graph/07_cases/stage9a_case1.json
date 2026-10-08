@@ -1,0 +1,32 @@
+{
+  "case": "case1",
+  "description": "MovingVehicle: R2 misses oracle mode; T3 selects it",
+  "scene_token": "d3b86ca0a17840109e9e049b3dd40037",
+  "sample_token": "40b07c35da0c440ab96e9d934f096276",
+  "instance_token": "3746719df67c423f92e76d1cf3a4ff58",
+  "dataset_index": 2434,
+  "node_in_graph": 1,
+  "best_mode": 0,
+  "T3_gate": 0.9297104477882384,
+  "neighbor_count": 8,
+  "top1_modes": {
+    "R0": 4,
+    "R2": 3,
+    "G1": 4,
+    "G3": 0,
+    "T1": 4,
+    "T2": 4,
+    "T3": 0
+  },
+  "Top1FDE": {
+    "R0": 12.080862045288086,
+    "R2": 41.725494384765625,
+    "G1": 12.080862045288086,
+    "G3": 4.208702564239502,
+    "T1": 12.080862045288086,
+    "T2": 12.080862045288086,
+    "T3": 4.208702564239502
+  },
+  "aggregate_precedes_selection": true,
+  "causal_attribution": false
+}

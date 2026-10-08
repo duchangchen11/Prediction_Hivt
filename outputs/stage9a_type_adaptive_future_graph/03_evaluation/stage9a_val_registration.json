@@ -1,0 +1,21 @@
+{
+  "status": "LOCKED_BEFORE_SECONDARY_VAL_PASS",
+  "checkpoint_manifest_sha256": "20a2646a690f0f8641b753102e8d1faf4209515aa868e6437a96b1cb0562a2e1",
+  "protocol_sha256": "6eff5078dc97f3123f26f9eee8bded0593263db0d6e4f63d0c38fb0558897c6c",
+  "evaluation_source_sha256": "c7893c1a82a93cd9764cb133bb75b0d8f52c129c60893fe8baead0c886b52535",
+  "models": [
+    "R0",
+    "R2",
+    "G1",
+    "G3",
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "Official_VAL_role": "development-reuse evidence",
+  "VAL_model_selection": false,
+  "fresh_predictor": true,
+  "Stage9_semantic_inputs": false,
+  "G3_reference_only": true,
+  "test_used": false
+}

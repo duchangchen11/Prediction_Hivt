@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "device": "NVIDIA GeForce RTX 3080",
+  "precision": "FP32",
+  "targets": 128,
+  "warmup": 100,
+  "measured": 500,
+  "semantic_retrieval": false,
+  "end_to_end_latency_claim": false
+}

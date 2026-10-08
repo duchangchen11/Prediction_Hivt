@@ -1,0 +1,10 @@
+{
+  "status": "DIAGNOSTIC_BOUNDARY_CORRECTION",
+  "first_measurement": "T1/T2/T3 graph residual only; R2 base logits already computed",
+  "corrected_measurement": "separately report combined frozen R2+graph, graph residual only and gate only",
+  "checkpoints_changed": false,
+  "training_source_changed": false,
+  "official_VAL_rerun": false,
+  "scientific_rules_changed": false,
+  "first_results_preserved": true
+}

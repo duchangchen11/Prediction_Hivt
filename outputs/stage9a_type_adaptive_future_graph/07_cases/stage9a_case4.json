@@ -1,0 +1,32 @@
+{
+  "case": "case4",
+  "description": "Failure: T3 worsens R2",
+  "scene_token": "6f83169d067343658251f72e1dd17dbc",
+  "sample_token": "4ae9c033164e4e01a0392672686d095c",
+  "instance_token": "888521a8b57f46258e81a89bf062278b",
+  "dataset_index": 1369,
+  "node_in_graph": 16,
+  "best_mode": 3,
+  "T3_gate": 0.8905802965164185,
+  "neighbor_count": 8,
+  "top1_modes": {
+    "R0": 3,
+    "R2": 3,
+    "G1": 5,
+    "G3": 3,
+    "T1": 2,
+    "T2": 3,
+    "T3": 2
+  },
+  "Top1FDE": {
+    "R0": 10.70884609222412,
+    "R2": 10.70884609222412,
+    "G1": 29.42164421081543,
+    "G3": 10.70884609222412,
+    "T1": 52.666629791259766,
+    "T2": 10.70884609222412,
+    "T3": 52.666629791259766
+  },
+  "aggregate_precedes_selection": true,
+  "causal_attribution": false
+}

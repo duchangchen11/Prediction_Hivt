@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "device": "NVIDIA GeForce RTX 3080",
+  "precision": "FP32",
+  "targets": 128,
+  "warmup": 100,
+  "measured": 500,
+  "semantic_retrieval": false,
+  "Stage9_combined_includes_frozen_R2_forward": true,
+  "residual_only_and_gate_costs_separately_labeled": true,
+  "end_to_end_latency_claim": false
+}

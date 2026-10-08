@@ -1,0 +1,32 @@
+{
+  "case": "case2",
+  "description": "Pedestrian: G1 worsens R2; T3 recovers oracle mode",
+  "scene_token": "50ff554b3ecb4d208849d042b7643715",
+  "sample_token": "d96c132fcf7147cfa1c2626fc7c9f311",
+  "instance_token": "2c82265eaf4547d38dbc8b2fda4ad73e",
+  "dataset_index": 2182,
+  "node_in_graph": 7,
+  "best_mode": 3,
+  "T3_gate": 0.604701578617096,
+  "neighbor_count": 8,
+  "top1_modes": {
+    "R0": 4,
+    "R2": 3,
+    "G1": 2,
+    "G3": 3,
+    "T1": 3,
+    "T2": 3,
+    "T3": 3
+  },
+  "Top1FDE": {
+    "R0": 4.686515808105469,
+    "R2": 0.3621259331703186,
+    "G1": 6.837053298950195,
+    "G3": 0.3621259331703186,
+    "T1": 0.3621259331703186,
+    "T2": 0.3621259331703186,
+    "T3": 0.3621259331703186
+  },
+  "aggregate_precedes_selection": true,
+  "causal_attribution": false
+}

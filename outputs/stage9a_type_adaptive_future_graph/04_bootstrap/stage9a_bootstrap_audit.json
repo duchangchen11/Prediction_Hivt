@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "scenes": 150,
+  "replicates": 1000,
+  "seed": 2022,
+  "shared_indices_sha256": "9e8e8619c7b0dedb1adfc875474a8600b2af204c593cb1b920233bcae55a2e46",
+  "pairs": [
+    [
+      "T3",
+      "R2"
+    ],
+    [
+      "T1",
+      "R2"
+    ],
+    [
+      "T2",
+      "R2"
+    ],
+    [
+      "T3",
+      "T1"
+    ],
+    [
+      "T3",
+      "T2"
+    ],
+    [
+      "T3",
+      "G1"
+    ],
+    [
+      "T3",
+      "G3"
+    ],
+    [
+      "T2",
+      "T1"
+    ]
+  ],
+  "groups": [
+    "Overall",
+    "Vehicle",
+    "Pedestrian",
+    "Bicycle",
+    "MovingVehicle",
+    "StoppedVehicle",
+    "ParkedVehicle",
+    "Vehicle>5m",
+    "Pedestrian<5m",
+    "Pedestrian>5m",
+    "Neighbor0",
+    "Neighbor1-2",
+    "Neighbor3-5",
+    "Neighbor6-8",
+    "0-5m",
+    "5-10m",
+    "10-20m",
+    "20-50m"
+  ],
+  "delta": "new-baseline",
+  "Official_VAL_role": "development-reuse evidence",
+  "subgroup_intervals": "unadjusted overlapping secondary analyses; not independent confirmatory evidence"
+}

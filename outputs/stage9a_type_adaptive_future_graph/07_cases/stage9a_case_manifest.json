@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "case1",
+      "description": "MovingVehicle: R2 misses oracle mode; T3 selects it",
+      "scene_token": "d3b86ca0a17840109e9e049b3dd40037",
+      "sample_token": "40b07c35da0c440ab96e9d934f096276",
+      "instance_token": "3746719df67c423f92e76d1cf3a4ff58",
+      "dataset_index": 2434,
+      "node_in_graph": 1,
+      "best_mode": 0,
+      "T3_gate": 0.9297104477882384,
+      "neighbor_count": 8,
+      "top1_modes": {
+        "R0": 4,
+        "R2": 3,
+        "G1": 4,
+        "G3": 0,
+        "T1": 4,
+        "T2": 4,
+        "T3": 0
+      },
+      "Top1FDE": {
+        "R0": 12.080862045288086,
+        "R2": 41.725494384765625,
+        "G1": 12.080862045288086,
+        "G3": 4.208702564239502,
+        "T1": 12.080862045288086,
+        "T2": 12.080862045288086,
+        "T3": 4.208702564239502
+      },
+      "aggregate_precedes_selection": true,
+      "causal_attribution": false
+    },
+    {
+      "case": "case2",
+      "description": "Pedestrian: G1 worsens R2; T3 recovers oracle mode",
+      "scene_token": "50ff554b3ecb4d208849d042b7643715",
+      "sample_token": "d96c132fcf7147cfa1c2626fc7c9f311",
+      "instance_token": "2c82265eaf4547d38dbc8b2fda4ad73e",
+      "dataset_index": 2182,
+      "node_in_graph": 7,
+      "best_mode": 3,
+      "T3_gate": 0.604701578617096,
+      "neighbor_count": 8,
+      "top1_modes": {
+        "R0": 4,
+        "R2": 3,
+        "G1": 2,
+        "G3": 3,
+        "T1": 3,
+        "T2": 3,
+        "T3": 3
+      },
+      "Top1FDE": {
+        "R0": 4.686515808105469,
+        "R2": 0.3621259331703186,
+        "G1": 6.837053298950195,
+        "G3": 0.3621259331703186,
+        "T1": 0.3621259331703186,
+        "T2": 0.3621259331703186,
+        "T3": 0.3621259331703186
+      },
+      "aggregate_precedes_selection": true,
+      "causal_attribution": false
+    },
+    {
+      "case": "case3",
+      "description": "High interaction and high gate Vehicle: T3 improves R2",
+      "scene_token": "dce6f3f2bf6b4859abcf3268581969d3",
+      "sample_token": "d903747f29c74016a3a702959cf43429",
+      "instance_token": "99cdc386f04749548f91ff0bc50da6b2",
+      "dataset_index": 2468,
+      "node_in_graph": 18,
+      "best_mode": 2,
+      "T3_gate": 0.9051963090896606,
+      "neighbor_count": 8,
+      "top1_modes": {
+        "R0": 3,
+        "R2": 3,
+        "G1": 0,
+        "G3": 3,
+        "T1": 3,
+        "T2": 3,
+        "T3": 0
+      },
+      "Top1FDE": {
+        "R0": 50.81661224365234,
+        "R2": 50.81661224365234,
+        "G1": 13.891037940979004,
+        "G3": 50.81661224365234,
+        "T1": 50.81661224365234,
+        "T2": 50.81661224365234,
+        "T3": 13.891037940979004
+      },
+      "aggregate_precedes_selection": true,
+      "causal_attribution": false
+    },
+    {
+      "case": "case4",
+      "description": "Failure: T3 worsens R2",
+      "scene_token": "6f83169d067343658251f72e1dd17dbc",
+      "sample_token": "4ae9c033164e4e01a0392672686d095c",
+      "instance_token": "888521a8b57f46258e81a89bf062278b",
+      "dataset_index": 1369,
+      "node_in_graph": 16,
+      "best_mode": 3,
+      "T3_gate": 0.8905802965164185,
+      "neighbor_count": 8,
+      "top1_modes": {
+        "R0": 3,
+        "R2": 3,
+        "G1": 5,
+        "G3": 3,
+        "T1": 2,
+        "T2": 3,
+        "T3": 2
+      },
+      "Top1FDE": {
+        "R0": 10.70884609222412,
+        "R2": 10.70884609222412,
+        "G1": 29.42164421081543,
+        "G3": 10.70884609222412,
+        "T1": 52.666629791259766,
+        "T2": 10.70884609222412,
+        "T3": 52.666629791259766
+      },
+      "aggregate_precedes_selection": true,
+      "causal_attribution": false
+    }
+  ],
+  "unavailable": [],
+  "high_gate_vehicle_p75": 0.6616038531064987,
+  "same_axis_between_geometry_panels": true,
+  "selection": "fixed requested category; largest FDE effect; lexical identity tie-break; distinct instances",
+  "oracle_mode_not_behavior_prediction_accuracy": true
+}

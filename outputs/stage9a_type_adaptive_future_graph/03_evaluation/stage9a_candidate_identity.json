@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "targets": 54990,
+  "scenes": 150,
+  "all_source_windows_checked": 3603,
+  "shared_prediction_tensor": true,
+  "fresh_equals_frozen_cache_bitwise": true,
+  "candidate_maxdiff": 0.0,
+  "minADE6_maxdiff": 0.0,
+  "minFDE6_maxdiff": 0.0,
+  "MR6_maxdiff": 0.0,
+  "predictor_gradient_count": 0,
+  "R2_gradient_count": 0,
+  "predictor_R2_states_unchanged": true,
+  "Stage9_semantic_inputs": false
+}
