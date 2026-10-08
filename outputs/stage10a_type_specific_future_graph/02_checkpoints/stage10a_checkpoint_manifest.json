@@ -1,0 +1,35 @@
+{
+  "status": "FROZEN_ALL_COMPLETE",
+  "training_prohibited": true,
+  "checkpoints": [
+    {
+      "Expert": "vehicle",
+      "Path": "outputs/stage10a_type_specific_future_graph/02_checkpoints/VehicleExpert_best.pt",
+      "SHA256": "e8f672ba1b77dfcf23b091aad65751cf9b27321206c2ad88c5dd0fee9bdd95d5",
+      "SelectedEpoch": 5,
+      "HeadDevSoftCE": 1.4797993697876362,
+      "Params": 24066,
+      "Seed": 2022,
+      "Selection": "minimum own-type HeadDev SoftCE"
+    },
+    {
+      "Expert": "pedestrian",
+      "Path": "outputs/stage10a_type_specific_future_graph/02_checkpoints/PedestrianExpert_best.pt",
+      "SHA256": "14aefd4d777248cede2a4bdbc144c1734b7bb90e12d51f74930588ca95ab3c99",
+      "SelectedEpoch": 4,
+      "HeadDevSoftCE": 1.6921395118722704,
+      "Params": 24066,
+      "Seed": 2123,
+      "Selection": "minimum own-type HeadDev SoftCE"
+    }
+  ],
+  "registration_sha256": "0d2280cd500bf8616b3e45186ce3953fb7e1dce4ca181556854e3c5fb73b6d41",
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "predictor_R2_state_sha256": [
+    "0a49aacd90d08951bc7750a473dc83996f9629c1041d39ac03d69bb5ea321437",
+    "ca6f70dc163b13e5e297da673b5809ed90b9af4de83e8a04113435357a8309d1"
+  ],
+  "official_VAL_used": false,
+  "test_used": false,
+  "checkpoint_selection": "own-type HeadDev SoftCE only"
+}

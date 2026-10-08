@@ -1,0 +1,28 @@
+{
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "precision": "FP32",
+  "effective_batch": 1024,
+  "microbatch": 128,
+  "accumulation": 8,
+  "max_epoch": 50,
+  "patience": 5,
+  "objective": "mean SoftCE over respective target type; q=softmax(-FDE_k/1m)",
+  "shuffle_seed": "respective expert seed + epoch",
+  "carry": "prepend epoch remainder to next epoch; final remainder preserved in last checkpoint; no shortened optimizer batches or discarded targets",
+  "checkpoint_selection": "minimum respective-type entire HeadDev SoftCE; strict improvement and earliest ties",
+  "sequential_order": [
+    "vehicle",
+    "pedestrian"
+  ],
+  "expert": "vehicle",
+  "target_type": "Vehicle",
+  "seed": 2022,
+  "initial_state_sha256": "e3c7296a6d67da33b3ff877d655147f4d683c36062178532896cc568763223be",
+  "registration_sha256": "0d2280cd500bf8616b3e45186ce3953fb7e1dce4ca181556854e3c5fb73b6d41",
+  "normalization_sha256": "763d8d4ed7852ef39d87a53194048a6f798d0df32e2e0c1e783361bab1ac2827",
+  "HeadTrainTargets": 191026,
+  "HeadDevTargets": 22719,
+  "optimizer_parameter_ptrs_independent": true
+}

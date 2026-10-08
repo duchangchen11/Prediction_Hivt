@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "graph_gradient_norm": 0.20632506906986237,
+  "module_gradient_norms": {
+    "node_encoder": 0.11419447511434555,
+    "interaction_encoder": 0.16573254764080048,
+    "interaction_attention": 0.01875750534236431,
+    "norm": 0.0044126687571406364,
+    "head": 0.041122496128082275
+  },
+  "gradients_finite_nonzero": true,
+  "predictor_gradient_count": 0,
+  "R2_gradient_count": 0,
+  "candidate_requires_grad": false
+}

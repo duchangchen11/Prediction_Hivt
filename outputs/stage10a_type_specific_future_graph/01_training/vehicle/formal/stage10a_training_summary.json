@@ -1,0 +1,30 @@
+{
+  "status": "COMPLETE",
+  "Expert": "vehicle",
+  "selected_epoch": 5,
+  "executed_epochs": 10,
+  "HeadDevSoftCE": 1.4797993697876362,
+  "selected": {
+    "DevSoftCE": 1.4797993697876362,
+    "DevTop1ADE": 1.243465704586703,
+    "DevTop1FDE": 2.7488933700966736,
+    "DevCount": 22719
+  },
+  "checkpoint_sha256": "e8f672ba1b77dfcf23b091aad65751cf9b27321206c2ad88c5dd0fee9bdd95d5",
+  "parameters": 24066,
+  "precision": "FP32",
+  "microbatch": 128,
+  "effective_batch": 1024,
+  "accumulation": 8,
+  "elapsed_seconds": 384.0877335109981,
+  "official_VAL_used": false,
+  "predictor_gradient_count": 0,
+  "R2_gradient_count": 0,
+  "candidate_requires_grad": false,
+  "tiny_weights_reused": false,
+  "all_own_type_HeadTrain_targets_optimized": true,
+  "other_type_loss_targets": 0,
+  "HeadDev_loss_backprop_targets": 0,
+  "unique_train_targets": 191026,
+  "final_unoptimized_carry_occurrences_retained_in_last_checkpoint": 500
+}

@@ -1,0 +1,30 @@
+{
+  "status": "COMPLETE",
+  "Expert": "pedestrian",
+  "selected_epoch": 4,
+  "executed_epochs": 9,
+  "HeadDevSoftCE": 1.6921395118722704,
+  "selected": {
+    "DevSoftCE": 1.6921395118722704,
+    "DevTop1ADE": 0.7107193237278794,
+    "DevTop1FDE": 1.497762410910098,
+    "DevCount": 7057
+  },
+  "checkpoint_sha256": "14aefd4d777248cede2a4bdbc144c1734b7bb90e12d51f74930588ca95ab3c99",
+  "parameters": 24066,
+  "precision": "FP32",
+  "microbatch": 128,
+  "effective_batch": 1024,
+  "accumulation": 8,
+  "elapsed_seconds": 123.16368653799873,
+  "official_VAL_used": false,
+  "predictor_gradient_count": 0,
+  "R2_gradient_count": 0,
+  "candidate_requires_grad": false,
+  "tiny_weights_reused": false,
+  "all_own_type_HeadTrain_targets_optimized": true,
+  "other_type_loss_targets": 0,
+  "HeadDev_loss_backprop_targets": 0,
+  "unique_train_targets": 66145,
+  "final_unoptimized_carry_occurrences_retained_in_last_checkpoint": 361
+}
