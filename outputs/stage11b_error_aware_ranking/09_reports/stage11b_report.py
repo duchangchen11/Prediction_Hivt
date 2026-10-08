@@ -107,6 +107,8 @@ def main():
     report='# Stage11B Controlled Error-Aware Ranking Objective Study\n\n基础commit：`'+BASE+'`；分支：`stage11b/controlled-ranking-objectives`。\n\n'+'\n\n'.join(sections)+'\n'
     (ROOT/'09_reports/stage11b_final_report.md').write_text(report)
     figures(result,ci,mean_ci)
+    for p in (ROOT/'08_figures').glob('stage11b_*.svg'):
+        p.write_text('\n'.join(line.rstrip() for line in p.read_text().splitlines())+'\n')
     atomic_json(ROOT/'08_figures/stage11b_figure_manifest.json',{'Conclusion':decision['ErrorAwareRanking'],'FigureSources':'frozen OOF and selected InnerDev logs, no re-fitting',
         'Files':{p.name:sha256(p) for p in sorted((ROOT/'08_figures').glob('stage11b_*')) if p.suffix in ('.png','.svg','.pdf')},
         'Intervals':'OOF means95 descriptive; C-A primary97.5 individual Bonferroni','Export':['PNG','SVG','PDF']})
