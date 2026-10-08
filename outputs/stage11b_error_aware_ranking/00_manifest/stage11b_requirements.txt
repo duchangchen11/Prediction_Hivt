@@ -1,0 +1,1635 @@
+你现在执行新的科研实验阶段：
+
+============================================================
+Stage11B
+Controlled Error-Aware Ranking Objective Study
+面向异构交通参与者的误差感知轨迹排序损失对照实验
+============================================================
+
+项目路径：
+
+/home/lrj/Prediction_Hivt
+
+基础分支：
+
+stage11a/mode-selection-loss-audit
+
+基础commit：
+
+5617f9463b3f5baa4d941f52c157c25a341fd5e1
+
+新建分支：
+
+stage11b/controlled-ranking-objectives
+
+实验环境：
+
+优先复用conda环境 ped_intent
+RTX3080
+PyTorch 2.5.1+cu124
+
+============================================================
+一、研究目标
+============================================================
+
+本阶段验证：
+
+改变Future Interaction Graph的训练排序目标，
+是否能够解决Stage11A发现的：
+
+1. 车辆高代价错误模式切换
+2. 行人错误模式切换过多
+3. SoftCE改善但Top1FDE恶化
+
+最终要求：
+
+Vehicle预测改善
+Pedestrian预测改善
+Bicycle预测保持稳定
+Overall预测改善。
+
+所有参与者必须继续参与模型预测。
+
+禁止仅保留Vehicle/Pedestrian而删除Bicycle。
+
+============================================================
+二、冻结历史结论
+============================================================
+
+保留：
+
+Stage8：
+
+AgentGraph=SUPPORTED
+FSCG=NOT_SUPPORTED
+SemanticGraph=NOT_SUPPORTED
+
+Stage9：
+
+TAFIG=NOT_SUPPORTED
+
+Stage10：
+
+Stage10A=STOP
+
+Stage11A：
+
+LossRankingMismatch=CONFIRMED
+CostlyModeSwitchProblem=CONFIRMED
+CandidateGeometryBottleneck=PARTIAL
+SoftTargetAmbiguity=NOT_CONFIRMED。
+
+不得改写历史报告。
+
+============================================================
+三、本阶段不允许修改的内容
+============================================================
+
+禁止修改：
+
+Stage5A candidate predictor
+候选轨迹数量K
+预测时域Tf
+历史观测长度Th
+Future Interaction Graph架构
+图消息传递层数
+Neighbor radius
+Neighbor数量
+Graph node/edge字段
+Semantic Graph
+Type Adapter
+Learned Gate。
+
+本阶段只研究：
+
+Ranking Loss。
+
+============================================================
+四、冻结基础预测器
+============================================================
+
+Stage5A checkpoint：
+
+outputs/stage5a_motion_aware_decoder/
+07_checkpoints/
+stage5a_best_overall_minfde.pt
+
+SHA256：
+
+88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7
+
+要求：
+
+eval()
+requires_grad=False
+
+禁止重新训练候选生成器。
+
+所有实验使用相同的6条候选轨迹。
+
+============================================================
+五、Future Interaction Graph
+============================================================
+
+复用Stage8 G1完整架构。
+
+要求：
+
+Node Feature = 15D
+
+Mode-Mode Edge = 17D
+
+Hidden Dimension = 64
+
+Message Passing Layers = 1
+
+Neighbor Radius = 50m
+
+Nearest Neighbors = 8
+
+Prediction Modes = 6
+
+Future Horizon = 12。
+
+保持：
+
+Vehicle
+Pedestrian
+Bicycle
+
+都可以作为graph neighbor。
+
+网络输出：
+
+delta_logits。
+
+最终：
+
+logits =
+original_stage5a_logits
++
+delta_logits。
+
+禁止改为Stage9的R2-residual模型。
+
+============================================================
+六、正式实验Variants
+============================================================
+
+只允许：
+
+A
+B
+C。
+
+------------------------------------------------------------
+A：Original SoftCE
+------------------------------------------------------------
+
+q_k =
+softmax(-FDE_k / 1m)
+
+L_A =
+-sum_k q_k log(p_k)。
+
+A是Stage8 G1架构在新CV协议下
+重新训练的受控对照。
+
+不能把A直接写成历史G1 checkpoint。
+
+------------------------------------------------------------
+B：Hard Best-Mode CE
+------------------------------------------------------------
+
+best_mode =
+argmin_k FDE_k
+
+L_B =
+-log(p_best_mode)。
+
+FDE相同的tie：
+
+选择最低mode index。
+
+------------------------------------------------------------
+C：Normalized Error-Aware Ranking
+------------------------------------------------------------
+
+先定义：
+
+c_k =
+FDE_k - min_j FDE_j。
+
+计算每个actor的平均候选后悔值：
+
+mean_regret =
+mean_k(c_k)。
+
+定义归一化尺度：
+
+scale =
+max(1m, mean_regret)。
+
+最终：
+
+L_C =
+sum_k p_k * (c_k / scale)。
+
+对所有actor求mean。
+
+注意：
+
+这是对Stage11A提出的
+原始Error-Aware Ranking
+进行尺度归一化后的受控实现。
+
+必须明确记录：
+
+normalized formulation。
+
+不得声称与未经归一化的原始形式完全相同。
+
+============================================================
+七、为什么需要归一化
+============================================================
+
+车辆候选之间的FDE差异
+可能明显大于行人。
+
+如果直接使用：
+
+sum_k p_k * c_k
+
+车辆极端样本可能贡献较大梯度。
+
+因此本阶段预先冻结：
+
+scale=max(1m,mean_regret)。
+
+目的：
+
+控制不同actor之间的损失尺度。
+
+但它不保证类别完全平衡。
+
+禁止训练后根据结果：
+
+调整scale
+修改归一化形式
+额外clip
+额外添加权重。
+
+============================================================
+八、所有Loss的监督来源
+============================================================
+
+FDE只能来自：
+
+训练阶段对应actor的真实未来轨迹。
+
+允许用于：
+
+loss
+label
+offline evaluation。
+
+禁止将GT FDE输入：
+
+GNN node feature
+graph edge feature
+ranking model
+inference-time gate。
+
+必须执行GT poison audit。
+
+============================================================
+九、重要：实验对照的公平性
+============================================================
+
+A/B/C必须：
+
+使用相同的训练actor
+使用相同的candidate
+使用相同的graph features
+使用相同的batch顺序
+使用相同的初始化状态
+使用相同的optimizer
+使用相同的训练预算
+使用相同的checkpoint选择指标。
+
+唯一正式实验变量：
+
+Loss A/B/C。
+
+============================================================
+十、数据划分
+============================================================
+
+保留历史：
+
+TRAIN700。
+
+本阶段只使用：
+
+HeadTrain630。
+
+禁止使用：
+
+HeadDev70作为训练、checkpoint选择、
+模型筛选或本阶段主要评价数据。
+
+禁止使用：
+
+official VAL150
+official test。
+
+============================================================
+十一、三折场景级交叉验证
+============================================================
+
+Stage11B采用：
+
+3-fold scene-level CV。
+
+固定：
+
+seed2022。
+
+将HeadTrain630划分：
+
+Fold1：
+210 scenes
+
+Fold2：
+210 scenes
+
+Fold3：
+210 scenes。
+
+按照scene token和固定seed
+生成确定性哈希排序后切分。
+
+禁止根据模型效果调整划分。
+
+============================================================
+十二、每折内部数据
+============================================================
+
+对于任意一折：
+
+OuterTest：
+210 scenes。
+
+其余：
+
+420 scenes。
+
+从420 scenes中固定划出：
+
+InnerTrain：
+378 scenes
+
+InnerDev：
+42 scenes。
+
+全部划分按scene进行。
+
+同一个scene的所有：
+
+window
+actor
+sample
+
+必须位于同一个分区。
+
+禁止window级随机划分。
+
+============================================================
+十三、Fold数据隔离
+============================================================
+
+对每个fold检查：
+
+InnerTrain ∩ InnerDev = empty
+
+InnerTrain ∩ OuterTest = empty
+
+InnerDev ∩ OuterTest = empty。
+
+3个OuterTest的并集：
+
+必须等于HeadTrain630。
+
+每个scene：
+
+恰好在一个OuterTest中出现一次。
+
+============================================================
+十四、Normalization
+============================================================
+
+每折重新拟合：
+
+Graph连续特征normalization。
+
+只使用该折InnerTrain378。
+
+R2输入特征normalization：
+
+同样只允许使用对应InnerTrain。
+
+禁止复用包含OuterTest统计的
+旧HeadTrain630 normalization
+作为本阶段折外评估归一化。
+
+对于冻结Stage5A预测器内部已有归一化：
+
+不修改其历史参数。
+
+但必须在报告中明确：
+
+本次CV验证的是冻结候选条件下的
+ranking泛化，
+
+不是完全独立训练的端到端预测器。
+
+============================================================
+十五、Fold-specific R2
+============================================================
+
+非常重要：
+
+历史R2已经在HeadTrain630训练过。
+
+因此不能直接作为
+Stage11B的独立OuterTest baseline。
+
+每折新建：
+
+R2_Fold1
+R2_Fold2
+R2_Fold3。
+
+复用：
+
+Stage6A原始R2结构
+Stage6A原始R2训练损失
+Stage6A原始训练超参数。
+
+只修改：
+
+当前fold的数据划分
+当前fold的normalization。
+
+R2训练：
+
+InnerTrain378。
+
+R2 checkpoint选择：
+
+InnerDev42。
+
+选择准则：
+
+复用Stage6A原始Top1FDE选择协议。
+
+禁止使用OuterTest。
+
+每折R2冻结后，
+才能进行该折OuterTest评价。
+
+如果无法可靠复现R2原训练协议：
+
+STOP并报告。
+
+不得用历史R2冒充fold-specific R2。
+
+============================================================
+十六、Bicycle安全策略
+============================================================
+
+Stage8/9已发现：
+
+Learned Graph对Bicycle可能造成明显负迁移。
+
+本阶段提前固定：
+
+所有A/B/C方案
+
+Vehicle：
+使用对应Graph Ranking Head
+
+Pedestrian：
+使用对应Graph Ranking Head
+
+Bicycle：
+使用当前fold冻结R2。
+
+注意：
+
+这不是删除Bicycle。
+
+Bicycle仍然：
+
+参与全部Graph interaction
+具有完整历史观测
+生成6条候选轨迹
+产生6个最终概率
+参与Overall评价。
+
+另外：
+
+A/B/C训练时，
+Bicycle target仍参与对应ranking loss。
+
+只是最终推理输出通过
+统一的冻结R2路由。
+
+所有Variants必须采用相同路由。
+
+不得根据Fold结果改变。
+
+============================================================
+十七、Bicycle一致性审计
+============================================================
+
+要求：
+
+Bicycle A output
+=
+Bicycle B output
+=
+Bicycle C output
+=
+Fold-specific R2 output。
+
+必须核对：
+
+candidate
+logits
+probability
+selected mode。
+
+全部一致。
+
+============================================================
+十八、模型初始化
+============================================================
+
+每折：
+
+A/B/C使用完全相同初始权重。
+
+Fold1：
+seed2022
+
+Fold2：
+seed2122
+
+Fold3：
+seed2222。
+
+每折内：
+
+A/B/C初始模型state_dict逐位一致。
+
+不同fold使用独立初始化。
+
+score最后一层：
+
+zero initialization。
+
+确保：
+
+初始logits =
+original_stage5a_logits。
+
+============================================================
+十九、训练配置
+============================================================
+
+AdamW
+
+learning rate：
+1e-3
+
+weight_decay：
+1e-4
+
+precision：
+FP32
+
+microbatch：
+128
+
+effective batch：
+1024
+
+gradient accumulation：
+8
+
+max_epoch：
+50
+
+patience：
+5。
+
+不足完整batch的数据：
+
+采用已有carry机制。
+
+不得删除有效训练actor。
+
+禁止AMP。
+
+============================================================
+二十、Tiny Overfit预检
+============================================================
+
+在正式CV训练前，
+对A/B/C分别执行tiny。
+
+使用：
+
+固定128个InnerTrain targets。
+
+300 optimizer updates。
+
+A：
+
+按正确的SoftCE entropy floor
+计算ExcessLossReduction。
+
+要求：
+
+>=90%。
+
+B：
+
+检查HardCE从初始值显著下降，
+相对下降至少80%。
+
+C：
+
+检查Normalized Error-Aware Loss
+从初始值显著下降，
+相对下降至少80%。
+
+同时要求：
+
+所有Loss finite
+梯度finite
+梯度nonzero
+predictor梯度0。
+
+注意：
+
+A/B/C损失的数学下界不同。
+
+禁止把A的SoftCE entropy floor
+用于B/C。
+
+若任一tiny失败：
+
+STOP检查实现。
+
+不得直接修改正式超参数救结果。
+
+============================================================
+二十一、Checkpoint选择
+============================================================
+
+这是本阶段非常重要的改动。
+
+Stage11A证明：
+
+SoftCE最低
+不一定对应Top1FDE最低。
+
+因此：
+
+A/B/C使用统一的
+InnerDev FDE-based checkpoint criterion。
+
+不能：
+
+A按SoftCE选
+B按HardCE选
+C按ErrorAwareLoss选。
+
+这样会引入额外比较变量。
+
+============================================================
+二十二、统一Checkpoint Score
+============================================================
+
+先在每折InnerDev获得：
+
+FoldR2VehicleFDE
+
+FoldR2PedestrianFDE。
+
+固定：
+
+S_dev
+
+=
+
+0.5 *
+VehicleDevTop1FDE
+/
+FoldR2VehicleFDE
+
++
+
+0.5 *
+PedestrianDevTop1FDE
+/
+FoldR2PedestrianFDE。
+
+选择：
+
+S_dev最小的checkpoint。
+
+每折两个R2参考值
+必须为正且finite。
+
+Bicycle通过R2路由，
+不参与图模型checkpoint选择。
+
+============================================================
+二十三、为什么这样选择
+============================================================
+
+目的是：
+
+Vehicle和Pedestrian
+拥有相同的相对优化重要性。
+
+不会因为Vehicle的FDE数值更大，
+就在checkpoint选择时
+完全压过Pedestrian。
+
+禁止根据OuterTest结果
+修改0.5/0.5比例。
+
+============================================================
+二十四、训练记录
+============================================================
+
+每个epoch记录：
+
+TrainLoss
+
+InnerDevLoss
+
+InnerDevVehicleTop1FDE
+
+InnerDevPedestrianTop1FDE
+
+InnerDevBicycleTop1FDE
+
+InnerDevOverallTop1FDE
+
+DevSelectionScore
+
+probability entropy
+
+max probability
+
+gradient norm。
+
+对于C额外记录：
+
+raw regret
+normalized regret
+scale分布。
+
+必须保证：
+
+模型概率finite
+归一化正确
+无NaN/Inf。
+
+============================================================
+二十五、训练执行顺序
+============================================================
+
+Fold1：
+
+R2
+A
+B
+C。
+
+Fold2：
+
+R2
+A
+B
+C。
+
+Fold3：
+
+R2
+A
+B
+C。
+
+不得因为Fold1表现不好
+就改Fold2/3配置。
+
+如果出现工程错误：
+
+可修正并完整记录，
+
+但不能因为性能结果
+调整超参数。
+
+============================================================
+二十六、冻结全部Checkpoint
+============================================================
+
+每个fold保存：
+
+R2_best.pt
+
+A_best.pt
+
+B_best.pt
+
+C_best.pt。
+
+记录：
+
+SHA256
+selected epoch
+checkpoint score
+normalization SHA256
+split SHA256
+training config SHA256。
+
+任何OuterTest评价前，
+必须先冻结该fold全部checkpoint。
+
+============================================================
+二十七、OuterTest评价
+============================================================
+
+每折210 scenes。
+
+统一评价：
+
+R0
+Fold-specific R2
+A
+B
+C。
+
+其中：
+
+A/B/C对Bicycle
+统一使用Fold-specific R2。
+
+禁止评价后重选checkpoint。
+
+============================================================
+二十八、评价指标
+============================================================
+
+Primary：
+
+Top1FDE。
+
+Secondary：
+
+Top1ADE
+OracleGap
+HitRate
+MRR
+SoftCE
+
+并记录：
+
+ExpectedRegret
+NormalizedExpectedRegret。
+
+所有几何指标：
+
+minADEOracle6
+minFDE6
+MR6
+
+必须一致。
+
+候选轨迹坐标：
+
+maxdiff=0。
+
+============================================================
+二十九、类别指标
+============================================================
+
+必须分别报告：
+
+Overall
+
+Vehicle
+
+Pedestrian
+
+Bicycle
+
+MovingVehicle
+
+StoppedVehicle
+
+ParkedVehicle
+
+Vehicle>5m
+
+Pedestrian<5m
+
+Pedestrian>5m。
+
+保留Stage11A中的：
+
+Pedestrian未来位移5-8m
+
+仅用于离线诊断。
+
+禁止作为推理输入。
+
+============================================================
+三十、模式切换代价
+============================================================
+
+比较：
+
+A vs FoldR2
+
+B vs FoldR2
+
+C vs FoldR2
+
+B vs A
+
+C vs A。
+
+必须统计：
+
+changed count
+
+improved count
+
+worsened count
+
+mean gain
+
+mean harm
+
+gross gain
+
+gross harm
+
+net FDE delta
+
+p90 harm
+
+p95 harm
+
+p99 harm
+
+top10 harm share。
+
+特别关注：
+
+Vehicle高代价错误切换是否减少。
+
+Pedestrian错误切换次数是否减少。
+
+============================================================
+三十一、三折OOF结果
+============================================================
+
+每个OuterTest只保存：
+
+对应fold完全未参与该排序模型
+训练或checkpoint选择的预测结果。
+
+三折结束后合并：
+
+630 scenes。
+
+每个scene恰好出现一次。
+
+输出：
+
+stage11b_oof_predictions
+
+stage11b_oof_metrics。
+
+禁止把InnerDev预测
+混入OOF。
+
+============================================================
+三十二、Bootstrap
+============================================================
+
+对三折合并OOF：
+
+paired scene-cluster bootstrap。
+
+2000 replicates。
+
+seed2022。
+
+在各fold内部
+按scene有放回重采样，
+
+然后合并计算指标。
+
+保持：
+
+同scene所有actor/window一起重采样。
+
+禁止actor独立bootstrap。
+
+============================================================
+三十三、主要比较
+============================================================
+
+Primary：
+
+C vs A。
+
+重点：
+
+Vehicle Top1FDE
+
+Pedestrian Top1FDE。
+
+两个共同主要比较
+需要报告95%描述性CI，
+并另外报告覆盖两个比较的
+Bonferroni调整区间。
+
+Secondary：
+
+B vs A
+
+C vs B
+
+C vs FoldR2
+
+A vs FoldR2。
+
+其他motion subgroup：
+
+exploratory。
+
+禁止事后改变主要比较。
+
+============================================================
+三十四、Primary成功判断
+============================================================
+
+C相对A：
+
+Vehicle delta<0
+
+Pedestrian delta<0。
+
+同时：
+
+Overall delta<0。
+
+并且：
+
+Bicycle与FoldR2完全一致。
+
+这是最基本的点估计方向要求。
+
+============================================================
+三十五、强支持标准
+============================================================
+
+ErrorAwareRanking=STRONG_SUPPORTED
+
+要求：
+
+C vs A：
+
+Vehicle Top1FDE改善
+
+Pedestrian Top1FDE改善
+
+两个主要类别的
+多重比较调整后区间上界均小于0。
+
+并且：
+
+C vs FoldR2
+
+Vehicle/Pedestrian点估计
+均优于FoldR2。
+
+Overall点估计改善。
+
+Bicycle严格保留R2。
+
+============================================================
+三十六、普通支持标准
+============================================================
+
+ErrorAwareRanking=SUPPORTED
+
+要求：
+
+C vs A：
+
+Vehicle delta<0
+
+Pedestrian delta<0
+
+Overall delta<0。
+
+并且：
+
+Vehicle与Pedestrian均无
+描述性95%CI完全位于恶化方向。
+
+C vs FoldR2：
+
+Vehicle点估计<0
+
+Pedestrian点估计<0。
+
+Bicycle严格等于R2。
+
+注意：
+
+SUPPORTED仅代表
+本次CV开发证据达到预设门槛，
+
+不等于完全独立的最终论文证实。
+
+============================================================
+三十七、部分支持
+============================================================
+
+如果：
+
+C改善Vehicle
+
+但Pedestrian恶化，
+
+或者：
+
+C改善Pedestrian
+
+但Vehicle恶化，
+
+则：
+
+ErrorAwareRanking=PARTIAL。
+
+不得宣称解决了
+异构交通参与者负迁移问题。
+
+============================================================
+三十八、HardCE判定
+============================================================
+
+B作为预先登记的对照方案。
+
+若B明显优于A和C：
+
+如实报告：
+
+HardCE有更好的开发阶段结果。
+
+但不得事后把B改成
+原本注册的Primary模型。
+
+是否继续验证B，
+等待大脑AI决定。
+
+============================================================
+三十九、失败处理
+============================================================
+
+若：
+
+A/B/C均无法
+同时改善Vehicle和Pedestrian，
+
+则：
+
+Stage11B=STOP。
+
+禁止继续：
+
+改temperature
+换hidden
+增加gate
+增加adapter
+修改loss scale
+调loss系数
+换seed
+改checkpoint选择准则。
+
+先交给大脑AI审查。
+
+============================================================
+四十、预测概率诊断
+============================================================
+
+记录：
+
+prediction entropy
+
+top1 probability
+
+top1-top2 probability margin
+
+oracle-mode probability。
+
+检测：
+
+HardCE是否产生明显概率集中。
+
+ErrorAware是否过度自信。
+
+不能只看Top1FDE
+而完全忽略概率质量。
+
+============================================================
+四十一、候选轨迹限制
+============================================================
+
+本阶段候选几何冻结。
+
+因此：
+
+minFDE不能改善。
+
+如果：
+
+A/B/C均无法有效降低行人Top1FDE，
+
+且行人OracleGap已经较小，
+
+报告必须明确讨论：
+
+是否应该进入
+Pedestrian Candidate Refinement
+
+方向。
+
+禁止在Stage11B中
+直接增加轨迹生成模块。
+
+============================================================
+四十二、计算效率
+============================================================
+
+记录：
+
+每模型训练时间
+单epoch时间
+总训练时间
+
+推理时延
+模型参数量
+GPU峰值显存。
+
+A/B/C架构完全相同，
+
+参数量应一致。
+
+============================================================
+四十三、输出目录
+============================================================
+
+创建：
+
+outputs/stage11b_error_aware_ranking/
+
+00_manifest/
+
+01_preflight/
+
+02_splits/
+
+03_training/
+fold1/
+fold2/
+fold3/
+
+04_checkpoints/
+
+05_oof_evaluation/
+
+06_bootstrap/
+
+07_diagnostics/
+
+08_figures/
+
+09_reports/。
+
+============================================================
+四十四、输出表格
+============================================================
+
+至少：
+
+stage11b_fold_split.csv
+
+stage11b_training_summary.csv
+
+stage11b_checkpoint_manifest.csv
+
+stage11b_fold_metrics.csv
+
+stage11b_oof_main_results.csv
+
+stage11b_oof_type_results.csv
+
+stage11b_oof_motion_results.csv
+
+stage11b_bootstrap_ci.csv
+
+stage11b_mode_switch_cost.csv
+
+stage11b_probability_statistics.csv
+
+stage11b_efficiency.csv。
+
+============================================================
+四十五、最终报告
+============================================================
+
+输出：
+
+09_reports/
+stage11b_final_report.md
+
+报告包含：
+
+【Research Question】
+
+【Stage11A Findings】
+
+【Controlled Variables】
+
+【Fold-specific R2】
+
+【3-fold Nested Data Split】
+
+【Normalization】
+
+【A SoftCE】
+
+【B HardCE】
+
+【C Normalized Error-Aware Ranking】
+
+【Tiny Overfit】
+
+【Training】
+
+【Checkpoint Selection】
+
+【OOF Identity】
+
+【Overall Results】
+
+【Vehicle Results】
+
+【Pedestrian Results】
+
+【Bicycle Results】
+
+【MovingVehicle】
+
+【Pedestrian Motion Groups】
+
+【High-Cost Switch Analysis】
+
+【Probability Analysis】
+
+【Bootstrap】
+
+【Limitations】
+
+【Scientific Decision】。
+
+============================================================
+四十六、科学结论
+============================================================
+
+最终给出：
+
+LossImplementation =
+PASS / FAIL
+
+CVIsolation =
+PASS / FAIL
+
+CandidateIdentity =
+PASS / FAIL
+
+BicyclePreserved =
+YES / NO
+
+HardCE =
+SUPPORTED / NOT_SUPPORTED
+
+ErrorAwareRanking =
+STRONG_SUPPORTED /
+SUPPORTED /
+PARTIAL /
+NOT_SUPPORTED
+
+VehicleImproved =
+YES / NO
+
+PedestrianImproved =
+YES / NO
+
+OverallImproved =
+YES / NO
+
+CostlySwitchReduced =
+YES / NO
+
+PedestrianWrongSwitchReduced =
+YES / NO
+
+Stage11B =
+GO / STOP
+
+ReadyForFurtherConfirmation =
+YES / NO。
+
+============================================================
+四十七、科研诚信要求
+============================================================
+
+必须明确：
+
+Stage11B hypothesis来自Stage11A分析。
+
+历史HeadDev和official VAL
+已经用于前期研究开发。
+
+本阶段OuterTest是
+排序模型的内部折外数据，
+
+不等于全系统独立测试。
+
+冻结Stage5A预测器
+可能在历史训练中使用过这些场景。
+
+因此不得写：
+
+fully independent end-to-end test。
+
+不得宣称：
+
+ErrorAware Ranking必然降低Top1FDE。
+
+所有实验结论只根据实际结果。
+
+============================================================
+四十八、Git管理
+============================================================
+
+建议提交：
+
+feat: implement controlled ranking objectives
+
+audit: establish nested scene-level CV
+
+train: evaluate SoftCE HardCE and error-aware ranking
+
+eval: analyze out-of-fold actor-type performance
+
+docs: finalize Stage11B scientific decision
+
+每阶段及时commit。
+
+最终push：
+
+stage11b/controlled-ranking-objectives
+
+禁止merge main。
+
+============================================================
+四十九、完成后向大脑AI汇报
+============================================================
+
+Git commit=
+
+CV folds=
+InnerTrain scenes=
+InnerDev scenes=
+OuterTest scenes=
+
+Fold-specific R2 trained=
+YES / NO
+
+A tiny=
+B tiny=
+C tiny=
+
+CandidateIdentity=
+
+BicyclePreserved=
+
+OOF Overall Top1FDE：
+
+R2=
+A=
+B=
+C=
+
+OOF Vehicle Top1FDE：
+
+R2=
+A=
+B=
+C=
+
+OOF Pedestrian Top1FDE：
+
+R2=
+A=
+B=
+C=
+
+OOF Bicycle Top1FDE：
+
+R2=
+A=
+B=
+C=
+
+MovingVehicle：
+
+R2=
+A=
+B=
+C=
+
+C vs A：
+
+Overall delta/CI=
+Vehicle delta/CI=
+Pedestrian delta/CI=
+
+C vs R2：
+
+Overall delta/CI=
+Vehicle delta/CI=
+Pedestrian delta/CI=
+
+Vehicle costly-switch harm reduction=
+
+Pedestrian wrong-switch reduction=
+
+HardCE=
+
+ErrorAwareRanking=
+
+VehicleImproved=
+
+PedestrianImproved=
+
+OverallImproved=
+
+Stage11B=
+
+ReadyForFurtherConfirmation=
+
+============================================================
+五十、STOP
+============================================================
+
+完成Stage11B后停止。
+
+不得自动进行：
+
+official VAL evaluation
+
+test evaluation
+
+Stage11C
+
+新的loss搜索
+
+新的网络结构修改。
+
+等待大脑AI审查。
