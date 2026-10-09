@@ -1,0 +1,17 @@
+{
+  "Status": "PASS",
+  "Cases": 19,
+  "FixedScenesRepresented": 12,
+  "VehicleRichScenes": 3,
+  "PedestrianRichScenes": 3,
+  "PotentialConflictScenes": 3,
+  "MissingFutureCases": 4,
+  "SelectionSource": "registered fixed12scene pool; observable density or prediction-CV proxy, never GT planning success",
+  "FiveRequiredFigureFamilies": true,
+  "SameAxesPerCase": true,
+  "AllGTMarkedEvaluationOnly": true,
+  "FigureDisplaySubsetOnly": true,
+  "ProxyIncludesAllActors": true,
+  "SourceTimestampMissing": "all fixed scenes lack original ego_pose.timestamp in currently accessible raw JSON",
+  "Dimensions": "class priors explicitly used when current raw annotation size is unavailable"
+}

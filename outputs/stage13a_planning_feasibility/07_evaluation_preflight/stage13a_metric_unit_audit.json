@@ -1,0 +1,13 @@
+{
+  "Status": "PASS",
+  "ActualUnequalTimesUsed": true,
+  "CVSpeedMetersPerSecond": 2,
+  "ZeroAccelerationJerkTest": true,
+  "OBBOverlapSeparatedCases": true,
+  "RotatedFootprintCases": true,
+  "BetweenKeyframesCrossingDetected": true,
+  "MissingGTNotEmptyObstacle": true,
+  "CollisionGeometry": "four-axis rectangle SAT, wrapped-heading interpolation<=.05s",
+  "EgoDimensionsApproximate": true,
+  "LowFrequency": "source~2Hz; interpolation adds no measured dynamics; no high-frequency or closed-loop claim"
+}
