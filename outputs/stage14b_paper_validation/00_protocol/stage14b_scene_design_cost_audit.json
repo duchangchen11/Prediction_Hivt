@@ -1,0 +1,452 @@
+{
+  "Status": "DESIGN_ONLY_HISTORICAL_COST_ANCHORS",
+  "MeasuredHardware": "NVIDIA GeForce RTX3080",
+  "HistoricalWarmupAndNLLSeconds": [
+    3328.9447301939945,
+    4355.208960567994
+  ],
+  "OriginalMeasuredRunUpdates": 11500,
+  "OriginalBudgetUpdates": 21000,
+  "Historical15HeadAggregateSeconds": 5587.4641953930395,
+  "Schemes": [
+    {
+      "Scheme": "A_Recommended378",
+      "HiVTRuns": 3,
+      "FreshRankingHeadRuns": 18,
+      "PredictorObservedScheduleAnchorHours": 6.403461408968323,
+      "PredictorFullBudgetLinearAnchorHours": 11.693277355507373,
+      "FifteenRankingRunsMeasuredHistoricalAnchorHours": 1.5520733876091777,
+      "AdditionalThreeMatchedRunsMeasuredHours": "NOT_YET_MEASURED",
+      "AdditionalThreeMatchedRunsNG_CProxyHours": 0.38416940102917174,
+      "AdditionalThreeMatchedRunsG_CProxyHours": 0.7830952824244445,
+      "CandidateForwardKernelOnlyAnchorHours": 0.04621010504694284,
+      "KnownComponentLowerHistoricalScheduleAnchorHours": 8.001744901624443,
+      "KnownComponentUpperHistoricalBudgetAnchorHours": 13.291560848163492,
+      "All18RunsIllustrativeLowerProxyHours": 8.385914302653616,
+      "All18RunsIllustrativeUpperProxyHours": 14.074656130587936,
+      "Interpretation": "planning anchor, not guaranteed runtime; matched3 uses separately labeled NG-C/G-C workload proxies, not measured bounds; excludes cache I/O/preprocessing/graph construction/diagnostics/new seeds"
+    },
+    {
+      "Scheme": "B_InnerOOF378",
+      "HiVTRuns": 12,
+      "FreshRankingHeadRuns": 18,
+      "PredictorObservedScheduleAnchorHours": 25.613845635873293,
+      "PredictorFullBudgetLinearAnchorHours": 46.77310942202949,
+      "FifteenRankingRunsMeasuredHistoricalAnchorHours": 1.5520733876091777,
+      "AdditionalThreeMatchedRunsMeasuredHours": "NOT_YET_MEASURED",
+      "AdditionalThreeMatchedRunsNG_CProxyHours": 0.38416940102917174,
+      "AdditionalThreeMatchedRunsG_CProxyHours": 0.7830952824244445,
+      "CandidateForwardKernelOnlyAnchorHours": 0.07392907208442456,
+      "KnownComponentLowerHistoricalScheduleAnchorHours": 27.239848095566895,
+      "KnownComponentUpperHistoricalBudgetAnchorHours": 48.399111881723094,
+      "All18RunsIllustrativeLowerProxyHours": 27.624017496596068,
+      "All18RunsIllustrativeUpperProxyHours": 49.18220716414754,
+      "Interpretation": "planning anchor, not guaranteed runtime; matched3 uses separately labeled NG-C/G-C workload proxies, not measured bounds; excludes cache I/O/preprocessing/graph construction/diagnostics/new seeds"
+    }
+  ],
+  "PerFoldVolumes": [
+    {
+      "OuterFold": 1,
+      "Role": "A_PredictorTrain378",
+      "Scenes": 378,
+      "SupervisedWindows": 9137,
+      "FullHorizonActorWindows": 159151,
+      "PartialActorWindows": 73196,
+      "ReferencedShardBytes": 2220358392,
+      "ReferencedShardGiB": 2.067869894206524
+    },
+    {
+      "OuterFold": 1,
+      "Role": "A_Development42",
+      "Scenes": 42,
+      "SupervisedWindows": 1017,
+      "FullHorizonActorWindows": 18327,
+      "PartialActorWindows": 9357,
+      "ReferencedShardBytes": 242569260,
+      "ReferencedShardGiB": 0.2259102277457714
+    },
+    {
+      "OuterFold": 1,
+      "Role": "A_Evaluation210",
+      "Scenes": 210,
+      "SupervisedWindows": 5041,
+      "FullHorizonActorWindows": 82673,
+      "PartialActorWindows": 43464,
+      "ReferencedShardBytes": 1167239140,
+      "ReferencedShardGiB": 1.087076161056757
+    },
+    {
+      "OuterFold": 1,
+      "Role": "Quarantined70",
+      "Scenes": 70,
+      "SupervisedWindows": 1703,
+      "FullHorizonActorWindows": 29934,
+      "PartialActorWindows": 14479,
+      "ReferencedShardBytes": 432867024,
+      "ReferencedShardGiB": 0.40313883125782013
+    },
+    {
+      "OuterFold": 1,
+      "Role": "AlternativeA_PredictorTrain448",
+      "Scenes": 448,
+      "SupervisedWindows": 10840,
+      "FullHorizonActorWindows": 189085,
+      "PartialActorWindows": 87675,
+      "ReferencedShardBytes": 2653225416,
+      "ReferencedShardGiB": 2.471008725464344
+    },
+    {
+      "OuterFold": 1,
+      "Role": "B_Inner1_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6102,
+      "FullHorizonActorWindows": 111366,
+      "PartialActorWindows": 50880,
+      "ReferencedShardBytes": 1506650336,
+      "ReferencedShardGiB": 1.4031774699687958
+    },
+    {
+      "OuterFold": 1,
+      "Role": "B_Inner1_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3035,
+      "FullHorizonActorWindows": 47785,
+      "PartialActorWindows": 22316,
+      "ReferencedShardBytes": 713708056,
+      "ReferencedShardGiB": 0.6646924242377281
+    },
+    {
+      "OuterFold": 1,
+      "Role": "B_Inner2_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6084,
+      "FullHorizonActorWindows": 103209,
+      "PartialActorWindows": 48978,
+      "ReferencedShardBytes": 1483764832,
+      "ReferencedShardGiB": 1.381863683462143
+    },
+    {
+      "OuterFold": 1,
+      "Role": "B_Inner2_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3053,
+      "FullHorizonActorWindows": 55942,
+      "PartialActorWindows": 24218,
+      "ReferencedShardBytes": 736593560,
+      "ReferencedShardGiB": 0.686006210744381
+    },
+    {
+      "OuterFold": 1,
+      "Role": "B_Inner3_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6088,
+      "FullHorizonActorWindows": 103727,
+      "PartialActorWindows": 46534,
+      "ReferencedShardBytes": 1450301616,
+      "ReferencedShardGiB": 1.350698634982109
+    },
+    {
+      "OuterFold": 1,
+      "Role": "B_Inner3_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3049,
+      "FullHorizonActorWindows": 55424,
+      "PartialActorWindows": 26662,
+      "ReferencedShardBytes": 770056776,
+      "ReferencedShardGiB": 0.7171712592244148
+    },
+    {
+      "OuterFold": 2,
+      "Role": "A_PredictorTrain378",
+      "Scenes": 378,
+      "SupervisedWindows": 9103,
+      "FullHorizonActorWindows": 157356,
+      "PartialActorWindows": 76707,
+      "ReferencedShardBytes": 2188459760,
+      "ReferencedShardGiB": 2.038161978125572
+    },
+    {
+      "OuterFold": 2,
+      "Role": "A_Development42",
+      "Scenes": 42,
+      "SupervisedWindows": 1018,
+      "FullHorizonActorWindows": 19084,
+      "PartialActorWindows": 9458,
+      "ReferencedShardBytes": 266963524,
+      "ReferencedShardGiB": 0.2486291565001011
+    },
+    {
+      "OuterFold": 2,
+      "Role": "A_Evaluation210",
+      "Scenes": 210,
+      "SupervisedWindows": 5074,
+      "FullHorizonActorWindows": 83711,
+      "PartialActorWindows": 39852,
+      "ReferencedShardBytes": 1174743508,
+      "ReferencedShardGiB": 1.094065148383379
+    },
+    {
+      "OuterFold": 2,
+      "Role": "Quarantined70",
+      "Scenes": 70,
+      "SupervisedWindows": 1703,
+      "FullHorizonActorWindows": 29934,
+      "PartialActorWindows": 14479,
+      "ReferencedShardBytes": 432867024,
+      "ReferencedShardGiB": 0.40313883125782013
+    },
+    {
+      "OuterFold": 2,
+      "Role": "AlternativeA_PredictorTrain448",
+      "Scenes": 448,
+      "SupervisedWindows": 10806,
+      "FullHorizonActorWindows": 187290,
+      "PartialActorWindows": 91186,
+      "ReferencedShardBytes": 2621326784,
+      "ReferencedShardGiB": 2.4413008093833923
+    },
+    {
+      "OuterFold": 2,
+      "Role": "B_Inner1_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6049,
+      "FullHorizonActorWindows": 103299,
+      "PartialActorWindows": 51908,
+      "ReferencedShardBytes": 1447401788,
+      "ReferencedShardGiB": 1.347997959703207
+    },
+    {
+      "OuterFold": 2,
+      "Role": "B_Inner1_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3054,
+      "FullHorizonActorWindows": 54057,
+      "PartialActorWindows": 24799,
+      "ReferencedShardBytes": 741057972,
+      "ReferencedShardGiB": 0.6901640184223652
+    },
+    {
+      "OuterFold": 2,
+      "Role": "B_Inner2_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6081,
+      "FullHorizonActorWindows": 106052,
+      "PartialActorWindows": 51078,
+      "ReferencedShardBytes": 1469901228,
+      "ReferencedShardGiB": 1.3689521960914135
+    },
+    {
+      "OuterFold": 2,
+      "Role": "B_Inner2_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3022,
+      "FullHorizonActorWindows": 51304,
+      "PartialActorWindows": 25629,
+      "ReferencedShardBytes": 718558532,
+      "ReferencedShardGiB": 0.6692097820341587
+    },
+    {
+      "OuterFold": 2,
+      "Role": "B_Inner3_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6076,
+      "FullHorizonActorWindows": 105361,
+      "PartialActorWindows": 50428,
+      "ReferencedShardBytes": 1459616504,
+      "ReferencedShardGiB": 1.359373800456524
+    },
+    {
+      "OuterFold": 2,
+      "Role": "B_Inner3_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3027,
+      "FullHorizonActorWindows": 51995,
+      "PartialActorWindows": 26279,
+      "ReferencedShardBytes": 728843256,
+      "ReferencedShardGiB": 0.6787881776690483
+    },
+    {
+      "OuterFold": 3,
+      "Role": "A_PredictorTrain378",
+      "Scenes": 378,
+      "SupervisedWindows": 9104,
+      "FullHorizonActorWindows": 148900,
+      "PartialActorWindows": 75388,
+      "ReferencedShardBytes": 2108238816,
+      "ReferencedShardGiB": 1.963450402021408
+    },
+    {
+      "OuterFold": 3,
+      "Role": "A_Development42",
+      "Scenes": 42,
+      "SupervisedWindows": 1011,
+      "FullHorizonActorWindows": 17484,
+      "PartialActorWindows": 7928,
+      "ReferencedShardBytes": 233743832,
+      "ReferencedShardGiB": 0.21769090741872787
+    },
+    {
+      "OuterFold": 3,
+      "Role": "A_Evaluation210",
+      "Scenes": 210,
+      "SupervisedWindows": 5080,
+      "FullHorizonActorWindows": 93767,
+      "PartialActorWindows": 42701,
+      "ReferencedShardBytes": 1288184144,
+      "ReferencedShardGiB": 1.1997149735689163
+    },
+    {
+      "OuterFold": 3,
+      "Role": "Quarantined70",
+      "Scenes": 70,
+      "SupervisedWindows": 1703,
+      "FullHorizonActorWindows": 29934,
+      "PartialActorWindows": 14479,
+      "ReferencedShardBytes": 432867024,
+      "ReferencedShardGiB": 0.40313883125782013
+    },
+    {
+      "OuterFold": 3,
+      "Role": "AlternativeA_PredictorTrain448",
+      "Scenes": 448,
+      "SupervisedWindows": 10807,
+      "FullHorizonActorWindows": 178834,
+      "PartialActorWindows": 89867,
+      "ReferencedShardBytes": 2541105840,
+      "ReferencedShardGiB": 2.366589233279228
+    },
+    {
+      "OuterFold": 3,
+      "Role": "B_Inner1_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6064,
+      "FullHorizonActorWindows": 96075,
+      "PartialActorWindows": 48305,
+      "ReferencedShardBytes": 1362215312,
+      "ReferencedShardGiB": 1.2686618715524673
+    },
+    {
+      "OuterFold": 3,
+      "Role": "B_Inner1_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3040,
+      "FullHorizonActorWindows": 52825,
+      "PartialActorWindows": 27083,
+      "ReferencedShardBytes": 746023504,
+      "ReferencedShardGiB": 0.6947885304689407
+    },
+    {
+      "OuterFold": 3,
+      "Role": "B_Inner2_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6071,
+      "FullHorizonActorWindows": 102045,
+      "PartialActorWindows": 51560,
+      "ReferencedShardBytes": 1460678104,
+      "ReferencedShardGiB": 1.3603624925017357
+    },
+    {
+      "OuterFold": 3,
+      "Role": "B_Inner2_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3033,
+      "FullHorizonActorWindows": 46855,
+      "PartialActorWindows": 23828,
+      "ReferencedShardBytes": 647560712,
+      "ReferencedShardGiB": 0.6030879095196724
+    },
+    {
+      "OuterFold": 3,
+      "Role": "B_Inner3_PredictorTrain252",
+      "Scenes": 252,
+      "SupervisedWindows": 6073,
+      "FullHorizonActorWindows": 99680,
+      "PartialActorWindows": 50911,
+      "ReferencedShardBytes": 1393584216,
+      "ReferencedShardGiB": 1.2978764399886131
+    },
+    {
+      "OuterFold": 3,
+      "Role": "B_Inner3_OOFOutput126",
+      "Scenes": 126,
+      "SupervisedWindows": 3031,
+      "FullHorizonActorWindows": 49220,
+      "PartialActorWindows": 24477,
+      "ReferencedShardBytes": 714654600,
+      "ReferencedShardGiB": 0.665573962032795
+    }
+  ],
+  "DatasetOriginalsDuplicated": false,
+  "ExistingFullTRAIN700GraphAndTargetCandidateCacheBytes": 6811196696,
+  "ExistingFullTRAIN700GraphAndTargetCandidateCacheGiB": 6.343421243131161,
+  "ExistingCacheByteStatOnlyEvidence": [
+    {
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/cache/arg0.npy",
+      "Bytes": 939875528,
+      "SHA256FromHistoricalFreeze": "71a294aa9487354f1fba5a1312c183d188d847376381a4b82e1e9d52521d9204",
+      "ReadScope": "filesystem byte size only; array contents not loaded"
+    },
+    {
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/cache/arg1.npy",
+      "Bytes": 5681024768,
+      "SHA256FromHistoricalFreeze": "d30a0ee21364b329a6e3ad2ddfb454df8c0d3302a45bc9a348050f2ae39d9040",
+      "ReadScope": "filesystem byte size only; array contents not loaded"
+    },
+    {
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/cache/arg2.npy",
+      "Bytes": 2320808,
+      "SHA256FromHistoricalFreeze": "e26e64893d5e2249155922b516fbc74776d1c56c6c62abd99440205bdaab669a",
+      "ReadScope": "filesystem byte size only; array contents not loaded"
+    },
+    {
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/cache/arg6.npy",
+      "Bytes": 6962168,
+      "SHA256FromHistoricalFreeze": "2382db4cf000c3416f894d77a786a94f98319cd3ea06ec9ce084b03a1586005a",
+      "ReadScope": "filesystem byte size only; array contents not loaded"
+    },
+    {
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/cache/fde.npy",
+      "Bytes": 6962168,
+      "SHA256FromHistoricalFreeze": "d1f1ad8cc3d711f3acf3d4b1727fa946e677d415d5aada17b54bf1acc98b49e6",
+      "ReadScope": "filesystem byte size only; array contents not loaded"
+    },
+    {
+      "Path": "outputs/stage8a_future_scene_compatibility_graph/01_training/cache/ade.npy",
+      "Bytes": 6962168,
+      "SHA256FromHistoricalFreeze": "46dcec322c9a54ebb1e81f7bec29b1d350198f06ca8b24f22c70603450edf0fd",
+      "ReadScope": "filesystem byte size only; array contents not loaded"
+    },
+    {
+      "Path": "outputs/stage11a_mode_selection_audit/01_identity_audit/cache/candidates.npy",
+      "Bytes": 167089088,
+      "SHA256FromHistoricalFreeze": "fac8fb05888372de965bdc11b6bef1d0f211d095e38c509ddcad4a1a9d909049",
+      "ReadScope": "filesystem byte size only; array contents not loaded"
+    }
+  ],
+  "EstimatedMergedThreefoldTargetCacheRows": 780453,
+  "EstimatedMergedAorBTargetCacheBytesAtUnchangedDtypeShapes": 18325038850.624084,
+  "EstimatedMergedAorBTargetCacheGiBAtUnchangedDtypeShapes": 17.06652236229189,
+  "CacheEstimateLimits": "bothA/B can merge one630-target-row cache perouterfold; B need not retain densegraph caches for all12 predictors. Assumes historicaldense node/edge geometry layout and samefull-horizon targets. Originalscene shards are referenced once, not copied. Completeall-current-actor forecasts, provenance, checkpoints/optimizer snapshots, temporary dev/inference buffers anddisk overhead are additional unmeasured costs; duplicatepermethod caches are forbidden by sharedcandidate control.",
+  "ImportantAssumptions": [
+    "sameStage5A architecture/batch16/density/device; validation42 workload differs from historicalVAL150",
+    "fixedupdate estimate is deliberately not scaled byscene count; full11500/21000 schedules can expose252scenes moreoften",
+    "epoch-matched schedules would be a different unapproved protocol; convergence on reduced partitions is unknown",
+    "15head costs use historical12G/NG plus3R2 runs; 3extraMatched-NG-C are not yet measured, workload proxies are not measured bounds; newcandidate quality may change earlystopping and runtime",
+    "candidate-forward anchors omitbatch-boundary overhead, I/O, transfer, graph construction and cache writes",
+    "neither estimate includes addedseed searches or hyperparameter sweeps"
+  ],
+  "NewGPUJobsExecuted": 0,
+  "SourceSHA256": {
+    "outputs/stage14a_paper_graph_ablation/09_reports/stage14a_predictor_data_provenance.json": "1c536d85daed0688e9c69ee491edc26e4adb5aed564f53d934d19e7c04ae741c",
+    "outputs/stage3_multitype_hivt/01_data_audit/stage3_official_split.json": "139e74c0b65e82fbb6abf817333eb652afb9f33e82e69a6b3af1db72d1fceb05",
+    "outputs/stage6a_future_interaction_reliability/00_manifest/stage6a_head_split.json": "55d8a856ce71c75b7af359e8dc66232907ae54b9a14e43c9a5f7f6148ce7d208",
+    "outputs/stage3_multitype_hivt/02_preprocessed/stage3_train_index.csv": "4bde8653d4af7e6edc3db611f07d9b109bd9409c533323519eee812517a23a83",
+    "outputs/stage11b_error_aware_ranking/02_splits/stage11b_fold1_split.json": "577c52648c875a73a1f00b30625aecb85b83c3e98fd2ffb8f1c80db55cb5cc3b",
+    "outputs/stage11b_error_aware_ranking/02_splits/stage11b_fold2_split.json": "2d94467fe62114f18451b23b4cac5a7568e07a482fa7383fb753d75aaba2cfc1",
+    "outputs/stage11b_error_aware_ranking/02_splits/stage11b_fold3_split.json": "b9d1fa4555703bef13fdc8f48135da3a2fabf4e75066c6282a32185a21cdcde9",
+    "outputs/stage14a_paper_graph_ablation/09_reports/stage14a_predictor_train_shard_manifest.csv": "1ff77f68547e75e06a0cd3d0237170e212e1a46ed75d2c1e25359aea9c9f0d77",
+    "outputs/stage14a_paper_graph_ablation/00_protocol/stage14a_frozen_history.json": "b4d7c1625e9ce46ea20fa78eb7c799ed06057f9e81708ba29efa5787325eb089",
+    "outputs/stage14a_paper_graph_ablation/03_training/stage14a_training_summary.csv": "fb8ff1f8b0fe0e1bc70eb55c2c1e7f80f4f644e705b4685c3eadaf40e11af7d8",
+    "outputs/stage11b_error_aware_ranking/03_training/stage11b_training_summary.csv": "9cc6efabb92d814780317775c421f7593092c525129935e29f7d8365d36ab1d6"
+  }
+}

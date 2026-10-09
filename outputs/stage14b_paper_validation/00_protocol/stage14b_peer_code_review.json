@@ -1,0 +1,21 @@
+{
+  "Status": "PASS",
+  "Reviewer": "independent local agent",
+  "Scope": "read-only static review; no new OuterTest data viewed",
+  "Checks": [
+    "original AST training operations preserved",
+    "registered C detaches FDE labels",
+    "all3 checkpoint SHA gate before new evaluation",
+    "FP32 metrics reused before FP64 aggregation",
+    "identity scene/sample/instance unique and same row order",
+    "oracle candidate metrics and Bicycle fixed R2 bitwise invariants",
+    "2000 seed2022 paired scene/fold weights",
+    "family3 Bonferroni98.3333 percentiles",
+    "historical contrasts labeled already known"
+  ],
+  "SourceSHA256": {
+    "03_training/stage14b_train.py": "cbcb4e9a8166711a2e0de071e78b2c23feb12d20a5110b9d73f009e5f6b7b13e",
+    "05_evaluation/stage14b_evaluate.py": "ed07d7d6a53b6a3f65f093c852c9c16a46719d82418e8bb298e00d78fc72ee34",
+    "06_statistics/stage14b_statistics.py": "4a93082a463222b751416dd59671f5a09242844ba02d8f3e5b3c115fe485417f"
+  }
+}

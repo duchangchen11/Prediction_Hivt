@@ -1,0 +1,306 @@
+{
+  "Status": "PASS_DESIGN_ONLY_WITH_DOCUMENTED_LIMITS",
+  "CheckedUTC": "2026-10-09T19:17:57.033109+00:00",
+  "ClientDate": "2026-10-10",
+  "Reviewer": "independent stage14a_evaluation agent",
+  "Scope": "Frozen A/B design, metadata, historical source hashes and protocol code only; not performance review.",
+  "ReviewActions": {
+    "OptimizerUpdates": 0,
+    "ModelInferenceRuns": 0,
+    "NewOuterPerformanceFilesRead": 0,
+    "FrozenPlanEdited": false,
+    "HistoricalFilesEdited": false,
+    "GitActions": 0
+  },
+  "PlanRegistration": {
+    "Status": "FROZEN_BEFORE_NEW_OUTER_RESULTS",
+    "SHA256": "97f89f405ae85356ce09054e3766c6ddca293447385924be666f52f6c98c324e",
+    "Unchanged": "PASS",
+    "FuturePredictorTrainingPermitted": false
+  },
+  "ReviewedSourceSHA256": {
+    "outputs/stage14b_paper_validation/stage14b_preregistered_plan.md": "97f89f405ae85356ce09054e3766c6ddca293447385924be666f52f6c98c324e",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_plan_registration.json": "cd11a76552d2dd801482330eed6cac12248a36a222669fcb389f675a13900631",
+    "outputs/stage14b_paper_validation/stage14b_evaluation_protocol.md": "86641746ed30ec5a5abc02ac4c4350dff8f678f09fb43fe993ea744412b09750",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_scene_design_audit.py": "50b53233be0d53f54e1700d090630ba2bf6974d8f0cee504f9461246443add2f",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_scene_design.json": "d655c9605758df39bfbbadfec1e5760cc122785e3343909802d4f8d706b5c634",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_scene_design_outer.csv": "784226d21d62d4196d1e6d9016e5e29518add02c6ae7d0205aa1c8839b67d68a",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_scene_design_inner_oof.csv": "bb02d5642d9203326315a64a008b8e134037ec3a8d14b83103c2599d60b4a923",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_scene_design_cost_audit.json": "8e51cdd6d5503b47c923744a9af2d1af85883e8976a86c5e2398c573e2fe43ca",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_scene_design_cost_comparison.csv": "a4dc4940a0c6fcd2d4c8ce76fb695e96a3bce50cb26d762a28835d751e011c35",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_scene_design_data_volume.csv": "042dc0222a34e3b9082a3b17bb9f93240e4d0c7e2c6741e0b92a6348f645a000",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_official_protocol_audit.py": "d9ebb37f5947ec7b854f6428eb7fc0c45055e714b245aafbf35bb7b0f1c93f86",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_official_protocol_audit.json": "decbf64c0b50c86c611d487336ea0e8928bd21552703cc9fe24e1fada6976280",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_design_clarifications.md": "fa84f297c3d85ba4ebd857ebf9c969d427220d7ea569f2bc6699327482c7affd"
+  },
+  "SceneAccounting": {
+    "OfficialTrain": 700,
+    "HeadTrain": 630,
+    "QuarantinedHeadDev": 70,
+    "OuterUniqueUnion": 630,
+    "OuterCSVRows": 2100,
+    "InnerOOFCSVRows": 1134,
+    "OriginalHeadPartitionMatch": "PASS",
+    "HistoricalSourceSHA256": "PASS",
+    "Folds": [
+      {
+        "OuterFold": 1,
+        "A_Roles": [
+          378,
+          42,
+          210,
+          70
+        ],
+        "A_All700Accounted": true,
+        "OriginalFoldListsExactMatch": true,
+        "B_InnerOOF": [
+          {
+            "InnerFold": 1,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          },
+          {
+            "InnerFold": 2,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          },
+          {
+            "InnerFold": 3,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          }
+        ],
+        "B_FinalRoles": [
+          378,
+          42,
+          210,
+          70
+        ],
+        "B_UniqueTrainingOOFScenes": 378,
+        "OuterTrainingAndSelectionIsolation": "PASS"
+      },
+      {
+        "OuterFold": 2,
+        "A_Roles": [
+          378,
+          42,
+          210,
+          70
+        ],
+        "A_All700Accounted": true,
+        "OriginalFoldListsExactMatch": true,
+        "B_InnerOOF": [
+          {
+            "InnerFold": 1,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          },
+          {
+            "InnerFold": 2,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          },
+          {
+            "InnerFold": 3,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          }
+        ],
+        "B_FinalRoles": [
+          378,
+          42,
+          210,
+          70
+        ],
+        "B_UniqueTrainingOOFScenes": 378,
+        "OuterTrainingAndSelectionIsolation": "PASS"
+      },
+      {
+        "OuterFold": 3,
+        "A_Roles": [
+          378,
+          42,
+          210,
+          70
+        ],
+        "A_All700Accounted": true,
+        "OriginalFoldListsExactMatch": true,
+        "B_InnerOOF": [
+          {
+            "InnerFold": 1,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          },
+          {
+            "InnerFold": 2,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          },
+          {
+            "InnerFold": 3,
+            "FitScenes": 252,
+            "ExcludedOOFScenes": 126,
+            "DevSelectionScenes": 42,
+            "OuterExcludedScenes": 210,
+            "QuarantineScenes": 70,
+            "Isolation": "PASS"
+          }
+        ],
+        "B_FinalRoles": [
+          378,
+          42,
+          210,
+          70
+        ],
+        "B_UniqueTrainingOOFScenes": 378,
+        "OuterTrainingAndSelectionIsolation": "PASS"
+      }
+    ]
+  },
+  "RunAccounting": {
+    "A_Predictors": 3,
+    "B_Predictors": 12,
+    "HeadsPerOuterFold": 6,
+    "HeadsTotal": 18,
+    "R0_AdditionalHeads": 0,
+    "OptionalTrueOriginalHiVTAdditionalPredictors": 3,
+    "OptionalTrueOriginalHiVTIncludedInAorBCost": false,
+    "OptionalTrueOriginalHiVTRequiresOwnCandidates": true,
+    "B_FourPredictorsPerOuterFoldUseSameFixedOuterSeed": true,
+    "B_12ModelsAreNot12IndependentSeedReplicates": true,
+    "OldWhole700PredictorInitializationAllowed": false,
+    "OldHeadsReusableOnNewCandidates": false
+  },
+  "LabelIsolation": {
+    "A_TrainingCandidates": "in-sample predictor residuals; acknowledged",
+    "B_EachHeld126ExcludedFromPredictorOptimizationAndSelection": "PASS",
+    "InnerDev42ReusedForPredictorAndHeadSelection": "allowed development reuse, no optimization gradient; never pristine confirmation",
+    "OuterFutureGT": "frozen evaluation only; prohibited from training, selection, normalization, graph inputs and A/B choice",
+    "WholeWindowSource": "target and all context predictions must share the corresponding predictor; future runtime audit required",
+    "Normalization": "corresponding head InnerTrain only"
+  },
+  "EvidenceScope": {
+    "CurrentRankingOOF": "conditional on frozen candidate generator trained on all700",
+    "FutureAorB": "training-isolated end-to-end internal scene CV; development-informed",
+    "HistoricalDevelopmentErasedByRepartitioning": false,
+    "OfficialVALPristine": false,
+    "KnownRegisteredUntouchedTrainvalScenes": 0
+  },
+  "OfficialCompatibility": {
+    "Status": "PARTIAL_NEEDS_ADAPTER_AND_PROTOCOL_RESET",
+    "SplitCounts": [
+      500,
+      200,
+      150
+    ],
+    "TargetManifestVerified": false,
+    "GlobalXYAndInstanceSampleAdapterRequired": true,
+    "HistorySeconds": 2,
+    "FutureSeconds": 6,
+    "FutureTimesteps": 12,
+    "ModelModes": 6,
+    "DefaultK": [
+      1,
+      5,
+      10
+    ],
+    "True10ModeResultAvailable": false,
+    "OfficialMiss": "probability top-k: min over modes of max_t L2 >=2m",
+    "ProjectMR6": "all six modes: minimum endpoint L2 >2m",
+    "MissDefinitionsEquivalent": false,
+    "CurrentLeaderboard": "VAL; official process may run top entries on hidden TEST",
+    "HiddenTESTFutureLabelsVerifiedAvailable": false,
+    "LocalDevkitSourceHashes": "PASS",
+    "ManifestPresenceIsNotCompleteValidation": true
+  },
+  "CostAudit": {
+    "RunCountsAndArithmetic": "PASS",
+    "FullUpdateBudget": 21000,
+    "HistoricalMeasuredUpdates": 11500,
+    "TimeMeaning": "historical single-device wall/GPU-reservation time including evaluation and IO, not pure CUDA active time",
+    "Matched3HistoricalCost": "NOT_YET_MEASURED at design snapshot; NG-C/G-C workload proxies are labeled separately",
+    "ProxyRangesAreMeasuredBoundsOrGuarantees": false,
+    "FixedUpdateBudgetScalesLinearlyWithSceneCount": false,
+    "OriginalDataCopied": false,
+    "NewGPUJobsExecuted0Scope": "pure metadata script only; separate authorized matched3 head jobs may run",
+    "Excludes": "cache IO, full contexts, temp caches, preprocessing, diagnostics and optional true OriginalHiVT extra3"
+  },
+  "StatisticsRegistration": {
+    "PrimaryEndpoint": "actor-window weighted Overall Top1FDE",
+    "Pairs": [
+      "G-C minus NG-C",
+      "G-C minus Matched-NG-C",
+      "NG-C minus NG-A"
+    ],
+    "Bootstrap": "whole paired scene,210 draws separately in each fold",
+    "Resamples": 2000,
+    "Seed": 2022,
+    "FamilySize": 3,
+    "AdjustedCoveragePercent": 98.33333333333333,
+    "AdjustedPercentiles": [
+      0.8333333333333334,
+      99.16666666666667
+    ],
+    "RequiredFoldDirections": "at least2 of3 negative; complete3folds required",
+    "ConditionedOnFixedFits": true,
+    "RetrainingSeedUncertaintyCaptured": false
+  },
+  "ClarificationsReviewed": [
+    {
+      "Item": "R0 versus true OriginalHiVT",
+      "Resolution": "Stage5A original scores need no head; true OriginalHiVT adds3 predictor runs/cache outside A3/B12 and18heads"
+    },
+    {
+      "Item": "B predictor seeds",
+      "Resolution": "four models per fold share its fixed outer seed; not independent seed repetitions"
+    },
+    {
+      "Item": "Target manifest",
+      "Resolution": "all checked paths missing now; future file must pass schema,scene,tokens,split,timestamps,count,coverage checks"
+    },
+    {
+      "Item": "GPU0 scope",
+      "Resolution": "metadata script only; does not deny current authorized matched-head training"
+    }
+  ],
+  "BlockingDesignErrors": [],
+  "FutureImplementationPrerequisites": [
+    "Explicit fold-local predictor entrypoint replacing inherited hardcoded TRAIN700/VAL150 reads while preserving historical files",
+    "Separate authorization and frozen budget before any A/B predictor fit",
+    "B row-level excluded-scene/source-SHA plus complete-window source audit; never overwrite innerOOF with final predictions",
+    "Fully verify official target manifest; implement global-coordinate/top-k/all-time Miss/OffRoadRate adapter before claiming official compatibility"
+  ],
+  "ThisReviewAuthorizesFutureTrainingOrOfficialEvaluation": false
+}

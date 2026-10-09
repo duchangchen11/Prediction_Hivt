@@ -1,0 +1,28 @@
+{
+  "Status": "MEASURED_MATCHED_COST_PLUS_HISTORICAL_PLANNING_ANCHORS",
+  "Schemes": [
+    {
+      "Scheme": "A_Recommended378",
+      "HiVTRuns": 3,
+      "RankingRuns": 18,
+      "Historical15HeadHours": 1.5520733876091777,
+      "MeasuredMatchedThreeHeadHours": 0.4111934113008384,
+      "PlanningObservedScheduleAnchorHours": 8.41293831292528,
+      "PlanningFullPredictorBudgetAnchorHours": 13.70275425946433,
+      "Limits": "historical/frozen-candidate observed wall times, not guaranteed future costs; excludes graph cache I/O/construction/diagnostics"
+    },
+    {
+      "Scheme": "B_InnerOOF378",
+      "HiVTRuns": 12,
+      "RankingRuns": 18,
+      "Historical15HeadHours": 1.5520733876091777,
+      "MeasuredMatchedThreeHeadHours": 0.4111934113008384,
+      "PlanningObservedScheduleAnchorHours": 27.651041506867735,
+      "PlanningFullPredictorBudgetAnchorHours": 48.81030529302393,
+      "Limits": "historical/frozen-candidate observed wall times, not guaranteed future costs; excludes graph cache I/O/construction/diagnostics"
+    }
+  ],
+  "MeasuredMatchedGPUWallHours": 0.4111934113008384,
+  "MeasuredMatchedTimeScope": "sum of formal head training wall times including InnerDev evaluation, I/O and saves; single-device reservation anchor, not pure active CUDA time",
+  "FormalHiVTJobsExecuted": 0
+}

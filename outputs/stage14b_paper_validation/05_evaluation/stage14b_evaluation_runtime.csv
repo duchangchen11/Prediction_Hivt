@@ -1,0 +1,4 @@
+Fold,Model,Actors,HeadForwardSeconds,HeadLatencyMSPerActor,FeaturePreparationSeconds,TotalEvaluationWallSeconds,PeakAllocatedGPUMemoryBytes,TimingScope
+1,Matched-NG-C,82673,0.74771207952289842,0.0090442112844931043,6.0542324195266701,8.2996021699800622,39947264,cached-input head CUDA FP32; excludes predictor/transfer/routing
+2,Matched-NG-C,83711,0.69833225387264974,0.0083421802854182821,6.2255061658506747,8.2512668089766521,39947264,cached-input head CUDA FP32; excludes predictor/transfer/routing
+3,Matched-NG-C,93767,0.82062399003189057,0.0087517355789551825,7.7363397610315587,10.158028239005944,39947264,cached-input head CUDA FP32; excludes predictor/transfer/routing

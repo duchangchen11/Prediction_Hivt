@@ -1,0 +1,422 @@
+{
+  "Status": "PASS",
+  "CheckedUTC": "2026-10-09T19:35:42.144297+00:00",
+  "Scope": "offline descriptive supplement from frozen actor metric arrays; no model forward or fitting",
+  "GroupDefinition": "t0 Vehicle whose motion_state is not vehicle.moving, vehicle.stopped or vehicle.parked",
+  "GroupRegisteredBeforeFitting": true,
+  "GroupDefinitionImplementation": "explicit complement; original Stage11B groups and main tables unchanged",
+  "Count": 4315,
+  "Scenes": 207,
+  "PerFoldCount": {
+    "1": 1208,
+    "2": 1225,
+    "3": 1882
+  },
+  "OtherMotionStateCounts": {
+    "unknown": 4315
+  },
+  "FullVehiclePartition": {
+    "Vehicle": 191026,
+    "MovingVehicle": 41728,
+    "StoppedVehicle": 23044,
+    "ParkedVehicle": 121939,
+    "OtherVehicleState": 4315
+  },
+  "Models": [
+    "NG-A",
+    "NG-C",
+    "G-A",
+    "G-C",
+    "Matched-NG-C"
+  ],
+  "Fields": [
+    "Top1FDE",
+    "Top1ADE",
+    "OracleGap",
+    "HitRate",
+    "MRR",
+    "SoftCE",
+    "ExpectedRegret",
+    "NormalizedExpectedRegret",
+    "PredictionEntropy",
+    "Top1Probability",
+    "Top1Top2Margin",
+    "OracleModeProbability",
+    "minADEOracle6",
+    "minFDE6",
+    "MR6"
+  ],
+  "ModelMetrics": [
+    {
+      "Group": "OtherVehicleState",
+      "Model": "NG-A",
+      "Count": 4315,
+      "Top1FDE": 3.117549301420498,
+      "Top1ADE": 1.353440338519924,
+      "OracleGap": 1.3241895047291563,
+      "HitRate": 0.43499420625724217,
+      "MRR": 0.6498995751255331,
+      "SoftCE": 1.5078668493799097,
+      "ExpectedRegret": 1.971651761438417,
+      "NormalizedExpectedRegret": 0.26928049998826253,
+      "PredictionEntropy": 1.5121303560007213,
+      "Top1Probability": 0.2600262990866724,
+      "Top1Top2Margin": 0.010902732165221682,
+      "OracleModeProbability": 0.24100281673948673,
+      "minADEOracle6": 0.7814250318885232,
+      "minFDE6": 1.7933597966913417,
+      "MR6": 0.16685979142526072
+    },
+    {
+      "Group": "OtherVehicleState",
+      "Model": "NG-C",
+      "Count": 4315,
+      "Top1FDE": 3.060851124658778,
+      "Top1ADE": 1.3026422130232915,
+      "OracleGap": 1.2674913279674362,
+      "HitRate": 0.4544611819235226,
+      "MRR": 0.6586172267284696,
+      "SoftCE": 18.24721120721288,
+      "ExpectedRegret": 1.2640940682339155,
+      "NormalizedExpectedRegret": 0.1409514123624714,
+      "PredictionEntropy": 0.10765689265277574,
+      "Top1Probability": 0.9557120897471559,
+      "Top1Top2Margin": 0.912352975971591,
+      "OracleModeProbability": 0.45404075796241816,
+      "minADEOracle6": 0.7814250318885232,
+      "minFDE6": 1.7933597966913417,
+      "MR6": 0.16685979142526072
+    },
+    {
+      "Group": "OtherVehicleState",
+      "Model": "G-A",
+      "Count": 4315,
+      "Top1FDE": 3.0721645895192595,
+      "Top1ADE": 1.365033077036634,
+      "OracleGap": 1.278804792827918,
+      "HitRate": 0.41205098493626885,
+      "MRR": 0.6427153341058317,
+      "SoftCE": 1.4901221561542393,
+      "ExpectedRegret": 1.7895834709805796,
+      "NormalizedExpectedRegret": 0.25041137072014885,
+      "PredictionEntropy": 1.4855754717062135,
+      "Top1Probability": 0.279794356358148,
+      "Top1Top2Margin": 0.024387066105978513,
+      "OracleModeProbability": 0.24870703599270977,
+      "minADEOracle6": 0.7814250318885232,
+      "minFDE6": 1.7933597966913417,
+      "MR6": 0.16685979142526072
+    },
+    {
+      "Group": "OtherVehicleState",
+      "Model": "G-C",
+      "Count": 4315,
+      "Top1FDE": 2.8650228711118073,
+      "Top1ADE": 1.2258888939056958,
+      "OracleGap": 1.0716630744204658,
+      "HitRate": 0.4630359212050985,
+      "MRR": 0.6678061027423715,
+      "SoftCE": 34.6532968059916,
+      "ExpectedRegret": 1.070724539998412,
+      "NormalizedExpectedRegret": 0.1257533554993877,
+      "PredictionEntropy": 0.06656347101878062,
+      "Top1Probability": 0.9729813346028466,
+      "Top1Top2Margin": 0.9460867566208713,
+      "OracleModeProbability": 0.46332146620828724,
+      "minADEOracle6": 0.7814250318885232,
+      "minFDE6": 1.7933597966913417,
+      "MR6": 0.16685979142526072
+    },
+    {
+      "Group": "OtherVehicleState",
+      "Model": "Matched-NG-C",
+      "Count": 4315,
+      "Top1FDE": 3.0207548631502403,
+      "Top1ADE": 1.285000837819574,
+      "OracleGap": 1.2273950664588988,
+      "HitRate": 0.46929316338354576,
+      "MRR": 0.6667825415218247,
+      "SoftCE": 16.287396102100782,
+      "ExpectedRegret": 1.2342227036645643,
+      "NormalizedExpectedRegret": 0.13830502476138382,
+      "PredictionEntropy": 0.1989590265850217,
+      "Top1Probability": 0.9191131817299963,
+      "Top1Top2Margin": 0.8418201835862731,
+      "OracleModeProbability": 0.45476590283431917,
+      "minADEOracle6": 0.7814250318885232,
+      "minFDE6": 1.7933597966913417,
+      "MR6": 0.16685979142526072
+    }
+  ],
+  "ExploratoryComparisons": [
+    {
+      "Group": "OtherVehicleState",
+      "Comparison": "G-C-NG-C",
+      "Count": 4315,
+      "Scenes": 207,
+      "DeltaTop1FDE": -0.19582825354697034,
+      "CI95Lower": -0.34476690809885474,
+      "CI95Upper": -0.06800708650087449,
+      "Exploratory": true,
+      "PrimaryFamilyMember": false,
+      "Fold1Count": 1208,
+      "Fold1DeltaTop1FDE": -0.49742213172498095,
+      "Fold2Count": 1225,
+      "Fold2DeltaTop1FDE": -0.05868859662294236,
+      "Fold3Count": 1882,
+      "Fold3DeltaTop1FDE": -0.0915087396749711,
+      "NegativeFolds": 3
+    },
+    {
+      "Group": "OtherVehicleState",
+      "Comparison": "G-C-Matched-NG-C",
+      "Count": 4315,
+      "Scenes": 207,
+      "DeltaTop1FDE": -0.15573199203843305,
+      "CI95Lower": -0.2527221797079616,
+      "CI95Upper": -0.055661482160186945,
+      "Exploratory": true,
+      "PrimaryFamilyMember": false,
+      "Fold1Count": 1208,
+      "Fold1DeltaTop1FDE": -0.2708608083311693,
+      "Fold2Count": 1225,
+      "Fold2DeltaTop1FDE": -0.0700393682628946,
+      "Fold3Count": 1882,
+      "Fold3DeltaTop1FDE": -0.1376118294685123,
+      "NegativeFolds": 3
+    },
+    {
+      "Group": "OtherVehicleState",
+      "Comparison": "NG-C-NG-A",
+      "Count": 4315,
+      "Scenes": 207,
+      "DeltaTop1FDE": -0.05669817676172006,
+      "CI95Lower": -0.1902780303414437,
+      "CI95Upper": 0.09778199507684325,
+      "Exploratory": true,
+      "PrimaryFamilyMember": false,
+      "Fold1Count": 1208,
+      "Fold1DeltaTop1FDE": 0.10710977640412347,
+      "Fold2Count": 1225,
+      "Fold2DeltaTop1FDE": -0.21155037320789177,
+      "Fold3Count": 1882,
+      "Fold3DeltaTop1FDE": -0.061047840299328256,
+      "NegativeFolds": 2
+    }
+  ],
+  "ExistingStoppedParkedTransparency": [
+    {
+      "Group": "StoppedVehicle",
+      "Count": 23044,
+      "ModelMetrics": [
+        {
+          "Model": "NG-A",
+          "minFDE6": 0.811419351570006,
+          "Top1ADE": 0.4886678829957338,
+          "Top1FDE": 1.2553604810329877,
+          "HitRate": 0.4586009373372678
+        },
+        {
+          "Model": "NG-C",
+          "minFDE6": 0.811419351570006,
+          "Top1ADE": 0.48424431735168183,
+          "Top1FDE": 1.2520481837921518,
+          "HitRate": 0.4767401492796389
+        },
+        {
+          "Model": "G-A",
+          "minFDE6": 0.811419351570006,
+          "Top1ADE": 0.4845301110552894,
+          "Top1FDE": 1.2385186156447772,
+          "HitRate": 0.40661343516750564
+        },
+        {
+          "Model": "G-C",
+          "minFDE6": 0.811419351570006,
+          "Top1ADE": 0.4787158627274396,
+          "Top1FDE": 1.2369385673664612,
+          "HitRate": 0.4664554764797778
+        },
+        {
+          "Model": "Matched-NG-C",
+          "minFDE6": 0.811419351570006,
+          "Top1ADE": 0.48471616203645423,
+          "Top1FDE": 1.2523828979045293,
+          "HitRate": 0.47938725915639646
+        }
+      ],
+      "Comparisons": [
+        {
+          "Comparison": "G-C-NG-C",
+          "Count": 23044,
+          "Scenes": 381,
+          "DeltaTop1FDE": -0.015109616425690609,
+          "CI95Lower": -0.03444847498571384,
+          "CI95Upper": 0.0013751490879490235,
+          "Fold1DeltaTop1FDE": -0.01665086520508151,
+          "Fold2DeltaTop1FDE": -0.015004452850698145,
+          "Fold3DeltaTop1FDE": -0.013904640106414507,
+          "NegativeFolds": 3,
+          "Exploratory": true,
+          "Source": "outputs/stage14b_paper_validation/06_statistics/stage14b_bootstrap_ci.csv"
+        },
+        {
+          "Comparison": "G-C-Matched-NG-C",
+          "Count": 23044,
+          "Scenes": 381,
+          "DeltaTop1FDE": -0.015444330538068157,
+          "CI95Lower": -0.032227907769809445,
+          "CI95Upper": -0.0006096693200975933,
+          "Fold1DeltaTop1FDE": -0.024608346049906454,
+          "Fold2DeltaTop1FDE": -0.010819791741623336,
+          "Fold3DeltaTop1FDE": -0.01203586382545231,
+          "NegativeFolds": 3,
+          "Exploratory": true,
+          "Source": "outputs/stage14b_paper_validation/06_statistics/stage14b_bootstrap_ci.csv"
+        },
+        {
+          "Comparison": "NG-C-NG-A",
+          "Count": 23044,
+          "Scenes": 381,
+          "DeltaTop1FDE": -0.0033122972408359493,
+          "CI95Lower": -0.02054887797081431,
+          "CI95Upper": 0.014514872952643337,
+          "Fold1DeltaTop1FDE": 0.01403975940201283,
+          "Fold2DeltaTop1FDE": -0.009185336964058276,
+          "Fold3DeltaTop1FDE": -0.01247445009968752,
+          "NegativeFolds": 2,
+          "Exploratory": true,
+          "Source": "outputs/stage14b_paper_validation/06_statistics/stage14b_bootstrap_ci.csv"
+        }
+      ]
+    },
+    {
+      "Group": "ParkedVehicle",
+      "Count": 121939,
+      "ModelMetrics": [
+        {
+          "Model": "NG-A",
+          "minFDE6": 0.1245843369678438,
+          "Top1ADE": 0.14360576433220595,
+          "Top1FDE": 0.22877413928433707,
+          "HitRate": 0.47452414731956144
+        },
+        {
+          "Model": "NG-C",
+          "minFDE6": 0.1245843369678438,
+          "Top1ADE": 0.13633728064974637,
+          "Top1FDE": 0.21469300131100655,
+          "HitRate": 0.5366535726879833
+        },
+        {
+          "Model": "G-A",
+          "minFDE6": 0.1245843369678438,
+          "Top1ADE": 0.14687226229135944,
+          "Top1FDE": 0.2351686460068312,
+          "HitRate": 0.4664463379230599
+        },
+        {
+          "Model": "G-C",
+          "minFDE6": 0.1245843369678438,
+          "Top1ADE": 0.13736500611475422,
+          "Top1FDE": 0.21674339179742808,
+          "HitRate": 0.5268043857994571
+        },
+        {
+          "Model": "Matched-NG-C",
+          "minFDE6": 0.1245843369678438,
+          "Top1ADE": 0.13669133775808906,
+          "Top1FDE": 0.2152634050251428,
+          "HitRate": 0.5386463723665111
+        }
+      ],
+      "Comparisons": [
+        {
+          "Comparison": "G-C-NG-C",
+          "Count": 121939,
+          "Scenes": 536,
+          "DeltaTop1FDE": 0.0020503904864215047,
+          "CI95Lower": -0.00018585369702027175,
+          "CI95Upper": 0.004483572617114387,
+          "Fold1DeltaTop1FDE": 0.0035414101434447414,
+          "Fold2DeltaTop1FDE": 0.002692224261903787,
+          "Fold3DeltaTop1FDE": 0.00013883267259934016,
+          "NegativeFolds": 0,
+          "Exploratory": true,
+          "Source": "outputs/stage14b_paper_validation/06_statistics/stage14b_bootstrap_ci.csv"
+        },
+        {
+          "Comparison": "G-C-Matched-NG-C",
+          "Count": 121939,
+          "Scenes": 536,
+          "DeltaTop1FDE": 0.0014799867722852574,
+          "CI95Lower": -0.0010016746460852863,
+          "CI95Upper": 0.004113591746888055,
+          "Fold1DeltaTop1FDE": 0.0008505910164756234,
+          "Fold2DeltaTop1FDE": 0.005090747009375673,
+          "Fold3DeltaTop1FDE": -0.0009884284613534725,
+          "NegativeFolds": 1,
+          "Exploratory": true,
+          "Source": "outputs/stage14b_paper_validation/06_statistics/stage14b_bootstrap_ci.csv"
+        },
+        {
+          "Comparison": "NG-C-NG-A",
+          "Count": 121939,
+          "Scenes": 536,
+          "DeltaTop1FDE": -0.0140811379733305,
+          "CI95Lower": -0.017204880626811886,
+          "CI95Upper": -0.010969239320926586,
+          "Fold1DeltaTop1FDE": -0.006169443283720433,
+          "Fold2DeltaTop1FDE": -0.020695124344237127,
+          "Fold3DeltaTop1FDE": -0.01576978931191496,
+          "NegativeFolds": 3,
+          "Exploratory": true,
+          "Source": "outputs/stage14b_paper_validation/06_statistics/stage14b_bootstrap_ci.csv"
+        }
+      ]
+    }
+  ],
+  "Bootstrap": {
+    "Replicates": 2000,
+    "Seed": 2022,
+    "Unit": "paired whole scene within each outer fold",
+    "ScenesDrawnPerFold": 210,
+    "Weights": "exact byte-frozen Stage14A weights; seed replay verified",
+    "CoveragePercent": 95,
+    "Percentiles": [
+      2.5,
+      97.5
+    ],
+    "MainFamilyModified": false,
+    "InferentialUse": "exploratory only; no additional primary support decision"
+  },
+  "AllOtherOracleMetricsBitwiseIdentical": true,
+  "InputSourceSHA256": {
+    "outputs/stage14b_paper_validation/04_checkpoints/stage14b_all_frozen.json": "fb9a39f816a571246a3433ff026b4341411acd5d992011fc2fa7d9da7ad92c69",
+    "outputs/stage14b_paper_validation/stage14b_preregistered_plan.md": "97f89f405ae85356ce09054e3766c6ddca293447385924be666f52f6c98c324e",
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_plan_registration.json": "cd11a76552d2dd801482330eed6cac12248a36a222669fcb389f675a13900631",
+    "outputs/stage14a_paper_graph_ablation/05_evaluation/stage14a_identity_audit.json": "bdfcae68ca1520501fb19c30241cd69acbe4198d849669c7db6c5cf5672f1473",
+    "outputs/stage14b_paper_validation/05_evaluation/stage14b_identity_audit.json": "6ae1925bfea68875c483593d57bcbe8e8e058199cedcee0b669b365ecb649563",
+    "outputs/stage14a_paper_graph_ablation/06_bootstrap/stage14a_bootstrap_audit.json": "cd2cbe305d495246bb08fabc82ace1a35ac6c34f2a06adb6a8530d9be6ee64db",
+    "outputs/stage14b_paper_validation/05_evaluation/cache/stage14b_actor_records.csv": "41a29278aa5b4a48c40cc9bf475698ad16561a3777e41a46eccf06327a2d5458",
+    "outputs/stage14a_paper_graph_ablation/05_evaluation/cache/stage14a_oof_actor_records.csv": "41a29278aa5b4a48c40cc9bf475698ad16561a3777e41a46eccf06327a2d5458",
+    "outputs/stage14a_paper_graph_ablation/05_evaluation/cache/stage14a_oof_metrics.npy": "9573f90a2913483779b0ec394c8020465824f44bd02e351db15710c65612aeab",
+    "outputs/stage14b_paper_validation/05_evaluation/cache/stage14b_matched_metrics.npy": "41a904688a9d2706b452632608d9dcec22f2567ca6976494f52ae4adb449eccd",
+    "outputs/stage14a_paper_graph_ablation/06_bootstrap/cache/stage14a_scene_bootstrap_weights.npy": "31d9b9ddba94345157a920e9a7fea1e9fc4d704a38ef37f2555bc149d072f54d",
+    "outputs/stage14b_paper_validation/05_evaluation/stage14b_capacity_metrics.csv": "5ba55332ef22eadae04e1ce9a923a21d736dda0b2d00fe3d5604ebc6b6617647",
+    "outputs/stage14b_paper_validation/06_statistics/stage14b_bootstrap_ci.csv": "e9d3b947a90744619ed01c1a1dcf9a983a4641484fe180c901b4051376305c6e",
+    "outputs/stage14b_paper_validation/06_statistics/stage14b_fold_comparisons.csv": "dd6f91504d74ee083cf764c257e96d2d008bde18c5a82e85b8936a68e598175d",
+    "outputs/stage11b_error_aware_ranking/02_splits/stage11b_fold1_split.json": "577c52648c875a73a1f00b30625aecb85b83c3e98fd2ffb8f1c80db55cb5cc3b",
+    "outputs/stage11b_error_aware_ranking/02_splits/stage11b_fold2_split.json": "2d94467fe62114f18451b23b4cac5a7568e07a482fa7383fb753d75aaba2cfc1",
+    "outputs/stage11b_error_aware_ranking/02_splits/stage11b_fold3_split.json": "b9d1fa4555703bef13fdc8f48135da3a2fabf4e75066c6282a32185a21cdcde9",
+    "outputs/stage14b_paper_validation/05_evaluation/stage14b_state_supplement.py": "367d5f70456871cce3101f01c49754f39ba05c5ea002cd068e23571c944c8134"
+  },
+  "OutputMetricsCSV": "stage14b_state_supplement.csv",
+  "OutputMetricsCSVSHA256": "c17ea579a8723a280fae12e7e285fce7915f83872fd68ff4bedf5c9b9bbac103",
+  "OptimizerUpdates": 0,
+  "ModelInferenceRuns": 0,
+  "NewCheckpoints": 0,
+  "OriginalGroupsModified": false,
+  "MainMetricTableModified": false,
+  "MainBootstrapModified": false
+}

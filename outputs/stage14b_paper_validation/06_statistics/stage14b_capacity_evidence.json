@@ -1,0 +1,33 @@
+{
+  "Status": "PASS",
+  "CapacityAlternativeNotSufficient": "SUPPORTED",
+  "RegisteredCapacityComparison": {
+    "Group": "Overall",
+    "Comparison": "G-C-Matched-NG-C",
+    "Count": 260151,
+    "Scenes": 630,
+    "DeltaTop1FDE": -0.05884157643013444,
+    "CI95Lower": -0.07448315406620698,
+    "CI95Upper": -0.04447543616850887,
+    "CoPrimary": true,
+    "FamilySize": 3,
+    "BonferroniCILower": -0.07854573040827176,
+    "BonferroniCIUpper": -0.04176779953355486,
+    "ResultOrigin": "new capacity contrast",
+    "Scope": "internal frozen-predictor ranking OOF; no independent end-to-end claim",
+    "Fold1DeltaTop1FDE": -0.05380527246509358,
+    "Fold2DeltaTop1FDE": -0.0439004531751128,
+    "Fold3DeltaTop1FDE": -0.07662078155030402,
+    "NegativeFolds": 3
+  },
+  "Interpretation": "approximate capacity control; does not establish causal effect or eliminate all architecture/optimization differences",
+  "Replicates": 2000,
+  "Seed": 2022,
+  "Unit": "paired whole scene within each fold",
+  "FamilySize": 3,
+  "AdjustedPercentiles": [
+    0.8333333333333334,
+    99.16666666666667
+  ],
+  "HistoricalComparisonsAlreadyKnown": true
+}

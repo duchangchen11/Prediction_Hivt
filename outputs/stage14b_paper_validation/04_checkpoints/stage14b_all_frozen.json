@@ -1,0 +1,48 @@
+{
+  "Status": "FROZEN_ALL_COMPLETE",
+  "Folds": 3,
+  "Checkpoints": [
+    {
+      "Fold": 1,
+      "Model": "Matched-NG-C",
+      "Path": "outputs/stage14b_paper_validation/04_checkpoints/fold1/Matched-NG-C_best.pt",
+      "SHA256": "b6485476ad1a7757909fe1e8950d87651ead946e58a5092898cede1497df0b59",
+      "SelectedEpoch": 15,
+      "CheckpointScore": 0.9561256366306297,
+      "NormalizationSHA256": "e371f3405fab3896165a4315d188ae172ef3e841587b9ab1df3717872ddeb1b7",
+      "SplitSHA256": "577c52648c875a73a1f00b30625aecb85b83c3e98fd2ffb8f1c80db55cb5cc3b",
+      "TrainingConfigSHA256": "9a6e6ae69d672d149b299026be2800b44ae528541fb05b155041378ef1c10733"
+    },
+    {
+      "Fold": 2,
+      "Model": "Matched-NG-C",
+      "Path": "outputs/stage14b_paper_validation/04_checkpoints/fold2/Matched-NG-C_best.pt",
+      "SHA256": "9c875fd0315564620648f96d6547e0910ad3e8dfbb24dcf2b13b078636f658f1",
+      "SelectedEpoch": 14,
+      "CheckpointScore": 0.9773188990912836,
+      "NormalizationSHA256": "e10bdad4e70ad875d0b3be424f8a72117a00f45782b60d1ae94a416e0ee0cf7d",
+      "SplitSHA256": "2d94467fe62114f18451b23b4cac5a7568e07a482fa7383fb753d75aaba2cfc1",
+      "TrainingConfigSHA256": "b9ea28151d807d3633d2b9d57a82506bf54f3da1a11e98c4309edae3892df8f4"
+    },
+    {
+      "Fold": 3,
+      "Model": "Matched-NG-C",
+      "Path": "outputs/stage14b_paper_validation/04_checkpoints/fold3/Matched-NG-C_best.pt",
+      "SHA256": "b69b3d0731f9daaebaa8faadef325eb83837455411875c112dec29e14ff4a645",
+      "SelectedEpoch": 2,
+      "CheckpointScore": 0.9696532382097769,
+      "NormalizationSHA256": "0b138fe341538c9413f66d170d3b7de51e6abe5167177fe3788cc0c47377dbe8",
+      "SplitSHA256": "b9d1fa4555703bef13fdc8f48135da3a2fabf4e75066c6282a32185a21cdcde9",
+      "TrainingConfigSHA256": "ead3ca8e284888a112c8da9d7b475511ffd9f99267c05b3f5a3694d8577056f9"
+    }
+  ],
+  "predictor_state_sha256": "0a49aacd90d08951bc7750a473dc83996f9629c1041d39ac03d69bb5ea321437",
+  "TinyWeightsUsed": false,
+  "NoOuterTestModelSelection": true,
+  "HeadDevUsed": false,
+  "OfficialVALTestUsed": false,
+  "NewFormalTrainingRuns": 3,
+  "HistoricalGACRetrained": false,
+  "FurtherTrainingPermitted": false,
+  "OuterTestEvaluationPermitted": true
+}

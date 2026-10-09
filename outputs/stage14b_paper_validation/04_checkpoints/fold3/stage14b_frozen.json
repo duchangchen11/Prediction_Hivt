@@ -1,0 +1,20 @@
+{
+  "Status": "FROZEN",
+  "Fold": 3,
+  "Checkpoints": [
+    {
+      "Fold": 3,
+      "Model": "Matched-NG-C",
+      "Path": "outputs/stage14b_paper_validation/04_checkpoints/fold3/Matched-NG-C_best.pt",
+      "SHA256": "b69b3d0731f9daaebaa8faadef325eb83837455411875c112dec29e14ff4a645",
+      "SelectedEpoch": 2,
+      "CheckpointScore": 0.9696532382097769,
+      "NormalizationSHA256": "0b138fe341538c9413f66d170d3b7de51e6abe5167177fe3788cc0c47377dbe8",
+      "SplitSHA256": "b9d1fa4555703bef13fdc8f48135da3a2fabf4e75066c6282a32185a21cdcde9",
+      "TrainingConfigSHA256": "ead3ca8e284888a112c8da9d7b475511ffd9f99267c05b3f5a3694d8577056f9"
+    }
+  ],
+  "OuterTestEvaluationPermitted": false,
+  "Reason": "all3 global gate required",
+  "FurtherTrainingPermitted": false
+}

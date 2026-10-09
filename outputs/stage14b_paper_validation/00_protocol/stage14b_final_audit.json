@@ -1,0 +1,59 @@
+{
+  "Status": "PASS",
+  "MethodAudit": "PASS",
+  "CapacityControl": "PASS",
+  "CapacityAlternativeNotSufficient": "SUPPORTED",
+  "EvaluationProtocol": "DESIGN_PASS_A_RECOMMENDED",
+  "FormalHiVTRunsExecuted": 0,
+  "MatchedHeadRunsExecuted": 3,
+  "EstimatedHiVTRuns": {
+    "A": 3,
+    "B": 12
+  },
+  "FutureRankingRuns": 18,
+  "PristineDataVerified": false,
+  "OfficialProtocolCompatibility": "PARTIAL_NEEDS_ADAPTER_AND_PROTOCOL_RESET",
+  "HistoricalFilesUnchanged": true,
+  "OldCheckpointCount": 35,
+  "HistoricalTrackedFileCount": 3124,
+  "PreservedUntrackedCount": 5,
+  "ExactThreeCheckpointPathsVerified": true,
+  "CheckpointSHA256": {
+    "outputs/stage14b_paper_validation/04_checkpoints/fold1/Matched-NG-C_best.pt": "b6485476ad1a7757909fe1e8950d87651ead946e58a5092898cede1497df0b59",
+    "outputs/stage14b_paper_validation/04_checkpoints/fold2/Matched-NG-C_best.pt": "9c875fd0315564620648f96d6547e0910ad3e8dfbb24dcf2b13b078636f658f1",
+    "outputs/stage14b_paper_validation/04_checkpoints/fold3/Matched-NG-C_best.pt": "b69b3d0731f9daaebaa8faadef325eb83837455411875c112dec29e14ff4a645"
+  },
+  "VerifiedFittingSourceSHA256": {
+    "1": {
+      "00_protocol/stage14b_common.py": "f217e0294b866734ada320fbd17b522c6c8437f06b3a8680df22f03503d3171b",
+      "01_preflight/stage14b_capacity_preflight.py": "343b11a05af1056c423df1358958f1ff68466f6f222a216799b524bccdd6b60f",
+      "02_models/stage14b_matched_nograph.py": "77b9b760a4e622110e587447becb92170983c986bd7835cfd26187ec350dbdcf",
+      "03_training/stage14b_train.py": "cbcb4e9a8166711a2e0de071e78b2c23feb12d20a5110b9d73f009e5f6b7b13e"
+    },
+    "2": {
+      "00_protocol/stage14b_common.py": "f217e0294b866734ada320fbd17b522c6c8437f06b3a8680df22f03503d3171b",
+      "01_preflight/stage14b_capacity_preflight.py": "343b11a05af1056c423df1358958f1ff68466f6f222a216799b524bccdd6b60f",
+      "02_models/stage14b_matched_nograph.py": "77b9b760a4e622110e587447becb92170983c986bd7835cfd26187ec350dbdcf",
+      "03_training/stage14b_train.py": "cbcb4e9a8166711a2e0de071e78b2c23feb12d20a5110b9d73f009e5f6b7b13e"
+    },
+    "3": {
+      "00_protocol/stage14b_common.py": "f217e0294b866734ada320fbd17b522c6c8437f06b3a8680df22f03503d3171b",
+      "01_preflight/stage14b_capacity_preflight.py": "343b11a05af1056c423df1358958f1ff68466f6f222a216799b524bccdd6b60f",
+      "02_models/stage14b_matched_nograph.py": "77b9b760a4e622110e587447becb92170983c986bd7835cfd26187ec350dbdcf",
+      "03_training/stage14b_train.py": "cbcb4e9a8166711a2e0de071e78b2c23feb12d20a5110b9d73f009e5f6b7b13e"
+    }
+  },
+  "FittingSourceVerificationScope": "four new imported fitting sources plus byte-frozen historical sources; not every metadata utility snapshot in training config",
+  "DesignReviewStatus": "PASS_DESIGN_ONLY_WITH_DOCUMENTED_LIMITS",
+  "DesignReviewSourcesVerified": true,
+  "RequiredReportSHA256": {
+    "stage14b_method_audit.md": "b60ef1b87174c7db8e929ba36bf0fa9a3b490775f2af6b4d16679ed42a694821",
+    "stage14b_evaluation_protocol.md": "86641746ed30ec5a5abc02ac4c4350dff8f678f09fb43fe993ea744412b09750",
+    "stage14b_capacity_control.md": "284a61626c15d7aa77ab53b9d8e1d681117564801cede29237e81d7fc83dfa70",
+    "stage14b_baseline_audit.md": "e9832495631263a28d128cc84ecea0200de7e3ab9959177acef1193b14c730d2",
+    "stage14b_preregistered_plan.md": "97f89f405ae85356ce09054e3766c6ddca293447385924be666f52f6c98c324e",
+    "stage14b_final_report.md": "560a3d47b629502a6ec0819c4c6194f95c62cac01266bfd710dec8c276157ebb"
+  },
+  "STOP": true,
+  "Stage15Started": false
+}

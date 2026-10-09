@@ -1,0 +1,46 @@
+{
+  "Status": "PASS",
+  "Models": [
+    "NG-A",
+    "NG-C",
+    "G-A",
+    "G-C",
+    "Matched-NG-C"
+  ],
+  "Fields": [
+    "Top1FDE",
+    "Top1ADE",
+    "OracleGap",
+    "HitRate",
+    "MRR",
+    "SoftCE",
+    "ExpectedRegret",
+    "NormalizedExpectedRegret",
+    "PredictionEntropy",
+    "Top1Probability",
+    "Top1Top2Margin",
+    "OracleModeProbability",
+    "minADEOracle6",
+    "minFDE6",
+    "MR6"
+  ],
+  "Actors": 260151,
+  "Scenes": 630,
+  "IdentityKeys": [
+    "scene_token",
+    "sample_token",
+    "instance_token"
+  ],
+  "IdentityJoin": "EXACT_SAME_UNIQUE_KEYS_AND_ORDER",
+  "HistoricalOutputsUnchanged": true,
+  "AllCandidatesUnchanged": true,
+  "AllOracleMetricsBitwiseIdentical": true,
+  "BicycleR2RouteBitwiseIdentical": true,
+  "TrainableInferenceParameters": 0,
+  "cache_files": {
+    "stage14b_matched_metrics.npy": "41a904688a9d2706b452632608d9dcec22f2567ca6976494f52ae4adb449eccd",
+    "stage14b_matched_logits.npy": "117affbaea5fd067f463f3cecec317893204d7f9e1ffec8b4c7100ae9a381851",
+    "stage14b_matched_probabilities.npy": "e0631e4942ba7c81d17660e3b014c6c721a3f4ac3bb9620030498869b6c18342",
+    "stage14b_actor_records.csv": "41a29278aa5b4a48c40cc9bf475698ad16561a3777e41a46eccf06327a2d5458"
+  }
+}
