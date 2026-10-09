@@ -1,0 +1,8 @@
+{
+  "Stage12BMatchingCallsDuringTraining": 0,
+  "Stage12BMapMatchingSeconds": 0,
+  "SourceStage12AManifestSHA256": "631d4657159363f50bcc5a3397dba9daaf4683bf275ef10185ed3385ee8e3a29",
+  "RecordedStage12AExtractionWallSeconds": 1092.399774282996,
+  "Scope": "historical cached extraction run, three CPU workers plus earlier cached scenes; excludes earlier runs/cache preparation; not cold production inference latency",
+  "ColdFeatureExtractionLatency": "not measured in Stage12B; no HD Map extraction repeated during training"
+}

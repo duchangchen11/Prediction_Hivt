@@ -1,0 +1,46 @@
+{
+  "Status": "PASS",
+  "Actors": 260151,
+  "Scenes": 630,
+  "Pedestrian": 66145,
+  "Vehicle": 191026,
+  "Bicycle": 2980,
+  "FrozenModelIntegrity": "PASS",
+  "SemanticCacheIntegrity": "PASS",
+  "FoldIsolation": "PASS",
+  "CandidateIdentity": "PASS",
+  "CandidateMaxDiff": 0,
+  "VehiclePreserved": "YES",
+  "BicyclePreserved": "YES",
+  "AllCandidateOracleMetricsBitwiseIdentical": true,
+  "RawC0OOFBitwiseIdentical": true,
+  "All9FrozenBeforeOuterTest": true,
+  "All9FreezeSHA256": "5928220873ff57212af261fb6d605c6eda7aa12aa3c86af9ab7e15c374d036c4",
+  "Models": [
+    "C0",
+    "G",
+    "S",
+    "P"
+  ],
+  "Fields": [
+    "Top1FDE",
+    "Top1ADE",
+    "OracleGap",
+    "HitRate",
+    "minFDE6",
+    "minADEOracle6",
+    "MR6",
+    "ExpectedRegret",
+    "PredictionEntropy"
+  ],
+  "CandidateFileSHA256": "fac8fb05888372de965bdc11b6bef1d0f211d095e38c509ddcad4a1a9d909049",
+  "CacheFiles": {
+    "06_oof_evaluation/cache/stage12b_metrics.npy": "8083f2a3f5cebd90000ce52a431e72a1daa23d2d796b203bc83df82624af88cf",
+    "06_oof_evaluation/cache/stage12b_actor_records.csv": "2d47f44db4377021811f491218951fc7501024c97a49f3ca3bc439e935f0fbb9",
+    "06_oof_evaluation/cache/stage12b_residuals.npy": "0cae4f7337e75a3b4d817fe0eec917e0bb466860ebaa27258903c7ed1465b8e4",
+    "06_oof_evaluation/cache/stage12b_probabilities.npy": "8f4595c9e3a76cfb31d71a20e8c8ceca34418803f4aaa1fa53183184109d6b83",
+    "06_oof_evaluation/cache/stage12b_modes.npy": "38759f1a7aced7be5576a608e50848ac26f3a8a34179eb985781b965f4f3fc70",
+    "06_oof_evaluation/cache/stage12b_logits.npy": "e1ac31859a5b65242839576aa11e588757570e0da8d24d222822705b7b85a905"
+  },
+  "CompletedUTC": "2026-10-09T10:08:01Z"
+}

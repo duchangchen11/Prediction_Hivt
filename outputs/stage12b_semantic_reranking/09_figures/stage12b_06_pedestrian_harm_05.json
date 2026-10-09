@@ -1,0 +1,59 @@
+{
+  "Identity": {
+    "Category": "Harm",
+    "Ordinal": 5,
+    "HeadTrainIndex": 142003,
+    "ActorID": "5d709891c41d423687ae4ea0473cb9c4|e6bbf0f6d56942ab897fda0c818c84ba|a81bcb74f994468482af5c0e24652fcf",
+    "SceneToken": "5d709891c41d423687ae4ea0473cb9c4",
+    "SampleToken": "e6bbf0f6d56942ab897fda0c818c84ba",
+    "Fold": 1,
+    "C0Mode": 4,
+    "SMode": 3,
+    "C0FDE": 1.059656023979187,
+    "SFDE": 7.188610553741455,
+    "DeltaFDE": 6.128954529762268
+  },
+  "Location": "boston-seaport",
+  "CoordinateFrame": "t0 ego",
+  "Origin": [
+    1769.0778977362709,
+    869.7053890363653
+  ],
+  "Yaw": -3.1024925149449945,
+  "CandidateGeometryIDs": [
+    "b81c1380a393f172488ce62457ed8fcaa81b07f528ab7f781193ff9d892ca465",
+    "2d5f5b3153f8f3ec4fdd2a3a228e262053983a4800a8121f57d13c8f40ae1c60",
+    "c4462cc6defbd78da4a7c013ac721587935a54787640b84034000e16e0119fbb",
+    "731f44e85a5729a4c1da98c94acb9f6d3d33e609b7612c9a77b3af46792bbb01",
+    "a69d620e3efc212c84d708778e9355c248e71e9f29c75b807583ac40a4512328",
+    "26a769909f98bad6edff2f3075310d582df9afe8f160ec1274ea77bd379b92dd"
+  ],
+  "Walkway": [
+    [
+      0.5833333134651184,
+      1.0
+    ],
+    [
+      1.0,
+      1.0
+    ],
+    [
+      0.4166666567325592,
+      1.0
+    ],
+    [
+      1.0,
+      1.0
+    ],
+    [
+      0.6666666865348816,
+      1.0
+    ],
+    [
+      0.75,
+      1.0
+    ]
+  ],
+  "MapBackground": "original visible HD Map components; display clipping only; not semantic fallback",
+  "GTOfflineOnly": true
+}

@@ -1,0 +1,59 @@
+{
+  "Identity": {
+    "Category": "Harm",
+    "Ordinal": 4,
+    "HeadTrainIndex": 19052,
+    "ActorID": "00590cbfa24a430a8c274b51e1c71231|5b0c6ca774354506bc23434861bff646|2d18ed0e920a4e839a244385733e5072",
+    "SceneToken": "00590cbfa24a430a8c274b51e1c71231",
+    "SampleToken": "5b0c6ca774354506bc23434861bff646",
+    "Fold": 1,
+    "C0Mode": 4,
+    "SMode": 3,
+    "C0FDE": 1.9670988321304321,
+    "SFDE": 8.133258819580078,
+    "DeltaFDE": 6.166159987449646
+  },
+  "Location": "singapore-onenorth",
+  "CoordinateFrame": "t0 ego",
+  "Origin": [
+    325.26446469462155,
+    974.9187973557389
+  ],
+  "Yaw": -2.5888278000131715,
+  "CandidateGeometryIDs": [
+    "814f8ac9361f111ffddaf93f3ce22f0911de1377e68e9c3c500706ce4e7b1b03",
+    "d1ee574f1ebe465163a8e91ce631e22985713729b4b499976fbf5fd2e4dacae4",
+    "10aebbfed6f3c7e0f4892e6644d1b4d39a57c305721cdf44bca89c23304c5a8c",
+    "502bbe9573909b684d862eb4defd2735035f2230fcf8675e75d5ef18a1ce45f3",
+    "eccd6320aceb45af46d11c6266d154d0f3cde571104003878995fa22ea4098a5",
+    "95b9ae8811c64d258a376f22e17a5621acd7e47b685372c96770f9fed8194cf7"
+  ],
+  "Walkway": [
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "MapBackground": "original visible HD Map components; display clipping only; not semantic fallback",
+  "GTOfflineOnly": true
+}
