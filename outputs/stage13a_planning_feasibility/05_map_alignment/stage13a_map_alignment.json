@@ -1,0 +1,29 @@
+{
+  "Status": "PASS",
+  "MapCompatibility": "PASS",
+  "Samples": 48,
+  "Regions": 4,
+  "MapDrivableMaskShape": [
+    301,
+    301
+  ],
+  "RasterSpacingM": 1,
+  "PatchRadiusM": 150,
+  "BoundaryAndLaneGeometryPresent": true,
+  "SourceHashes": {
+    "singapore-onenorth.json": "17939122b940d7faff50fa7ff623ded7f739549a781c32dff1ecd1ac7bebca02",
+    "singapore-queenstown.json": "c7e75f5a5643c4831aae1c99a0fdcc61e9ba3c01f98d922f0fafa34ea1062927",
+    "boston-seaport.json": "fc33712481efd763be39ce7edca0ec924d2d1fe20e1c89d52e21bf43d86e6b59",
+    "singapore-hollandvillage.json": "0c9209c277686e367b06ab5bbe2547ba357f7f790365cb4927f44ae0f78266b2"
+  },
+  "RoundtripMaxM": 1.3642420526593924e-12,
+  "RouteInferredFromFutureGT": false,
+  "ExistingInvalidSourceComponentsExcluded": [
+    [
+      "boston-seaport",
+      "walkway",
+      "15de5628-2b89-4cc1-acb3-f5751dcbba5f",
+      "b7ada811-352c-4501-8162-cfdba0a8d640"
+    ]
+  ]
+}

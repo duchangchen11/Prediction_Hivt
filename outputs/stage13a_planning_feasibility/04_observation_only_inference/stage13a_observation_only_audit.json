@@ -1,0 +1,19 @@
+{
+  "Status": "PASS",
+  "ObservationOnlyInference": "PASS",
+  "Scenes": 12,
+  "PlanningSamples": 48,
+  "InferenceOnlyMissingFutureSamples": 12,
+  "HistoricalGraphHistoryBitwiseMatchedSamples": 36,
+  "PastOnlyFacadeBlocksFutureReads": true,
+  "ActorSelection": "present supported,historycount>=2; no future labels",
+  "FrozenAllModelsEval": true,
+  "FrozenParameterGradients": 0,
+  "FrozenStatesUnchanged": true,
+  "OriginalGraphNumericalDefinitionReused": true,
+  "CAndR2FoldIdentity": true,
+  "TemperatureUnchanged": true,
+  "BicycleR2ProbabilityDirectCopy": true,
+  "AllCurrentActorsRetained": true,
+  "NoTraining": true
+}

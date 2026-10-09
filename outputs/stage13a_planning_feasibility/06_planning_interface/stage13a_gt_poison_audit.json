@@ -1,0 +1,13 @@
+{
+  "Status": "PASS",
+  "GTLeakage": "PASS",
+  "PlanningGTIsolation": "PASS",
+  "Samples": 48,
+  "RawFutureMetadataPoisonSamples": 12,
+  "EvaluationLabelsNaNAndMasksPoisoned": true,
+  "FutureGraphPositionsAndMasksPoisoned": true,
+  "ObservationIdentitiesAndFeaturesUnchanged": true,
+  "PredictionMaxDiff": 0.0,
+  "PlanningMaxDiff": 0.0,
+  "CVInputSignature": "PlanningObservation only; full PlanningSample and EvaluationLabels rejected"
+}
