@@ -92,6 +92,8 @@ def main():
     main_groups=['Overall','Vehicle','Pedestrian','Bicycle','MovingVehicle','StoppedVehicle','ParkedVehicle']
     main_metrics=metrics[metrics.Group.isin(main_groups)].copy()
     primary=contrasts[contrasts.Group=='Overall']
+    graph_motion=contrasts[(contrasts.Comparison=='G-C-NG-C') & contrasts.Group.isin(
+        ['Vehicle','Pedestrian','MovingVehicle','StoppedVehicle','ParkedVehicle'])]
     required_switches=switches[(switches.Group.isin(main_groups)) & switches.Comparison.isin(['NG-C-NG-A','G-C-NG-C','G-C-G-A'])]
     freeze_time=datetime.fromtimestamp((ROOT/'04_checkpoints/stage14a_all_frozen.json').stat().st_mtime,timezone.utc).isoformat()
     total_seconds=float(training.Seconds.sum())
@@ -121,9 +123,12 @@ def main():
         'Delta=first model−second model; negative favors the first. 2000 paired whole-scene bootstrap draws, seed 2022, independently resample 210 scenes within each of three folds. Every actor/window of a drawn scene stays clustered and paired across models. Four co-primary Overall Top1FDE comparisons use Bonferroni family 4: 98.75% individual intervals, giving the preregistered familywise .05 criterion. 95% intervals are also reported descriptively. Type/motion groups and interaction are exploratory; they do not replace the registered comparisons.',
         markdown_table(primary.to_dict('records'),['Comparison','Count','DeltaTop1FDE','CI95Lower','CI95Upper','BonferroniCILower','BonferroniCIUpper','Fold1DeltaTop1FDE','Fold2DeltaTop1FDE','Fold3DeltaTop1FDE']), '',
         'Graph gate requires comparison C (G-C−NG-C) to satisfy all conditions. Cross-structure Loss gate requires both A (NG-C−NG-A) and D (G-C−G-A) to satisfy them. No post-hoc criterion changes or parameter searches were performed.',
+        'The graph comparison under SoftCE (B: G-A−NG-A) does not meet the registered improvement conditions. The supported graph label is specific to the error-aware comparison C; it is not a claim of graph benefit under every loss. Different selected/executed epochs follow the identical original early-stopping rule, rather than an OuterTest-based budget adjustment. Bootstrap intervals condition on the frozen fitted heads and do not resample or refit training runs.',
         markdown_table(interaction[interaction.Group=='Overall'].to_dict('records'),['Comparison','Count','DeltaTop1FDE','CI95Lower','CI95Upper']),
         'The interaction is descriptive association of controlled contrasts, not causal identification.','',
         '## Mode changes, high-cost harm and motion states','',
+        markdown_table(graph_motion.to_dict('records'),['Group','Count','DeltaTop1FDE','CI95Lower','CI95Upper','Fold1DeltaTop1FDE','Fold2DeltaTop1FDE','Fold3DeltaTop1FDE']),
+        'These type/motion comparisons are exploratory. ParkedVehicle has a positive G-C−NG-C delta (worse), with all three fold directions positive and a descriptive 95% interval spanning zero. StoppedVehicle also has an interval spanning zero. MovingVehicle has a negative delta. Results therefore should be disclosed separately by current motion state.',
         'Gross gain/harm are sums of negative/positive paired target FDE changes in meters. High-cost harm is the original comparison/group-specific largest ceil(0.1×number of positive harms) tail. Different comparisons have different tail memberships; this is not a fixed identical actor subset. Unchanged selected modes have exactly zero FDE difference.',
         markdown_table(required_switches.to_dict('records'),['Comparison','Group','Count','ChangedCount','ImprovedCount','WorsenedCount','GrossGain','GrossHarm','HighCostHarmCount','HighCostHarmSum','NetFDEDelta']), '',
         'Disjoint MovingVehicle/StoppedVehicle/ParkedVehicle/OtherVehicleState contributions are in 07_diagnostics/stage14a_motion_contribution.csv. These contributions sum to the Vehicle mean delta, preventing a static-target count effect from being silently described as a moving-vehicle improvement. Diagnostics alone do not establish a causal switching mechanism.','',

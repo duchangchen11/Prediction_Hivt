@@ -1,0 +1,70 @@
+{
+  "Stage": "Stage14A",
+  "Status": "COMPLETE_AWAITING_BRAIN_AI_REVIEW",
+  "GraphIncrementSupported": "SUPPORTED",
+  "LossIncrementSupported": "SUPPORTED",
+  "Rule": "verbatim preregistered point<0, Bonferroni 98.75% CI upper<0 and at least 2/3 negative folds; graph=C, cross-structure loss=A AND D",
+  "RegisteredEvidence": {
+    "A": {
+      "PointImproves": true,
+      "AdjustedCIExcludesZeroInImprovementDirection": true,
+      "AtLeastTwoNegativeFolds": true,
+      "NegativeDirectionFolds": 3,
+      "DeltaTop1FDE": -0.12620922552383826,
+      "AdjustedCILower": -0.15369376432610957,
+      "AdjustedCIUpper": -0.10113673810940568,
+      "RegisteredConditionsAllMet": true,
+      "Comparison": "NG-C-NG-A"
+    },
+    "B": {
+      "PointImproves": false,
+      "AdjustedCIExcludesZeroInImprovementDirection": false,
+      "AtLeastTwoNegativeFolds": true,
+      "NegativeDirectionFolds": 2,
+      "DeltaTop1FDE": 0.0031182207753255977,
+      "AdjustedCILower": -0.030288924079140567,
+      "AdjustedCIUpper": 0.033505351229552394,
+      "RegisteredConditionsAllMet": false,
+      "Comparison": "G-A-NG-A"
+    },
+    "C": {
+      "PointImproves": true,
+      "AdjustedCIExcludesZeroInImprovementDirection": true,
+      "AtLeastTwoNegativeFolds": true,
+      "NegativeDirectionFolds": 3,
+      "DeltaTop1FDE": -0.055221222561943235,
+      "AdjustedCILower": -0.07828241070782631,
+      "AdjustedCIUpper": -0.037582749019352844,
+      "RegisteredConditionsAllMet": true,
+      "Comparison": "G-C-NG-C"
+    },
+    "D": {
+      "PointImproves": true,
+      "AdjustedCIExcludesZeroInImprovementDirection": true,
+      "AtLeastTwoNegativeFolds": true,
+      "NegativeDirectionFolds": 3,
+      "DeltaTop1FDE": -0.1845486688611071,
+      "AdjustedCILower": -0.21719502678074043,
+      "AdjustedCIUpper": -0.15225021997313545,
+      "RegisteredConditionsAllMet": true,
+      "Comparison": "G-C-G-A"
+    },
+    "GraphIncrementRegisteredConditionsMet": true,
+    "LossAcrossStructuresRegisteredConditionsMet": true,
+    "Scope": "statistical evidence for final report; internal ranking OOF, not independent end-to-end validation"
+  },
+  "ProtocolSHA256": "ae26d06dd83ab9d13773a125676a8bb59d887504fe0d674580f6304ca826e151",
+  "NewFormalTrainingRuns": 6,
+  "FrozenCandidateIdentity": "PASS",
+  "NoGraphImplementationAudit": "PASS",
+  "TrainingStatus": "COMPLETE_6_OF_6",
+  "Bicycle": "all four models bitwise-identical frozen FoldR2 route; no graph-Bicycle improvement claim",
+  "PredictorTrainingSceneOverlap": "630/630; each OuterTest 210/210; Stage5A trained all TRAIN700",
+  "IndependentEvaluationStatus": "NOT_INDEPENDENT_FROZEN_PREDICTOR_OOF",
+  "EvaluationLabel": "nuScenes HeadTrain630 internal three-fold ranking OOF",
+  "OfficialVALTestExecuted": false,
+  "EndToEndRetrainingExecuted": false,
+  "ScientificInterpretationOwner": "brain-AI; this JSON only applies registered evidence gates",
+  "NextAction": "STOP after publication; await brain-AI review",
+  "FutureStageTrainingAuthorized": false
+}

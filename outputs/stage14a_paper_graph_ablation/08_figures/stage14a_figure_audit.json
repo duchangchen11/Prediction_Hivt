@@ -1,0 +1,269 @@
+{
+  "Stage": "Stage14A",
+  "Status": "PASS",
+  "FigureFamilies": 6,
+  "Backend": "Python / matplotlib exclusively",
+  "VisualQA": "All six PNG previews inspected with view_image after rendering and layout repair; final case annotations avoid the GT endpoint region.",
+  "LayoutRepairsOnly": [
+    "Use a single title per axis and wrap long delta-axis labels",
+    "Include all moving/stopped/parked vehicle states in the table, with sample counts and exploratory ParkedVehicle contrast",
+    "Use square equal-metric case coordinate domains, leaving separate legend/footnote space",
+    "Place case score annotations in the less occupied upper corner"
+  ],
+  "DataOrEvaluationMetricsChanged": false,
+  "CaseSelectionContractChanged": false,
+  "ModelFittingOrInferencePerformed": false,
+  "ScientificDecisionMade": false,
+  "IndependentOfficialTestClaim": false,
+  "BonferroniFamily4IntervalsRetained": true,
+  "ParkedVehiclePossibleHarmDisclosed": true,
+  "CasesShowImprovementAndFailure": true,
+  "CandidateCoordinatesUnchanged": true,
+  "Figures": [
+    {
+      "Figure": 1,
+      "Family": "Overall2x2",
+      "Status": "PASS",
+      "PNGViewedWithViewImage": true,
+      "VisualLayout": "PASS: titles, axis labels, legends and footnotes readable; no clipping or superimposed titles",
+      "UnitsAndActualSampleCounts": "PASS",
+      "InternalOOFAndPredictorOverlapDisclosure": "PASS",
+      "SVGEditableText": true,
+      "SVGTextElements": 34,
+      "PDFEmbeddedTrueType": true,
+      "PDFFontTypeSetting": 42,
+      "PNGDimensionsPixels": [
+        1265,
+        576
+      ],
+      "SourceData": "08_figures/stage14a_fig1_source_data.csv",
+      "SourceSHA256": "684ccf2948f4e7ac3f257d6443fd5cbd57fec3336c4d4ed8d035341bbd715a00",
+      "Exports": {
+        "svg": {
+          "Path": "08_figures/stage14a_fig1_overall_2x2.svg",
+          "Bytes": 17227,
+          "SHA256": "b4440c14d63c95ae8c3d5a6c2d96de720483f76980c17f647e62dfb466f34d18",
+          "Format": "svg"
+        },
+        "pdf": {
+          "Path": "08_figures/stage14a_fig1_overall_2x2.pdf",
+          "Bytes": 23618,
+          "SHA256": "417be8996888fa2cb9b48a2207a4bc82449db56ecc5780e71eb3e290af24bdf8",
+          "Format": "pdf"
+        },
+        "png": {
+          "Path": "08_figures/stage14a_fig1_overall_2x2.png",
+          "Bytes": 105004,
+          "SHA256": "679fbbea50765dbc1d4ad6f4469fed18f7df6894a13e497947177af796895f3f",
+          "Format": "png"
+        }
+      }
+    },
+    {
+      "Figure": 2,
+      "Family": "VehiclePedestrian",
+      "Status": "PASS",
+      "PNGViewedWithViewImage": true,
+      "VisualLayout": "PASS: titles, axis labels, legends and footnotes readable; no clipping or superimposed titles",
+      "UnitsAndActualSampleCounts": "PASS",
+      "InternalOOFAndPredictorOverlapDisclosure": "PASS",
+      "SVGEditableText": true,
+      "SVGTextElements": 31,
+      "PDFEmbeddedTrueType": true,
+      "PDFFontTypeSetting": 42,
+      "PNGDimensionsPixels": [
+        1269,
+        574
+      ],
+      "SourceData": "08_figures/stage14a_fig2_source_data.csv",
+      "SourceSHA256": "8b8802e60f379a5002f5cca6d4d6e8e93b11c398bd50979427c92ca98afb50c8",
+      "Exports": {
+        "svg": {
+          "Path": "08_figures/stage14a_fig2_vehicle_pedestrian.svg",
+          "Bytes": 18511,
+          "SHA256": "05343274efe053180d496ef139aba6733f3aa7d56ac6ad5b69514e96037c72f2",
+          "Format": "svg"
+        },
+        "pdf": {
+          "Path": "08_figures/stage14a_fig2_vehicle_pedestrian.pdf",
+          "Bytes": 17399,
+          "SHA256": "e1f443192bd36b2d5b81ce0e02ed25c456c1689b5ad2f5798c7890cc9a93915d",
+          "Format": "pdf"
+        },
+        "png": {
+          "Path": "08_figures/stage14a_fig2_vehicle_pedestrian.png",
+          "Bytes": 72130,
+          "SHA256": "6e87c43053d964fec7ba4102ed879116c8f8a825bcd1465ce43fa1b9c88c4d0c",
+          "Format": "png"
+        }
+      }
+    },
+    {
+      "Figure": 3,
+      "Family": "MovingVehicle",
+      "Status": "PASS",
+      "PNGViewedWithViewImage": true,
+      "VisualLayout": "PASS: titles, axis labels, legends and footnotes readable; no clipping or superimposed titles",
+      "UnitsAndActualSampleCounts": "PASS",
+      "InternalOOFAndPredictorOverlapDisclosure": "PASS",
+      "SVGEditableText": true,
+      "SVGTextElements": 28,
+      "PDFEmbeddedTrueType": true,
+      "PDFFontTypeSetting": 42,
+      "PNGDimensionsPixels": [
+        1255,
+        574
+      ],
+      "SourceData": "08_figures/stage14a_fig3_source_data.csv",
+      "SourceSHA256": "8f212a6fd2b117b6b7d12e918459a78a51b58182f604c43f4ad9cf38f087f284",
+      "Exports": {
+        "svg": {
+          "Path": "08_figures/stage14a_fig3_moving_vehicle.svg",
+          "Bytes": 18932,
+          "SHA256": "24a3a8b7f9b8cd0d177df0814aab3e982dead4831a03f32260dbe790647872d1",
+          "Format": "svg"
+        },
+        "pdf": {
+          "Path": "08_figures/stage14a_fig3_moving_vehicle.pdf",
+          "Bytes": 18132,
+          "SHA256": "01c81cd3bf00b02c74bdef5a047e54c15c74a079dd010255ac27c7efaf802925",
+          "Format": "pdf"
+        },
+        "png": {
+          "Path": "08_figures/stage14a_fig3_moving_vehicle.png",
+          "Bytes": 87517,
+          "SHA256": "2c5a295c3369ab320abbe4bcc77d1c6759713957496daa5287a4e6602a22b58a",
+          "Format": "png"
+        }
+      }
+    },
+    {
+      "Figure": 4,
+      "Family": "AblationTable",
+      "Status": "PASS",
+      "PNGViewedWithViewImage": true,
+      "VisualLayout": "PASS: titles, axis labels, legends and footnotes readable; no clipping or superimposed titles",
+      "UnitsAndActualSampleCounts": "PASS",
+      "InternalOOFAndPredictorOverlapDisclosure": "PASS",
+      "SVGEditableText": true,
+      "SVGTextElements": 95,
+      "PDFEmbeddedTrueType": true,
+      "PDFFontTypeSetting": 42,
+      "PNGDimensionsPixels": [
+        1296,
+        1195
+      ],
+      "SourceData": "08_figures/stage14a_fig4_source_data.csv",
+      "SourceSHA256": "9895fc610b3a6e4241008a531f166cad9f7ffb8f6ee1625d0bc3ff985f4e62b4",
+      "Exports": {
+        "svg": {
+          "Path": "08_figures/stage14a_fig4_ablation_table.svg",
+          "Bytes": 38398,
+          "SHA256": "3962963ff97a9ae86ef2a2b1afdb909658f32160ee4354ddfd84cf9486a1d15f",
+          "Format": "svg"
+        },
+        "pdf": {
+          "Path": "08_figures/stage14a_fig4_ablation_table.pdf",
+          "Bytes": 30879,
+          "SHA256": "52f64dd8946b81c38377561bcdb5189e28e803affdea30334ef2f23d66b9f9ca",
+          "Format": "pdf"
+        },
+        "png": {
+          "Path": "08_figures/stage14a_fig4_ablation_table.png",
+          "Bytes": 198129,
+          "SHA256": "4191a4d25157f3e65db30b9826d8add4c9ba13645f4751de7789afd031c9fc81",
+          "Format": "png"
+        }
+      }
+    },
+    {
+      "Figure": 5,
+      "Family": "HighCostSwitch",
+      "Status": "PASS",
+      "PNGViewedWithViewImage": true,
+      "VisualLayout": "PASS: titles, axis labels, legends and footnotes readable; no clipping or superimposed titles",
+      "UnitsAndActualSampleCounts": "PASS",
+      "InternalOOFAndPredictorOverlapDisclosure": "PASS",
+      "SVGEditableText": true,
+      "SVGTextElements": 63,
+      "PDFEmbeddedTrueType": true,
+      "PDFFontTypeSetting": 42,
+      "PNGDimensionsPixels": [
+        1279,
+        921
+      ],
+      "SourceData": "08_figures/stage14a_fig5_source_data.csv",
+      "SourceSHA256": "a037dc064fa2b5d564e5ba4f30f4d55a610b833915349790a5cbe46b83841d1e",
+      "Exports": {
+        "svg": {
+          "Path": "08_figures/stage14a_fig5_high_cost_switch.svg",
+          "Bytes": 33413,
+          "SHA256": "b3fe92d5eacbc28951a939755bf2946a74f322422f2e20484e6c0537b8a24d2d",
+          "Format": "svg"
+        },
+        "pdf": {
+          "Path": "08_figures/stage14a_fig5_high_cost_switch.pdf",
+          "Bytes": 17809,
+          "SHA256": "eb09152c38dfd01aaebe71b829f2a0d1c805a70ced0f7f0f67869fdfc6c26d1e",
+          "Format": "pdf"
+        },
+        "png": {
+          "Path": "08_figures/stage14a_fig5_high_cost_switch.png",
+          "Bytes": 146819,
+          "SHA256": "55e8fd90174bf9e5ca5092ab7354ef78e4eb02ba6286bc4c06d194ab037cc3d1",
+          "Format": "png"
+        }
+      }
+    },
+    {
+      "Figure": 6,
+      "Family": "ImprovementAndFailureCases",
+      "Status": "PASS",
+      "PNGViewedWithViewImage": true,
+      "VisualLayout": "PASS: titles, axis labels, legends and footnotes readable; no clipping or superimposed titles",
+      "UnitsAndActualSampleCounts": "PASS",
+      "InternalOOFAndPredictorOverlapDisclosure": "PASS",
+      "SVGEditableText": true,
+      "SVGTextElements": 131,
+      "PDFEmbeddedTrueType": true,
+      "PDFFontTypeSetting": 42,
+      "PNGDimensionsPixels": [
+        1185,
+        1754
+      ],
+      "SourceData": "08_figures/stage14a_case_manifest.json",
+      "SourceSHA256": "78918d212af6adec91ed2b920145e6d5199d05ba3d3857d7afe2b0af16d8ea1e",
+      "Exports": {
+        "svg": {
+          "Path": "08_figures/stage14a_fig6_improvement_failure_cases.svg",
+          "Bytes": 93768,
+          "SHA256": "3171b76a72eb5d77cae1d34072cd55e047b2686ba3e316c086e7e6d51ed76e32",
+          "Format": "svg"
+        },
+        "pdf": {
+          "Path": "08_figures/stage14a_fig6_improvement_failure_cases.pdf",
+          "Bytes": 35493,
+          "SHA256": "569c5410b401397c4f7edd1f501059f6d0ed1ab1058364391c1c05e30f7be3ae",
+          "Format": "pdf"
+        },
+        "png": {
+          "Path": "08_figures/stage14a_fig6_improvement_failure_cases.png",
+          "Bytes": 245693,
+          "SHA256": "0336c1cef180788583dbf275a4b7aecff314e683d95e34d5b64d5ab02ede66d3",
+          "Format": "png"
+        }
+      }
+    }
+  ],
+  "FigureContractSHA256": "ab8ff00bcc91c03e0f16a3bd3dbb8063b7727140a0725933564d7f847905d19b",
+  "FigureManifestSHA256": "aef90c764591876d8c48fdab069a9721175285e71a7783eba96729339c4874a2",
+  "FrozenGateSHA256": "39bacca97850eed7b702f2f425ac69630eec264a9ff7505c4b5c070eccb851cc",
+  "IdentityAuditSHA256": "bdfcae68ca1520501fb19c30241cd69acbe4198d849669c7db6c5cf5672f1473",
+  "SourceDataSHA256": {
+    "05_evaluation/stage14a_ablation_metrics.csv": "1549ccb819130deb548188b0bcde33ceb995af6b12fceeed3c015b5221337922",
+    "05_evaluation/stage14a_fold_metrics.csv": "0ecb1b847b16bc87babf98628fd8c8d992800bf3cd9c189b8fb09a251ba90b6a",
+    "06_bootstrap/stage14a_bootstrap_ci.csv": "4f3f41fb8de916beea8254f8fd1155d8e09b7f49cc7d8636f56f132c35daf80f",
+    "06_bootstrap/stage14a_model_mean_ci.csv": "7b2455a92b733fc714cccfa02868d292a24914ce27286b5a29a60b9a34367902",
+    "07_diagnostics/stage14a_mode_switch.csv": "ed6178b94b3ec2a208165349b406629dead82fe5b5ed122c3e5e21760446bb68"
+  }
+}

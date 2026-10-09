@@ -1,0 +1,259 @@
+{
+  "Status": "PASS",
+  "Comparison": "G-C-NG-C",
+  "Cases": [
+    {
+      "Title": "Vehicle improvement",
+      "Available": true,
+      "Selection": "median improvement",
+      "RowIndex": 218354,
+      "SceneToken": "6b6a24b7ae6b40ee95d60918f7f4cb2e",
+      "SampleToken": "a6b3de5fca2441a19dba029a23a59345",
+      "InstanceToken": "a19a0d96993842a6baff77248cbe9103",
+      "Fold": 3,
+      "SourceIndex": 244160,
+      "DatasetIndex": 13572,
+      "NodeInGraph": 27,
+      "Group": "Vehicle",
+      "Comparison": "G-C-NG-C",
+      "DeltaTop1FDE": -0.7335455417633057,
+      "GroupDirectionalMedianOrExtreme": -0.7335455417633057,
+      "GroupDirectionalChangedCount": 18775,
+      "CandidateSHA256": "39c5e8c87cd823504bddc507e50da843f7b39bdd6da07b57691627540a75c056",
+      "GTSHA256": "99025a0631eb2e4805be714971181583e7b9af299a97eb354ab71a1921010c75",
+      "HistorySHA256": "da9a3d5610749df0ab81f58c323bd2fc9cb88e9a5a28518a5b6c100712f49fea",
+      "Top1ModesOneBased": [
+        5,
+        5,
+        4,
+        6
+      ],
+      "Top1FDEByModel": {
+        "NG-A": 2.2319791316986084,
+        "NG-C": 2.2319791316986084,
+        "G-A": 11.045562744140625,
+        "G-C": 1.4984335899353027
+      },
+      "FigureDisplayTranslation": [
+        69.4610366821289,
+        20.854248046875
+      ],
+      "CoordinateFrame": "original t0 ego orientation, target-centered display only",
+      "CandidateGeometryUnchanged": true,
+      "GTUsedForEvaluationAndCaseSelectionOnly": true
+    },
+    {
+      "Title": "Vehicle failure",
+      "Available": true,
+      "Selection": "median harm",
+      "RowIndex": 163827,
+      "SceneToken": "3b5f3391078e48ac92600cbdfa4ccbe6",
+      "SampleToken": "e24db7f9089b4618b43dbd3c05b88bf7",
+      "InstanceToken": "18d2b6fbd5674960b635cf95e536da18",
+      "Fold": 3,
+      "SourceIndex": 184305,
+      "DatasetIndex": 10746,
+      "NodeInGraph": 1,
+      "Group": "Vehicle",
+      "Comparison": "G-C-NG-C",
+      "DeltaTop1FDE": 0.2036283016204834,
+      "GroupDirectionalMedianOrExtreme": 0.20360536128282547,
+      "GroupDirectionalChangedCount": 17742,
+      "CandidateSHA256": "bff38240ecb5c431378ff9a4e48b7fe1fc5e04e675d8f73c0034ca31d94593a0",
+      "GTSHA256": "20c7e10d59f5f0a91a970c31ab52fec2c5435573b47778ba6f1cbae5ba97d60e",
+      "HistorySHA256": "84214b5a2b8cb5190abd9edd35f91c9f14b382a6b8318c3dd7894c698e8e59fd",
+      "Top1ModesOneBased": [
+        5,
+        5,
+        3,
+        2
+      ],
+      "Top1FDEByModel": {
+        "NG-A": 3.0563840866088867,
+        "NG-C": 3.0563840866088867,
+        "G-A": 15.368196487426758,
+        "G-C": 3.26001238822937
+      },
+      "FigureDisplayTranslation": [
+        -11.991110801696777,
+        0.07358368486166
+      ],
+      "CoordinateFrame": "original t0 ego orientation, target-centered display only",
+      "CandidateGeometryUnchanged": true,
+      "GTUsedForEvaluationAndCaseSelectionOnly": true
+    },
+    {
+      "Title": "Pedestrian improvement",
+      "Available": true,
+      "Selection": "median improvement",
+      "RowIndex": 5552,
+      "SceneToken": "6520b5f0d568414c973f791b30ee1548",
+      "SampleToken": "7bfb0fad8b034ca1b4542325e58b7377",
+      "InstanceToken": "47495448ebca42c6af341a8868fd5461",
+      "Fold": 1,
+      "SourceIndex": 5695,
+      "DatasetIndex": 484,
+      "NodeInGraph": 16,
+      "Group": "Pedestrian",
+      "Comparison": "G-C-NG-C",
+      "DeltaTop1FDE": -0.2998555898666382,
+      "GroupDirectionalMedianOrExtreme": -0.2998555898666382,
+      "GroupDirectionalChangedCount": 9145,
+      "CandidateSHA256": "adae374c294a37b5f1f96abb53a7569badfb1a42b47d6e5b667a7156d62e9198",
+      "GTSHA256": "bd2959b1329de4477e2ef28f3779e262059f74a2beafa949f569280b695d2835",
+      "HistorySHA256": "13d2a978a6acaa0789d809a831acb13f461660f6fd4f6fcce9f1ef93e13a3b6c",
+      "Top1ModesOneBased": [
+        1,
+        5,
+        6,
+        6
+      ],
+      "Top1FDEByModel": {
+        "NG-A": 2.0572125911712646,
+        "NG-C": 1.7049353122711182,
+        "G-A": 1.40507972240448,
+        "G-C": 1.40507972240448
+      },
+      "FigureDisplayTranslation": [
+        21.90188980102539,
+        7.695822715759277
+      ],
+      "CoordinateFrame": "original t0 ego orientation, target-centered display only",
+      "CandidateGeometryUnchanged": true,
+      "GTUsedForEvaluationAndCaseSelectionOnly": true
+    },
+    {
+      "Title": "Pedestrian failure",
+      "Available": true,
+      "Selection": "median harm",
+      "RowIndex": 254413,
+      "SceneToken": "affb0caa5d2948f98cee5c42c7aefc1c",
+      "SampleToken": "22247d49d87245769bde1d2f14313cdd",
+      "InstanceToken": "550d7a8fb15c4b25b16bc0d07a8b7d01",
+      "Fold": 2,
+      "SourceIndex": 283034,
+      "DatasetIndex": 16276,
+      "NodeInGraph": 9,
+      "Group": "Pedestrian",
+      "Comparison": "G-C-NG-C",
+      "DeltaTop1FDE": 0.2697839140892029,
+      "GroupDirectionalMedianOrExtreme": 0.2697839140892029,
+      "GroupDirectionalChangedCount": 7979,
+      "CandidateSHA256": "c3f3328390138fba96a0197b990db530682da75ff72c905c8d954556586d263e",
+      "GTSHA256": "81082808ffabff27e8d7a57e048743371275ce62f78ddd7cb9294f74adf2ef81",
+      "HistorySHA256": "9b6c4b2609684f84e2fe8cda29f1a63f844c93270cf6e2da064db54fab64259e",
+      "Top1ModesOneBased": [
+        5,
+        5,
+        5,
+        6
+      ],
+      "Top1FDEByModel": {
+        "NG-A": 0.38887399435043335,
+        "NG-C": 0.38887399435043335,
+        "G-A": 0.38887399435043335,
+        "G-C": 0.6586579084396362
+      },
+      "FigureDisplayTranslation": [
+        29.168312072753906,
+        6.987588405609131
+      ],
+      "CoordinateFrame": "original t0 ego orientation, target-centered display only",
+      "CandidateGeometryUnchanged": true,
+      "GTUsedForEvaluationAndCaseSelectionOnly": true
+    },
+    {
+      "Title": "MovingVehicle large improvement",
+      "Available": true,
+      "Selection": "largest improvement",
+      "RowIndex": 137886,
+      "SceneToken": "0b8948ee96ac46faad405bf1ffc70bb1",
+      "SampleToken": "35557940fe58460fb50ab2c4c120985b",
+      "InstanceToken": "e57f85fb0c1042bf9279fe72604067a2",
+      "Fold": 3,
+      "SourceIndex": 154773,
+      "DatasetIndex": 9157,
+      "NodeInGraph": 57,
+      "Group": "MovingVehicle",
+      "Comparison": "G-C-NG-C",
+      "DeltaTop1FDE": -26.47028923034668,
+      "GroupDirectionalMedianOrExtreme": -26.47028923034668,
+      "GroupDirectionalChangedCount": 9815,
+      "CandidateSHA256": "aa3c172f359197909843c3aab7ea7f7c76610cff38ad0b553f352d009ec98bbd",
+      "GTSHA256": "5db715184e8bbdcbae9578c2d6fe5862114dda0ee49d81fc6a85617e78983428",
+      "HistorySHA256": "3e1df7ccaee5d7227863f036b88efeb64babcfddfc96faad72d4e5ca122d4be8",
+      "Top1ModesOneBased": [
+        2,
+        4,
+        3,
+        3
+      ],
+      "Top1FDEByModel": {
+        "NG-A": 44.225364685058594,
+        "NG-C": 46.578670501708984,
+        "G-A": 20.108381271362305,
+        "G-C": 20.108381271362305
+      },
+      "FigureDisplayTranslation": [
+        41.38029861450195,
+        -103.1327896118164
+      ],
+      "CoordinateFrame": "original t0 ego orientation, target-centered display only",
+      "CandidateGeometryUnchanged": true,
+      "GTUsedForEvaluationAndCaseSelectionOnly": true
+    },
+    {
+      "Title": "MovingVehicle high-cost failure",
+      "Available": true,
+      "Selection": "largest harm",
+      "RowIndex": 198944,
+      "SceneToken": "373bf99c103d4464a7b963a83523fbcb",
+      "SampleToken": "4b8270fbeee649278bd75a7b42790196",
+      "InstanceToken": "ac6f45d70c614b20852cfb3d42481b35",
+      "Fold": 3,
+      "SourceIndex": 221531,
+      "DatasetIndex": 12016,
+      "NodeInGraph": 14,
+      "Group": "MovingVehicle",
+      "Comparison": "G-C-NG-C",
+      "DeltaTop1FDE": 20.665456295013428,
+      "GroupDirectionalMedianOrExtreme": 20.665456295013428,
+      "GroupDirectionalChangedCount": 7709,
+      "CandidateSHA256": "b3db3268b2e77dda79fb47b69b13c3600d5be5c8ba47e9d54f36c726ee8b6622",
+      "GTSHA256": "5ecd543226f17bfeffc4b0bced8f2b928dface65eb55763422aa7b61cf5d790c",
+      "HistorySHA256": "19d278c2168151ed5e86fc1e2b4c74f5a5cc0fa084e92448aff666d1969eddfc",
+      "Top1ModesOneBased": [
+        5,
+        2,
+        5,
+        1
+      ],
+      "Top1FDEByModel": {
+        "NG-A": 20.020904541015625,
+        "NG-C": 7.023401737213135,
+        "G-A": 20.020904541015625,
+        "G-C": 27.688858032226562
+      },
+      "FigureDisplayTranslation": [
+        182.12693786621094,
+        -6.570985794067383
+      ],
+      "CoordinateFrame": "original t0 ego orientation, target-centered display only",
+      "CandidateGeometryUnchanged": true,
+      "GTUsedForEvaluationAndCaseSelectionOnly": true
+    }
+  ],
+  "SelectionContract": {
+    "AfterAllSixCheckpointsFrozen": true,
+    "NoTrainingOrModelSelectionUse": true,
+    "RepresentativeCases": "G-C minus NG-C: select the changed-mode actor closest to the median delta among improvements and harms, separately Vehicle and Pedestrian; prefer a scene not already displayed",
+    "TailCases": "Additional MovingVehicle largest improvement and largest harm for G-C minus NG-C, using distinct actor identities where available",
+    "TieBreak": "lexical scene/sample/instance identity",
+    "MissingSubsets": "report an unavailable panel explicitly; never invent a case",
+    "Geometry": "all six frozen candidates and separate GT/history in original t0 ego orientation; optional plot translation centers on current actor without changing stored candidates",
+    "SelectedModes": "display the Top1 selection of all four models and their FDE; overlaps mean the same frozen candidate was selected"
+  },
+  "AllModelsUseUnchangedGeometry": true,
+  "RerankerOrPredictorInferencePerformed": false,
+  "NoTrainingOrModelSelectionUse": true
+}

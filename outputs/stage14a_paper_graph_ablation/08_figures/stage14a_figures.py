@@ -118,7 +118,6 @@ def model_mean_axis(ax, means, group):
     ax.set_xlim(0, upper * 1.2)
     ax.set_xlabel("Top1FDE (m)")
     ax.grid(axis="x", color="#EEEEEE", lw=.6)
-    ax.set_title(f"{group} | n={int(one(means, Group=group, Model=MODELS[0]).Count):,}")
 
 
 def contrast_axis(ax, intervals, group, comparisons=COMPARISONS, adjusted=False):
@@ -138,7 +137,7 @@ def contrast_axis(ax, intervals, group, comparisons=COMPARISONS, adjusted=False)
     lo, hi = min(0., min(lows)), max(0., max(highs))
     padding = max((hi - lo) * .18, .003)
     ax.set_xlim(lo - padding, hi + padding)
-    ax.set_xlabel("Paired Δ Top1FDE (m); negative favors first model")
+    ax.set_xlabel("Paired Δ Top1FDE (m)\nNegative favors first model", fontsize=7)
     ax.grid(axis="x", color="#EEEEEE", lw=.6)
 
 
@@ -181,7 +180,7 @@ def type_figure(means, output):
     fig.subplots_adjust(left=.22, right=.98, bottom=.24, top=.87, wspace=.72)
     for letter, ax, group in zip("ab", axes, ("Vehicle", "Pedestrian")):
         model_mean_axis(ax, means, group)
-        ax.set_title(f"{letter}  {ax.get_title()}", loc="left")
+        ax.set_title(f"{letter}  {group} | n={int(one(means, Group=group, Model=MODELS[0]).Count):,}", loc="left")
     count = int(one(means, Group="Vehicle", Model="NG-A").Count + one(means, Group="Pedestrian", Model="NG-A").Count)
     footer(fig, "Group means and descriptive 95% paired scene-cluster intervals; units m. Bicycle uses identical R2 route.", count)
     dump("08_figures/stage14a_fig2_source_data.csv", means.loc[means.Group.isin(["Vehicle", "Pedestrian"])].to_dict("records"))
@@ -192,7 +191,7 @@ def moving_figure(means, intervals, output):
     fig, axes = plt.subplots(1, 2, figsize=(7.1, 3.3))
     fig.subplots_adjust(left=.22, right=.98, bottom=.24, top=.87, wspace=.72)
     model_mean_axis(axes[0], means, "MovingVehicle")
-    axes[0].set_title("a  MovingVehicle: model means", loc="left")
+    axes[0].set_title(f"a  MovingVehicle | n={int(one(means, Group='MovingVehicle', Model='NG-A').Count):,}", loc="left")
     contrast_axis(axes[1], intervals, "MovingVehicle", SWITCH_COMPARISONS)
     axes[1].set_title("b  Exploratory paired contrasts", loc="left")
     count = int(one(means, Group="MovingVehicle", Model="NG-A").Count)
@@ -220,15 +219,15 @@ def table_axis(ax, cells, headers, title, widths):
 
 
 def ablation_figure(metrics, intervals, output):
-    fig, axes = plt.subplots(2, 1, figsize=(7.1, 4.8))
-    fig.subplots_adjust(left=.03, right=.98, bottom=.17, top=.9, hspace=.32)
+    fig, axes = plt.subplots(3, 1, figsize=(7.1, 6.8))
+    fig.subplots_adjust(left=.03, right=.98, bottom=.16, top=.93, hspace=.45)
     cells = []
     for model in MODELS:
         cells.append([model, "Yes" if model.startswith("G-") else "No", "SoftCE" if model.endswith("A") else "Error-Aware",
                       *[f"{one(metrics, Group=group, Model=model).Top1FDE:.4f}"
-                        for group in ("Overall", "Vehicle", "Pedestrian", "MovingVehicle")]])
+                        for group in ("Overall", "Vehicle", "Pedestrian", "Bicycle")]])
     table_axis(axes[0], cells,
-               ["Model", "Graph", "Loss", "Overall", "Vehicle", "Pedestrian", "MovingVehicle"],
+               ["Model", "Graph", "Loss", "Overall", "Vehicle", "Pedestrian", "Bicycle"],
                "a  Controlled graph / loss ablation: Top1FDE (m)", [.1, .08, .15, .15, .15, .15, .2])
     contrast_cells = []
     for comparison in COMPARISONS:
@@ -239,13 +238,22 @@ def ablation_figure(metrics, intervals, output):
     table_axis(axes[1], contrast_cells,
                ["Paired contrast", "Δ (m)", "Adjusted 98.75% CI", "Fold1 Δ", "Fold2 Δ", "Fold3 Δ"],
                "b  Four registered Overall contrasts: first model minus second", [.2, .11, .3, .13, .13, .13])
+    motion_groups = ("MovingVehicle", "StoppedVehicle", "ParkedVehicle")
+    motion_cells = [[model, *[f"{one(metrics, Group=group, Model=model).Top1FDE:.5f}"
+                            for group in motion_groups]] for model in MODELS]
+    motion_headers = ["Model", *[f"{group}\n(n={int(one(metrics, Group=group, Model='NG-A').Count):,})"
+                                  for group in motion_groups]]
+    table_axis(axes[2], motion_cells, motion_headers,
+               "c  All prespecified current vehicle states: Top1FDE (m)", [.13, .29, .29, .29])
     count = int(one(metrics, Group="Overall", Model="NG-A").Count)
     sizes = "; ".join(f"{group} n={int(one(metrics, Group=group, Model='NG-A').Count):,}"
                       for group in ("Vehicle", "Pedestrian", "MovingVehicle"))
-    footer(fig, f"{sizes}. Δ and CI in m; whole-scene paired bootstrap, family4 Bonferroni.", count)
+    parked = one(intervals, Group="ParkedVehicle", Comparison="G-C-NG-C")
+    fig.text(.02, .105, f"ParkedVehicle G-C − NG-C={parked.DeltaTop1FDE:+.5f} m; exploratory 95% CI [{parked.CI95Lower:+.5f}, {parked.CI95Upper:+.5f}].", fontsize=6.7)
+    footer(fig, f"{sizes}. Bicycle: identical frozen fold-R2 route. Paired Overall intervals: family4 Bonferroni.", count)
     dump("08_figures/stage14a_fig4_source_data.csv", pd.concat([
-        metrics.loc[metrics.Group.isin(["Overall", "Vehicle", "Pedestrian", "MovingVehicle"])].assign(Panel="model means"),
-        intervals.loc[intervals.Group == "Overall"].assign(Panel="paired contrasts")
+        metrics.loc[metrics.Group.isin(["Overall", "Vehicle", "Pedestrian", "Bicycle", "MovingVehicle", "StoppedVehicle", "ParkedVehicle"])].assign(Panel="model means"),
+        intervals.loc[intervals.Group.isin(["Overall", "ParkedVehicle"])].assign(Panel="paired contrasts")
     ], ignore_index=True).to_dict("records"))
     export(fig, "stage14a_fig4_ablation_table", "AblationTable", output)
 
@@ -360,8 +368,8 @@ def case_figure(audit, output):
     gt = np.load(S11A / "01_identity_audit/cache/GT.npy", mmap_mode="r")
     cases = choose_cases(actors, metrics, probabilities)
     windows = case_windows(cases)
-    fig, axes = plt.subplots(3, 2, figsize=(7.1, 9.7))
-    fig.subplots_adjust(left=.09, right=.98, bottom=.12, top=.94, wspace=.28, hspace=.47)
+    fig, axes = plt.subplots(3, 2, figsize=(7.1, 10.2))
+    fig.subplots_adjust(left=.09, right=.98, bottom=.2, top=.94, wspace=.28, hspace=.5)
     for index, (case, ax) in enumerate(zip(cases, axes.flat)):
         if not case["Available"]:
             ax.axis("off"); ax.text(.5, .5, f"{case['Title']}\nUnavailable: {case['Reason']}",
@@ -408,8 +416,10 @@ def case_figure(audit, output):
         ax.plot(truth[:, 0], truth[:, 1], color="#222222", lw=1.6, zorder=3)
         ax.plot(history_centered[:, 0], history_centered[:, 1], color="#222222", ls=":", lw=1.3, zorder=3)
         ax.scatter(0, 0, s=20, color="#222222", zorder=4)
-        ax.set_xlim(lower[0] - padding, upper[0] + padding)
-        ax.set_ylim(lower[1] - padding, upper[1] + padding)
+        display_center = (lower + upper) / 2
+        half_span = float((upper - lower).max()) / 2 + padding
+        ax.set_xlim(display_center[0] - half_span, display_center[0] + half_span)
+        ax.set_ylim(display_center[1] - half_span, display_center[1] + half_span)
         ax.set_aspect("equal", adjustable="box")
         ax.set_xlabel("Ego-frame x, centered at target t0 (m)", fontsize=6.5)
         ax.set_ylabel("Ego-frame y (m)", fontsize=6.5)
@@ -417,7 +427,12 @@ def case_figure(audit, output):
                      fontsize=7.5, loc="left")
         annotation = "\n".join(f"{model}: mode{int(top_modes[j]) + 1}, {metrics[case['RowIndex'], j, 0]:.3f} m"
                                 for j, model in enumerate(MODELS))
-        ax.text(.015, .985, annotation, transform=ax.transAxes, ha="left", va="top", fontsize=6,
+        normalized = (centered - (display_center - half_span)) / (2 * half_span)
+        left_density = int(((normalized[:, 0] < .52) & (normalized[:, 1] > .75)).sum())
+        right_density = int(((normalized[:, 0] > .48) & (normalized[:, 1] > .75)).sum())
+        annotation_right = right_density < left_density
+        ax.text(.985 if annotation_right else .015, .985, annotation, transform=ax.transAxes,
+                ha="right" if annotation_right else "left", va="top", fontsize=6,
                 bbox={"facecolor": "white", "alpha": .85, "edgecolor": "none", "pad": 1.8})
         case.update(CandidateSHA256=array_sha(candidate), GTSHA256=array_sha(groundtruth),
                     HistorySHA256=array_sha(history), Top1ModesOneBased=[int(value) + 1 for value in top_modes],
@@ -429,11 +444,12 @@ def case_figure(audit, output):
     legend += [Line2D([], [], color="#222222", label="GT (evaluation only)"),
                Line2D([], [], color="#222222", ls=":", label="Observed history"),
                Line2D([], [], color="#BDBDBD", label="All six frozen candidates")]
-    fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(.5, .081), ncol=4, fontsize=6.6)
+    fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(.5, .12), ncol=4, fontsize=6.6)
     count = len(actors)
-    fig.text(.02, .060, f"{DATASET} | n={count:,}; {sum(case['Available'] for case in cases)} displayed actor cases", fontsize=6.8)
-    fig.text(.02, .039, "Representative median-direction cases plus moving-vehicle extremes, selected after freezing; no aggregate inference from examples.", fontsize=6.2)
-    fig.text(.02, .019, "5 observed / 12 future frames; positions and FDE in m. Same six candidates for every model. " + LIMIT, fontsize=6.1)
+    fig.text(.02, .093, f"{DATASET} | n={count:,}; {sum(case['Available'] for case in cases)} displayed actor cases", fontsize=6.8)
+    fig.text(.02, .072, "Representative median-direction cases plus moving-vehicle extremes, selected after freezing; examples do not establish aggregate evidence.", fontsize=6.2)
+    fig.text(.02, .051, "5 observed / 12 future frames; positions and FDE in m. Same frozen six candidates for every model.", fontsize=6.1)
+    fig.text(.02, .030, LIMIT, fontsize=6.1)
     atomic_json(FIGURES / "stage14a_case_manifest.json", {
         "Status": "PASS", "Comparison": "G-C-NG-C", "Cases": cases,
         "SelectionContract": read_json(FIGURES / "stage14a_figure_contract.json")["CaseSelection"],
