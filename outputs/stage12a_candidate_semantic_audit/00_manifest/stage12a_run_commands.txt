@@ -1,0 +1,46 @@
+Stage12A only; project /home/lrj/Prediction_Hivt
+Branch stage12a/candidate-semantic-consistency-audit
+Base 165c497961afe9f3a196a0987128f9eed48da144
+Environment /home/lrj/anaconda3/envs/ped_intent/bin/python
+Prefix for Python commands: PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1
+All paths below are relative to outputs/stage12a_candidate_semantic_audit/.
+
+Ordered execution:
+00_manifest/stage12a_register.py
+01_map_integrity/stage12a_prepare_frames.py
+01_map_integrity/stage12a_preflight.py
+02_semantic_cache/stage12a_extract.py
+03_feature_statistics/stage12a_statistics.py
+08_negative_controls/stage12a_controls.py
+09_cases/stage12a_cases.py
+11_reports/stage12a_verify.py
+11_reports/stage12a_report.py
+
+Engineering notes, all before error-label analysis:
+The first registration attempt rejected a historical Stage11C summary JSON
+because an initial read guard was too broad. It was narrowed to prohibited
+inner-dev cache directories; registration then passed before extraction.
+A premature asynchronous frame-preparation launch saw no frozen manifest;
+the command was restarted only after successful registration.
+Preflight was rerun after adding the explicit stationary heading mask and
+after exact spatial-index pruning, with direct component calculation checks.
+Sequential extraction was interrupted with SIGINT and resumed from scene
+caches; no source data was changed or deleted. Exact optimization replay
+requires semantic maxdiff<1e-10 and bitwise masks/geometry IDs.
+Full extraction uses three fork CPU processes, read-only source mmaps,
+disjoint scene cache paths, canonical ordered manifest, and replay of the
+first three completed sequential scenes. Extraction opens no standalone
+GT/FDE/ADE label array; all630 scenes freeze before subsequent analysis.
+
+No training, checkpoint generation, official VAL/test evaluation, HeadDev70
+evaluation, mode reranking, loss search or Stage12B implementation is run.
+Versioned result JSON/CSV files and final verification retain numeric outcomes.
+Large per-scene/combined arrays and full-mode CSV are local ignored artifacts.
+
+Git publication:
+Only this stage root is added and committed.
+GitHub branch publication creates equivalent blob/tree/commit objects using
+the authorized GitHub connector if native HTTPS credentials are unavailable.
+Every remote tree must equal the corresponding native Git tree, followed by
+native fetch and metadata-only alignment to the identical published tree.
+No merge; STOP after publishing the Stage12A branch.

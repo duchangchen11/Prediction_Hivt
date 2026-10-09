@@ -20,23 +20,41 @@ def semantic_features(index,points,location,selection,edges):
     put('centerline_valid',anycenter,np.ones(p,bool));put('lane_count',(mask&(types==0)).sum(-1),np.ones(p,bool))
     put('connector_count',(mask&(types==1)).sum(-1),np.ones(p,bool))
     lines=shapely.linestrings(points);pointgeom=shapely.points(points)
+    # A component with a disjoint bounding box cannot contain a sampled point
+    # or intersect/cross this polyline. This is exact pruning, also for a
+    # zero-length candidate; no geometry or matching threshold is changed.
+    pairs=reg['polygon_tree'].query(lines)
+    if pairs.size:
+        part_rows=pairs[0];part_ids=pairs[1];local_entities=reg['part_entities'][part_ids]
+        global_ids=reg['ids'][local_entities]
+        selected=(ids[part_rows]==global_ids[:,None]).any(-1)
+        part_rows=part_rows[selected];part_ids=part_ids[selected];local_entities=local_entities[selected]
+        part_types=reg['types'][local_entities]
+    else:
+        part_rows=part_ids=part_types=np.empty(0,np.int64)
     for label,ty in [('drivable',2),('carpark',3),('crosswalk',4),('walkway',5)]:
         m=mask&(types==ty);has=m.any(-1);nearest=np.where(m,selection['geometry_distances'],np.inf).min(-1)
         put(label+'_distance',nearest,has);put(label+'_valid',has,np.ones(p,bool))
-        rows,slots=np.where(m);parts=[];pr=[]
-        for row,sl in zip(rows,slots):
-            ent=reg['entities'][reg['id_to_local'][int(ids[row,sl])]]
-            parts.extend(ent['parts']);pr.extend([row]*len(ent['parts']))
+        keep=part_types==ty;pr=part_rows[keep];geom=reg['polygon_parts'][part_ids[keep]]
         inside=np.zeros((p,12),bool);intersects=np.zeros(p,bool);crosses=np.zeros(p,bool);bd=np.full(p,np.inf)
-        if parts:
-            geom=np.asarray(parts,dtype=object);pr=np.asarray(pr,np.int64)
+        if len(geom):
             assert shapely.is_valid(geom).all()
             np.logical_or.at(inside,pr,shapely.contains(geom[:,None],pointgeom[pr]))
             np.logical_or.at(intersects,pr,shapely.intersects(lines[pr],geom))
             if label=='drivable':
                 boundary=shapely.boundary(geom)
                 np.logical_or.at(crosses,pr,shapely.crosses(lines[pr],boundary))
-                np.minimum.at(bd,pr,shapely.distance(lines[pr],boundary))
+        if label=='drivable':
+            # Nearest ORIGINAL component boundary over every selected entity,
+            # including components whose bounding boxes do not intersect.
+            rows,slots=np.where(m)
+            for eid in np.unique(ids[rows,slots]):
+                rr=rows[ids[rows,slots]==eid];ent=reg['entities'][reg['id_to_local'][int(eid)]]
+                if '_diagnostic_boundary_tree' not in ent:
+                    ent['_diagnostic_boundary_tree']=shapely.STRtree(shapely.boundary(np.asarray(ent['parts'],dtype=object)))
+                pair,distance=ent['_diagnostic_boundary_tree'].query_nearest(lines[rr],return_distance=True,all_matches=False)
+                assert pair.shape[1]==len(rr)
+                np.minimum.at(bd,rr[pair[0]],distance)
         put(label+'_inside_fraction',inside.mean(-1),has);put(label+'_intersects',intersects,has)
         if label=='drivable':put('drivable_boundary_crossing',crosses,has);put('drivable_boundary_distance',bd,has)
     put('map_valid_mask',mask.any(-1),np.ones(p,bool))

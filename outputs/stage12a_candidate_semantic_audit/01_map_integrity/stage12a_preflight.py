@@ -65,6 +65,11 @@ def main():
                     if not parts:continue
                     direct=np.mean([any(g.contains(shapely.Point(xy)) for g in parts) for xy in points[r]])
                     assert abs(sem[r,SEM_FIELDS.index(label+'_inside_fraction')]-direct)<1e-12
+                    if label=='drivable':
+                        line=shapely.LineString(points[r]);boundary_distance=min(line.distance(g.boundary) for g in parts)
+                        crossing=any(line.crosses(g.boundary) for g in parts)
+                        assert abs(sem[r,SEM_FIELDS.index('drivable_boundary_distance')]-boundary_distance)<1e-10
+                        assert bool(sem[r,SEM_FIELDS.index('drivable_boundary_crossing')])==crossing
             actor_count+=len(ix);selector_count+=len(points);poison_count+=len(points)
             details.append({'Scene':w['scene_token'],'Sample':w['sample_token'],'Region':loc,'Actors':len(ix),'RoundtripMaxM':error})
     assert roundtrip<1e-5
