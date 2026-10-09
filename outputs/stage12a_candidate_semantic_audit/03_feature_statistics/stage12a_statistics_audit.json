@@ -1,0 +1,17 @@
+{
+  "Status": "PASS",
+  "SemanticCoverage": "PASS",
+  "ActorsRetained": 260151,
+  "CandidatesRetained": 1560906,
+  "MissingFeaturesFiniteWithMasks": true,
+  "MapMissingActorsDropped": 0,
+  "MainTop1": "C Raw",
+  "CalibratedTop1ExactlyCraw": true,
+  "BicycleFoldR2Identity": true,
+  "LocalFullModeCSV": "02_semantic_cache/cache/stage12a_mode_semantics.csv",
+  "LocalFullModeCSVSHA256": "9778a391b1d863edf9b5218e9d61fc57e727503550507b2bfb0c7373b5b17f38",
+  "FullCSVRows": 1560906,
+  "StaticEntityDictionaryPath": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/02_graph_cache/stage8a0c_entity_dictionary.json",
+  "DictionarySHA256": "41dba2550c77a05e0acd9b4d674ddc3d92abfcc25698b0313ad1291ab695fc62",
+  "ExplicitLabelAccessStartedAfterSemanticFreeze": true
+}

@@ -1,0 +1,4 @@
+Group,Stage8Population,Stage12Population,Stage8Actors,Stage12Actors,Stage8CandidateCoverage,Stage12CandidateCoverage,DifferenceDueToPopulation
+Vehicle,TRAIN700 full-horizon targets incl historical HeadDev70,HeadTrain630 frozen OOF full-horizon targets only,213745,191026,0.886942384617,0.886875783052,"same selector and candidate matching; different actor/scene population, not assumed equal"
+Pedestrian,TRAIN700 full-horizon targets incl historical HeadDev70,HeadTrain630 frozen OOF full-horizon targets only,73202,66145,0.902008597215,0.89793131252,"same selector and candidate matching; different actor/scene population, not assumed equal"
+Bicycle,TRAIN700 full-horizon targets incl historical HeadDev70,HeadTrain630 frozen OOF full-horizon targets only,3138,2980,0.925270873168,0.921308724832,"same selector and candidate matching; different actor/scene population, not assumed equal"
