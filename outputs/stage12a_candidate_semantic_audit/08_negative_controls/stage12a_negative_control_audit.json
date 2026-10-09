@@ -1,0 +1,71 @@
+{
+  "Status": "PASS",
+  "NegativeControl": "PASS",
+  "VehicleSemanticSignal": "WEAK",
+  "PedestrianSemanticSignal": "PROMISING",
+  "SemanticIncrementalValue": "SUGGESTED",
+  "FeatureCriteria": [
+    {
+      "ActorType": "Vehicle",
+      "Feature": "centerline_mean_distance",
+      "Grade": "WEAK",
+      "PositiveEligibleFolds": 3,
+      "PositiveSelectedDifferenceFolds": 1,
+      "ControlContrastPass": true,
+      "MatchedMotionIncrementalSuggested": false
+    },
+    {
+      "ActorType": "Vehicle",
+      "Feature": "centerline_heading_error",
+      "Grade": "NONE",
+      "PositiveEligibleFolds": 3,
+      "PositiveSelectedDifferenceFolds": 3,
+      "ControlContrastPass": false,
+      "MatchedMotionIncrementalSuggested": false
+    },
+    {
+      "ActorType": "Vehicle",
+      "Feature": "drivable_inside_fraction",
+      "Grade": "WEAK",
+      "PositiveEligibleFolds": 3,
+      "PositiveSelectedDifferenceFolds": 1,
+      "ControlContrastPass": true,
+      "MatchedMotionIncrementalSuggested": false
+    },
+    {
+      "ActorType": "Pedestrian",
+      "Feature": "crosswalk_distance",
+      "Grade": "NONE",
+      "PositiveEligibleFolds": 0,
+      "PositiveSelectedDifferenceFolds": 0,
+      "ControlContrastPass": false,
+      "MatchedMotionIncrementalSuggested": false
+    },
+    {
+      "ActorType": "Pedestrian",
+      "Feature": "walkway_inside_fraction",
+      "Grade": "PROMISING",
+      "PositiveEligibleFolds": 3,
+      "PositiveSelectedDifferenceFolds": 3,
+      "ControlContrastPass": true,
+      "MatchedMotionIncrementalSuggested": true
+    },
+    {
+      "ActorType": "Pedestrian",
+      "Feature": "crosswalk_intersects",
+      "Grade": "NONE",
+      "PositiveEligibleFolds": 0,
+      "PositiveSelectedDifferenceFolds": 1,
+      "ControlContrastPass": false,
+      "MatchedMotionIncrementalSuggested": false
+    }
+  ],
+  "AllFeatureAndMaskDistributionsPreservedByPermutation": true,
+  "CandidateFDEModelScoresUnchanged": true,
+  "NC1PermutationSHA256": "75bb403b91d81f952214647a2dfe87c52e0c05f93233d09a91deef6e1ec5ea92",
+  "NC2PermutationSHA256": "2b89ab175e04cde2a7935b4afcbc4641ce223be3348adab2932ce53be68774e8",
+  "Seed": 2022,
+  "BootstrapUnit": "whole scene within each frozen outer fold, paired real and both controls",
+  "GenuineIndependentPredictionGain": "UNRESOLVED",
+  "Evidence": "descriptive development evidence, no independent confirmation or causal inference"
+}
