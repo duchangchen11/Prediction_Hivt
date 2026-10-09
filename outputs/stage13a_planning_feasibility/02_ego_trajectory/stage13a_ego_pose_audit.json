@@ -1,0 +1,22 @@
+{
+  "Status": "PASS_WITH_SOURCE_LIMIT",
+  "EgoTrajectoryExtraction": "PASS",
+  "EgoPoseTokenAndLidarKeyframeIdentity": "PASS",
+  "OriginalPoseTimestampVerification": "PARTIAL",
+  "KnownKeyframes": 162,
+  "UnknownKeyframes": 25145,
+  "PoseMinusLidarUS": {
+    "Count": 162,
+    "Min": 0.0,
+    "Mean": 0.0,
+    "Median": 0.0,
+    "P95": 0.0,
+    "Max": 0.0
+  },
+  "SourceFieldsDroppedByHistoricalIndex": [
+    "ego_pose.timestamp",
+    "sample_annotation.size"
+  ],
+  "NoPoseTimestampImputation": true,
+  "NoNewRawDataCopy": true
+}

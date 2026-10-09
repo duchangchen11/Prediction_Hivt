@@ -1,0 +1,18 @@
+{
+  "Status": "PASS",
+  "CoordinateAlignment": "PASS",
+  "EgoAndActorFP64RoundtripMaxM": 2.842170943040401e-14,
+  "MapFP64RoundtripMaxM": 1.3642420526593924e-12,
+  "ThresholdM": 1e-05,
+  "Coordinates": "reuse preprocessing.coordinates",
+  "ForwardAxis": [
+    1,
+    0
+  ],
+  "LeftAxis": [
+    0,
+    1
+  ],
+  "YawUnits": "radians counterclockwise",
+  "DistanceUnits": "meters"
+}

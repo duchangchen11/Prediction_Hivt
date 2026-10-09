@@ -1,0 +1,64 @@
+{
+  "Stage": "Stage13A",
+  "Branch": "stage13a/prediction-to-ego-planning-audit",
+  "BaseCommit": "020bf774e33b3269a463bbc2d03e0c6f9185a1d1",
+  "NoTraining": true,
+  "NoOptimizers": true,
+  "HistorySteps": 5,
+  "FutureSteps": 12,
+  "Modes": 6,
+  "Coordinates": "existing FP64 global_to_ego/ego_to_global: t0 origin, +x forward,+y left,yaw counterclockwise radians",
+  "PredictionEligibility": "supported and present at t0, at least2 historical observations among5; independent of any future GT/mask/displacement/error",
+  "OtherActors": "retain every supported t0 actor, including insufficient-history rows with PredictionValidMask0 and recorded unknown-risk status; all retained as original model context",
+  "SceneSelection": "three distinct lexicographic scenes per region: largest observable Vehicle count, largest observable Pedestrian count, first Bicycle-present remaining scene if available; density ties scene_token. Regions sorted; only HeadTrain630. No prediction/error/GT trajectory selection.",
+  "Windows": "per selected scene first/middle/last anchor with5 history and12 scheduled future keyframes, plus finalscene keyframe as inference-only missing-future example; fixed before predictor replay",
+  "FutureTime": "explicit query schedule from recorded sample timestamps for replay; planner/forecaster never read future poses or annotations. Inference-only final anchor uses externally requested nominal0.5s grid, clearly distinguished. No asynchronous pose resampling.",
+  "InferenceModes": {
+    "A": "historical OOF identity/frame/keyframe alignment only, future-complete evaluated subset",
+    "B": "past-only metadata facade, neutral unused future placeholders, frozen Stage5A + corresponding-fold C/R2 on allcurrent contexts"
+  },
+  "Probability": "C raw logits and original raw probability retained; Vehicle/Pedestrian additionally scale by existing foldT, Bicycle directly routesR2 original probabilities; neither distribution is actual collision probability",
+  "Map": {
+    "RadiusMeters": 150,
+    "RasterResolutionMeters": 1,
+    "Source": "unchanged original local HD Map; no semantic training or route extraction from future GT",
+    "OutOfPatch": "evaluation mask unknown rather than offroad"
+  },
+  "Collision": {
+    "Footprint": "oriented rectangles; current annotation width/length when available; otherwise explicit class prior",
+    "EgoLengthWidth": [
+      4.8,
+      2.0
+    ],
+    "MissingActorLengthWidth": {
+      "Vehicle": [
+        4.5,
+        1.8
+      ],
+      "Pedestrian": [
+        0.6,
+        0.6
+      ],
+      "Bicycle": [
+        1.8,
+        0.6
+      ]
+    },
+    "InterpolationMaxStepSeconds": 0.05,
+    "Heading": "prediction tangent, retain observed heading for zero displacement; interpolate wrapped heading",
+    "GTMask": "both segment endpoints observed, including t0; never treat missing future as empty scene",
+    "Score": "uncalibrated mode-weighted overlap indicator/expected impacted actors, not actual collision probability"
+  },
+  "References": [
+    "Recorded Ego Future:EvaluationOnly",
+    "CV from last2 observed ego poses and their true elapsedseconds; externally supplied forecast schedule"
+  ],
+  "CaseSelection": "within fixed12 scenes: up to3 distinct vehicle-rich>=10,3 pedestrian-rich>=5,3 forecast-CV footprint-proxy conflict scenes, then ordinary; include final-anchor missing-future cases. No selection by GT success/ADE/FDE.",
+  "RouteInformation": "audit metadata for actual route/command; no GT endpoint as navigation input",
+  "Decision": "GO requires all required engineering gates and observation-only inference; CONDITIONAL_GO for usable geometry/interface but missing source verification, route or evaluation coverage limitations; STOP on unextractable ego GT or broken identity/time/frame or inputGTdependency",
+  "DataLimit": "configured original trainval volume currently unmounted; complete frozen SQLite, subset rawJSON and unchanged HD Map reused; source ego_pose timestamps/dimensions audited as available/unknown, never invented",
+  "FrozenHistorySHA256": "fa3d965652333ff4bfe66407745ea2d7a7e50d6f1038190d337103716b421e3e",
+  "RequirementsSHA256": "2889e2d2c16e15dc7520aa8ef2a0c2d2aa47b7efbf9840275f6fa3696ed4e5cc",
+  "AfterCompletion": "push ownbranch without merge then STOP; no Stage13B/complexplanner/training/officialVAL/test",
+  "Evidence": "engineering feasibility, nonreactive openloop, not independent generalization or closedloop safety"
+}

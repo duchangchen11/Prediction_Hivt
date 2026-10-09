@@ -1,0 +1,26 @@
+{
+  "Status": "PASS",
+  "TimestampAlignment": "PASS",
+  "SampleAndForecastKeyframeIdentity": "PASS",
+  "SampleMinusLidarUS": {
+    "Count": 25307,
+    "Min": 0.0,
+    "Mean": 0.0,
+    "Median": 0.0,
+    "P95": 0.0,
+    "Max": 0.0
+  },
+  "SamplingIntervalSeconds": {
+    "Count": 24677,
+    "Min": 0.394377,
+    "Mean": 0.4989543034809742,
+    "Median": 0.499883,
+    "P95": 0.549643,
+    "Max": 0.750945
+  },
+  "NoForcedHalfSecondResampling": true,
+  "FutureQueryTimes": "exact recorded sample schedule supplied externally for replay; nominal schedule only for no-future demonstration",
+  "PoseTimestampSourceVerification": "PARTIAL",
+  "AcquisitionAlignment": "sample vs LIDAR offset explicitly reported; no unrecorded correction",
+  "FrameCoordinateDefinition": "pose at matching LIDAR_TOP keyframe"
+}
