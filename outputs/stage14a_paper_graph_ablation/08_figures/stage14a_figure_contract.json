@@ -1,0 +1,66 @@
+{
+  "Stage": "Stage14A",
+  "Status": "DEFINED_BEFORE_OUTERTEST_FIGURE_READ",
+  "Backend": "Python / matplotlib only",
+  "CoreConclusion": "Display the registered 2x2 graph/loss comparisons and their uncertainty, including motion-state and costly-switch evidence, without presupposing a positive scientific result.",
+  "Archetype": "quantitative grid with trajectory case panels",
+  "DatasetLabel": "nuScenes HeadTrain630 internal ranking OOF, 3 folds",
+  "EvaluationScope": "Frozen Stage5A candidate generator; overlapping predictor training scenes; not official independent test or independent end-to-end validation",
+  "Models": ["NG-A", "NG-C", "G-A", "G-C"],
+  "DisplayDefinitions": {
+    "NG": "NoGraph / zero interaction message",
+    "G": "Future Interaction Graph / original frozen Stage11B G1",
+    "A": "SoftCE",
+    "C": "Normalized Error-Aware Ranking"
+  },
+  "EvidenceChain": [
+    {"Figure": 1, "Family": "Overall2x2", "Purpose": "The four Overall Top1FDE means occupy the registered graph-by-loss design; means have descriptive scene-cluster 95% intervals."},
+    {"Figure": 2, "Family": "VehiclePedestrian", "Purpose": "Display Vehicle and Pedestrian means and descriptive scene-cluster uncertainty using the same four-model ordering."},
+    {"Figure": 3, "Family": "MovingVehicle", "Purpose": "Display the moving-vehicle subgroup and paired graph/loss contrasts, explicitly exploratory."},
+    {"Figure": 4, "Family": "AblationTable", "Purpose": "Show architecture/loss structure, group means and the four registered paired Overall contrasts with Bonferroni-adjusted 98.75% intervals."},
+    {"Figure": 5, "Family": "HighCostSwitch", "Purpose": "Show gain/harm and largest-10%-positive-harm sums for three required contrasts in Overall and MovingVehicle; tail membership and actor counts are disclosed."},
+    {"Figure": 6, "Family": "ImprovementAndFailureCases", "Purpose": "Show both improvements and failures on unchanged six-candidate geometry, using GT only for post-freeze descriptive case selection and display."}
+  ],
+  "StatisticalContract": {
+    "Bootstrap": "2000 paired whole-scene resamples within each 210-scene fold; seed2022",
+    "ModelMeanIntervals": "descriptive 95% scene-cluster intervals, not significance tests",
+    "OverallPrimaryContrasts": ["NG-C-NG-A", "G-A-NG-A", "G-C-NG-C", "G-C-G-A"],
+    "OverallPrimaryIntervals": "Bonferroni family4, FWER0.05; 98.75% individual intervals",
+    "OtherGroups": "descriptive/exploratory paired 95% intervals",
+    "Direction": "negative delta favors the first model",
+    "Units": "Top1FDE m; gross/tail harm sums m across actor-windows; count actor-windows",
+    "HighCostDefinition": "largest ceil(0.1*n_positive_harms) within each contrast/group; different tails must not be described as identical paired subsets"
+  },
+  "CaseSelection": {
+    "AfterAllSixCheckpointsFrozen": true,
+    "NoTrainingOrModelSelectionUse": true,
+    "RepresentativeCases": "G-C minus NG-C: select the changed-mode actor closest to the median delta among improvements and harms, separately Vehicle and Pedestrian; prefer a scene not already displayed",
+    "TailCases": "Additional MovingVehicle largest improvement and largest harm for G-C minus NG-C, using distinct actor identities where available",
+    "TieBreak": "lexical scene/sample/instance identity",
+    "MissingSubsets": "report an unavailable panel explicitly; never invent a case",
+    "Geometry": "all six frozen candidates and separate GT/history in original t0 ego orientation; optional plot translation centers on current actor without changing stored candidates",
+    "SelectedModes": "display the Top1 selection of all four models and their FDE; overlaps mean the same frozen candidate was selected"
+  },
+  "ExportContract": {
+    "PrimaryFormats": ["SVG", "PDF"],
+    "Preview": "PNG 180dpi",
+    "SVGFontType": "none; editable text",
+    "PDFFontType": 42,
+    "FinalWidthsInches": "7.1 double-column quantitative figures; 7.1 trajectory case panels",
+    "SourceData": "small CSV per quantitative family plus case identity/selection manifest; large caches remain local",
+    "Fonts": "DejaVu Sans / 7-9pt",
+    "Palette": "consistent muted blue NoGraph and purple Graph; dashed SoftCE, solid Error-Aware; black GT",
+    "SampleSize": "actual Count from identical full 12-step historical evaluation rows, shown in every figure",
+    "FigureLabel": "dataset, internal OOF protocol, count, units, and interval definition in every figure"
+  },
+  "ReviewRisks": [
+    "Do not label internal ranking OOF as independent official test.",
+    "Do not infer a graph contribution from Bicycle: all four models use the same predefined fold R2 route.",
+    "Do not equate overlapping descriptive model-mean intervals with paired contrast inference.",
+    "Do not replace the registered family4 intervals with selected significant comparisons.",
+    "Do not claim attention, causality, closed-loop safety, or trajectory geometry improvements from ranking case plots.",
+    "Disclose representative and tail case selection; figures are examples, not aggregate evidence.",
+    "No GT-guided candidate recomputation, new inference, tuning, or scientific decision is performed by plotting code."
+  ],
+  "ExecutionGate": "Require all6 frozen checkpoint SHA checks, PASS unified identity audit and cache SHA checks, PASS bootstrap audit and PASS switch audit before any evaluation-array read."
+}
