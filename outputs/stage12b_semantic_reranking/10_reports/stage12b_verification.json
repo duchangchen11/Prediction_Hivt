@@ -1,0 +1,58 @@
+{
+  "Status": "PASS",
+  "Checks": [
+    {
+      "Check": "HistoricalIntegrity",
+      "Status": "PASS",
+      "Detail": "2775 historical files, 20 checkpoints,5 old untracked files unchanged; all frozen data hashes checked"
+    },
+    {
+      "Check": "PreflightAndTiny",
+      "Status": "PASS",
+      "Detail": "all requested gates PASS; 300 updates for each fixed128 target variant; tiny weights discarded"
+    },
+    {
+      "Check": "FrozenInputs",
+      "Status": "PASS",
+      "Detail": "new fold caches, original per-scene records and normalizers verified"
+    },
+    {
+      "Check": "TrainingAndCapacity",
+      "Status": "PASS",
+      "Detail": "nine independent641-parameter heads; frozen source code; exact ordered batches512/micro128/accum4; selected strict InnerDevFDE minimum; all unique train targets used"
+    },
+    {
+      "Check": "NormalizationAndPermutation",
+      "Status": "PASS",
+      "Detail": "all8 means/std independently recomputed exclusively from corresponding InnerTrain pedestrians; every shuffled row matches fixed joint value/mask permutation"
+    },
+    {
+      "Check": "CompleteOutputs",
+      "Status": "PASS",
+      "Detail": "all9 residual predictions independently replayed bitwise; full3-type260151actor population; C0 identical to historical C; V identical to C; B identical to R2; shared candidates and all oracle metrics unchanged"
+    },
+    {
+      "Check": "PairedSceneBootstrap",
+      "Status": "PASS",
+      "Detail": "2000 seed2022 draws of210 whole scenes per fold; every paired delta95%CI and adjusted97.5%CI independently reconstructed from scene delta sums"
+    },
+    {
+      "Check": "ScientificDecision",
+      "Status": "PASS",
+      "Detail": "NOT_SUPPORTED and STOP follow preregistered control-failure rule; no tuning or new-stage training"
+    }
+  ],
+  "FrozenModelIntegrity": "PASS",
+  "SemanticCacheIntegrity": "PASS",
+  "CandidateIdentity": "PASS",
+  "GTLeakage": "PASS",
+  "FoldIsolation": "PASS",
+  "VehiclePreserved": "YES",
+  "BicyclePreserved": "YES",
+  "HistoricalFiles": 2775,
+  "FrozenCheckpoints": 20,
+  "Stage12B": "STOP",
+  "ReadyForNextStage": "NO",
+  "ProtocolSHA256": "a7a734f36fcccc38162897742e754696b5062a1ed2b9fd54b2a1ce37af572519",
+  "All9FreezeSHA256": "5928220873ff57212af261fb6d605c6eda7aa12aa3c86af9ab7e15c374d036c4"
+}

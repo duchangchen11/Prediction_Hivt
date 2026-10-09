@@ -1,0 +1,9 @@
+Check,Status,Detail
+HistoricalIntegrity,PASS,"2775 historical files, 20 checkpoints,5 old untracked files unchanged; all frozen data hashes checked"
+PreflightAndTiny,PASS,all requested gates PASS; 300 updates for each fixed128 target variant; tiny weights discarded
+FrozenInputs,PASS,"new fold caches, original per-scene records and normalizers verified"
+TrainingAndCapacity,PASS,nine independent641-parameter heads; frozen source code; exact ordered batches512/micro128/accum4; selected strict InnerDevFDE minimum; all unique train targets used
+NormalizationAndPermutation,PASS,all8 means/std independently recomputed exclusively from corresponding InnerTrain pedestrians; every shuffled row matches fixed joint value/mask permutation
+CompleteOutputs,PASS,all9 residual predictions independently replayed bitwise; full3-type260151actor population; C0 identical to historical C; V identical to C; B identical to R2; shared candidates and all oracle metrics unchanged
+PairedSceneBootstrap,PASS,2000 seed2022 draws of210 whole scenes per fold; every paired delta95%CI and adjusted97.5%CI independently reconstructed from scene delta sums
+ScientificDecision,PASS,NOT_SUPPORTED and STOP follow preregistered control-failure rule; no tuning or new-stage training

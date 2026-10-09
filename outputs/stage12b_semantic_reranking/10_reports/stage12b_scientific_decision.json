@@ -1,0 +1,35 @@
+{
+  "FrozenModelIntegrity": "PASS",
+  "SemanticCacheIntegrity": "PASS",
+  "GTLeakage": "PASS",
+  "FoldIsolation": "PASS",
+  "CandidateIdentity": "PASS",
+  "VehiclePreserved": "YES",
+  "BicyclePreserved": "YES",
+  "GeometryControl": "PASS",
+  "ShuffledControl": "PASS",
+  "SemanticIncrement": "NOT_SUPPORTED",
+  "PedestrianImproved": "NO",
+  "Pedestrian5_8mDegraded": "YES",
+  "Pedestrian5_8mSignificantlyDegraded": true,
+  "OverallImproved": "NO",
+  "Stage12B": "STOP",
+  "ReadyForNextStage": "NO",
+  "FoldPedestrianSMinusG": [
+    -0.0003309215405655763,
+    0.01016394115267194,
+    -0.0017483036313785671
+  ],
+  "PedestrianWrongSwitchReduction": {
+    "RelativeToGeometry": 498,
+    "RelativeToShuffled": 113,
+    "GeometryWrongSwitches": 5342,
+    "RealSemanticWrongSwitches": 4844,
+    "ShuffledWrongSwitches": 4957
+  },
+  "ProbabilityDiagnostics": "recorded; no new calibration or fitted temperature",
+  "Evidence": "development-stage same630-scene OOF; not fully independent end-to-end test",
+  "StopAfterCompletion": true,
+  "NextStageTrainingAuthorized": false,
+  "HistoricalScientificDecisionsUnchanged": true
+}

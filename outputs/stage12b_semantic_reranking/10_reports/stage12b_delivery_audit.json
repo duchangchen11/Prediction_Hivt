@@ -1,0 +1,65 @@
+{
+  "Status": "PASS",
+  "Science": {
+    "FrozenModelIntegrity": "PASS",
+    "SemanticCacheIntegrity": "PASS",
+    "GTLeakage": "PASS",
+    "FoldIsolation": "PASS",
+    "CandidateIdentity": "PASS",
+    "VehiclePreserved": "YES",
+    "BicyclePreserved": "YES",
+    "GeometryControl": "PASS",
+    "ShuffledControl": "PASS",
+    "SemanticIncrement": "NOT_SUPPORTED",
+    "PedestrianImproved": "NO",
+    "Pedestrian5_8mDegraded": "YES",
+    "Pedestrian5_8mSignificantlyDegraded": true,
+    "OverallImproved": "NO",
+    "Stage12B": "STOP",
+    "ReadyForNextStage": "NO",
+    "FoldPedestrianSMinusG": [
+      -0.0003309215405655763,
+      0.01016394115267194,
+      -0.0017483036313785671
+    ],
+    "PedestrianWrongSwitchReduction": {
+      "RelativeToGeometry": 498,
+      "RelativeToShuffled": 113,
+      "GeometryWrongSwitches": 5342,
+      "RealSemanticWrongSwitches": 4844,
+      "ShuffledWrongSwitches": 4957
+    },
+    "ProbabilityDiagnostics": "recorded; no new calibration or fitted temperature",
+    "Evidence": "development-stage same630-scene OOF; not fully independent end-to-end test",
+    "StopAfterCompletion": true,
+    "NextStageTrainingAuthorized": false,
+    "HistoricalScientificDecisionsUnchanged": true
+  },
+  "IndependentVerification": "PASS",
+  "TrainingSeconds": 128.7825993479928,
+  "ParamsPerHead": 641,
+  "FormalCheckpoints": 9,
+  "All9CheckpointSHA256": {
+    "05_checkpoints/fold1/G_best.pt": "6b70edd072a01d432f518e7e441d4c1ed0ab9c2daa2e3aa6145c3de4763c0e79",
+    "05_checkpoints/fold1/S_best.pt": "a4781a2504c7219961d075752cfb13ad289150c41cbf35b31b9e5242eaaced48",
+    "05_checkpoints/fold1/P_best.pt": "b590ef5c49155bc6e07db94828e8e7446a9cd6373fd2ea3cf24d9c22576c8b44",
+    "05_checkpoints/fold2/G_best.pt": "4333049f7ea8dffaaea91a6b65d1a2b2454f1530d5000918fd401f47d43ebe03",
+    "05_checkpoints/fold2/S_best.pt": "5d91695ab5e77b9f478dcc269e853282864b012a7b81262035a2d44037d9766c",
+    "05_checkpoints/fold2/P_best.pt": "d22882524f66b0d94bcceb78e0de4647fd9b79740c02967bef30a4ae110928ca",
+    "05_checkpoints/fold3/G_best.pt": "f774d9f21d22d54ed8bd357627439a5e7c14cdb7906361f346eff10399a0fee6",
+    "05_checkpoints/fold3/S_best.pt": "5f0b5bb427d0e212a3f526b0b5472927af91e618da8ed29a1bcf40e0da9397dd",
+    "05_checkpoints/fold3/P_best.pt": "044ba53cd06ef59486f19bbf4bfad076cf4bcfcecd4931d0fced5eda5e8c483c"
+  },
+  "ReportSHA256": "f990504d288ecf0d8f35478dfc8e0d3df2131d862a6101d0c1d024d90f9bd488",
+  "FiguresSHA256": "3d6cb0c6a6000939e696710eddfd53253ba5061657c21b27322ed17ef81dbdd9",
+  "Runtime": {
+    "Python": "3.10.21",
+    "Environment": "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+    "Torch": "2.5.1+cu124",
+    "CUDA": "12.4",
+    "GPU": "NVIDIA GeForce RTX 3080",
+    "Numpy": "1.26.4",
+    "Device": "FP32 CUDA; AMP disabled",
+    "FrozenProtocolSHA256": "a7a734f36fcccc38162897742e754696b5062a1ed2b9fd54b2a1ce37af572519"
+  }
+}
