@@ -1,0 +1,11 @@
+{
+  "Status": "PASS",
+  "TinyOverfit": "PASS",
+  "FrozenPredictorCAndR2StatesUnchanged": true,
+  "FrozenGradients": 0,
+  "InitialWeightsOnly": "same per-fold state; tiny weights discarded",
+  "FormalTrainingPermitted": true,
+  "TargetsSHA256": "0e718b41ddfbeb7b13b897bd9f21e4c06496ba53e3ea2453f2e8acb329377363",
+  "LossDecreaseThreshold": 0.05,
+  "NoHyperparameterAdjustment": true
+}

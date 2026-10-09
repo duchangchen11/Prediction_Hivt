@@ -1,0 +1,62 @@
+{
+  "Status": "PASS",
+  "ActorCount": 260151,
+  "CandidateCount": 1560906,
+  "Features": [
+    "predicted_displacement",
+    "endpoint_x",
+    "endpoint_y",
+    "trajectory_length",
+    "trajectory_curvature",
+    "recent_speed",
+    "history_displacement",
+    "interaction_minimum_distance"
+  ],
+  "InputDim": 18,
+  "SemanticFields": [
+    "walkway_inside_fraction",
+    "walkway_valid"
+  ],
+  "SemanticCacheSourceSHA256": "631d4657159363f50bcc5a3397dba9daaf4683bf275ef10185ed3385ee8e3a29",
+  "SourceCombinedManifestSHA256": "a064a1f05be80f24f3cf703d2ca265c8f7594958b96179a6b6e76e5abce35a55",
+  "Files": {
+    "02_input_cache/cache/stage12b_walkway.npy": "c3183c7a4a64242a1ccc61f03eb8e6b2d69b941f20f0401dfe8211fd436c6bab",
+    "02_input_cache/cache/fold3/stage12b_base_logits.npy": "af05401fdec0f7c2fa44fbb894e34b81610f289b6a9e45579f21e50c55f09481",
+    "02_input_cache/cache/fold3/stage12b_InnerDev_pedestrian_indices.npy": "d3c2587f405b867e5087678e4b08efd995f79bfe4a6abf0218d5a1650150eb22",
+    "02_input_cache/cache/fold3/stage12b_geometry_inputs.npy": "98eef1b4b7cfec7cefd2468eef393ba53c26e3ea3dd2aee1fa80c3bf0e644eec",
+    "02_input_cache/cache/fold3/stage12b_InnerTrain_permutation.npy": "631051006518eb1d2b2f82781d0acec27fe79c542b6ee0d219d07c7bc45f30f4",
+    "02_input_cache/cache/fold3/stage12b_InnerDev_permutation.npy": "7148ef1e568e5156e08a52e2081c64e8f3f7b4d2f11e46b628f8194449b32bc5",
+    "02_input_cache/cache/fold3/stage12b_base_probabilities.npy": "39587984a5cc34581d7cb86ac84b4262ee42c878d06da30feaa0f77af586c71b",
+    "02_input_cache/cache/fold3/stage12b_OuterTest_pedestrian_indices.npy": "e23ade50fdf6d827e108ea9d3224657faa94f45f48b3a36cdf49e3ea60e84a76",
+    "02_input_cache/cache/fold3/stage12b_OuterTest_permutation.npy": "23d2c4ae8b4a283419f1b27c100da0b3cca104d046c33f847250296f75e68038",
+    "02_input_cache/cache/fold3/stage12b_InnerTrain_pedestrian_indices.npy": "ef6130327e52823b19fd80a93f8b12877930a0dffc8fcb755587511454d2a602",
+    "02_input_cache/cache/fold1/stage12b_base_logits.npy": "8f694a4b2ab21dfe8c3c2125441318534817105363687910b0d15e592d9fb552",
+    "02_input_cache/cache/fold1/stage12b_InnerDev_pedestrian_indices.npy": "c403764550179e4b62793d57bb23555ea75545e86b9a22bb87165aed1513d680",
+    "02_input_cache/cache/fold1/stage12b_geometry_inputs.npy": "dcb198a777210b814ac6f397370922305d1354518e73716df5c3f5204335d301",
+    "02_input_cache/cache/fold1/stage12b_InnerTrain_permutation.npy": "f5919b4882c0d7b77cacc09c521c8e619d54cdb631f90d36fe8945408e1263e8",
+    "02_input_cache/cache/fold1/stage12b_InnerDev_permutation.npy": "87aeae7ea7593fed695baf3ca55ccc366ef887b37cf31b56a4382a72bb0c8033",
+    "02_input_cache/cache/fold1/stage12b_base_probabilities.npy": "2ca5bb939aaebb98dfa560257b6ce09619ec9bddc53acb1f3d15e064bb08f9af",
+    "02_input_cache/cache/fold1/stage12b_OuterTest_pedestrian_indices.npy": "c1ee29272fce3f0ac6ecb34e031922f167e386342c26dd338b4ad33978aa6456",
+    "02_input_cache/cache/fold1/stage12b_OuterTest_permutation.npy": "6b04a8e6495ec30d95951a5246473cd4b3f9a8fad728db4477348c12f7766e38",
+    "02_input_cache/cache/fold1/stage12b_InnerTrain_pedestrian_indices.npy": "c490fa1462236109a0f638d975516d971277c4c6e2517fe714dcd442e6076388",
+    "02_input_cache/cache/fold2/stage12b_base_logits.npy": "a47d04ff03c32c9c3c700c6038edee0bb99247b3d968d13c0c1363ad320d3390",
+    "02_input_cache/cache/fold2/stage12b_InnerDev_pedestrian_indices.npy": "3eb39d4bbc255bc89e93929d0e84f41563b9950f8cd64e7e7038e3f16dd69740",
+    "02_input_cache/cache/fold2/stage12b_geometry_inputs.npy": "b7494eec1cff335d85e7f030222f7e1c55d6f92551311a8157e03b736cd88756",
+    "02_input_cache/cache/fold2/stage12b_InnerTrain_permutation.npy": "b40c1b6e17112488992e2871a3990ac267fd70023a64722c778f567287f93f0b",
+    "02_input_cache/cache/fold2/stage12b_InnerDev_permutation.npy": "4c7f968215007833fe791aefd20d2d99b80964848cccd8329ec32fa725abc716",
+    "02_input_cache/cache/fold2/stage12b_base_probabilities.npy": "a9e7660b8aebe383a4921e1c2d3f9ce4513214dd1321c1099ede1453055e1300",
+    "02_input_cache/cache/fold2/stage12b_OuterTest_pedestrian_indices.npy": "f71ee7799385084359f86ef6ea8aaf2686a355b9e1fc90e5a1c0edb60125844c",
+    "02_input_cache/cache/fold2/stage12b_OuterTest_permutation.npy": "bbfb99041c0d229963c6f2cbd2ab3b432c383cdc61d404fb3272de6edaa0457b",
+    "02_input_cache/cache/fold2/stage12b_InnerTrain_pedestrian_indices.npy": "eb02ef3f9b44076fab6f16e576f003edb178d23fdf791748e505589f50c0b8dc"
+  },
+  "Normalizations": {
+    "02_input_cache/stage12b_fold2_normalization.json": "f717d62bac0961914f71b3f834eb4b2907a3817086372be32e759641d6336711",
+    "02_input_cache/stage12b_fold3_normalization.json": "c9d1c68610b4ef79e5c78a609c1f4acf8a1472901d4b9b7b5fe70c5392ec0055",
+    "02_input_cache/stage12b_fold1_normalization.json": "4e06f70d391464299ceff1071abf556964be80b86b925abec9f65a7eb421bf20"
+  },
+  "OriginalIdentityAndSixModesPreserved": true,
+  "MapFeatureIntegrity": "PASS",
+  "GTLeakage": "PASS",
+  "NoFutureFeatures": true,
+  "FoldSpecificForwardReplayed": true
+}

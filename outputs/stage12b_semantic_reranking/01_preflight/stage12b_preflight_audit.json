@@ -1,0 +1,19 @@
+{
+  "Status": "PASS",
+  "CandidateIdentity": "PASS",
+  "FrozenCIdentity": "PASS",
+  "TemperatureIdentity": "PASS",
+  "MapFeatureIntegrity": "PASS",
+  "SemanticCacheIntegrity": "PASS",
+  "GTLeakage": "PASS",
+  "FoldIsolation": "PASS",
+  "NetworkCapacityMatched": "PASS",
+  "InitializationIdentity": "PASS",
+  "TinyOverfit": "PASS",
+  "FormalTrainingPermitted": true,
+  "NeutralPredictionsAudited": 595305,
+  "CandidateMaxDiff": 0.0,
+  "OriginalGTpoisonAuditSHA256": "2899a6067d924e8fde6200786ab3523d7ec68d4983a4944942aab96a63ba709b",
+  "NewInputFutureColumnsPoisoned": true,
+  "AllSourcesFrozen": "Stage5,foldC,foldR2,temperatures,normalizations,semantic cache; no neural training during preflight"
+}
