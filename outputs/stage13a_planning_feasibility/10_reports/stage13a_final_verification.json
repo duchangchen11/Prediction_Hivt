@@ -1,0 +1,27 @@
+{
+  "Status": "PASS",
+  "RequiredReportSections": 20,
+  "FixedSampleCacheReplay": 48,
+  "HeadTrainSceneIsolation": 630,
+  "HistoricalOOFIdentityMatches": 260151,
+  "NoTrainingCalls": true,
+  "NoNewCheckpoints": true,
+  "HistoricalSHAIntegrity": true,
+  "OriginalDataSHAIntegrity": true,
+  "PreservedStage2CFiles": true,
+  "ProbabilityAndFrameChecks": true,
+  "UnknownMasksAndCoverageRetained": true,
+  "CandidateReplayDifferences": {
+    "Count": 920,
+    "Min": 4.76837158203125e-07,
+    "Mean": 3.6433986995531165e-06,
+    "Median": 3.814697265625e-06,
+    "P95": 7.62939453125e-06,
+    "Max": 2.288818359375e-05
+  },
+  "PlanningDecision": "CONDITIONAL_GO",
+  "SourceTimestampVerification": "PARTIAL",
+  "SourceStage3GraphFiles": 12,
+  "ScientificDecisionSHA256": "4186b43a3189a1d9ad7b62573e2e68aa75928941e4df1533cf598663bad22590",
+  "ReportSHA256": "1a8d57e6da24cd4164e9546c47d1485e6d696360c4f89a62c32bc5ba33387f3a"
+}

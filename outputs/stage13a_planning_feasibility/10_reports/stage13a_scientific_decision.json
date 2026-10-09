@@ -1,0 +1,67 @@
+{
+  "Stage": "Stage13A",
+  "Stage13A": "CONDITIONAL_GO",
+  "ReadyForPlanningDevelopment": "CONDITIONAL",
+  "EngineeringScope": "observation-only frozen forecast to ego planning/evaluation interfaces",
+  "EgoTrajectoryExtraction": "PASS",
+  "TimestampAlignment": "PASS",
+  "OriginalPoseTimestampVerification": "PARTIAL",
+  "CoordinateAlignment": "PASS",
+  "PredictionIdentityJoin": "PASS",
+  "ObservationOnlyInference": "PASS",
+  "GTLeakage": "PASS",
+  "GTLeakageTestInterpretation": "no future-label dependency detected",
+  "MapCompatibility": "PASS",
+  "PlanningInterface": "PASS",
+  "PlanningSampleCount": 48,
+  "CompleteOpenLoopEvaluationSampleCount": 36,
+  "InferenceOnlyMissingFutureSampleCount": 12,
+  "FullMetadataScenes": 630,
+  "FullMetadataForwardReplay": false,
+  "VehiclePredictionCoverage": 0.9676074283716892,
+  "PedestrianPredictionCoverage": 0.969417128726261,
+  "BicyclePredictionCoverage": 0.958144102123481,
+  "CoverageDefinition": "history eligibility / all supported t0 actors with5 ego history frames; full630 metadata, actual replay fixed48 samples",
+  "RouteInformation": "UNAVAILABLE",
+  "OpenLoopEvaluationFeasibility": "PASS_WITH_LIMITS",
+  "BlockingIssues": [
+    "No supplied route/goal/high-level command; legal route input design remains necessary.",
+    "Original trainval volume unmounted; original ego_pose.timestamp verified for only 162/25307 HeadTrain keyframes. Restore original metadata for full source verification.",
+    "Current actor annotation size unavailable outside small raw subset; class-prior footprints and approximate ego dimensions require disclosure or original-size recovery.",
+    "Insufficient actor history and incomplete future GT remain unknown-risk/unknown-evaluation; no claim of complete traffic coverage.",
+    "Source about 2Hz, nonreactive forecasts, no route-conditioned or closed-loop planning validation; interpolated footprints remain proxies."
+  ],
+  "NoTraining": true,
+  "NoOptimizer": true,
+  "NoNewCheckpoint": true,
+  "HistoricalDecisionsUnchanged": true,
+  "EndToEndIndependentValidation": false,
+  "ClosedLoopSafetyClaim": false,
+  "Stage13BImplemented": false,
+  "NextStageAuthorized": false,
+  "AfterCompletion": "STOP_FOR_BRAIN_AI_REVIEW",
+  "Remediation": [
+    {
+      "Module": "ego metadata and footprints",
+      "Action": "restore original local trainval mount; join source timestamps and sizes by tokens",
+      "NewData": "no new dataset; existing original metadata required",
+      "ExtraPlanningFramework": false
+    },
+    {
+      "Module": "route/command interface",
+      "Action": "design lawful inference-time route input; never use recorded GT endpoint",
+      "NewData": "possibly route annotations or a separately authorized route-generation protocol",
+      "ExtraPlanningFramework": "not required for current audit; future design pending review"
+    },
+    {
+      "Module": "missing-actor/evaluation masks",
+      "Action": "retain conservative unknown-risk status, publish coverage; any fallback requires future authorization",
+      "NewData": "not required for honest present audit",
+      "ExtraPlanningFramework": false
+    }
+  ],
+  "FrozenCheckpoints": 29,
+  "FrozenTrackedHistoricalFiles": 2894,
+  "PreservedUntrackedFiles": 5,
+  "CandidateReplaySingleGraphMaxDiffM": 2.288818359375e-05
+}
