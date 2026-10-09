@@ -1,0 +1,51 @@
+{
+  "Status": "PASS",
+  "Device": "NVIDIA GeForce RTX 3080",
+  "DeviceGiB": 9.65411376953125,
+  "NominalDeviceGiB": 10.0,
+  "MemoryScope": "torch device properties give CUDA-visible total; nvidia-smi gives nominal framebuffer total",
+  "PeakAllocatedGiB": 4.5197272300720215,
+  "PeakReservedGiB": 4.904296875,
+  "StressWindows": 16,
+  "StressActors": 1633,
+  "ForwardMeanSecondsPer16WindowBatch": 0.0585764344704027,
+  "ForwardMedianSeconds": 0.06280461899586953,
+  "TrainingStepMeanSeconds": 0.4355225004999536,
+  "TrainingStepMedianSeconds": 0.39931236050324515,
+  "ColdAndWarmStepRangeSeconds": [
+    0.17903223499888554,
+    0.7592808860063087
+  ],
+  "TrainingStepBenchmarkMeanSeconds": 0.4092526178050321,
+  "CheckpointMinBytes": 8197516,
+  "CheckpointMaxBytes": 8206788,
+  "PreflightCheckpointTotalBytes": 98429301,
+  "PreflightCandidateCacheTotalBytes": 2529542,
+  "DiskFreeGiB": 43.13230895996094,
+  "Formal3FoldTargetCacheGiB": 17.06652236229189,
+  "Formal3FoldContextCacheProxyGiB": 2.4957181425601576,
+  "FormalR2ExtraGiB": 0.3336257552728057,
+  "FormalIdentityBudgetGiB": 0.18607449531555176,
+  "FormalCheckpointBudgetGiB": 0.5,
+  "FormalScratchBudgetGiB": 2,
+  "PlannedNewStorageGiB": 22.581940755440407,
+  "RequestedOperationalReserveGiB": 8,
+  "StoragePassAtAuditTime": true,
+  "SharedCandidatesAndBoundedStreamingRequired": true,
+  "PredictorMeasuredStepExtrapolationHours": {
+    "Historical11500LengthMinFoldMean": 3.2930867661565975,
+    "Maximum21000LengthMaxFoldMean": 9.27353986427382
+  },
+  "DevForwardKernelWallProxyAtMaxBudgetHours": 0.13121121321370205,
+  "HistoricalSchemeACompleteKnownComponentAnchorHours": [
+    8.41293831292528,
+    13.70275425946433
+  ],
+  "MeasuredHistorical18HeadHours": 1.963266798910016,
+  "EstimatedHiVTRuns": 3,
+  "FutureRankingRuns": 18,
+  "FormalHiVTRunsExecuted": 0,
+  "ActualDiagnosticOptimizerUpdates": 30,
+  "HeadOptimizerUpdates": 0,
+  "Limits": "few fixed train/dev samples; elapsed step includes loading/hash/collation/H2D/backward/AdamW; forward excludes transfer/I/O; dense old-context sizes are metadata proxies, not new cache measurements; no per-method duplication and no permanent double dense staging"
+}

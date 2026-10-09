@@ -1,0 +1,50 @@
+{
+  "Status": "PASS",
+  "Fold": 2,
+  "Seed": 2122,
+  "Config": {
+    "protocol_sha256": "42205adce1a73e4c20f3fdd9d533b57a3142a093bcecd760ae9d673518605d13",
+    "fold": 2,
+    "seed": 2122,
+    "lists": {
+      "InnerTrain": {
+        "path": "01_data_isolation/stage15a_fold2_InnerTrain.json",
+        "sha256": "51abb7e4163c610adfb4b54f4c5567e3db566c684c7407dbb379055ff3c1694e"
+      },
+      "InnerDev": {
+        "path": "01_data_isolation/stage15a_fold2_InnerDev.json",
+        "sha256": "692cd98bb285a9f805c4a9d7a9de03996cd36c2c9d192e676865066e520ab2db"
+      }
+    },
+    "output_dir": "/home/lrj/Prediction_Hivt/outputs/stage15a_isolated_predictor/02_training/entry_smoke/fold2",
+    "precision": "FP32",
+    "scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING",
+    "fitting_source_sha256": {
+      "00_manifest/stage15a_common.py": "27474dae2e00afe124dcf71d50fab0eed0bdfcc7f9bbc9ca8be72557b62f47b0",
+      "02_training/stage15a_train.py": "a0ae7465798e0c96ad42a325766fa791d68028db31a9cb1dbf712a81eaf13156"
+    }
+  },
+  "Protocol": {
+    "batch_size": 16,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "warmup": {
+      "phase": "fixed_scale",
+      "steps": 5000,
+      "lr": 0.001
+    },
+    "nll": {
+      "phase": "original_nll",
+      "maximum_steps": 16000,
+      "lr": 0.0001,
+      "patience": 5
+    },
+    "maximum_global_steps": 21000,
+    "validation_interval": 500,
+    "selection": "post-update InnerDev42 full-horizon Overall minFDE6 strict improvement; final NLL only"
+  },
+  "TrainWindows": 9103,
+  "DevWindows": 1018,
+  "GraphPayloadsLoaded": 0,
+  "FullTrainingAuthorized": false
+}

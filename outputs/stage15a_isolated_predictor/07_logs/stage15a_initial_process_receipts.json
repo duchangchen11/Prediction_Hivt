@@ -1,0 +1,23 @@
+[
+  {
+    "fold": 2,
+    "command": [
+      "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+      "outputs/stage15a_isolated_predictor/03_checks/stage15a_checks.py",
+      "--fold",
+      "2",
+      "--seed",
+      "2122",
+      "--training-scenes",
+      "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold2_InnerTrain.json",
+      "--development-scenes",
+      "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold2_InnerDev.json",
+      "--output-dir",
+      "outputs/stage15a_isolated_predictor/04_checkpoints/fold2",
+      "--mode",
+      "preflight"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 6.5511863231658936
+  }
+]

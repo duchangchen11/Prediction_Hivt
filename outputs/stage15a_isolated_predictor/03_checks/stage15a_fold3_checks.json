@@ -1,0 +1,226 @@
+{
+  "Status": "PASS",
+  "Fold": 3,
+  "Seed": 2222,
+  "Initialization": {
+    "Status": "PASS",
+    "Fold": 3,
+    "Seed": 2222,
+    "StateSHA256": "6f5e99f5ac938ac890e5288b0eee4e3b05e3aa171dc471622023e782a8a93fbf",
+    "Parameters": 650403,
+    "TrainableParameters": 650403,
+    "FreshRepeatExact": true,
+    "HistoricalSeed2022FreshReferenceExact": false,
+    "TypeEmbedding": [
+      3,
+      64
+    ],
+    "MotionExperts": 2,
+    "NeutralRouter": [
+      0.5,
+      0.5
+    ],
+    "TRAIN700WeightsLoaded": false,
+    "LoadsAtInitialization": []
+  },
+  "ModelInputAndLoss": {
+    "Status": "PASS",
+    "OrdinaryVsStrippedMaxDiff": {
+      "raw_prediction": 0.0,
+      "mode_logits": 0.0,
+      "mode_prob": 0.0
+    },
+    "GTPoisonMaxDiff": {
+      "raw_prediction": 0.0,
+      "mode_logits": 0.0,
+      "mode_prob": 0.0
+    },
+    "ForwardKeys": [
+      "agent_type",
+      "batch",
+      "bos_mask",
+      "edge_index",
+      "is_intersections",
+      "lane_actor_index",
+      "lane_actor_vectors",
+      "lane_vectors",
+      "num_nodes",
+      "padding_mask",
+      "positions",
+      "ptr",
+      "rotate_angles",
+      "traffic_controls",
+      "turn_directions",
+      "x"
+    ],
+    "PositionsShape": [
+      528,
+      5,
+      2
+    ],
+    "FutureFieldsPhysicallyAbsent": true,
+    "ManualLossMaxDiff": {
+      "fixed_scale": 0.0,
+      "original_nll": 0.0
+    },
+    "CoordinateConversionMaxDiff": 0.0
+  },
+  "Identity": {
+    "Status": "PASS",
+    "Source": "read-only original metadata SQLite exact selected train/dev keys",
+    "Windows": [
+      {
+        "scene_token": "b829278aae2747959f2a95423455bbcb",
+        "sample_token": "160429309f7b40a8829ef5dbe6d6d1d8",
+        "actors": 36,
+        "annotation_identity_checks": 440,
+        "coordinate_max_error_m": 3.1743238650960848e-06,
+        "timestamp_sequence_sha256": "df0f16b557a2fcd1993922648f1580b579557a8b91da09f47618e999b48f7443",
+        "nominal_history_duration_deviation_s": 0.0010179999999999634,
+        "nominal_future_duration_deviation_s": 0.001814999999999678,
+        "history_times": [
+          -1.998982,
+          -1.499655,
+          -0.999789,
+          -0.500458,
+          0.0
+        ],
+        "future_times": [
+          0.500395,
+          1.000832,
+          1.501268,
+          2.001697,
+          2.50156,
+          3.002006,
+          3.502423,
+          4.002852,
+          4.502735,
+          5.002116,
+          5.501921,
+          6.001815
+        ]
+      },
+      {
+        "scene_token": "b829278aae2747959f2a95423455bbcb",
+        "sample_token": "16113258bf6343c9a308607caf64ecfa",
+        "actors": 34,
+        "annotation_identity_checks": 489,
+        "coordinate_max_error_m": 3.7283996334736003e-06,
+        "timestamp_sequence_sha256": "bb2dd339ffee8d0cd72dfbbe6dab89ae0e60f0fb63eac28ac64ad12521ceec33",
+        "nominal_history_duration_deviation_s": -0.10125399999999996,
+        "nominal_future_duration_deviation_s": 0.0482800000000001,
+        "history_times": [
+          -2.101254,
+          -1.600822,
+          -1.000336,
+          -0.500427,
+          0.0
+        ],
+        "future_times": [
+          0.549638,
+          1.049503,
+          1.548842,
+          2.048695,
+          2.548579,
+          3.048479,
+          3.549164,
+          4.048202,
+          4.548068,
+          5.048497,
+          5.548386,
+          6.04828
+        ]
+      },
+      {
+        "scene_token": "6f5133fe62b240e797bac25aeff8b531",
+        "sample_token": "47d7743e515b4dc8aca1e81e08776cd0",
+        "actors": 15,
+        "annotation_identity_checks": 179,
+        "coordinate_max_error_m": 1.8882326457969612e-06,
+        "timestamp_sequence_sha256": "8223783813cf560b280a2bd70536e2472e809e7c8efa4130347025de802afe9e",
+        "nominal_history_duration_deviation_s": -0.00062400000000018,
+        "nominal_future_duration_deviation_s": -0.20001099999999994,
+        "history_times": [
+          -2.000624,
+          -1.449878,
+          -0.999767,
+          -0.499868,
+          0.0
+        ],
+        "future_times": [
+          0.399783,
+          0.899653,
+          1.399528,
+          1.89997,
+          2.40038,
+          2.900831,
+          3.400724,
+          3.90004,
+          4.400459,
+          4.900322,
+          5.300715,
+          5.799989
+        ]
+      },
+      {
+        "scene_token": "6f5133fe62b240e797bac25aeff8b531",
+        "sample_token": "0744a7e052bb4d008837e7344628b08b",
+        "actors": 15,
+        "annotation_identity_checks": 171,
+        "coordinate_max_error_m": 2.983849299198482e-06,
+        "timestamp_sequence_sha256": "696c461af6d327d29c3770b6ac14b72287219689a7e67ec2506dfa0686ef912a",
+        "nominal_history_duration_deviation_s": 0.150339,
+        "nominal_future_duration_deviation_s": -0.09991000000000039,
+        "history_times": [
+          -1.849661,
+          -1.39955,
+          -0.899651,
+          -0.399783,
+          0.0
+        ],
+        "future_times": [
+          0.49987,
+          0.999745,
+          1.500187,
+          2.000597,
+          2.501048,
+          3.000941,
+          3.500257,
+          4.000676,
+          4.500539,
+          4.900932,
+          5.400206,
+          5.90009
+        ]
+      }
+    ],
+    "OuterQueries": 0,
+    "SourceSHA256": "697f881f553d7b30f878ccafb68b64f88fe98e9bddc68c0f84879bc1480e0164"
+  },
+  "Recovery": {
+    "Status": "PASS",
+    "ModelMaxDiff": 0.0,
+    "OptimizerMomentsMaxDiff": 0.0,
+    "NextBatchIdentitiesExact": true,
+    "LossAndGradientsExact": true,
+    "AllRNGStreamsExact": true,
+    "CursorExact": true,
+    "AdditionalProbeUpdates": 2,
+    "CheckpointSHA256": "4e086d3f3759010e7087d0e57b7bdb924a3b3e0571be2aba2cfbed235581a065",
+    "CheckpointBytes": 8206788
+  },
+  "StoppingRules": {
+    "Status": "PASS",
+    "StrictTiesDoNotImprove": true,
+    "NLLPatience5": true,
+    "WarmupFixed5000": true,
+    "NLLMaximum16000": true,
+    "GlobalMaximum21000": true,
+    "SimulationOnlyNoOptimizer": true
+  },
+  "RankingStatus": "PASS",
+  "ActualOptimizerUpdates": 8,
+  "FullPredictorRuns": 0,
+  "OuterInferenceRuns": 0,
+  "Stage15BStarted": false
+}

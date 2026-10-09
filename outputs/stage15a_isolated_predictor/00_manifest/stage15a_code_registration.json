@@ -1,0 +1,11 @@
+{
+  "Status": "REGISTERED_BEFORE_ANY_OPTIMIZER_UPDATE",
+  "TimestampUTC": "2026-10-09T20:28:28.779510+00:00",
+  "SourceSHA256": {
+    "00_manifest/stage15a_common.py": "27474dae2e00afe124dcf71d50fab0eed0bdfcc7f9bbc9ca8be72557b62f47b0",
+    "00_manifest/stage15a_prepare.py": "cb02f9d1cdd6186f66fca21d838c14ad7392a8e045cc26eea8edbd572e3c7e49",
+    "05_candidate_interface/stage15a_ranking.py": "fae76fabfd60e7fcd627fe05eaf156da67ef8308236e0dd595cd8ccd782430c9",
+    "03_checks/stage15a_checks.py": "c59421aa95d37f2ae7607cc44278a88b1c8c7b2667fea886badd2e402f4f1164",
+    "02_training/stage15a_train.py": "a0ae7465798e0c96ad42a325766fa791d68028db31a9cb1dbf712a81eaf13156"
+  }
+}

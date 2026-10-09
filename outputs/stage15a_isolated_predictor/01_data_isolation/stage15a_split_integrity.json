@@ -1,0 +1,126 @@
+{
+  "Status": "PASS",
+  "Scheme": "A_Recommended378",
+  "CountsPerFold": [
+    378,
+    42,
+    210,
+    70
+  ],
+  "ExactStage14BSplitOrder": true,
+  "All700AccountedPerFold": true,
+  "OuterUnionsExactly630": true,
+  "SourceSHA256": {
+    "outputs/stage14b_paper_validation/00_protocol/stage14b_scene_design.json": "d655c9605758df39bfbbadfec1e5760cc122785e3343909802d4f8d706b5c634",
+    "outputs/stage3_multitype_hivt/02_preprocessed/stage3_train_index.csv": "4bde8653d4af7e6edc3db611f07d9b109bd9409c533323519eee812517a23a83",
+    "outputs/stage14b_paper_validation/stage14b_preregistered_plan.md": "97f89f405ae85356ce09054e3766c6ddca293447385924be666f52f6c98c324e",
+    "outputs/stage5a_motion_aware_decoder/00_manifest/stage5a_config.yaml": "cdd0e6326bf54d5d45efcf1be23e0fedb5741e2e16412b4c57367c075bd864a8"
+  },
+  "MetadataOnly": true,
+  "OuterPredictionsRead": false,
+  "OuterPerformanceComputed": false,
+  "folds": [
+    {
+      "fold": 1,
+      "seed": 2022,
+      "metadata": {
+        "InnerTrain": {
+          "scenes": 378,
+          "windows": 9144,
+          "supervised_windows": 9137,
+          "full_targets": 159151,
+          "partial_targets": 73196
+        },
+        "InnerDev": {
+          "scenes": 42,
+          "windows": 1022,
+          "supervised_windows": 1017,
+          "full_targets": 18327,
+          "partial_targets": 9357
+        },
+        "OuterTest": {
+          "scenes": 210,
+          "windows": 5061,
+          "supervised_windows": 5041,
+          "full_targets": 82673,
+          "partial_targets": 43464
+        },
+        "QuarantinedHeadDev": {
+          "scenes": 70,
+          "windows": 1703,
+          "supervised_windows": 1703,
+          "full_targets": 29934,
+          "partial_targets": 14479
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "seed": 2122,
+      "metadata": {
+        "InnerTrain": {
+          "scenes": 378,
+          "windows": 9135,
+          "supervised_windows": 9103,
+          "full_targets": 157356,
+          "partial_targets": 76707
+        },
+        "InnerDev": {
+          "scenes": 42,
+          "windows": 1018,
+          "supervised_windows": 1018,
+          "full_targets": 19084,
+          "partial_targets": 9458
+        },
+        "OuterTest": {
+          "scenes": 210,
+          "windows": 5074,
+          "supervised_windows": 5074,
+          "full_targets": 83711,
+          "partial_targets": 39852
+        },
+        "QuarantinedHeadDev": {
+          "scenes": 70,
+          "windows": 1703,
+          "supervised_windows": 1703,
+          "full_targets": 29934,
+          "partial_targets": 14479
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "seed": 2222,
+      "metadata": {
+        "InnerTrain": {
+          "scenes": 378,
+          "windows": 9124,
+          "supervised_windows": 9104,
+          "full_targets": 148900,
+          "partial_targets": 75388
+        },
+        "InnerDev": {
+          "scenes": 42,
+          "windows": 1011,
+          "supervised_windows": 1011,
+          "full_targets": 17484,
+          "partial_targets": 7928
+        },
+        "OuterTest": {
+          "scenes": 210,
+          "windows": 5092,
+          "supervised_windows": 5080,
+          "full_targets": 93767,
+          "partial_targets": 42701
+        },
+        "QuarantinedHeadDev": {
+          "scenes": 70,
+          "windows": 1703,
+          "supervised_windows": 1703,
+          "full_targets": 29934,
+          "partial_targets": 14479
+        }
+      }
+    }
+  ]
+}

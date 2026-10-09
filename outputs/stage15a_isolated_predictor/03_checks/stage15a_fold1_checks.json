@@ -1,0 +1,218 @@
+{
+  "Status": "PASS",
+  "Fold": 1,
+  "Seed": 2022,
+  "Initialization": {
+    "Status": "PASS",
+    "Fold": 1,
+    "Seed": 2022,
+    "StateSHA256": "7b824f0e51d34da3445848abfa2fb349c7a3abcf45ae59ac951def86a21cbbb4",
+    "Parameters": 650403,
+    "TrainableParameters": 650403,
+    "FreshRepeatExact": true,
+    "HistoricalSeed2022FreshReferenceExact": true,
+    "TypeEmbedding": [
+      3,
+      64
+    ],
+    "MotionExperts": 2,
+    "NeutralRouter": [
+      0.5,
+      0.5
+    ],
+    "TRAIN700WeightsLoaded": false,
+    "LoadsAtInitialization": []
+  },
+  "ModelInputAndLoss": {
+    "Status": "PASS",
+    "OrdinaryVsStrippedMaxDiff": {
+      "raw_prediction": 0.0,
+      "mode_logits": 0.0,
+      "mode_prob": 0.0
+    },
+    "GTPoisonMaxDiff": {
+      "raw_prediction": 0.0,
+      "mode_logits": 0.0,
+      "mode_prob": 0.0
+    },
+    "ForwardKeys": [
+      "agent_type",
+      "batch",
+      "bos_mask",
+      "edge_index",
+      "is_intersections",
+      "lane_actor_index",
+      "lane_actor_vectors",
+      "lane_vectors",
+      "num_nodes",
+      "padding_mask",
+      "positions",
+      "ptr",
+      "rotate_angles",
+      "traffic_controls",
+      "turn_directions",
+      "x"
+    ],
+    "PositionsShape": [
+      402,
+      5,
+      2
+    ],
+    "FutureFieldsPhysicallyAbsent": true,
+    "ManualLossMaxDiff": {
+      "fixed_scale": 0.0,
+      "original_nll": 0.0
+    },
+    "CoordinateConversionMaxDiff": 0.0
+  },
+  "Identity": {
+    "Status": "PASS",
+    "Source": "read-only original metadata SQLite exact selected train/dev keys",
+    "Windows": [
+      {
+        "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+        "sample_token": "370c89de894d4b639b55c6f0709bfca9",
+        "actors": 25,
+        "annotation_identity_checks": 356,
+        "coordinate_max_error_m": 3.0071366836637026e-06,
+        "timestamp_sequence_sha256": "3488847fb5e2074772a5eb9065f5ffa6a8619e176e1254455e292a12f346a679",
+        "history_times": [
+          -2.001124,
+          -1.50072,
+          -1.000304,
+          -0.500416,
+          0.0
+        ],
+        "future_times": [
+          0.500472,
+          0.999776,
+          1.49923,
+          1.998954,
+          2.398236,
+          2.898626,
+          3.399052,
+          3.898931,
+          4.398846,
+          4.898713,
+          5.398594,
+          5.898454
+        ]
+      },
+      {
+        "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+        "sample_token": "e8bfc37476ad4b5e9bbeab8b76c0bd60",
+        "actors": 26,
+        "annotation_identity_checks": 396,
+        "coordinate_max_error_m": 2.8365254820528207e-06,
+        "timestamp_sequence_sha256": "83594883958476226523ca52488ba02a6e9d577f5d57a6bbbaab5df7e453587f",
+        "history_times": [
+          -2.000609,
+          -1.50019,
+          -0.999759,
+          -0.499877,
+          0.0
+        ],
+        "future_times": [
+          0.499901,
+          0.999747,
+          1.499116,
+          1.998978,
+          2.498852,
+          2.99926,
+          3.499173,
+          3.998467,
+          4.498346,
+          4.998214,
+          5.499206,
+          5.999624
+        ]
+      },
+      {
+        "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+        "sample_token": "86b70d00d4eb420d859c3c6024e256d6",
+        "actors": 53,
+        "annotation_identity_checks": 750,
+        "coordinate_max_error_m": 3.686423497128999e-06,
+        "timestamp_sequence_sha256": "c46105eaf0dea940d13ce1c5ac01958a33817ba2bc1661eb7d1445f2640f921a",
+        "history_times": [
+          -1.899997,
+          -1.398566,
+          -0.90024,
+          -0.399788,
+          0.0
+        ],
+        "future_times": [
+          0.500425,
+          1.000297,
+          1.507048,
+          2.000055,
+          2.499927,
+          3.000362,
+          3.500234,
+          4.000109,
+          4.499978,
+          4.999856,
+          5.49974,
+          6.000161
+        ]
+      },
+      {
+        "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+        "sample_token": "c370568cda2d4161acd15ace5fcb1822",
+        "actors": 56,
+        "annotation_identity_checks": 790,
+        "coordinate_max_error_m": 3.784817636187654e-06,
+        "timestamp_sequence_sha256": "c0222abb8da4f4ceac48c59ed7e472599819a4b7a3e60ff639adc150914ad97e",
+        "history_times": [
+          -1.898991,
+          -1.400665,
+          -0.900213,
+          -0.500425,
+          0.0
+        ],
+        "future_times": [
+          0.499872,
+          1.006623,
+          1.49963,
+          1.999502,
+          2.499937,
+          2.999809,
+          3.499684,
+          3.999553,
+          4.499431,
+          4.999315,
+          5.499736,
+          6.000178
+        ]
+      }
+    ],
+    "OuterQueries": 0,
+    "SourceSHA256": "697f881f553d7b30f878ccafb68b64f88fe98e9bddc68c0f84879bc1480e0164"
+  },
+  "Recovery": {
+    "Status": "PASS",
+    "ModelMaxDiff": 0.0,
+    "OptimizerMomentsMaxDiff": 0.0,
+    "NextBatchIdentitiesExact": true,
+    "LossAndGradientsExact": true,
+    "AllRNGStreamsExact": true,
+    "CursorExact": true,
+    "AdditionalProbeUpdates": 2,
+    "CheckpointSHA256": "883c82dff9c792b589c0dee863081ce5da087bf186720119f8a0c9609165e2b5",
+    "CheckpointBytes": 8206788
+  },
+  "StoppingRules": {
+    "Status": "PASS",
+    "StrictTiesDoNotImprove": true,
+    "NLLPatience5": true,
+    "WarmupFixed5000": true,
+    "NLLMaximum16000": true,
+    "GlobalMaximum21000": true,
+    "SimulationOnlyNoOptimizer": true
+  },
+  "RankingStatus": "PASS",
+  "ActualOptimizerUpdates": 13,
+  "FullPredictorRuns": 0,
+  "OuterInferenceRuns": 0,
+  "Stage15BStarted": false
+}

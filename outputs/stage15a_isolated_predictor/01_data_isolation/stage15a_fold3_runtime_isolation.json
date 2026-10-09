@@ -1,0 +1,675 @@
+{
+  "Status": "PASS",
+  "Loaded": [
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0597.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0005.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0597.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0737.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0575.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0005.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage15a_isolated_predictor/04_checkpoints/fold3/stage15a_preflight_warm_best.pt",
+      "scope": "preflight_checkpoint"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-1009.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0175.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage15a_isolated_predictor/04_checkpoints/fold3/stage15a_preflight_warm_best.pt",
+      "scope": "preflight_checkpoint"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0575.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0657.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage15a_isolated_predictor/04_checkpoints/fold3/stage15a_preflight_warm_best.pt",
+      "scope": "preflight_checkpoint"
+    }
+  ],
+  "LoadedShardSHA256": {
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0597.pt": "2f17b5f8ce084b991c35cf732ae12d3917c44b7c66e84b008c30b6c84d0c3a27",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0005.pt": "03dad640e8357de8bb81a2fdc2181c5bc1598893a5f2c85708bf72740b1249cd",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0737.pt": "28400de47658b2cb4b95393c40526ba8d3d8c1cdbc480366014b9c74454de8e5",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0575.pt": "af0ba01d6b024889f487407193c1754b7b7682cadeafd1d9fbf728f805d51e6d",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-1009.pt": "9b6b4c37e648041af84b088c5f78c72f5ad21fec13ebcd948f254952da0a0efd",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0175.pt": "26aaa42aa9f707ee2e3d9b708193b740368d2b6e1f5e3079936b390f1a8ddf00",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0657.pt": "040eab7b1dbb4e93d5e7d0b1bb4e1546df27b47ea1ecb5dc8cf9251be7da84ec"
+  },
+  "BatchRecords": [
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "model_integrity",
+      "scene_tokens": [
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb"
+      ],
+      "sample_tokens": [
+        "160429309f7b40a8829ef5dbe6d6d1d8",
+        "16113258bf6343c9a308607caf64ecfa",
+        "c04ada66550443a79301167ec1ea42f7",
+        "c714310967cb46a29c647f79a13081ec",
+        "8f9c43cfc6d74bdf908104e4f5d39cfc",
+        "bdde5cc5b60d44fcbb9171a04b5e0460",
+        "2921ce2c454e4360bb89ab966d8c350b",
+        "aaef809b349045ffa2af93a7d1ae0124",
+        "8c230980f5ed4fe8af301b9edd3520d4",
+        "634cc5f8d02740ec877154a67599d159",
+        "260f81a4b336497893ae6d606b81d7c8",
+        "48f36dc70e0045a0842d0e7ff5432297",
+        "b00f16b952c74369be05edbeacd815bb",
+        "3cf81e48627f4a38a44a29c470a8269b",
+        "538d0d339f5142f1aeaf693921f9ba79",
+        "1a2e069d26804d20b4b1fef087b5dd73"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "forward_benchmark",
+      "scene_tokens": [
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb"
+      ],
+      "sample_tokens": [
+        "160429309f7b40a8829ef5dbe6d6d1d8",
+        "16113258bf6343c9a308607caf64ecfa",
+        "c04ada66550443a79301167ec1ea42f7",
+        "c714310967cb46a29c647f79a13081ec",
+        "8f9c43cfc6d74bdf908104e4f5d39cfc",
+        "bdde5cc5b60d44fcbb9171a04b5e0460",
+        "2921ce2c454e4360bb89ab966d8c350b",
+        "aaef809b349045ffa2af93a7d1ae0124",
+        "8c230980f5ed4fe8af301b9edd3520d4",
+        "634cc5f8d02740ec877154a67599d159",
+        "260f81a4b336497893ae6d606b81d7c8",
+        "48f36dc70e0045a0842d0e7ff5432297",
+        "b00f16b952c74369be05edbeacd815bb",
+        "3cf81e48627f4a38a44a29c470a8269b",
+        "538d0d339f5142f1aeaf693921f9ba79",
+        "1a2e069d26804d20b4b1fef087b5dd73"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "candidate_interface",
+      "scene_tokens": [
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb"
+      ],
+      "sample_tokens": [
+        "160429309f7b40a8829ef5dbe6d6d1d8",
+        "16113258bf6343c9a308607caf64ecfa",
+        "c04ada66550443a79301167ec1ea42f7",
+        "c714310967cb46a29c647f79a13081ec"
+      ],
+      "windows": 4
+    },
+    {
+      "fold": 3,
+      "role": "InnerDev",
+      "purpose": "candidate_interface",
+      "scene_tokens": [
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531"
+      ],
+      "sample_tokens": [
+        "47d7743e515b4dc8aca1e81e08776cd0",
+        "0744a7e052bb4d008837e7344628b08b",
+        "3477ca40271d4002aa9a0330b98a2faa",
+        "e98c37beff2b4b5bae2b01fc3a9d9e52"
+      ],
+      "windows": 4
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "optimization",
+      "scene_tokens": [
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb"
+      ],
+      "sample_tokens": [
+        "160429309f7b40a8829ef5dbe6d6d1d8",
+        "16113258bf6343c9a308607caf64ecfa",
+        "c04ada66550443a79301167ec1ea42f7",
+        "c714310967cb46a29c647f79a13081ec",
+        "8f9c43cfc6d74bdf908104e4f5d39cfc",
+        "bdde5cc5b60d44fcbb9171a04b5e0460",
+        "2921ce2c454e4360bb89ab966d8c350b",
+        "aaef809b349045ffa2af93a7d1ae0124",
+        "8c230980f5ed4fe8af301b9edd3520d4",
+        "634cc5f8d02740ec877154a67599d159",
+        "260f81a4b336497893ae6d606b81d7c8",
+        "48f36dc70e0045a0842d0e7ff5432297",
+        "b00f16b952c74369be05edbeacd815bb",
+        "3cf81e48627f4a38a44a29c470a8269b",
+        "538d0d339f5142f1aeaf693921f9ba79",
+        "1a2e069d26804d20b4b1fef087b5dd73"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "optimization",
+      "scene_tokens": [
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "b829278aae2747959f2a95423455bbcb",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc"
+      ],
+      "sample_tokens": [
+        "471e6f0a254f420189cd6ef74532838b",
+        "354d2fd81b0a42d4b803c704a2c138c0",
+        "58ef7d88df2a408792c4b6ef59955af7",
+        "c149b119ccf04ae288441df5dfd0b9e2",
+        "bc867fdd08ad43cdb7f52ff9e32ddcae",
+        "159327d7b41c421185fdc1c6aff944ab",
+        "be5d16b9048147c7be6d09bbd942c72d",
+        "e962e335984b400c8239157c0982f435",
+        "db7511714d964c26a3f35bb706405d16",
+        "a9b53fbb58694e3e95a28b9903007117",
+        "fd54e16002a64ee499c99ea3bd88b783",
+        "f7e5f471f6bb437da03f24c6dff569a0",
+        "5d76d048762e4f12bd814d456e5776b0",
+        "1f1309a70c89443fbf02b5bb96359d52",
+        "0545b9cffcb441769be5f769fad6986d",
+        "2121c15e2d814bfc976a7852411f413f"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "optimization",
+      "scene_tokens": [
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc",
+        "df8dfada99a04a81bd1b102eeb84e9bc"
+      ],
+      "sample_tokens": [
+        "43fc07c017aa426e92fe01d6c25e4d6d",
+        "ef0b07f177ce4c2d8aaa934b2308c3a1",
+        "f25ccf1ac11e424185fd866dc61c15ba",
+        "b2818f4741a943059234cd128bcc7094",
+        "30c1e6befd1447cd9740d46dc4093898",
+        "d3423d16c2aa47709ab578e2f80368a3",
+        "3832462aab7a4d8095005cd65d86f929",
+        "4663c01e97954fbc9af325ad44b0eeec",
+        "e3f986e5d53f416492bdf255e82bff52",
+        "ae63aa9b6855419793440c8dc95c421e",
+        "666185bd9c104aeaa6a55378f3808371",
+        "00fd4e991cda4decb34d1a3c166755f0",
+        "124cda5d2ece4c79ab4500f6d802160d",
+        "521cd379284d4440aa3b3920698de5b8",
+        "d85ea1b83fa546c0b21831398df946ec",
+        "2c05a4aef2224d9682b19ba1eca54f33"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "optimization",
+      "scene_tokens": [
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c"
+      ],
+      "sample_tokens": [
+        "b9d1182c7c6441ac86d13d9e4e7fbeae",
+        "e3822333607844f8afdc115dbcc24ddc",
+        "c9673c9f1a604310827a1b0b4b03e216",
+        "44eb0257e2c841fa82d1e5870feac89d",
+        "b73d77e65879472d93b5d900fdcd8d13",
+        "f70b116799e24e408348463e9cce0f03",
+        "8b2141a8105346c1851b9e80c43fdf92",
+        "f712b2f8934d488abc8bd0acce703428",
+        "cffc0e2b8c78429191e64ca85660f9eb",
+        "03021d2a1efc4a9291c9a1248d916c40",
+        "a8e4db3417c84316b4feec84cc171d48",
+        "d0f2daed000e432aaecbf16c44c8aa65",
+        "c6e59e23c4c2463fabc78a998d596f16",
+        "7b495fe5f8b446bb82a2e51e06db4ed8",
+        "de339550e1af46ea814326f6042b0d50",
+        "8a622afe1c5c4ef0b8ceb9addf736137"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerDev",
+      "purpose": "development_evaluation",
+      "scene_tokens": [
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531"
+      ],
+      "sample_tokens": [
+        "47d7743e515b4dc8aca1e81e08776cd0",
+        "0744a7e052bb4d008837e7344628b08b",
+        "3477ca40271d4002aa9a0330b98a2faa",
+        "e98c37beff2b4b5bae2b01fc3a9d9e52"
+      ],
+      "windows": 4
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "optimization",
+      "scene_tokens": [
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723"
+      ],
+      "sample_tokens": [
+        "142befbcebde45609e4fe018c970e55b",
+        "04cebd7db4ce44369523b4f3f2ec6ce4",
+        "8377679b8d774e909bfbb62392b112ad",
+        "d6254dd0b9bb44ed923ef91b7ee97f98",
+        "218fd6aaa539473a88d11b746a9f91e1",
+        "03a2fe9862d84868a34f79c9aad54b0e",
+        "05acb546bdb541ac9cbff08010eada5e",
+        "e0ca139fcaaa47358702b860f3f07053",
+        "3a1e4ad8c0454dc7af9f83d07ff819dc",
+        "febcf9a7355448d0a53a42c96992f9d5",
+        "64a42ac06621493cbb053f99425713b8",
+        "2dd49299dad84d63a67f62983c622d64",
+        "77c3f5aa740b4c5f825faef5d6d36439",
+        "c263ac8a2ba9401d82705a35d9a22f5f",
+        "31b1a34b4cf14d30abe2610843b04054",
+        "f5f0b05fe2e543f884c4fcedb9f30ef1"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "optimization",
+      "scene_tokens": [
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "ea0979999bf84ee6a6230b1bde7ec723",
+        "7cf32f906f50415786414ce8bbe10e9b",
+        "7cf32f906f50415786414ce8bbe10e9b",
+        "7cf32f906f50415786414ce8bbe10e9b",
+        "7cf32f906f50415786414ce8bbe10e9b",
+        "7cf32f906f50415786414ce8bbe10e9b",
+        "7cf32f906f50415786414ce8bbe10e9b",
+        "7cf32f906f50415786414ce8bbe10e9b"
+      ],
+      "sample_tokens": [
+        "ceb4747854fe4872b3eb91ca810eee39",
+        "18798d742b514a1398343eb47b40dc7d",
+        "8972bf976a2342549bbb5532321d05bd",
+        "8164a7f77cf24fe09ea70e6961324325",
+        "c9cd80422a584651b540385f5a5a53bb",
+        "979994aee7054065a72d889eafee0ab8",
+        "d1067c9dc45540b8a97a30f84a7e9d93",
+        "5568cc3a66264acd83c6edc083f5caee",
+        "5aefac2e3b8d442da9327d4906321ed4",
+        "b37572630e9546dfa1cfea75412769a5",
+        "745791ce3ef34d51ae3ed180b97a5899",
+        "0e0c99c74f8d453098537500ee62c43b",
+        "310a943c9aae4441a9923e65ee2f01e0",
+        "952a31caa0224bf092cde296fcc716e4",
+        "5a5c18f545a54c77b9f64f372e8cdf4c",
+        "3343a448b642431686cc389a46e2cbf9"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerDev",
+      "purpose": "development_evaluation",
+      "scene_tokens": [
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531",
+        "6f5133fe62b240e797bac25aeff8b531"
+      ],
+      "sample_tokens": [
+        "47d7743e515b4dc8aca1e81e08776cd0",
+        "0744a7e052bb4d008837e7344628b08b",
+        "3477ca40271d4002aa9a0330b98a2faa",
+        "e98c37beff2b4b5bae2b01fc3a9d9e52"
+      ],
+      "windows": 4
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "optimization",
+      "scene_tokens": [
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a"
+      ],
+      "sample_tokens": [
+        "ce4151b3453e482fbf3c070321e8e2d5",
+        "1a014bbc9dd14e349e56e1709f50d366",
+        "eb0378d2900f42b28746cc86edadb496",
+        "8a23edb87a3f42539aef4d62b7d0cde0",
+        "a7efded3545d4c10b41c5b95d43dc518",
+        "ada79dd0795747d7aacba608f9b113bf",
+        "7d7ba3eaa9234b5eaf75669cee136361",
+        "d7ac72da932f4db1af96e1395bee4093",
+        "09d8cc873e54426bb4003f6514fe4bfd",
+        "3b87c757dd974c438c7e4a2eb5b17551",
+        "d1e38d2f79eb4e9aa783c7e82760cf2e",
+        "dc627badfe8c40ef97ac35e182244356",
+        "d3807c6116214e22a57529520e114605",
+        "4fcdfd9af9aa4b8baf5e542b95693c05",
+        "eb149c4270fe4f949ceb7d707e252001",
+        "24d602bf59814c03bb8d457f7fa75eb7"
+      ],
+      "windows": 16
+    },
+    {
+      "fold": 3,
+      "role": "InnerTrain",
+      "purpose": "optimization",
+      "scene_tokens": [
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "e329b73341204af7a9de29e65291ce1c",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a",
+        "cf3db17f34cd412faca3535ac8c7069a"
+      ],
+      "sample_tokens": [
+        "ce4151b3453e482fbf3c070321e8e2d5",
+        "1a014bbc9dd14e349e56e1709f50d366",
+        "eb0378d2900f42b28746cc86edadb496",
+        "8a23edb87a3f42539aef4d62b7d0cde0",
+        "a7efded3545d4c10b41c5b95d43dc518",
+        "ada79dd0795747d7aacba608f9b113bf",
+        "7d7ba3eaa9234b5eaf75669cee136361",
+        "d7ac72da932f4db1af96e1395bee4093",
+        "09d8cc873e54426bb4003f6514fe4bfd",
+        "3b87c757dd974c438c7e4a2eb5b17551",
+        "d1e38d2f79eb4e9aa783c7e82760cf2e",
+        "dc627badfe8c40ef97ac35e182244356",
+        "d3807c6116214e22a57529520e114605",
+        "4fcdfd9af9aa4b8baf5e542b95693c05",
+        "eb149c4270fe4f949ceb7d707e252001",
+        "24d602bf59814c03bb8d457f7fa75eb7"
+      ],
+      "windows": 16
+    }
+  ],
+  "BlockedNegativeProbes": [
+    {
+      "path": "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0543.pt",
+      "reason": "OUTER_OR_HEADDEV_SHARD"
+    },
+    {
+      "path": "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0259.pt",
+      "reason": "OUTER_OR_HEADDEV_SHARD"
+    },
+    {
+      "path": "/home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/02_preprocessed/stage3_val_index.csv",
+      "reason": "OFFICIAL_VAL_OR_TEST"
+    },
+    {
+      "path": "/home/lrj/Prediction_Hivt/outputs/stage5a_motion_aware_decoder/07_checkpoints/stage5a_best_overall_minfde.pt",
+      "reason": "NONFOLD_ARRAY_OR_HISTORICAL_CHECKPOINT"
+    }
+  ],
+  "NegativeTests": [
+    {
+      "Probe": "wrong_fold_seed",
+      "Rejected": true,
+      "Reason": "Frozen fold seed mismatch"
+    },
+    {
+      "Probe": "swapped_train_dev_lists",
+      "Rejected": true,
+      "Reason": ""
+    },
+    {
+      "Probe": "historical_output_directory",
+      "Rejected": true,
+      "Reason": ""
+    },
+    {
+      "Probe": "OuterTest_graph_load",
+      "Rejected": true,
+      "Reason": "OuterTest/HeadDev70/old weights cannot be loaded"
+    },
+    {
+      "Probe": "OuterTest_raw_shard_open",
+      "Rejected": true,
+      "Reason": "Stage15A forbidden read/write: OUTER_OR_HEADDEV_SHARD /home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0543.pt"
+    },
+    {
+      "Probe": "QuarantinedHeadDev_graph_load",
+      "Rejected": true,
+      "Reason": "OuterTest/HeadDev70/old weights cannot be loaded"
+    },
+    {
+      "Probe": "QuarantinedHeadDev_raw_shard_open",
+      "Rejected": true,
+      "Reason": "Stage15A forbidden read/write: OUTER_OR_HEADDEV_SHARD /home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0259.pt"
+    },
+    {
+      "Probe": "outer_dataset_creation",
+      "Rejected": true,
+      "Reason": "Only train/dev datasets exist in this entry"
+    },
+    {
+      "Probe": "formal_training_gate",
+      "Rejected": true,
+      "Reason": "Formal fitting is disabled by the Stage15A registration"
+    },
+    {
+      "Probe": "official_VAL_index",
+      "Rejected": true,
+      "Reason": "Stage15A forbidden read/write: OFFICIAL_VAL_OR_TEST /home/lrj/Prediction_Hivt/outputs/stage3_multitype_hivt/02_preprocessed/stage3_val_index.csv"
+    },
+    {
+      "Probe": "old_TRAIN700_checkpoint",
+      "Rejected": true,
+      "Reason": "Stage15A forbidden read/write: NONFOLD_ARRAY_OR_HISTORICAL_CHECKPOINT /home/lrj/Prediction_Hivt/outputs/stage5a_motion_aware_decoder/07_checkpoints/stage5a_best_overall_minfde.pt"
+    },
+    {
+      "Probe": "development_optimizer_use",
+      "Rejected": true,
+      "Reason": "InnerDev must not generate optimizer updates"
+    }
+  ],
+  "ReadPaths": [
+    "models/hivt_runtime/global_interactor.py",
+    "models/hivt_runtime/local_encoder.py",
+    "outputs/stage14a_paper_graph_ablation/02_models/stage14a_nograph.py",
+    "outputs/stage14b_paper_validation/02_models/stage14b_matched_nograph.py",
+    "outputs/stage15a_isolated_predictor/00_manifest/stage15a_common.py",
+    "outputs/stage15a_isolated_predictor/00_manifest/stage15a_protocol.json",
+    "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold3_InnerDev.json",
+    "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold3_InnerTrain.json",
+    "outputs/stage15a_isolated_predictor/02_training/stage15a_train.py",
+    "outputs/stage15a_isolated_predictor/04_checkpoints/fold3/stage15a_preflight_last.pt",
+    "outputs/stage15a_isolated_predictor/04_checkpoints/fold3/stage15a_preflight_nll_best.pt",
+    "outputs/stage15a_isolated_predictor/04_checkpoints/fold3/stage15a_preflight_resume_probe.pt",
+    "outputs/stage15a_isolated_predictor/04_checkpoints/fold3/stage15a_preflight_warm_best.pt",
+    "outputs/stage15a_isolated_predictor/05_candidate_interface/cache/fold3/stage15a_candidates.pt",
+    "outputs/stage15a_isolated_predictor/05_candidate_interface/cache/fold3/stage15a_labels.pt",
+    "outputs/stage15a_isolated_predictor/05_candidate_interface/stage15a_ranking.py",
+    "outputs/stage2c_trainval_vehicle_baseline/02_preprocessed/stage2c_metadata_cache/stage2c_trajectory_metadata.sqlite",
+    "outputs/stage3_multitype_hivt/02_preprocessed/stage3_val_index.csv",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0005.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0175.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0259.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0543.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0575.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0597.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0657.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0737.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-1009.pt",
+    "outputs/stage5a_motion_aware_decoder/07_checkpoints/stage5a_best_overall_minfde.pt",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py"
+  ],
+  "OuterPerformanceComputed": false,
+  "OfficialVALLoaded": false,
+  "HeadDevLoaded": false,
+  "OldWeightsLoaded": false
+}

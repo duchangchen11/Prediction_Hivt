@@ -1,0 +1,14 @@
+{
+  "Status": "AUDIT_ONLY_CORRECTION_REGISTERED_BEFORE_FOLD2_FITTING",
+  "TimestampUTC": "2026-10-09T20:32:02.636325+00:00",
+  "OriginalRegistrationSHA256": "4f1008b48dbadf23a2f7240d8670f90d2d413f2ec4af3274530bc97df0720c82",
+  "ChangedSource": "03_checks/stage15a_checks.py",
+  "OldSHA256": "c59421aa95d37f2ae7607cc44278a88b1c8c7b2667fea886badd2e402f4f1164",
+  "CurrentSHA256": "0a4dd288be7755e0b769c6e01169faefa7de80ce6e7b6c8c61de67124bfca477",
+  "ArchivedOriginal": "07_logs/stage15a_checks_initial_timestamp_audit.py",
+  "Reason": "Remove unregistered0.15sec nominal-frame-duration tolerance; retain exact source timestamp matching and report real jitter",
+  "TrainingSourceChanged": false,
+  "DataOrProtocolChanged": false,
+  "FailedAttemptOptimizerUpdates": 0,
+  "OuterPerformanceRead": false
+}

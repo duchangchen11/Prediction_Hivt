@@ -1,0 +1,624 @@
+{
+  "Status": "PASS",
+  "Fold": 1,
+  "SourcePhase": "original_nll",
+  "ActualNLLUpdates": 2,
+  "NLLCheckpointSHA256": "cf29fabd5b9e3c52c206a39c17090df931fa4bed7c09b76f1fc9db023860dafb",
+  "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+  "OptimizerAndRNGLoaded": true,
+  "CandidateCacheBytes": 646206,
+  "CandidateCacheSHA256": "bfbe5b7ec1bbf1ccaf052f247277172a40c3699ae70b0d2697ac69628d0f905d",
+  "NLLWeightsProduceK6": true,
+  "K": 6,
+  "HistoryOnlyInput": true,
+  "GTFeatureMaxDiff": 0.0,
+  "NormalizationSHA256": "fbc6a5e2d26c7a68c9e718d9e74e3b5e906683ecc990fb82edbf2d5d76b164fe",
+  "NormalizationFitRole": "InnerTrain subset only; never formal",
+  "FreshHeadInitialization": true,
+  "HistoricalHeadWeightsLoaded": false,
+  "HeadOptimizerUpdates": 0,
+  "OuterInferenceRuns": 0,
+  "PredictorOptimizerUpdates": 0,
+  "Rows": [
+    {
+      "Model": "R2",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "370c89de894d4b639b55c6f0709bfca9",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "370c89de894d4b639b55c6f0709bfca9",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "370c89de894d4b639b55c6f0709bfca9",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "370c89de894d4b639b55c6f0709bfca9",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "370c89de894d4b639b55c6f0709bfca9",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "370c89de894d4b639b55c6f0709bfca9",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "e8bfc37476ad4b5e9bbeab8b76c0bd60",
+      "TargetCount": 26,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "e8bfc37476ad4b5e9bbeab8b76c0bd60",
+      "TargetCount": 26,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "e8bfc37476ad4b5e9bbeab8b76c0bd60",
+      "TargetCount": 26,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "e8bfc37476ad4b5e9bbeab8b76c0bd60",
+      "TargetCount": 26,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "e8bfc37476ad4b5e9bbeab8b76c0bd60",
+      "TargetCount": 26,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "e8bfc37476ad4b5e9bbeab8b76c0bd60",
+      "TargetCount": 26,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "77738237fd8b49b5a7f21d6580825e56",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "77738237fd8b49b5a7f21d6580825e56",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "77738237fd8b49b5a7f21d6580825e56",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "77738237fd8b49b5a7f21d6580825e56",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "77738237fd8b49b5a7f21d6580825e56",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "77738237fd8b49b5a7f21d6580825e56",
+      "TargetCount": 25,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "a1311722c1de4bb3b4a9d36a6246da9d",
+      "TargetCount": 23,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "a1311722c1de4bb3b4a9d36a6246da9d",
+      "TargetCount": 23,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "a1311722c1de4bb3b4a9d36a6246da9d",
+      "TargetCount": 23,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "a1311722c1de4bb3b4a9d36a6246da9d",
+      "TargetCount": 23,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "a1311722c1de4bb3b4a9d36a6246da9d",
+      "TargetCount": 23,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "4f18d9a7ed374a0fb93c026589dcf9a0",
+      "sample_token": "a1311722c1de4bb3b4a9d36a6246da9d",
+      "TargetCount": 23,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "86b70d00d4eb420d859c3c6024e256d6",
+      "TargetCount": 47,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "86b70d00d4eb420d859c3c6024e256d6",
+      "TargetCount": 47,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "86b70d00d4eb420d859c3c6024e256d6",
+      "TargetCount": 47,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "86b70d00d4eb420d859c3c6024e256d6",
+      "TargetCount": 47,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "86b70d00d4eb420d859c3c6024e256d6",
+      "TargetCount": 47,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "86b70d00d4eb420d859c3c6024e256d6",
+      "TargetCount": 47,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "c370568cda2d4161acd15ace5fcb1822",
+      "TargetCount": 53,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "c370568cda2d4161acd15ace5fcb1822",
+      "TargetCount": 53,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "c370568cda2d4161acd15ace5fcb1822",
+      "TargetCount": 53,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "c370568cda2d4161acd15ace5fcb1822",
+      "TargetCount": 53,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "c370568cda2d4161acd15ace5fcb1822",
+      "TargetCount": 53,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "c370568cda2d4161acd15ace5fcb1822",
+      "TargetCount": 53,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "02f64cc49e0640f99b3f54903224c610",
+      "TargetCount": 56,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "02f64cc49e0640f99b3f54903224c610",
+      "TargetCount": 56,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "02f64cc49e0640f99b3f54903224c610",
+      "TargetCount": 56,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "02f64cc49e0640f99b3f54903224c610",
+      "TargetCount": 56,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "02f64cc49e0640f99b3f54903224c610",
+      "TargetCount": 56,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "02f64cc49e0640f99b3f54903224c610",
+      "TargetCount": 56,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "9165015b97254c078758133676e17804",
+      "TargetCount": 54,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "9165015b97254c078758133676e17804",
+      "TargetCount": 54,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "9165015b97254c078758133676e17804",
+      "TargetCount": 54,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "9165015b97254c078758133676e17804",
+      "TargetCount": 54,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "9165015b97254c078758133676e17804",
+      "TargetCount": 54,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerDev",
+      "scene_token": "7ad94b6e54f641208bf59cba6bb55220",
+      "sample_token": "9165015b97254c078758133676e17804",
+      "TargetCount": 54,
+      "BicycleTargetCount": 0,
+      "PredictorStateSHA256": "0a506bb6c99d0f131e1bc233eef9c3717e8cbf1921868f5691af0e09b0611996",
+      "OriginalModeLogitPairing": "PASS",
+      "BicycleRouting": "PASS"
+    }
+  ],
+  "ReadPaths": [
+    "models/hivt_runtime/global_interactor.py",
+    "models/hivt_runtime/local_encoder.py",
+    "outputs/stage14a_paper_graph_ablation/02_models/stage14a_nograph.py",
+    "outputs/stage14b_paper_validation/02_models/stage14b_matched_nograph.py",
+    "outputs/stage15a_isolated_predictor/00_manifest/stage15a_common.py",
+    "outputs/stage15a_isolated_predictor/00_manifest/stage15a_protocol.json",
+    "outputs/stage15a_isolated_predictor/02_training/stage15a_train.py",
+    "outputs/stage15a_isolated_predictor/04_checkpoints/fold1/stage15a_preflight_nll_best.pt",
+    "outputs/stage15a_isolated_predictor/05_candidate_interface/cache/fold1/stage15a_trained_candidates.pt",
+    "outputs/stage15a_isolated_predictor/05_candidate_interface/stage15a_fold1_trained_normalization.json",
+    "outputs/stage15a_isolated_predictor/05_candidate_interface/stage15a_ranking.py",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0064.pt",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0530.pt",
+    "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py"
+  ],
+  "LoadedPayloads": [
+    {
+      "path": "outputs/stage15a_isolated_predictor/04_checkpoints/fold1/stage15a_preflight_nll_best.pt",
+      "scope": "preflight_checkpoint"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0530.pt",
+      "scope": "graph"
+    },
+    {
+      "path": "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0064.pt",
+      "scope": "graph"
+    }
+  ],
+  "BatchRecords": [
+    {
+      "fold": 1,
+      "role": "InnerTrain",
+      "purpose": "candidate_interface",
+      "scene_tokens": [
+        "4f18d9a7ed374a0fb93c026589dcf9a0",
+        "4f18d9a7ed374a0fb93c026589dcf9a0",
+        "4f18d9a7ed374a0fb93c026589dcf9a0",
+        "4f18d9a7ed374a0fb93c026589dcf9a0"
+      ],
+      "sample_tokens": [
+        "370c89de894d4b639b55c6f0709bfca9",
+        "e8bfc37476ad4b5e9bbeab8b76c0bd60",
+        "77738237fd8b49b5a7f21d6580825e56",
+        "a1311722c1de4bb3b4a9d36a6246da9d"
+      ],
+      "windows": 4
+    },
+    {
+      "fold": 1,
+      "role": "InnerDev",
+      "purpose": "candidate_interface",
+      "scene_tokens": [
+        "7ad94b6e54f641208bf59cba6bb55220",
+        "7ad94b6e54f641208bf59cba6bb55220",
+        "7ad94b6e54f641208bf59cba6bb55220",
+        "7ad94b6e54f641208bf59cba6bb55220"
+      ],
+      "sample_tokens": [
+        "86b70d00d4eb420d859c3c6024e256d6",
+        "c370568cda2d4161acd15ace5fcb1822",
+        "02f64cc49e0640f99b3f54903224c610",
+        "9165015b97254c078758133676e17804"
+      ],
+      "windows": 4
+    }
+  ],
+  "LoadedShardSHA256": {
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0530.pt": "23e483eccc120212bf27d8fdffc9061a76426454cabc058b49e3cfc01afe9719",
+    "outputs/stage3_multitype_hivt/02_preprocessed/train/stage3_scene-0064.pt": "619b54731d27acbc04f80a2c52713ab6328b467df4872bdb425645f1cc33ad69"
+  }
+}

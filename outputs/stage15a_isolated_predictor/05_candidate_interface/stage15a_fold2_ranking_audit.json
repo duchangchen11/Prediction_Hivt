@@ -1,0 +1,572 @@
+{
+  "Status": "PASS",
+  "ParameterCounts": {
+    "R2": 673,
+    "NG-A": 7425,
+    "NG-C": 7425,
+    "G-A": 24066,
+    "G-C": 24066,
+    "Matched-NG-C": 24001
+  },
+  "RawFeatureShapes": {
+    "node": [
+      44,
+      9,
+      6,
+      15
+    ],
+    "edge": [
+      44,
+      6,
+      8,
+      6,
+      17
+    ],
+    "neighbor_mask": [
+      44,
+      8
+    ],
+    "R2": [
+      44,
+      6,
+      19
+    ]
+  },
+  "K": 6,
+  "NodeDim": 15,
+  "EdgeDim": 17,
+  "R2Dim": 19,
+  "MapInputs": "None; frozen G1 has no semantic/map module",
+  "ModesAndLogitsAligned": true,
+  "GTPoisonFeatureMaxDiff": 0.0,
+  "Normalization": {
+    "Fold": 2,
+    "fit_partition": "InnerTrain",
+    "preflight_subset_only": true,
+    "formal_eligible": false,
+    "fit_scene_tokens": [
+      "bcb05cffb5814973a6cff4fbdca2b99b"
+    ],
+    "fit_actor_windows": 76,
+    "graph": {
+      "0": {
+        "3": {
+          "count": 4104,
+          "mean": 0.383435393420373,
+          "std": 0.4924406788592464
+        },
+        "4": {
+          "count": 4104,
+          "mean": 0.16666666664215818,
+          "std": 0.05473913885095802
+        },
+        "5": {
+          "count": 4104,
+          "mean": 0.5544615587327161,
+          "std": 1.03765078320708
+        },
+        "6": {
+          "count": 4104,
+          "mean": 2.0518479451512626,
+          "std": 4.242367698380436
+        },
+        "7": {
+          "count": 4104,
+          "mean": 2.0715879150611833,
+          "std": 4.234753374220935
+        },
+        "8": {
+          "count": 4104,
+          "mean": 25.72405136948847,
+          "std": 23.690089342750912
+        },
+        "9": {
+          "count": 4104,
+          "mean": 9.524286932836615,
+          "std": 11.685837865961654
+        },
+        "10": {
+          "count": 4104,
+          "mean": 1.079986474795365,
+          "std": 0.39446875288576083
+        },
+        "11": {
+          "count": 4104,
+          "mean": 17.713392508657353,
+          "std": 2.745067625095583
+        },
+        "12": {
+          "count": 4104,
+          "mean": 2.9522320824234107,
+          "std": 0.45751127152637194
+        },
+        "13": {
+          "count": 4104,
+          "mean": -0.0621233073279885,
+          "std": 0.527586548405637
+        },
+        "14": {
+          "count": 4104,
+          "mean": 0.3205077980426467,
+          "std": 0.7842626347937489
+        }
+      },
+      "1": {
+        "0": {
+          "count": 21888,
+          "mean": 11.42227032310195,
+          "std": 8.948444777924848
+        },
+        "1": {
+          "count": 21888,
+          "mean": 0.5043935777656244,
+          "std": 0.2595790372168435
+        },
+        "2": {
+          "count": 21888,
+          "mean": 13.039148094048125,
+          "std": 9.134780214544836
+        },
+        "3": {
+          "count": 21888,
+          "mean": 13.043896787019367,
+          "std": 9.010739212201536
+        },
+        "4": {
+          "count": 21888,
+          "mean": 13.033997854448675,
+          "std": 9.159683076198911
+        },
+        "5": {
+          "count": 21888,
+          "mean": -0.03963323068357264,
+          "std": 0.6253274737402656
+        },
+        "6": {
+          "count": 21888,
+          "mean": 0.1509242948668224,
+          "std": 0.7646022591890733
+        },
+        "7": {
+          "count": 21888,
+          "mean": 0.6716220774343602,
+          "std": 0.493832706190793
+        },
+        "8": {
+          "count": 21888,
+          "mean": -0.0016498221353286715,
+          "std": 0.13937727933763136
+        },
+        "9": {
+          "count": 21888,
+          "mean": 0.16666666655842083,
+          "std": 0.054738317683895414
+        },
+        "10": {
+          "count": 21888,
+          "mean": 0.16666666731205687,
+          "std": 0.05474570774404327
+        }
+      }
+    },
+    "R2": {
+      "mean": [
+        0.4868421052631579,
+        0.5131578947368421,
+        0.0,
+        0.4859112550529014,
+        0.9926205263963264,
+        1.0027072384806448,
+        0.36327731841358174,
+        0.16666666731205687,
+        1.0629893342082046,
+        17.830309508139628,
+        1.485859125329737,
+        2.593965218778242,
+        3.001603897203479,
+        11.412949007854127,
+        4.31009805058701,
+        0.3817065852841829,
+        0.08366245746885086,
+        0.04765485932861312,
+        0.36110000424414346
+      ],
+      "std": [
+        0.49982683982164794,
+        0.49982683982164794,
+        0.0,
+        0.5337025462941761,
+        0.9248913997965634,
+        0.9168341564799802,
+        0.48933413616253657,
+        0.05474570774404305,
+        0.38943462668396994,
+        2.621049977949428,
+        0.21842082983120412,
+        0.4631071594279589,
+        3.3138615654740047,
+        6.432262682198247,
+        3.6887642850800524,
+        0.36665502631176217,
+        0.09782717759662275,
+        0.09455994391315879,
+        0.38000016237503903
+      ]
+    },
+    "epsilon": 1e-06,
+    "std_ddof": 0,
+    "InnerDev_or_Outer_or_HeadDev_used": false
+  },
+  "RejectedDevNormalization": {
+    "Probe": "development_normalization_fit",
+    "Rejected": true,
+    "Reason": ""
+  },
+  "HeadBackwardFinite": true,
+  "HistoricalHeadWeightsLoaded": false,
+  "HeadOptimizerUpdates": 0,
+  "BicycleFutureRoute": "new same-fold R2 after future authorized fitting",
+  "PredictorGradientsZeroAndStateUnchanged": true,
+  "ProbeResults": [
+    {
+      "Model": "R2",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 44,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 44,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 44,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 44,
+      "ModePermutationMaxDiff": 1.1920928955078125e-07
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 44,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 44,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 48,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 48,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 48,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 48,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 48,
+      "ModePermutationMaxDiff": 1.1920928955078125e-07
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 48,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 45,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 45,
+      "ModePermutationMaxDiff": 2.9802322387695312e-08
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 45,
+      "ModePermutationMaxDiff": 7.450580596923828e-09
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 45,
+      "ModePermutationMaxDiff": 1.1920928955078125e-07
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 45,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 45,
+      "ModePermutationMaxDiff": 1.4901161193847656e-08
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 46,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 46,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 46,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 46,
+      "ModePermutationMaxDiff": 1.1920928955078125e-07
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 46,
+      "ModePermutationMaxDiff": 1.1920928955078125e-07
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "Targets": 46,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 18,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 18,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 18,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 18,
+      "ModePermutationMaxDiff": 2.9802322387695312e-08
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 18,
+      "ModePermutationMaxDiff": 1.1920928955078125e-07
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 18,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 19,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 19,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 19,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 19,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 19,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 19,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 20,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 20,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 20,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 20,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 20,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 20,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "R2",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 22,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-A",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 22,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "NG-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 22,
+      "ModePermutationMaxDiff": 0.0
+    },
+    {
+      "Model": "G-A",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 22,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "G-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 22,
+      "ModePermutationMaxDiff": 5.960464477539063e-08
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "Targets": 22,
+      "ModePermutationMaxDiff": 0.0
+    }
+  ],
+  "CandidateCacheBytes": 381778,
+  "LabelSidecarBytes": 33010,
+  "CandidateSHA256": "ca5b8d356872b8126fe5b9735b86772322c9b743846c8880f412cad7c6b8716b",
+  "LabelSHA256": "ea87810e4a9a5f958ed514571c9fd4547fd528ee2341994ca5e24f1c05da1d2e"
+}

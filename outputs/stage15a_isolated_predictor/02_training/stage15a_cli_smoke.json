@@ -1,0 +1,149 @@
+{
+  "Status": "PASS",
+  "Records": [
+    {
+      "fold": 1,
+      "command": [
+        "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+        "outputs/stage15a_isolated_predictor/02_training/stage15a_train.py",
+        "--fold",
+        "1",
+        "--seed",
+        "2022",
+        "--training-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold1_InnerTrain.json",
+        "--development-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold1_InnerDev.json",
+        "--output-dir",
+        "outputs/stage15a_isolated_predictor/02_training/entry_smoke/fold1",
+        "--mode",
+        "describe"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "STAGE15A_ENTRY_DESCRIPTION_PASS 1\n",
+      "stderr": "",
+      "formal_fitting_executed": false
+    },
+    {
+      "fold": 1,
+      "command": [
+        "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+        "outputs/stage15a_isolated_predictor/02_training/stage15a_train.py",
+        "--fold",
+        "1",
+        "--seed",
+        "2022",
+        "--training-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold1_InnerTrain.json",
+        "--development-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold1_InnerDev.json",
+        "--output-dir",
+        "outputs/stage15a_isolated_predictor/02_training/entry_smoke/fold1",
+        "--mode",
+        "formal"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/lrj/Prediction_Hivt/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py\", line 294, in <module>\n    main()\n  File \"/home/lrj/Prediction_Hivt/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py\", line 275, in main\n    raise RuntimeError(\"Stage15A does not authorize full predictor fitting; STOP for brainAI review\")\nRuntimeError: Stage15A does not authorize full predictor fitting; STOP for brainAI review\n",
+      "formal_fitting_executed": false
+    },
+    {
+      "fold": 2,
+      "command": [
+        "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+        "outputs/stage15a_isolated_predictor/02_training/stage15a_train.py",
+        "--fold",
+        "2",
+        "--seed",
+        "2122",
+        "--training-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold2_InnerTrain.json",
+        "--development-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold2_InnerDev.json",
+        "--output-dir",
+        "outputs/stage15a_isolated_predictor/02_training/entry_smoke/fold2",
+        "--mode",
+        "describe"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "STAGE15A_ENTRY_DESCRIPTION_PASS 2\n",
+      "stderr": "",
+      "formal_fitting_executed": false
+    },
+    {
+      "fold": 2,
+      "command": [
+        "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+        "outputs/stage15a_isolated_predictor/02_training/stage15a_train.py",
+        "--fold",
+        "2",
+        "--seed",
+        "2122",
+        "--training-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold2_InnerTrain.json",
+        "--development-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold2_InnerDev.json",
+        "--output-dir",
+        "outputs/stage15a_isolated_predictor/02_training/entry_smoke/fold2",
+        "--mode",
+        "formal"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/lrj/Prediction_Hivt/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py\", line 294, in <module>\n    main()\n  File \"/home/lrj/Prediction_Hivt/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py\", line 275, in main\n    raise RuntimeError(\"Stage15A does not authorize full predictor fitting; STOP for brainAI review\")\nRuntimeError: Stage15A does not authorize full predictor fitting; STOP for brainAI review\n",
+      "formal_fitting_executed": false
+    },
+    {
+      "fold": 3,
+      "command": [
+        "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+        "outputs/stage15a_isolated_predictor/02_training/stage15a_train.py",
+        "--fold",
+        "3",
+        "--seed",
+        "2222",
+        "--training-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold3_InnerTrain.json",
+        "--development-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold3_InnerDev.json",
+        "--output-dir",
+        "outputs/stage15a_isolated_predictor/02_training/entry_smoke/fold3",
+        "--mode",
+        "describe"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "STAGE15A_ENTRY_DESCRIPTION_PASS 3\n",
+      "stderr": "",
+      "formal_fitting_executed": false
+    },
+    {
+      "fold": 3,
+      "command": [
+        "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+        "outputs/stage15a_isolated_predictor/02_training/stage15a_train.py",
+        "--fold",
+        "3",
+        "--seed",
+        "2222",
+        "--training-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold3_InnerTrain.json",
+        "--development-scenes",
+        "outputs/stage15a_isolated_predictor/01_data_isolation/stage15a_fold3_InnerDev.json",
+        "--output-dir",
+        "outputs/stage15a_isolated_predictor/02_training/entry_smoke/fold3",
+        "--mode",
+        "formal"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/lrj/Prediction_Hivt/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py\", line 294, in <module>\n    main()\n  File \"/home/lrj/Prediction_Hivt/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py\", line 275, in main\n    raise RuntimeError(\"Stage15A does not authorize full predictor fitting; STOP for brainAI review\")\nRuntimeError: Stage15A does not authorize full predictor fitting; STOP for brainAI review\n",
+      "formal_fitting_executed": false
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "Status": "INITIAL_AUDIT_FAILURE_BEFORE_OPTIMIZATION",
+  "Fold": 2,
+  "ActualOptimizerUpdates": 0,
+  "Failure": "Unregistered extra0.15sec nominal-duration tolerance; exact source timestamps already matched",
+  "FailedSourceSHA256": "c59421aa95d37f2ae7607cc44278a88b1c8c7b2667fea886badd2e402f4f1164",
+  "SampleTimes": [
+    {
+      "role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "sample_token": "a34813ab9ece48799caca1d6c8432b8d",
+      "history_times": [
+        -2.001164,
+        -1.500723,
+        -1.000282,
+        -0.500424,
+        0.0
+      ],
+      "future_times": [
+        0.499908,
+        1.049523,
+        1.549406,
+        2.049277,
+        2.648688,
+        3.148569,
+        3.648432,
+        4.148315,
+        4.648878,
+        5.148617,
+        5.74805,
+        6.248027
+      ],
+      "deviation_from_nominal2s": -0.001164000000000165,
+      "deviation_from_nominal6s": 0.24802700000000044
+    },
+    {
+      "role": "InnerTrain",
+      "scene_token": "bcb05cffb5814973a6cff4fbdca2b99b",
+      "sample_token": "79dd4eafd264491c9e212e618cab82c8",
+      "history_times": [
+        -2.049277,
+        -1.549369,
+        -0.999754,
+        -0.499871,
+        0.0
+      ],
+      "future_times": [
+        0.599411,
+        1.099292,
+        1.599155,
+        2.099038,
+        2.599601,
+        3.09934,
+        3.698773,
+        4.19875,
+        4.699059,
+        5.199479,
+        5.700477,
+        6.200362
+      ],
+      "deviation_from_nominal2s": -0.049277000000000015,
+      "deviation_from_nominal6s": 0.20036200000000015
+    },
+    {
+      "role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "sample_token": "11c869e882034b69b67b121c9deabd9e",
+      "history_times": [
+        -1.89885,
+        -1.499068,
+        -0.99975,
+        -0.499872,
+        0.0
+      ],
+      "future_times": [
+        0.400364,
+        0.85045,
+        1.350893,
+        1.851322,
+        2.401508,
+        2.901382,
+        3.401258,
+        3.851373,
+        4.401071,
+        4.900895,
+        5.500862,
+        6.000764
+      ],
+      "deviation_from_nominal2s": 0.10115000000000007,
+      "deviation_from_nominal6s": 0.000764000000000209
+    },
+    {
+      "role": "InnerDev",
+      "scene_token": "798e8504b4364d378270333a349ef508",
+      "sample_token": "78ba8faa832d4a4197d5bd3128943327",
+      "history_times": [
+        -1.899432,
+        -1.400114,
+        -0.900236,
+        -0.400364,
+        0.0
+      ],
+      "future_times": [
+        0.450086,
+        0.950529,
+        1.450958,
+        2.001144,
+        2.501018,
+        3.000894,
+        3.451009,
+        4.000707,
+        4.500531,
+        5.100498,
+        5.6004,
+        6.200888
+      ],
+      "deviation_from_nominal2s": 0.10056799999999999,
+      "deviation_from_nominal6s": 0.20088799999999996
+    }
+  ],
+  "ScientificDataChanged": false,
+  "OuterMetricsRead": false
+}

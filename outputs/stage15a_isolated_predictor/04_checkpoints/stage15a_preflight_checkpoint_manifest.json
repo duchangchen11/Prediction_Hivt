@@ -1,0 +1,68 @@
+{
+  "Status": "PASS",
+  "Checkpoints": {
+    "04_checkpoints/fold1/stage15a_preflight_last.pt": {
+      "SHA256": "bb0f97644976ddff34ff79493e567a95494e8c391b2786482cf67dbbd6b0bbf2",
+      "Bytes": 8197516,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold1/stage15a_preflight_nll_best.pt": {
+      "SHA256": "cf29fabd5b9e3c52c206a39c17090df931fa4bed7c09b76f1fc9db023860dafb",
+      "Bytes": 8202152,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold1/stage15a_preflight_warm_best.pt": {
+      "SHA256": "081b758dda760d9a669b726a27113ca00398c4a8ca9dc704b9174f145c278492",
+      "Bytes": 8203311,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold1/stage15a_preflight_resume_probe.pt": {
+      "SHA256": "883c82dff9c792b589c0dee863081ce5da087bf186720119f8a0c9609165e2b5",
+      "Bytes": 8206788,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold2/stage15a_preflight_last.pt": {
+      "SHA256": "42f49e53cd4f1ea073d93c3d769bf2708530c110a816c7c74bffef18cd4725b4",
+      "Bytes": 8197516,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold2/stage15a_preflight_nll_best.pt": {
+      "SHA256": "4c6b0dcb642821aed282bdcb8b1c00270cdbac244ddd5120095f71f6b5152718",
+      "Bytes": 8202152,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold2/stage15a_preflight_warm_best.pt": {
+      "SHA256": "0f6995bab3eb453ca7926befe3a89d978687b925054c3040c75b3ee00864b1fa",
+      "Bytes": 8203311,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold2/stage15a_preflight_resume_probe.pt": {
+      "SHA256": "87034089840e6a512b0a2d274f0cedd80eb6fd8b9ee1369920e766c7ec61cb44",
+      "Bytes": 8206788,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold3/stage15a_preflight_last.pt": {
+      "SHA256": "7f52dd333d8eb52f3914c43df41efc41da7ea6665c9516fea7ca2657b0d23a14",
+      "Bytes": 8197516,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold3/stage15a_preflight_nll_best.pt": {
+      "SHA256": "57019088a976b81adc0e7840aa26b272ce5a429efbbad1813ac8635d3419fe1b",
+      "Bytes": 8202152,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold3/stage15a_preflight_warm_best.pt": {
+      "SHA256": "a4f829f59f826d4187fad6a98175a656891324d0a7cc0da99d0b35c5daa49f6b",
+      "Bytes": 8203311,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    },
+    "04_checkpoints/fold3/stage15a_preflight_resume_probe.pt": {
+      "SHA256": "4e086d3f3759010e7087d0e57b7bdb924a3b3e0571be2aba2cfbed235581a065",
+      "Bytes": 8206788,
+      "Scope": "PREFLIGHT_ONLY_NOT_ELIGIBLE_FOR_FORMAL_TRAINING"
+    }
+  },
+  "FormalEligible": false,
+  "FormalHiVTRuns": 0,
+  "FutureStage15BMustStartFresh": true
+}
