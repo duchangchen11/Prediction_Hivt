@@ -1,0 +1,701 @@
+你现在负责 SCI 小论文的补充实验。
+
+研究仓库：
+/home/lrj/Prediction_Hivt
+
+GitHub：
+https://github.com/duchangchen11/Prediction_Hivt
+
+本阶段名称：
+
+Stage14A
+Paper-Oriented Controlled Graph Ablation
+
+本阶段目标：
+
+为 SCI 小论文补充严格的受控消融证据。
+
+注意：
+大脑AI负责论文写作和科研判断。
+执行AI只负责代码、实验、核验和结果上传。
+
+==================================================
+一、研究背景
+==================================================
+
+论文暂定题目：
+
+Multi-Modal Trajectory Prediction for
+Heterogeneous Traffic Agents via
+Future Interaction Graphs and
+Error-Aware Ranking
+
+已有模型：
+
+Stage5A：
+冻结HiVT六模态候选生成器。
+
+Stage8 G1：
+Future Interaction Graph排序器。
+
+Stage11B C：
+Normalized Error-Aware Ranking。
+
+当前论文最需要回答：
+
+Future Interaction Graph
+是否具有独立的预测收益？
+
+Normalized Error-Aware Ranking
+是否只有结合交互图才有效？
+
+==================================================
+二、本次实验的核心设计
+==================================================
+
+建立2×2受控实验：
+
+模型1：
+NoGraph + SoftCE
+
+模型2：
+NoGraph + Error-Aware Ranking
+
+模型3：
+Future Interaction Graph + SoftCE
+
+模型4：
+Future Interaction Graph + Error-Aware Ranking
+
+对应：
+
+NG-A
+NG-C
+G-A
+G-C
+
+其中：
+
+G-A：
+直接复用Stage11B的A模型。
+
+G-C：
+直接复用Stage11B的C模型。
+
+禁止重复训练G-A和G-C。
+
+只需要新训练：
+
+NG-A
+NG-C。
+
+每个模型训练3个fold。
+
+总计新增6次正式训练。
+
+==================================================
+三、Git要求
+==================================================
+
+当前已知最新历史基础：
+
+stage13a/prediction-to-ego-planning-audit
+
+commit：
+88b83b7114e72b91544d4566cab26700c1b452dc
+
+开始前核对远程分支和本地状态。
+
+新建实验分支：
+
+stage14a/paper-graph-ablation
+
+禁止：
+
+覆盖历史实验
+修改历史checkpoint
+修改Stage11B指标
+删除Stage12失败实验
+merge main。
+
+所有新增代码与输出统一放在：
+
+outputs/stage14a_paper_graph_ablation/
+
+==================================================
+四、冻结预测器
+==================================================
+
+复用Stage5A原始checkpoint。
+
+冻结：
+
+全部HiVT参数
+全部候选轨迹
+原始模式分数。
+
+不训练候选轨迹生成器。
+
+不修改六条候选轨迹坐标。
+
+目标：
+
+只评估候选模式排序。
+
+所有模型必须使用
+完全相同的原始候选轨迹。
+
+==================================================
+五、NoGraph模型定义
+==================================================
+
+使用Stage8 G1相同的：
+
+Node Encoder
+LayerNorm
+Scoring Head
+Original Logit Residual。
+
+唯一主要区别：
+
+不计算Future Interaction Message。
+
+即：
+
+interaction_message = 0。
+
+因此：
+
+NoGraph的评分依赖
+目标参与者自身的候选模式特征。
+
+G1的评分额外使用
+其他参与者未来候选模式之间的交互信息。
+
+严格核对：
+
+node embedding维度一致
+scoring head结构一致
+初始化规则一致
+输入候选一致
+训练损失一致
+训练数据一致。
+
+NoGraph不需要使用
+无效的交互网络参数参加优化。
+
+同时报告：
+
+总参数量
+实际可训练参数量
+推理计算开销。
+
+不得通过破坏G1输入、
+随机置乱邻居或者删除其他数据，
+伪装成NoGraph消融。
+
+==================================================
+六、受控变量
+==================================================
+
+沿用Stage11B：
+
+HeadTrain630场景
+
+3-fold场景划分
+
+每fold：
+378 InnerTrain
+42 InnerDev
+210 OuterTest。
+
+使用原始：
+
+fold split
+normalization protocol
+random seed
+batch ordering
+optimizer
+learning rate
+weight decay
+checkpoint selection
+early stopping。
+
+不允许根据OuterTest结果
+更改超参数。
+
+NoGraph的训练初始化
+必须与对应fold G1
+共享模块的初始化一致。
+
+==================================================
+七、损失函数
+==================================================
+
+NG-A：
+
+使用Stage11B A的SoftCE。
+
+NG-C：
+
+使用Stage11B C的
+Normalized Error-Aware Ranking。
+
+完全复用原始代码定义。
+
+不得重新设计新的loss。
+
+不得修改normalization scale。
+
+不得添加类别权重。
+
+不得修改1m下限。
+
+==================================================
+八、车辆、行人和自行车
+==================================================
+
+Vehicle：
+
+使用对应模型的排序结果。
+
+Pedestrian：
+
+使用对应模型的排序结果。
+
+Bicycle：
+
+沿用Stage11B提前确定的
+对应fold R2路由。
+
+所有四个模型的Bicycle输出
+必须完全一致。
+
+同时明确：
+
+这是一项预设的类别路由策略，
+不能声称Graph模型本身
+改善了Bicycle。
+
+==================================================
+九、训练前检查
+==================================================
+
+正式训练之前：
+
+1. 冻结实验协议。
+2. 核验历史checkpoint SHA256。
+3. 核验630场景划分。
+4. 检查模型输入无未来GT。
+5. 确保NoGraph关闭交互消息。
+6. 检查两种损失与历史一致。
+7. 运行tiny overfit。
+8. 确认梯度只更新新增排序网络。
+9. 确认预测候选坐标完全不变。
+
+任一关键完整性检查失败：
+
+立即STOP。
+
+不得带着问题继续正式训练。
+
+==================================================
+十、正式训练
+==================================================
+
+只训练：
+
+Fold1 NG-A
+Fold1 NG-C
+
+Fold2 NG-A
+Fold2 NG-C
+
+Fold3 NG-A
+Fold3 NG-C。
+
+采用Stage11B对应配置。
+
+每个模型：
+
+独立初始化
+独立训练
+InnerDev选checkpoint。
+
+所有6个checkpoint必须先冻结，
+之后才允许统一评估OuterTest。
+
+不得查看OuterTest指标
+来决定后续训练轮数。
+
+==================================================
+十一、评价指标
+==================================================
+
+主指标：
+
+Top1FDE。
+
+辅助指标：
+
+Top1ADE
+OracleGap
+HitRate
+minFDE6
+MR6。
+
+分组：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle
+MovingVehicle
+StoppedVehicle
+ParkedVehicle。
+
+所有指标：
+
+单位
+样本数
+分母
+评估mask
+
+必须与Stage11B保持一致。
+
+==================================================
+十二、必须完成的比较
+==================================================
+
+比较A：
+
+NG-C vs NG-A
+
+回答：
+
+没有未来交互图时，
+Error-Aware Ranking是否有效？
+
+比较B：
+
+G-A vs NG-A
+
+回答：
+
+采用SoftCE时，
+未来交互图是否具有增量价值？
+
+比较C：
+
+G-C vs NG-C
+
+回答：
+
+采用Error-Aware Ranking时，
+未来交互图是否仍具有增量价值？
+
+比较D：
+
+G-C vs G-A
+
+回答：
+
+有未来交互图时，
+Error-Aware Ranking是否改善表现？
+
+比较E：
+
+报告Graph与Loss之间的
+描述性交互效应。
+
+注意：
+
+不能只比较G-C与R2，
+就认定Graph与Loss均有效。
+
+==================================================
+十三、统计分析
+==================================================
+
+沿用Stage11B：
+
+paired scene-cluster bootstrap。
+
+建议保持：
+
+2000次重采样。
+
+以scene为聚类单位。
+
+输出：
+
+Delta Top1FDE
+95% CI
+每fold差异
+完整样本量。
+
+对于预先指定的多重主要比较，
+应在协议冻结时明确
+多重比较修正方式。
+
+禁止：
+
+actor独立bootstrap。
+
+禁止：
+
+根据显著性结果
+事后更换主要比较。
+
+==================================================
+十四、模式切换分析
+==================================================
+
+重点比较：
+
+NG-C vs NG-A
+G-C vs NG-C
+G-C vs G-A。
+
+统计：
+
+mode changed count
+improved count
+worsened count
+gross gain
+gross harm
+high-cost harm
+net FDE delta。
+
+回答：
+
+预测误差改善是否来源于
+减少高代价候选模式切换？
+
+还是仅仅因为
+大量容易预测的静止目标？
+
+==================================================
+十五、论文图像
+==================================================
+
+至少生成：
+
+图1：
+2×2模型整体Top1FDE比较图。
+
+图2：
+Vehicle和Pedestrian分组比较图。
+
+图3：
+MovingVehicle比较图。
+
+图4：
+Graph与Loss消融表格图。
+
+图5：
+高代价模式切换统计图。
+
+图6：
+典型预测改善及失败案例图。
+
+所有图：
+
+优先保存SVG和PDF。
+
+图中标注：
+
+数据集
+评价协议
+样本量
+指标单位。
+
+禁止把开发OOF结果
+标注为official independent test。
+
+==================================================
+十六、单独审计论文独立验证条件
+==================================================
+
+在不重新训练HiVT的前提下：
+
+追溯Stage5A候选生成器的
+训练场景和验证场景。
+
+明确：
+
+Stage5A实际训练场景有哪些？
+
+是否包含Stage11B的OuterTest场景？
+
+历史official VAL是否已经被
+用于开发、模型选择或假设形成？
+
+当前是否存在真正没有被
+预测器训练和方法开发使用的
+评价场景？
+
+保存完整数据来源审计。
+
+如果不存在：
+
+明确报告。
+
+同时估计：
+
+重新训练端到端模型
+所需GPU时间和数据量。
+
+但本阶段不授权执行
+端到端HiVT重新训练。
+
+==================================================
+十七、实验报告
+==================================================
+
+创建：
+
+outputs/stage14a_paper_graph_ablation/
+
+00_protocol/
+01_preflight/
+02_models/
+03_training/
+04_checkpoints/
+05_evaluation/
+06_bootstrap/
+07_diagnostics/
+08_figures/
+09_reports/
+
+必须提交：
+
+stage14a_protocol.json
+
+stage14a_model_integrity.json
+
+stage14a_training_summary.csv
+
+stage14a_ablation_metrics.csv
+
+stage14a_fold_metrics.csv
+
+stage14a_bootstrap_ci.csv
+
+stage14a_mode_switch.csv
+
+stage14a_predictor_data_provenance.json
+
+stage14a_final_report.md
+
+stage14a_scientific_decision.json。
+
+大型缓存保留本地。
+
+==================================================
+十八、科研判定
+==================================================
+
+GraphIncrementSupported：
+
+只有G-C确实优于NG-C，
+并且达到预先登记的
+方向一致性与不确定性条件，
+才可以给予SUPPORTED。
+
+LossIncrementSupported：
+
+只有NG-C与G-C的
+对应损失对比具备正面证据，
+才可以宣称误差感知排序
+具有较好的跨结构有效性。
+
+如果Graph无独立收益：
+
+必须报告NOT_SUPPORTED。
+
+不能为了论文
+重新调网络直到显著。
+
+如果实验失败：
+
+保留所有失败数据。
+
+==================================================
+十九、最终汇报
+==================================================
+
+完成后向大脑AI汇报：
+
+GitBranch=
+
+CommitSHA=
+
+FrozenCandidateIdentity=
+
+NoGraphImplementationAudit=
+
+TrainingStatus=
+
+NG-A OverallFDE=
+
+NG-C OverallFDE=
+
+G-A OverallFDE=
+
+G-C OverallFDE=
+
+NG-C VehicleFDE=
+
+G-C VehicleFDE=
+
+NG-C PedestrianFDE=
+
+G-C PedestrianFDE=
+
+GraphIncrementDelta=
+
+GraphIncrementCI=
+
+LossIncrementDelta=
+
+LossIncrementCI=
+
+MovingVehicleResult=
+
+HighCostSwitchResult=
+
+PredictorTrainingSceneOverlap=
+
+IndependentEvaluationStatus=
+
+ScientificDecision=
+
+GitHubReportPath=
+
+==================================================
+二十、结束条件
+==================================================
+
+完成后：
+
+提交代码、图表和报告。
+
+push到：
+
+stage14a/paper-graph-ablation
+
+停止。
+
+等待大脑AI审查。
+
+不要擅自启动：
+
+新的预测模型
+新的语义模块
+端到端重训练
+official VAL/test评价
+Stage14B
+Diffusion Planning。
+
+论文写作由大脑AI负责。

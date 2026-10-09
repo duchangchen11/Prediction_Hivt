@@ -1,0 +1,146 @@
+{
+  "status": "REGISTERED_BEFORE_FITTING",
+  "client_date": "2026-10-10",
+  "timezone": "Asia/Shanghai",
+  "base_commit": "88b83b7114e72b91544d4566cab26700c1b452dc",
+  "branch": "stage14a/paper-graph-ablation",
+  "formal_variants": [
+    "NG-A",
+    "NG-C"
+  ],
+  "A": "mean(-sum softmax(-FDE/1m)*log_softmax(logits))",
+  "B": "mean(-log p[argmin FDE]); lowest index tie",
+  "C": "mean(sum p*(FDE-minFDE)/max(1m,mean(FDE-minFDE))); normalized formulation, differs from raw Stage11A expected risk",
+  "architecture": "original G1 node_encoder + LayerNorm + scoring head + original-logit residual; interaction_message exactly0; no interaction network parameters",
+  "node_dim": 15,
+  "edge_dim": 17,
+  "hidden": 64,
+  "message_layers": 1,
+  "neighbor_radius_m": 50,
+  "max_neighbors": 8,
+  "K": 6,
+  "Tf": 12,
+  "Th": 5,
+  "official_VAL_or_test_permitted": false,
+  "historical_HeadDev_for_training_selection_or_main_evaluation": false,
+  "source_scenes": "HeadTrain630 only",
+  "split_seed": 2022,
+  "outer_split": "sort scene token by SHA256 of UTF8(2022|outer|scene_token), lexical token tie; consecutive210 blocks",
+  "inner_split": "remaining420 sort by SHA256 of UTF8(2022|inner|foldN|scene_token); first42 InnerDev, rest378 InnerTrain",
+  "ABC_seeds": [
+    2022,
+    2122,
+    2222
+  ],
+  "same_initial_state_per_fold": true,
+  "last_score_layer": "zero weight and bias",
+  "batch_order": "NumPy default_rng(fold_seed+epoch) permutation; identical cached order hashes A/B/C",
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "precision": "FP32",
+  "AMP": false,
+  "microbatch": 128,
+  "accumulation": 8,
+  "effective_batch": 1024,
+  "max_epochs": 50,
+  "patience": 5,
+  "carry": "continuous shuffled epoch stream; pending final remainder prepended next epoch; no smaller optimizer step; pending saved at stop, every distinct actor must have participated",
+  "early_stop": "variant-specific patience5 on identical selection rule; same maximum budget, no equalization based on test performance",
+  "ABC_selection": "minimum Sdev=.5*VehicleInnerDevFDE/FoldR2VehicleFDE+.5*PedestrianInnerDevFDE/FoldR2PedestrianFDE; strict improvement; epoch1 first eligible",
+  "R2_protocol": {
+    "architecture": [
+      19,
+      32,
+      1
+    ],
+    "parameters": 673,
+    "loss": "original Stage6 ranking_loss softmax(-FDE/1m)",
+    "seed": 2022,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "head_batch": 1024,
+    "evaluation_batch": 4096,
+    "max_epochs": 50,
+    "patience": 5,
+    "order": "torch.randperm with CPU Generator seed2022+epoch",
+    "remainder": "original last partial batch optimizer step, no carry",
+    "selection": "InnerDev Overall Top1FDE strict improvement",
+    "changes_only": "data partition and normalization; historical R2 checkpoint never loaded"
+  },
+  "normalization": "each fold fitted only on InnerTrain378, population std +1e-6; original G1 valid mask and R2 missing-neighbor conventions",
+  "Bicycle": "neighbors and training targets retained; final ABC scores routed to corresponding frozen FoldR2",
+  "tiny": {
+    "fold": 1,
+    "targets": 128,
+    "sampling_seed": 2022,
+    "updates": 300,
+    "optimizer": "same AdamW FP32",
+    "A_pass": "original entropy-floor adjusted excess CE reduction>=0.9",
+    "B_C_pass": "1-final/initial>=.8",
+    "any_failure": "STOP; no formal training or tuning",
+    "variants": [
+      "NG-A",
+      "NG-C"
+    ],
+    "reuse_original_target_ids": true,
+    "C_pass": "original normalized objective reduction>=0.8"
+  },
+  "OuterTest": "unified evaluation only after all6 new checkpoints frozen; reuse historical G-A/G-C outputs through identity keys",
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 2022,
+    "unit": "paired whole scenes, independent210-scene resampling within each of3folds",
+    "descriptive_percentiles": [
+      2.5,
+      97.5
+    ],
+    "family_size": 4,
+    "FWER": 0.05,
+    "adjusted_coverage": 0.9875,
+    "adjusted_percentiles": [
+      0.625,
+      99.375
+    ],
+    "primary_groups": [
+      "Overall"
+    ],
+    "co_primary": [
+      "NG-C-NG-A",
+      "G-A-NG-A",
+      "G-C-NG-C",
+      "G-C-G-A"
+    ],
+    "interaction": "(G-C-G-A)-(NG-C-NG-A), descriptive95%CI only"
+  },
+  "primary": "four preregistered controlled OverallTop1FDE comparisons; type/motion and interaction contrasts exploratory",
+  "secondary": [
+    "B vs A",
+    "C vs B",
+    "C vs R2",
+    "A vs R2"
+  ],
+  "motion_groups": "exploratory",
+  "decisions": {
+    "GraphIncrementSupported": "SUPPORTED iff G-C minus NG-C Overall point<0, family4 adjusted CI upper<0 and>=2/3fold deltas<0; otherwise NOT_SUPPORTED",
+    "LossIncrementSupported": "SUPPORTED iff both NG-C minus NG-A and G-C minus G-A each meet point<0, adjusted CI upper<0,>=2/3negativefolds; otherwise NOT_SUPPORTED",
+    "Limits": "type and MovingVehicle gains/harms disclosed separately; no causal/independent end-to-end validation claim; no outer-test tuning"
+  },
+  "limitations": "hypothesis informed by Stage11A; historical HeadDev/VAL used earlier; frozen Stage5A may have trained on CV scenes; internal ranking OOF, not independent end-to-end test",
+  "after_stage": "push ownbranch without merge then STOP for brain-AI review; no Stage14B, new models/semantic modules, HiVT retraining or officialVAL/test evaluation",
+  "Stage": "Stage14A",
+  "reused_variants": [
+    "G-A = Stage11B A",
+    "G-C = Stage11B C"
+  ],
+  "FormalNewTrainingRuns": 6,
+  "control": "identical shared module initialization, own candidates/node features, folds, normalization, sample ordering, optimizer, learning rate, loss and checkpoint selection; full unchanged graph-input cache remains available",
+  "CandidateGenerator": "unchanged Stage5A frozen; no new predictor training",
+  "NoGraphImplementation": "real structural zero-message ablation, not shuffled/deleted/corrupted graph inputs",
+  "high_cost": "original Stage11B definition: sum and count of largest10% positive per-actor switch FDE harms; ceil(0.1*n_harms)",
+  "FigureBackend": "python",
+  "FigureProtocolLabel": "nuScenes HeadTrain630 internal ranking OOF,3fold; not official independent test",
+  "FreezeSHA256": "b4d7c1625e9ce46ea20fa78eb7c799ed06057f9e81708ba29efa5787325eb089",
+  "RequirementsSHA256": "126187d09b162ef5bbd79c1e60db1d6e1c7fcb4f30e691161e888c6707ec5a37"
+}

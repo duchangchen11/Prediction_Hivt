@@ -1,0 +1,27 @@
+{
+  "Status": "PASS",
+  "HeadTrainScenes": 630,
+  "Folds": 3,
+  "InnerTrainDevOuterScenes": [
+    378,
+    42,
+    210
+  ],
+  "GTpoisonWindows": 10,
+  "HistoricalGTpoisonWindowsReused": 100,
+  "PoisonScope": "Fold1 InnerTrain only",
+  "CandidateIdentity": "PASS",
+  "CandidateCoordinateMaxDiff": 0,
+  "OriginalCachedGraphInputs": "BITWISE_EQUAL",
+  "NoGraphGTpoisonMaxDiff": 0,
+  "LabelsDetached": true,
+  "LossCode": "exact original Stage11B objective AST, same1m floor and normalization; closed forms byte-equal",
+  "CurrentLossVariants": [
+    "A",
+    "C"
+  ],
+  "ClassWeightsAdded": false,
+  "CurrentInputArraysDestroyed": false,
+  "HeadDevOrVALOrOuterTestUsed": false,
+  "FormalTrainingAllowedOnlyAfterTiny": true
+}

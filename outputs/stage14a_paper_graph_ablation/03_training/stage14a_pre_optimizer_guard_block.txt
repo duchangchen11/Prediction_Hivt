@@ -1,0 +1,20 @@
+/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(
+START_FORMAL 1 NG-A
+Traceback (most recent call last):
+  File "/home/lrj/Prediction_Hivt/outputs/stage14a_paper_graph_ablation/03_training/stage14a_train.py", line 89, in <module>
+    if __name__=='__main__':main()
+  File "/home/lrj/Prediction_Hivt/outputs/stage14a_paper_graph_ablation/03_training/stage14a_train.py", line 65, in main
+    result=train_graph(fold,variant,store,predictor,r2,refs)
+  File "/home/lrj/Prediction_Hivt/outputs/stage11b_error_aware_ranking/03_training/stage11b_train.py [Stage14A controlled adaptation]", line 109, in train_graph
+  File "/home/lrj/Prediction_Hivt/outputs/stage14a_paper_graph_ablation/03_training/stage14a_train.py", line 26, in config
+    new_sources_sha256={str(p.relative_to(ROOT)):sha256(p) for p in sorted(ROOT.rglob('stage14a_*.py'))},
+  File "/home/lrj/Prediction_Hivt/outputs/stage14a_paper_graph_ablation/03_training/stage14a_train.py", line 26, in <dictcomp>
+    new_sources_sha256={str(p.relative_to(ROOT)):sha256(p) for p in sorted(ROOT.rglob('stage14a_*.py'))},
+  File "/home/lrj/Prediction_Hivt/outputs/stage14a_paper_graph_ablation/00_protocol/stage14a_common.py", line 37, in sha256
+    with Path(p).open('rb') as f:
+  File "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+  File "/home/lrj/Prediction_Hivt/outputs/stage14a_paper_graph_ablation/00_protocol/stage14a_common.py", line 31, in guard
+    if os.environ.get('STAGE14A_PHASE') in ('tiny','train') and (p.is_relative_to(OOF) or p.is_relative_to(ROOT/'05_evaluation')):raise RuntimeError('OuterTest evaluation forbidden until all6 checkpoints frozen')
+RuntimeError: OuterTest evaluation forbidden until all6 checkpoints frozen

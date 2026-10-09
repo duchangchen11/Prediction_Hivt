@@ -1,0 +1,380 @@
+{
+  "Stage": "Stage14A",
+  "Status": "PASS",
+  "NoGraphImplementationAudit": "PASS",
+  "API": "NoGraphReranker(seed); forward(original seven G1 arguments)",
+  "SharedModules": [
+    "node_encoder",
+    "norm",
+    "head"
+  ],
+  "NodeEmbeddingDimension": 64,
+  "InteractionMessage": "exact zero, no interaction network registered or executed",
+  "GraphInputsDestroyedOrRemovedForAblation": false,
+  "OriginalG1Source": "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py",
+  "OriginalG1SourceSHA256": "16b086e006e51b1cd67544c42b42ce869daccdad6e0d4636b4a04115f0947f9b",
+  "FoldSeeds": [
+    2022,
+    2122,
+    2222
+  ],
+  "SeedAudits": [
+    {
+      "Seed": 2022,
+      "Status": "PASS",
+      "SharedInitialStateBitwise": {
+        "node_encoder.0.weight": true,
+        "node_encoder.0.bias": true,
+        "node_encoder.2.weight": true,
+        "node_encoder.2.bias": true,
+        "norm.weight": true,
+        "norm.bias": true,
+        "head.0.weight": true,
+        "head.0.bias": true,
+        "head.2.weight": true,
+        "head.2.bias": true
+      },
+      "SharedModuleDefinitionsIdentical": true,
+      "UnusedInteractionParametersRegistered": false,
+      "InitialFinalHeadExactlyZero": true,
+      "InitialOutputEqualsOriginalLogits": true,
+      "InitialZeroMessageOutputMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "NonzeroHeadProbeZeroMessageOutputMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "NonzeroHeadProbeNeighborAndEdgeChangesMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "TargetFeatureChangeMaxLogitDiff": 0.047840237617492676,
+      "OriginalLogitResidualMaxDiff": 5.960464477539063e-08,
+      "CompleteInputUnmodified": true,
+      "CompleteInputSHA256": [
+        "4f271ff83323dc12d1dabf89e1611bf0ea7dfd891e8ba14663538f011ce75dfc",
+        "65bb6059b12f57c06173220e148dc75a4737b5166c04b5f51d594c1fb267d1c4",
+        "8b447bca0ae0a18d1ef6bf14b9477d72c98f02f30c9e5dbfa4dad1dc2a0f6ed5",
+        "067fd23205ee4b99063e07cdaac5f011d05001aadd0570cb9028ea419672a583",
+        "8c16c85837c0f26beb42391ca72cf2f3efd006a0fca7b6fa75b58c4e2c87209f",
+        "e2ea78849258549af3e9a81459f0cf8cefb5d41c5b4bb201499be90c32509fc2",
+        "8e7b6b2855cf1b58b7a82a68dc64a3ee8697d857b14b9916e2fd0b2df6b0efc0"
+      ],
+      "GradientOnlySharedRankingModules": true,
+      "GradientChecks": {
+        "node_encoder.0.weight": {
+          "Finite": true,
+          "Elements": 960,
+          "NonzeroElements": 960
+        },
+        "node_encoder.0.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "node_encoder.2.weight": {
+          "Finite": true,
+          "Elements": 4096,
+          "NonzeroElements": 4096
+        },
+        "node_encoder.2.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "norm.weight": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "norm.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "head.0.weight": {
+          "Finite": true,
+          "Elements": 2048,
+          "NonzeroElements": 2048
+        },
+        "head.0.bias": {
+          "Finite": true,
+          "Elements": 32,
+          "NonzeroElements": 32
+        },
+        "head.2.weight": {
+          "Finite": true,
+          "Elements": 32,
+          "NonzeroElements": 32
+        },
+        "head.2.bias": {
+          "Finite": true,
+          "Elements": 1,
+          "NonzeroElements": 1
+        }
+      },
+      "OptimizerConstructed": false,
+      "TrainingPerformed": false
+    },
+    {
+      "Seed": 2122,
+      "Status": "PASS",
+      "SharedInitialStateBitwise": {
+        "node_encoder.0.weight": true,
+        "node_encoder.0.bias": true,
+        "node_encoder.2.weight": true,
+        "node_encoder.2.bias": true,
+        "norm.weight": true,
+        "norm.bias": true,
+        "head.0.weight": true,
+        "head.0.bias": true,
+        "head.2.weight": true,
+        "head.2.bias": true
+      },
+      "SharedModuleDefinitionsIdentical": true,
+      "UnusedInteractionParametersRegistered": false,
+      "InitialFinalHeadExactlyZero": true,
+      "InitialOutputEqualsOriginalLogits": true,
+      "InitialZeroMessageOutputMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "NonzeroHeadProbeZeroMessageOutputMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "NonzeroHeadProbeNeighborAndEdgeChangesMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "TargetFeatureChangeMaxLogitDiff": 0.03641390800476074,
+      "OriginalLogitResidualMaxDiff": 5.960464477539063e-08,
+      "CompleteInputUnmodified": true,
+      "CompleteInputSHA256": [
+        "6e521e5ed170df305e606edc44848971c28990fd8527c3a9f41ee8e43739b6dc",
+        "80311651274846ba8fd2d86f8a57aed69e7f805ba5365aed0e58b82d29fbe5bb",
+        "8b447bca0ae0a18d1ef6bf14b9477d72c98f02f30c9e5dbfa4dad1dc2a0f6ed5",
+        "6d4e851c785ecc5a339ccb8891c23c2493ab26256cf23dd86f37d6a23ebe3d54",
+        "8bc0512dc9727ab6dddd83b18ffdf9dfc7a17669e7897db5919517ebccd03916",
+        "e2ea78849258549af3e9a81459f0cf8cefb5d41c5b4bb201499be90c32509fc2",
+        "69dc123ef6a82b365844b98851340adb6ebca35d6186e4a00fa2358c1867a8c2"
+      ],
+      "GradientOnlySharedRankingModules": true,
+      "GradientChecks": {
+        "node_encoder.0.weight": {
+          "Finite": true,
+          "Elements": 960,
+          "NonzeroElements": 960
+        },
+        "node_encoder.0.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "node_encoder.2.weight": {
+          "Finite": true,
+          "Elements": 4096,
+          "NonzeroElements": 4096
+        },
+        "node_encoder.2.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "norm.weight": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "norm.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "head.0.weight": {
+          "Finite": true,
+          "Elements": 2048,
+          "NonzeroElements": 2048
+        },
+        "head.0.bias": {
+          "Finite": true,
+          "Elements": 32,
+          "NonzeroElements": 32
+        },
+        "head.2.weight": {
+          "Finite": true,
+          "Elements": 32,
+          "NonzeroElements": 32
+        },
+        "head.2.bias": {
+          "Finite": true,
+          "Elements": 1,
+          "NonzeroElements": 1
+        }
+      },
+      "OptimizerConstructed": false,
+      "TrainingPerformed": false
+    },
+    {
+      "Seed": 2222,
+      "Status": "PASS",
+      "SharedInitialStateBitwise": {
+        "node_encoder.0.weight": true,
+        "node_encoder.0.bias": true,
+        "node_encoder.2.weight": true,
+        "node_encoder.2.bias": true,
+        "norm.weight": true,
+        "norm.bias": true,
+        "head.0.weight": true,
+        "head.0.bias": true,
+        "head.2.weight": true,
+        "head.2.bias": true
+      },
+      "SharedModuleDefinitionsIdentical": true,
+      "UnusedInteractionParametersRegistered": false,
+      "InitialFinalHeadExactlyZero": true,
+      "InitialOutputEqualsOriginalLogits": true,
+      "InitialZeroMessageOutputMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "NonzeroHeadProbeZeroMessageOutputMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "NonzeroHeadProbeNeighborAndEdgeChangesMaxDiff": {
+        "delta_logits": 0.0,
+        "mode_logits": 0.0,
+        "mode_prob": 0.0,
+        "map_message": 0.0
+      },
+      "TargetFeatureChangeMaxLogitDiff": 0.03184810280799866,
+      "OriginalLogitResidualMaxDiff": 5.960464477539063e-08,
+      "CompleteInputUnmodified": true,
+      "CompleteInputSHA256": [
+        "286bb2fe2bb9cfb8d3b77abfba8f7662514f1d700017f58cfff43648112de893",
+        "db20b60ac8695f7b555bfc92e700db994f79d5462d10ad380fbef247edb20e8c",
+        "8b447bca0ae0a18d1ef6bf14b9477d72c98f02f30c9e5dbfa4dad1dc2a0f6ed5",
+        "f6c48ecc817ca5fdbb4ec04f1f454d407eabaecdadc3bd6f42c2b86f6bd53678",
+        "b8e121c133cccd35b932d0c35b6af86a6d5f77d0c53d6126fefdb8ea9669ed03",
+        "e2ea78849258549af3e9a81459f0cf8cefb5d41c5b4bb201499be90c32509fc2",
+        "c72c3dbf2b3c191449854c07129c224ed52b162594b43d412537f95b7b760bd8"
+      ],
+      "GradientOnlySharedRankingModules": true,
+      "GradientChecks": {
+        "node_encoder.0.weight": {
+          "Finite": true,
+          "Elements": 960,
+          "NonzeroElements": 960
+        },
+        "node_encoder.0.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "node_encoder.2.weight": {
+          "Finite": true,
+          "Elements": 4096,
+          "NonzeroElements": 4096
+        },
+        "node_encoder.2.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "norm.weight": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "norm.bias": {
+          "Finite": true,
+          "Elements": 64,
+          "NonzeroElements": 64
+        },
+        "head.0.weight": {
+          "Finite": true,
+          "Elements": 2048,
+          "NonzeroElements": 2048
+        },
+        "head.0.bias": {
+          "Finite": true,
+          "Elements": 32,
+          "NonzeroElements": 32
+        },
+        "head.2.weight": {
+          "Finite": true,
+          "Elements": 32,
+          "NonzeroElements": 32
+        },
+        "head.2.bias": {
+          "Finite": true,
+          "Elements": 1,
+          "NonzeroElements": 1
+        }
+      },
+      "OptimizerConstructed": false,
+      "TrainingPerformed": false
+    }
+  ],
+  "InferenceCompute": {
+    "NoGraph": {
+      "TotalParameters": 7425,
+      "TrainableParameters": 7425,
+      "LinearMultiplyAddsPer128Targets": 5480448,
+      "LinearFLOPsPer128Targets": 10960896,
+      "LinearCalls": 4,
+      "LinearOutputElements": 123648,
+      "CPUHeadForwardMedianMilliseconds": 0.40661400000000003,
+      "CPUHeadForwardP10Milliseconds": 0.3817126,
+      "CPUHeadForwardP90Milliseconds": 0.4189676,
+      "Measurements": 20,
+      "Warmups": 5
+    },
+    "G1": {
+      "TotalParameters": 24066,
+      "TrainableParameters": 24066,
+      "LinearMultiplyAddsPer128Targets": 642883584,
+      "LinearFLOPsPer128Targets": 1285767168,
+      "LinearCalls": 8,
+      "LinearOutputElements": 8024832,
+      "CPUHeadForwardMedianMilliseconds": 39.581185,
+      "CPUHeadForwardP10Milliseconds": 39.2973436,
+      "CPUHeadForwardP90Milliseconds": 39.902052399999995,
+      "Measurements": 20,
+      "Warmups": 5
+    },
+    "NoGraphToG1LinearFLOPsRatio": 0.008524790703008525,
+    "Scope": "CPU single-thread, FP32, 128 targets; complete 8-neighbor / 6-mode inputs. Head forward only. Excludes packing, transfer, frozen candidate generator, and non-linear operation FLOPs. No GPU throughput claim."
+  },
+  "DataSource": "Synthetic full-shape, full-neighbor fixtures only; no dataset read",
+  "OuterTestRead": false,
+  "VALOrTestRead": false,
+  "CheckpointReadOrWritten": false,
+  "TrainingPerformed": false,
+  "AdditionalRequiredPreflight": [
+    "Protocol/checkpoint/split freeze",
+    "Real-data observation-only and loss integrity",
+    "Tiny overfit",
+    "Candidate identity",
+    "Gradients only new ranking network"
+  ]
+}
