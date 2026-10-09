@@ -1,0 +1,17 @@
+Comparison,Group,Count,VehicleDenominator,MeanDeltaTop1FDE,DeltaSum,ContributionToVehicleMeanDelta,Units,Interpretation
+NG-C-NG-A,MovingVehicle,41728,191026,-0.69121942581090967,-28843.20420023764,-0.15099098656851759,m,additive descriptive attribution by disjoint current vehicle state
+NG-C-NG-A,StoppedVehicle,23044,191026,-0.0033122972408359493,-76.328577617823612,-0.00039957166887137673,m,additive descriptive attribution by disjoint current vehicle state
+NG-C-NG-A,ParkedVehicle,121939,191026,-0.0140811379733305,-1717.0398833299478,-0.0089885140417008558,m,additive descriptive attribution by disjoint current vehicle state
+NG-C-NG-A,OtherVehicleState,4315,191026,-0.056698176761720058,-244.65263272682205,-0.0012807294961252502,m,additive descriptive attribution by disjoint current vehicle state
+G-A-NG-A,MovingVehicle,41728,191026,0.0058440105737695572,243.85887322225608,0.0012765742528360333,m,additive descriptive attribution by disjoint current vehicle state
+G-A-NG-A,StoppedVehicle,23044,191026,-0.016841865388210621,-388.10394600592554,-0.002031681268549441,m,additive descriptive attribution by disjoint current vehicle state
+G-A-NG-A,ParkedVehicle,121939,191026,0.0063945067224941603,779.73975523421541,0.0040818514507669924,m,additive descriptive attribution by disjoint current vehicle state
+G-A-NG-A,OtherVehicleState,4315,191026,-0.045384711901238294,-195.83503185384325,-0.0010251747503158902,m,additive descriptive attribution by disjoint current vehicle state
+G-C-NG-C,MovingVehicle,41728,191026,-0.30172392514532476,-12590.335948464111,-0.065909017350853347,m,additive descriptive attribution by disjoint current vehicle state
+G-C-NG-C,StoppedVehicle,23044,191026,-0.015109616425690609,-348.18600091361441,-0.0018227152372641128,m,additive descriptive attribution by disjoint current vehicle state
+G-C-NG-C,ParkedVehicle,121939,191026,0.0020503904864215047,250.02256552375184,0.0013088405008938671,m,additive descriptive attribution by disjoint current vehicle state
+G-C-NG-C,OtherVehicleState,4315,191026,-0.19582825354697034,-844.99891405517701,-0.0044234759355018536,m,additive descriptive attribution by disjoint current vehicle state
+G-C-G-A,MovingVehicle,41728,191026,-0.99878736153000403,-41677.399021924008,-0.21817657817220695,m,additive descriptive attribution by disjoint current vehicle state
+G-C-G-A,StoppedVehicle,23044,191026,-0.0015800482783159384,-36.410632525512483,-0.00019060563758604841,m,additive descriptive attribution by disjoint current vehicle state
+G-C-G-A,ParkedVehicle,121939,191026,-0.018425254209403157,-2246.7570730404113,-0.011761524991573982,m,additive descriptive attribution by disjoint current vehicle state
+G-C-G-A,OtherVehicleState,4315,191026,-0.2071417184074521,-893.81651492815581,-0.004679030681311213,m,additive descriptive attribution by disjoint current vehicle state

@@ -1,0 +1,7 @@
+Fold,Model,OOFActors,HeadForwardSeconds,HeadLatencyMSPerActor,FeaturePreparationSeconds,PeakAllocatedGPUMemoryBytes,TimingScope
+1,NG-A,82673,0.58557757126982324,0.0070830569988971394,6.0756411031034077,39946752,"FP32 cached-input head forward, synchronized CUDA; Bicycle routing and predictor excluded"
+1,NG-C,82673,0.45204845593252685,0.0054679091835608583,6.0756411031034077,39946752,"FP32 cached-input head forward, synchronized CUDA; Bicycle routing and predictor excluded"
+2,NG-A,83711,0.52088637680571992,0.0062224364397238108,6.1355214055656688,39946752,"FP32 cached-input head forward, synchronized CUDA; Bicycle routing and predictor excluded"
+2,NG-C,83711,0.45614229104830883,0.0054490125676232371,6.1355214055656688,39946752,"FP32 cached-input head forward, synchronized CUDA; Bicycle routing and predictor excluded"
+3,NG-A,93767,0.58352885405474808,0.0062231793067363582,6.8880428151169326,39946752,"FP32 cached-input head forward, synchronized CUDA; Bicycle routing and predictor excluded"
+3,NG-C,93767,0.51139267894905061,0.0054538662743721204,6.8880428151169326,39946752,"FP32 cached-input head forward, synchronized CUDA; Bicycle routing and predictor excluded"

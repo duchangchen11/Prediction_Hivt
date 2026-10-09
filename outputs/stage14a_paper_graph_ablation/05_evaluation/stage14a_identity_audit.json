@@ -1,0 +1,83 @@
+{
+  "Status": "PASS",
+  "Folds": 3,
+  "OOFScenes": 630,
+  "OOFActors": 260151,
+  "Fields": [
+    "Top1FDE",
+    "Top1ADE",
+    "OracleGap",
+    "HitRate",
+    "MRR",
+    "SoftCE",
+    "ExpectedRegret",
+    "NormalizedExpectedRegret",
+    "PredictionEntropy",
+    "Top1Probability",
+    "Top1Top2Margin",
+    "OracleModeProbability",
+    "minADEOracle6",
+    "minFDE6",
+    "MR6"
+  ],
+  "Models": [
+    "NG-A",
+    "NG-C",
+    "G-A",
+    "G-C"
+  ],
+  "IdentityKeys": [
+    "scene_token",
+    "sample_token",
+    "instance_token"
+  ],
+  "EachActorExactlyOnce": true,
+  "EachSceneExactlyOneFold": true,
+  "AllSixNewCheckpointsFrozenBeforeEvaluation": true,
+  "FrozenGateSHA256": "39bacca97850eed7b702f2f425ac69630eec264a9ff7505c4b5c070eccb851cc",
+  "CandidateIdentity": "PASS",
+  "CandidateCoordinateMaxDiff": 0.0,
+  "CandidatePath": "outputs/stage11a_mode_selection_audit/01_identity_audit/cache/candidates.npy",
+  "CandidateSHA256": "fac8fb05888372de965bdc11b6bef1d0f211d095e38c509ddcad4a1a9d909049",
+  "GeometryAllModelsBitwiseEqual": true,
+  "minADEOracle6_minFDE6_MR6_AllModelsBitwiseEqual": true,
+  "HistoricalGraphScoresAndActorMetricsBitwiseReproduced": true,
+  "HistoricalGraphPublishedMetricReproduction": "PASS",
+  "HistoricalPublishedCSVPrecision": "original %.12g; exact comparison at those 12 significant digits",
+  "HistoricalOOFAuditSHA256": "48ec76652cc01602e1e039032906cf46e3a6563deae949ed68f979ed4788c3c2",
+  "BicyclePreserved": "YES",
+  "BicycleActors": 2980,
+  "BicycleScoresProbabilitiesModesMetricsMaxDiff": 0.0,
+  "BicyclePolicy": "preregistered corresponding-fold R2 route; not a graph improvement",
+  "ForwardInputNames": [
+    "local_nodes",
+    "interaction_edge",
+    "neighbor_mask",
+    "map_node",
+    "map_edge",
+    "map_mask",
+    "original_logits"
+  ],
+  "FutureLabelsInForward": false,
+  "FrozenModelStatesUnchanged": true,
+  "RankingOuterTestSeenInCorrespondingFoldTraining": false,
+  "PredictorTrainingOverlap": "separate provenance audit; ranking OOF is not end-to-end independent evaluation",
+  "official_VAL_or_test_used": false,
+  "Units": {
+    "Top1FDE": "m",
+    "Top1ADE": "m",
+    "OracleGap": "m",
+    "minFDE6": "m",
+    "minADEOracle6": "m",
+    "ExpectedRegret": "m",
+    "MR6": "fraction; minFDE6>2m",
+    "HitRate": "fraction; Top1 matches lowest-index endpoint-FDE oracle"
+  },
+  "EvaluationMask": "identical historical full 12-step future actor rows; denominator Count actors/windows",
+  "cache_files": {
+    "stage14a_oof_metrics.npy": "9573f90a2913483779b0ec394c8020465824f44bd02e351db15710c65612aeab",
+    "stage14a_oof_logits.npy": "614dd4d5ba6525f7d57210f15702291cb9dd8e0924de68c42a262fd093dea09d",
+    "stage14a_oof_actor_records.csv": "41a29278aa5b4a48c40cc9bf475698ad16561a3777e41a46eccf06327a2d5458",
+    "stage14a_oof_probabilities.npy": "ee92366fe6ae48b6043e71cc506717cc13965c586003f7b635ef71d26fb43611"
+  }
+}

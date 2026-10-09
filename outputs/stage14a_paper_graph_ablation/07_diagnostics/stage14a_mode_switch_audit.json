@@ -1,0 +1,20 @@
+{
+  "Status": "PASS",
+  "OriginalDefinitionPath": "outputs/stage11b_error_aware_ranking/06_bootstrap/stage11b_analyze.py",
+  "OriginalDefinitionSHA256": "7cce04511b102c352e7dcffa0884df3f5866ddd8a3b1d7f1ee58d05f88a1963b",
+  "OriginalFunctionASTReused": true,
+  "IdentityAuditSHA256": "bdfcae68ca1520501fb19c30241cd69acbe4198d849669c7db6c5cf5672f1473",
+  "Comparisons": [
+    "NG-C-NG-A",
+    "G-A-NG-A",
+    "G-C-NG-C",
+    "G-C-G-A"
+  ],
+  "RequiredGroupsPresent": true,
+  "UnchangedModesHaveZeroFDEDelta": true,
+  "GrossGainHarmNetAccounting": true,
+  "VehicleStateContributionsSumToVehicleDelta": true,
+  "HighCostDefinition": "largest10% of strictly positive harms, ceil count; separately defined comparison/group tails",
+  "NoCausalClaim": true,
+  "official_VAL_or_test_used": false
+}

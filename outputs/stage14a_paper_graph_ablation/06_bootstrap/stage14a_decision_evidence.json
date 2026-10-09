@@ -1,0 +1,49 @@
+{
+  "A": {
+    "PointImproves": true,
+    "AdjustedCIExcludesZeroInImprovementDirection": true,
+    "AtLeastTwoNegativeFolds": true,
+    "NegativeDirectionFolds": 3,
+    "DeltaTop1FDE": -0.12620922552383826,
+    "AdjustedCILower": -0.15369376432610957,
+    "AdjustedCIUpper": -0.10113673810940568,
+    "RegisteredConditionsAllMet": true,
+    "Comparison": "NG-C-NG-A"
+  },
+  "B": {
+    "PointImproves": false,
+    "AdjustedCIExcludesZeroInImprovementDirection": false,
+    "AtLeastTwoNegativeFolds": true,
+    "NegativeDirectionFolds": 2,
+    "DeltaTop1FDE": 0.0031182207753255977,
+    "AdjustedCILower": -0.030288924079140567,
+    "AdjustedCIUpper": 0.033505351229552394,
+    "RegisteredConditionsAllMet": false,
+    "Comparison": "G-A-NG-A"
+  },
+  "C": {
+    "PointImproves": true,
+    "AdjustedCIExcludesZeroInImprovementDirection": true,
+    "AtLeastTwoNegativeFolds": true,
+    "NegativeDirectionFolds": 3,
+    "DeltaTop1FDE": -0.055221222561943235,
+    "AdjustedCILower": -0.07828241070782631,
+    "AdjustedCIUpper": -0.037582749019352844,
+    "RegisteredConditionsAllMet": true,
+    "Comparison": "G-C-NG-C"
+  },
+  "D": {
+    "PointImproves": true,
+    "AdjustedCIExcludesZeroInImprovementDirection": true,
+    "AtLeastTwoNegativeFolds": true,
+    "NegativeDirectionFolds": 3,
+    "DeltaTop1FDE": -0.1845486688611071,
+    "AdjustedCILower": -0.21719502678074043,
+    "AdjustedCIUpper": -0.15225021997313545,
+    "RegisteredConditionsAllMet": true,
+    "Comparison": "G-C-G-A"
+  },
+  "GraphIncrementRegisteredConditionsMet": true,
+  "LossAcrossStructuresRegisteredConditionsMet": true,
+  "Scope": "statistical evidence for final report; internal ranking OOF, not independent end-to-end validation"
+}
