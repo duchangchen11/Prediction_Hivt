@@ -1,0 +1,11 @@
+{
+  "Status": "PASS",
+  "GTLeakage": "PASS",
+  "Candidates": 684,
+  "GTReplacedWithNaN": true,
+  "FutureAndTargetMaskPoisoned": true,
+  "MotionLabelsPoisoned": true,
+  "SelectionsAndFeaturesBitwiseEqual": true,
+  "ExtractorAPI": "observation allowlist and frozen actor nodes; no GT/FDE/ADE/future motion parameters",
+  "ExplicitFutureLabelFilesOpened": false
+}

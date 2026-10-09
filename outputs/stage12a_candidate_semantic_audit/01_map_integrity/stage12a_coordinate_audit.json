@@ -1,0 +1,215 @@
+{
+  "Status": "PASS",
+  "CoordinateAudit": "PASS",
+  "FixedScenePerRegion": {
+    "boston-seaport": "0053e9c440a94c1b84bd9c4223efc4b0",
+    "singapore-hollandvillage": "04e5f089805540a5a9e73c1b7c54ee8c",
+    "singapore-onenorth": "00590cbfa24a430a8c274b51e1c71231",
+    "singapore-queenstown": "01796494e25c448dadaba70cfcc3532d"
+  },
+  "Actors": 114,
+  "Candidates": 684,
+  "RoundtripMaxDiffM": 1.6342482922482304e-13,
+  "ThresholdM": 1e-05,
+  "PositiveYawCounterclockwise": true,
+  "OriginYawMapLocation": "frozen Stage8 scene/sample frame with original Stage6 identities",
+  "Stage8HistoricalCoordinateAuditSHA256": "51de7ca4c4b89d0cc2d065394f787577917fb2e7608aa80d11bc812eafb32320",
+  "Details": [
+    {
+      "Scene": "00590cbfa24a430a8c274b51e1c71231",
+      "Sample": "1062a0889bc344879c71cede2f6fe8cb",
+      "Region": "singapore-onenorth",
+      "Actors": 13,
+      "RoundtripMaxM": 6.394884621840902e-14
+    },
+    {
+      "Scene": "00590cbfa24a430a8c274b51e1c71231",
+      "Sample": "168ee8f9f25c4adca1f2c609763bfbfe",
+      "Region": "singapore-onenorth",
+      "Actors": 8,
+      "RoundtripMaxM": 5.684341886080802e-14
+    },
+    {
+      "Scene": "00590cbfa24a430a8c274b51e1c71231",
+      "Sample": "082350d3f7d049d8963522b1528c57f9",
+      "Region": "singapore-onenorth",
+      "Actors": 3,
+      "RoundtripMaxM": 7.105427357601002e-14
+    },
+    {
+      "Scene": "00590cbfa24a430a8c274b51e1c71231",
+      "Sample": "1788770b9c0c4238b5a8d3299f063bcc",
+      "Region": "singapore-onenorth",
+      "Actors": 3,
+      "RoundtripMaxM": 7.105427357601002e-14
+    },
+    {
+      "Scene": "00590cbfa24a430a8c274b51e1c71231",
+      "Sample": "1d60627631334d6f9acd2cf8cdf66895",
+      "Region": "singapore-onenorth",
+      "Actors": 3,
+      "RoundtripMaxM": 6.394884621840902e-14
+    },
+    {
+      "Scene": "00590cbfa24a430a8c274b51e1c71231",
+      "Sample": "4166547322dd427683861ed0b5f66a02",
+      "Region": "singapore-onenorth",
+      "Actors": 3,
+      "RoundtripMaxM": 6.394884621840902e-14
+    },
+    {
+      "Scene": "00590cbfa24a430a8c274b51e1c71231",
+      "Sample": "9c31efbd1aa44ab1a6e030953c7e790a",
+      "Region": "singapore-onenorth",
+      "Actors": 1,
+      "RoundtripMaxM": 5.861977570020827e-14
+    },
+    {
+      "Scene": "0053e9c440a94c1b84bd9c4223efc4b0",
+      "Sample": "07c5a29a0f7c4f16ac31dd11a5fdca55",
+      "Region": "boston-seaport",
+      "Actors": 32,
+      "RoundtripMaxM": 1.0302869668521453e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "21a8de08e45e4e98946f7af0a404b31e",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.4921397450962104e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "248d0b2ce168419b914ba49a8b1ec9e4",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.438849039914203e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "1f7389a3d4844e018853fce9edb877d1",
+      "Region": "singapore-queenstown",
+      "Actors": 5,
+      "RoundtripMaxM": 1.6342482922482304e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "54ff52cfb17742d3b393cd9e35293109",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.5187850976872141e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "3e7d8306d4fd48a68c9f22db0a11262b",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.4210854715202004e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "2bb6bb88b2ca400aa5d2989de22954d7",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.4921397450962104e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "c6c2f1a2b26b4d938f83a0ffe171d835",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.4921397450962104e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "238b67f9a51e44048b985fcfa67df6a1",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.438849039914203e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "344b7821f4e54fbb96242e37fab9b6e8",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.3500311979441904e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "db23ac925c264adca50f21f6c26290b5",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.4299672557172016e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "90a67fc651df429da4219dbf905494a5",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.545430450278218e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "535f2ef475334d1cb7af464b22ffba43",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.5720758028692217e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "299f746e5b644ad2a3dbfe3a29f60820",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.4921397450962104e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "42a0f55673004273aeb992f1a652aa8e",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.4299672557172016e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "43229069f120464b95cf1d8145155d22",
+      "Region": "singapore-queenstown",
+      "Actors": 1,
+      "RoundtripMaxM": 1.4832579608992091e-13
+    },
+    {
+      "Scene": "01796494e25c448dadaba70cfcc3532d",
+      "Sample": "02c953a65a614ba6a0b64d78111bc8f4",
+      "Region": "singapore-queenstown",
+      "Actors": 13,
+      "RoundtripMaxM": 1.5917822615563182e-13
+    },
+    {
+      "Scene": "04e5f089805540a5a9e73c1b7c54ee8c",
+      "Sample": "11c3568bc3314bb4a52a8c2a5f301667",
+      "Region": "singapore-hollandvillage",
+      "Actors": 5,
+      "RoundtripMaxM": 1.4210854715202004e-13
+    },
+    {
+      "Scene": "04e5f089805540a5a9e73c1b7c54ee8c",
+      "Sample": "1ab39fe9bbe14ff198626e388270fd1e",
+      "Region": "singapore-hollandvillage",
+      "Actors": 4,
+      "RoundtripMaxM": 1.2168044349891716e-13
+    },
+    {
+      "Scene": "04e5f089805540a5a9e73c1b7c54ee8c",
+      "Sample": "31ee9b01ade74b7da5155965772dea34",
+      "Region": "singapore-hollandvillage",
+      "Actors": 4,
+      "RoundtripMaxM": 1.3322676295501878e-13
+    },
+    {
+      "Scene": "04e5f089805540a5a9e73c1b7c54ee8c",
+      "Sample": "3403b23df15a4d6bb7a52dd2d0d8f59d",
+      "Region": "singapore-hollandvillage",
+      "Actors": 3,
+      "RoundtripMaxM": 1.2789769243681803e-13
+    }
+  ]
+}

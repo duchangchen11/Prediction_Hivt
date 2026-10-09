@@ -1,0 +1,1316 @@
+你现在执行新的科研阶段：
+
+============================================================
+Stage12A
+Candidate Trajectory Semantic Consistency Audit
+
+面向异构交通参与者的
+候选轨迹场景语义一致性诊断
+============================================================
+
+项目路径：
+
+/home/lrj/Prediction_Hivt
+
+基础分支：
+
+stage11c/ranking-probability-calibration
+
+基础commit：
+
+165c497961afe9f3a196a0987128f9eed48da144
+
+新建分支：
+
+stage12a/candidate-semantic-consistency-audit
+
+实验环境：
+
+优先使用已有conda环境：
+
+ped_intent
+
+============================================================
+一、研究目标
+============================================================
+
+本阶段研究：
+
+nuScenes HD Map提供的场景语义，
+能否帮助识别多模态候选轨迹中的
+错误模式选择。
+
+重点关注：
+
+Vehicle
+Pedestrian。
+
+Bicycle必须保留。
+
+本阶段只做：
+
+地图语义提取
+候选轨迹语义匹配
+错误模式分析
+统计诊断
+负对照
+可视化。
+
+禁止训练新的预测模型。
+
+禁止修改Stage11B/11C的模型结果。
+
+============================================================
+二、冻结历史结论
+============================================================
+
+Stage8：
+
+AgentGraph=SUPPORTED
+
+SemanticGraph=NOT_SUPPORTED
+
+SemanticContributionToJoint=NOT_SUPPORTED。
+
+Stage9：
+
+TAFIG=NOT_SUPPORTED。
+
+Stage10：
+
+DualExpert=STOP。
+
+Stage11A：
+
+LossRankingMismatch=CONFIRMED
+
+CostlyModeSwitchProblem=CONFIRMED
+
+CandidateGeometryBottleneck=PARTIAL。
+
+Stage11B：
+
+ErrorAwareRanking=STRONG_SUPPORTED
+
+VehicleImproved=YES
+
+PedestrianImproved=YES
+
+BicyclePreserved=YES。
+
+Stage11C：
+
+CalibrationEngineering=PASS
+
+CalibrationUseful=YES
+
+Top1Identity=PASS
+
+Stage11C=GO。
+
+不得修改任何历史结论。
+
+============================================================
+三、冻结基础预测模型
+============================================================
+
+Stage5A：
+
+Frozen Candidate Predictor。
+
+SHA256：
+
+88fe3feb59b7e830ec1e40aa917484386e0d2799d0f6116f410adda2d97fdce7
+
+每个actor：
+
+K=6条候选轨迹。
+
+Th=5
+Tf=12。
+
+禁止：
+
+重新训练Stage5A
+修改候选轨迹
+增加候选模式
+修改坐标系
+修改预测时域。
+
+============================================================
+四、冻结模式排序模型
+============================================================
+
+使用Stage11B正式的：
+
+C：Normalized Error-Aware Ranking。
+
+三折C checkpoint必须与
+Stage11B manifest一致。
+
+同时保留：
+
+R0
+
+Fold-specific R2
+
+A SoftCE
+
+C Raw
+
+C Calibrated。
+
+其中：
+
+C Raw作为本阶段主要Top1排序结果。
+
+C Calibrated仅用于辅助概率分析。
+
+因为正温度校准不改变Top1，
+不能把校准本身算作新的轨迹改善。
+
+禁止重新训练这些模型。
+
+============================================================
+五、研究数据
+============================================================
+
+使用Stage11B原三折OOF：
+
+630 scenes
+
+260151 actor-window targets。
+
+Vehicle：
+
+191026
+
+Pedestrian：
+
+66145
+
+Bicycle：
+
+2980。
+
+必须复用原始scene和actor identity。
+
+禁止重新划分数据。
+
+禁止使用：
+
+历史HeadDev70
+
+official VAL150
+
+official test
+
+进行新模型选择或语义效果验证。
+
+注意：
+
+Stage11B/11C的OOF结果
+已经被用于科研分析。
+
+本次语义诊断属于开发阶段探索证据，
+不是新的独立确认性测试。
+
+============================================================
+六、数据文件检查
+============================================================
+
+首先检查本地：
+
+Stage11B OOF actor records
+
+OOF candidate trajectories
+
+OOF logits
+
+OOF probabilities
+
+OOF per-mode FDE/ADE
+
+scene/actor identity。
+
+这些大数组可能没有上传GitHub。
+
+优先读取本地原始缓存。
+
+必须核对：
+
+SHA256
+shape
+dtype
+scene identity
+actor identity
+candidate identity。
+
+如果关键缓存缺失：
+
+优先检查能否通过冻结checkpoint
+和冻结数据协议进行无训练重放。
+
+若无法保证与Stage11B结果一致：
+
+STOP并报告。
+
+禁止生成无法审计的替代数据。
+
+============================================================
+七、场景地图来源
+============================================================
+
+使用nuScenes原始HD Map。
+
+优先复用Stage8已有的地图语义实现。
+
+重点检查：
+
+outputs/stage8a_future_scene_compatibility_graph/
+00b_type_aware_semantic_audit/
+
+以及：
+
+outputs/stage8a_future_scene_compatibility_graph/
+00c_sparse_type_aware_graph_spec/
+
+特别复用：
+
+stage8a0c_selector.py
+
+stage8a0c_common.py。
+
+不要重新发明地图实体匹配规则。
+
+如果确有必要新增提取代码：
+
+必须先证明与冻结Stage8实现一致。
+
+============================================================
+八、地图语义类型
+============================================================
+
+正式使用六种静态地图实体：
+
+1. lane
+
+2. lane_connector
+
+3. drivable_area
+
+4. carpark_area
+
+5. ped_crossing
+
+6. walkway。
+
+禁止直接加入：
+
+实时交通灯颜色
+动态交通指挥信息
+未观测到的让行决策
+未来真实道路占用状态。
+
+nuScenes地图中可能包含
+traffic_light_controlled等静态字段。
+
+注意：
+
+这不等于当前交通灯实时状态。
+
+============================================================
+九、类型专属语义
+============================================================
+
+Vehicle：
+
+重点分析：
+
+lane
+lane_connector
+drivable_area
+carpark_area。
+
+Pedestrian：
+
+重点分析：
+
+walkway
+ped_crossing
+drivable_area。
+
+Bicycle：
+
+重点分析：
+
+lane
+lane_connector
+drivable_area。
+
+所有三类actor均保留。
+
+禁止删除地图匹配失败的actor。
+
+匹配失败必须保留missing mask。
+
+============================================================
+十、地图选择器
+============================================================
+
+优先复用Stage8A-0C
+已审计的type-aware quota。
+
+原始规则：
+
+Vehicle：
+
+lane 3
+connector 3
+drivable 1
+carpark 1。
+
+Pedestrian：
+
+walkway 3
+crossing 2
+drivable 1。
+
+Bicycle：
+
+lane 3
+connector 3
+drivable 1。
+
+保持：
+
+lane/connector 10m匹配范围
+
+polygon 2m匹配范围。
+
+无匹配时：
+
+允许empty map context。
+
+禁止：
+
+最近地图实体强制fallback
+
+删除无地图actor
+
+使用GT寻找地图实体。
+
+============================================================
+十一、坐标系审计
+============================================================
+
+Stage5A候选轨迹位于ego坐标系。
+
+地图实体使用global坐标。
+
+必须正确执行：
+
+ego_to_global。
+
+核对：
+
+origin
+yaw
+rotation direction
+map location。
+
+选择固定样本执行：
+
+ego->global->ego roundtrip。
+
+坐标误差：
+
+maxdiff < 1e-5m。
+
+同时执行：
+
+polygon inside
+polyline intersection
+boundary distance
+
+几何测试。
+
+若坐标审计失败：
+
+STOP。
+
+============================================================
+十二、GT信息隔离
+============================================================
+
+地图语义提取只能使用：
+
+历史观测
+
+已冻结预测候选
+
+actor type
+
+map location
+
+静态HD Map。
+
+禁止使用：
+
+未来GT位置
+
+GT未来位移
+
+真实FDE
+
+真实ADE
+
+未来运动类别
+
+决定地图特征。
+
+这些信息只能在：
+
+全部语义特征冻结之后
+
+用于离线误差分析。
+
+必须执行GT poison test。
+
+将GT替换为NaN后：
+
+地图语义特征必须保持一致。
+
+============================================================
+十三、车辆语义特征
+============================================================
+
+对于每个Vehicle candidate：
+
+提取：
+
+1. 最近lane/connector距离
+
+2. 预测轨迹与lane中心线的平均距离
+
+3. 候选终点与道路中心线距离
+
+4. 预测轨迹位于drivable area内的比例
+
+5. 候选方向与lane方向夹角
+
+6. lane/connector匹配是否有效
+
+7. carpark关联信息。
+
+注意：
+
+这些特征用于诊断。
+
+不能直接定义：
+
+偏离lane=预测必然错误。
+
+停车、变道、路口转弯等
+可能存在合理偏离。
+
+============================================================
+十四、行人语义特征
+============================================================
+
+对于每个Pedestrian candidate：
+
+提取：
+
+1. 与ped_crossing的最近距离
+
+2. 是否与ped_crossing相交
+
+3. 轨迹位于ped_crossing内的比例
+
+4. 与walkway的最近距离
+
+5. 轨迹位于walkway内的比例
+
+6. 与drivable_area的空间关系
+
+7. 是否穿越drivable_area边界。
+
+注意：
+
+行人进入drivable_area
+不能直接判为错误。
+
+行人有可能正常过街。
+
+人行横道附近并不意味着
+一定发生过街行为。
+
+============================================================
+十五、自行车语义特征
+============================================================
+
+提取：
+
+lane/connector距离
+
+道路方向匹配程度
+
+drivable area关联
+
+地图匹配覆盖率。
+
+Bicycle全部参与诊断。
+
+但不调整Bicycle最终模式排序。
+
+============================================================
+十六、候选模式级特征
+============================================================
+
+每个actor：
+
+6条候选轨迹。
+
+对每条candidate单独计算：
+
+semantic features。
+
+保存结构：
+
+scene_id
+actor_id
+actor_type
+fold
+mode_index
+
+candidate_geometry_id
+
+map_valid_mask
+
+semantic_features。
+
+禁止只对Top1轨迹提取。
+
+必须对6条候选全部提取。
+
+============================================================
+十七、语义特征完整性
+============================================================
+
+检查：
+
+所有候选数量不变
+
+actor identity不变
+
+mode index不变
+
+missing map context不导致NaN
+
+polygon invalid geometry正确隔离
+
+地图实体token可追踪。
+
+报告：
+
+Vehicle Map Coverage
+
+Pedestrian Map Coverage
+
+Bicycle Map Coverage。
+
+各fold分别统计。
+
+并与Stage8历史覆盖审计比较。
+
+允许因分析总体不同而存在差异，
+但必须解释统计口径。
+
+不能直接声称两阶段覆盖率相等。
+
+============================================================
+十八、核心分析A
+错误模式与地图语义
+============================================================
+
+对于每个actor：
+
+获取：
+
+C Raw Top1 mode
+
+R2 Top1 mode
+
+Oracle minFDE mode。
+
+Oracle只用于离线标签与比较。
+
+计算：
+
+C Top1与Oracle之间的：
+
+lane distance差异
+
+drivable fraction差异
+
+crosswalk intersection差异
+
+walkway relation差异。
+
+重点检查：
+
+当C选错模式时，
+
+地图语义是否表现出
+可重复的差异。
+
+禁止根据Oracle定义推理时的
+语义选择规则。
+
+============================================================
+十九、核心分析B
+有害模式切换
+============================================================
+
+对：
+
+FoldR2->C Raw
+
+进行分析。
+
+按delta FDE划分：
+
+Improved
+
+Worsened
+
+Unchanged。
+
+对于Worsened：
+
+分析C所选candidate
+相对R2所选candidate的
+地图语义变化。
+
+对于Improved：
+
+进行相同分析。
+
+重点比较：
+
+Vehicle高代价错误切换
+
+Pedestrian错误切换。
+
+输出：
+
+切换次数
+
+平均改善
+
+平均恶化
+
+gross gain
+
+gross harm
+
+p90/p95/p99 harm。
+
+同时报告对应语义特征差异。
+
+============================================================
+二十、核心分析C
+车辆专项
+============================================================
+
+重点：
+
+MovingVehicle
+
+StoppedVehicle
+
+ParkedVehicle
+
+Vehicle>5m。
+
+检查：
+
+高代价错误是否与：
+
+lane distance
+
+heading alignment
+
+drivable occupancy
+
+等因素存在关联。
+
+尤其关注：
+
+MovingVehicle。
+
+因为现有实验中，
+移动车辆仍有较大的绝对FDE。
+
+不得只通过大量ParkedVehicle
+掩盖运动目标的性能问题。
+
+============================================================
+二十一、核心分析D
+行人专项
+============================================================
+
+重点：
+
+Pedestrian<5m
+
+Pedestrian>5m
+
+Pedestrian5-8m。
+
+这些组基于未来GT位移，
+只能用于离线诊断。
+
+另外必须使用历史可观测运动特征
+进行独立分组：
+
+recent speed
+
+history displacement
+
+history heading。
+
+研究：
+
+人行横道、walkway关系
+能否帮助解释行人选错模式。
+
+不能把GT位移组用于推理。
+
+============================================================
+二十二、增量信息分析
+============================================================
+
+必须区分：
+
+地图语义信息
+
+与：
+
+候选轨迹自身几何信息。
+
+为每个candidate同时记录：
+
+predicted displacement
+
+endpoint position
+
+predicted heading
+
+trajectory length
+
+trajectory curvature
+
+以及已有graph interaction特征。
+
+分析：
+
+地图特征与已有运动/交互特征
+是否高度相关。
+
+在相同：
+
+actor type
+
+map region
+
+predicted displacement group
+
+下比较语义与排序误差的关系。
+
+注意：
+
+即使发现统计相关，
+也不能证明地图语义
+一定能提升模型预测性能。
+
+真正的增益仍需下一阶段受控训练验证。
+
+============================================================
+二十三、负对照
+============================================================
+
+必须加入两个负对照：
+
+Negative Control 1：
+
+在同一actor的6个candidate内部，
+随机打乱candidate对应的语义特征。
+
+不改变：
+
+candidate
+FDE
+model score。
+
+Negative Control 2：
+
+在相同map region和actor type内，
+进行确定性的语义标签置换。
+
+保留基本类别分布，
+破坏真实candidate-map对应关系。
+
+seed2022。
+
+两种负对照都只能用于分析，
+不得修改正式模型输入或checkpoint。
+
+如果真实语义与负对照
+表现没有区别：
+
+不能宣称地图语义具有可靠增量信息。
+
+============================================================
+二十四、统计评估
+============================================================
+
+使用：
+
+三折OOF。
+
+所有分析分别报告：
+
+Fold1
+Fold2
+Fold3
+Pooled。
+
+对于连续统计量：
+
+报告：
+
+mean
+median
+P90/P95。
+
+对于语义与误差关联：
+
+优先使用scene-level配对统计。
+
+可执行：
+
+2000次paired scene-cluster bootstrap。
+
+seed2022。
+
+禁止actor独立bootstrap。
+
+由于本次语义假设和特征
+都受到历史结果启发，
+
+所有置信区间均标记为
+开发阶段描述性证据。
+
+不能用于宣称独立因果发现。
+
+============================================================
+二十五、典型案例
+============================================================
+
+生成至少：
+
+10个Vehicle错误模式案例
+
+10个Pedestrian错误模式案例
+
+5个Vehicle成功切换案例
+
+5个Pedestrian成功切换案例。
+
+案例按预先登记的排序准则提取。
+
+每张图显示：
+
+HD Map
+
+GT
+
+6条candidate
+
+R2 Top1
+
+C Raw Top1
+
+Oracle candidate
+
+相关地图语义实体。
+
+同时显示：
+
+该actor的语义特征值。
+
+GT及Oracle仅作为图示中的
+离线评价参考。
+
+============================================================
+二十六、图像要求
+============================================================
+
+优先鸟瞰图BEV。
+
+车辆绘制：
+
+lane
+lane_connector
+drivable area。
+
+行人绘制：
+
+walkway
+ped_crossing
+drivable area。
+
+保证：
+
+地图与候选轨迹位于同一坐标系。
+
+所有图包含：
+
+scene ID
+actor ID
+actor type
+FDE delta。
+
+不要只画轨迹不画地图。
+
+============================================================
+二十七、效率与资源
+============================================================
+
+本阶段不训练。
+
+但是HD Map几何匹配可能耗费CPU时间。
+
+执行方式：
+
+先使用固定小批量scene
+进行preflight。
+
+通过后再处理完整630 scenes。
+
+允许：
+
+分scene缓存
+
+分batch匹配
+
+多进程CPU执行
+
+断点续跑。
+
+禁止因为计算较慢
+临时删除Pedestrian/Bicycle样本。
+
+所有缓存记录SHA256。
+
+============================================================
+二十八、输出目录
+============================================================
+
+创建：
+
+outputs/stage12a_candidate_semantic_audit/
+
+00_manifest/
+
+01_map_integrity/
+
+02_semantic_cache/
+
+03_feature_statistics/
+
+04_vehicle_analysis/
+
+05_pedestrian_analysis/
+
+06_bicycle_analysis/
+
+07_incremental_information/
+
+08_negative_controls/
+
+09_cases/
+
+10_figures/
+
+11_reports/。
+
+============================================================
+二十九、主要结果文件
+============================================================
+
+保存：
+
+stage12a_protocol.json
+
+stage12a_map_integrity.json
+
+stage12a_coordinate_audit.json
+
+stage12a_gt_poison_audit.json
+
+stage12a_semantic_coverage.csv
+
+stage12a_mode_semantics.csv
+
+stage12a_vehicle_semantic_error.csv
+
+stage12a_pedestrian_semantic_error.csv
+
+stage12a_bicycle_semantic_statistics.csv
+
+stage12a_switch_semantic_analysis.csv
+
+stage12a_incremental_information.csv
+
+stage12a_negative_controls.csv
+
+stage12a_case_manifest.csv
+
+stage12a_final_report.md
+
+stage12a_scientific_decision.json。
+
+大型actor级数组保留本地，
+Git只提交可审计的小型结果文件。
+
+============================================================
+三十、科学结论
+============================================================
+
+必须明确区分：
+
+CONFIRMED：
+
+地图特征能够正确提取，
+地图匹配与坐标转换正确，
+冻结候选和Top1结果保持。
+
+STRONGLY_SUGGESTED：
+
+某些语义特征与特定错误模式
+存在跨fold重复的描述性关联。
+
+UNRESOLVED：
+
+语义特征是否能带来
+独立于运动/交互特征的
+真实预测增益。
+
+禁止把相关性直接写成因果性。
+
+============================================================
+三十一、Stage12A Decision
+============================================================
+
+输出：
+
+MapIntegrity =
+PASS / FAIL
+
+SemanticCoverage =
+PASS / FAIL
+
+GTLeakage =
+PASS / FAIL
+
+CandidateIdentity =
+PASS / FAIL
+
+VehicleSemanticSignal =
+PROMISING / WEAK / NONE
+
+PedestrianSemanticSignal =
+PROMISING / WEAK / NONE
+
+BicycleAnalyzed =
+YES / NO
+
+NegativeControl =
+PASS / FAIL
+
+SemanticIncrementalValue =
+SUGGESTED / UNRESOLVED / NOT_OBSERVED
+
+Stage12A =
+GO / CONDITIONAL_GO / STOP
+
+ReadyForStage12B =
+YES / NO。
+
+============================================================
+三十二、GO判断原则
+============================================================
+
+Stage12A=GO要求：
+
+全部工程完整性检查PASS。
+
+并且：
+
+至少Vehicle或Pedestrian一类
+出现预先定义的语义-误差关联信号。
+
+该信号在至少2个fold方向一致。
+
+真实语义关联不能完全由
+候选内随机置换的负对照复制。
+
+同时报告：
+
+语义信号是否在相近运动特征的
+分组中仍然存在。
+
+这是进入受控训练实验的
+筛查标准，
+
+不是证明语义模块有效的标准。
+
+如果只有覆盖率高，
+但没有可重复的误差关联：
+
+不得判为GO。
+
+============================================================
+三十三、Stage12B准备建议
+============================================================
+
+本阶段不训练Stage12B。
+
+如果Stage12A发现有效信号：
+
+下一步考虑：
+
+Frozen Stage5A
+
++
+
+Future Interaction Graph
+
++
+
+Map Semantic Consistency Features
+
++
+
+Error-Aware Ranking。
+
+未来必须对比：
+
+C：无语义
+
+C+Geometry Control：
+加入匹配复杂度相近的几何特征
+
+C+Semantic：
+加入实际地图语义
+
+C+Shuffled Semantic：
+加入置换的语义负对照。
+
+必须采用公平的内部CV协议。
+
+只有C+Semantic可靠超过这些对照，
+才能支持新增语义模块的独立贡献。
+
+============================================================
+三十四、Git提交
+============================================================
+
+建议提交：
+
+audit: reuse frozen semantic map entities
+
+feat: extract candidate-level map semantics
+
+audit: analyze semantic signals in ranking errors
+
+eval: add semantic negative controls
+
+docs: finalize Stage12A scientific decision
+
+push：
+
+stage12a/candidate-semantic-consistency-audit
+
+禁止merge main。
+
+============================================================
+三十五、完成后汇报
+============================================================
+
+Git commit=
+
+MapIntegrity=
+
+CoordinateAudit=
+
+GTLeakage=
+
+CandidateIdentity=
+
+OOF scenes=
+
+OOF actors=
+
+Vehicle semantic coverage=
+
+Pedestrian semantic coverage=
+
+Bicycle semantic coverage=
+
+Vehicle semantic error findings=
+
+Pedestrian semantic error findings=
+
+MovingVehicle semantic findings=
+
+Pedestrian5-8m findings=
+
+NegativeControl=
+
+VehicleSemanticSignal=
+
+PedestrianSemanticSignal=
+
+SemanticIncrementalValue=
+
+Stage12A=
+
+ReadyForStage12B=
+
+============================================================
+三十六、STOP
+============================================================
+
+Stage12A结束后：
+
+立即停止。
+
+禁止自动开展：
+
+Stage12B训练
+
+Semantic GNN训练
+
+official VAL评价
+
+test评价
+
+HiVT重新训练
+
+Error-Aware Loss参数搜索。
+
+等待大脑AI审查。
