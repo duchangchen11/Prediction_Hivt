@@ -66,6 +66,10 @@ def main():
     assert correction["TrainingSourceChanged"] is False and correction["DataOrProtocolChanged"] is False
     trained_reg = read(ROOT / "00_manifest/stage15a_trained_interface_registration.json")
     assert trained_reg["SourceSHA256"] == sha(ROOT / "03_checks/stage15a_trained_interface_check.py")
+    clarification = read(ROOT / "00_manifest/stage15a_postcheck_metadata_clarification.json")
+    assert clarification["OriginalRegistrationSHA256"] == sha(ROOT / clarification["OriginalRegistration"])
+    assert clarification["OptimizerMayBeCreatedForRecovery"] and clarification["OptimizerUpdatesInTrainedInterfaceChecks"] == 0
+    assert not clarification["FittingSourceChanged"] and not clarification["PredictorWeightsOrResultsChanged"]
     checks, ranks, interfaces, isolation, resources = [], [], [], [], []
     cp = {}
     for fold in (1, 2, 3):
@@ -229,6 +233,8 @@ TrainingInterface = PASS。新增入口显式接收 `--fold --seed --training-sc
 
 {checkpoint_ref} 保存模型、AdamW、phase/严格best/坏验证次数、scene sampler epoch+cursor以及CPU/CUDA/Python/NumPy RNG；{restore_ref} 严格绑定fold、seed、列表SHA、输出目录和fitting源码SHA，禁止历史模型或其他fold替代。三折恢复后下一步模型、AdamW moments、loss/梯度、batch身份、游标和全部RNG逐位一致，maxdiff0。NLL checkpoint也完成严格load与候选forward核验。
 
+NLL postcheck初始登记的 `NoOptimizerCreatedOrStepped=true` 表述过宽：restore会重建并加载AdamW以核验状态，随后删除optimizer，实际没有执行optimizer.step。原登记保留，准确行为见 [元数据说明](00_manifest/stage15a_postcheck_metadata_clarification.json)。全部postcheck与head拟合更新仍为0，结果与checkpoint未变。
+
 {transition_ref} 从本实验自己的warm best恢复模型/优化器/RNG，仅将LR0.001改为0.0001，AdamW moments与其他group选项保持；NLL sampler游标重置，epoch偏移100000。原SceneSampler算法逐scene/窗shuffle复用；新按步重建loader只模拟原每新epoch一次CPU base-seed抽样，防止恢复时额外消耗RNG。确定性算法与 `CUBLAS_WORKSPACE_CONFIG=:4096:8`用于可复现检查，batch、损失、模型和预算保持原定义。
 
 边界模拟验证严格tie不改善、NLL patience5、warm固定5000及21000总上限；这些模拟不训练。有限梯度、type embedding、所有expert/router参数在4步内都收到非零梯度。任何隔离、非有限或恢复失败即退出；没有历史模型填补、自动换seed/batch或额外训练预算。
@@ -313,6 +319,8 @@ Stage15A工程检查完成。基础commit `{BASE}`，分支 `{BRANCH}`，新增�
 
 保留一次Fold2优化前时间审计失败：本地额外0.15s名义时长门槛误拒原始timestamp jitter；已改为逐点源timestamp精确一致性，无数据/训练/超参数改变。修正登记与原源码/失败记录可复核。5/12帧的名义2/6s并非每条样本严格均匀时间；官方协议仍需单独token/坐标/指标/采样adapter与协议重置，不能提前宣称official兼容或全新独立确认。
 
+postcheck登记中“未创建或更新optimizer”的初始合并表述已 [补充说明](00_manifest/stage15a_postcheck_metadata_clarification.json)：恢复会重建optimizer用于load，随后删除，未step；原登记、源码、模型与结果保留不变。
+
 全部历史文件/38 checkpoint/5未提交Stage2C文件SHA保持。新小样本CP、候选和标签缓存只保留本地；可版本管理源码、配置、split列表、日志证据及本六份报告提交推送，不merge main。
 
 六份交付：[数据隔离](stage15a_data_isolation_audit.md)、[训练入口](stage15a_training_interface_audit.md)、[模型完整性](stage15a_model_integrity.md)、[排序兼容](stage15a_ranking_compatibility.md)、[资源](stage15a_resource_report.md)、本最终报告。执行/重放说明见 [README](README.md)；机器审核见 [final audit](00_manifest/stage15a_final_audit.json)。
@@ -363,6 +371,7 @@ PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8
         "FormalPredictorRuns": 0, "RankingOptimizerUpdates": 0, "OuterInferenceRuns": 0, "OuterPerformanceComputed": False,
         "FailedInitialAudit": {"fold": 2, "optimizer_updates": 0, "audit_only_correction": True},
         "FittingSourcesUnchanged": True, "AuditCorrectionRegistrationSHA256": sha(ROOT / "00_manifest/stage15a_audit_correction_registration.json"),
+        "PostcheckMetadataClarificationSHA256": sha(ROOT / "00_manifest/stage15a_postcheck_metadata_clarification.json"),
         "PreflightCheckpointCount": 12, "PreflightCheckpointSHA256": {p: x["SHA256"] for p, x in cp.items()},
         "RequiredReportSHA256": {p: sha(ROOT / p) for p in reports}, "PristineIndependentConfirmation": False,
         "FullTrainingAuthorized": False, "STOP": True, "Stage15BStarted": False}

@@ -27,6 +27,7 @@
   },
   "FittingSourcesUnchanged": true,
   "AuditCorrectionRegistrationSHA256": "5532942b16b1f1f41ffddb131c466f539a481dc24d2f9c0c3fcee74da2770511",
+  "PostcheckMetadataClarificationSHA256": "86d4563ded6b46aad3aa75083a59647d893a83a25c2d3b3b1077f8f46ca271cd",
   "PreflightCheckpointCount": 12,
   "PreflightCheckpointSHA256": {
     "04_checkpoints/fold1/stage15a_preflight_last.pt": "bb0f97644976ddff34ff79493e567a95494e8c391b2786482cf67dbbd6b0bbf2",
@@ -44,11 +45,11 @@
   },
   "RequiredReportSHA256": {
     "stage15a_data_isolation_audit.md": "a0ee30b65d7218d225b6e2d32f3773b0396cee6de2f7402ae9f64df4708da683",
-    "stage15a_training_interface_audit.md": "ebe0f3f5fedc8306991475beb03a6c6b944e16cc4f74e6a10ef0f9719af4e819",
+    "stage15a_training_interface_audit.md": "87987c3dafc7f410b86a892c34c9cc74613a2017a08d112d1c51f8917413670d",
     "stage15a_model_integrity.md": "fc5d04f3d8ec17ccd52d6084ba15fe16dba4043d6dfb85a07a391a54ad55bf8b",
     "stage15a_ranking_compatibility.md": "fea8c5f70fbbe35964d11ed67b23b5eecc1cae99007805d9858cf74d8bdf710d",
-    "stage15a_resource_report.md": "42299b12710500c01fd4521966d6a423d66eab8656ea5b7eefb9f0d54cc43dae",
-    "stage15a_final_report.md": "b9403964bbb8bf918ba65c5e0fd1f764573604e1e41894bef56b6be2c28c3cff"
+    "stage15a_resource_report.md": "9254d93b3fb07d39f9b411fb0996844d181d2304c2119231e2e03fa60f31dfa3",
+    "stage15a_final_report.md": "14f619ff0c54126e9b49d9b4f1e04c6a0d3959abd0389590b677469e3dfca900"
   },
   "PristineIndependentConfirmation": false,
   "FullTrainingAuthorized": false,

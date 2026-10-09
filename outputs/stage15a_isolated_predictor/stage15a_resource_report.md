@@ -12,7 +12,7 @@ GPUResource = PASS；StorageResource = PASS_WITH_SHARED_STREAMING。设备NVIDIA
 
 元数据选出的Fold2 InnerTrain最大16个actor-count窗口共1633演员，完整训练step成功，峰值allocated4.520GiB、reserved4.904GiB。该批次选择只依赖t0 actor_count，不读取GT error或Outer；它提供batch16的显存证据，不代表全程穷尽所有地图/边密度组合。
 
-每个模型+AdamW+RNG检查checkpoint 8.198–8.207MB；12个共98.429MB。实际小样本候选/label缓存总2.530MB，均留本地不上传。详见 [原始计时与资源JSON](06_resources/stage15a_resource_summary.json)、[各fold汇总CSV](06_resources/stage15a_resource_summary.csv)。磁盘本次audit剩余43.132GiB。
+每个模型+AdamW+RNG检查checkpoint 8.198–8.207MB；12个共98.429MB。实际小样本候选/label缓存总2.530MB，均留本地不上传。详见 [原始计时与资源JSON](06_resources/stage15a_resource_summary.json)、[各fold汇总CSV](06_resources/stage15a_resource_summary.csv)。磁盘本次audit剩余43.192GiB。
 
 正式方案A为3次新HiVT＋18头；从本次不同fold少量step均值延伸，3×11500步的较短历史schedule代理约3.29小时，3×21000上限的较慢fold代理约9.27小时（预测器train step部分）。这些不是收敛承诺或时间置信区间。上限126次完整Dev42评价的forward-only代理0.131小时，还要加开发shard I/O/保存。历史18头实测代理1.963小时。
 

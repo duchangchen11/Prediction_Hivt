@@ -8,6 +8,8 @@ TrainingInterface = PASS。新增入口显式接收 `--fold --seed --training-sc
 
 [stage15a_train.py:28](https://github.com/duchangchen11/Prediction_Hivt/blob/stage15a/isolated-predictor-preflight/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py#L28) 保存模型、AdamW、phase/严格best/坏验证次数、scene sampler epoch+cursor以及CPU/CUDA/Python/NumPy RNG；[stage15a_train.py:39](https://github.com/duchangchen11/Prediction_Hivt/blob/stage15a/isolated-predictor-preflight/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py#L39) 严格绑定fold、seed、列表SHA、输出目录和fitting源码SHA，禁止历史模型或其他fold替代。三折恢复后下一步模型、AdamW moments、loss/梯度、batch身份、游标和全部RNG逐位一致，maxdiff0。NLL checkpoint也完成严格load与候选forward核验。
 
+NLL postcheck初始登记的 `NoOptimizerCreatedOrStepped=true` 表述过宽：restore会重建并加载AdamW以核验状态，随后删除optimizer，实际没有执行optimizer.step。原登记保留，准确行为见 [元数据说明](00_manifest/stage15a_postcheck_metadata_clarification.json)。全部postcheck与head拟合更新仍为0，结果与checkpoint未变。
+
 [stage15a_train.py:94](https://github.com/duchangchen11/Prediction_Hivt/blob/stage15a/isolated-predictor-preflight/outputs/stage15a_isolated_predictor/02_training/stage15a_train.py#L94) 从本实验自己的warm best恢复模型/优化器/RNG，仅将LR0.001改为0.0001，AdamW moments与其他group选项保持；NLL sampler游标重置，epoch偏移100000。原SceneSampler算法逐scene/窗shuffle复用；新按步重建loader只模拟原每新epoch一次CPU base-seed抽样，防止恢复时额外消耗RNG。确定性算法与 `CUBLAS_WORKSPACE_CONFIG=:4096:8`用于可复现检查，batch、损失、模型和预算保持原定义。
 
 边界模拟验证严格tie不改善、NLL patience5、warm固定5000及21000总上限；这些模拟不训练。有限梯度、type embedding、所有expert/router参数在4步内都收到非零梯度。任何隔离、非有限或恢复失败即退出；没有历史模型填补、自动换seed/batch或额外训练预算。

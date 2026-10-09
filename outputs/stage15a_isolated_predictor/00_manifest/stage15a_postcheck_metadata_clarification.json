@@ -1,0 +1,15 @@
+{
+  "Status": "METADATA_CLARIFICATION_ONLY_AFTER_CHECKS",
+  "TimestampUTC": "2026-10-09T20:58:52.103936+00:00",
+  "OriginalRegistration": "00_manifest/stage15a_trained_interface_registration.json",
+  "OriginalRegistrationSHA256": "3740eb84711cbdd392e37adc5dfe731c28fb0493add3b53964d0d150b022c5e6",
+  "OriginalFlag": "NoOptimizerCreatedOrStepped=true",
+  "CorrectMeaning": "No optimizer updates occur. restore() reconstructs and loads an AdamW optimizer to verify checkpoint state, then deletes it before inference.",
+  "OptimizerMayBeCreatedForRecovery": true,
+  "OptimizerUpdatesInTrainedInterfaceChecks": 0,
+  "HeadOptimizerUpdates": 0,
+  "PredictorWeightsOrResultsChanged": false,
+  "FittingSourceChanged": false,
+  "CheckSourceChanged": false,
+  "OriginalRegistrationPreserved": true
+}
