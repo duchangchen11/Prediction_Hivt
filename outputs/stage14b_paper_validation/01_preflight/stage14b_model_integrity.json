@@ -1,0 +1,432 @@
+{
+  "Stage": "Stage14B",
+  "Status": "PASS",
+  "Architecture": "fixed original own node64 + residual own adapter64->128->64 + original norm/head/logit residual",
+  "ArchitectureSearchPerformed": false,
+  "CandidateOrOriginalLogitModification": false,
+  "TotalParameters": 24001,
+  "TrainableParameters": 24001,
+  "OwnAdapterParameters": 16576,
+  "G1Parameters": 24066,
+  "CapacityDifferenceParameters": 65,
+  "CapacityDifferenceFraction": 0.002700905842267099,
+  "UnusedCapacityPadding": false,
+  "InteractionMessage": "exact zero; neighbors are not consumed",
+  "FoldSeeds": [
+    2022,
+    2122,
+    2222
+  ],
+  "SeedAudits": [
+    {
+      "Seed": 2022,
+      "Status": "PASS",
+      "SharedInitializationBitwise": {
+        "node_encoder.0.weight": true,
+        "node_encoder.0.bias": true,
+        "node_encoder.2.weight": true,
+        "node_encoder.2.bias": true,
+        "norm.weight": true,
+        "norm.bias": true,
+        "head.0.weight": true,
+        "head.0.bias": true,
+        "head.2.weight": true,
+        "head.2.bias": true
+      },
+      "AdapterInitializationRepeatable": true,
+      "AdapterSeed": 2123,
+      "InitialLogitsEqualOriginal": true,
+      "NoNeighborOrMapParameters": true,
+      "NonzeroHeadNeighborAndEdgeMaxDiff": 0.0,
+      "OwnNodeChangeMaxLogitDiff": 0.026169896125793457,
+      "OwnAdapterContributionMaxLogitDiff": 0.020967543125152588,
+      "OriginalLogitResidualMaxDiff": 5.960464477539063e-08,
+      "InputUnmodified": true,
+      "InputSHA256": [
+        "774c8f6df9017b11905370064ec9043cef42f54ef29f57c21f002fb53c104da6",
+        "f81747620e75644819fce167d7a2b99d854246800b39f6925746793ca4a17914",
+        "8b447bca0ae0a18d1ef6bf14b9477d72c98f02f30c9e5dbfa4dad1dc2a0f6ed5",
+        "2260020695981385a0e7c1c66b036d0124059b5657586d3cb71e3aae35b46536",
+        "912128f00e9c725590078b5fc63e1c208eb71b064958bb6cbdbe8664f6425194",
+        "e2ea78849258549af3e9a81459f0cf8cefb5d41c5b4bb201499be90c32509fc2",
+        "e6e2d8a251a02d1fb8f44301fac1cb6177fb5c0b90be115eed305f6996d9c0f8"
+      ],
+      "FutureLabelsNotInForward": true,
+      "LabelPoisonForwardMaxDiff": 0.0,
+      "LabelPoisonChangesSeparateLoss": 0.7644871473312378,
+      "LabelsDetached": true,
+      "NormalizedCLossGradientChecks": {
+        "node_encoder.0.weight": {
+          "Finite": true,
+          "Norm": 0.014457140117883682,
+          "NonzeroElements": 960
+        },
+        "node_encoder.0.bias": {
+          "Finite": true,
+          "Norm": 0.003787009743973613,
+          "NonzeroElements": 64
+        },
+        "node_encoder.2.weight": {
+          "Finite": true,
+          "Norm": 0.02712298557162285,
+          "NonzeroElements": 4096
+        },
+        "node_encoder.2.bias": {
+          "Finite": true,
+          "Norm": 0.007214462384581566,
+          "NonzeroElements": 64
+        },
+        "norm.weight": {
+          "Finite": true,
+          "Norm": 0.0019730539061129093,
+          "NonzeroElements": 64
+        },
+        "norm.bias": {
+          "Finite": true,
+          "Norm": 0.0016601947136223316,
+          "NonzeroElements": 64
+        },
+        "head.0.weight": {
+          "Finite": true,
+          "Norm": 0.03225574642419815,
+          "NonzeroElements": 2048
+        },
+        "head.0.bias": {
+          "Finite": true,
+          "Norm": 0.0030696711037307978,
+          "NonzeroElements": 32
+        },
+        "head.2.weight": {
+          "Finite": true,
+          "Norm": 0.128012552857399,
+          "NonzeroElements": 32
+        },
+        "head.2.bias": {
+          "Finite": true,
+          "Norm": 5.122274160385132e-09,
+          "NonzeroElements": 1
+        },
+        "own_adapter.0.weight": {
+          "Finite": true,
+          "Norm": 0.007092170417308807,
+          "NonzeroElements": 8064
+        },
+        "own_adapter.0.bias": {
+          "Finite": true,
+          "Norm": 0.0034173987805843353,
+          "NonzeroElements": 126
+        },
+        "own_adapter.2.weight": {
+          "Finite": true,
+          "Norm": 0.01020421925932169,
+          "NonzeroElements": 8064
+        },
+        "own_adapter.2.bias": {
+          "Finite": true,
+          "Norm": 0.007007020991295576,
+          "NonzeroElements": 64
+        }
+      },
+      "AllAdapterTensorsHaveSubstantialCGradient": true,
+      "LogitMSEForwardParticipationProbeGradientNorms": {
+        "node_encoder.0.weight": 0.038377560675144196,
+        "node_encoder.0.bias": 0.010588076896965504,
+        "node_encoder.2.weight": 0.08926801383495331,
+        "node_encoder.2.bias": 0.03125450760126114,
+        "norm.weight": 0.006024606060236692,
+        "norm.bias": 0.007717480417340994,
+        "head.0.weight": 0.09637217968702316,
+        "head.0.bias": 0.014582857489585876,
+        "head.2.weight": 0.6295031905174255,
+        "head.2.bias": 0.2807205617427826,
+        "own_adapter.0.weight": 0.020985936746001244,
+        "own_adapter.0.bias": 0.011883188970386982,
+        "own_adapter.2.weight": 0.03451794013381004,
+        "own_adapter.2.bias": 0.031034840270876884
+      },
+      "OptimizerOrTrainingPerformed": false
+    },
+    {
+      "Seed": 2122,
+      "Status": "PASS",
+      "SharedInitializationBitwise": {
+        "node_encoder.0.weight": true,
+        "node_encoder.0.bias": true,
+        "node_encoder.2.weight": true,
+        "node_encoder.2.bias": true,
+        "norm.weight": true,
+        "norm.bias": true,
+        "head.0.weight": true,
+        "head.0.bias": true,
+        "head.2.weight": true,
+        "head.2.bias": true
+      },
+      "AdapterInitializationRepeatable": true,
+      "AdapterSeed": 2223,
+      "InitialLogitsEqualOriginal": true,
+      "NoNeighborOrMapParameters": true,
+      "NonzeroHeadNeighborAndEdgeMaxDiff": 0.0,
+      "OwnNodeChangeMaxLogitDiff": 0.03278669714927673,
+      "OwnAdapterContributionMaxLogitDiff": 0.05711507797241211,
+      "OriginalLogitResidualMaxDiff": 5.960464477539063e-08,
+      "InputUnmodified": true,
+      "InputSHA256": [
+        "6f3787dd934c1548d48a2e6de9b01a0ac83ce3f592bd928220465892eca0a74a",
+        "c0028b9517a8009cada8662b8e2c1a5373e855b4577d443a099759c0498a69ef",
+        "8b447bca0ae0a18d1ef6bf14b9477d72c98f02f30c9e5dbfa4dad1dc2a0f6ed5",
+        "aa337dfa2050c5ab7c5b70445fdd9d391857a4f481b5cd51a5bb27fd93156aef",
+        "bc3f2e626ffc9c62890e15de78d7d7c428ffbab1f1a8ea7c227dc50ae4d55d57",
+        "e2ea78849258549af3e9a81459f0cf8cefb5d41c5b4bb201499be90c32509fc2",
+        "0f9ecd893c7a671de32e5466c7612ec194dce3c3018ec4c486efeb5ec9e42607"
+      ],
+      "FutureLabelsNotInForward": true,
+      "LabelPoisonForwardMaxDiff": 0.0,
+      "LabelPoisonChangesSeparateLoss": 1.0859681367874146,
+      "LabelsDetached": true,
+      "NormalizedCLossGradientChecks": {
+        "node_encoder.0.weight": {
+          "Finite": true,
+          "Norm": 0.02736981399357319,
+          "NonzeroElements": 960
+        },
+        "node_encoder.0.bias": {
+          "Finite": true,
+          "Norm": 0.005733057856559753,
+          "NonzeroElements": 64
+        },
+        "node_encoder.2.weight": {
+          "Finite": true,
+          "Norm": 0.04739515855908394,
+          "NonzeroElements": 4096
+        },
+        "node_encoder.2.bias": {
+          "Finite": true,
+          "Norm": 0.00826877262443304,
+          "NonzeroElements": 64
+        },
+        "norm.weight": {
+          "Finite": true,
+          "Norm": 0.002901350613683462,
+          "NonzeroElements": 64
+        },
+        "norm.bias": {
+          "Finite": true,
+          "Norm": 0.0016756020486354828,
+          "NonzeroElements": 64
+        },
+        "head.0.weight": {
+          "Finite": true,
+          "Norm": 0.036207567900419235,
+          "NonzeroElements": 2048
+        },
+        "head.0.bias": {
+          "Finite": true,
+          "Norm": 0.0025433190166950226,
+          "NonzeroElements": 32
+        },
+        "head.2.weight": {
+          "Finite": true,
+          "Norm": 0.09890847653150558,
+          "NonzeroElements": 32
+        },
+        "head.2.bias": {
+          "Finite": true,
+          "Norm": 4.0978193283081055e-08,
+          "NonzeroElements": 1
+        },
+        "own_adapter.0.weight": {
+          "Finite": true,
+          "Norm": 0.010899814777076244,
+          "NonzeroElements": 8064
+        },
+        "own_adapter.0.bias": {
+          "Finite": true,
+          "Norm": 0.004189180675894022,
+          "NonzeroElements": 126
+        },
+        "own_adapter.2.weight": {
+          "Finite": true,
+          "Norm": 0.015107150189578533,
+          "NonzeroElements": 8064
+        },
+        "own_adapter.2.bias": {
+          "Finite": true,
+          "Norm": 0.00811779499053955,
+          "NonzeroElements": 64
+        }
+      },
+      "AllAdapterTensorsHaveSubstantialCGradient": true,
+      "LogitMSEForwardParticipationProbeGradientNorms": {
+        "node_encoder.0.weight": 0.10247291624546051,
+        "node_encoder.0.bias": 0.030941735953092575,
+        "node_encoder.2.weight": 0.23280729353427887,
+        "node_encoder.2.bias": 0.058635350316762924,
+        "norm.weight": 0.014667432755231857,
+        "norm.bias": 0.014923949725925922,
+        "head.0.weight": 0.17337043583393097,
+        "head.0.bias": 0.02133798971772194,
+        "head.2.weight": 0.7224670648574829,
+        "head.2.bias": 0.2947049140930176,
+        "own_adapter.0.weight": 0.04384848102927208,
+        "own_adapter.0.bias": 0.021597959101200104,
+        "own_adapter.2.weight": 0.07166340947151184,
+        "own_adapter.2.bias": 0.056413035839796066
+      },
+      "OptimizerOrTrainingPerformed": false
+    },
+    {
+      "Seed": 2222,
+      "Status": "PASS",
+      "SharedInitializationBitwise": {
+        "node_encoder.0.weight": true,
+        "node_encoder.0.bias": true,
+        "node_encoder.2.weight": true,
+        "node_encoder.2.bias": true,
+        "norm.weight": true,
+        "norm.bias": true,
+        "head.0.weight": true,
+        "head.0.bias": true,
+        "head.2.weight": true,
+        "head.2.bias": true
+      },
+      "AdapterInitializationRepeatable": true,
+      "AdapterSeed": 2323,
+      "InitialLogitsEqualOriginal": true,
+      "NoNeighborOrMapParameters": true,
+      "NonzeroHeadNeighborAndEdgeMaxDiff": 0.0,
+      "OwnNodeChangeMaxLogitDiff": 0.05167853832244873,
+      "OwnAdapterContributionMaxLogitDiff": 0.04017472267150879,
+      "OriginalLogitResidualMaxDiff": 2.384185791015625e-07,
+      "InputUnmodified": true,
+      "InputSHA256": [
+        "c243549d285eac7b9f3f476bf163f47c1d026c3b1ac12b2c6e300b711e1393a6",
+        "f537d8e0923c417366d9da3adc26629c20918567537d8587ecae996228868e42",
+        "8b447bca0ae0a18d1ef6bf14b9477d72c98f02f30c9e5dbfa4dad1dc2a0f6ed5",
+        "3506a655e650151f46f6ae1bb8e6333176da7561470066367513f28475353b95",
+        "fccba25cfc965da3dd6e8a415e7faa7798fe3cec92f3a90aed77d5c6fdb61392",
+        "e2ea78849258549af3e9a81459f0cf8cefb5d41c5b4bb201499be90c32509fc2",
+        "54a7f4cb35b33ac534a6994c68cc754e330881e24d7b5065261bf8e9590515a1"
+      ],
+      "FutureLabelsNotInForward": true,
+      "LabelPoisonForwardMaxDiff": 0.0,
+      "LabelPoisonChangesSeparateLoss": 1.3104345798492432,
+      "LabelsDetached": true,
+      "NormalizedCLossGradientChecks": {
+        "node_encoder.0.weight": {
+          "Finite": true,
+          "Norm": 0.020170865580439568,
+          "NonzeroElements": 960
+        },
+        "node_encoder.0.bias": {
+          "Finite": true,
+          "Norm": 0.004557681269943714,
+          "NonzeroElements": 64
+        },
+        "node_encoder.2.weight": {
+          "Finite": true,
+          "Norm": 0.040957894176244736,
+          "NonzeroElements": 4096
+        },
+        "node_encoder.2.bias": {
+          "Finite": true,
+          "Norm": 0.009139159694314003,
+          "NonzeroElements": 64
+        },
+        "norm.weight": {
+          "Finite": true,
+          "Norm": 0.0030176625587046146,
+          "NonzeroElements": 64
+        },
+        "norm.bias": {
+          "Finite": true,
+          "Norm": 0.0023994066286832094,
+          "NonzeroElements": 64
+        },
+        "head.0.weight": {
+          "Finite": true,
+          "Norm": 0.042229291051626205,
+          "NonzeroElements": 2048
+        },
+        "head.0.bias": {
+          "Finite": true,
+          "Norm": 0.004191393032670021,
+          "NonzeroElements": 32
+        },
+        "head.2.weight": {
+          "Finite": true,
+          "Norm": 0.10095918923616409,
+          "NonzeroElements": 32
+        },
+        "head.2.bias": {
+          "Finite": true,
+          "Norm": 1.1175870895385742e-08,
+          "NonzeroElements": 1
+        },
+        "own_adapter.0.weight": {
+          "Finite": true,
+          "Norm": 0.009958614595234394,
+          "NonzeroElements": 7872
+        },
+        "own_adapter.0.bias": {
+          "Finite": true,
+          "Norm": 0.004476632457226515,
+          "NonzeroElements": 123
+        },
+        "own_adapter.2.weight": {
+          "Finite": true,
+          "Norm": 0.013943792320787907,
+          "NonzeroElements": 7872
+        },
+        "own_adapter.2.bias": {
+          "Finite": true,
+          "Norm": 0.008753297850489616,
+          "NonzeroElements": 64
+        }
+      },
+      "AllAdapterTensorsHaveSubstantialCGradient": true,
+      "LogitMSEForwardParticipationProbeGradientNorms": {
+        "node_encoder.0.weight": 0.05533390864729881,
+        "node_encoder.0.bias": 0.018570255488157272,
+        "node_encoder.2.weight": 0.1479259580373764,
+        "node_encoder.2.bias": 0.05378726124763489,
+        "norm.weight": 0.013686462305486202,
+        "norm.bias": 0.015641052275896072,
+        "head.0.weight": 0.17558078467845917,
+        "head.0.bias": 0.027388842776417732,
+        "head.2.weight": 0.6429129242897034,
+        "head.2.bias": 0.3680307865142822,
+        "own_adapter.0.weight": 0.03132684528827667,
+        "own_adapter.0.bias": 0.017884520813822746,
+        "own_adapter.2.weight": 0.06552591174840927,
+        "own_adapter.2.bias": 0.05210743471980095
+      },
+      "OptimizerOrTrainingPerformed": false
+    }
+  ],
+  "InferenceCompute": {
+    "MatchedNoGraph": {
+      "TotalParameters": 24001,
+      "TrainableParameters": 24001,
+      "LinearFLOPsPer128Targets": 36126720,
+      "CPU128TargetForwardMedianMS": 0.6663435,
+      "Warmups": 5,
+      "Repeats": 20
+    },
+    "G1": {
+      "TotalParameters": 24066,
+      "TrainableParameters": 24066,
+      "LinearFLOPsPer128Targets": 1285767168,
+      "CPU128TargetForwardMedianMS": 36.776590999999996,
+      "Warmups": 5,
+      "Repeats": 20
+    },
+    "Scope": "FP32 single-thread CPU head forward only; excludes packing/predictor/CUDA transfer/nonlinear FLOPs. Matching active parameter capacity does not match graph computational complexity."
+  },
+  "HistoricalObjectiveSourceSHA256": "23c02791ffd9f3236d6c90499e87117db0a5900c0508a98f799ded0de6caf9be",
+  "SharedScoreBiasNote": "The original final scalar head bias adds a common six-mode offset and is unidentifiable under both SoftCE and normalized C. This same1 shared dimension exists in G1; it is retained for architectural identity and is not added capacity padding.",
+  "InputSource": "Synthetic complete full-neighbor/full-candidate tensors only; real raw-GT isolation is checked separately",
+  "OuterTestOrVALOrTestRead": false,
+  "TrainingPerformed": false,
+  "OptimizerConstructed": false,
+  "FormalTrainingGate": "Requires frozen registration, real input/loss preflight and original300updateC tiny PASS; this structural audit alone grants no training permission"
+}

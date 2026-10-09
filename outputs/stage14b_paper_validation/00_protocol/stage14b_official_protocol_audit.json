@@ -1,0 +1,61 @@
+{
+  "Status": "PARTIAL_NEEDS_ADAPTER_AND_PROTOCOL_RESET",
+  "CheckedUTC": "2026-10-09T18:57:17.913555+00:00",
+  "LocalDevkitSourceSHA256": {
+    "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/nuscenes/eval/prediction/splits.py": "d72cb48382187644649dc2cce197e80aefde04bf20dd0b44ad0a287b206ae76e",
+    "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/nuscenes/eval/prediction/metrics.py": "79890607fad84d3a00c94d46006888a1cd2975b82bc99fa5b94d8ba409a55b2d",
+    "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/nuscenes/eval/prediction/data_classes.py": "77f9d18bcfaee9aa0fb9b20dbf9b82e939abe6ba78ac0fbc974c31a3eef54f42",
+    "/home/lrj/anaconda3/envs/ped_intent/lib/python3.10/site-packages/nuscenes/eval/prediction/configs/predict_2020_icra.json": "1e9ffa4c73cdc902d8606565179f7e59161ea4294c02254bc7d9e5305847dd1c"
+  },
+  "ChallengeTrainScenes": 500,
+  "ChallengeTrainValScenes": 200,
+  "ChallengeValScenes": 150,
+  "ManifestChecks": [
+    {
+      "Path": "/home/lrj/Prediction_Hivt/outputs/stage2/trainval/cache/maps/prediction/prediction_scenes.json",
+      "Exists": false
+    },
+    {
+      "Path": "/media/lrj/54926A1D926A0438/nuscenes-trainval/maps/prediction/prediction_scenes.json",
+      "Exists": false
+    },
+    {
+      "Path": "/home/lrj/datasets/nuscenes-mini/maps/prediction/prediction_scenes.json",
+      "Exists": false
+    }
+  ],
+  "FullTrainValTargetManifestVerified": false,
+  "CurrentProtocol": "custom HeadTrain630 ranking OOF, all full-horizon V/P/B targets",
+  "HorizonCompatible": true,
+  "HistorySeconds": 2,
+  "PredictionSeconds": 6,
+  "Timesteps": 12,
+  "NumModes": 6,
+  "ModeLimit": 25,
+  "DefaultOfficialK": [
+    1,
+    5,
+    10
+  ],
+  "ActualSixModeSupportsK": [
+    1,
+    5,
+    6
+  ],
+  "Genuine10ModesAvailable": false,
+  "OfficialMiss": "min over probability top-k of max_t L2 >=2m",
+  "ProjectMR6": "min_k endpoint L2 >2m",
+  "MissCompatible": false,
+  "CoordinatesNeedGlobalAdapter": true,
+  "TargetUniverseIdentical": false,
+  "OfficialSplitIdentical": false,
+  "HiddenTestAnnotationsVerifiedAvailable": false,
+  "CurrentDataPristine": false,
+  "CurrentPredictionServer": "VAL leaderboard; official code review/run on hidden TEST for top entries",
+  "PrimarySources": [
+    "https://github.com/nutonomy/nuscenes-devkit/blob/master/python-sdk/nuscenes/eval/prediction/README.md",
+    "https://github.com/nutonomy/nuscenes-devkit/blob/master/python-sdk/nuscenes/eval/prediction/splits.py",
+    "https://github.com/nutonomy/nuscenes-devkit/blob/master/python-sdk/nuscenes/eval/prediction/metrics.py",
+    "https://github.com/nutonomy/nuscenes-devkit/blob/master/python-sdk/nuscenes/eval/prediction/configs/predict_2020_icra.json"
+  ]
+}

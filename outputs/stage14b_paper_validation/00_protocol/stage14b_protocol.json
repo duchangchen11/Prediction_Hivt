@@ -1,0 +1,142 @@
+{
+  "status": "REGISTERED_BEFORE_FITTING",
+  "client_date": "2026-10-10",
+  "timezone": "Asia/Shanghai",
+  "base_commit": "4daa4ae82557270e4f43881fa22c21e3ba6c4068",
+  "branch": "stage14b/paper-validation-design",
+  "formal_variants": [
+    "Matched-NG-C"
+  ],
+  "A": "mean(-sum softmax(-FDE/1m)*log_softmax(logits))",
+  "B": "mean(-log p[argmin FDE]); lowest index tie",
+  "C": "mean(sum p*(FDE-minFDE)/max(1m,mean(FDE-minFDE))); normalized formulation, differs from raw Stage11A expected risk",
+  "architecture": "G1 own-node encoder64 + residual Linear64x128/ReLU/Linear128x64 + original LayerNorm64/head64x32x1; original-logit residual",
+  "node_dim": 15,
+  "edge_dim": 17,
+  "hidden": 64,
+  "message_layers": 1,
+  "neighbor_radius_m": 50,
+  "max_neighbors": 8,
+  "K": 6,
+  "Tf": 12,
+  "Th": 5,
+  "official_VAL_or_test_permitted": false,
+  "historical_HeadDev_for_training_selection_or_main_evaluation": false,
+  "source_scenes": "HeadTrain630 only",
+  "split_seed": 2022,
+  "outer_split": "sort scene token by SHA256 of UTF8(2022|outer|scene_token), lexical token tie; consecutive210 blocks",
+  "inner_split": "remaining420 sort by SHA256 of UTF8(2022|inner|foldN|scene_token); first42 InnerDev, rest378 InnerTrain",
+  "ABC_seeds": [
+    2022,
+    2122,
+    2222
+  ],
+  "last_score_layer": "zero weight and bias",
+  "batch_order": "NumPy default_rng(fold_seed+epoch) permutation; identical cached order hashes A/B/C",
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "precision": "FP32",
+  "AMP": false,
+  "microbatch": 128,
+  "accumulation": 8,
+  "effective_batch": 1024,
+  "max_epochs": 50,
+  "patience": 5,
+  "carry": "continuous shuffled epoch stream; pending final remainder prepended next epoch; no smaller optimizer step; pending saved at stop, every distinct actor must have participated",
+  "early_stop": "variant-specific patience5 on identical selection rule; same maximum budget, no equalization based on test performance",
+  "ABC_selection": "minimum Sdev=.5*VehicleInnerDevFDE/FoldR2VehicleFDE+.5*PedestrianInnerDevFDE/FoldR2PedestrianFDE; strict improvement; epoch1 first eligible",
+  "R2_protocol": {
+    "architecture": [
+      19,
+      32,
+      1
+    ],
+    "parameters": 673,
+    "loss": "original Stage6 ranking_loss softmax(-FDE/1m)",
+    "seed": 2022,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "head_batch": 1024,
+    "evaluation_batch": 4096,
+    "max_epochs": 50,
+    "patience": 5,
+    "order": "torch.randperm with CPU Generator seed2022+epoch",
+    "remainder": "original last partial batch optimizer step, no carry",
+    "selection": "InnerDev Overall Top1FDE strict improvement",
+    "changes_only": "data partition and normalization; historical R2 checkpoint never loaded"
+  },
+  "normalization": "each fold fitted only on InnerTrain378, population std +1e-6; original G1 valid mask and R2 missing-neighbor conventions",
+  "Bicycle": "neighbors and training targets retained; final ABC scores routed to corresponding frozen FoldR2",
+  "tiny": {
+    "fold": 1,
+    "targets": 128,
+    "sampling_seed": 2022,
+    "updates": 300,
+    "variants": [
+      "Matched-NG-C"
+    ],
+    "reuse_original_target_ids": true,
+    "C_pass": "1-final/initial >=0.8 on original normalized C objective",
+    "any_failure": "STOP; no architecture/hyperparameter changes or formal runs"
+  },
+  "OuterTest": "new matched outputs only after all3 checkpoints frozen; cached historical outputs joined by scene/sample/instance identities",
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 2022,
+    "unit": "paired whole scenes independently resampled210 within each fold",
+    "descriptive_percentiles": [
+      2.5,
+      97.5
+    ],
+    "family_size": 3,
+    "FWER": 0.05,
+    "adjusted_coverage": 0.9833333333333333,
+    "adjusted_percentiles": [
+      0.8333333333333334,
+      99.16666666666667
+    ],
+    "primary_groups": [
+      "Overall"
+    ],
+    "co_primary": [
+      "G-C-NG-C",
+      "G-C-Matched-NG-C",
+      "NG-C-NG-A"
+    ]
+  },
+  "primary": "three registered Overall Top1FDE contrasts; two historical known results and one new capacity comparison",
+  "secondary": [
+    "minFDE6",
+    "Top1ADE",
+    "HitRate",
+    "Vehicle",
+    "Pedestrian",
+    "MovingVehicle",
+    "head latency and GPU memory"
+  ],
+  "motion_groups": "exploratory",
+  "limitations": "known historical contrasts reused; internal ranking OOF only; frozen predictor trained all TRAIN700; architecture/depth still differ; approximate rather than exact active capacity match",
+  "after_stage": "commit/push Stage14B only then STOP brainAI review; no Stage15 or HiVT retraining",
+  "Stage": "Stage14B",
+  "reused_variants": [
+    "Stage14A NG-A/NG-C/G-A/G-C, historical fixed foldR2"
+  ],
+  "FormalNewTrainingRuns": 3,
+  "CandidateGenerator": "same historical Stage5A checkpoint and byte-frozen candidates; no new HiVT training",
+  "high_cost": "original Stage11B definition: sum and count of largest10% positive per-actor switch FDE harms; ceil(0.1*n_harms)",
+  "FreezeSHA256": "7896cf85db193baad68ee9561a1901f231ab8630a37c5e360b0723824a0fb84c",
+  "ActiveParameters": 24001,
+  "GraphParameters": 24066,
+  "Difference": 65,
+  "RelativeDifference": 0.002700905842267099,
+  "ExtraOwnAdapterParameters": 16576,
+  "AdapterInitialization": "foldseed+101 once; no architecture search",
+  "SharedInitialization": "G1 node_encoder/norm/head bitwise same per fold; score last layer zero",
+  "FutureGT": "labels only objective/checkpoint evaluation; absent from seven forward inputs",
+  "decisions": {
+    "CapacityAlternativeNotSufficient": "SUPPORTED iff G-C minus Matched-NG-C Overall point<0, Bonferroni family3 CI upper<0 and >=2 of3 folds negative; else NOT_ESTABLISHED; no causal proof"
+  },
+  "ModelSourceSHA256": "77b9b760a4e622110e587447becb92170983c986bd7835cfd26187ec350dbdcf"
+}

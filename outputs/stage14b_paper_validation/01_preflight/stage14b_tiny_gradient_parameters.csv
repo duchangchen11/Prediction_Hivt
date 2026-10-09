@@ -1,0 +1,15 @@
+Parameter,MaximumGradientNorm,ActiveAdapter,SharedSoftmaxOffset
+node_encoder.0.weight,2.7054905891418457,False,False
+node_encoder.0.bias,0.51032799482345581,False,False
+node_encoder.2.weight,1.6142172813415527,False,False
+node_encoder.2.bias,0.42475441098213196,False,False
+norm.weight,0.01061722356826067,False,False
+norm.bias,0.0052055702544748783,False,False
+head.0.weight,0.053319275379180908,False,False
+head.0.bias,0.0063796816393733025,False,False
+head.2.weight,0.70771282911300659,False,False
+head.2.bias,4.71482053399086e-09,False,True
+own_adapter.0.weight,0.20664587616920471,True,False
+own_adapter.0.bias,0.154688760638237,True,False
+own_adapter.2.weight,0.11391501128673553,True,False
+own_adapter.2.bias,0.06566639244556427,True,False
