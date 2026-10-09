@@ -1,0 +1,9 @@
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage11c_probability_calibration/00_manifest/stage11c_register.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage11c_probability_calibration/02_calibration/stage11c_fit.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage11c_probability_calibration/03_oof_evaluation/stage11c_evaluate.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage11c_probability_calibration/04_bootstrap/stage11c_bootstrap.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage11c_probability_calibration/08_reports/stage11c_final_audit.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage11c_probability_calibration/06_figures/stage11c_figures.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /home/lrj/anaconda3/envs/ped_intent/bin/python outputs/stage11c_probability_calibration/08_reports/stage11c_report.py
+
+Registration must precede fitting and refuses to overwrite registration. Completed evaluators refuse overwrite. Historical inputs are read-only.

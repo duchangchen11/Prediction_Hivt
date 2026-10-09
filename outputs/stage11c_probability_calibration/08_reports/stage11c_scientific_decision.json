@@ -1,0 +1,44 @@
+{
+  "FrozenModelIntegrity": "PASS",
+  "TemperatureFitIsolation": "PASS",
+  "Top1Identity": "PASS",
+  "BicyclePreserved": "YES",
+  "CalibrationEngineering": "PASS",
+  "VehicleNLLImproved": "YES",
+  "PedestrianNLLImproved": "YES",
+  "ProbabilityConcentrationReduced": "YES",
+  "CalibrationUseful": "YES",
+  "ReadyForSemanticStudy": "YES",
+  "Stage11C": "GO",
+  "ExecutionBoundary": "STOP_AFTER_STAGE11C; wait for brain-AI review, no next-stage authorization",
+  "EvidenceScope": "OOF development evidence, already inspected; not independent testing",
+  "ProbabilityScope": "six-candidate FDE-oracle-mode classification only; not true future/intent/collision/risk probabilities",
+  "ExpectedRegretTradeoff": {
+    "Vehicle": {
+      "Raw": 1.135765954550943,
+      "Calibrated": 2.3102776172363355,
+      "Delta": 1.1745116626853225,
+      "CI95": [
+        1.1510649322652755,
+        1.1984179618307027
+      ]
+    },
+    "Pedestrian": {
+      "Raw": 0.3979681349851593,
+      "Calibrated": 0.7363324502039568,
+      "Delta": 0.3383643152188062,
+      "CI95": [
+        0.318400636683329,
+        0.3600757513590155
+      ]
+    }
+  },
+  "Temperatures": {
+    "Fold1": 93.47459065453494,
+    "Fold2": 41.89311387594937,
+    "Fold3": 77.85669786831706
+  },
+  "ProtocolSHA256": "e36cfe8de4ca0b8e40bf2a8b3c1df8691b592b2bbdca33cedd94ecd3bbe5a0da",
+  "NewModelTraining": false,
+  "HeadDevOfficialVALTestRead": false
+}
