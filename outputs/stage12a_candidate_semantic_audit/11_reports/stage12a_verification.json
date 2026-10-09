@@ -1,0 +1,125 @@
+{
+  "Status": "PASS",
+  "MapIntegrity": "PASS",
+  "CoordinateAudit": "PASS",
+  "GTLeakage": "PASS",
+  "CandidateIdentity": "PASS",
+  "SemanticCoverage": "PASS",
+  "NegativeControl": "PASS",
+  "Actors": 260151,
+  "Scenes": 630,
+  "Candidates": 1560906,
+  "FDEMaxDiff": 0.0,
+  "ADEMaxDiff": 0.0,
+  "TiedRankMaxDiff": 1.1102230246251565e-16,
+  "EmptyCandidateContextsRetained": 171573,
+  "HistoryFilesVerified": 2600,
+  "PreservedUntrackedVerified": 5,
+  "CheckpointHashesVerified": 20,
+  "TrainingExecuted": false,
+  "OfficialVALOrTestUsed": false,
+  "HeadDevEvaluationUsed": false,
+  "Checks": [
+    {
+      "Check": "ActorIdentity",
+      "Status": "PASS",
+      "Evidence": "unchanged complete HeadTrain OOF population"
+    },
+    {
+      "Check": "Types",
+      "Status": "PASS",
+      "Evidence": "all Vehicle/Pedestrian/Bicycle actors retained"
+    },
+    {
+      "Check": "ProbabilityShape",
+      "Status": "PASS",
+      "Evidence": "R0,FoldR2,A,B,C frozen float32 scores"
+    },
+    {
+      "Check": "ProbabilityNumeric",
+      "Status": "PASS",
+      "Evidence": "finite unchanged source probabilities"
+    },
+    {
+      "Check": "CandidateIdentity",
+      "Status": "PASS",
+      "Evidence": "1,560,906 per-mode geometry SHA256 values recomputed against original Stage11A source"
+    },
+    {
+      "Check": "PerModeFDEADE",
+      "Status": "PASS",
+      "Evidence": "all HeadTrain candidates CPU FP32 last-valid FDE/ADE bitwise cache match"
+    },
+    {
+      "Check": "MissingMapRetention",
+      "Status": "PASS",
+      "Evidence": "171573 empty candidate contexts retained as finite values plus masks"
+    },
+    {
+      "Check": "CalibratedTop1",
+      "Status": "PASS",
+      "Evidence": "positive temperature leaves every C Raw Top1 unchanged"
+    },
+    {
+      "Check": "FullModeCSV",
+      "Status": "PASS",
+      "Evidence": "local actor-level CSV hash, exact six modes per actor"
+    },
+    {
+      "Check": "TiedRankSpearman",
+      "Status": "PASS",
+      "Evidence": "200 fixed synthetic rows vs SciPy; maxdiff 1.11e-16"
+    },
+    {
+      "Check": "SceneBootstrap",
+      "Status": "PASS",
+      "Evidence": "2000 whole-scene draws stratified by three frozen outer210 folds, regenerated seed2022"
+    },
+    {
+      "Check": "NegativeControls",
+      "Status": "PASS",
+      "Evidence": "full semantic+mask records are deterministic permutations; NC2 exactly region/type restricted; scores/candidates untouched"
+    },
+    {
+      "Check": "PairedSceneAssociation",
+      "Status": "PASS",
+      "Evidence": "all six primary features pooled real and control estimates recomputed on identical eligible actors"
+    },
+    {
+      "Check": "GrossGainHarm",
+      "Status": "PASS",
+      "Evidence": "gross harm minus gross gain equals net signed FDE change in every fold/type/motion group"
+    },
+    {
+      "Check": "SwitchSemanticPairing",
+      "Status": "PASS",
+      "Evidence": "selected C minus R2 features independently gathered; major motion/type groups match counts and means"
+    },
+    {
+      "Check": "Cases",
+      "Status": "PASS",
+      "Evidence": "10+10 error and5+5 successful switch cases, registered error/gain order"
+    },
+    {
+      "Check": "CaseIdentityAndFiles",
+      "Status": "PASS",
+      "Evidence": "all six geometry IDs and R2/C/oracle modes equal frozen arrays; PNG/SVG/PDF SHA256 verified"
+    },
+    {
+      "Check": "RegisteredCaseSelection",
+      "Status": "PASS",
+      "Evidence": "all30 selections independently reproduced from FDE/gain order with identity ties and scene diversity only"
+    },
+    {
+      "Check": "NoNewCheckpoint",
+      "Status": "PASS",
+      "Evidence": "Stage12A produces diagnostic features and reports only"
+    },
+    {
+      "Check": "HistoricalIntegrity",
+      "Status": "PASS",
+      "Evidence": "2600 historical tracked files, 5 preserved Stage2C files,20 checkpoints and frozen data hashes unchanged"
+    }
+  ],
+  "ProtocolSHA256": "96d19ececcf10796f3c53221ae16f7ffb19a05e9d682897b463dec3ec33933a6"
+}

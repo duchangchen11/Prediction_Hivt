@@ -1,0 +1,92 @@
+{
+  "MapIntegrity": "PASS",
+  "CoordinateAudit": "PASS",
+  "GTLeakage": "PASS",
+  "CandidateIdentity": "PASS",
+  "SemanticCoverage": "PASS",
+  "NegativeControl": "PASS",
+  "Stage": "Stage12A",
+  "BaseCommit": "165c497961afe9f3a196a0987128f9eed48da144",
+  "OOFScenes": 630,
+  "OOFActors": 260151,
+  "BicycleAnalyzed": "YES",
+  "VehicleSemanticSignal": "WEAK",
+  "PedestrianSemanticSignal": "PROMISING",
+  "SemanticIncrementalValue": "SUGGESTED",
+  "Stage12A": "GO",
+  "ReadyForStage12B": "YES",
+  "FrozenCandidatesAndTop1": "CONFIRMED",
+  "SemanticFeatureExtraction": "CONFIRMED",
+  "ReproducibleDescriptiveAssociation": "STRONGLY_SUGGESTED",
+  "GenuineIndependentPredictionGain": "UNRESOLVED",
+  "TrainingExecuted": false,
+  "NewCheckpointCreated": false,
+  "OfficialVALOrTestUsed": false,
+  "HeadDevEvaluationUsed": false,
+  "Action": "STOP; wait for 大脑AI review; no Stage12B implementation or training authorized",
+  "EvidenceScope": "previously inspected OOF development exploration; scene-cluster CIs descriptive and unadjusted",
+  "ProtocolSHA256": "96d19ececcf10796f3c53221ae16f7ffb19a05e9d682897b463dec3ec33933a6",
+  "SemanticManifestSHA256": "631d4657159363f50bcc5a3397dba9daaf4683bf275ef10185ed3385ee8e3a29",
+  "VerificationSHA256": "5b0f9fdfb51fee9136f5e824f347a2908e4d2a872097e64c2c9f5e0dad064afb",
+  "FeatureCriteria": [
+    {
+      "ActorType": "Vehicle",
+      "Feature": "centerline_mean_distance",
+      "Grade": "WEAK",
+      "PositiveEligibleFolds": 3,
+      "PositiveSelectedDifferenceFolds": 1,
+      "ControlContrastPass": true,
+      "MatchedMotionIncrementalSuggested": false
+    },
+    {
+      "ActorType": "Vehicle",
+      "Feature": "centerline_heading_error",
+      "Grade": "NONE",
+      "PositiveEligibleFolds": 3,
+      "PositiveSelectedDifferenceFolds": 3,
+      "ControlContrastPass": false,
+      "MatchedMotionIncrementalSuggested": false
+    },
+    {
+      "ActorType": "Vehicle",
+      "Feature": "drivable_inside_fraction",
+      "Grade": "WEAK",
+      "PositiveEligibleFolds": 3,
+      "PositiveSelectedDifferenceFolds": 1,
+      "ControlContrastPass": true,
+      "MatchedMotionIncrementalSuggested": false
+    },
+    {
+      "ActorType": "Pedestrian",
+      "Feature": "crosswalk_distance",
+      "Grade": "NONE",
+      "PositiveEligibleFolds": 0,
+      "PositiveSelectedDifferenceFolds": 0,
+      "ControlContrastPass": false,
+      "MatchedMotionIncrementalSuggested": false
+    },
+    {
+      "ActorType": "Pedestrian",
+      "Feature": "walkway_inside_fraction",
+      "Grade": "PROMISING",
+      "PositiveEligibleFolds": 3,
+      "PositiveSelectedDifferenceFolds": 3,
+      "ControlContrastPass": true,
+      "MatchedMotionIncrementalSuggested": true
+    },
+    {
+      "ActorType": "Pedestrian",
+      "Feature": "crosswalk_intersects",
+      "Grade": "NONE",
+      "PositiveEligibleFolds": 0,
+      "PositiveSelectedDifferenceFolds": 1,
+      "ControlContrastPass": false,
+      "MatchedMotionIncrementalSuggested": false
+    }
+  ],
+  "CandidateCoverage": {
+    "Vehicle": 0.886875783052,
+    "Pedestrian": 0.89793131252,
+    "Bicycle": 0.921308724832
+  }
+}

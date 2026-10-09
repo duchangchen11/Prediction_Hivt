@@ -1,0 +1,21 @@
+Check,Status,Evidence
+ActorIdentity,PASS,unchanged complete HeadTrain OOF population
+Types,PASS,all Vehicle/Pedestrian/Bicycle actors retained
+ProbabilityShape,PASS,"R0,FoldR2,A,B,C frozen float32 scores"
+ProbabilityNumeric,PASS,finite unchanged source probabilities
+CandidateIdentity,PASS,"1,560,906 per-mode geometry SHA256 values recomputed against original Stage11A source"
+PerModeFDEADE,PASS,all HeadTrain candidates CPU FP32 last-valid FDE/ADE bitwise cache match
+MissingMapRetention,PASS,171573 empty candidate contexts retained as finite values plus masks
+CalibratedTop1,PASS,positive temperature leaves every C Raw Top1 unchanged
+FullModeCSV,PASS,"local actor-level CSV hash, exact six modes per actor"
+TiedRankSpearman,PASS,200 fixed synthetic rows vs SciPy; maxdiff 1.11e-16
+SceneBootstrap,PASS,"2000 whole-scene draws stratified by three frozen outer210 folds, regenerated seed2022"
+NegativeControls,PASS,full semantic+mask records are deterministic permutations; NC2 exactly region/type restricted; scores/candidates untouched
+PairedSceneAssociation,PASS,all six primary features pooled real and control estimates recomputed on identical eligible actors
+GrossGainHarm,PASS,gross harm minus gross gain equals net signed FDE change in every fold/type/motion group
+SwitchSemanticPairing,PASS,selected C minus R2 features independently gathered; major motion/type groups match counts and means
+Cases,PASS,"10+10 error and5+5 successful switch cases, registered error/gain order"
+CaseIdentityAndFiles,PASS,all six geometry IDs and R2/C/oracle modes equal frozen arrays; PNG/SVG/PDF SHA256 verified
+RegisteredCaseSelection,PASS,all30 selections independently reproduced from FDE/gain order with identity ties and scene diversity only
+NoNewCheckpoint,PASS,Stage12A produces diagnostic features and reports only
+HistoricalIntegrity,PASS,"2600 historical tracked files, 5 preserved Stage2C files,20 checkpoints and frozen data hashes unchanged"

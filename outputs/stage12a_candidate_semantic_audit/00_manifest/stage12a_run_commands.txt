@@ -31,6 +31,13 @@ Full extraction uses three fork CPU processes, read-only source mmaps,
 disjoint scene cache paths, canonical ordered manifest, and replay of the
 first three completed sequential scenes. Extraction opens no standalone
 GT/FDE/ADE label array; all630 scenes freeze before subsequent analysis.
+The first case JSON write exposed a NumPy Fold integer serialization issue;
+an explicit Python-int conversion fixed it without changing case identities.
+Case legend layout was reviewed in four representative error/success images
+and moved outside the BEV axes to avoid obscuring narrow pedestrian plots.
+Statistics was interrupted and resumed after caching identical C/R2/oracle
+feature gathers in contiguous arrays; independent selected-mode means verify
+this numerical optimization without changing any definition or threshold.
 
 No training, checkpoint generation, official VAL/test evaluation, HeadDev70
 evaluation, mode reranking, loss search or Stage12B implementation is run.
