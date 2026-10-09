@@ -1,0 +1,32 @@
+{
+  "Status": "FROZEN_ALL9",
+  "TimestampUTC": "2026-10-09T10:06:45Z",
+  "Checkpoints": {
+    "05_checkpoints/fold1/G_best.pt": "6b70edd072a01d432f518e7e441d4c1ed0ab9c2daa2e3aa6145c3de4763c0e79",
+    "05_checkpoints/fold1/S_best.pt": "a4781a2504c7219961d075752cfb13ad289150c41cbf35b31b9e5242eaaced48",
+    "05_checkpoints/fold1/P_best.pt": "b590ef5c49155bc6e07db94828e8e7446a9cd6373fd2ea3cf24d9c22576c8b44",
+    "05_checkpoints/fold2/G_best.pt": "4333049f7ea8dffaaea91a6b65d1a2b2454f1530d5000918fd401f47d43ebe03",
+    "05_checkpoints/fold2/S_best.pt": "5d91695ab5e77b9f478dcc269e853282864b012a7b81262035a2d44037d9766c",
+    "05_checkpoints/fold2/P_best.pt": "d22882524f66b0d94bcceb78e0de4647fd9b79740c02967bef30a4ae110928ca",
+    "05_checkpoints/fold3/G_best.pt": "f774d9f21d22d54ed8bd357627439a5e7c14cdb7906361f346eff10399a0fee6",
+    "05_checkpoints/fold3/S_best.pt": "5f0b5bb427d0e212a3f526b0b5472927af91e618da8ed29a1bcf40e0da9397dd",
+    "05_checkpoints/fold3/P_best.pt": "044ba53cd06ef59486f19bbf4bfad076cf4bcfcecd4931d0fced5eda5e8c483c"
+  },
+  "Sequence": [
+    "Fold1 G",
+    "Fold1 S",
+    "Fold1 P",
+    "Fold2 G",
+    "Fold2 S",
+    "Fold2 P",
+    "Fold3 G",
+    "Fold3 S",
+    "Fold3 P"
+  ],
+  "ProtocolSHA256": "a7a734f36fcccc38162897742e754696b5062a1ed2b9fd54b2a1ce37af572519",
+  "ConfigurationSHA256": "8d2854a4ad67d90a5c4db302298b21e8a44033f89957740074d3b4029d1977c0",
+  "NoResidualOuterTestReadDuringTraining": true,
+  "FrozenGradients": 0,
+  "FrozenStatesUnchanged": true,
+  "CheckpointManifestSHA256": "1860a37a5dbebebad342df07d6b2758fd9f3a14e74f7cf0625921ccff23a7b30"
+}
