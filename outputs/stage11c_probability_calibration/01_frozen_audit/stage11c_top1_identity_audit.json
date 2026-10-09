@@ -1,0 +1,29 @@
+{
+  "Status": "PASS",
+  "Top1Identity": "PASS",
+  "Actors": 260151,
+  "Scenes": 630,
+  "ChangedModes": 0,
+  "RawProbabilityAndLogitArgmaxEqual": true,
+  "CalibratedProbabilityAndLogitArgmaxEqual": true,
+  "TieRule": "lowest index, identical raw/cal",
+  "CandidateCoordinatesExact": true,
+  "CandidateMaxDiff": 0,
+  "HeadTrainCandidateBlockSHA256": "4136b746e0481eb79246d639ee9cbcb59f408a07d34ae57ecb80a1f45a256381",
+  "CandidateSourceSHA256Before": "fac8fb05888372de965bdc11b6bef1d0f211d095e38c509ddcad4a1a9d909049",
+  "CandidateSourceSHA256After": "fac8fb05888372de965bdc11b6bef1d0f211d095e38c509ddcad4a1a9d909049",
+  "MetricIdentity": {
+    "Top1FDE": true,
+    "Top1ADE": true,
+    "minFDE6": true,
+    "minADEOracle6": true,
+    "MR6": true
+  },
+  "MetricMaxDiff": {
+    "Top1FDE": 0,
+    "Top1ADE": 0,
+    "minFDE6": 0,
+    "minADEOracle6": 0,
+    "MR6": 0
+  }
+}

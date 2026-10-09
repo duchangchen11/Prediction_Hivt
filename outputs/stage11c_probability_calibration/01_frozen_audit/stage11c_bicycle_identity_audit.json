@@ -1,0 +1,18 @@
+{
+  "Status": "PASS",
+  "BicyclePreserved": "YES",
+  "Actors": 2980,
+  "BitwiseFields": {
+    "logits": true,
+    "probabilities": true,
+    "candidates": true,
+    "top1_mode": true,
+    "Top1FDE": true
+  },
+  "CandidateBlockSHA256": "063286cf38f8a0c61ffd52b9093ee70b2d75265398373d79eaa4749ea76c4f53",
+  "LogitsSHA256": "ad18ff63bae59906723057b635648b4fac9d4e42ff9defebd409fe90779dfe24",
+  "ProbabilitiesSHA256": "2e023ec4ff39bf05adac828e00fdbb203445471bc32dd81bf610f89f8b3356da",
+  "LogitDType": "float32",
+  "ProbabilityDType": "float32",
+  "Routing": "original frozen FoldR2 FP32 block, no temperature scaling or softmax recomputation"
+}
