@@ -1,0 +1,93 @@
+{
+  "Stage": "Stage11C",
+  "BaseCommit": "465d3541192303e43809dc553c12e445225ab228",
+  "Branch": "stage11c/ranking-probability-calibration",
+  "Method": "one fold-specific global scalar temperature, Vehicle/Pedestrian shared; Bicycle original FoldR2",
+  "TrainNeuralNetworks": false,
+  "WriteCheckpoints": false,
+  "NewCalibratorsOrSearches": false,
+  "Data": "HeadTrain630, original Stage11B 3 outer210 / inner378 / dev42 splits",
+  "FitPartition": "corresponding InnerDev42 only; V/P fixed .5/.5 macro weights",
+  "OracleLabel": "lowest-index argmin frozen FDE among six candidates",
+  "FitObjective": "macro OracleBestMode NLL: .5 mean Vehicle + .5 mean Pedestrian",
+  "Temperature": {
+    "bounds": [
+      1.0,
+      1000.0
+    ],
+    "space": "natural log T",
+    "method": "scipy.optimize.minimize_scalar bounded",
+    "dtype": "float64",
+    "xatol": 1e-10,
+    "maxiter": 1000,
+    "endpoints_evaluated": true,
+    "selection": "minimum objective among interior solution and exact endpoints; exact tie uses smaller T",
+    "boundary_rule": "exact endpoint 1000 wins => BOUNDARY_HIT; never expand range"
+  },
+  "ProbabilityStorage": "V/P calibrated logits and probabilities FP64; Bicycle separate original FP32 blocks, bitwise unchanged; routed by observed actor type",
+  "Precision": "stable FP64 shifted logsumexp for NLL/SoftCE; raw probabilities original Stage11B FP32 promoted exactly for statistics",
+  "Top1": "lowest-index argmax of probabilities; require exact equality with raw probabilities and logits",
+  "Brier": "sum across six classes (p_k - onehot_oracle_k)^2; unnormalized, range 0..2",
+  "ECE": {
+    "bins": 15,
+    "edges": "uniform j/15 for j=0..15",
+    "intervals": "[j/15,(j+1)/15), last includes 1",
+    "event": "selected highest-probability mode equals lowest-index oracle-best FDE mode",
+    "weight": "actor/window count",
+    "empty_bins": "zero contribution, reliability means left missing",
+    "interpretation": "six-candidate oracle-mode classification calibration; not real-world trajectory/intent/collision/risk probability"
+  },
+  "Auxiliary": {
+    "SoftCE": "q=softmax(-FDE/1m), -sum q log p",
+    "ExpectedFDE": "sum p*FDE",
+    "ExpectedRegret": "sum p*(FDE-minFDE)",
+    "NormalizedExpectedRegret": "sum p*cost / max(1m,mean six costs) using original Stage11B convention"
+  },
+  "Bootstrap": {
+    "replicates": 2000,
+    "seed": 2022,
+    "unit": "paired whole scene, within each 210-scene outer fold, pooled630",
+    "CI_percentiles": [
+      2.5,
+      97.5
+    ],
+    "metrics": [
+      "OracleBestModeNLL",
+      "BrierScore",
+      "Top1ModeECE",
+      "ExpectedRegret"
+    ],
+    "ECE": "recompute nonlinear ECE for each replicate from per-scene/bin confidence and oracle-event counts",
+    "uncertainty": "descriptive, fixed fitted T/checkpoints; not refit within bootstrap; no independent test claim"
+  },
+  "Decision": {
+    "Engineering": "frozen checkpoints, no model training, isolated three T, exact Top1/Bicycle, finite normalized outputs",
+    "ClearWorsening": "positive delta with descriptive paired 95% CI entirely >0",
+    "UsefulYES": "engineering PASS; legal T; merged V/P NLL both decrease; Brier not clearly worse for both; full ECE/concentration reporting; Top1 exact",
+    "Conflict": "both types Brier clearly worse OR both types ECE clearly worse, despite NLL improvement => INCONCLUSIVE",
+    "UsefulNO": "no improvement of both type NLLs or engineering failure",
+    "ConcentrationReduced": "both type mean pmax and fraction pmax>0.99 decrease",
+    "ExpectedRegretTradeoff": "must disclose; not alone a veto for oracle-event calibration",
+    "Readiness": "YES and GO iff engineering PASS and CalibrationUseful YES; actual execution always STOP after Stage11C"
+  },
+  "Limitations": [
+    "InnerDev reused for checkpoint selection and temperature fit",
+    "Stage11B OOF already inspected; this is OOF development evidence, not independent testing",
+    "single observed GT future; FDE-derived oracle labels do not establish real-world risk probabilities"
+  ],
+  "Forbidden": [
+    "HeadDev70",
+    "official VAL150",
+    "official test",
+    "model training",
+    "new semantic graph",
+    "Stage12"
+  ],
+  "Versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "torch": "2.5.1+cu124",
+    "pandas": "2.2.3"
+  },
+  "Seed": 2022
+}

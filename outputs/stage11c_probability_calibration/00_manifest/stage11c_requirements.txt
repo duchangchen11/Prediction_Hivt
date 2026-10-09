@@ -1,0 +1,814 @@
+你现在执行：
+
+============================================================
+Stage11C
+Error-Aware Ranking Probability Calibration
+误差感知轨迹排序概率校准与稳健性审计
+============================================================
+
+项目路径：
+/home/lrj/Prediction_Hivt
+
+基础分支：
+stage11b/controlled-ranking-objectives
+
+基础commit：
+465d3541192303e43809dc553c12e445225ab228
+
+新建分支：
+stage11c/ranking-probability-calibration
+
+============================================================
+一、研究目标
+============================================================
+
+Stage11B已经证明：
+
+Normalized Error-Aware Ranking
+在三折OOF中改善了：
+
+Vehicle
+Pedestrian
+Overall。
+
+Bicycle保持FoldR2。
+
+但模型C存在概率过度集中的问题。
+
+本阶段研究：
+
+能否在不改变Top1轨迹选择的前提下，
+改善候选模式概率的质量。
+
+本阶段不研究新的GNN结构。
+
+============================================================
+二、冻结全部历史模型
+============================================================
+
+必须保留Stage11B：
+
+3个fold的C checkpoint
+
+3个fold的A checkpoint
+
+3个fold的B checkpoint
+
+3个fold的R2 checkpoint。
+
+所有SHA256必须与
+Stage11B checkpoint manifest一致。
+
+禁止：
+
+重新训练
+修改权重
+覆盖checkpoint
+改变数据划分
+改变候选轨迹。
+
+============================================================
+三、冻结原始结果
+============================================================
+
+Stage11B OOF原始结果：
+
+Overall：
+
+R2=2.344301
+C=2.199512
+
+Vehicle：
+
+R2=2.708376
+C=2.516273
+
+Pedestrian：
+
+R2=1.319636
+C=1.304968
+
+Bicycle：
+
+R2=1.749867
+C=1.749867。
+
+注意：
+
+这些是现有OOF的历史结果，
+不能作为新温度参数的选择目标。
+
+============================================================
+四、数据协议
+============================================================
+
+复用Stage11B：
+
+HeadTrain630
+
+3-fold CV。
+
+每折：
+
+InnerTrain378
+InnerDev42
+OuterTest210。
+
+禁止重新划分。
+
+不使用：
+
+历史HeadDev70
+official VAL150
+official test。
+
+本阶段只在对应折的InnerDev42
+拟合该折的温度参数。
+
+注意：
+
+InnerDev此前也参与checkpoint选择，
+因此需要在报告中说明该数据复用。
+
+OuterTest数据不能用于拟合温度。
+
+Stage11B的OOF结果已经被科研人员查看，
+因此Stage11C OOF只能作为
+新增校准方案的开发阶段评价。
+
+不得宣称完全独立测试。
+
+============================================================
+五、模型结构保持不变
+============================================================
+
+继续使用：
+
+Stage5A
++
+Future Interaction Graph G1
++
+Error-Aware Ranking C。
+
+只在输出logits之后增加：
+
+Temperature Scaling。
+
+公式：
+
+p_k(T)=softmax(logits_k/T)。
+
+要求：
+
+T>0。
+
+正温度缩放在数学上必须保持：
+
+argmax(logits/T)
+=
+argmax(logits)。
+
+因此：
+
+不允许改变Top1模式选择。
+
+============================================================
+六、正式Calibration方案
+============================================================
+
+本阶段只注册一个正式方案：
+
+Fold-specific Global Temperature。
+
+每个fold拟合一个标量T。
+
+Vehicle和Pedestrian共享该折T。
+
+Bicycle不使用新温度，
+继续保持FoldR2输出。
+
+禁止：
+
+type-specific temperature搜索
+per-mode temperature
+额外MLP calibrator
+isotonic calibration
+learned gate
+额外ranking head。
+
+这些不能混入本阶段正式实验。
+
+============================================================
+七、Calibration目标
+============================================================
+
+定义：
+
+k*=argmin_k FDE_k。
+
+这只是六条冻结候选中的
+oracle-best mode标签。
+
+不是人的真实行为意图类别。
+
+拟合温度时使用：
+
+OracleBestMode NLL
+
+即：
+
+L_cal=-log p_{k*}(T)。
+
+为了兼顾车辆和行人，
+采用固定macro目标：
+
+L_cal_macro=
+0.5*mean_V(L_cal)
++
+0.5*mean_P(L_cal)。
+
+Bicycle不参与T拟合，
+其输出保持FoldR2。
+
+============================================================
+八、温度优化
+============================================================
+
+每fold：
+
+单独拟合T。
+
+限制：
+
+1 <= T <= 1000。
+
+采用确定性的有界一维优化。
+
+建议：
+
+在log(T)空间进行
+bounded scalar minimization。
+
+必须：
+
+固定搜索区间
+固定数值精度
+固定停止容差。
+
+只允许在InnerDev42优化。
+
+禁止根据OuterTest：
+
+选择T
+调整温度范围
+修改优化目标。
+
+若最优值达到T=1000边界，
+如实记录BOUNDARY_HIT。
+
+禁止继续扩大范围救结果。
+
+============================================================
+九、数值稳定性
+============================================================
+
+校准优化和诊断优先使用FP64。
+
+计算NLL时采用：
+
+logsumexp
+
+或稳定的log_softmax。
+
+禁止直接：
+
+exp(very_large_logit)
+
+造成数值溢出。
+
+输出必须满足：
+
+finite logits
+finite probabilities
+probability sum=1。
+
+============================================================
+十、Top1保持性审计
+============================================================
+
+比较：
+
+C_raw
+C_temperature_calibrated。
+
+逐actor检查：
+
+candidate coordinates
+
+Top1 mode index
+
+Top1FDE
+
+Top1ADE
+
+minFDE6
+
+minADEOracle6
+
+MR6。
+
+要求：
+
+全部不变。
+
+如果出现任何模式改变：
+
+STOP并检查浮点精度及平局规则。
+
+不得将结果直接标记PASS。
+
+============================================================
+十一、自行车保持性
+============================================================
+
+所有Bicycle：
+
+继续使用原FoldR2。
+
+要求：
+
+C_raw Bicycle
+=
+C_calibrated Bicycle
+=
+FoldR2 Bicycle。
+
+必须核对：
+
+6 candidates
+6 logits
+6 probabilities
+Top1 mode
+Top1FDE。
+
+逐位一致。
+
+============================================================
+十二、校准指标
+============================================================
+
+分别统计：
+
+Overall
+Vehicle
+Pedestrian
+Bicycle。
+
+对于Vehicle/Pedestrian报告：
+
+OracleBestMode NLL
+
+OracleBestMode Brier Score
+
+Top1-mode ECE
+
+Top1-mode Reliability Diagram
+
+Prediction Entropy
+
+Mean Top1 Probability
+
+Top1 Probability P50/P90/P99
+
+Probability Above 0.9
+
+Probability Above 0.99。
+
+============================================================
+十三、解释校准指标
+============================================================
+
+Top1-mode ECE采用：
+
+预测最高模式概率
+
+与
+
+该模式是否为最小FDE候选
+
+进行比较。
+
+必须明确：
+
+这是oracle-mode分类事件的校准分析。
+
+不是：
+
+真实世界未来轨迹概率
+行人过街意图概率
+碰撞风险概率。
+
+不得混淆。
+
+============================================================
+十四、额外概率质量指标
+============================================================
+
+同时报告：
+
+原始SoftCE：
+
+q=softmax(-FDE/1m)
+
+ExpectedFDE
+
+ExpectedRegret
+
+NormalizedExpectedRegret。
+
+这些只用于辅助理解。
+
+因为校准可能：
+
+降低OracleBestMode NLL
+
+但提高ExpectedRegret。
+
+必须完整报告这种权衡。
+
+不得只挑选有利指标。
+
+============================================================
+十五、评估对照
+============================================================
+
+模型：
+
+R0
+
+FoldR2
+
+A SoftCE
+
+B HardCE
+
+C Raw
+
+C Calibrated。
+
+核心比较：
+
+C Raw
+vs
+C Calibrated。
+
+全部使用Stage11B冻结结果。
+
+不能因为校准后某个指标不好，
+就重新训练C。
+
+============================================================
+十六、Bootstrap
+============================================================
+
+沿用Stage11B：
+
+630个场景
+
+3个OuterTest fold。
+
+执行：
+
+2000次paired whole-scene bootstrap。
+
+seed2022。
+
+比较：
+
+C_calibrated vs C_raw。
+
+重点：
+
+OracleBestMode NLL
+
+Brier Score
+
+ECE
+
+ExpectedRegret。
+
+ECE区间只作为描述性结果，
+需明确分箱定义与不确定性限制。
+
+Top1ADE/FDE应严格相等，
+无需把零变化包装成新收益。
+
+============================================================
+十七、稳健性诊断
+============================================================
+
+分别检查：
+
+Vehicle
+
+Pedestrian
+
+MovingVehicle
+
+StoppedVehicle
+
+ParkedVehicle
+
+Pedestrian<5m
+
+Pedestrian>5m
+
+Pedestrian5-8m。
+
+未来真实位移分组
+只能用于离线分析。
+
+禁止将GT未来位移
+用于推理阶段选择温度。
+
+============================================================
+十八、结果判断
+============================================================
+
+CalibrationEngineering=PASS
+
+要求：
+
+全部checkpoint冻结
+没有训练新模型
+三个T仅来自InnerDev
+Top1 mode完全保持
+Bicycle逐位保持R2
+没有数值异常。
+
+CalibrationUseful=YES
+
+要求：
+
+三个fold校准参数均合法；
+
+合并OOF：
+
+Vehicle和Pedestrian的
+OracleBestMode NLL
+相对C Raw都降低；
+
+Brier Score至少不出现
+两类同时明显恶化；
+
+ECE和概率集中程度
+得到完整报告；
+
+Top1FDE严格不变。
+
+若校准指标存在明显冲突：
+
+CalibrationUseful=INCONCLUSIVE。
+
+若NLL或概率质量没有改善：
+
+CalibrationUseful=NO。
+
+============================================================
+十九、风险提示
+============================================================
+
+即使CalibrationUseful=YES，
+
+也不能直接宣称：
+
+模型得到了真实概率校准。
+
+目前GT只提供单条未来轨迹，
+oracle-best-mode也是根据FDE构造的标签。
+
+校准后的结果只能说明：
+
+六候选oracle-mode分类概率
+在当前数据上具有更好的
+指定评价指标。
+
+不能自动视为：
+
+碰撞概率
+风险概率
+行为意图概率。
+
+============================================================
+二十、输出目录
+============================================================
+
+创建：
+
+outputs/stage11c_probability_calibration/
+
+00_manifest/
+
+01_frozen_audit/
+
+02_calibration/
+fold1/
+fold2/
+fold3/
+
+03_oof_evaluation/
+
+04_bootstrap/
+
+05_probability_diagnostics/
+
+06_figures/
+
+07_tables/
+
+08_reports/。
+
+============================================================
+二十一、主要输出
+============================================================
+
+至少保存：
+
+stage11c_protocol.json
+
+stage11c_frozen_manifest.json
+
+stage11c_temperature_values.csv
+
+stage11c_innerdev_calibration.csv
+
+stage11c_oof_probability_metrics.csv
+
+stage11c_type_metrics.csv
+
+stage11c_top1_identity_audit.json
+
+stage11c_bicycle_identity_audit.json
+
+stage11c_bootstrap_ci.csv
+
+stage11c_probability_diagnostics.csv
+
+stage11c_final_report.md
+
+stage11c_scientific_decision.json。
+
+============================================================
+二十二、必须生成的图
+============================================================
+
+图1：
+
+C Raw vs C Calibrated
+Probability Distribution。
+
+图2：
+
+Vehicle Reliability Diagram。
+
+图3：
+
+Pedestrian Reliability Diagram。
+
+图4：
+
+Calibration前后
+OracleBestMode NLL。
+
+图5：
+
+Calibration前后
+Top1FDE Identity Check。
+
+所有图注明确：
+
+Stage11C
+OOF Development Evidence。
+
+============================================================
+二十三、最终结论
+============================================================
+
+输出：
+
+FrozenModelIntegrity =
+PASS / FAIL
+
+TemperatureFitIsolation =
+PASS / FAIL
+
+Top1Identity =
+PASS / FAIL
+
+BicyclePreserved =
+YES / NO
+
+VehicleNLLImproved =
+YES / NO
+
+PedestrianNLLImproved =
+YES / NO
+
+ProbabilityConcentrationReduced =
+YES / NO
+
+CalibrationUseful =
+YES / NO / INCONCLUSIVE
+
+ReadyForSemanticStudy =
+YES / NO
+
+Stage11C =
+GO / STOP。
+
+注意：
+
+ReadyForSemanticStudy
+不意味着概率已经达到真实风险校准水平。
+
+============================================================
+二十四、Git
+============================================================
+
+提交：
+
+audit: freeze Stage11B ranking models
+
+feat: fit fold-specific temperature calibration
+
+eval: assess calibrated probability quality
+
+docs: finalize Stage11C scientific decision
+
+最终push：
+
+stage11c/ranking-probability-calibration
+
+禁止merge main。
+
+============================================================
+二十五、完成后汇报
+============================================================
+
+Git commit=
+
+Fold1 Temperature=
+Fold2 Temperature=
+Fold3 Temperature=
+
+C Raw Overall Top1FDE=
+C Calibrated Overall Top1FDE=
+
+C Raw Vehicle Top1FDE=
+C Calibrated Vehicle Top1FDE=
+
+C Raw Pedestrian Top1FDE=
+C Calibrated Pedestrian Top1FDE=
+
+C Raw Bicycle Top1FDE=
+C Calibrated Bicycle Top1FDE=
+
+Vehicle NLL Raw=
+Vehicle NLL Calibrated=
+
+Pedestrian NLL Raw=
+Pedestrian NLL Calibrated=
+
+Vehicle ECE Raw=
+Vehicle ECE Calibrated=
+
+Pedestrian ECE Raw=
+Pedestrian ECE Calibrated=
+
+Top1Identity=
+
+BicyclePreserved=
+
+CalibrationUseful=
+
+ReadyForSemanticStudy=
+
+Stage11C=
+
+============================================================
+二十六、STOP
+============================================================
+
+完成Stage11C后：
+
+停止执行。
+
+不得自动启动Stage12。
+
+不得读取official VAL或test。
+
+不得新增Semantic Graph。
+
+不得重新训练HiVT或G1。
+
+等待大脑AI审查。
