@@ -1,0 +1,31 @@
+{
+  "Status": "FROZEN",
+  "Fold": 1,
+  "Checkpoints": [
+    {
+      "Fold": 1,
+      "Model": "NG-A",
+      "Path": "outputs/stage14a_paper_graph_ablation/04_checkpoints/fold1/NG-A_best.pt",
+      "SHA256": "04b8f1cdf4457474baa975d91927ff87f237ac1151252cbddc07462baeafb7fc",
+      "SelectedEpoch": 1,
+      "CheckpointScore": 1.01905364758982,
+      "NormalizationSHA256": "e371f3405fab3896165a4315d188ae172ef3e841587b9ab1df3717872ddeb1b7",
+      "SplitSHA256": "577c52648c875a73a1f00b30625aecb85b83c3e98fd2ffb8f1c80db55cb5cc3b",
+      "TrainingConfigSHA256": "1c0ecaec3b6ab8dbc06d9837d6fafce51f1f7eb67120f7fcc84e73d327d0fe2e"
+    },
+    {
+      "Fold": 1,
+      "Model": "NG-C",
+      "Path": "outputs/stage14a_paper_graph_ablation/04_checkpoints/fold1/NG-C_best.pt",
+      "SHA256": "2f18ba3c9a05a43ad153db8ff9fcfafde0157d1283194a2196bfefc6deb72b4a",
+      "SelectedEpoch": 14,
+      "CheckpointScore": 0.9566755607451395,
+      "NormalizationSHA256": "e371f3405fab3896165a4315d188ae172ef3e841587b9ab1df3717872ddeb1b7",
+      "SplitSHA256": "577c52648c875a73a1f00b30625aecb85b83c3e98fd2ffb8f1c80db55cb5cc3b",
+      "TrainingConfigSHA256": "d380e803aa77d4f6e4b04374ef1f6d749aff93a13b4d3cf1d795bdfda6f4b32e"
+    }
+  ],
+  "OuterTestEvaluationPermitted": false,
+  "Reason": "all6 global gate required",
+  "FurtherTrainingPermitted": false
+}

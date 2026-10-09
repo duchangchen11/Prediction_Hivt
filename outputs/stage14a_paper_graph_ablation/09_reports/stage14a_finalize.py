@@ -20,6 +20,7 @@ def main():
     verify(history=True,data=True)
     expected={'01_preflight/stage14a_model_integrity.json':'PASS',
         '01_preflight/stage14a_input_loss_integrity.json':'PASS','01_preflight/stage14a_tiny_audit.json':'PASS',
+        '01_preflight/stage14a_early_evaluation_guard.json':'PASS',
         '04_checkpoints/stage14a_all_frozen.json':'FROZEN_ALL_COMPLETE',
         '05_evaluation/stage14a_identity_audit.json':'PASS','06_bootstrap/stage14a_bootstrap_audit.json':'PASS',
         '07_diagnostics/stage14a_mode_switch_audit.json':'PASS','07_diagnostics/stage14a_efficiency_audit.json':'PASS',

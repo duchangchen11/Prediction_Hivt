@@ -34,6 +34,8 @@ STAGE14A_PHASE=train PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 \
 
 模型审计只执行合成 CPU forward/gradient 检查；没有 optimizer 更新或 checkpoint。输入审计最初的标签梯度检查错误地处于 `no_grad` 中，已将这一检查局部置于 `enable_grad`，随后科学完整性检查全部通过。第一次训练启动的 source SHA 扫描被预冻结读取保护阻断，发生在 optimizer 创建前，零更新、零 checkpoint；保留完整 trace：`03_training/stage14a_pre_optimizer_guard_block.txt`。随后只锁训练有关 source，读取保护未放宽。
 
+六模型冻结前额外实测 `stage14a_evaluate.frozen_gate()`：缺少全局冻结文件时必须在任何历史 OOF 缓存读取前阻断，记录见 `01_preflight/stage14a_early_evaluation_guard.json`；该保护检查没有模型 forward 或 optimizer 更新。
+
 所有六个 checkpoint 冻结后才允许执行：
 
 ```bash
