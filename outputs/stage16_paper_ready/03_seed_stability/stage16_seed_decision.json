@@ -1,0 +1,169 @@
+{
+  "Status": "COMPLETE",
+  "FreshRankHeadFits": 24,
+  "FreshPredictorFits": 0,
+  "MeasuredHeadFitHours": 2.073104078151074,
+  "OriginalReplicatesReused": 12,
+  "HeadInitializationsPerFoldAndModel": 3,
+  "FixedSamplerSeedByFold": [
+    2022,
+    2122,
+    2222
+  ],
+  "RegisteredInitSeedsByFold": [
+    [
+      2022,
+      3022,
+      4022
+    ],
+    [
+      2122,
+      3122,
+      4122
+    ],
+    [
+      2222,
+      3222,
+      4222
+    ]
+  ],
+  "PredictorCrossSeedRobustnessEvaluated": false,
+  "Stage15BPreregisteredDecisionsRevised": false,
+  "DirectionSummary": [
+    {
+      "Group": "Overall",
+      "Comparison": "G-C-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 9,
+      "PositivePairs": 0,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.0417560973536
+    },
+    {
+      "Group": "Overall",
+      "Comparison": "G-C-Matched-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 8,
+      "PositivePairs": 1,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.03044321128520667
+    },
+    {
+      "Group": "Overall",
+      "Comparison": "NG-C-NG-A",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 9,
+      "PositivePairs": 0,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.07669337216322222
+    },
+    {
+      "Group": "Vehicle",
+      "Comparison": "G-C-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 9,
+      "PositivePairs": 0,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.05486227507302223
+    },
+    {
+      "Group": "Vehicle",
+      "Comparison": "G-C-Matched-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 8,
+      "PositivePairs": 1,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.0381339582349989
+    },
+    {
+      "Group": "Vehicle",
+      "Comparison": "NG-C-NG-A",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 9,
+      "PositivePairs": 0,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.10132688874302222
+    },
+    {
+      "Group": "Pedestrian",
+      "Comparison": "G-C-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 7,
+      "PositivePairs": 2,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.005687591781525333
+    },
+    {
+      "Group": "Pedestrian",
+      "Comparison": "G-C-Matched-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 9,
+      "PositivePairs": 0,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.009660864437072111
+    },
+    {
+      "Group": "Pedestrian",
+      "Comparison": "NG-C-NG-A",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 7,
+      "PositivePairs": 2,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.01132441759972989
+    },
+    {
+      "Group": "Bicycle",
+      "Comparison": "G-C-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 0,
+      "PositivePairs": 0,
+      "EqualPairs": 9,
+      "UnweightedMeanPairDelta": 0.0
+    },
+    {
+      "Group": "Bicycle",
+      "Comparison": "G-C-Matched-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 0,
+      "PositivePairs": 0,
+      "EqualPairs": 9,
+      "UnweightedMeanPairDelta": 0.0
+    },
+    {
+      "Group": "Bicycle",
+      "Comparison": "NG-C-NG-A",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 0,
+      "PositivePairs": 0,
+      "EqualPairs": 9,
+      "UnweightedMeanPairDelta": 0.0
+    },
+    {
+      "Group": "MovingVehicle",
+      "Comparison": "G-C-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 9,
+      "PositivePairs": 0,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.2400392524905111
+    },
+    {
+      "Group": "MovingVehicle",
+      "Comparison": "G-C-Matched-NG-C",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 8,
+      "PositivePairs": 1,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.16401476296757111
+    },
+    {
+      "Group": "MovingVehicle",
+      "Comparison": "NG-C-NG-A",
+      "FoldInitializationPairs": 9,
+      "NegativePairs": 9,
+      "PositivePairs": 0,
+      "EqualPairs": 0,
+      "UnweightedMeanPairDelta": -0.40829801466863336
+    }
+  ]
+}

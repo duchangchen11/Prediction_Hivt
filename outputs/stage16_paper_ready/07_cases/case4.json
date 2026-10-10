@@ -1,0 +1,103 @@
+{
+  "Case": "case4",
+  "Group": "Pedestrian",
+  "Outcome": "Failure",
+  "Selection": "unique maximum gain/harm in frozen G-C minus NG-C within registered group; illustrative extremum",
+  "ActorRecordIndex": 171688,
+  "Fold": 3,
+  "SceneToken": "bed8426a524d45afab05b19cf02386b2",
+  "SampleToken": "12a087e40d874fc19f7282c153c15789",
+  "InstanceToken": "dabc3da6de3045779670d0ab98293554",
+  "NodeIndex": 23,
+  "DeltaTop1FDE": 5.705439627170563,
+  "OracleMinFDE6": 0.6797953844070435,
+  "SelectedModes": {
+    "R0": 1,
+    "R2": 1,
+    "NG-A": 1,
+    "NG-C": 1,
+    "G-A": 1,
+    "G-C": 4,
+    "Matched-NG-C": 1
+  },
+  "ModeErrors": [
+    0.6797953844070435,
+    0.969359815120697,
+    4.272780418395996,
+    2.6920008659362793,
+    6.67479944229126,
+    11.868159294128418
+  ],
+  "OriginalModeProbabilities": {
+    "R0": [
+      0.1974799931049347,
+      0.20806032419204712,
+      0.1748061329126358,
+      0.18990899622440338,
+      0.15373767912387848,
+      0.07600680738687515
+    ],
+    "R2": [
+      0.22572709619998932,
+      0.2838723659515381,
+      0.1568954437971115,
+      0.22565533220767975,
+      0.09015890955924988,
+      0.01769084669649601
+    ],
+    "NG-A": [
+      0.23447710275650024,
+      0.23716887831687927,
+      0.17165660858154297,
+      0.20041431486606598,
+      0.13192984461784363,
+      0.024353332817554474
+    ],
+    "NG-C": [
+      0.19572457671165466,
+      0.7365591526031494,
+      0.012397697195410728,
+      0.04456259682774544,
+      0.0078379912301898,
+      0.002917902311310172
+    ],
+    "G-A": [
+      0.22009491920471191,
+      0.28419601917266846,
+      0.16680991649627686,
+      0.23692552745342255,
+      0.08213191479444504,
+      0.009841658174991608
+    ],
+    "G-C": [
+      0.0008186220075003803,
+      0.026973942294716835,
+      0.36358803510665894,
+      0.09755300730466843,
+      0.5061822533607483,
+      0.004884135443717241
+    ],
+    "Matched-NG-C": [
+      7.161036046454683e-05,
+      0.9149109125137329,
+      0.0254107266664505,
+      0.03431794419884682,
+      0.025271909311413765,
+      1.6858311937539838e-05
+    ]
+  },
+  "CurrentXY": [
+    42.8448486328125,
+    -12.021638870239258
+  ],
+  "CoordinateFrame": "unmodified t0 ego xy meters; identical axis across compared methods in each case",
+  "Times": "exact original cached history/future timestamps",
+  "LocalCoordinateFile": "07_cases/case4_coordinates.csv",
+  "CoordinateFileSHA256": "20e3f40d1c7ced2c1dae047a74a7bcb584775d38b1d7d219cdd7d4c2a678def9",
+  "SourceContextPath": "outputs/stage15b_isolated_validation/05_candidate_interface/cache/fold3/OuterTest/bed8426a524d45afab05b19cf02386b2.pt",
+  "SourceContextSHA256": "fb99b308b5e1c4f1c48cd905c93d49f28190966c8584a77429b7d340cd1583e7",
+  "PredictorCheckpointSHA256": "b1f7c7e8200255a998d65676a42b2b431ab5444df70ffd3822eb5349ba168ab4",
+  "FDECoordinateCheck": "PASS max difference tolerance1e-5 + rtol1e-5",
+  "ModelInputGT": false,
+  "GTUse": "offline illustration only"
+}

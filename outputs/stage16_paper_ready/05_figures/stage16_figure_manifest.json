@@ -1,0 +1,275 @@
+{
+  "Status": "PASS_DATA_EXPORT_AND_VISUAL_REVIEW",
+  "Backend": "Python/matplotlib",
+  "Figures": [
+    {
+      "Figure": "fig1_architecture",
+      "SourceFiles": [
+        "outputs/stage5a_motion_aware_decoder/00_manifest/stage5a_decoder.py",
+        "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py",
+        "outputs/stage11b_error_aware_ranking/00_manifest/stage11b_common.py"
+      ],
+      "SourceSHA256": {
+        "outputs/stage5a_motion_aware_decoder/00_manifest/stage5a_decoder.py": "508bff307ac340d17864239925815d4c771ff239f8bdd107f729ecdca54af214",
+        "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py": "16b086e006e51b1cd67544c42b42ce869daccdad6e0d4636b4a04115f0947f9b",
+        "outputs/stage11b_error_aware_ranking/00_manifest/stage11b_common.py": "23c02791ffd9f3236d6c90499e87117db0a5900c0508a98f799ded0de6caf9be"
+      },
+      "Interpretation": "Structural diagram, no experimental coordinate or performance claim.",
+      "DimensionsInches": [
+        7.2,
+        4.35
+      ],
+      "Exports": {
+        "svg": {
+          "path": "05_figures/fig1_architecture.svg",
+          "sha256": "be9a36e2c2bdd27905094590fa9b0d5444f3016010698816a4d8bda1c4f1ce5b",
+          "bytes": 16410
+        },
+        "pdf": {
+          "path": "05_figures/fig1_architecture.pdf",
+          "sha256": "2a87899eb984dbc2bade6cb83c88d549bd598cef753c79b9ef1c39e186ceed3e",
+          "bytes": 26480
+        },
+        "png": {
+          "path": "05_figures/fig1_architecture.png",
+          "sha256": "97aeaf1227f5c3d0d9f227dd9c15c7c7e57ce0790edfe0152f3ef87e800e6b8b",
+          "bytes": 407390
+        }
+      }
+    },
+    {
+      "Figure": "fig2_future_interaction_graph",
+      "SourceFiles": [
+        "outputs/stage8a_future_scene_compatibility_graph/00_manifest/stage8a_graph.py",
+        "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py"
+      ],
+      "SourceSHA256": {
+        "outputs/stage8a_future_scene_compatibility_graph/00_manifest/stage8a_graph.py": "5740dfa697e52d4c83a44056250c186305d9dcd04a816c2a6c8dec3e1d62c085",
+        "outputs/stage8a_future_scene_compatibility_graph/00c_sparse_type_aware_graph_spec/03_model_audit/stage8a0c_model.py": "16b086e006e51b1cd67544c42b42ce869daccdad6e0d4636b4a04115f0947f9b"
+      },
+      "Interpretation": "One illustrative neighbor drawn; actual scoring aggregates all valid neighbor modes with the documented mask.",
+      "DimensionsInches": [
+        7.2,
+        3.9
+      ],
+      "Exports": {
+        "svg": {
+          "path": "05_figures/fig2_future_interaction_graph.svg",
+          "sha256": "cbb552710954565e547097de48fb974798fc6c0a3ada91461bb1e43ed94911f7",
+          "bytes": 24198
+        },
+        "pdf": {
+          "path": "05_figures/fig2_future_interaction_graph.pdf",
+          "sha256": "dca4a465db2c9ac59f42f0b670599af898a2dd4762aa8d5d2fdd9703aec5f88c",
+          "bytes": 24420
+        },
+        "png": {
+          "path": "05_figures/fig2_future_interaction_graph.png",
+          "sha256": "1932474b75494b46001d6820e5693262d3c16951a224fe9cb487808d815be293",
+          "bytes": 429836
+        }
+      }
+    },
+    {
+      "Figure": "fig3_seven_model_performance",
+      "SourceFiles": [
+        "06_source_data/stage16_seven_model_metrics.csv"
+      ],
+      "SourceSHA256": {
+        "06_source_data/stage16_seven_model_metrics.csv": "e3d9d40b5c12c139408bf0506ff3c5d1f0001b9aeca584b7c2510cede8f0463c"
+      },
+      "Interpretation": "Pooled means are actor-window weighted; fold ticks show three existing fitted folds, not independent seed repeats.",
+      "DimensionsInches": [
+        7.2,
+        3.4
+      ],
+      "Exports": {
+        "svg": {
+          "path": "05_figures/fig3_seven_model_performance.svg",
+          "sha256": "8f41adac7186e9f27992eae0788d78d0de55fc26ebe07ae6b893519159b1309b",
+          "bytes": 34724
+        },
+        "pdf": {
+          "path": "05_figures/fig3_seven_model_performance.pdf",
+          "sha256": "93ea1c4ca378782015b2d230a78bcf59447742990f43a847ad7d862b73760066",
+          "bytes": 28301
+        },
+        "png": {
+          "path": "05_figures/fig3_seven_model_performance.png",
+          "sha256": "98d8daba2be69681e63f22d8831ab9ee7d1f39664343d82d2686c0828100d67c",
+          "bytes": 219435
+        }
+      }
+    },
+    {
+      "Figure": "fig4_two_by_two_ablation",
+      "SourceFiles": [
+        "06_source_data/stage16_seven_model_metrics.csv",
+        "06_source_data/stage16_primary_bootstrap.csv"
+      ],
+      "SourceSHA256": {
+        "06_source_data/stage16_seven_model_metrics.csv": "e3d9d40b5c12c139408bf0506ff3c5d1f0001b9aeca584b7c2510cede8f0463c",
+        "06_source_data/stage16_primary_bootstrap.csv": "1c014b0707aa5a49be421c1fbecf251893ac23660fe1e40d05e050e5830b8c97"
+      },
+      "Interpretation": "Heatmap and primary adjusted intervals retain Stage15B selection and inference decisions.",
+      "DimensionsInches": [
+        7.2,
+        3.25
+      ],
+      "Exports": {
+        "svg": {
+          "path": "05_figures/fig4_two_by_two_ablation.svg",
+          "sha256": "642e09616b985556646d78c597d240d2dae2ce3081bc0416404ce6647c5b20ee",
+          "bytes": 19927
+        },
+        "pdf": {
+          "path": "05_figures/fig4_two_by_two_ablation.pdf",
+          "sha256": "c0383016199d7b49dfd7e893411285ab86dbba70cf32067ccfb431e8a77cb203",
+          "bytes": 25385
+        },
+        "png": {
+          "path": "05_figures/fig4_two_by_two_ablation.png",
+          "sha256": "7d74b786a694efd28eb46ba8b16689078261053cfffe3a8c266faedf0d5c4359",
+          "bytes": 221014
+        }
+      }
+    },
+    {
+      "Figure": "fig5_multitype_groups",
+      "SourceFiles": [
+        "06_source_data/stage16_seven_model_metrics.csv"
+      ],
+      "SourceSHA256": {
+        "06_source_data/stage16_seven_model_metrics.csv": "e3d9d40b5c12c139408bf0506ff3c5d1f0001b9aeca584b7c2510cede8f0463c"
+      },
+      "Interpretation": "Group axes have explicit distinct scales; Bicycle scoring policy is disclosed.",
+      "DimensionsInches": [
+        7.2,
+        4.5
+      ],
+      "Exports": {
+        "svg": {
+          "path": "05_figures/fig5_multitype_groups.svg",
+          "sha256": "527d896451dce93afad89cf7fd01a8cb7a996754001d9f7d753d4d9736c0329e",
+          "bytes": 35834
+        },
+        "pdf": {
+          "path": "05_figures/fig5_multitype_groups.pdf",
+          "sha256": "b7045b6e9cfa7fc6fb88035705948446ecd729565d18b000b4527e6737753aa6",
+          "bytes": 28427
+        },
+        "png": {
+          "path": "05_figures/fig5_multitype_groups.png",
+          "sha256": "11c90056491fc52767f14b8925fc0c8e08aab056a5c9ad59e501caeb8efd804a",
+          "bytes": 343566
+        }
+      }
+    },
+    {
+      "Figure": "fig6_improvement_failure_cases",
+      "SourceFiles": [
+        "07_cases/stage16_case_manifest.json",
+        "07_cases/case1_coordinates.csv",
+        "07_cases/case2_coordinates.csv",
+        "07_cases/case3_coordinates.csv",
+        "07_cases/case4_coordinates.csv"
+      ],
+      "SourceSHA256": {
+        "07_cases/stage16_case_manifest.json": "0f20446ba7fa8af376741d6a1b39fbc5765b6d3cf9ad96e733b92d66ac38d499",
+        "07_cases/case1_coordinates.csv": "f94797067ecaa2ed9e5e71f8fe423fe0a1a00eea4017b734d457443f9a1641a2",
+        "07_cases/case2_coordinates.csv": "6e4ad2ed44ce622a857fbbb3a8b2a1874b76b95726e0b8d46b0ba064ab9f29e6",
+        "07_cases/case3_coordinates.csv": "fc50d1dadd5c336bcfd44f091f57e059c21f928ff6509decf20bab58fd573149",
+        "07_cases/case4_coordinates.csv": "20e3f40d1c7ced2c1dae047a74a7bcb584775d38b1d7d219cdd7d4c2a678def9"
+      },
+      "Interpretation": "Exact cached local coordinates and timestamp identity; extrema are not a prevalence sample; local coordinate CSVs excluded from Git.",
+      "DimensionsInches": [
+        7.2,
+        5.3
+      ],
+      "Exports": {
+        "svg": {
+          "path": "05_figures/fig6_improvement_failure_cases.svg",
+          "sha256": "ff59e5e2d0741c49ee67a3ddcf589be6476c8f2be50d79679804aad67085f252",
+          "bytes": 58001
+        },
+        "pdf": {
+          "path": "05_figures/fig6_improvement_failure_cases.pdf",
+          "sha256": "99c63e72b46721e6138f6cca448b2f1c9144bd047193a83be2e185ff3e11601e",
+          "bytes": 31077
+        },
+        "png": {
+          "path": "05_figures/fig6_improvement_failure_cases.png",
+          "sha256": "f1481af10b32d17a47593e5abf4aab50e7e944641d70c45392a83be776b1cd36",
+          "bytes": 329235
+        }
+      }
+    },
+    {
+      "Figure": "figS1_probability_quality",
+      "SourceFiles": [
+        "06_source_data/stage16_probability_metrics.csv",
+        "06_source_data/stage16_reliability_bins.csv"
+      ],
+      "SourceSHA256": {
+        "06_source_data/stage16_probability_metrics.csv": "7d78b8b1832442836d991d1f24afc371994047c7195fb9667d1f77163ffaacdb",
+        "06_source_data/stage16_reliability_bins.csv": "2d41cc10dee03d4bc7887e6509d9f9fded8fd3def6911a36ccc648ff7cfc6181"
+      },
+      "Interpretation": "Oracle-mode label is explicit; entropy/Brier in nats/dimensionless; no claim of calibrated physical-event probability.",
+      "DimensionsInches": [
+        7.2,
+        3.25
+      ],
+      "Exports": {
+        "svg": {
+          "path": "05_figures/figS1_probability_quality.svg",
+          "sha256": "fbc7de0c8c4429f8a65c80068c0923a82b2f4fcd88e4fa939deee904e23e2f15",
+          "bytes": 29949
+        },
+        "pdf": {
+          "path": "05_figures/figS1_probability_quality.pdf",
+          "sha256": "763649584edad9be1541339f50ac360f4aef151819325bbcca0bbc3a392bfd79",
+          "bytes": 26541
+        },
+        "png": {
+          "path": "05_figures/figS1_probability_quality.png",
+          "sha256": "1cfa7c66caa76a11e0c0112f536a96a75df1aacae85c75198494450ae90f2c0c",
+          "bytes": 323347
+        }
+      }
+    },
+    {
+      "Figure": "figS2_head_initialization",
+      "SourceFiles": [
+        "06_source_data/stage16_seed_metrics.csv",
+        "06_source_data/stage16_seed_summary.csv"
+      ],
+      "SourceSHA256": {
+        "06_source_data/stage16_seed_metrics.csv": "7b91170671f7cb8b494a9c4bf73a5252e38aa603ad7a6c62411858ce0cd906e2",
+        "06_source_data/stage16_seed_summary.csv": "cc94c56295ce20542a62a513ee6e4aa479383d627b3e235fc17d2712d5dc118b"
+      },
+      "Interpretation": "Three conditional head initializations; pooled configurations align registered replicate indices, no predictor-seed robustness claim.",
+      "DimensionsInches": [
+        7.2,
+        4.7
+      ],
+      "Exports": {
+        "svg": {
+          "path": "05_figures/figS2_head_initialization.svg",
+          "sha256": "ffcd42ad6c693fed04a05892868e03aea14dd865159e309c6ee252c63145d738",
+          "bytes": 39023
+        },
+        "pdf": {
+          "path": "05_figures/figS2_head_initialization.pdf",
+          "sha256": "64450c6326b4d46b319cb568b4c60fdcd8a24d515db4ff7edb7e4aae73f9080c",
+          "bytes": 27969
+        },
+        "png": {
+          "path": "05_figures/figS2_head_initialization.png",
+          "sha256": "8c21ca1fcecf79e81c7982de8a5f461cc9a7007a6fc6d8e677c6ffeac084f6bb",
+          "bytes": 303179
+        }
+      }
+    }
+  ],
+  "ContractSHA256": "408e70776d3462ee86232e3c5d85770bfaa3a5b42e2a3e240641adc325d0a299"
+}

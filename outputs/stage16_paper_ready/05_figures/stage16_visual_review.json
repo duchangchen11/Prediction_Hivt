@@ -1,0 +1,22 @@
+{
+  "Status": "PASS",
+  "Method": "Assistant inspected actual PNGs with view_image during this task; all main plots and S1, revised architecture, and revised S2 reviewed",
+  "PNG_SHA256": {
+    "fig1_architecture": "97aeaf1227f5c3d0d9f227dd9c15c7c7e57ce0790edfe0152f3ef87e800e6b8b",
+    "fig2_future_interaction_graph": "1932474b75494b46001d6820e5693262d3c16951a224fe9cb487808d815be293",
+    "fig3_seven_model_performance": "98d8daba2be69681e63f22d8831ab9ee7d1f39664343d82d2686c0828100d67c",
+    "fig4_two_by_two_ablation": "7d74b786a694efd28eb46ba8b16689078261053cfffe3a8c266faedf0d5c4359",
+    "fig5_multitype_groups": "11c90056491fc52767f14b8925fc0c8e08aab056a5c9ad59e501caeb8efd804a",
+    "fig6_improvement_failure_cases": "f1481af10b32d17a47593e5abf4aab50e7e944641d70c45392a83be776b1cd36",
+    "figS1_probability_quality": "1cfa7c66caa76a11e0c0112f536a96a75df1aacae85c75198494450ae90f2c0c",
+    "figS2_head_initialization": "8c21ca1fcecf79e81c7982de8a5f461cc9a7007a6fc6d8e677c6ffeac084f6bb"
+  },
+  "Checks": [
+    "readable labels and symbols",
+    "no clipped panel titles",
+    "same-axis real-coordinate case comparison",
+    "dataset/protocol/metric/unit/count labels",
+    "conditional initialization interpretation"
+  ],
+  "NoFabricatedCases": true
+}

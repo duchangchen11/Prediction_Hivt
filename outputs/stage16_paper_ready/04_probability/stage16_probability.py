@@ -13,7 +13,24 @@ def main():
   a=np.load(folder/'fde.npy',mmap_mode='r');assert a.shape==(len(fr),6);fds.append(a);offset+=len(fr)
  fd=np.concatenate(fds);oracle=fd.argmin(-1);ties=(fd==fd.min(-1)[:,None]).sum(-1)>1
  assert np.array_equal(fd.min(-1),m[:,0,FIELDS.index('minFDE6')])
- rows=[];bins=[];switch=[]
+ rows=[];bins=[];switch=[];distributions=[]
+ for group,gm in groups(f).items():
+  oracle_fde=np.asarray(m[gm,0,FIELDS.index('minFDE6')])
+  for j,name in enumerate(MODELS):
+   selected_fde=np.asarray(m[gm,j,FIELDS.index('Top1FDE')])
+   distributions.append({'Group':group,'Model':name,'Count':int(gm.sum()),'MeanTop1FDE':float(selected_fde.mean()),'MedianTop1FDE':float(np.median(selected_fde)),'P90Top1FDE':float(np.quantile(selected_fde,.9)),'P99Top1FDE':float(np.quantile(selected_fde,.99)),'MeanOracleMinFDE6':float(oracle_fde.mean()),'MedianOracleMinFDE6':float(np.median(oracle_fde)),'P90OracleMinFDE6':float(np.quantile(oracle_fde,.9)),'P99OracleMinFDE6':float(np.quantile(oracle_fde,.99)),'MeanSelectionGap':float((selected_fde-oracle_fde).mean())})
+ dump(ROOT/'06_source_data/stage16_selected_error_distributions.csv',distributions)
+ masks=groups(f);components=[('MovingVehicle',masks['MovingVehicle']),('OtherVehicle',masks['Vehicle']&~masks['MovingVehicle']),('Pedestrian',masks['Pedestrian']),('Bicycle',masks['Bicycle'])]
+ assert np.all(np.stack([mask for _,mask in components]).sum(0)==1)
+ contributions=[]
+ for left,right in [('G-C','NG-C'),('G-C','Matched-NG-C'),('NG-C','NG-A')]:
+  delta=m[:,MODELS.index(left),FIELDS.index('Top1FDE')]-m[:,MODELS.index(right),FIELDS.index('Top1FDE')]
+  total=0.
+  for group,mask in components:
+   count=int(mask.sum());mean=float(delta[mask].mean());weighted=count/len(f)*mean;total+=weighted
+   contributions.append({'Comparison':left+'-'+right,'ExclusiveGroup':group,'Count':count,'FractionOfOverall':count/len(f),'MeanDeltaTop1FDE':mean,'WeightedContributionMeters':weighted,'OverallDeltaTop1FDE':float(delta.mean())})
+  assert abs(total-delta.mean())<1e-12
+ dump(ROOT/'06_source_data/stage16_error_contribution.csv',contributions)
  for j,name in enumerate(MODELS):
   prob=np.asarray(p[:,j],np.float64);assert np.all(np.isfinite(prob)) and np.allclose(prob.sum(-1),1,atol=1e-6,rtol=0)
   selected=prob.argmax(-1);confidence=prob.max(-1);hit=selected==oracle;op=prob[np.arange(len(f)),oracle]

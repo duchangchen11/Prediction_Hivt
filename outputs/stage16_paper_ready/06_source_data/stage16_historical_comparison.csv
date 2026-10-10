@@ -1,0 +1,156 @@
+Stage,Scope,Group,Model,Count,Top1FDE,Top1ADE,minFDE6,HitRate
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Overall,NG-A,260151,2.38094287701,1.0733642914,1.25813498579,0.385914334367
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Overall,NG-C,260151,2.25473365148,0.994880064547,1.25813498579,0.419871536146
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Overall,G-A,260151,2.38406109778,1.08946577447,1.25813498579,0.385068671656
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Overall,G-C,260151,2.19951242892,0.973628107344,1.25813498579,0.420121391038
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Vehicle,NG-A,191026,2.74877952051,1.22562958657,1.38159356277,0.416299351921
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Vehicle,NG-C,191026,2.58711971874,1.12394018009,1.38159356277,0.455597667333
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Vehicle,G-A,191026,2.75108109019,1.2446842684,1.38159356277,0.410766073728
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Vehicle,G-C,191026,2.51627335071,1.09656849304,1.38159356277,0.451990828474
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian,NG-A,66145,1.34706645116,0.64569616498,0.907948220658,0.296545468289
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian,NG-C,66145,1.31755203684,0.630692316797,0.907948220658,0.316607453322
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian,G-A,66145,1.35268363466,0.653994256608,0.907948220658,0.309199485978
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian,G-C,66145,1.30496819872,0.626156614517,0.907948220658,0.328006652052
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Bicycle,NG-A,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Bicycle,NG-C,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Bicycle,G-A,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Bicycle,G-C,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14A,old TRAIN700 predictor; ranking-only OOF,MovingVehicle,NG-A,41728,10.8994228037,4.78132228603,5.32716419182,0.220858895706
+Stage14A,old TRAIN700 predictor; ranking-only OOF,MovingVehicle,NG-C,41728,10.2082033779,4.34473586032,5.32716419182,0.207175038344
+Stage14A,old TRAIN700 predictor; ranking-only OOF,MovingVehicle,G-A,41728,10.9052668143,4.86009323854,5.32716419182,0.250215682515
+Stage14A,old TRAIN700 predictor; ranking-only OOF,MovingVehicle,G-C,41728,9.90647945278,4.22741810183,5.32716419182,0.224237921779
+Stage14A,old TRAIN700 predictor; ranking-only OOF,StoppedVehicle,NG-A,23044,1.25536048103,0.488667882996,0.81141935157,0.458600937337
+Stage14A,old TRAIN700 predictor; ranking-only OOF,StoppedVehicle,NG-C,23044,1.25204818379,0.484244317352,0.81141935157,0.47674014928
+Stage14A,old TRAIN700 predictor; ranking-only OOF,StoppedVehicle,G-A,23044,1.23851861564,0.484530111055,0.81141935157,0.406613435168
+Stage14A,old TRAIN700 predictor; ranking-only OOF,StoppedVehicle,G-C,23044,1.23693856737,0.478715862727,0.81141935157,0.46645547648
+Stage14A,old TRAIN700 predictor; ranking-only OOF,ParkedVehicle,NG-A,121939,0.228774139284,0.143605764332,0.124584336968,0.47452414732
+Stage14A,old TRAIN700 predictor; ranking-only OOF,ParkedVehicle,NG-C,121939,0.214693001311,0.13633728065,0.124584336968,0.536653572688
+Stage14A,old TRAIN700 predictor; ranking-only OOF,ParkedVehicle,G-A,121939,0.235168646007,0.146872262291,0.124584336968,0.466446337923
+Stage14A,old TRAIN700 predictor; ranking-only OOF,ParkedVehicle,G-C,121939,0.216743391797,0.137365006115,0.124584336968,0.526804385799
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Vehicle>5m,NG-A,38241,12.4480429806,5.38163442856,6.27141967336,0.191312988677
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Vehicle>5m,NG-C,38241,11.609787245,4.86912999066,6.27141967336,0.19071153997
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Vehicle>5m,G-A,38241,12.4394208602,5.46896165049,6.27141967336,0.227896760022
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Vehicle>5m,G-C,38241,11.2691586033,4.73881278561,6.27141967336,0.211709944824
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian<5m,NG-A,24005,0.910723838121,0.439098124271,0.465567079464,0.392418246199
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian<5m,NG-C,24005,0.92289267258,0.44340569479,0.465567079464,0.411955842533
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian<5m,G-A,24005,0.891483303554,0.438291418706,0.465567079464,0.402916059154
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian<5m,G-C,24005,0.880860746991,0.424724253527,0.465567079464,0.422037075609
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian>5m,NG-A,42140,1.5956284926,0.763384488835,1.15995010235,0.241931656383
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian>5m,NG-C,42140,1.54236926606,0.73737991436,1.15995010235,0.262292358804
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian>5m,G-A,42140,1.61540584511,0.776869117164,1.15995010235,0.255813953488
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian>5m,G-C,42140,1.54656049532,0.740902315172,1.15995010235,0.274442335074
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian5-8m,NG-A,22483,1.64656141754,0.773088785077,1.15135252836,0.223457723613
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian5-8m,NG-C,22483,1.54519925024,0.722797677393,1.15135252836,0.276119734911
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian5-8m,G-A,22483,1.68835973732,0.799060698783,1.15135252836,0.219365743006
+Stage14A,old TRAIN700 predictor; ranking-only OOF,Pedestrian5-8m,G-C,22483,1.5294052103,0.717004064871,1.15135252836,0.311435306676
+Stage14B,same old frozen predictor; capacity control,Overall,NG-A,260151,2.38094287701,1.0733642914,1.25813498579,0.385914334367
+Stage14B,same old frozen predictor; capacity control,Overall,NG-C,260151,2.25473365148,0.994880064547,1.25813498579,0.419871536146
+Stage14B,same old frozen predictor; capacity control,Overall,G-A,260151,2.38406109778,1.08946577447,1.25813498579,0.385068671656
+Stage14B,same old frozen predictor; capacity control,Overall,G-C,260151,2.19951242892,0.973628107344,1.25813498579,0.420121391038
+Stage14B,same old frozen predictor; capacity control,Overall,Matched-NG-C,260151,2.25835400535,0.995979173778,1.25813498579,0.421389885105
+Stage14B,same old frozen predictor; capacity control,Vehicle,NG-A,191026,2.74877952051,1.22562958657,1.38159356277,0.416299351921
+Stage14B,same old frozen predictor; capacity control,Vehicle,NG-C,191026,2.58711971874,1.12394018009,1.38159356277,0.455597667333
+Stage14B,same old frozen predictor; capacity control,Vehicle,G-A,191026,2.75108109019,1.2446842684,1.38159356277,0.410766073728
+Stage14B,same old frozen predictor; capacity control,Vehicle,G-C,191026,2.51627335071,1.09656849304,1.38159356277,0.451990828474
+Stage14B,same old frozen predictor; capacity control,Vehicle,Matched-NG-C,191026,2.5931949882,1.12589810371,1.38159356277,0.456796457027
+Stage14B,same old frozen predictor; capacity control,Pedestrian,NG-A,66145,1.34706645116,0.64569616498,0.907948220658,0.296545468289
+Stage14B,same old frozen predictor; capacity control,Pedestrian,NG-C,66145,1.31755203684,0.630692316797,0.907948220658,0.316607453322
+Stage14B,same old frozen predictor; capacity control,Pedestrian,G-A,66145,1.35268363466,0.653994256608,0.907948220658,0.309199485978
+Stage14B,same old frozen predictor; capacity control,Pedestrian,G-C,66145,1.30496819872,0.626156614517,0.907948220658,0.328006652052
+Stage14B,same old frozen predictor; capacity control,Pedestrian,Matched-NG-C,66145,1.31424572879,0.629360697621,0.907948220658,0.319117091239
+Stage14B,same old frozen predictor; capacity control,Bicycle,NG-A,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14B,same old frozen predictor; capacity control,Bicycle,NG-C,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14B,same old frozen predictor; capacity control,Bicycle,G-A,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14B,same old frozen predictor; capacity control,Bicycle,G-C,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14B,same old frozen predictor; capacity control,Bicycle,Matched-NG-C,2980,1.74986687881,0.805403870716,1.11696231899,0.421812080537
+Stage14B,same old frozen predictor; capacity control,MovingVehicle,NG-A,41728,10.8994228037,4.78132228603,5.32716419182,0.220858895706
+Stage14B,same old frozen predictor; capacity control,MovingVehicle,NG-C,41728,10.2082033779,4.34473586032,5.32716419182,0.207175038344
+Stage14B,same old frozen predictor; capacity control,MovingVehicle,G-A,41728,10.9052668143,4.86009323854,5.32716419182,0.250215682515
+Stage14B,same old frozen predictor; capacity control,MovingVehicle,G-C,41728,9.90647945278,4.22741810183,5.32716419182,0.224237921779
+Stage14B,same old frozen predictor; capacity control,MovingVehicle,Matched-NG-C,41728,10.2383098336,4.3542280548,5.32716419182,0.203843941718
+Stage14B,same old frozen predictor; capacity control,StoppedVehicle,NG-A,23044,1.25536048103,0.488667882996,0.81141935157,0.458600937337
+Stage14B,same old frozen predictor; capacity control,StoppedVehicle,NG-C,23044,1.25204818379,0.484244317352,0.81141935157,0.47674014928
+Stage14B,same old frozen predictor; capacity control,StoppedVehicle,G-A,23044,1.23851861564,0.484530111055,0.81141935157,0.406613435168
+Stage14B,same old frozen predictor; capacity control,StoppedVehicle,G-C,23044,1.23693856737,0.478715862727,0.81141935157,0.46645547648
+Stage14B,same old frozen predictor; capacity control,StoppedVehicle,Matched-NG-C,23044,1.2523828979,0.484716162036,0.81141935157,0.479387259156
+Stage14B,same old frozen predictor; capacity control,ParkedVehicle,NG-A,121939,0.228774139284,0.143605764332,0.124584336968,0.47452414732
+Stage14B,same old frozen predictor; capacity control,ParkedVehicle,NG-C,121939,0.214693001311,0.13633728065,0.124584336968,0.536653572688
+Stage14B,same old frozen predictor; capacity control,ParkedVehicle,G-A,121939,0.235168646007,0.146872262291,0.124584336968,0.466446337923
+Stage14B,same old frozen predictor; capacity control,ParkedVehicle,G-C,121939,0.216743391797,0.137365006115,0.124584336968,0.526804385799
+Stage14B,same old frozen predictor; capacity control,ParkedVehicle,Matched-NG-C,121939,0.215263405025,0.136691337758,0.124584336968,0.538646372367
+Stage14B,same old frozen predictor; capacity control,Vehicle>5m,NG-A,38241,12.4480429806,5.38163442856,6.27141967336,0.191312988677
+Stage14B,same old frozen predictor; capacity control,Vehicle>5m,NG-C,38241,11.609787245,4.86912999066,6.27141967336,0.19071153997
+Stage14B,same old frozen predictor; capacity control,Vehicle>5m,G-A,38241,12.4394208602,5.46896165049,6.27141967336,0.227896760022
+Stage14B,same old frozen predictor; capacity control,Vehicle>5m,G-C,38241,11.2691586033,4.73881278561,6.27141967336,0.211709944824
+Stage14B,same old frozen predictor; capacity control,Vehicle>5m,Matched-NG-C,38241,11.6209951381,4.86999910281,6.27141967336,0.190110091263
+Stage14B,same old frozen predictor; capacity control,Pedestrian<5m,NG-A,24005,0.910723838121,0.439098124271,0.465567079464,0.392418246199
+Stage14B,same old frozen predictor; capacity control,Pedestrian<5m,NG-C,24005,0.92289267258,0.44340569479,0.465567079464,0.411955842533
+Stage14B,same old frozen predictor; capacity control,Pedestrian<5m,G-A,24005,0.891483303554,0.438291418706,0.465567079464,0.402916059154
+Stage14B,same old frozen predictor; capacity control,Pedestrian<5m,G-C,24005,0.880860746991,0.424724253527,0.465567079464,0.422037075609
+Stage14B,same old frozen predictor; capacity control,Pedestrian<5m,Matched-NG-C,24005,0.898514626899,0.432150633651,0.465567079464,0.419370964382
+Stage14B,same old frozen predictor; capacity control,Pedestrian>5m,NG-A,42140,1.5956284926,0.763384488835,1.15995010235,0.241931656383
+Stage14B,same old frozen predictor; capacity control,Pedestrian>5m,NG-C,42140,1.54236926606,0.73737991436,1.15995010235,0.262292358804
+Stage14B,same old frozen predictor; capacity control,Pedestrian>5m,G-A,42140,1.61540584511,0.776869117164,1.15995010235,0.255813953488
+Stage14B,same old frozen predictor; capacity control,Pedestrian>5m,G-C,42140,1.54656049532,0.740902315172,1.15995010235,0.274442335074
+Stage14B,same old frozen predictor; capacity control,Pedestrian>5m,Matched-NG-C,42140,1.55106644784,0.741701171887,1.15995010235,0.262007593735
+Stage14B,same old frozen predictor; capacity control,Pedestrian5-8m,NG-A,22483,1.64656141754,0.773088785077,1.15135252836,0.223457723613
+Stage14B,same old frozen predictor; capacity control,Pedestrian5-8m,NG-C,22483,1.54519925024,0.722797677393,1.15135252836,0.276119734911
+Stage14B,same old frozen predictor; capacity control,Pedestrian5-8m,G-A,22483,1.68835973732,0.799060698783,1.15135252836,0.219365743006
+Stage14B,same old frozen predictor; capacity control,Pedestrian5-8m,G-C,22483,1.5294052103,0.717004064871,1.15135252836,0.311435306676
+Stage14B,same old frozen predictor; capacity control,Pedestrian5-8m,Matched-NG-C,22483,1.55376970628,0.727008116069,1.15135252836,0.282658008273
+Stage15B,new fold-isolated predictors and heads; internal CV,Overall,R0,260151,2.37274100064,1.05633764306,1.26620244368,0.45182989879
+Stage15B,new fold-isolated predictors and heads; internal CV,Overall,R2,260151,2.34657406164,1.04442603972,1.26620244368,0.455016509642
+Stage15B,new fold-isolated predictors and heads; internal CV,Overall,NG-A,260151,2.37578206363,1.06463557792,1.26620244368,0.439275651449
+Stage15B,new fold-isolated predictors and heads; internal CV,Overall,NG-C,260151,2.30654340676,1.02081891529,1.26620244368,0.46449177593
+Stage15B,new fold-isolated predictors and heads; internal CV,Overall,G-A,260151,2.36164073553,1.06398690247,1.26620244368,0.440198192588
+Stage15B,new fold-isolated predictors and heads; internal CV,Overall,G-C,260151,2.26116102772,0.999894343729,1.26620244368,0.470369131773
+Stage15B,new fold-isolated predictors and heads; internal CV,Overall,Matched-NG-C,260151,2.28368370321,1.00946398239,1.26620244368,0.467474658948
+Stage15B,new fold-isolated predictors and heads; internal CV,Vehicle,R0,191026,2.73129356724,1.19812754183,1.39044105221,0.489388879001
+Stage15B,new fold-isolated predictors and heads; internal CV,Vehicle,R2,191026,2.69896216327,1.18354970179,1.39044105221,0.491310083444
+Stage15B,new fold-isolated predictors and heads; internal CV,Vehicle,NG-A,191026,2.74104389949,1.21279571678,1.39044105221,0.466460063028
+Stage15B,new fold-isolated predictors and heads; internal CV,Vehicle,NG-C,191026,2.64843136314,1.15316068508,1.39044105221,0.497199334122
+Stage15B,new fold-isolated predictors and heads; internal CV,Vehicle,G-A,191026,2.72019213459,1.20995481426,1.39044105221,0.46489483107
+Stage15B,new fold-isolated predictors and heads; internal CV,Vehicle,G-C,191026,2.588150026,1.12539050744,1.39044105221,0.502497042287
+Stage15B,new fold-isolated predictors and heads; internal CV,Vehicle,Matched-NG-C,191026,2.61619173765,1.1372878987,1.39044105221,0.501680399527
+Stage15B,new fold-isolated predictors and heads; internal CV,Pedestrian,R0,66145,1.35328284593,0.652980274074,0.914363744579,0.341356111573
+Stage15B,new fold-isolated predictors and heads; internal CV,Pedestrian,R2,66145,1.34639272303,0.649446180242,0.914363744579,0.348053518784
+Stage15B,new fold-isolated predictors and heads; internal CV,Pedestrian,NG-A,66145,1.33973742306,0.644468968276,0.914363744579,0.357910650843
+Stage15B,new fold-isolated predictors and heads; internal CV,Pedestrian,NG-C,66145,1.33488288446,0.644361521967,0.914363744579,0.368312041727
+Stage15B,new fold-isolated predictors and heads; internal CV,Pedestrian,G-A,66145,1.34433865667,0.650122194909,0.914363744579,0.366059414922
+Stage15B,new fold-isolated predictors and heads; internal CV,Pedestrian,G-C,66145,1.33048393399,0.642264277104,0.914363744579,0.37612820319
+Stage15B,new fold-isolated predictors and heads; internal CV,Pedestrian,Matched-NG-C,66145,1.33808240011,0.645542529492,0.914363744579,0.36710257767
+Stage15B,new fold-isolated predictors and heads; internal CV,Bicycle,R0,2980,2.01676685807,0.920269176523,1.11169449739,0.496308724832
+Stage15B,new fold-isolated predictors and heads; internal CV,Bicycle,R2,2980,1.95788451107,0.893320715424,1.11169449739,0.502684563758
+Stage15B,new fold-isolated predictors and heads; internal CV,Bicycle,NG-A,2980,1.95788451107,0.893320715424,1.11169449739,0.502684563758
+Stage15B,new fold-isolated predictors and heads; internal CV,Bicycle,NG-C,2980,1.95788451107,0.893320715424,1.11169449739,0.502684563758
+Stage15B,new fold-isolated predictors and heads; internal CV,Bicycle,G-A,2980,1.95788451107,0.893320715424,1.11169449739,0.502684563758
+Stage15B,new fold-isolated predictors and heads; internal CV,Bicycle,G-C,2980,1.95788451107,0.893320715424,1.11169449739,0.502684563758
+Stage15B,new fold-isolated predictors and heads; internal CV,Bicycle,Matched-NG-C,2980,1.95788451107,0.893320715424,1.11169449739,0.502684563758
+Stage15B,new fold-isolated predictors and heads; internal CV,MovingVehicle,R0,41728,10.8746901949,4.68791610704,5.3436266876,0.214100843558
+Stage15B,new fold-isolated predictors and heads; internal CV,MovingVehicle,R2,41728,10.7248943496,4.6197181839,5.3436266876,0.221338190184
+Stage15B,new fold-isolated predictors and heads; internal CV,MovingVehicle,NG-A,41728,10.8638030933,4.72205927077,5.3436266876,0.248178680982
+Stage15B,new fold-isolated predictors and heads; internal CV,MovingVehicle,NG-C,41728,10.470631364,4.47049854387,5.3436266876,0.222152990798
+Stage15B,new fold-isolated predictors and heads; internal CV,MovingVehicle,G-A,41728,10.7147649235,4.68171442338,5.3436266876,0.27398868865
+Stage15B,new fold-isolated predictors and heads; internal CV,MovingVehicle,G-C,41728,10.2107555881,4.35054683114,5.3436266876,0.234087423313
+Stage15B,new fold-isolated predictors and heads; internal CV,MovingVehicle,Matched-NG-C,41728,10.3242182339,4.39857144811,5.3436266876,0.227137653374
+Stage15B,new fold-isolated predictors and heads; internal CV,StoppedVehicle,R0,23044,1.25556890502,0.485405420329,0.821111621777,0.529465370595
+Stage15B,new fold-isolated predictors and heads; internal CV,StoppedVehicle,R2,23044,1.25868155218,0.487040079776,0.821111621777,0.526601284499
+Stage15B,new fold-isolated predictors and heads; internal CV,StoppedVehicle,NG-A,23044,1.27774107135,0.498846093951,0.821111621777,0.484724874154
+Stage15B,new fold-isolated predictors and heads; internal CV,StoppedVehicle,NG-C,23044,1.27407297854,0.493807942069,0.821111621777,0.528033327547
+Stage15B,new fold-isolated predictors and heads; internal CV,StoppedVehicle,G-A,23044,1.28858484074,0.507582053727,0.821111621777,0.45538968929
+Stage15B,new fold-isolated predictors and heads; internal CV,StoppedVehicle,G-C,23044,1.26114538883,0.48797021821,0.821111621777,0.529118208644
+Stage15B,new fold-isolated predictors and heads; internal CV,StoppedVehicle,Matched-NG-C,23044,1.26673548667,0.490537354108,0.821111621777,0.533501128276
+Stage15B,new fold-isolated predictors and heads; internal CV,ParkedVehicle,R0,121939,0.208264771746,0.133069837772,0.130292095993,0.575550070117
+Stage15B,new fold-isolated predictors and heads; internal CV,ParkedVehicle,R2,121939,0.209879141392,0.133935361412,0.130292095993,0.576132328459
+Stage15B,new fold-isolated predictors and heads; internal CV,ParkedVehicle,NG-A,121939,0.225897483584,0.142622962506,0.130292095993,0.53689959734
+Stage15B,new fold-isolated predictors and heads; internal CV,ParkedVehicle,NG-C,121939,0.217426344304,0.13762652832,0.130292095993,0.585415658649
+Stage15B,new fold-isolated predictors and heads; internal CV,ParkedVehicle,G-A,121939,0.24313199909,0.150501969497,0.130292095993,0.532799186478
+Stage15B,new fold-isolated predictors and heads; internal CV,ParkedVehicle,G-C,121939,0.216474518284,0.137056871361,0.130292095993,0.588786196377
+Stage15B,new fold-isolated predictors and heads; internal CV,ParkedVehicle,Matched-NG-C,121939,0.219022955735,0.138411369202,0.130292095993,0.589245442393
+Stage15B,new fold-isolated predictors and heads; internal CV,OtherVehicleState,R0,4315,3.16108567138,1.35435991579,1.81278190347,0.502665121669
+Stage15B,new fold-isolated predictors and heads; internal CV,OtherVehicleState,R2,4315,3.11611691076,1.33531154651,1.81278190347,0.516570104287
+Stage15B,new fold-isolated predictors and heads; internal CV,OtherVehicleState,NG-A,4315,3.08132050243,1.33179942737,1.81278190347,0.48922363847
+Stage15B,new fold-isolated predictors and heads; internal CV,OtherVehicleState,NG-C,4315,3.04246936352,1.29255117879,1.81278190347,0.499420625724
+Stage15B,new fold-isolated predictors and heads; internal CV,OtherVehicleState,G-A,4315,3.0545284045,1.32687563991,1.81278190347,0.442873696408
+Stage15B,new fold-isolated predictors and heads; internal CV,OtherVehicleState,G-C,4315,2.98285447545,1.27042070899,1.81278190347,0.517497103129
+Stage15B,new fold-isolated predictors and heads; internal CV,OtherVehicleState,Matched-NG-C,4315,3.02516144987,1.28071425573,1.81278190347,0.512166859791

@@ -1,0 +1,13 @@
+{
+  "Device": "NVIDIA GeForce RTX 3080",
+  "PyTorch": "2.5.1+cu124",
+  "NewHiVTFits": 0,
+  "NewExternalFits": 0,
+  "HeadFits": 24,
+  "HeadFitWallHours": 2.073104078151074,
+  "PeakAllocatedBytes": 155383296,
+  "DiskFreeBytesAtFinalization": 25796878336,
+  "NewPredictorCacheBytes": 0,
+  "ReusePolicy": "readonly existing Stage15B arrays/context; no duplication",
+  "ExternalBaselineCost": "engineering estimates only, no measured external fit"
+}

@@ -1,0 +1,52 @@
+{
+  "Status": "COMPLETE",
+  "Fold": 3,
+  "Model": "G-C",
+  "SelectedEpoch": 14,
+  "ExecutedEpochs": 19,
+  "CheckpointScore": 0.9841030296131223,
+  "CheckpointSHA256": "4b6be5c39ab0c78ddd76fb49f87055d647037dfa3feb814fb7f9ea4b491b6995",
+  "Params": 24066,
+  "InitialStateSHA256": "c0e7c47d48ec2210ad47dc1c918b54873c5cda60aba3e35f499d093027ab9e9f",
+  "DevMetrics": {
+    "Overall": {
+      "Count": 17484,
+      "Top1FDE": 1.9067689760062771,
+      "Top1ADE": 0.8380712699111188,
+      "HitRate": 0.49416609471516815,
+      "SoftCE": 20.461808665595893
+    },
+    "Vehicle": {
+      "Count": 13644,
+      "Top1FDE": 2.039601490183927,
+      "Top1ADE": 0.8825506750550026,
+      "HitRate": 0.5128994429785987,
+      "SoftCE": 19.15528477116468
+    },
+    "Pedestrian": {
+      "Count": 3611,
+      "Top1FDE": 1.3772710220488429,
+      "Top1ADE": 0.656808565949688,
+      "HitRate": 0.42702852395458324,
+      "SoftCE": 26.58949349587461
+    },
+    "Bicycle": {
+      "Count": 229,
+      "Top1FDE": 2.3419230733881196,
+      "Top1ADE": 1.0462049826690887,
+      "HitRate": 0.4366812227074236,
+      "SoftCE": 1.6807697725087796
+    }
+  },
+  "Selection": "minimum Sdev=.5*VehicleInnerDevFDE/FoldR2VehicleFDE+.5*PedestrianInnerDevFDE/FoldR2PedestrianFDE; strict improvement; epoch1 first eligible",
+  "NormalizationSHA256": "da8b564a8dee9ecf3fb95852094f47bbc6e744ead2860bc71715be8c33df07fe",
+  "PredictorCheckpointSHA256": "b1f7c7e8200255a998d65676a42b2b431ab5444df70ffd3822eb5349ba168ab4",
+  "AllDistinctTrainActorWindowsUsed": 148900,
+  "FinalPendingOccurrences": 812,
+  "OuterTestUsed": false,
+  "HistoricalOrTinyWeightsLoaded": false,
+  "PredictorGradientCount": 0,
+  "Seconds": 394.25655804001144,
+  "PeakGPUMemoryBytes": 155383296,
+  "ConfigSHA256": "7a7721042795f009c96d24922889ef49c8625bcf9d34ed137103f3519377b8d1"
+}

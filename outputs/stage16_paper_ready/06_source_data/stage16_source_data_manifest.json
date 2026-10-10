@@ -1,0 +1,43 @@
+{
+  "Status": "PASS",
+  "OriginalTables": {
+    "stage16_seven_model_metrics.csv": {
+      "source": "outputs/stage15b_isolated_validation/stage15b_end_to_end_metrics.csv",
+      "sha256": "e3d9d40b5c12c139408bf0506ff3c5d1f0001b9aeca584b7c2510cede8f0463c",
+      "export_sha256": "e3d9d40b5c12c139408bf0506ff3c5d1f0001b9aeca584b7c2510cede8f0463c"
+    },
+    "stage16_primary_bootstrap.csv": {
+      "source": "outputs/stage15b_isolated_validation/stage15b_bootstrap_ci.csv",
+      "sha256": "1c014b0707aa5a49be421c1fbecf251893ac23660fe1e40d05e050e5830b8c97",
+      "export_sha256": "1c014b0707aa5a49be421c1fbecf251893ac23660fe1e40d05e050e5830b8c97"
+    },
+    "stage16_head_compute.csv": {
+      "source": "outputs/stage15b_isolated_validation/09_statistics/stage15b_head_compute.csv",
+      "sha256": "39e5825ee6c257e3a8b6683e12e9bfd71f114bd210f84e277451633e9dca14fe",
+      "export_sha256": "39e5825ee6c257e3a8b6683e12e9bfd71f114bd210f84e277451633e9dca14fe"
+    },
+    "stage16_system_compute.csv": {
+      "source": "outputs/stage15b_isolated_validation/09_statistics/stage15b_system_compute.csv",
+      "sha256": "9072e2f3dbe569028736e12a158ad3296c2a9e8d9da22768326d6ba1734c8c01",
+      "export_sha256": "9072e2f3dbe569028736e12a158ad3296c2a9e8d9da22768326d6ba1734c8c01"
+    },
+    "stage16_candidate_distribution.csv": {
+      "source": "outputs/stage15b_isolated_validation/09_statistics/stage15b_candidate_error_distributions.csv",
+      "sha256": "76541681b08e5537f6d3221233767ebed55538368859af739b412baa78bbedf9",
+      "export_sha256": "76541681b08e5537f6d3221233767ebed55538368859af739b412baa78bbedf9"
+    },
+    "stage16_switch_harm.csv": {
+      "source": "outputs/stage15b_isolated_validation/09_statistics/stage15b_switch_harm.csv",
+      "sha256": "49fc2e8531e3f529f9ed01ee5aca640afd5c8ca40cfcc8baa6c6f641a7745de1",
+      "export_sha256": "49fc2e8531e3f529f9ed01ee5aca640afd5c8ca40cfcc8baa6c6f641a7745de1"
+    }
+  },
+  "FrozenEvaluationSources": {
+    "metrics.npy": "c87736217807177dc6a828ba7f525dcc4d7c078b2868ed424165e7c7c4f084a0",
+    "logits.npy": "d75395c8bfb588d17f1da0c6661afac4764f94f73aa2b09d4e828d0a36abbeec",
+    "probabilities.npy": "2492ffc122a75d3f40385a05c6b8688d03d921cb43117a3beceebecc9247a3fd",
+    "actor_records.csv": "7a4a42d032873c556c1a85dfa4e0841680e97f951b7b25abc7dcbfc0ea7b42e3"
+  },
+  "CaseManifestSHA256": "0f20446ba7fa8af376741d6a1b39fbc5765b6d3cf9ad96e733b92d66ac38d499",
+  "PlotContractSHA256": "408e70776d3462ee86232e3c5d85770bfaa3a5b42e2a3e240641adc325d0a299"
+}

@@ -1,0 +1,38 @@
+{
+  "Status": "PASS",
+  "FoldChecks": [
+    {
+      "Fold": 1,
+      "Identity": "PASS",
+      "Heads": 8,
+      "BicycleR2Exact": true,
+      "OuterReadAfter24Freeze": true
+    },
+    {
+      "Fold": 2,
+      "Identity": "PASS",
+      "Heads": 8,
+      "BicycleR2Exact": true,
+      "OuterReadAfter24Freeze": true
+    },
+    {
+      "Fold": 3,
+      "Identity": "PASS",
+      "Heads": 8,
+      "BicycleR2Exact": true,
+      "OuterReadAfter24Freeze": true
+    }
+  ],
+  "Rows": 260151,
+  "SeedMetricsSHA256": "f9284e46812107df94523284fac96352e49b9294f26d3c9dd314cbb62a4f0395",
+  "Seconds": 49.148436660005245,
+  "SourceAllFrozenSHA256": "695fbc13de01c5af0ba11c88abfae89fe3429865457ccdeeda856089f5fd9487",
+  "FurtherTrainingOrSeedSelection": false,
+  "NoHiVTFit": true,
+  "MetricOrder": [
+    "Top1FDE",
+    "Top1ADE",
+    "HitRate"
+  ],
+  "CubeAxes": "actors,new initialization replicate[1,2],models[NG-A,NG-C,G-C,Matched-NG-C],metric"
+}
