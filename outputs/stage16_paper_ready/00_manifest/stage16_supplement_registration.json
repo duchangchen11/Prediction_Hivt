@@ -1,0 +1,285 @@
+{
+  "Stage": "Stage16 ranking initialization supplement",
+  "FrozenBeforeNewFits": true,
+  "BaseCommit": "2deef55128730b02c1cf0bd9e7237a23d6865133",
+  "Models": [
+    "NG-A",
+    "NG-C",
+    "G-C",
+    "Matched-NG-C"
+  ],
+  "Jobs": [
+    {
+      "fold": 1,
+      "model": "NG-A",
+      "replicate": 1,
+      "initialization_seed": 3022,
+      "fixed_sampler_seed": 2022,
+      "original_stage15b_initialization_seed": 2022,
+      "expected_seconds_from_original": 107.63171722798143
+    },
+    {
+      "fold": 1,
+      "model": "NG-A",
+      "replicate": 2,
+      "initialization_seed": 4022,
+      "fixed_sampler_seed": 2022,
+      "original_stage15b_initialization_seed": 2022,
+      "expected_seconds_from_original": 107.63171722798143
+    },
+    {
+      "fold": 1,
+      "model": "NG-C",
+      "replicate": 1,
+      "initialization_seed": 3022,
+      "fixed_sampler_seed": 2022,
+      "original_stage15b_initialization_seed": 2022,
+      "expected_seconds_from_original": 267.88839530802215
+    },
+    {
+      "fold": 1,
+      "model": "NG-C",
+      "replicate": 2,
+      "initialization_seed": 4022,
+      "fixed_sampler_seed": 2022,
+      "original_stage15b_initialization_seed": 2022,
+      "expected_seconds_from_original": 267.88839530802215
+    },
+    {
+      "fold": 1,
+      "model": "G-C",
+      "replicate": 1,
+      "initialization_seed": 3022,
+      "fixed_sampler_seed": 2022,
+      "original_stage15b_initialization_seed": 2022,
+      "expected_seconds_from_original": 511.6076879189932
+    },
+    {
+      "fold": 1,
+      "model": "G-C",
+      "replicate": 2,
+      "initialization_seed": 4022,
+      "fixed_sampler_seed": 2022,
+      "original_stage15b_initialization_seed": 2022,
+      "expected_seconds_from_original": 511.6076879189932
+    },
+    {
+      "fold": 1,
+      "model": "Matched-NG-C",
+      "replicate": 1,
+      "initialization_seed": 3022,
+      "fixed_sampler_seed": 2022,
+      "original_stage15b_initialization_seed": 2022,
+      "expected_seconds_from_original": 165.5638056099997
+    },
+    {
+      "fold": 1,
+      "model": "Matched-NG-C",
+      "replicate": 2,
+      "initialization_seed": 4022,
+      "fixed_sampler_seed": 2022,
+      "original_stage15b_initialization_seed": 2022,
+      "expected_seconds_from_original": 165.5638056099997
+    },
+    {
+      "fold": 2,
+      "model": "NG-A",
+      "replicate": 1,
+      "initialization_seed": 3122,
+      "fixed_sampler_seed": 2122,
+      "original_stage15b_initialization_seed": 2122,
+      "expected_seconds_from_original": 183.60664105199976
+    },
+    {
+      "fold": 2,
+      "model": "NG-A",
+      "replicate": 2,
+      "initialization_seed": 4122,
+      "fixed_sampler_seed": 2122,
+      "original_stage15b_initialization_seed": 2122,
+      "expected_seconds_from_original": 183.60664105199976
+    },
+    {
+      "fold": 2,
+      "model": "NG-C",
+      "replicate": 1,
+      "initialization_seed": 3122,
+      "fixed_sampler_seed": 2122,
+      "original_stage15b_initialization_seed": 2122,
+      "expected_seconds_from_original": 170.04833037001663
+    },
+    {
+      "fold": 2,
+      "model": "NG-C",
+      "replicate": 2,
+      "initialization_seed": 4122,
+      "fixed_sampler_seed": 2122,
+      "original_stage15b_initialization_seed": 2122,
+      "expected_seconds_from_original": 170.04833037001663
+    },
+    {
+      "fold": 2,
+      "model": "G-C",
+      "replicate": 1,
+      "initialization_seed": 3122,
+      "fixed_sampler_seed": 2122,
+      "original_stage15b_initialization_seed": 2122,
+      "expected_seconds_from_original": 481.7644486950012
+    },
+    {
+      "fold": 2,
+      "model": "G-C",
+      "replicate": 2,
+      "initialization_seed": 4122,
+      "fixed_sampler_seed": 2122,
+      "original_stage15b_initialization_seed": 2122,
+      "expected_seconds_from_original": 481.7644486950012
+    },
+    {
+      "fold": 2,
+      "model": "Matched-NG-C",
+      "replicate": 1,
+      "initialization_seed": 3122,
+      "fixed_sampler_seed": 2122,
+      "original_stage15b_initialization_seed": 2122,
+      "expected_seconds_from_original": 325.9797277629841
+    },
+    {
+      "fold": 2,
+      "model": "Matched-NG-C",
+      "replicate": 2,
+      "initialization_seed": 4122,
+      "fixed_sampler_seed": 2122,
+      "original_stage15b_initialization_seed": 2122,
+      "expected_seconds_from_original": 325.9797277629841
+    },
+    {
+      "fold": 3,
+      "model": "NG-A",
+      "replicate": 1,
+      "initialization_seed": 3222,
+      "fixed_sampler_seed": 2222,
+      "original_stage15b_initialization_seed": 2222,
+      "expected_seconds_from_original": 125.27219643100398
+    },
+    {
+      "fold": 3,
+      "model": "NG-A",
+      "replicate": 2,
+      "initialization_seed": 4222,
+      "fixed_sampler_seed": 2222,
+      "original_stage15b_initialization_seed": 2222,
+      "expected_seconds_from_original": 125.27219643100398
+    },
+    {
+      "fold": 3,
+      "model": "NG-C",
+      "replicate": 1,
+      "initialization_seed": 3222,
+      "fixed_sampler_seed": 2222,
+      "original_stage15b_initialization_seed": 2222,
+      "expected_seconds_from_original": 88.15387609999743
+    },
+    {
+      "fold": 3,
+      "model": "NG-C",
+      "replicate": 2,
+      "initialization_seed": 4222,
+      "fixed_sampler_seed": 2222,
+      "original_stage15b_initialization_seed": 2222,
+      "expected_seconds_from_original": 88.15387609999743
+    },
+    {
+      "fold": 3,
+      "model": "G-C",
+      "replicate": 1,
+      "initialization_seed": 3222,
+      "fixed_sampler_seed": 2222,
+      "original_stage15b_initialization_seed": 2222,
+      "expected_seconds_from_original": 208.0789719549939
+    },
+    {
+      "fold": 3,
+      "model": "G-C",
+      "replicate": 2,
+      "initialization_seed": 4222,
+      "fixed_sampler_seed": 2222,
+      "original_stage15b_initialization_seed": 2222,
+      "expected_seconds_from_original": 208.0789719549939
+    },
+    {
+      "fold": 3,
+      "model": "Matched-NG-C",
+      "replicate": 1,
+      "initialization_seed": 3222,
+      "fixed_sampler_seed": 2222,
+      "original_stage15b_initialization_seed": 2222,
+      "expected_seconds_from_original": 138.2743661380082
+    },
+    {
+      "fold": 3,
+      "model": "Matched-NG-C",
+      "replicate": 2,
+      "initialization_seed": 4222,
+      "fixed_sampler_seed": 2222,
+      "original_stage15b_initialization_seed": 2222,
+      "expected_seconds_from_original": 138.2743661380082
+    }
+  ],
+  "NewHeadFits": 24,
+  "NewPredictorFits": 0,
+  "InitializationOnly": true,
+  "SameFoldOriginalDataPermutation": true,
+  "R2BicycleRoute": "frozen original samefold Stage15B R2; no refitting",
+  "Train": "InnerTrain378",
+  "Selection": "InnerDev42 strict Sdev, original samefold R2 references",
+  "OuterTestUse": "evaluate only after all24 selected heads frozen; never choose seeds/models/thresholds",
+  "Optimizer": "AdamW lr=.001 wd=.0001 FP32",
+  "Microbatch": 128,
+  "Accumulation": 8,
+  "ContinuousCarry": true,
+  "EpochCap": 50,
+  "Patience": 5,
+  "LossA": "detached soft CE q=softmax(-FDE/1m)",
+  "LossC": "mean sum p*(FDE-minFDE)/max(1m,mean regret)",
+  "Inference": "original logits + residual; unchanged K6 geometry; samefold frozen R2 Bicycle route",
+  "TimingEstimateHours": 1.541038980316112,
+  "EpochCapUpperEstimateHours": 7.024874005444445,
+  "SensitivitySummary": "per-fold three initialization replicates including original Stage15B; sample SD ddof=1; pooled replicate actor-window weighted; conditional on each frozen predictor, not predictor-seed robustness",
+  "Statistics": "supplementary descriptive seed comparison; no replacement or new primary significance claim",
+  "FailureRule": "preserve failed run and reason; stop nonfinite/identity/source failures; no result-driven rerun or seed selection; recover only exact durable state after verified infrastructure failure",
+  "ProbabilityEvent": "selected mode equals argmin frozen K6 endpoint FDE, lowest original-index ties",
+  "ProbabilityLabel": "one-hot endpoint-oracle candidate index; no natural mode identity across actors",
+  "ECEBins": {
+    "Count": 15,
+    "Edges": [
+      0.0,
+      0.06666666666666667,
+      0.13333333333333333,
+      0.2,
+      0.26666666666666666,
+      0.3333333333333333,
+      0.4,
+      0.4666666666666667,
+      0.5333333333333333,
+      0.6,
+      0.6666666666666666,
+      0.7333333333333333,
+      0.8,
+      0.8666666666666667,
+      0.9333333333333333,
+      1.0
+    ],
+    "Convention": "[low,high), last includes 1; top-label ECE"
+  },
+  "Brier": "mean sum_k (p_k - onehot(oracle)_k)^2; no 1/K normalization",
+  "CalibrationFittingPermitted": false,
+  "CaseSelection": "post-freeze illustrative maximum gain and harm within MovingVehicle and Pedestrian for G-C versus NG-C; 4 distinct actors, never evidence of prevalence",
+  "Stage15BConclusionsUnchanged": true,
+  "ImplementationSHA256": {
+    "outputs/stage16_paper_ready/03_seed_stability/stage16_train_heads.py": "86d465f01faac1546fad4e9052ff8c30c847432b46551007b65ac11d8838ccb8",
+    "outputs/stage16_paper_ready/00_manifest/stage16_common.py": "0e7d1f5bdc2aaadab4b598f1fcdbba9920c7e399fb42877db22e196b2d8eeda2",
+    "outputs/stage16_paper_ready/02_literature/stage16_external_code_preflight.py": "41d0b10e7ec7f0f1a44688458110e0a7b4689c7f9b26246177816ac7ca0badfa"
+  },
+  "PreflightSHA256": "ccb1936e5cd17c7cd62b13b76d9f8e111489ab321215df4df890830201a098b3"
+}

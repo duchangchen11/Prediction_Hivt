@@ -1,0 +1,249 @@
+{
+  "Status": "PASS",
+  "Runs": [
+    {
+      "Fold": 1,
+      "Model": "NG-A",
+      "Seed": 3022,
+      "StateSHA256": "c2b15c7d8a4a2f1a9f21a955b8e6bc96413cca5aeee00d929bdeed6bdb32b245",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 1.3634960651397705,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 1,
+      "Model": "NG-A",
+      "Seed": 4022,
+      "StateSHA256": "1f621316c47ab33805312119f515d779457cf574c64613966c149f8ff633f3b7",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 1.3634960651397705,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 1,
+      "Model": "NG-C",
+      "Seed": 3022,
+      "StateSHA256": "c2b15c7d8a4a2f1a9f21a955b8e6bc96413cca5aeee00d929bdeed6bdb32b245",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.23473705351352692,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 1,
+      "Model": "NG-C",
+      "Seed": 4022,
+      "StateSHA256": "1f621316c47ab33805312119f515d779457cf574c64613966c149f8ff633f3b7",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.23473705351352692,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 1,
+      "Model": "G-C",
+      "Seed": 3022,
+      "StateSHA256": "08263fa78f4bb726824c9786b61419743791e489144732cf5dd374311d4a11e2",
+      "ParameterCount": 24066,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.23473705351352692,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 1,
+      "Model": "G-C",
+      "Seed": 4022,
+      "StateSHA256": "1638ae862f86a33fa215d3d0c077b7197fb573debb975e30e20bd6b9d1800de9",
+      "ParameterCount": 24066,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.23473705351352692,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 1,
+      "Model": "Matched-NG-C",
+      "Seed": 3022,
+      "StateSHA256": "d3b3d015f28dad77cac27b5af324a43997f8136275c71bc21f02ee5d05555c9f",
+      "ParameterCount": 24001,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.23473705351352692,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 1,
+      "Model": "Matched-NG-C",
+      "Seed": 4022,
+      "StateSHA256": "aafd0baa3b6f8e6f766d3a26719e17293364b78c299d049cd9259b97374c9b20",
+      "ParameterCount": 24001,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.23473705351352692,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 2,
+      "Model": "NG-A",
+      "Seed": 3122,
+      "StateSHA256": "7310fbe39020b3bde7bcd10b05d58fc3c67ec1e7f8d747fa137a767948b69113",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 1.5308902263641357,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 2,
+      "Model": "NG-A",
+      "Seed": 4122,
+      "StateSHA256": "4608cc008aa1c4e3059fa8b23f02c86379021c4b974ab72041958cb55c48ffbb",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 1.5308902263641357,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 2,
+      "Model": "NG-C",
+      "Seed": 3122,
+      "StateSHA256": "7310fbe39020b3bde7bcd10b05d58fc3c67ec1e7f8d747fa137a767948b69113",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.3544739782810211,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 2,
+      "Model": "NG-C",
+      "Seed": 4122,
+      "StateSHA256": "4608cc008aa1c4e3059fa8b23f02c86379021c4b974ab72041958cb55c48ffbb",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.3544739782810211,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 2,
+      "Model": "G-C",
+      "Seed": 3122,
+      "StateSHA256": "4d1512525d53b70fdefa715762f091fd686a927290d5d4ecba0fe80b7d9740c2",
+      "ParameterCount": 24066,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.3544739782810211,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 2,
+      "Model": "G-C",
+      "Seed": 4122,
+      "StateSHA256": "b221b53f5a2a1bc53b4ba5ad4fab48c13ac6adc9d06ef0a2d6a60eb6aecafaf7",
+      "ParameterCount": 24066,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.3544739782810211,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 2,
+      "Model": "Matched-NG-C",
+      "Seed": 3122,
+      "StateSHA256": "52cedda296f44447a150c815647d5d9787d290abc2561716abfa041e0a3ff4e8",
+      "ParameterCount": 24001,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.3544739782810211,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 2,
+      "Model": "Matched-NG-C",
+      "Seed": 4122,
+      "StateSHA256": "abc8c10b0f5d7484d24983d1bb2462d4f152d6dfb5ce14b07bd10970c06e53b1",
+      "ParameterCount": 24001,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.3544739782810211,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 3,
+      "Model": "NG-A",
+      "Seed": 3222,
+      "StateSHA256": "17f591e17029e85572fd0d0c04a19b2f64998a51b5841a68bed25b268473d830",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 1.5587646961212158,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 3,
+      "Model": "NG-A",
+      "Seed": 4222,
+      "StateSHA256": "87a66fdb6b5f35c7e96f7beeaa2e0c8247d0fb5bb0664a748f9b462774cb5f63",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 1.5587646961212158,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 3,
+      "Model": "NG-C",
+      "Seed": 3222,
+      "StateSHA256": "17f591e17029e85572fd0d0c04a19b2f64998a51b5841a68bed25b268473d830",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.4011276364326477,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 3,
+      "Model": "NG-C",
+      "Seed": 4222,
+      "StateSHA256": "87a66fdb6b5f35c7e96f7beeaa2e0c8247d0fb5bb0664a748f9b462774cb5f63",
+      "ParameterCount": 7425,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.4011276364326477,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 3,
+      "Model": "G-C",
+      "Seed": 3222,
+      "StateSHA256": "9843068ccf1bd08fb60f7d3e54739fa8063d1c34eb7589377a58d43423d34951",
+      "ParameterCount": 24066,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.4011276364326477,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 3,
+      "Model": "G-C",
+      "Seed": 4222,
+      "StateSHA256": "c0e7c47d48ec2210ad47dc1c918b54873c5cda60aba3e35f499d093027ab9e9f",
+      "ParameterCount": 24066,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.4011276364326477,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 3,
+      "Model": "Matched-NG-C",
+      "Seed": 3222,
+      "StateSHA256": "829ce4a19b93d1c89b0d8503aa93404f7998fa57e2ac272e62d4c8c9e50765b7",
+      "ParameterCount": 24001,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.4011276364326477,
+      "FiniteGradient": true
+    },
+    {
+      "Fold": 3,
+      "Model": "Matched-NG-C",
+      "Seed": 4222,
+      "StateSHA256": "a0a7454bcaf22bbce64c1ef9a49c368ff402d640c698dfb148fdb18492247b6c",
+      "ParameterCount": 24001,
+      "ZeroResidualExact": true,
+      "FiniteLoss": 0.4011276364326477,
+      "FiniteGradient": true
+    }
+  ],
+  "OptimizerSteps": 0,
+  "NoOuterRead": true,
+  "NoPredictorConstructed": true,
+  "HistoricalWritesForbidden": true
+}

@@ -1,0 +1,85 @@
+{
+  "Status": "PASS_SCORER_CONTRACT_ONLY",
+  "TNT": {
+    "Parameters": 16001,
+    "Input": "context[4,1,64], candidates[4,6,24]",
+    "Output": [
+      4,
+      6
+    ],
+    "GTInput": false,
+    "GTOnlyLoss": true
+  },
+  "RRNet": {
+    "Parameters": 9537,
+    "Input": "history[4,6,5,2], goals[4,6,1,2]",
+    "Output": [
+      4,
+      6,
+      1
+    ],
+    "GTInput": false,
+    "GTOnlyLoss": true
+  },
+  "OptimizerSteps": 0,
+  "Data": "synthetic shape probes, no evaluation metrics",
+  "SyntheticContextNotScientificBaseline": true,
+  "FullPaperReproduction": false,
+  "TNTFiles": {
+    "repository": "Henry1iu/TNT-Trajectory-Prediction",
+    "commit": "bcbccdc1d35a717793e3caa1d599c1f700612227",
+    "code": {
+      "core/model/layers/scoring_and_selection.py": {
+        "sha256": "eed950d62a680bb61be37c74a2a27128feac1f87a580887d363d44260a61bcd4",
+        "bytes": 5021,
+        "url": "https://github.com/Henry1iu/TNT-Trajectory-Prediction/blob/bcbccdc1d35a717793e3caa1d599c1f700612227/core/model/layers/scoring_and_selection.py"
+      },
+      "core/model/layers/basic_module.py": {
+        "sha256": "e2361641963335ec6dd859e372eeb4383aaa35daab5a773477143fd3483cbb1d",
+        "bytes": 2359,
+        "url": "https://github.com/Henry1iu/TNT-Trajectory-Prediction/blob/bcbccdc1d35a717793e3caa1d599c1f700612227/core/model/layers/basic_module.py"
+      },
+      "core/model/TNT.py": {
+        "sha256": "98fc3ceff1d8d329c5419ac2a2acb7f6b87c56bf769b8511d2478abe813d8c5f",
+        "bytes": 11001,
+        "url": "https://github.com/Henry1iu/TNT-Trajectory-Prediction/blob/bcbccdc1d35a717793e3caa1d599c1f700612227/core/model/TNT.py"
+      },
+      "README.md": {
+        "sha256": "36ca51d3f25243fe3b4d65e35f0841cbbbc33cefead2b02b44b3e271336e102f",
+        "bytes": 7985,
+        "url": "https://github.com/Henry1iu/TNT-Trajectory-Prediction/blob/bcbccdc1d35a717793e3caa1d599c1f700612227/README.md"
+      }
+    }
+  },
+  "RRNetFiles": {
+    "repository": "RoboSafe-Lab/R-RNet",
+    "commit": "2edb131d4a5e08365739695fec0a05351fe535f8",
+    "code": {
+      "rrnet/modeling/rrnet.py": {
+        "sha256": "62401bfa8aca411b8df436fc22ff85625364a1f3936515e88580ff444af3837f",
+        "bytes": 23453,
+        "url": "https://github.com/RoboSafe-Lab/R-RNet/blob/2edb131d4a5e08365739695fec0a05351fe535f8/rrnet/modeling/rrnet.py"
+      },
+      "rrnet/layers/loss.py": {
+        "sha256": "d2b31137b02ff69fa835aad001f075e3e7eea0cf91c6a2bb50c4c8d821d6c422",
+        "bytes": 3085,
+        "url": "https://github.com/RoboSafe-Lab/R-RNet/blob/2edb131d4a5e08365739695fec0a05351fe535f8/rrnet/layers/loss.py"
+      },
+      "rrnet/engine/trainer.py": {
+        "sha256": "14133e6c88ca81cfdb5d8949fa682e068995d56cd26f93580cfaca490c4ecf5c",
+        "bytes": 17563,
+        "url": "https://github.com/RoboSafe-Lab/R-RNet/blob/2edb131d4a5e08365739695fec0a05351fe535f8/rrnet/engine/trainer.py"
+      },
+      "configs/ETH_UCY.json": {
+        "sha256": "4a3b8e83843dea556d8023337c83d5aa2c6cf3fc0b05fb2b61fc7b62c23de155",
+        "bytes": 1906,
+        "url": "https://github.com/RoboSafe-Lab/R-RNet/blob/2edb131d4a5e08365739695fec0a05351fe535f8/configs/ETH_UCY.json"
+      },
+      "README.md": {
+        "sha256": "0bce0e5fa8d2eeeff04f9d0d416fd704a9b73815487facff606a5d6614447b16",
+        "bytes": 1492,
+        "url": "https://github.com/RoboSafe-Lab/R-RNet/blob/2edb131d4a5e08365739695fec0a05351fe535f8/README.md"
+      }
+    }
+  }
+}
