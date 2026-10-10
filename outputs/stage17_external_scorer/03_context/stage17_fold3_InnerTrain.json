@@ -1,0 +1,55 @@
+{
+  "Status": "PASS",
+  "Fold": 3,
+  "Role": "InnerTrain",
+  "Targets": 148900,
+  "Scenes": 378,
+  "Batches": 754,
+  "PairedIntegrityBatches": 18,
+  "InstrumentationMaxDiff": {
+    "raw_prediction": 0.0,
+    "mode_logits": 0.0,
+    "mode_prob": 0.0
+  },
+  "CachedCandidatesBitwiseEqual": true,
+  "CachedLogitsBitwiseEqual": true,
+  "CachedProbabilitiesBitwiseEqual": true,
+  "ActorFrameTransformMaxDiff": 2.288818359375e-05,
+  "IdentityCSV_SHA256": "7933db05f8adf86ea8cb596a0fffe797b613bea52b0cfbcc1723c664481499eb",
+  "OriginalCacheManifestSHA256": "8df05cc9d7ad160aaf8039a18985341049f746994aab05cb3ceb31b2d207df18",
+  "PredictorCheckpointSHA256": "b1f7c7e8200255a998d65676a42b2b431ab5444df70ffd3822eb5349ba168ab4",
+  "FrozenRegistrationSHA256": "a4493b4100a9ab9e7d1ee3b53def92e3e96ee020040099fbaecf76ea4bd1eb42",
+  "Context": "decoder input local: history+lanes+local actors+type embedding,64D; detached",
+  "FuturePerturbationInputAndOutputBitwiseEqual": true,
+  "LabelUse": "separate GT array, never predictor/scorer.forward",
+  "Seconds": 121.53112713000155,
+  "PeakGPUMemoryBytes": 3036544000,
+  "Arrays": {
+    "context": {
+      "shape": [
+        148900,
+        1,
+        64
+      ],
+      "sha256": "461723d912aa934b3bae8f0528f9c8193848f626a9c65a11caf02cff0e8164a2",
+      "bytes": 38118528
+    },
+    "trajectory": {
+      "shape": [
+        148900,
+        6,
+        24
+      ],
+      "sha256": "97c7fe1cfb3bb5e5135700218c4d9557c517b65a23d8f33ce7151d303d89e328",
+      "bytes": 85766528
+    },
+    "gt": {
+      "shape": [
+        148900,
+        24
+      ],
+      "sha256": "62b7b77e8cf6d1c1e7fcec1935ba05eeb296a8c1f856e43b28a5855496392fb7",
+      "bytes": 14294528
+    }
+  }
+}

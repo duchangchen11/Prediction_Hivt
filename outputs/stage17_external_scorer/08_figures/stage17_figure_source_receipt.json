@@ -1,0 +1,56 @@
+{
+  "Status": "PASS_TEXT_BOUNDS_AND_SOURCE",
+  "SourceSHA256": {
+    "stage17_external_comparison.csv": "471e7313c29f503de856ec2b783227d6833b10067700cd635c5c40f4da28f06a",
+    "stage17_bootstrap_comparison.csv": "cdb33ae3272a3b34f49588b2fb3c74e80719047c22c568e22ce664ea2324f4b2",
+    "stage17_main_performance_table.csv": "06da9950415518219d6dadcab83204c08d5ce51f9c65d79136c72d18b6d7410c",
+    "07_efficiency/stage17_head_compute.csv": "908398931f3df6acd95a1ec56a75c438955fc4e1078d1fdb095dc57ce3e18a2a",
+    "07_efficiency/stage17_whole_compute.csv": "4be8a08775f3dc6ce97f7000b04ecc6c101986f6de0d0c97b7df0c0da77d5b75"
+  },
+  "Exports": 6,
+  "EditableSVGText": true,
+  "PDFType42": true,
+  "PNG_DPI": 400,
+  "Backend": "Python matplotlib",
+  "VisualReview": "PASS: final PNGs inspected; readable labels/legend/counts, no clipping or overlap",
+  "FinalPlotSourceSHA256": "c4d8cb61977151006931c8863d8bbe1f571a1f9e154f219901413e81d1b567d6",
+  "ExportSHA256": {
+    "08_figures/stage17_external_method_comparison.svg": "9fc736204fabeede6ac6fd7e77caa7ff9953fa114e0a43de56b3be853383113c",
+    "08_figures/stage17_external_method_comparison.pdf": "b2e1344b94955b1bd4e75a56260bc8454ff22b65624c969c8cdafbb2393c336e",
+    "08_figures/stage17_external_method_comparison.png": "b9b0a22a04ea7e4d478495f77eb56e072c9fd578e6b2ca29b942b7ca84302665",
+    "08_figures/stage17_main_performance_table.svg": "9729af282f4c36edd05f52569b40223fcd0918718e2bb4bf327b260af8edc478",
+    "08_figures/stage17_main_performance_table.png": "c38f035c06250a7c2bd93b7aa46b2cf4d40e95b9e646b211f1e191052eda2799",
+    "08_figures/stage17_main_performance_table.pdf": "07a503cb789132a9271b9cf1947499fd8e08e26fb7288f810c9ee9fef5aa0ae2"
+  },
+  "PDFTrueTypeFontInspection": {
+    "stage17_external_method_comparison.pdf": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nEVICAO+DejaVuSans-Bold               CID TrueType      Identity-H       yes yes yes     17  0\nBMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     24  0\n",
+    "stage17_main_performance_table.pdf": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nEVICAO+DejaVuSans-Bold               CID TrueType      Identity-H       yes yes yes     15  0\nBMQQDV+DejaVuSans                    CID TrueType      Identity-H       yes yes yes     22  0\n"
+  },
+  "SVGTextCounts": {
+    "stage17_external_method_comparison.svg": 46,
+    "stage17_main_performance_table.svg": 113
+  },
+  "PNGInspection": {
+    "stage17_external_method_comparison.png": {
+      "Size": [
+        2834,
+        1496
+      ],
+      "DPI": [
+        399.9992,
+        399.9992
+      ]
+    },
+    "stage17_main_performance_table.png": {
+      "Size": [
+        4280,
+        1280
+      ],
+      "DPI": [
+        399.9992,
+        399.9992
+      ]
+    }
+  },
+  "VisualReviewAutomated": false
+}

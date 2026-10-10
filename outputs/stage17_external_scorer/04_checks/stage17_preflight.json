@@ -1,0 +1,106 @@
+{
+  "Status": "PASS",
+  "Folds": [
+    {
+      "Fold": 1,
+      "Status": "PASS",
+      "Parameters": 16001,
+      "InputContext": [
+        128,
+        1,
+        64
+      ],
+      "InputTrajectory": [
+        128,
+        6,
+        24
+      ],
+      "OutputProbability": [
+        128,
+        6
+      ],
+      "ProbabilityNormalized": true,
+      "AllParametersFiniteConnectedGradient": true,
+      "OriginalComponentLossVerified": true,
+      "GTOnlyLoss": true,
+      "NoLabelsInForwardInputs": true,
+      "TrainDevDisjoint": true,
+      "Steps": 20,
+      "FirstTinyLoss": 1.9069533348083496,
+      "LastTinyLoss": 1.2980904579162598,
+      "GradientNorm": 0.39195138216018677,
+      "CheckpointReplayBitwiseEqual": true,
+      "TinyWeightsEligibleForFormal": false,
+      "Seconds": 0.37749525799881667,
+      "PeakGPUMemoryBytes": 73721856
+    },
+    {
+      "Fold": 2,
+      "Status": "PASS",
+      "Parameters": 16001,
+      "InputContext": [
+        128,
+        1,
+        64
+      ],
+      "InputTrajectory": [
+        128,
+        6,
+        24
+      ],
+      "OutputProbability": [
+        128,
+        6
+      ],
+      "ProbabilityNormalized": true,
+      "AllParametersFiniteConnectedGradient": true,
+      "OriginalComponentLossVerified": true,
+      "GTOnlyLoss": true,
+      "NoLabelsInForwardInputs": true,
+      "TrainDevDisjoint": true,
+      "Steps": 20,
+      "FirstTinyLoss": 1.7163258790969849,
+      "LastTinyLoss": 1.4636201858520508,
+      "GradientNorm": 0.2959672808647156,
+      "CheckpointReplayBitwiseEqual": true,
+      "TinyWeightsEligibleForFormal": false,
+      "Seconds": 0.3011328290158417,
+      "PeakGPUMemoryBytes": 73990144
+    },
+    {
+      "Fold": 3,
+      "Status": "PASS",
+      "Parameters": 16001,
+      "InputContext": [
+        128,
+        1,
+        64
+      ],
+      "InputTrajectory": [
+        128,
+        6,
+        24
+      ],
+      "OutputProbability": [
+        128,
+        6
+      ],
+      "ProbabilityNormalized": true,
+      "AllParametersFiniteConnectedGradient": true,
+      "OriginalComponentLossVerified": true,
+      "GTOnlyLoss": true,
+      "NoLabelsInForwardInputs": true,
+      "TrainDevDisjoint": true,
+      "Steps": 20,
+      "FirstTinyLoss": 1.6963473558425903,
+      "LastTinyLoss": 1.4960036277770996,
+      "GradientNorm": 0.34895846247673035,
+      "CheckpointReplayBitwiseEqual": true,
+      "TinyWeightsEligibleForFormal": false,
+      "Seconds": 0.2890093280002475,
+      "PeakGPUMemoryBytes": 73990144
+    }
+  ],
+  "OuterPerformanceRead": false,
+  "FullHiVTTrainingSteps": 0
+}

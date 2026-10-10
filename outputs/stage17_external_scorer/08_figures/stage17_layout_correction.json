@@ -1,0 +1,13 @@
+{
+  "Status": "DISPLAY_ONLY_CORRECTION",
+  "UTC": "2026-10-10T12:22:06.219355+00:00",
+  "OriginalPlotSourceSHA256": "8dd1a90cebb8a24bd915eb49920fa85aebf4820547cab391f4c60776f941b956",
+  "FinalPlotSourceSHA256": "c4d8cb61977151006931c8863d8bbe1f571a1f9e154f219901413e81d1b567d6",
+  "Reason": "Bounding-box QA inspected an inactive locator tick outside axes view; explicitly restrict ticks to existing view range",
+  "MetricStatisticsAndTrainingChanges": false,
+  "DataSHA256": {
+    "stage17_external_comparison.csv": "471e7313c29f503de856ec2b783227d6833b10067700cd635c5c40f4da28f06a",
+    "stage17_bootstrap_comparison.csv": "cdb33ae3272a3b34f49588b2fb3c74e80719047c22c568e22ce664ea2324f4b2"
+  },
+  "VisualRevision": "Move legend into unused space in panel b to avoid caption overlap identified during actual PNG review"
+}

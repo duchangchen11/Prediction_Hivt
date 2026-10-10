@@ -25,3 +25,16 @@ The original scene tokens and order are reused: 378 InnerTrain, 42 InnerDev, 210
 Before fitting: shape, finite connected gradients, probability sum, actual loss equivalence, split isolation, tiny optimization, save/load/optimizer replay, future-input poisoning and exact cached candidate/logit/probability invariance. Tiny weights are discarded. No numerical failure may be repaired by changing the loss, candidate count, or Outer-based choices.
 
 Only after all three selected scorer checkpoints are frozen may Outer context export and performance evaluation begin. Shared candidates imply unchanged minFDE6. Bootstrap is supplementary paired scene analysis with 95% descriptive CI, outside the Stage15B confirmatory family3. The context provides independent learned information beyond the existing cached node/edge features; the comparison controls candidate geometry and scene protocol, **not identical input information**. Source licensing remains unverified; third-party files are local-only.
+
+## Input-information comparison
+
+| Method | Actual scoring inputs | Additional observed latent? | Predicted neighbor messages? |
+|---|---|---|---|
+| R0 | original Stage5A mode logits | no additional input | no extra reranking messages |
+| R2 | target's 19 observable candidate features + original logits | no | no |
+| NG-A / NG-C | target's 15 candidate-node features + original logits | no | no |
+| G-A / G-C | 15D node features, 17D cross-mode edges, ≤8 retained neighbors, masks + original logits | no extra context vector | yes, frozen predicted neighbor candidates |
+| Matched-NG-C | target's 15 candidate-node features + original logits + own-feature capacity adapter | no | no |
+| Adapted TNT | six full 24D trajectories + frozen 64D observed local actor/lane/type context | **yes, from the same frozen predictor** | no explicit post-prediction neighbor-message branch |
+
+TNT does **not** receive original logits directly and does not add a residual to them. Its local history encoder already incorporates observed local neighbors and lanes; “no explicit predicted-neighbor messages” does not mean no interaction information. Its contextual information differs from the original VectorNet global context as well as the G-C scoring features. The shared predictor weights are reused unchanged; no extra encoder receives training updates. Existing graph/no-graph methods use the same-fold R2 Bicycle route, while primary TNT scores Bicycle directly; the separate routing sensitivity makes that difference numerical and visible.

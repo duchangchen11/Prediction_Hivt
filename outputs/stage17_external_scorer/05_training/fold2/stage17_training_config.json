@@ -1,0 +1,26 @@
+{
+  "Fold": 2,
+  "Seed": 2122,
+  "RegistrationSHA256": "a4493b4100a9ab9e7d1ee3b53def92e3e96ee020040099fbaecf76ea4bd1eb42",
+  "TrainManifestSHA256": "3b6388717fba9bb6557a7891fac9d821e279854c80a1c49721b5f65ef39281ba",
+  "DevManifestSHA256": "d26241524c4b71eb079a54e4bbdba06b3d2b97475c96d7228e17122bc022a86f",
+  "Parameters": 16001,
+  "Optimizer": "AdamW",
+  "LR": 0.001,
+  "WeightDecay": 0.0001,
+  "EffectiveBatch": 1024,
+  "Microbatch": 128,
+  "Accumulation": 8,
+  "MaxEpochs": 50,
+  "Patience": 5,
+  "Temperature": 0.01,
+  "ScoreTemperature": 1.0,
+  "Loss": "pinned TrajScoreSelection.loss / effectivebatch; soft CE of max squared full-trajectory distance",
+  "R2DevReferences": {
+    "Vehicle": 2.6549871640088654,
+    "Pedestrian": 1.3044438430306526
+  },
+  "BicycleRoute": "pure TNT for primary; same-fold frozen R2 sensitivity reported separately",
+  "FreshInitialization": true,
+  "TinyWeightsLoaded": false
+}

@@ -1,0 +1,13 @@
+{
+  "GPU": "NVIDIA GeForce RTX 3080",
+  "Torch": "2.5.1+cu124",
+  "DiskFreeBytes": 24928440320,
+  "AddedContextCacheBytes": 724263840,
+  "SelectedCheckpointBytes": {
+    "1": 69372,
+    "2": 69372,
+    "3": 69372
+  },
+  "HeadAndWholeContexts": "independent frozen HiVT local context used by TNT; separate CPU graph pipeline used by G-C",
+  "NoConcurrentStage17GPUJobsDuringBenchmark": true
+}

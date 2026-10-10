@@ -1,0 +1,34 @@
+{
+  "Status": "PASS",
+  "UTC": "2026-10-10T12:23:30.882727+00:00",
+  "SummarySHA256": "d2278b10004ae41e696af18ce98eb8798cd21f15b5ee5e929608ad2010cd34b0",
+  "RegistrationSHA256": "a4493b4100a9ab9e7d1ee3b53def92e3e96ee020040099fbaecf76ea4bd1eb42",
+  "HistoricalPreservation": {
+    "Status": "PASS",
+    "HistoricalFilesChecked": 3882,
+    "FrozenCandidateContextFilesChecked": 1971,
+    "BytesChecked": 20548927103,
+    "BaseCommit": "e6682e4855d99eb598a3a40d117a81a41448e940",
+    "NoHistoricalCheckpointResultChanges": true
+  },
+  "NewCheckpointSHA256": {
+    "1": "5d22f0137c7736740e3f81b5b6e9f399f562f520f6330af10b707dca2ddbfb51",
+    "2": "5cea029ce24af4f3b42deb142968ec46cf96ae8c88aeecc5859811adba1e71bf",
+    "3": "fdbd6a37e6cbda9b08f9770d69108628ce46a4686caaecd101420b542fce1044"
+  },
+  "DataArrayHashesVerified": true,
+  "NewTNTOuterMetricsAfterGlobalFreeze": true,
+  "OldSevenMetricsAndOracleBitwisePreserved": true,
+  "PythonASTPass": true,
+  "FiguresSourceReceiptSHA256": "0d2867397f555b9024ef218f229e098aa62606cb8a438c3b22e0c85f1e8782e2",
+  "FinalFigureVisualReview": "PASS",
+  "ReportSHA256": {
+    "stage17_integrity_checks.md": "3b9304e72e6fe4ee99e4ce74e478d1f4b247674a43bbc3e76d2ad57ca031b760",
+    "stage17_efficiency_report.md": "f5312b6b18a014510a73219e7abb08728353f809c870a0b69349ff460d0f1c55",
+    "stage17_baseline_source_audit.md": "b79424e9d156d222db831a6921221d6d4d2a4e4e40afc3a6ab5bb2f92c259aff",
+    "stage17_training_report.md": "482be3c462bedcacfc94eee0c83b83df3cc1ca54bfbbcc360656a76c28243842",
+    "stage17_scientific_conclusion.md": "2ee1d6fbf003e62b9631cdcc3dfab4b4afb5e877237b53835ca8a1db12feba12",
+    "stage17_final_report.md": "519d493a406ecc01811c1699cb6f21e9b13afa6320125b01bd89709a82f9d363",
+    "stage17_adapter_design.md": "168d1f85db50590475240266fb8741b09b4dfaff364b35fa180dcf7ff40adc50"
+  }
+}

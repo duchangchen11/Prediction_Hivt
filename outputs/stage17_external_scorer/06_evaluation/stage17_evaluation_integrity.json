@@ -1,0 +1,35 @@
+{
+  "Status": "PASS",
+  "Models": [
+    "R0",
+    "R2",
+    "NG-A",
+    "NG-C",
+    "G-A",
+    "G-C",
+    "Matched-NG-C",
+    "Adapted TNT Scoring"
+  ],
+  "Fields": [
+    "Top1FDE",
+    "Top1ADE",
+    "HitRate",
+    "minFDE6"
+  ],
+  "ActorWindows": 260151,
+  "Scenes": 630,
+  "IdentitySource": "outputs/stage15b_isolated_validation/08_evaluation/cache/actor_records.csv",
+  "IdentitySHA256": "7a4a42d032873c556c1a85dfa4e0841680e97f951b7b25abc7dcbfc0ea7b42e3",
+  "CandidateOracleBitwiseEqual": true,
+  "ExistingSevenMetricsBitwiseEqual": true,
+  "AllThreeFrozenBeforeOuter": true,
+  "GlobalFreezeSHA256": "16e44d179605610018906b7db8a8597be3a67bbd89f473994a29df188bdc7b5e",
+  "SupplementaryOutsideFamily3": true,
+  "UTC": "2026-10-10T12:18:28.794892+00:00",
+  "SHA256": {
+    "raw_scores.npy": "7dbd6fa1f9b5b30b05223e2224570a5bcbbd5275abee86560a194159c376daa2",
+    "probabilities.npy": "3bd255d43e283d7e8ef627309b05a15b95bf95ccfdbde456404d8bfcef0b02c3",
+    "r2_bicycle_sensitivity.npy": "2b9855d166d12383491fc1903c74b69aa722296968708d96820fdc8907c57f55",
+    "metrics.npy": "0180ebe897de9799196cd1617caf22243dce7a95c9b3d63d41064ba1667d2afa"
+  }
+}

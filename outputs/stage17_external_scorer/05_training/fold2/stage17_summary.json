@@ -1,0 +1,45 @@
+{
+  "Status": "COMPLETE",
+  "Fold": 2,
+  "Seed": 2122,
+  "SelectedEpoch": 8,
+  "ExecutedEpochs": 13,
+  "DevSelectionScore": 1.0165408641706244,
+  "CheckpointSHA256": "5cea029ce24af4f3b42deb142968ec46cf96ae8c88aeecc5859811adba1e71bf",
+  "ConfigSHA256": "b428244e1a89fca2b4fc3a4ed06ae5cafa811e910c8ec041bf99739a60ae42ef",
+  "InitialStateSHA256": "4305e9225e6f1137a7021139c4fcbd5d9ba1bfe72fe950221f55b05cb1cc18ac",
+  "PredictorCheckpointSHA256": "dadf139ef4d5ca4009a22de3dda42f3cd91f62a149d2c4114e922856100729c8",
+  "AllTrainTargetsUsed": 157356,
+  "FinalPending": 700,
+  "DevMetrics": {
+    "Overall": {
+      "Count": 19084,
+      "Top1FDE": 2.379666973120812,
+      "Top1ADE": 1.0712943196886113
+    },
+    "Vehicle": {
+      "Count": 14245,
+      "Top1FDE": 2.762606049057009,
+      "Top1ADE": 1.2307896032906374
+    },
+    "Pedestrian": {
+      "Count": 4537,
+      "Top1FDE": 1.2947219696752104,
+      "Top1ADE": 0.6203342175229924
+    },
+    "Bicycle": {
+      "Count": 302,
+      "Top1FDE": 0.6161846682253534,
+      "Top1ADE": 0.3229356064917581
+    },
+    "MovingVehicle": {
+      "Count": 2767,
+      "Top1FDE": 12.353789584651787,
+      "Top1ADE": 5.329300210650648
+    }
+  },
+  "Seconds": 135.3465067849902,
+  "PeakGPUMemoryBytes": 75426816,
+  "OuterRead": false,
+  "HiVTTrainingSteps": 0
+}

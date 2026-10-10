@@ -1,0 +1,69 @@
+{
+  "Status": "COMPLETE",
+  "TNTSourceVerified": true,
+  "AdapterIntegrity": "PASS",
+  "TrainingStatus": "COMPLETE",
+  "ThreeFoldComplete": true,
+  "AdaptedTNTOverallFDE": 2.42199518016,
+  "GCOverallFDE": 2.26116102772,
+  "NGCOverallFDE": 2.30654340676,
+  "GCvsTNTDelta": -0.16083415244,
+  "GCvsTNT95CI": [
+    -0.191229643333,
+    -0.133288916245
+  ],
+  "GCvsTNTFoldDelta": [
+    -0.0641710602047,
+    -0.239324818005,
+    -0.175987625616
+  ],
+  "Interpretation": "G-C has lower pooled Top1FDE than the adapted TNT scorer",
+  "SupplementaryOnly": true,
+  "NoNewConfirmatoryFamilyMember": true,
+  "FullTNTReproduction": false,
+  "License": "no grant found; upstream source local-only",
+  "FittingGPUHours": 0.14180942951361228,
+  "PairedTrainDevBatches": 108,
+  "CandidateGeometryAndLogitsBitwiseUnchanged": true,
+  "HiVTTrainingSteps": 0,
+  "PaperTableReady": true,
+  "FigureExports": 6,
+  "TNTR2BicycleSensitivityOverallFDE": 2.42070994392,
+  "BicycleTNTFDE": 2.07008434104,
+  "BicycleGCR2RouteFDE": 1.95788451107,
+  "Groups": {
+    "MovingVehicle": {
+      "G-C": 10.2107555881,
+      "NG-C": 10.470631364,
+      "Adapted TNT Scoring": 11.1111346622
+    },
+    "Pedestrian": {
+      "G-C": 1.33048393399,
+      "NG-C": 1.33488288446,
+      "Adapted TNT Scoring": 1.36013371816
+    }
+  },
+  "Compute": {
+    "HeadMeanMSPer1024": {
+      "G-C": 10.430799427566667,
+      "NG-C": 4.79578346538,
+      "Adapted TNT Scoring": 5.1429530797766665
+    },
+    "WholeMeanSecondsPer16Windows": {
+      "G-C": 0.23576869280366664,
+      "NG-C": 0.222686303599,
+      "Adapted TNT Scoring": 0.08088366313116667
+    }
+  },
+  "HistoricalPreservation": {
+    "Status": "PASS",
+    "HistoricalFilesChecked": 3882,
+    "FrozenCandidateContextFilesChecked": 1971,
+    "BytesChecked": 20548927103,
+    "BaseCommit": "e6682e4855d99eb598a3a40d117a81a41448e940",
+    "NoHistoricalCheckpointResultChanges": true
+  },
+  "DiskFreeBytes": 24924880896,
+  "STOP": true,
+  "NextStageAuthorized": false
+}
