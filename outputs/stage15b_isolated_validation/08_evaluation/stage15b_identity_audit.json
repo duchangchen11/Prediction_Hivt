@@ -1,0 +1,43 @@
+{
+  "Status": "PASS",
+  "ActorWindows": 260151,
+  "Scenes": 630,
+  "Fields": [
+    "Top1FDE",
+    "Top1ADE",
+    "OracleGap",
+    "HitRate",
+    "MRR",
+    "SoftCE",
+    "ExpectedRegret",
+    "NormalizedExpectedRegret",
+    "PredictionEntropy",
+    "Top1Probability",
+    "Top1Top2Margin",
+    "OracleModeProbability",
+    "minADEOracle6",
+    "minFDE6",
+    "MR6"
+  ],
+  "Models": [
+    "R0",
+    "R2",
+    "NG-A",
+    "NG-C",
+    "G-A",
+    "G-C",
+    "Matched-NG-C"
+  ],
+  "IdentitiesUnique": true,
+  "AllOracleMetricsBitwiseEqual": true,
+  "BicycleNewR2RouteBitwiseEqual": true,
+  "All18HeadsFrozenBeforeEvaluation": true,
+  "HistoricalPredictionsLoaded": false,
+  "OfficialProtocol": "custom internal evaluation, not nuScenes leaderboard",
+  "SHA256": {
+    "logits.npy": "d75395c8bfb588d17f1da0c6661afac4764f94f73aa2b09d4e828d0a36abbeec",
+    "actor_records.csv": "7a4a42d032873c556c1a85dfa4e0841680e97f951b7b25abc7dcbfc0ea7b42e3",
+    "probabilities.npy": "2492ffc122a75d3f40385a05c6b8688d03d921cb43117a3beceebecc9247a3fd",
+    "metrics.npy": "c87736217807177dc6a828ba7f525dcc4d7c078b2868ed424165e7c7c4f084a0"
+  }
+}

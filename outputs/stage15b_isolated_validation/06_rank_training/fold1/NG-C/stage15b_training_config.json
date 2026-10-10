@@ -1,0 +1,48 @@
+{
+  "Fold": 1,
+  "Model": "NG-C",
+  "seed": 2022,
+  "parameters": 7425,
+  "ProtocolSHA256": "2ddb67d16d4f3f355bc147598ee22c8b176953344aa78bdf9ca7c2672cf8e7be",
+  "TrainingPartition": "InnerTrain378",
+  "SelectionPartition": "InnerDev42",
+  "TrainingCacheManifestSHA256": "c745329521157e2146ae057164040e8807f8acd146d9370c256dede3ab291988",
+  "DevCacheManifestSHA256": "b53c57b0bc161dd1b788447e0e4ba879181dbf6b18c6d3cc55d90940c3cec70b",
+  "NormalizationSHA256": "5b984b5f85e3c399fe8b1f7a9571a40e53e5900fb44abdd4afc8652ed154dfea",
+  "HeadRegistrationSHA256": "ccfab9560d1e928c7c547693cf0fdfafdc28d6c9e08c55f5e793ed79a50cb9c0",
+  "PredictorCheckpointSHA256": "23bf3629c54eb86110965be97d38d02e7350a2b45a8568e2b831b0d9e6d632fd",
+  "HistoricalWeightsLoaded": false,
+  "R2Protocol": {
+    "architecture": [
+      19,
+      32,
+      1
+    ],
+    "parameters": 673,
+    "loss": "original Stage6 ranking_loss softmax(-FDE/1m)",
+    "seed": 2022,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "head_batch": 1024,
+    "evaluation_batch": 4096,
+    "max_epochs": 50,
+    "patience": 5,
+    "order": "torch.randperm with CPU Generator seed2022+epoch",
+    "remainder": "original last partial batch optimizer step, no carry",
+    "selection": "InnerDev Overall Top1FDE strict improvement",
+    "changes_only": "data partition and normalization; historical R2 checkpoint never loaded"
+  },
+  "GraphProtocol": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "microbatch": 128,
+    "accumulation": 8,
+    "effective_batch": 1024,
+    "max_epochs": 50,
+    "patience": 5,
+    "carry": "continuous shuffled epoch stream; pending final remainder prepended next epoch; no smaller optimizer step; pending saved at stop, every distinct actor must have participated",
+    "ABC_selection": "minimum Sdev=.5*VehicleInnerDevFDE/FoldR2VehicleFDE+.5*PedestrianInnerDevFDE/FoldR2PedestrianFDE; strict improvement; epoch1 first eligible"
+  }
+}

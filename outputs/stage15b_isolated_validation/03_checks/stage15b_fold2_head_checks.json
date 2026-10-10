@@ -1,0 +1,84 @@
+{
+  "Status": "PASS",
+  "Fold": 2,
+  "Role": "InnerTrain",
+  "Targets": 128,
+  "ActualUpdates": 12,
+  "Rows": [
+    {
+      "Model": "R2",
+      "Params": 673,
+      "InitialStateSHA256": "b4e0c23baade21cd0eda026bcb286e7ce43bb1e2785fefa2f7f32e5d7622427f",
+      "DiagnosticUpdates": 2,
+      "InitialLoss": 1.5308902263641357,
+      "FinalLoss": 1.53037691116333,
+      "GradientNorm": 0.10994487255811691,
+      "GTLabelPoisonMaxDiff": 0.0,
+      "OwnOnlyNeighborInvariance": false,
+      "TinyWeightsRetainedAsFormal": false
+    },
+    {
+      "Model": "NG-A",
+      "Params": 7425,
+      "InitialStateSHA256": "164cfbcdc31d12bb7202b2a39d8996936a96c66b4b03eac253e0b8022afd27c3",
+      "DiagnosticUpdates": 2,
+      "InitialLoss": 1.5308902263641357,
+      "FinalLoss": 1.5303924083709717,
+      "GradientNorm": 0.12425953149795532,
+      "GTLabelPoisonMaxDiff": 0.0,
+      "OwnOnlyNeighborInvariance": true,
+      "TinyWeightsRetainedAsFormal": false
+    },
+    {
+      "Model": "NG-C",
+      "Params": 7425,
+      "InitialStateSHA256": "164cfbcdc31d12bb7202b2a39d8996936a96c66b4b03eac253e0b8022afd27c3",
+      "DiagnosticUpdates": 2,
+      "InitialLoss": 0.3544739782810211,
+      "FinalLoss": 0.35347676277160645,
+      "GradientNorm": 0.2457495629787445,
+      "GTLabelPoisonMaxDiff": 0.0,
+      "OwnOnlyNeighborInvariance": true,
+      "TinyWeightsRetainedAsFormal": false
+    },
+    {
+      "Model": "G-A",
+      "Params": 24066,
+      "InitialStateSHA256": "f1247691a89c2033dab339c4f6b7ecc44e0cfc6592ccb72fd19b97e26aa375ee",
+      "DiagnosticUpdates": 2,
+      "InitialLoss": 1.5308902263641357,
+      "FinalLoss": 1.5304301977157593,
+      "GradientNorm": 0.11077845841646194,
+      "GTLabelPoisonMaxDiff": 0.0,
+      "OwnOnlyNeighborInvariance": false,
+      "TinyWeightsRetainedAsFormal": false
+    },
+    {
+      "Model": "G-C",
+      "Params": 24066,
+      "InitialStateSHA256": "f1247691a89c2033dab339c4f6b7ecc44e0cfc6592ccb72fd19b97e26aa375ee",
+      "DiagnosticUpdates": 2,
+      "InitialLoss": 0.3544739782810211,
+      "FinalLoss": 0.35362303256988525,
+      "GradientNorm": 0.21367007493972778,
+      "GTLabelPoisonMaxDiff": 0.0,
+      "OwnOnlyNeighborInvariance": false,
+      "TinyWeightsRetainedAsFormal": false
+    },
+    {
+      "Model": "Matched-NG-C",
+      "Params": 24001,
+      "InitialStateSHA256": "bb0d3e49ac9cd2cec8de221777a480e1253b262db160c6014b69190aa0bf7c77",
+      "DiagnosticUpdates": 2,
+      "InitialLoss": 0.3544739782810211,
+      "FinalLoss": 0.35336896777153015,
+      "GradientNorm": 0.27990275621414185,
+      "GTLabelPoisonMaxDiff": 0.0,
+      "OwnOnlyNeighborInvariance": true,
+      "TinyWeightsRetainedAsFormal": false
+    }
+  ],
+  "OptimizerInputsFrozenFeatures": true,
+  "NewPredictorWeightsUpdated": false,
+  "OuterTestUsed": false
+}

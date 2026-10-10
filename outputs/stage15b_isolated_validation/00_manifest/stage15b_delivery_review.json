@@ -1,0 +1,20 @@
+{
+  "Status": "PASS",
+  "RequiredArtifacts": {
+    "stage15b_predictor_training_report.md": "23c89139ec7c6d5c339c651a0af51d97ac57ee419511d4289822b7eabefe0857",
+    "stage15b_predictor_checkpoint_audit.md": "231c2e9d44b7d38ff21a9275c57c0e93eaf8d4e82efc67b7bd05b580060160f3",
+    "stage15b_candidate_provenance.md": "98116f505e41e7242482562e4f18503d10ce8f547db7e074aedd026fa9c7b805",
+    "stage15b_ranking_training_report.md": "29c897a67fed39204d911c7f14e87e55a920b166c78edbc559afcf73628b5880",
+    "stage15b_end_to_end_metrics.csv": "e3d9d40b5c12c139408bf0506ff3c5d1f0001b9aeca584b7c2510cede8f0463c",
+    "stage15b_ablation_metrics.csv": "802e03a1fa900096106581a7933fba8cecaa270799b54f1ab3698ff89f20fc83",
+    "stage15b_bootstrap_ci.csv": "1c014b0707aa5a49be421c1fbecf251893ac23660fe1e40d05e050e5830b8c97",
+    "stage15b_failure_cases.md": "f924f3ea61879c2183ce83c55b1348ff0423062482d69d607a0c6426e20b90fc",
+    "stage15b_final_report.md": "c2fc489e9704f24a944164608500dd54b621064bbdd610c67af0cd2505857aae"
+  },
+  "FrozenFittingAndStatisticalSourcesUnchanged": true,
+  "FormalOptimizerBatchesAudited": 36500,
+  "WeightedFoldToPooledConsistency": true,
+  "PrimaryDecisionConsistency": true,
+  "NoFittingOrNewHypothesisTest": true,
+  "HistoricalSHAReview": "already PASS in final_audit; no redundant rerun"
+}

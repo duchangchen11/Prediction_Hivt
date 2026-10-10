@@ -1,0 +1,53 @@
+{
+  "Case": "case2",
+  "Selection": "largest observed harm in stated fixed contrast/group, unique actor-window",
+  "Comparison": "G-C-NG-C",
+  "Group": "Pedestrian",
+  "Fold": 3,
+  "SceneToken": "bed8426a524d45afab05b19cf02386b2",
+  "SampleToken": "12a087e40d874fc19f7282c153c15789",
+  "InstanceToken": "dabc3da6de3045779670d0ab98293554",
+  "NodeIndex": 23,
+  "DeltaTop1FDE": 5.705439627170563,
+  "OracleMinFDE6": 0.6797953844070435,
+  "Models": {
+    "R0": {
+      "mode": 1,
+      "Top1FDE": 0.969359815120697,
+      "Top1ADE": 0.664043128490448
+    },
+    "R2": {
+      "mode": 1,
+      "Top1FDE": 0.969359815120697,
+      "Top1ADE": 0.664043128490448
+    },
+    "NG-A": {
+      "mode": 1,
+      "Top1FDE": 0.969359815120697,
+      "Top1ADE": 0.664043128490448
+    },
+    "NG-C": {
+      "mode": 1,
+      "Top1FDE": 0.969359815120697,
+      "Top1ADE": 0.664043128490448
+    },
+    "G-A": {
+      "mode": 1,
+      "Top1FDE": 0.969359815120697,
+      "Top1ADE": 0.664043128490448
+    },
+    "G-C": {
+      "mode": 4,
+      "Top1FDE": 6.67479944229126,
+      "Top1ADE": 3.492304563522339
+    },
+    "Matched-NG-C": {
+      "mode": 1,
+      "Top1FDE": 0.969359815120697,
+      "Top1ADE": 0.664043128490448
+    }
+  },
+  "PredictorCheckpointSHA256": "b1f7c7e8200255a998d65676a42b2b431ab5444df70ffd3822eb5349ba168ab4",
+  "CoordinateFrame": "t0 ego xy meters",
+  "Times": "exact source timestamps"
+}

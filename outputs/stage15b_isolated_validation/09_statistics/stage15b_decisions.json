@@ -1,0 +1,86 @@
+{
+  "Status": "COMPLETE",
+  "Decisions": {
+    "GraphIncrementSupported": {
+      "Decision": "SUPPORTED",
+      "RegisteredRule": "SUPPORTED iff point<0, family3 Bonferroni CI upper<0, at least2/3 fold deltas<0; otherwise NOT_SUPPORTED; failed fold INCOMPLETE",
+      "Evidence": {
+        "Group": "Overall",
+        "Comparison": "G-C-NG-C",
+        "Metric": "Top1FDE",
+        "Count": 260151,
+        "Scenes": 630,
+        "Delta": -0.04538237903332411,
+        "CI95Lower": -0.0642186010232971,
+        "CI95Upper": -0.029746910047558008,
+        "CoPrimary": true,
+        "FamilySize": 3,
+        "BonferroniCILower": -0.06897609375370954,
+        "BonferroniCIUpper": -0.026488898497242806,
+        "Replicates": 2000,
+        "Seed": 2022,
+        "Unit": "paired whole scenes independently210 within each fold",
+        "Scope": "new internal scene-isolated end-to-end CV; conditional on trained models",
+        "Fold1Delta": -0.04745532172322477,
+        "Fold2Delta": -0.029450312608553898,
+        "Fold3Delta": -0.057778134698769114,
+        "NegativeFolds": 3
+      }
+    },
+    "LossIncrementSupported": {
+      "Decision": "SUPPORTED",
+      "RegisteredRule": "SUPPORTED iff point<0, family3 Bonferroni CI upper<0, at least2/3 fold deltas<0; otherwise NOT_SUPPORTED; failed fold INCOMPLETE",
+      "Evidence": {
+        "Group": "Overall",
+        "Comparison": "NG-C-NG-A",
+        "Metric": "Top1FDE",
+        "Count": 260151,
+        "Scenes": 630,
+        "Delta": -0.06923865687029176,
+        "CI95Lower": -0.09894244836699527,
+        "CI95Upper": -0.039382562183061486,
+        "CoPrimary": true,
+        "FamilySize": 3,
+        "BonferroniCILower": -0.10499017560114791,
+        "BonferroniCIUpper": -0.03150570582726132,
+        "Replicates": 2000,
+        "Seed": 2022,
+        "Unit": "paired whole scenes independently210 within each fold",
+        "Scope": "new internal scene-isolated end-to-end CV; conditional on trained models",
+        "Fold1Delta": -0.029503734457355168,
+        "Fold2Delta": -0.15236825099808576,
+        "Fold3Delta": -0.030057962026828127,
+        "NegativeFolds": 3
+      }
+    },
+    "CapacityAlternativeNotSufficient": {
+      "Decision": "SUPPORTED",
+      "RegisteredRule": "SUPPORTED iff point<0, family3 Bonferroni CI upper<0, at least2/3 fold deltas<0; otherwise NOT_SUPPORTED; failed fold INCOMPLETE",
+      "Evidence": {
+        "Group": "Overall",
+        "Comparison": "G-C-Matched-NG-C",
+        "Metric": "Top1FDE",
+        "Count": 260151,
+        "Scenes": 630,
+        "Delta": -0.022522675489945188,
+        "CI95Lower": -0.032961709368320755,
+        "CI95Upper": -0.01372436005019487,
+        "CoPrimary": true,
+        "FamilySize": 3,
+        "BonferroniCILower": -0.03538720038867549,
+        "BonferroniCIUpper": -0.011727022761008829,
+        "Replicates": 2000,
+        "Seed": 2022,
+        "Unit": "paired whole scenes independently210 within each fold",
+        "Scope": "new internal scene-isolated end-to-end CV; conditional on trained models",
+        "Fold1Delta": -0.04252891433521818,
+        "Fold2Delta": -0.015296572221539982,
+        "Fold3Delta": -0.011334608756939053,
+        "NegativeFolds": 3
+      }
+    }
+  },
+  "HistoricalExposureLimitation": true,
+  "Uncertainty": "fixed three trained folds, not seed retraining variability",
+  "WeightsSHA256": "31d9b9ddba94345157a920e9a7fea1e9fc4d704a38ef37f2555bc149d072f54d"
+}

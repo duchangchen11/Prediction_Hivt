@@ -1,0 +1,67 @@
+{
+  "Status": "PASS",
+  "Predictors": 3,
+  "RankingHeads": 18,
+  "History": {
+    "historical_files": 3282,
+    "checkpoints": 50,
+    "preserved_untracked": 5
+  },
+  "Identity": {
+    "Status": "PASS",
+    "ActorWindows": 260151,
+    "Scenes": 630,
+    "Fields": [
+      "Top1FDE",
+      "Top1ADE",
+      "OracleGap",
+      "HitRate",
+      "MRR",
+      "SoftCE",
+      "ExpectedRegret",
+      "NormalizedExpectedRegret",
+      "PredictionEntropy",
+      "Top1Probability",
+      "Top1Top2Margin",
+      "OracleModeProbability",
+      "minADEOracle6",
+      "minFDE6",
+      "MR6"
+    ],
+    "Models": [
+      "R0",
+      "R2",
+      "NG-A",
+      "NG-C",
+      "G-A",
+      "G-C",
+      "Matched-NG-C"
+    ],
+    "IdentitiesUnique": true,
+    "AllOracleMetricsBitwiseEqual": true,
+    "BicycleNewR2RouteBitwiseEqual": true,
+    "All18HeadsFrozenBeforeEvaluation": true,
+    "HistoricalPredictionsLoaded": false,
+    "OfficialProtocol": "custom internal evaluation, not nuScenes leaderboard",
+    "SHA256": {
+      "logits.npy": "d75395c8bfb588d17f1da0c6661afac4764f94f73aa2b09d4e828d0a36abbeec",
+      "actor_records.csv": "7a4a42d032873c556c1a85dfa4e0841680e97f951b7b25abc7dcbfc0ea7b42e3",
+      "probabilities.npy": "2492ffc122a75d3f40385a05c6b8688d03d921cb43117a3beceebecc9247a3fd",
+      "metrics.npy": "c87736217807177dc6a828ba7f525dcc4d7c078b2868ed424165e7c7c4f084a0"
+    }
+  },
+  "Decisions": {
+    "GraphIncrementSupported": "SUPPORTED",
+    "LossIncrementSupported": "SUPPORTED",
+    "CapacityAlternativeNotSufficient": "SUPPORTED"
+  },
+  "CacheBytes": 19639145590,
+  "DiskFreeBytes": 25919733760,
+  "ScientificLimitations": "Internal training-isolated three-fold CV on historically developed scenes; not pristine confirmation. Scheme A uses predictor training-in candidates for ranker fitting. Bootstrap is conditional on three selected predictors/heads and does not quantify retraining seed uncertainty. Custom eligibility/t0 ego coordinates/K6/end-point miss/HitRate differ from official nuScenes default K=[1,5,10], official targets/splits, global-coordinate output, whole-trajectory miss and OffRoadRate definitions. No cross-protocol paper-number comparison. Capacity is approximately matched and no causal proof is claimed.",
+  "ProtocolSHA256": "2ddb67d16d4f3f355bc147598ee22c8b176953344aa78bdf9ca7c2672cf8e7be",
+  "AllRequiredDeliverables": true,
+  "STOP": true,
+  "ActualOptimizerSourceAudit": "01_data_isolation/stage15b_actual_data_usage.json",
+  "FormalOptimizerSteps": 36500,
+  "PostOutcomeEdits": "report clarifications only; no fitting, evaluation, bootstrap or thresholds changed"
+}

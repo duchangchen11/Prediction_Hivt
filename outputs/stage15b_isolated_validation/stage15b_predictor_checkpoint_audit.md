@@ -1,0 +1,9 @@
+# Stage15B predictor checkpoints
+
+| fold | seed | path | sha256 | params | warm_steps | nll_steps_executed | selected_global_step | checkpoint_dev_minFDE6 | TrainSceneSHA256 | DevSceneSHA256 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 2022 | 04_predictor_checkpoints/fold1/stage15b_nll_best_overall_minfde.pt | 23bf3629c54eb86110965be97d38d02e7350a2b45a8568e2b831b0d9e6d632fd | 650403 | 5000 | 6500 | 9000 | 1.180323 | d96f1efbddddeb08565400fa39f0f8890758aa57c03e9c4ce0cb7826ddeb79ad | 3ddfb21c9508bd6e665f9f2bc328ff8e9d1505dd72e65b25674a46b625d2947b |
+| 2 | 2122 | 04_predictor_checkpoints/fold2/stage15b_nll_best_overall_minfde.pt | dadf139ef4d5ca4009a22de3dda42f3cd91f62a149d2c4114e922856100729c8 | 650403 | 5000 | 7000 | 9500 | 1.277962 | 51abb7e4163c610adfb4b54f4c5567e3db566c684c7407dbb379055ff3c1694e | 692cd98bb285a9f805c4a9d7a9de03996cd36c2c9d192e676865066e520ab2db |
+| 3 | 2222 | 04_predictor_checkpoints/fold3/stage15b_nll_best_overall_minfde.pt | b1f7c7e8200255a998d65676a42b2b431ab5444df70ffd3822eb5349ba168ab4 | 650403 | 5000 | 8000 | 10500 | 1.125768 | 0d31af38ff1bbf997ca25bcf3ad5c3827ea9889ecd840bc7ecb9bdc1e8c37587 | 7f53320b0a21d6a8e75c671549c3e482ffb54e0f3d3b0086f9a17217f8528431 |
+
+All three new NLL checkpoints were frozen before candidate generation. Strict readback,650403 parameters,K6, GT-poison forward invariance, exact next-step optimizer/RNG replay and original raw timestamp/coordinate identity checks pass per-fold (`03_checks/stage15b_foldN_checkpoint_checks.json`). Own best warmup model/optimizer/RNG are restored; only LR changes to0.0001, NLL sampler resets with100000 epoch offset. Timestamps preserve original keyframe clock jitter; nominal5-past/12-future is not resampled to an invented exact six-second grid.

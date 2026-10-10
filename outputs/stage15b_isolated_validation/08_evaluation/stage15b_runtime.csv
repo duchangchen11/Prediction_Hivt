@@ -1,0 +1,19 @@
+Fold,Model,Actors,Parameters,HeadForwardSeconds,HeadMSPerActor,SharedFeaturePreparationSeconds,UnifiedFoldEvaluationSeconds,Scope
+1,R2,82673,673,0.351087665826,0.0042467028634,5.1720572229,15.193181496,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+1,NG-A,82673,7425,0.453527522099,0.00548579974234,5.1720572229,15.19318384,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+1,NG-C,82673,7425,0.423978661303,0.0051283812285,5.1720572229,15.193184631,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+1,G-A,82673,24066,0.964736917405,0.0116693106263,5.1720572229,15.19318561,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+1,G-C,82673,24066,0.887883166521,0.0107396993761,5.1720572229,15.19318642,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+1,Matched-NG-C,82673,24001,0.566541793552,0.00685280313467,5.1720572229,15.193187295,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+2,R2,83711,673,0.268551540939,0.00320807947509,5.21002348812,15.047742927,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+2,NG-A,83711,7425,0.45420371939,0.00542585465936,5.21002348812,15.04774504,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+2,NG-C,83711,7425,0.430222529278,0.00513937868712,5.21002348812,15.047745707,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+2,G-A,83711,24066,0.913174247689,0.0109086529571,5.21002348812,15.047746746,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+2,G-C,83711,24066,0.896875257196,0.0107139474764,5.21002348812,15.047747678,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+2,Matched-NG-C,83711,24001,0.575358268194,0.00687315010206,5.21002348812,15.047748576,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+3,R2,93767,673,0.334303398937,0.00356525642216,7.21347475291,18.578840323,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+3,NG-A,93767,7425,0.540842101997,0.00576793650214,7.21347475291,18.578843297,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+3,NG-C,93767,7425,0.49866791899,0.00531816010952,7.21347475291,18.578844161,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+3,G-A,93767,24066,1.06268500836,0.0113332516596,7.21347475291,18.578845266,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+3,G-C,93767,24066,1.03439700167,0.0110315676269,7.21347475291,18.578846164,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
+3,Matched-NG-C,93767,24001,0.658820284269,0.00702614229173,7.21347475291,18.578847627,cached inputs; head CUDA FP32; excludes predictor and scene feature construction and Bicycle route
