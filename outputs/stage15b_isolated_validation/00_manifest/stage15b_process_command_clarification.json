@@ -1,0 +1,21 @@
+{
+  "Clarification": "Supervisor process receipt Command lists the core entry; actual child execution additionally prepends the registered JSON scalar wrapper.",
+  "ActualCommandPrefix": [
+    "/home/lrj/anaconda3/envs/ped_intent/bin/python",
+    "-u",
+    "/home/lrj/Prediction_Hivt/outputs/stage15b_isolated_validation/00_manifest/stage15b_infrastructure.py"
+  ],
+  "Then": "absolute core script path and all recorded arguments",
+  "ExplicitEnvironment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "CPUThreads": 4,
+  "DeterministicAlgorithms": true,
+  "CuDNNDeterministic": true,
+  "CuDNNBenchmark": false,
+  "Source": "00_manifest/stage15b_run.py subprocess.Popen call",
+  "TrainingComputationChanged": false,
+  "OnlyLoggingSerializationAdapted": true
+}

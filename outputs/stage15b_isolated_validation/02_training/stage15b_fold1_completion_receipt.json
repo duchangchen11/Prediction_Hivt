@@ -1,0 +1,15 @@
+{
+  "Status": "COMPLETE",
+  "Fold": 1,
+  "Seed": 2022,
+  "WarmupExecutedSteps": 5000,
+  "NLLExecutedSteps": 6500,
+  "SelectedNLLGlobalStep": 9000,
+  "SelectedInnerDevMinFDE6": 1.1803225282599104,
+  "SelectedCheckpointSHA256": "23bf3629c54eb86110965be97d38d02e7350a2b45a8568e2b831b0d9e6d632fd",
+  "TrainingScenes": 378,
+  "DevelopmentScenes": 42,
+  "OuterTestUsed": false,
+  "HeadDevUsed": false,
+  "StopReason": "patience_5"
+}

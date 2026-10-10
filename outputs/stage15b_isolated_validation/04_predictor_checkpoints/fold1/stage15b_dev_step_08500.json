@@ -1,0 +1,50 @@
+{
+  "fold": 1,
+  "seed": 2022,
+  "phase": "original_nll",
+  "global_step": 8500,
+  "training_loss_mean_last500_steps": 0.8613055834770202,
+  "measured": {
+    "full_horizon_Overall_minFDE6": 1.1834344818941516,
+    "Count": 18327,
+    "selection_role": "InnerDev",
+    "subset_only": false,
+    "metrics": {
+      "Overall": {
+        "Count": 18327,
+        "minADE6": 0.5878559232552691,
+        "minFDE6": 1.1834344818941516
+      },
+      "Vehicle": {
+        "Count": 12401,
+        "minADE6": 0.6441299360396869,
+        "minFDE6": 1.3119050783900172
+      },
+      "Pedestrian": {
+        "Count": 5604,
+        "minADE6": 0.47838578537945103,
+        "minFDE6": 0.9317171224885493
+      },
+      "Bicycle": {
+        "Count": 322,
+        "minADE6": 0.32579573728173095,
+        "minFDE6": 0.6165407395455986
+      },
+      "MovingVehicle": {
+        "Count": 2431,
+        "minADE6": 2.4182295748448297,
+        "minFDE6": 5.076391102030302
+      }
+    },
+    "ADE_definition": "ADE of FDE-minimizing mode, inherited multimodal_errors"
+  },
+  "lr": 0.0001,
+  "improved": true,
+  "best_step": 8500,
+  "best_FDE": 1.1834344818941516,
+  "bad_validations": 0,
+  "gpu_peak_allocated_bytes": 4764721664,
+  "gpu_peak_reserved_bytes": 9277800448,
+  "block_wall_seconds": 247.18862172099762,
+  "checkpoint": "04_predictor_checkpoints/fold1/stage15b_nll_best_overall_minfde.pt"
+}
