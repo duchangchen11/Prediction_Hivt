@@ -1,0 +1,87 @@
+{
+  "Status": "FROZEN_ALL_COMPLETE",
+  "Checkpoints": [
+    {
+      "fold": 1,
+      "seed": 2022,
+      "path": "04_predictor_checkpoints/fold1/stage15b_nll_best_overall_minfde.pt",
+      "sha256": "23bf3629c54eb86110965be97d38d02e7350a2b45a8568e2b831b0d9e6d632fd",
+      "state_sha256": "1a5d6f79c1cdc50da6f645b73806694ba5cc30b07117cb93313aff93796676b9",
+      "params": 650403,
+      "warm_steps": 5000,
+      "nll_steps_executed": 6500,
+      "selected_global_step": 9000,
+      "checkpoint_dev_minFDE6": 1.1803225282599104,
+      "transition": {
+        "Status": "PASS",
+        "OnlyLRChanged": true,
+        "OptimizerMomentsPreserved": true,
+        "AllRNGRestored": true,
+        "SamplerCursorReset": true,
+        "NLLEpochOffset": 100000,
+        "OwnWarmupCheckpoint": "04_predictor_checkpoints/fold1/stage15b_warmup_best_overall_minfde.pt",
+        "SHA256": "0c402bbb3b41f39ba9fa45324dbe2bbc2183993946a08ab89d7f3c91e0202513",
+        "WarmupActualSteps": 4500,
+        "FormalWarmupWouldRequire": 5000
+      },
+      "TrainSceneSHA256": "d96f1efbddddeb08565400fa39f0f8890758aa57c03e9c4ce0cb7826ddeb79ad",
+      "DevSceneSHA256": "3ddfb21c9508bd6e665f9f2bc328ff8e9d1505dd72e65b25674a46b625d2947b"
+    },
+    {
+      "fold": 2,
+      "seed": 2122,
+      "path": "04_predictor_checkpoints/fold2/stage15b_nll_best_overall_minfde.pt",
+      "sha256": "dadf139ef4d5ca4009a22de3dda42f3cd91f62a149d2c4114e922856100729c8",
+      "state_sha256": "78d6b5e8270659f2f8c77d51378a87df367c6503eae8815d981b2a8b1f21299b",
+      "params": 650403,
+      "warm_steps": 5000,
+      "nll_steps_executed": 7000,
+      "selected_global_step": 9500,
+      "checkpoint_dev_minFDE6": 1.2779619257521588,
+      "transition": {
+        "Status": "PASS",
+        "OnlyLRChanged": true,
+        "OptimizerMomentsPreserved": true,
+        "AllRNGRestored": true,
+        "SamplerCursorReset": true,
+        "NLLEpochOffset": 100000,
+        "OwnWarmupCheckpoint": "04_predictor_checkpoints/fold2/stage15b_warmup_best_overall_minfde.pt",
+        "SHA256": "2bd6fd230bec909405b90aab22d4088b9934c443e409da8f44b9e5c8eff3fe0e",
+        "WarmupActualSteps": 4000,
+        "FormalWarmupWouldRequire": 5000
+      },
+      "TrainSceneSHA256": "51abb7e4163c610adfb4b54f4c5567e3db566c684c7407dbb379055ff3c1694e",
+      "DevSceneSHA256": "692cd98bb285a9f805c4a9d7a9de03996cd36c2c9d192e676865066e520ab2db"
+    },
+    {
+      "fold": 3,
+      "seed": 2222,
+      "path": "04_predictor_checkpoints/fold3/stage15b_nll_best_overall_minfde.pt",
+      "sha256": "b1f7c7e8200255a998d65676a42b2b431ab5444df70ffd3822eb5349ba168ab4",
+      "state_sha256": "522b2292dc1b96ce9acc4704132f8917f799aa2694709e1bdd6d235224b8e27e",
+      "params": 650403,
+      "warm_steps": 5000,
+      "nll_steps_executed": 8000,
+      "selected_global_step": 10500,
+      "checkpoint_dev_minFDE6": 1.1257677944042281,
+      "transition": {
+        "Status": "PASS",
+        "OnlyLRChanged": true,
+        "OptimizerMomentsPreserved": true,
+        "AllRNGRestored": true,
+        "SamplerCursorReset": true,
+        "NLLEpochOffset": 100000,
+        "OwnWarmupCheckpoint": "04_predictor_checkpoints/fold3/stage15b_warmup_best_overall_minfde.pt",
+        "SHA256": "5fd290e0531ad614f8b6c80a480d25c3ddba8d28a7d047c9e7e1735488cd9970",
+        "WarmupActualSteps": 5000,
+        "FormalWarmupWouldRequire": 5000
+      },
+      "TrainSceneSHA256": "0d31af38ff1bbf997ca25bcf3ad5c3827ea9889ecd840bc7ecb9bdc1e8c37587",
+      "DevSceneSHA256": "7f53320b0a21d6a8e75c671549c3e482ffb54e0f3d3b0086f9a17217f8528431"
+    }
+  ],
+  "NewFromFresh": true,
+  "TinyOrHistoricalWeightsUsed": false,
+  "OuterEvaluationPerformed": false,
+  "FurtherPredictorTrainingPermitted": false
+}

@@ -1,0 +1,14 @@
+{
+  "Fold": 3,
+  "Status": "COMPLETE",
+  "Seed": 2222,
+  "WarmupSteps": 5000,
+  "NLLSteps": 8000,
+  "SelectedGlobalStep": 10500,
+  "InnerDevMinFDE6": 1.1257677944042281,
+  "CheckpointPath": "04_predictor_checkpoints/fold3/stage15b_nll_best_overall_minfde.pt",
+  "CheckpointSHA256": "b1f7c7e8200255a998d65676a42b2b431ab5444df70ffd3822eb5349ba168ab4",
+  "StopReason": "patience_5",
+  "OuterEvaluationDone": false,
+  "ObservedUTC": "2026-10-10T06:16:57.780803+00:00"
+}

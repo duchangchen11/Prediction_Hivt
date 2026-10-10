@@ -1,0 +1,12 @@
+{
+  "Status": "PASS",
+  "OnlyLRChanged": true,
+  "OptimizerMomentsPreserved": true,
+  "AllRNGRestored": true,
+  "SamplerCursorReset": true,
+  "NLLEpochOffset": 100000,
+  "OwnWarmupCheckpoint": "04_predictor_checkpoints/fold3/stage15b_warmup_best_overall_minfde.pt",
+  "SHA256": "5fd290e0531ad614f8b6c80a480d25c3ddba8d28a7d047c9e7e1735488cd9970",
+  "WarmupActualSteps": 5000,
+  "FormalWarmupWouldRequire": 5000
+}

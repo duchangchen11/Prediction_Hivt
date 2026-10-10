@@ -1,0 +1,21 @@
+{
+  "Status": "PASS",
+  "Fold": 3,
+  "CheckpointSHA256": "b1f7c7e8200255a998d65676a42b2b431ab5444df70ffd3822eb5349ba168ab4",
+  "OutputK": 6,
+  "Parameters": 650403,
+  "GTInputPoisonMaxDiff": {
+    "raw_prediction": 0.0,
+    "mode_logits": 0.0,
+    "mode_prob": 0.0
+  },
+  "NextStepReplay": "BITWISE_EXACT",
+  "DiagnosticOptimizerUpdates": 2,
+  "DiagnosticWeightsRetainedAsFormal": false,
+  "OptimizerStateAndAllRNGEqual": true,
+  "RawCoordinateMaxErrorMeters": 3.8011440322516856e-06,
+  "RawTimestampMaxErrorSeconds": 0.0,
+  "TimestampPolicy": "actual original source-clock values, no nominal-spacing threshold",
+  "CoordinateChecksOnlyOn": "InnerTrain",
+  "OuterTestEvaluated": false
+}
