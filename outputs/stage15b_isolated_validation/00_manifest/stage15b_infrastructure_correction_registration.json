@@ -1,0 +1,19 @@
+{
+  "Status": "REGISTERED_BEFORE_SAME_RUN_RESUME",
+  "Reason": "np.bool_ JSON monitor serialization failed after durable checkpoint1000; no loss/OOM/isolation/restore failure",
+  "FailurePath": "04_predictor_checkpoints/fold1/stage15b_failure.json",
+  "FailureSHA256": "2f116387bb0a74aeb681bc9eeecd5f42af1920d8e6e54e816a0583cbdb74e113",
+  "FrozenFittingSourcesChanged": false,
+  "ProtocolChanged": false,
+  "ModifiedLossOptimizerLRBatchSeedBudget": false,
+  "Implementation": "JSON encoder converts NumPy scalar via item only, no model/optimizer/sampler/RNG change",
+  "sources": {
+    "00_manifest/stage15b_infrastructure.py": "2909323ad7f25c0de5f7b779469f5fe454087d0ee6c9fb838c92aa9cba7d1012",
+    "03_checks/stage15b_infrastructure_resume_check.py": "6b314739712d5b3adab0e9adf97cd7e8ec07b71542bb8db4fcdb203fcbb949bb"
+  },
+  "CheckpointAtInterruption": {
+    "path": "04_predictor_checkpoints/fold1/stage15b_warmup_last_checkpoint.pt",
+    "sha256": "0f0b0af234378f67de1700fe294ff3d61c873c9df7d9553794678b185c8f0fb5"
+  },
+  "Authorization": "Stage14B frozen failure rules allow infrastructure interruption recovery with same optimizer/RNG; Stage15B does not permit protocol tuning"
+}

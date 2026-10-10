@@ -1,0 +1,9 @@
+{
+  "ExitCode": 1,
+  "Entry": "03_checks/stage15b_infrastructure_resume_check.py",
+  "ObservedException": "AssertionError at rows[0]==rows[1] and sha256(cp)==cp_hash",
+  "RuntimeFlagsMissing": true,
+  "DiagnosticUpdates": 2,
+  "CorrectedDeterministicCheck": "PASS; all fields bitwise equal",
+  "FormalUpdates": 0
+}

@@ -1,0 +1,11 @@
+{
+  "Status": "REGISTERED_BEFORE_CHECK",
+  "PreviousDiagnosticExit": 1,
+  "PreviousDiagnosticFailure": "two-step replay mismatch; before optimizer resume; frozen training untouched",
+  "CheckerCorrection": "match frozen FP32 deterministic_algorithms=True, cudnn deterministic=True/benchmark=False and CPU threads4; first checker omitted these runtime flags",
+  "PreviousSourceSHA256": "6b314739712d5b3adab0e9adf97cd7e8ec07b71542bb8db4fcdb203fcbb949bb",
+  "NewSourceSHA256": "0fbf59141f9818f710471c058a14d406d7dfe68b2f06784eec59bbc45d7d03a8",
+  "NoFormalOptimizerUpdateSinceStep1000": true,
+  "IfRecheckFails": "STOP fold, INCOMPLETE; do not resume or tune",
+  "DiscardedCheckUpdates": 2
+}

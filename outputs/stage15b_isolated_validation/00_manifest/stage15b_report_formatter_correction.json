@@ -1,0 +1,9 @@
+{
+  "Status": "REGISTERED_BEFORE_OUTER_ACCESS",
+  "Reason": "existing environment lacks optional tabulate package; do not install or upgrade environment",
+  "Change": "replace Markdown-only table rendering with local formatter; no numeric/statistical/model change",
+  "InitialSourceSHA256": "e16e5e27d9420bd8a97820b31c2d1dfc2a86c59284bb77923461eec575d3f86c",
+  "PreservedInitialSource": "10_logs/stage15b_finalize_initial_formatter.py",
+  "CurrentSourceSHA256": "3fb858ca564021cdb6154b9598de00b58e070af4a10e3f550448e5cc96ea8344",
+  "FrozenTrainingSourcesChanged": false
+}

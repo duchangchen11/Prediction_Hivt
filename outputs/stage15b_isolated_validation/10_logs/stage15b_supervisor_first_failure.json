@@ -1,0 +1,6 @@
+{
+  "Status": "FAILED_STOP",
+  "Exception": "AssertionError('Fold1 FAILED_STOP')",
+  "Traceback": "Traceback (most recent call last):\n  File \"/home/lrj/Prediction_Hivt/outputs/stage15b_isolated_validation/00_manifest/stage15b_run.py\", line 56, in <module>\n    try:main()\n  File \"/home/lrj/Prediction_Hivt/outputs/stage15b_isolated_validation/00_manifest/stage15b_run.py\", line 31, in main\n    assert not (ROOT/'04_predictor_checkpoints/fold1/stage15b_failure.json').exists(),'Fold1 FAILED_STOP'\nAssertionError: Fold1 FAILED_STOP\n",
+  "NoProtocolChangePermitted": true
+}

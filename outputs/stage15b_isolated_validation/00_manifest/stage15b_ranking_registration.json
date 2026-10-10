@@ -1,0 +1,14 @@
+{
+  "Status": "REGISTERED_BEFORE_CANDIDATES_OR_HEAD_FITTING",
+  "sources": {
+    "05_candidate_interface/stage15b_cache.py": "ee59e4da25f6cd25b5125f4f1e7f1de6dfc8fe2df5f574a5f47fd6ff213b119d",
+    "05_candidate_interface/stage15b_ranking.py": "a92fe91dfbb06248f3643eaac1711f13743f947e3a6cf76eda84d95a327cd15b",
+    "06_rank_training/stage15b_heads.py": "e240c11ee3df0ac8122aa7a86fa894760154c7d377787fe598675d0f8a5fce1b",
+    "03_checks/stage15b_head_check.py": "02a231b2a0c266e08863130d5c35bc83b990b3cc40c9d35ddc117a78aeb6ad7b",
+    "03_checks/stage15b_checkpoint_check.py": "9730e8efece91a0db9342681c5f93bc13e2e97301c3ca151e74c25fadbf0e445"
+  },
+  "protocol_sha256": "2ddb67d16d4f3f355bc147598ee22c8b176953344aa78bdf9ca7c2672cf8e7be",
+  "PredictorFrozenRegistrationUnchanged": true,
+  "RankingHyperparametersUnchanged": true,
+  "NoOuterPerformanceSeen": true
+}
