@@ -1,0 +1,55 @@
+{
+  "Status": "REGISTERED_BEFORE_FITTING",
+  "BaseCommit": "ca06370efbea2d65e366d7876c19fe6750168cf0",
+  "ProtocolSHA256": "2ddb67d16d4f3f355bc147598ee22c8b176953344aa78bdf9ca7c2672cf8e7be",
+  "sources": {
+    "00_manifest/stage15b_adapt.py": "e0746416990a9d243729888f42e5cd9fe06b023079f3d31e22ac697c62ada6c6",
+    "00_manifest/stage15b_common.py": "3567ad88a517bbbe2bdba639ae418d532712c763842150dda913d45a5d592970",
+    "00_manifest/stage15b_prepare.py": "93c25b6c23075d5cfa7cc72b8b2c07898f662925d4ea49c1af30a82b86f1d7db",
+    "02_training/stage15b_train.py": "778e3348d5c34332fa243fdb93d80294e3930a927426b15a5a3beb9a390531d9",
+    "05_candidate_interface/stage15b_ranking.py": "a92fe91dfbb06248f3643eaac1711f13743f947e3a6cf76eda84d95a327cd15b"
+  },
+  "PredictorFullTrainingAuthorized": true,
+  "CandidateGate": "all3 fresh NLL predictors frozen",
+  "HeadTrainingGate": "fresh candidates and Train-only norm",
+  "OuterEvaluationGate": "all18 heads frozen",
+  "HistoricalWeightsForbidden": true,
+  "StatisticalProtocol": {
+    "replicates": 2000,
+    "seed": 2022,
+    "unit": "paired whole scenes independently resampled210 within each fold",
+    "descriptive_percentiles": [
+      2.5,
+      97.5
+    ],
+    "family_size": 3,
+    "FWER": 0.05,
+    "adjusted_coverage": 0.9833333333333333,
+    "adjusted_percentiles": [
+      0.8333333333333334,
+      99.16666666666667
+    ],
+    "primary_groups": [
+      "Overall"
+    ],
+    "co_primary": [
+      "G-C-NG-C",
+      "G-C-Matched-NG-C",
+      "NG-C-NG-A"
+    ]
+  },
+  "Decisions": {
+    "GraphIncrementSupported": {
+      "Contrast": "G-C-NG-C",
+      "Rule": "SUPPORTED iff point<0, family3 Bonferroni CI upper<0, at least2/3 fold deltas<0; otherwise NOT_SUPPORTED; failed fold INCOMPLETE"
+    },
+    "LossIncrementSupported": {
+      "Contrast": "NG-C-NG-A",
+      "Rule": "SUPPORTED iff point<0, family3 Bonferroni CI upper<0, at least2/3 fold deltas<0; otherwise NOT_SUPPORTED; failed fold INCOMPLETE"
+    },
+    "CapacityAlternativeNotSufficient": {
+      "Contrast": "G-C-Matched-NG-C",
+      "Rule": "SUPPORTED iff point<0, family3 Bonferroni CI upper<0, at least2/3 fold deltas<0; otherwise NOT_SUPPORTED; failed fold INCOMPLETE"
+    }
+  }
+}
